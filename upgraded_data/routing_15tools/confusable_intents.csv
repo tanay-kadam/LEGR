@@ -1,0 +1,451 @@
+source_row_id,original_query,transformed_query,label,generation_type,lexical_cues_removed,paraphrase_family,confusable_with
+-1,,Query payment-api-03 to see if it's still alive.,check_status,confusable_intent,,,query_database
+-1,,Look up how staging-db-02 is performing.,check_status,confusable_intent,,,query_database
+-1,,Scan payment-api-03 -- is it healthy?,check_status,confusable_intent,,,scan_malware
+-1,,Look up how cdn-edge-06 is performing.,check_status,confusable_intent,,,query_database
+-1,,Query auth-svc-04 to see if it's still alive.,check_status,confusable_intent,,,query_database
+-1,,Look up how auth-svc-04 is performing.,check_status,confusable_intent,,,query_database
+-1,,Look up how prod-web-01 is performing.,check_status,confusable_intent,,,query_database
+-1,,Look up how payment-api-03 is performing.,check_status,confusable_intent,,,query_database
+-1,,Look up how ml-infer-05 is performing.,check_status,confusable_intent,,,query_database
+-1,,Scan auth-svc-04 -- is it healthy?,check_status,confusable_intent,,,scan_malware
+-1,,Query prod-web-01 to see if it's still alive.,check_status,confusable_intent,,,query_database
+-1,,Scan staging-db-02 -- is it healthy?,check_status,confusable_intent,,,scan_malware
+-1,,Query staging-db-02 to see if it's still alive.,check_status,confusable_intent,,,query_database
+-1,,Scan ml-infer-05 -- is it healthy?,check_status,confusable_intent,,,scan_malware
+-1,,Scan prod-web-01 -- is it healthy?,check_status,confusable_intent,,,scan_malware
+-1,,Query ml-infer-05 to see if it's still alive.,check_status,confusable_intent,,,query_database
+-1,,Scan cdn-edge-06 -- is it healthy?,check_status,confusable_intent,,,scan_malware
+-1,,Query cdn-edge-06 to see if it's still alive.,check_status,confusable_intent,,,query_database
+-1,,Scan payment-api-03 -- is it healthy?,check_status,confusable_intent,,,scan_malware
+-1,,Scan prod-web-01 -- is it healthy?,check_status,confusable_intent,,,scan_malware
+-1,,Query cdn-edge-06 to see if it's still alive.,check_status,confusable_intent,,,query_database
+-1,,Look up how cdn-edge-06 is performing.,check_status,confusable_intent,,,query_database
+-1,,Scan prod-web-01 -- is it healthy?,check_status,confusable_intent,,,scan_malware
+-1,,Scan cdn-edge-06 -- is it healthy?,check_status,confusable_intent,,,scan_malware
+-1,,Look up how prod-web-01 is performing.,check_status,confusable_intent,,,query_database
+-1,,Scan payment-api-03 -- is it healthy?,check_status,confusable_intent,,,scan_malware
+-1,,Query payment-api-03 to see if it's still alive.,check_status,confusable_intent,,,query_database
+-1,,Scan cdn-edge-06 -- is it healthy?,check_status,confusable_intent,,,scan_malware
+-1,,Query payment-api-03 to see if it's still alive.,check_status,confusable_intent,,,query_database
+-1,,Query prod-web-01 to see if it's still alive.,check_status,confusable_intent,,,query_database
+-1,,Notify the team by creating a formal issue for cdn-edge-06.,create_ticket,confusable_intent,,,send_notification
+-1,,Log Diana's complaint so we can follow up.,create_ticket,confusable_intent,,,log_audit_event
+-1,,Log Frank's complaint so we can follow up.,create_ticket,confusable_intent,,,log_audit_event
+-1,,Send a record of this problem to the tracking system.,create_ticket,confusable_intent,,,send_notification
+-1,,Notify the team by creating a formal issue for ml-infer-05.,create_ticket,confusable_intent,,,send_notification
+-1,,Notify the team by creating a formal issue for payment-api-03.,create_ticket,confusable_intent,,,send_notification
+-1,,Log Grace's complaint so we can follow up.,create_ticket,confusable_intent,,,log_audit_event
+-1,,Notify the team by creating a formal issue for staging-db-02.,create_ticket,confusable_intent,,,send_notification
+-1,,Notify the team by creating a formal issue for auth-svc-04.,create_ticket,confusable_intent,,,send_notification
+-1,,Notify the team by creating a formal issue for prod-web-01.,create_ticket,confusable_intent,,,send_notification
+-1,,Log Charlie's complaint so we can follow up.,create_ticket,confusable_intent,,,log_audit_event
+-1,,Log Eve's complaint so we can follow up.,create_ticket,confusable_intent,,,log_audit_event
+-1,,Log Bob's complaint so we can follow up.,create_ticket,confusable_intent,,,log_audit_event
+-1,,Log Alice's complaint so we can follow up.,create_ticket,confusable_intent,,,log_audit_event
+-1,,Log Bob's complaint so we can follow up.,create_ticket,confusable_intent,,,log_audit_event
+-1,,Log Diana's complaint so we can follow up.,create_ticket,confusable_intent,,,log_audit_event
+-1,,Log Eve's complaint so we can follow up.,create_ticket,confusable_intent,,,log_audit_event
+-1,,Notify the team by creating a formal issue for cdn-edge-06.,create_ticket,confusable_intent,,,send_notification
+-1,,Send a record of this problem to the tracking system.,create_ticket,confusable_intent,,,send_notification
+-1,,Send a record of this problem to the tracking system.,create_ticket,confusable_intent,,,send_notification
+-1,,Notify the team by creating a formal issue for cdn-edge-06.,create_ticket,confusable_intent,,,send_notification
+-1,,Notify the team by creating a formal issue for auth-svc-04.,create_ticket,confusable_intent,,,send_notification
+-1,,Log Charlie's complaint so we can follow up.,create_ticket,confusable_intent,,,log_audit_event
+-1,,Log Frank's complaint so we can follow up.,create_ticket,confusable_intent,,,log_audit_event
+-1,,Send a record of this problem to the tracking system.,create_ticket,confusable_intent,,,send_notification
+-1,,Send a record of this problem to the tracking system.,create_ticket,confusable_intent,,,send_notification
+-1,,Send a record of this problem to the tracking system.,create_ticket,confusable_intent,,,send_notification
+-1,,Send a record of this problem to the tracking system.,create_ticket,confusable_intent,,,send_notification
+-1,,Send a record of this problem to the tracking system.,create_ticket,confusable_intent,,,send_notification
+-1,,Send a record of this problem to the tracking system.,create_ticket,confusable_intent,,,send_notification
+-1,,Notify a manager that Frank's case needs attention.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Send this to a real person for Frank.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Create an escalation path for Frank.,escalate_to_human,confusable_intent,,,create_ticket
+-1,,Send this to a real person for Alice.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Send this to a real person for Eve.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Create an escalation path for Diana.,escalate_to_human,confusable_intent,,,create_ticket
+-1,,Send this to a real person for Bob.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Create an escalation path for Bob.,escalate_to_human,confusable_intent,,,create_ticket
+-1,,Create an escalation path for Alice.,escalate_to_human,confusable_intent,,,create_ticket
+-1,,Send this to a real person for Grace.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Notify a manager that Diana's case needs attention.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Notify a manager that Grace's case needs attention.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Notify a manager that Bob's case needs attention.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Notify a manager that Eve's case needs attention.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Notify a manager that Charlie's case needs attention.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Create an escalation path for Eve.,escalate_to_human,confusable_intent,,,create_ticket
+-1,,Create an escalation path for Grace.,escalate_to_human,confusable_intent,,,create_ticket
+-1,,Send this to a real person for Diana.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Notify a manager that Alice's case needs attention.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Send this to a real person for Charlie.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Notify a manager that Diana's case needs attention.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Create an escalation path for Charlie.,escalate_to_human,confusable_intent,,,create_ticket
+-1,,Notify a manager that Diana's case needs attention.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Notify a manager that Charlie's case needs attention.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Create an escalation path for Bob.,escalate_to_human,confusable_intent,,,create_ticket
+-1,,Create an escalation path for Eve.,escalate_to_human,confusable_intent,,,create_ticket
+-1,,Notify a manager that Eve's case needs attention.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Send this to a real person for Charlie.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Send this to a real person for Frank.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Send this to a real person for Bob.,escalate_to_human,confusable_intent,,,send_notification
+-1,,Log the quarterly metrics into a document.,generate_report,confusable_intent,,,log_audit_event
+-1,,Pull the data and compile findings for Marketing.,generate_report,confusable_intent,,,query_database
+-1,,Query the system and put together a summary for HR.,generate_report,confusable_intent,,,query_database
+-1,,Query the system and put together a summary for Finance.,generate_report,confusable_intent,,,query_database
+-1,,Pull the data and compile findings for Engineering.,generate_report,confusable_intent,,,query_database
+-1,,Query the system and put together a summary for Marketing.,generate_report,confusable_intent,,,query_database
+-1,,Pull the data and compile findings for HR.,generate_report,confusable_intent,,,query_database
+-1,,Query the system and put together a summary for Legal.,generate_report,confusable_intent,,,query_database
+-1,,Pull the data and compile findings for Legal.,generate_report,confusable_intent,,,query_database
+-1,,Query the system and put together a summary for Engineering.,generate_report,confusable_intent,,,query_database
+-1,,Pull the data and compile findings for HR.,generate_report,confusable_intent,,,query_database
+-1,,Pull the data and compile findings for Finance.,generate_report,confusable_intent,,,query_database
+-1,,Pull the data and compile findings for HR.,generate_report,confusable_intent,,,query_database
+-1,,Log the quarterly metrics into a document.,generate_report,confusable_intent,,,log_audit_event
+-1,,Query the system and put together a summary for HR.,generate_report,confusable_intent,,,query_database
+-1,,Log the quarterly metrics into a document.,generate_report,confusable_intent,,,log_audit_event
+-1,,Query the system and put together a summary for Legal.,generate_report,confusable_intent,,,query_database
+-1,,Log the quarterly metrics into a document.,generate_report,confusable_intent,,,log_audit_event
+-1,,Log the quarterly metrics into a document.,generate_report,confusable_intent,,,log_audit_event
+-1,,Query the system and put together a summary for Finance.,generate_report,confusable_intent,,,query_database
+-1,,Pull the data and compile findings for Legal.,generate_report,confusable_intent,,,query_database
+-1,,Log the quarterly metrics into a document.,generate_report,confusable_intent,,,log_audit_event
+-1,,Pull the data and compile findings for HR.,generate_report,confusable_intent,,,query_database
+-1,,Log the quarterly metrics into a document.,generate_report,confusable_intent,,,log_audit_event
+-1,,Pull the data and compile findings for Legal.,generate_report,confusable_intent,,,query_database
+-1,,Query the system and put together a summary for HR.,generate_report,confusable_intent,,,query_database
+-1,,Query the system and put together a summary for Legal.,generate_report,confusable_intent,,,query_database
+-1,,Pull the data and compile findings for Legal.,generate_report,confusable_intent,,,query_database
+-1,,Pull the data and compile findings for Engineering.,generate_report,confusable_intent,,,query_database
+-1,,Query the system and put together a summary for Finance.,generate_report,confusable_intent,,,query_database
+-1,,File a record of what happened with payment-api-03.,log_audit_event,confusable_intent,,,create_ticket
+-1,,File a record of what happened with cdn-edge-06.,log_audit_event,confusable_intent,,,create_ticket
+-1,,Document the action taken on Charlie's account.,log_audit_event,confusable_intent,,,create_ticket
+-1,,Report the incident to the compliance trail.,log_audit_event,confusable_intent,,,generate_report
+-1,,File a record of what happened with prod-web-01.,log_audit_event,confusable_intent,,,create_ticket
+-1,,Document the action taken on Alice's account.,log_audit_event,confusable_intent,,,create_ticket
+-1,,Document the action taken on Frank's account.,log_audit_event,confusable_intent,,,create_ticket
+-1,,Document the action taken on Bob's account.,log_audit_event,confusable_intent,,,create_ticket
+-1,,Document the action taken on Diana's account.,log_audit_event,confusable_intent,,,create_ticket
+-1,,Document the action taken on Eve's account.,log_audit_event,confusable_intent,,,create_ticket
+-1,,File a record of what happened with ml-infer-05.,log_audit_event,confusable_intent,,,create_ticket
+-1,,File a record of what happened with auth-svc-04.,log_audit_event,confusable_intent,,,create_ticket
+-1,,Document the action taken on Grace's account.,log_audit_event,confusable_intent,,,create_ticket
+-1,,File a record of what happened with staging-db-02.,log_audit_event,confusable_intent,,,create_ticket
+-1,,Report the incident to the compliance trail.,log_audit_event,confusable_intent,,,generate_report
+-1,,File a record of what happened with ml-infer-05.,log_audit_event,confusable_intent,,,create_ticket
+-1,,Report the incident to the compliance trail.,log_audit_event,confusable_intent,,,generate_report
+-1,,File a record of what happened with staging-db-02.,log_audit_event,confusable_intent,,,create_ticket
+-1,,Document the action taken on Frank's account.,log_audit_event,confusable_intent,,,create_ticket
+-1,,Report the incident to the compliance trail.,log_audit_event,confusable_intent,,,generate_report
+-1,,Report the incident to the compliance trail.,log_audit_event,confusable_intent,,,generate_report
+-1,,Document the action taken on Grace's account.,log_audit_event,confusable_intent,,,create_ticket
+-1,,File a record of what happened with ml-infer-05.,log_audit_event,confusable_intent,,,create_ticket
+-1,,File a record of what happened with staging-db-02.,log_audit_event,confusable_intent,,,create_ticket
+-1,,Report the incident to the compliance trail.,log_audit_event,confusable_intent,,,generate_report
+-1,,File a record of what happened with auth-svc-04.,log_audit_event,confusable_intent,,,create_ticket
+-1,,File a record of what happened with prod-web-01.,log_audit_event,confusable_intent,,,create_ticket
+-1,,File a record of what happened with ml-infer-05.,log_audit_event,confusable_intent,,,create_ticket
+-1,,Document the action taken on Grace's account.,log_audit_event,confusable_intent,,,create_ticket
+-1,,Document the action taken on Diana's account.,log_audit_event,confusable_intent,,,create_ticket
+-1,,Charlie's subscription charge was wrong -- give them their money back.,process_refund,confusable_intent,,,update_subscription
+-1,,Update Charlie's billing to reflect the returned amount.,process_refund,confusable_intent,,,update_database
+-1,,Adjust Bob's account balance after the error.,process_refund,confusable_intent,,,update_subscription
+-1,,Update Eve's billing to reflect the returned amount.,process_refund,confusable_intent,,,update_database
+-1,,Adjust Diana's account balance after the error.,process_refund,confusable_intent,,,update_subscription
+-1,,Adjust Alice's account balance after the error.,process_refund,confusable_intent,,,update_subscription
+-1,,Frank's subscription charge was wrong -- give them their money back.,process_refund,confusable_intent,,,update_subscription
+-1,,Eve's subscription charge was wrong -- give them their money back.,process_refund,confusable_intent,,,update_subscription
+-1,,Adjust Charlie's account balance after the error.,process_refund,confusable_intent,,,update_subscription
+-1,,Update Frank's billing to reflect the returned amount.,process_refund,confusable_intent,,,update_database
+-1,,Adjust Frank's account balance after the error.,process_refund,confusable_intent,,,update_subscription
+-1,,Grace's subscription charge was wrong -- give them their money back.,process_refund,confusable_intent,,,update_subscription
+-1,,Adjust Grace's account balance after the error.,process_refund,confusable_intent,,,update_subscription
+-1,,Update Bob's billing to reflect the returned amount.,process_refund,confusable_intent,,,update_database
+-1,,Bob's subscription charge was wrong -- give them their money back.,process_refund,confusable_intent,,,update_subscription
+-1,,Update Grace's billing to reflect the returned amount.,process_refund,confusable_intent,,,update_database
+-1,,Update Alice's billing to reflect the returned amount.,process_refund,confusable_intent,,,update_database
+-1,,Diana's subscription charge was wrong -- give them their money back.,process_refund,confusable_intent,,,update_subscription
+-1,,Alice's subscription charge was wrong -- give them their money back.,process_refund,confusable_intent,,,update_subscription
+-1,,Update Diana's billing to reflect the returned amount.,process_refund,confusable_intent,,,update_database
+-1,,Adjust Eve's account balance after the error.,process_refund,confusable_intent,,,update_subscription
+-1,,Adjust Bob's account balance after the error.,process_refund,confusable_intent,,,update_subscription
+-1,,Eve's subscription charge was wrong -- give them their money back.,process_refund,confusable_intent,,,update_subscription
+-1,,Update Eve's billing to reflect the returned amount.,process_refund,confusable_intent,,,update_database
+-1,,Update Alice's billing to reflect the returned amount.,process_refund,confusable_intent,,,update_database
+-1,,Frank's subscription charge was wrong -- give them their money back.,process_refund,confusable_intent,,,update_subscription
+-1,,Frank's subscription charge was wrong -- give them their money back.,process_refund,confusable_intent,,,update_subscription
+-1,,Alice's subscription charge was wrong -- give them their money back.,process_refund,confusable_intent,,,update_subscription
+-1,,Adjust Alice's account balance after the error.,process_refund,confusable_intent,,,update_subscription
+-1,,Adjust Diana's account balance after the error.,process_refund,confusable_intent,,,update_subscription
+-1,,Deploy a fresh system for Finance -- update the inventory too.,provision_vm,confusable_intent,,,update_database
+-1,,Set up another host -- the current cdn-edge-06 isn't cutting it.,provision_vm,confusable_intent,,,restart_service
+-1,,Deploy a fresh system for Legal -- update the inventory too.,provision_vm,confusable_intent,,,update_database
+-1,,Set up another host -- the current ml-infer-05 isn't cutting it.,provision_vm,confusable_intent,,,restart_service
+-1,,Set up another host -- the current auth-svc-04 isn't cutting it.,provision_vm,confusable_intent,,,restart_service
+-1,,Deploy a fresh system for Marketing -- update the inventory too.,provision_vm,confusable_intent,,,update_database
+-1,,Set up another host -- the current staging-db-02 isn't cutting it.,provision_vm,confusable_intent,,,restart_service
+-1,,Deploy a fresh system for Engineering -- update the inventory too.,provision_vm,confusable_intent,,,update_database
+-1,,Restart the setup process for Marketing's new environment.,provision_vm,confusable_intent,,,restart_service
+-1,,Deploy a fresh system for HR -- update the inventory too.,provision_vm,confusable_intent,,,update_database
+-1,,Restart the setup process for HR's new environment.,provision_vm,confusable_intent,,,restart_service
+-1,,Set up another host -- the current payment-api-03 isn't cutting it.,provision_vm,confusable_intent,,,restart_service
+-1,,Restart the setup process for Finance's new environment.,provision_vm,confusable_intent,,,restart_service
+-1,,Restart the setup process for Legal's new environment.,provision_vm,confusable_intent,,,restart_service
+-1,,Set up another host -- the current prod-web-01 isn't cutting it.,provision_vm,confusable_intent,,,restart_service
+-1,,Restart the setup process for HR's new environment.,provision_vm,confusable_intent,,,restart_service
+-1,,Restart the setup process for Engineering's new environment.,provision_vm,confusable_intent,,,restart_service
+-1,,Set up another host -- the current payment-api-03 isn't cutting it.,provision_vm,confusable_intent,,,restart_service
+-1,,Set up another host -- the current payment-api-03 isn't cutting it.,provision_vm,confusable_intent,,,restart_service
+-1,,Deploy a fresh system for Marketing -- update the inventory too.,provision_vm,confusable_intent,,,update_database
+-1,,Set up another host -- the current staging-db-02 isn't cutting it.,provision_vm,confusable_intent,,,restart_service
+-1,,Set up another host -- the current cdn-edge-06 isn't cutting it.,provision_vm,confusable_intent,,,restart_service
+-1,,Deploy a fresh system for HR -- update the inventory too.,provision_vm,confusable_intent,,,update_database
+-1,,Restart the setup process for HR's new environment.,provision_vm,confusable_intent,,,restart_service
+-1,,Set up another host -- the current payment-api-03 isn't cutting it.,provision_vm,confusable_intent,,,restart_service
+-1,,Restart the setup process for Legal's new environment.,provision_vm,confusable_intent,,,restart_service
+-1,,Set up another host -- the current ml-infer-05 isn't cutting it.,provision_vm,confusable_intent,,,restart_service
+-1,,Deploy a fresh system for Marketing -- update the inventory too.,provision_vm,confusable_intent,,,update_database
+-1,,Deploy a fresh system for Marketing -- update the inventory too.,provision_vm,confusable_intent,,,update_database
+-1,,Deploy a fresh system for Marketing -- update the inventory too.,provision_vm,confusable_intent,,,update_database
+-1,,Restart payment-api-03's isolation procedure.,quarantine_system,confusable_intent,,,restart_service
+-1,,Scan and lock down prod-web-01 immediately.,quarantine_system,confusable_intent,,,scan_malware
+-1,,cdn-edge-06 is infected -- shut down its connections.,quarantine_system,confusable_intent,,,scan_malware
+-1,,Scan and lock down staging-db-02 immediately.,quarantine_system,confusable_intent,,,scan_malware
+-1,,Scan and lock down payment-api-03 immediately.,quarantine_system,confusable_intent,,,scan_malware
+-1,,Restart prod-web-01's isolation procedure.,quarantine_system,confusable_intent,,,restart_service
+-1,,ml-infer-05 is infected -- shut down its connections.,quarantine_system,confusable_intent,,,scan_malware
+-1,,auth-svc-04 is infected -- shut down its connections.,quarantine_system,confusable_intent,,,scan_malware
+-1,,staging-db-02 is infected -- shut down its connections.,quarantine_system,confusable_intent,,,scan_malware
+-1,,Scan and lock down cdn-edge-06 immediately.,quarantine_system,confusable_intent,,,scan_malware
+-1,,Restart auth-svc-04's isolation procedure.,quarantine_system,confusable_intent,,,restart_service
+-1,,Scan and lock down ml-infer-05 immediately.,quarantine_system,confusable_intent,,,scan_malware
+-1,,Restart cdn-edge-06's isolation procedure.,quarantine_system,confusable_intent,,,restart_service
+-1,,Restart staging-db-02's isolation procedure.,quarantine_system,confusable_intent,,,restart_service
+-1,,prod-web-01 is infected -- shut down its connections.,quarantine_system,confusable_intent,,,scan_malware
+-1,,payment-api-03 is infected -- shut down its connections.,quarantine_system,confusable_intent,,,scan_malware
+-1,,Scan and lock down auth-svc-04 immediately.,quarantine_system,confusable_intent,,,scan_malware
+-1,,Restart ml-infer-05's isolation procedure.,quarantine_system,confusable_intent,,,restart_service
+-1,,payment-api-03 is infected -- shut down its connections.,quarantine_system,confusable_intent,,,scan_malware
+-1,,Restart staging-db-02's isolation procedure.,quarantine_system,confusable_intent,,,restart_service
+-1,,staging-db-02 is infected -- shut down its connections.,quarantine_system,confusable_intent,,,scan_malware
+-1,,auth-svc-04 is infected -- shut down its connections.,quarantine_system,confusable_intent,,,scan_malware
+-1,,Scan and lock down payment-api-03 immediately.,quarantine_system,confusable_intent,,,scan_malware
+-1,,ml-infer-05 is infected -- shut down its connections.,quarantine_system,confusable_intent,,,scan_malware
+-1,,Restart auth-svc-04's isolation procedure.,quarantine_system,confusable_intent,,,restart_service
+-1,,Scan and lock down staging-db-02 immediately.,quarantine_system,confusable_intent,,,scan_malware
+-1,,Restart auth-svc-04's isolation procedure.,quarantine_system,confusable_intent,,,restart_service
+-1,,Restart cdn-edge-06's isolation procedure.,quarantine_system,confusable_intent,,,restart_service
+-1,,Scan and lock down auth-svc-04 immediately.,quarantine_system,confusable_intent,,,scan_malware
+-1,,Scan and lock down prod-web-01 immediately.,quarantine_system,confusable_intent,,,scan_malware
+-1,,I need a report of Grace's transactions from the database.,query_database,confusable_intent,,,generate_report
+-1,,I want to check what we have on file for Frank.,query_database,confusable_intent,,,check_status
+-1,,I want to check what we have on file for Alice.,query_database,confusable_intent,,,check_status
+-1,,I need a report of Diana's transactions from the database.,query_database,confusable_intent,,,generate_report
+-1,,I want to check what we have on file for Grace.,query_database,confusable_intent,,,check_status
+-1,,Generate a list of all entries matching Frank.,query_database,confusable_intent,,,generate_report
+-1,,I need a report of Frank's transactions from the database.,query_database,confusable_intent,,,generate_report
+-1,,Can you verify the records for #42017 in the system?,query_database,confusable_intent,,,check_status
+-1,,Generate a list of all entries matching Bob.,query_database,confusable_intent,,,generate_report
+-1,,Can you verify the records for #53698 in the system?,query_database,confusable_intent,,,check_status
+-1,,I want to check what we have on file for Diana.,query_database,confusable_intent,,,check_status
+-1,,Can you verify the records for #31450 in the system?,query_database,confusable_intent,,,check_status
+-1,,Can you verify the records for #60122 in the system?,query_database,confusable_intent,,,check_status
+-1,,Generate a list of all entries matching Diana.,query_database,confusable_intent,,,generate_report
+-1,,I want to check what we have on file for Charlie.,query_database,confusable_intent,,,check_status
+-1,,I need a report of Charlie's transactions from the database.,query_database,confusable_intent,,,generate_report
+-1,,I want to check what we have on file for Bob.,query_database,confusable_intent,,,check_status
+-1,,I need a report of Eve's transactions from the database.,query_database,confusable_intent,,,generate_report
+-1,,Generate a list of all entries matching Alice.,query_database,confusable_intent,,,generate_report
+-1,,Generate a list of all entries matching Grace.,query_database,confusable_intent,,,generate_report
+-1,,I want to check what we have on file for Eve.,query_database,confusable_intent,,,check_status
+-1,,Generate a list of all entries matching Eve.,query_database,confusable_intent,,,generate_report
+-1,,I need a report of Alice's transactions from the database.,query_database,confusable_intent,,,generate_report
+-1,,Can you verify the records for #20891 in the system?,query_database,confusable_intent,,,check_status
+-1,,Generate a list of all entries matching Charlie.,query_database,confusable_intent,,,generate_report
+-1,,Can you verify the records for #10234 in the system?,query_database,confusable_intent,,,check_status
+-1,,Generate a list of all entries matching Bob.,query_database,confusable_intent,,,generate_report
+-1,,I need a report of Bob's transactions from the database.,query_database,confusable_intent,,,generate_report
+-1,,Generate a list of all entries matching Bob.,query_database,confusable_intent,,,generate_report
+-1,,I need a report of Diana's transactions from the database.,query_database,confusable_intent,,,generate_report
+-1,,Update Charlie's login so they can get back in.,reset_password,confusable_intent,,,update_database
+-1,,Frank's access needs to be fixed -- the system locked them out.,reset_password,confusable_intent,,,quarantine_system
+-1,,The system is blocking Grace -- fix their credentials.,reset_password,confusable_intent,,,quarantine_system
+-1,,Update Diana's login so they can get back in.,reset_password,confusable_intent,,,update_database
+-1,,Grace's access needs to be fixed -- the system locked them out.,reset_password,confusable_intent,,,quarantine_system
+-1,,The system is blocking Bob -- fix their credentials.,reset_password,confusable_intent,,,quarantine_system
+-1,,Update Grace's login so they can get back in.,reset_password,confusable_intent,,,update_database
+-1,,The system is blocking Frank -- fix their credentials.,reset_password,confusable_intent,,,quarantine_system
+-1,,Diana's access needs to be fixed -- the system locked them out.,reset_password,confusable_intent,,,quarantine_system
+-1,,Update Bob's login so they can get back in.,reset_password,confusable_intent,,,update_database
+-1,,The system is blocking Eve -- fix their credentials.,reset_password,confusable_intent,,,quarantine_system
+-1,,The system is blocking Charlie -- fix their credentials.,reset_password,confusable_intent,,,quarantine_system
+-1,,The system is blocking Alice -- fix their credentials.,reset_password,confusable_intent,,,quarantine_system
+-1,,The system is blocking Diana -- fix their credentials.,reset_password,confusable_intent,,,quarantine_system
+-1,,Alice's access needs to be fixed -- the system locked them out.,reset_password,confusable_intent,,,quarantine_system
+-1,,Update Alice's login so they can get back in.,reset_password,confusable_intent,,,update_database
+-1,,Eve's access needs to be fixed -- the system locked them out.,reset_password,confusable_intent,,,quarantine_system
+-1,,Bob's access needs to be fixed -- the system locked them out.,reset_password,confusable_intent,,,quarantine_system
+-1,,Charlie's access needs to be fixed -- the system locked them out.,reset_password,confusable_intent,,,quarantine_system
+-1,,Update Frank's login so they can get back in.,reset_password,confusable_intent,,,update_database
+-1,,Update Eve's login so they can get back in.,reset_password,confusable_intent,,,update_database
+-1,,Diana's access needs to be fixed -- the system locked them out.,reset_password,confusable_intent,,,quarantine_system
+-1,,Frank's access needs to be fixed -- the system locked them out.,reset_password,confusable_intent,,,quarantine_system
+-1,,Eve's access needs to be fixed -- the system locked them out.,reset_password,confusable_intent,,,quarantine_system
+-1,,Charlie's access needs to be fixed -- the system locked them out.,reset_password,confusable_intent,,,quarantine_system
+-1,,Frank's access needs to be fixed -- the system locked them out.,reset_password,confusable_intent,,,quarantine_system
+-1,,The system is blocking Charlie -- fix their credentials.,reset_password,confusable_intent,,,quarantine_system
+-1,,Bob's access needs to be fixed -- the system locked them out.,reset_password,confusable_intent,,,quarantine_system
+-1,,Update Alice's login so they can get back in.,reset_password,confusable_intent,,,update_database
+-1,,Update Grace's login so they can get back in.,reset_password,confusable_intent,,,update_database
+-1,,Bring auth-svc-04 back to life.,restart_service,confusable_intent,,,provision_vm
+-1,,Provision a fresh start for prod-web-01.,restart_service,confusable_intent,,,provision_vm
+-1,,Provision a fresh start for cdn-edge-06.,restart_service,confusable_intent,,,provision_vm
+-1,,The service on auth-svc-04 is failing -- isolate and reboot.,restart_service,confusable_intent,,,quarantine_system
+-1,,The service on ml-infer-05 is failing -- isolate and reboot.,restart_service,confusable_intent,,,quarantine_system
+-1,,The service on prod-web-01 is failing -- isolate and reboot.,restart_service,confusable_intent,,,quarantine_system
+-1,,Bring prod-web-01 back to life.,restart_service,confusable_intent,,,provision_vm
+-1,,Bring cdn-edge-06 back to life.,restart_service,confusable_intent,,,provision_vm
+-1,,Provision a fresh start for auth-svc-04.,restart_service,confusable_intent,,,provision_vm
+-1,,The service on payment-api-03 is failing -- isolate and reboot.,restart_service,confusable_intent,,,quarantine_system
+-1,,Bring ml-infer-05 back to life.,restart_service,confusable_intent,,,provision_vm
+-1,,Bring staging-db-02 back to life.,restart_service,confusable_intent,,,provision_vm
+-1,,Provision a fresh start for ml-infer-05.,restart_service,confusable_intent,,,provision_vm
+-1,,The service on staging-db-02 is failing -- isolate and reboot.,restart_service,confusable_intent,,,quarantine_system
+-1,,Provision a fresh start for payment-api-03.,restart_service,confusable_intent,,,provision_vm
+-1,,Bring payment-api-03 back to life.,restart_service,confusable_intent,,,provision_vm
+-1,,Provision a fresh start for staging-db-02.,restart_service,confusable_intent,,,provision_vm
+-1,,The service on cdn-edge-06 is failing -- isolate and reboot.,restart_service,confusable_intent,,,quarantine_system
+-1,,Bring cdn-edge-06 back to life.,restart_service,confusable_intent,,,provision_vm
+-1,,Bring auth-svc-04 back to life.,restart_service,confusable_intent,,,provision_vm
+-1,,Provision a fresh start for staging-db-02.,restart_service,confusable_intent,,,provision_vm
+-1,,The service on prod-web-01 is failing -- isolate and reboot.,restart_service,confusable_intent,,,quarantine_system
+-1,,Provision a fresh start for ml-infer-05.,restart_service,confusable_intent,,,provision_vm
+-1,,The service on auth-svc-04 is failing -- isolate and reboot.,restart_service,confusable_intent,,,quarantine_system
+-1,,Bring payment-api-03 back to life.,restart_service,confusable_intent,,,provision_vm
+-1,,Bring payment-api-03 back to life.,restart_service,confusable_intent,,,provision_vm
+-1,,The service on ml-infer-05 is failing -- isolate and reboot.,restart_service,confusable_intent,,,quarantine_system
+-1,,Bring payment-api-03 back to life.,restart_service,confusable_intent,,,provision_vm
+-1,,The service on payment-api-03 is failing -- isolate and reboot.,restart_service,confusable_intent,,,quarantine_system
+-1,,Provision a fresh start for staging-db-02.,restart_service,confusable_intent,,,provision_vm
+-1,,Check cdn-edge-06 for anything suspicious.,scan_malware,confusable_intent,,,check_status
+-1,,Check payment-api-03 for anything suspicious.,scan_malware,confusable_intent,,,check_status
+-1,,Verify ml-infer-05's security posture.,scan_malware,confusable_intent,,,check_status
+-1,,Check prod-web-01 for anything suspicious.,scan_malware,confusable_intent,,,check_status
+-1,,payment-api-03 looks compromised -- isolate and investigate.,scan_malware,confusable_intent,,,quarantine_system
+-1,,Check auth-svc-04 for anything suspicious.,scan_malware,confusable_intent,,,check_status
+-1,,staging-db-02 looks compromised -- isolate and investigate.,scan_malware,confusable_intent,,,quarantine_system
+-1,,Check staging-db-02 for anything suspicious.,scan_malware,confusable_intent,,,check_status
+-1,,ml-infer-05 looks compromised -- isolate and investigate.,scan_malware,confusable_intent,,,quarantine_system
+-1,,Verify payment-api-03's security posture.,scan_malware,confusable_intent,,,check_status
+-1,,prod-web-01 looks compromised -- isolate and investigate.,scan_malware,confusable_intent,,,quarantine_system
+-1,,Verify auth-svc-04's security posture.,scan_malware,confusable_intent,,,check_status
+-1,,Check ml-infer-05 for anything suspicious.,scan_malware,confusable_intent,,,check_status
+-1,,Verify prod-web-01's security posture.,scan_malware,confusable_intent,,,check_status
+-1,,Verify staging-db-02's security posture.,scan_malware,confusable_intent,,,check_status
+-1,,cdn-edge-06 looks compromised -- isolate and investigate.,scan_malware,confusable_intent,,,quarantine_system
+-1,,auth-svc-04 looks compromised -- isolate and investigate.,scan_malware,confusable_intent,,,quarantine_system
+-1,,Verify cdn-edge-06's security posture.,scan_malware,confusable_intent,,,check_status
+-1,,Check staging-db-02 for anything suspicious.,scan_malware,confusable_intent,,,check_status
+-1,,auth-svc-04 looks compromised -- isolate and investigate.,scan_malware,confusable_intent,,,quarantine_system
+-1,,Verify staging-db-02's security posture.,scan_malware,confusable_intent,,,check_status
+-1,,Verify payment-api-03's security posture.,scan_malware,confusable_intent,,,check_status
+-1,,Verify ml-infer-05's security posture.,scan_malware,confusable_intent,,,check_status
+-1,,Verify ml-infer-05's security posture.,scan_malware,confusable_intent,,,check_status
+-1,,Verify payment-api-03's security posture.,scan_malware,confusable_intent,,,check_status
+-1,,Check staging-db-02 for anything suspicious.,scan_malware,confusable_intent,,,check_status
+-1,,ml-infer-05 looks compromised -- isolate and investigate.,scan_malware,confusable_intent,,,quarantine_system
+-1,,cdn-edge-06 looks compromised -- isolate and investigate.,scan_malware,confusable_intent,,,quarantine_system
+-1,,prod-web-01 looks compromised -- isolate and investigate.,scan_malware,confusable_intent,,,quarantine_system
+-1,,Verify prod-web-01's security posture.,scan_malware,confusable_intent,,,check_status
+-1,,Create an alert for HR about the maintenance.,send_notification,confusable_intent,,,create_ticket
+-1,,Make sure Grace gets the update -- reach out to them.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Create an alert for Marketing about the maintenance.,send_notification,confusable_intent,,,create_ticket
+-1,,Escalate this message to Grace right away.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Make sure Frank gets the update -- reach out to them.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Escalate this message to Frank right away.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Create an alert for Legal about the maintenance.,send_notification,confusable_intent,,,create_ticket
+-1,,Make sure Alice gets the update -- reach out to them.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Escalate this message to Bob right away.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Make sure Charlie gets the update -- reach out to them.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Escalate this message to Eve right away.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Create an alert for Engineering about the maintenance.,send_notification,confusable_intent,,,create_ticket
+-1,,Escalate this message to Charlie right away.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Create an alert for Finance about the maintenance.,send_notification,confusable_intent,,,create_ticket
+-1,,Make sure Bob gets the update -- reach out to them.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Escalate this message to Diana right away.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Make sure Eve gets the update -- reach out to them.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Escalate this message to Alice right away.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Make sure Diana gets the update -- reach out to them.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Create an alert for Legal about the maintenance.,send_notification,confusable_intent,,,create_ticket
+-1,,Create an alert for Engineering about the maintenance.,send_notification,confusable_intent,,,create_ticket
+-1,,Create an alert for Finance about the maintenance.,send_notification,confusable_intent,,,create_ticket
+-1,,Make sure Bob gets the update -- reach out to them.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Escalate this message to Bob right away.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Create an alert for HR about the maintenance.,send_notification,confusable_intent,,,create_ticket
+-1,,Escalate this message to Bob right away.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Create an alert for Marketing about the maintenance.,send_notification,confusable_intent,,,create_ticket
+-1,,Create an alert for Legal about the maintenance.,send_notification,confusable_intent,,,create_ticket
+-1,,Create an alert for Engineering about the maintenance.,send_notification,confusable_intent,,,create_ticket
+-1,,Escalate this message to Charlie right away.,send_notification,confusable_intent,,,escalate_to_human
+-1,,Reset the outdated values for Grace in the system.,update_database,confusable_intent,,,reset_password
+-1,,Log the corrected entry for Frank.,update_database,confusable_intent,,,log_audit_event
+-1,,Log the corrected entry for Eve.,update_database,confusable_intent,,,log_audit_event
+-1,,Record the new address for Alice in the system.,update_database,confusable_intent,,,log_audit_event
+-1,,Reset the outdated values for Diana in the system.,update_database,confusable_intent,,,reset_password
+-1,,Log the corrected entry for Grace.,update_database,confusable_intent,,,log_audit_event
+-1,,Reset the outdated values for Charlie in the system.,update_database,confusable_intent,,,reset_password
+-1,,Record the new address for Eve in the system.,update_database,confusable_intent,,,log_audit_event
+-1,,Log the corrected entry for Bob.,update_database,confusable_intent,,,log_audit_event
+-1,,Record the new address for Charlie in the system.,update_database,confusable_intent,,,log_audit_event
+-1,,Record the new address for Bob in the system.,update_database,confusable_intent,,,log_audit_event
+-1,,Log the corrected entry for Diana.,update_database,confusable_intent,,,log_audit_event
+-1,,Log the corrected entry for Alice.,update_database,confusable_intent,,,log_audit_event
+-1,,Reset the outdated values for Bob in the system.,update_database,confusable_intent,,,reset_password
+-1,,Record the new address for Frank in the system.,update_database,confusable_intent,,,log_audit_event
+-1,,Reset the outdated values for Eve in the system.,update_database,confusable_intent,,,reset_password
+-1,,Reset the outdated values for Alice in the system.,update_database,confusable_intent,,,reset_password
+-1,,Record the new address for Grace in the system.,update_database,confusable_intent,,,log_audit_event
+-1,,Log the corrected entry for Charlie.,update_database,confusable_intent,,,log_audit_event
+-1,,Reset the outdated values for Frank in the system.,update_database,confusable_intent,,,reset_password
+-1,,Record the new address for Diana in the system.,update_database,confusable_intent,,,log_audit_event
+-1,,Reset the outdated values for Alice in the system.,update_database,confusable_intent,,,reset_password
+-1,,Reset the outdated values for Grace in the system.,update_database,confusable_intent,,,reset_password
+-1,,Log the corrected entry for Charlie.,update_database,confusable_intent,,,log_audit_event
+-1,,Reset the outdated values for Frank in the system.,update_database,confusable_intent,,,reset_password
+-1,,Reset the outdated values for Grace in the system.,update_database,confusable_intent,,,reset_password
+-1,,Record the new address for Frank in the system.,update_database,confusable_intent,,,log_audit_event
+-1,,Record the new address for Diana in the system.,update_database,confusable_intent,,,log_audit_event
+-1,,Reset the outdated values for Bob in the system.,update_database,confusable_intent,,,reset_password
+-1,,Record the new address for Bob in the system.,update_database,confusable_intent,,,log_audit_event
+-1,,Update Grace's account to a lower tier.,update_subscription,confusable_intent,,,update_database
+-1,,Process Eve's request to switch plans.,update_subscription,confusable_intent,,,process_refund
+-1,,Refund the difference after the plan change for Diana.,update_subscription,confusable_intent,,,process_refund
+-1,,Refund the difference after the plan change for Eve.,update_subscription,confusable_intent,,,process_refund
+-1,,Refund the difference after the plan change for Frank.,update_subscription,confusable_intent,,,process_refund
+-1,,Process Alice's request to switch plans.,update_subscription,confusable_intent,,,process_refund
+-1,,Refund the difference after the plan change for Charlie.,update_subscription,confusable_intent,,,process_refund
+-1,,Update Charlie's account to a lower tier.,update_subscription,confusable_intent,,,update_database
+-1,,Process Bob's request to switch plans.,update_subscription,confusable_intent,,,process_refund
+-1,,Update Bob's account to a lower tier.,update_subscription,confusable_intent,,,update_database
+-1,,Update Frank's account to a lower tier.,update_subscription,confusable_intent,,,update_database
+-1,,Refund the difference after the plan change for Grace.,update_subscription,confusable_intent,,,process_refund
+-1,,Process Frank's request to switch plans.,update_subscription,confusable_intent,,,process_refund
+-1,,Refund the difference after the plan change for Alice.,update_subscription,confusable_intent,,,process_refund
+-1,,Update Alice's account to a lower tier.,update_subscription,confusable_intent,,,update_database
+-1,,Update Eve's account to a lower tier.,update_subscription,confusable_intent,,,update_database
+-1,,Process Diana's request to switch plans.,update_subscription,confusable_intent,,,process_refund
+-1,,Process Grace's request to switch plans.,update_subscription,confusable_intent,,,process_refund
+-1,,Process Charlie's request to switch plans.,update_subscription,confusable_intent,,,process_refund
+-1,,Refund the difference after the plan change for Bob.,update_subscription,confusable_intent,,,process_refund
+-1,,Update Diana's account to a lower tier.,update_subscription,confusable_intent,,,update_database
+-1,,Update Alice's account to a lower tier.,update_subscription,confusable_intent,,,update_database
+-1,,Update Alice's account to a lower tier.,update_subscription,confusable_intent,,,update_database
+-1,,Update Diana's account to a lower tier.,update_subscription,confusable_intent,,,update_database
+-1,,Process Charlie's request to switch plans.,update_subscription,confusable_intent,,,process_refund
+-1,,Process Alice's request to switch plans.,update_subscription,confusable_intent,,,process_refund
+-1,,Process Bob's request to switch plans.,update_subscription,confusable_intent,,,process_refund
+-1,,Refund the difference after the plan change for Alice.,update_subscription,confusable_intent,,,process_refund
+-1,,Process Grace's request to switch plans.,update_subscription,confusable_intent,,,process_refund
+-1,,Update Frank's account to a lower tier.,update_subscription,confusable_intent,,,update_database

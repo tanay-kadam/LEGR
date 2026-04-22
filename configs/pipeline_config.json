@@ -1,0 +1,69 @@
+{
+    "seed": 42,
+
+    "_comment_tool_count": "Default output dirs are for the generic (no tool count) run. Use --tool-count N in run_pipeline.py or main.py to redirect output to upgraded_data/routing_{N}tools/ etc.",
+
+    "routing": {
+        "input_path": "results/single_tool_dataset_scaled.csv",
+        "output_dir": "upgraded_data/routing",
+        "query_col": "query",
+        "label_col": "ground_truth",
+        "id_col": "id",
+        "lexical_cue_reduced_per_label": 67,
+        "confusable_per_label": 30,
+        "paraphrase_variants": 4,
+        "paraphrase_test_frac": 0.25,
+        "near_dup_threshold": 0.8,
+        "top_ngram_n": 3,
+        "top_ngram_k": 20
+    },
+
+    "graph": {
+        "input_path": "outputs/test_corpus_for_all_models.csv",
+        "output_dir": "upgraded_data/graph",
+        "query_col": "query",
+        "dag_id_col": "dag_id",
+        "tools_col": "tools",
+        "edges_col": "edges",
+        "dag_text_col": "dag_text",
+        "n_new_dags": 120,
+        "queries_per_dag": 4,
+        "new_dag_families": [
+            "diamond",
+            "asymmetric_fork_join",
+            "deep_asymmetric_merge",
+            "multi_branch_independent",
+            "repeated_tool",
+            "hourglass",
+            "w_shape",
+            "long_chain_branched",
+            "double_diamond",
+            "wide_fanout_deep",
+            "y_shape",
+            "inverted_y"
+        ],
+        "train_topology_families": [
+            "chain_short",
+            "chain_medium",
+            "single_node",
+            "fanout",
+            "fanin"
+        ],
+        "test_topology_families": [
+            "diamond",
+            "fork_join",
+            "complex_mixed",
+            "complex_deep",
+            "wide_fanout",
+            "wide_fanin",
+            "parallel_paths"
+        ],
+        "train_frac": 0.65,
+        "dev_frac": 0.15,
+        "test_frac": 0.20
+    },
+
+    "report": {
+        "output_dir": "upgraded_data"
+    }
+}

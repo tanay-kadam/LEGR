@@ -1,0 +1,855 @@
+{
+  "original": {
+    "total_rows": 2010,
+    "unique_labels": 30,
+    "class_counts": {
+      "check_status": 67,
+      "create_ticket": 67,
+      "escalate_to_human": 67,
+      "generate_report": 67,
+      "log_audit_event": 67,
+      "process_refund": 67,
+      "provision_vm": 67,
+      "quarantine_system": 67,
+      "query_database": 67,
+      "reset_password": 67,
+      "restart_service": 67,
+      "scan_malware": 67,
+      "send_notification": 67,
+      "update_database": 67,
+      "update_subscription": 67,
+      "run_pipeline": 67,
+      "run_load_test": 67,
+      "deploy_container": 67,
+      "create_dns_record": 67,
+      "disable_feature_flag": 67,
+      "renew_certificate": 67,
+      "approve_access": 67,
+      "assign_role": 67,
+      "revoke_access": 67,
+      "remove_role": 67,
+      "backup_database": 67,
+      "snapshot_vm": 67,
+      "schedule_maintenance": 67,
+      "restore_backup": 67,
+      "trigger_failover": 67
+    },
+    "exact_duplicate_rate": 0.1303,
+    "near_duplicate_rate": 0.0007,
+    "avg_query_length": 57.0,
+    "cue_word_fraction": 0.9726,
+    "top_3grams": [
+      [
+        "and we're good",
+        410
+      ],
+      [
+        "nothing else needed",
+        395
+      ],
+      [
+        "all i need",
+        388
+      ],
+      [
+        "i need is",
+        388
+      ],
+      [
+        "need is for",
+        388
+      ],
+      [
+        "is for someone",
+        388
+      ],
+      [
+        "for someone to",
+        388
+      ],
+      [
+        "i need you",
+        32
+      ],
+      [
+        "need you to",
+        32
+      ],
+      [
+        "ml-infer-05 nothing else",
+        30
+      ],
+      [
+        "cdn-edge-06 nothing else",
+        30
+      ],
+      [
+        "hey can you",
+        29
+      ],
+      [
+        "admin role from",
+        26
+      ],
+      [
+        "reported an issue",
+        25
+      ],
+      [
+        "the operator role",
+        25
+      ],
+      [
+        "the admin role",
+        25
+      ],
+      [
+        "take a snapshot",
+        25
+      ],
+      [
+        "a snapshot of",
+        25
+      ],
+      [
+        "a maintenance window",
+        25
+      ],
+      [
+        "maintenance window for",
+        25
+      ]
+    ]
+  },
+  "lexical_cue_reduced": {
+    "total_rows": 2010,
+    "unique_labels": 30,
+    "class_counts": {
+      "approve_access": 67,
+      "assign_role": 67,
+      "backup_database": 67,
+      "check_status": 67,
+      "create_dns_record": 67,
+      "create_ticket": 67,
+      "deploy_container": 67,
+      "disable_feature_flag": 67,
+      "escalate_to_human": 67,
+      "generate_report": 67,
+      "log_audit_event": 67,
+      "process_refund": 67,
+      "provision_vm": 67,
+      "quarantine_system": 67,
+      "query_database": 67,
+      "remove_role": 67,
+      "renew_certificate": 67,
+      "reset_password": 67,
+      "restart_service": 67,
+      "restore_backup": 67,
+      "revoke_access": 67,
+      "run_load_test": 67,
+      "run_pipeline": 67,
+      "scan_malware": 67,
+      "schedule_maintenance": 67,
+      "send_notification": 67,
+      "snapshot_vm": 67,
+      "trigger_failover": 67,
+      "update_database": 67,
+      "update_subscription": 67
+    },
+    "exact_duplicate_rate": 0.4254,
+    "near_duplicate_rate": 0.0025,
+    "avg_query_length": 45.9,
+    "cue_word_fraction": 0.3124,
+    "top_3grams": [
+      [
+        "we need to",
+        141
+      ],
+      [
+        "needs to be",
+        43
+      ],
+      [
+        "needs the ability",
+        34
+      ],
+      [
+        "the ability to",
+        34
+      ],
+      [
+        "ability to make",
+        34
+      ],
+      [
+        "to make changes",
+        34
+      ],
+      [
+        "make changes in",
+        34
+      ],
+      [
+        "we need a",
+        34
+      ],
+      [
+        "can we get",
+        34
+      ],
+      [
+        "shouldn't have access",
+        32
+      ],
+      [
+        "have access to",
+        32
+      ],
+      [
+        "we have a",
+        30
+      ],
+      [
+        "the team needs",
+        27
+      ],
+      [
+        "to get the",
+        26
+      ],
+      [
+        "get the latest",
+        26
+      ],
+      [
+        "can't do their",
+        25
+      ],
+      [
+        "do their work",
+        25
+      ],
+      [
+        "their work without",
+        25
+      ],
+      [
+        "work without the",
+        25
+      ],
+      [
+        "without the right",
+        25
+      ]
+    ]
+  },
+  "confusable_intents": {
+    "total_rows": 900,
+    "unique_labels": 30,
+    "class_counts": {
+      "approve_access": 30,
+      "assign_role": 30,
+      "backup_database": 30,
+      "check_status": 30,
+      "create_dns_record": 30,
+      "create_ticket": 30,
+      "deploy_container": 30,
+      "disable_feature_flag": 30,
+      "escalate_to_human": 30,
+      "generate_report": 30,
+      "log_audit_event": 30,
+      "process_refund": 30,
+      "provision_vm": 30,
+      "quarantine_system": 30,
+      "query_database": 30,
+      "remove_role": 30,
+      "renew_certificate": 30,
+      "reset_password": 30,
+      "restart_service": 30,
+      "restore_backup": 30,
+      "revoke_access": 30,
+      "run_load_test": 30,
+      "run_pipeline": 30,
+      "scan_malware": 30,
+      "schedule_maintenance": 30,
+      "send_notification": 30,
+      "snapshot_vm": 30,
+      "trigger_failover": 30,
+      "update_database": 30,
+      "update_subscription": 30
+    },
+    "exact_duplicate_rate": 0.4656,
+    "near_duplicate_rate": 0.0047,
+    "avg_query_length": 45.5,
+    "cue_word_fraction": 0.61,
+    "top_3grams": [
+      [
+        "in the system",
+        39
+      ],
+      [
+        "-- isolate and",
+        23
+      ],
+      [
+        "so they can",
+        21
+      ],
+      [
+        "they can get",
+        21
+      ],
+      [
+        "a record of",
+        19
+      ],
+      [
+        "from the system",
+        17
+      ],
+      [
+        "run the pipeline",
+        16
+      ],
+      [
+        "the pipeline and",
+        16
+      ],
+      [
+        "pipeline and push",
+        16
+      ],
+      [
+        "and push the",
+        16
+      ],
+      [
+        "push the build",
+        16
+      ],
+      [
+        "the build to",
+        16
+      ],
+      [
+        "roll back the",
+        16
+      ],
+      [
+        "swap out the",
+        15
+      ],
+      [
+        "out the expired",
+        15
+      ],
+      [
+        "the expired key",
+        15
+      ],
+      [
+        "expired key on",
+        15
+      ],
+      [
+        "archive the current",
+        14
+      ],
+      [
+        "the current state",
+        14
+      ],
+      [
+        "current state of",
+        14
+      ]
+    ]
+  },
+  "paraphrase_heldout_train": {
+    "total_rows": 7540,
+    "unique_labels": 30,
+    "class_counts": {
+      "check_status": 250,
+      "create_ticket": 265,
+      "escalate_to_human": 230,
+      "generate_report": 250,
+      "log_audit_event": 225,
+      "process_refund": 275,
+      "provision_vm": 270,
+      "quarantine_system": 265,
+      "query_database": 245,
+      "reset_password": 240,
+      "restart_service": 235,
+      "scan_malware": 240,
+      "send_notification": 220,
+      "update_database": 245,
+      "update_subscription": 235,
+      "run_pipeline": 265,
+      "run_load_test": 265,
+      "deploy_container": 215,
+      "create_dns_record": 240,
+      "disable_feature_flag": 280,
+      "renew_certificate": 250,
+      "approve_access": 255,
+      "assign_role": 265,
+      "revoke_access": 260,
+      "remove_role": 290,
+      "backup_database": 265,
+      "snapshot_vm": 250,
+      "schedule_maintenance": 245,
+      "restore_backup": 245,
+      "trigger_failover": 260
+    },
+    "exact_duplicate_rate": 0.0432,
+    "near_duplicate_rate": 0.0003,
+    "avg_query_length": 69.9,
+    "cue_word_fraction": 0.9702,
+    "top_3grams": [
+      [
+        "need is for",
+        1825
+      ],
+      [
+        "and we're good",
+        1540
+      ],
+      [
+        "nothing else needed",
+        1480
+      ],
+      [
+        "all i need",
+        1470
+      ],
+      [
+        "i need is",
+        1470
+      ],
+      [
+        "is for someone",
+        1470
+      ],
+      [
+        "for someone to",
+        1470
+      ],
+      [
+        "need you to",
+        519
+      ],
+      [
+        "the situation requires",
+        403
+      ],
+      [
+        "would anyone be",
+        383
+      ],
+      [
+        "anyone be able",
+        383
+      ],
+      [
+        "be able to",
+        383
+      ],
+      [
+        "is it possible",
+        382
+      ],
+      [
+        "it possible to",
+        382
+      ],
+      [
+        "-- that's what",
+        376
+      ],
+      [
+        "that's what needs",
+        376
+      ],
+      [
+        "what needs to",
+        376
+      ],
+      [
+        "needs to happen",
+        376
+      ],
+      [
+        "it would help",
+        374
+      ],
+      [
+        "would help if",
+        374
+      ]
+    ]
+  },
+  "paraphrase_heldout_test": {
+    "total_rows": 2510,
+    "unique_labels": 30,
+    "class_counts": {
+      "check_status": 85,
+      "create_ticket": 70,
+      "escalate_to_human": 105,
+      "generate_report": 85,
+      "log_audit_event": 110,
+      "process_refund": 60,
+      "provision_vm": 65,
+      "quarantine_system": 70,
+      "query_database": 90,
+      "reset_password": 95,
+      "restart_service": 100,
+      "scan_malware": 95,
+      "send_notification": 115,
+      "update_database": 90,
+      "update_subscription": 100,
+      "run_pipeline": 70,
+      "run_load_test": 70,
+      "deploy_container": 120,
+      "create_dns_record": 95,
+      "disable_feature_flag": 55,
+      "renew_certificate": 85,
+      "approve_access": 80,
+      "assign_role": 70,
+      "revoke_access": 75,
+      "remove_role": 45,
+      "backup_database": 70,
+      "snapshot_vm": 85,
+      "schedule_maintenance": 90,
+      "restore_backup": 90,
+      "trigger_failover": 75
+    },
+    "exact_duplicate_rate": 0.0183,
+    "near_duplicate_rate": 0.0004,
+    "avg_query_length": 70.1,
+    "cue_word_fraction": 0.9801,
+    "top_3grams": [
+      [
+        "need is for",
+        617
+      ],
+      [
+        "and we're good",
+        510
+      ],
+      [
+        "nothing else needed",
+        495
+      ],
+      [
+        "all i need",
+        470
+      ],
+      [
+        "i need is",
+        470
+      ],
+      [
+        "is for someone",
+        470
+      ],
+      [
+        "for someone to",
+        470
+      ],
+      [
+        "need you to",
+        169
+      ],
+      [
+        "what we need",
+        147
+      ],
+      [
+        "we need is",
+        147
+      ],
+      [
+        "-- that's what",
+        146
+      ],
+      [
+        "that's what needs",
+        146
+      ],
+      [
+        "what needs to",
+        146
+      ],
+      [
+        "needs to happen",
+        146
+      ],
+      [
+        "is it possible",
+        134
+      ],
+      [
+        "it possible to",
+        134
+      ],
+      [
+        "would anyone be",
+        124
+      ],
+      [
+        "anyone be able",
+        124
+      ],
+      [
+        "be able to",
+        124
+      ],
+      [
+        "the situation requires",
+        106
+      ]
+    ]
+  },
+  "confusable_label_pairs": [
+    {
+      "true_label": "approve_access",
+      "confusable_with": "transfer_ownership"
+    },
+    {
+      "true_label": "approve_access",
+      "confusable_with": "reset_password"
+    },
+    {
+      "true_label": "assign_role",
+      "confusable_with": "approve_access"
+    },
+    {
+      "true_label": "assign_role",
+      "confusable_with": "transfer_ownership"
+    },
+    {
+      "true_label": "backup_database",
+      "confusable_with": "query_database"
+    },
+    {
+      "true_label": "backup_database",
+      "confusable_with": "archive_data"
+    },
+    {
+      "true_label": "check_status",
+      "confusable_with": "query_database"
+    },
+    {
+      "true_label": "check_status",
+      "confusable_with": "scan_malware"
+    },
+    {
+      "true_label": "create_dns_record",
+      "confusable_with": "update_database"
+    },
+    {
+      "true_label": "create_dns_record",
+      "confusable_with": "deploy_container"
+    },
+    {
+      "true_label": "create_ticket",
+      "confusable_with": "send_notification"
+    },
+    {
+      "true_label": "create_ticket",
+      "confusable_with": "log_audit_event"
+    },
+    {
+      "true_label": "deploy_container",
+      "confusable_with": "provision_vm"
+    },
+    {
+      "true_label": "deploy_container",
+      "confusable_with": "run_pipeline"
+    },
+    {
+      "true_label": "disable_feature_flag",
+      "confusable_with": "rollback_deployment"
+    },
+    {
+      "true_label": "disable_feature_flag",
+      "confusable_with": "enable_feature_flag"
+    },
+    {
+      "true_label": "escalate_to_human",
+      "confusable_with": "create_ticket"
+    },
+    {
+      "true_label": "escalate_to_human",
+      "confusable_with": "send_notification"
+    },
+    {
+      "true_label": "generate_report",
+      "confusable_with": "query_database"
+    },
+    {
+      "true_label": "generate_report",
+      "confusable_with": "log_audit_event"
+    },
+    {
+      "true_label": "log_audit_event",
+      "confusable_with": "create_ticket"
+    },
+    {
+      "true_label": "log_audit_event",
+      "confusable_with": "generate_report"
+    },
+    {
+      "true_label": "process_refund",
+      "confusable_with": "update_subscription"
+    },
+    {
+      "true_label": "process_refund",
+      "confusable_with": "update_database"
+    },
+    {
+      "true_label": "provision_vm",
+      "confusable_with": "restart_service"
+    },
+    {
+      "true_label": "provision_vm",
+      "confusable_with": "update_database"
+    },
+    {
+      "true_label": "quarantine_system",
+      "confusable_with": "restart_service"
+    },
+    {
+      "true_label": "quarantine_system",
+      "confusable_with": "scan_malware"
+    },
+    {
+      "true_label": "query_database",
+      "confusable_with": "generate_report"
+    },
+    {
+      "true_label": "query_database",
+      "confusable_with": "check_status"
+    },
+    {
+      "true_label": "remove_role",
+      "confusable_with": "revoke_access"
+    },
+    {
+      "true_label": "remove_role",
+      "confusable_with": "assign_role"
+    },
+    {
+      "true_label": "renew_certificate",
+      "confusable_with": "rotate_api_key"
+    },
+    {
+      "true_label": "renew_certificate",
+      "confusable_with": "schedule_maintenance"
+    },
+    {
+      "true_label": "reset_password",
+      "confusable_with": "update_database"
+    },
+    {
+      "true_label": "reset_password",
+      "confusable_with": "quarantine_system"
+    },
+    {
+      "true_label": "restart_service",
+      "confusable_with": "provision_vm"
+    },
+    {
+      "true_label": "restart_service",
+      "confusable_with": "quarantine_system"
+    },
+    {
+      "true_label": "restore_backup",
+      "confusable_with": "restart_service"
+    },
+    {
+      "true_label": "restore_backup",
+      "confusable_with": "rollback_deployment"
+    },
+    {
+      "true_label": "revoke_access",
+      "confusable_with": "quarantine_system"
+    },
+    {
+      "true_label": "revoke_access",
+      "confusable_with": "rotate_api_key"
+    },
+    {
+      "true_label": "run_load_test",
+      "confusable_with": "check_status"
+    },
+    {
+      "true_label": "run_load_test",
+      "confusable_with": "scan_malware"
+    },
+    {
+      "true_label": "run_pipeline",
+      "confusable_with": "deploy_container"
+    },
+    {
+      "true_label": "run_pipeline",
+      "confusable_with": "restart_service"
+    },
+    {
+      "true_label": "scan_malware",
+      "confusable_with": "check_status"
+    },
+    {
+      "true_label": "scan_malware",
+      "confusable_with": "quarantine_system"
+    },
+    {
+      "true_label": "schedule_maintenance",
+      "confusable_with": "send_notification"
+    },
+    {
+      "true_label": "schedule_maintenance",
+      "confusable_with": "create_ticket"
+    },
+    {
+      "true_label": "send_notification",
+      "confusable_with": "escalate_to_human"
+    },
+    {
+      "true_label": "send_notification",
+      "confusable_with": "create_ticket"
+    },
+    {
+      "true_label": "snapshot_vm",
+      "confusable_with": "archive_data"
+    },
+    {
+      "true_label": "snapshot_vm",
+      "confusable_with": "backup_database"
+    },
+    {
+      "true_label": "trigger_failover",
+      "confusable_with": "restart_service"
+    },
+    {
+      "true_label": "trigger_failover",
+      "confusable_with": "rollback_deployment"
+    },
+    {
+      "true_label": "update_database",
+      "confusable_with": "log_audit_event"
+    },
+    {
+      "true_label": "update_database",
+      "confusable_with": "reset_password"
+    },
+    {
+      "true_label": "update_subscription",
+      "confusable_with": "process_refund"
+    },
+    {
+      "true_label": "update_subscription",
+      "confusable_with": "update_database"
+    }
+  ],
+  "paraphrase_family_overlap": 0
+}

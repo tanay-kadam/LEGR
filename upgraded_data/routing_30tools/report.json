@@ -1,0 +1,855 @@
+{
+  "original": {
+    "total_rows": 2010,
+    "unique_labels": 30,
+    "class_counts": {
+      "check_service_status": 67,
+      "provision_workspace": 67,
+      "reset_user_password": 67,
+      "restart_service": 67,
+      "create_support_ticket": 67,
+      "inspect_security_alerts": 67,
+      "revoke_system_access": 67,
+      "quarantine_endpoint": 67,
+      "escalate_security_incident": 67,
+      "log_compliance_event": 67,
+      "generate_access_report": 67,
+      "assign_access_role": 67,
+      "approve_access_request": 67,
+      "notify_access_change": 67,
+      "update_identity_record": 67,
+      "validate_release_readiness": 67,
+      "deploy_service_release": 67,
+      "enable_feature_flag": 67,
+      "rollback_service_release": 67,
+      "record_release_note": 67,
+      "run_load_test": 67,
+      "scale_service_capacity": 67,
+      "trigger_failover": 67,
+      "schedule_maintenance_window": 67,
+      "snapshot_system_state": 67,
+      "update_customer_record": 67,
+      "authorize_data_export": 67,
+      "process_refund": 67,
+      "send_customer_notification": 67,
+      "archive_customer_data": 67
+    },
+    "exact_duplicate_rate": 0.0,
+    "near_duplicate_rate": 0.0012,
+    "avg_query_length": 59.1,
+    "cue_word_fraction": 0.9831,
+    "top_3grams": [
+      [
+        "finance for request",
+        51
+      ],
+      [
+        "the current state",
+        51
+      ],
+      [
+        "the security incident",
+        45
+      ],
+      [
+        "service to the",
+        45
+      ],
+      [
+        "the customer data",
+        45
+      ],
+      [
+        "about the latest",
+        44
+      ],
+      [
+        "engineering for request",
+        43
+      ],
+      [
+        "reverse the charge",
+        43
+      ],
+      [
+        "the charge on",
+        43
+      ],
+      [
+        "review the threat",
+        42
+      ],
+      [
+        "the threat alerts",
+        42
+      ],
+      [
+        "threat alerts tied",
+        42
+      ],
+      [
+        "alerts tied to",
+        42
+      ],
+      [
+        "auth-svc-04 for request",
+        42
+      ],
+      [
+        "ml-infer-05 for request",
+        41
+      ],
+      [
+        "marketing for request",
+        40
+      ],
+      [
+        "run a load",
+        40
+      ],
+      [
+        "a load test",
+        40
+      ],
+      [
+        "load test against",
+        40
+      ],
+      [
+        "scale service capacity",
+        39
+      ]
+    ]
+  },
+  "lexical_cue_reduced": {
+    "total_rows": 2010,
+    "unique_labels": 30,
+    "class_counts": {
+      "approve_access_request": 67,
+      "archive_customer_data": 67,
+      "assign_access_role": 67,
+      "authorize_data_export": 67,
+      "check_service_status": 67,
+      "create_support_ticket": 67,
+      "deploy_service_release": 67,
+      "enable_feature_flag": 67,
+      "escalate_security_incident": 67,
+      "generate_access_report": 67,
+      "inspect_security_alerts": 67,
+      "log_compliance_event": 67,
+      "notify_access_change": 67,
+      "process_refund": 67,
+      "provision_workspace": 67,
+      "quarantine_endpoint": 67,
+      "record_release_note": 67,
+      "reset_user_password": 67,
+      "restart_service": 67,
+      "revoke_system_access": 67,
+      "rollback_service_release": 67,
+      "run_load_test": 67,
+      "scale_service_capacity": 67,
+      "schedule_maintenance_window": 67,
+      "send_customer_notification": 67,
+      "snapshot_system_state": 67,
+      "trigger_failover": 67,
+      "update_customer_record": 67,
+      "update_identity_record": 67,
+      "validate_release_readiness": 67
+    },
+    "exact_duplicate_rate": 0.5925,
+    "near_duplicate_rate": 0.008,
+    "avg_query_length": 56.8,
+    "cue_word_fraction": 0.7368,
+    "top_3grams": [
+      [
+        "out of the",
+        92
+      ],
+      [
+        "needs to be",
+        79
+      ],
+      [
+        "there should be",
+        74
+      ],
+      [
+        "is waiting for",
+        71
+      ],
+      [
+        "tied to order",
+        61
+      ],
+      [
+        "we need to",
+        57
+      ],
+      [
+        "should be an",
+        52
+      ],
+      [
+        "be an official",
+        52
+      ],
+      [
+        "the latest release",
+        50
+      ],
+      [
+        "cannot proceed until",
+        49
+      ],
+      [
+        "proceed until the",
+        49
+      ],
+      [
+        "locked out of",
+        48
+      ],
+      [
+        "the release is",
+        47
+      ],
+      [
+        "to know whether",
+        43
+      ],
+      [
+        "is locked out",
+        41
+      ],
+      [
+        "of the tools",
+        41
+      ],
+      [
+        "the tools used",
+        41
+      ],
+      [
+        "tools used by",
+        41
+      ],
+      [
+        "to stay connected",
+        40
+      ],
+      [
+        "we need a",
+        39
+      ]
+    ]
+  },
+  "confusable_intents": {
+    "total_rows": 900,
+    "unique_labels": 30,
+    "class_counts": {
+      "approve_access_request": 30,
+      "archive_customer_data": 30,
+      "assign_access_role": 30,
+      "authorize_data_export": 30,
+      "check_service_status": 30,
+      "create_support_ticket": 30,
+      "deploy_service_release": 30,
+      "enable_feature_flag": 30,
+      "escalate_security_incident": 30,
+      "generate_access_report": 30,
+      "inspect_security_alerts": 30,
+      "log_compliance_event": 30,
+      "notify_access_change": 30,
+      "process_refund": 30,
+      "provision_workspace": 30,
+      "quarantine_endpoint": 30,
+      "record_release_note": 30,
+      "reset_user_password": 30,
+      "restart_service": 30,
+      "revoke_system_access": 30,
+      "rollback_service_release": 30,
+      "run_load_test": 30,
+      "scale_service_capacity": 30,
+      "schedule_maintenance_window": 30,
+      "send_customer_notification": 30,
+      "snapshot_system_state": 30,
+      "trigger_failover": 30,
+      "update_customer_record": 30,
+      "update_identity_record": 30,
+      "validate_release_readiness": 30
+    },
+    "exact_duplicate_rate": 0.6967,
+    "near_duplicate_rate": 0.0155,
+    "avg_query_length": 72.5,
+    "cue_word_fraction": 0.9178,
+    "top_3grams": [
+      [
+        "this is not",
+        238
+      ],
+      [
+        "is not a",
+        128
+      ],
+      [
+        "do not just",
+        115
+      ],
+      [
+        "if you want",
+        56
+      ],
+      [
+        "you want but",
+        56
+      ],
+      [
+        "is not an",
+        49
+      ],
+      [
+        "later if you",
+        47
+      ],
+      [
+        "if needed but",
+        47
+      ],
+      [
+        "the service back",
+        42
+      ],
+      [
+        "can wait first",
+        41
+      ],
+      [
+        "a system snapshot",
+        36
+      ],
+      [
+        "a support case",
+        36
+      ],
+      [
+        "approval can wait",
+        34
+      ],
+      [
+        "a release note",
+        34
+      ],
+      [
+        "later if needed",
+        33
+      ],
+      [
+        "is not just",
+        33
+      ],
+      [
+        "i need the",
+        32
+      ],
+      [
+        "but the immediate",
+        31
+      ],
+      [
+        "write the note",
+        31
+      ],
+      [
+        "but the customer",
+        31
+      ]
+    ]
+  },
+  "paraphrase_heldout_train": {
+    "total_rows": 7540,
+    "unique_labels": 30,
+    "class_counts": {
+      "check_service_status": 250,
+      "provision_workspace": 265,
+      "reset_user_password": 230,
+      "restart_service": 250,
+      "create_support_ticket": 225,
+      "inspect_security_alerts": 275,
+      "revoke_system_access": 270,
+      "quarantine_endpoint": 265,
+      "escalate_security_incident": 245,
+      "log_compliance_event": 240,
+      "generate_access_report": 235,
+      "assign_access_role": 240,
+      "approve_access_request": 220,
+      "notify_access_change": 245,
+      "update_identity_record": 235,
+      "validate_release_readiness": 265,
+      "deploy_service_release": 265,
+      "enable_feature_flag": 215,
+      "rollback_service_release": 240,
+      "record_release_note": 280,
+      "run_load_test": 250,
+      "scale_service_capacity": 255,
+      "trigger_failover": 265,
+      "schedule_maintenance_window": 260,
+      "snapshot_system_state": 290,
+      "update_customer_record": 265,
+      "authorize_data_export": 250,
+      "process_refund": 245,
+      "send_customer_notification": 245,
+      "archive_customer_data": 260
+    },
+    "exact_duplicate_rate": 0.0,
+    "near_duplicate_rate": 0.0002,
+    "avg_query_length": 73.1,
+    "cue_word_fraction": 0.9828,
+    "top_3grams": [
+      [
+        "need you to",
+        499
+      ],
+      [
+        "the situation requires",
+        403
+      ],
+      [
+        "would anyone be",
+        383
+      ],
+      [
+        "anyone be able",
+        383
+      ],
+      [
+        "be able to",
+        383
+      ],
+      [
+        "is it possible",
+        382
+      ],
+      [
+        "it possible to",
+        382
+      ],
+      [
+        "-- that's what",
+        376
+      ],
+      [
+        "that's what needs",
+        376
+      ],
+      [
+        "what needs to",
+        376
+      ],
+      [
+        "needs to happen",
+        376
+      ],
+      [
+        "it would help",
+        374
+      ],
+      [
+        "would help if",
+        374
+      ],
+      [
+        "what we need",
+        355
+      ],
+      [
+        "we need is",
+        355
+      ],
+      [
+        "need is for",
+        355
+      ],
+      [
+        "could you please",
+        270
+      ],
+      [
+        "i'd appreciate it",
+        259
+      ],
+      [
+        "appreciate it if",
+        259
+      ],
+      [
+        "it if you",
+        259
+      ]
+    ]
+  },
+  "paraphrase_heldout_test": {
+    "total_rows": 2510,
+    "unique_labels": 30,
+    "class_counts": {
+      "check_service_status": 85,
+      "provision_workspace": 70,
+      "reset_user_password": 105,
+      "restart_service": 85,
+      "create_support_ticket": 110,
+      "inspect_security_alerts": 60,
+      "revoke_system_access": 65,
+      "quarantine_endpoint": 70,
+      "escalate_security_incident": 90,
+      "log_compliance_event": 95,
+      "generate_access_report": 100,
+      "assign_access_role": 95,
+      "approve_access_request": 115,
+      "notify_access_change": 90,
+      "update_identity_record": 100,
+      "validate_release_readiness": 70,
+      "deploy_service_release": 70,
+      "enable_feature_flag": 120,
+      "rollback_service_release": 95,
+      "record_release_note": 55,
+      "run_load_test": 85,
+      "scale_service_capacity": 80,
+      "trigger_failover": 70,
+      "schedule_maintenance_window": 75,
+      "snapshot_system_state": 45,
+      "update_customer_record": 70,
+      "authorize_data_export": 85,
+      "process_refund": 90,
+      "send_customer_notification": 90,
+      "archive_customer_data": 75
+    },
+    "exact_duplicate_rate": 0.0,
+    "near_duplicate_rate": 0.0004,
+    "avg_query_length": 71.9,
+    "cue_word_fraction": 0.9841,
+    "top_3grams": [
+      [
+        "need you to",
+        157
+      ],
+      [
+        "what we need",
+        147
+      ],
+      [
+        "we need is",
+        147
+      ],
+      [
+        "need is for",
+        147
+      ],
+      [
+        "-- that's what",
+        146
+      ],
+      [
+        "that's what needs",
+        146
+      ],
+      [
+        "what needs to",
+        146
+      ],
+      [
+        "needs to happen",
+        146
+      ],
+      [
+        "is it possible",
+        134
+      ],
+      [
+        "it possible to",
+        134
+      ],
+      [
+        "would anyone be",
+        124
+      ],
+      [
+        "anyone be able",
+        124
+      ],
+      [
+        "be able to",
+        124
+      ],
+      [
+        "the situation requires",
+        106
+      ],
+      [
+        "it would help",
+        103
+      ],
+      [
+        "would help if",
+        103
+      ],
+      [
+        "quick one --",
+        96
+      ],
+      [
+        "would you mind",
+        92
+      ],
+      [
+        "we request that",
+        88
+      ],
+      [
+        "request that you",
+        88
+      ]
+    ]
+  },
+  "confusable_label_pairs": [
+    {
+      "true_label": "approve_access_request",
+      "confusable_with": "notify_access_change"
+    },
+    {
+      "true_label": "approve_access_request",
+      "confusable_with": "reset_user_password"
+    },
+    {
+      "true_label": "archive_customer_data",
+      "confusable_with": "snapshot_system_state"
+    },
+    {
+      "true_label": "archive_customer_data",
+      "confusable_with": "authorize_data_export"
+    },
+    {
+      "true_label": "assign_access_role",
+      "confusable_with": "provision_workspace"
+    },
+    {
+      "true_label": "assign_access_role",
+      "confusable_with": "approve_access_request"
+    },
+    {
+      "true_label": "authorize_data_export",
+      "confusable_with": "archive_customer_data"
+    },
+    {
+      "true_label": "authorize_data_export",
+      "confusable_with": "enable_feature_flag"
+    },
+    {
+      "true_label": "check_service_status",
+      "confusable_with": "restart_service"
+    },
+    {
+      "true_label": "check_service_status",
+      "confusable_with": "inspect_security_alerts"
+    },
+    {
+      "true_label": "create_support_ticket",
+      "confusable_with": "provision_workspace"
+    },
+    {
+      "true_label": "create_support_ticket",
+      "confusable_with": "escalate_security_incident"
+    },
+    {
+      "true_label": "deploy_service_release",
+      "confusable_with": "provision_workspace"
+    },
+    {
+      "true_label": "deploy_service_release",
+      "confusable_with": "rollback_service_release"
+    },
+    {
+      "true_label": "enable_feature_flag",
+      "confusable_with": "authorize_data_export"
+    },
+    {
+      "true_label": "enable_feature_flag",
+      "confusable_with": "record_release_note"
+    },
+    {
+      "true_label": "escalate_security_incident",
+      "confusable_with": "log_compliance_event"
+    },
+    {
+      "true_label": "escalate_security_incident",
+      "confusable_with": "create_support_ticket"
+    },
+    {
+      "true_label": "generate_access_report",
+      "confusable_with": "update_identity_record"
+    },
+    {
+      "true_label": "generate_access_report",
+      "confusable_with": "validate_release_readiness"
+    },
+    {
+      "true_label": "inspect_security_alerts",
+      "confusable_with": "quarantine_endpoint"
+    },
+    {
+      "true_label": "inspect_security_alerts",
+      "confusable_with": "check_service_status"
+    },
+    {
+      "true_label": "log_compliance_event",
+      "confusable_with": "update_identity_record"
+    },
+    {
+      "true_label": "log_compliance_event",
+      "confusable_with": "inspect_security_alerts"
+    },
+    {
+      "true_label": "notify_access_change",
+      "confusable_with": "send_customer_notification"
+    },
+    {
+      "true_label": "notify_access_change",
+      "confusable_with": "update_identity_record"
+    },
+    {
+      "true_label": "process_refund",
+      "confusable_with": "update_customer_record"
+    },
+    {
+      "true_label": "process_refund",
+      "confusable_with": "rollback_service_release"
+    },
+    {
+      "true_label": "provision_workspace",
+      "confusable_with": "deploy_service_release"
+    },
+    {
+      "true_label": "provision_workspace",
+      "confusable_with": "create_support_ticket"
+    },
+    {
+      "true_label": "quarantine_endpoint",
+      "confusable_with": "inspect_security_alerts"
+    },
+    {
+      "true_label": "quarantine_endpoint",
+      "confusable_with": "restart_service"
+    },
+    {
+      "true_label": "record_release_note",
+      "confusable_with": "log_compliance_event"
+    },
+    {
+      "true_label": "record_release_note",
+      "confusable_with": "validate_release_readiness"
+    },
+    {
+      "true_label": "reset_user_password",
+      "confusable_with": "create_support_ticket"
+    },
+    {
+      "true_label": "reset_user_password",
+      "confusable_with": "approve_access_request"
+    },
+    {
+      "true_label": "restart_service",
+      "confusable_with": "check_service_status"
+    },
+    {
+      "true_label": "restart_service",
+      "confusable_with": "quarantine_endpoint"
+    },
+    {
+      "true_label": "revoke_system_access",
+      "confusable_with": "approve_access_request"
+    },
+    {
+      "true_label": "revoke_system_access",
+      "confusable_with": "quarantine_endpoint"
+    },
+    {
+      "true_label": "rollback_service_release",
+      "confusable_with": "deploy_service_release"
+    },
+    {
+      "true_label": "rollback_service_release",
+      "confusable_with": "trigger_failover"
+    },
+    {
+      "true_label": "run_load_test",
+      "confusable_with": "scale_service_capacity"
+    },
+    {
+      "true_label": "run_load_test",
+      "confusable_with": "validate_release_readiness"
+    },
+    {
+      "true_label": "scale_service_capacity",
+      "confusable_with": "schedule_maintenance_window"
+    },
+    {
+      "true_label": "scale_service_capacity",
+      "confusable_with": "update_customer_record"
+    },
+    {
+      "true_label": "schedule_maintenance_window",
+      "confusable_with": "notify_access_change"
+    },
+    {
+      "true_label": "schedule_maintenance_window",
+      "confusable_with": "run_load_test"
+    },
+    {
+      "true_label": "send_customer_notification",
+      "confusable_with": "notify_access_change"
+    },
+    {
+      "true_label": "send_customer_notification",
+      "confusable_with": "archive_customer_data"
+    },
+    {
+      "true_label": "snapshot_system_state",
+      "confusable_with": "trigger_failover"
+    },
+    {
+      "true_label": "snapshot_system_state",
+      "confusable_with": "record_release_note"
+    },
+    {
+      "true_label": "trigger_failover",
+      "confusable_with": "snapshot_system_state"
+    },
+    {
+      "true_label": "trigger_failover",
+      "confusable_with": "rollback_service_release"
+    },
+    {
+      "true_label": "update_customer_record",
+      "confusable_with": "process_refund"
+    },
+    {
+      "true_label": "update_customer_record",
+      "confusable_with": "provision_workspace"
+    },
+    {
+      "true_label": "update_identity_record",
+      "confusable_with": "log_compliance_event"
+    },
+    {
+      "true_label": "update_identity_record",
+      "confusable_with": "generate_access_report"
+    },
+    {
+      "true_label": "validate_release_readiness",
+      "confusable_with": "deploy_service_release"
+    },
+    {
+      "true_label": "validate_release_readiness",
+      "confusable_with": "generate_access_report"
+    }
+  ],
+  "paraphrase_family_overlap": 0
+}

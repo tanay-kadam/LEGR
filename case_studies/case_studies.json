@@ -1,0 +1,149 @@
+[
+  {
+    "query": "Produce the Marketing performance summary, followed by ping Bob about it.",
+    "ground_truth_dag_text": "generate_report -> send_notification",
+    "ground_truth_tools": [
+      "generate_report",
+      "send_notification"
+    ],
+    "legr_top1_dag_text": "generate_report -> send_notification",
+    "sbert_top1_dag_text": "generate_report -> send_notification",
+    "bm25_top1_dag_text": "log_audit_event -> update_subscription, process_refund -> update_subscription",
+    "sbert_correct": true,
+    "bm25_correct": false,
+    "explanation": "LEGR retrieves the correct DAG (structure + tools). BM25 retrieves a keyword-similar but wrong DAG."
+  },
+  {
+    "query": "Frank is asking us to generate the Engineering analytics. Next, blast an alert to Legal.",
+    "ground_truth_dag_text": "generate_report -> send_notification",
+    "ground_truth_tools": [
+      "generate_report",
+      "send_notification"
+    ],
+    "legr_top1_dag_text": "generate_report -> send_notification",
+    "sbert_top1_dag_text": "escalate_to_human -> send_notification, send_notification -> generate_report",
+    "bm25_top1_dag_text": "log_audit_event -> update_subscription, process_refund -> update_subscription",
+    "sbert_correct": false,
+    "bm25_correct": false,
+    "explanation": "LEGR retrieves the correct DAG (structure + tools). S-BERT retrieves a structurally/semantically wrong DAG. BM25 retrieves a keyword-similar but wrong DAG."
+  },
+  {
+    "query": "We gotta yank payment-api-03 off the network \u2014 then record the event in Legal's log.",
+    "ground_truth_dag_text": "quarantine_system -> log_audit_event",
+    "ground_truth_tools": [
+      "quarantine_system",
+      "log_audit_event"
+    ],
+    "legr_top1_dag_text": "quarantine_system -> log_audit_event",
+    "sbert_top1_dag_text": "log_audit_event -> create_ticket",
+    "bm25_top1_dag_text": "log_audit_event -> update_subscription, process_refund -> update_subscription",
+    "sbert_correct": false,
+    "bm25_correct": false,
+    "explanation": "LEGR retrieves the correct DAG (structure + tools). S-BERT retrieves a structurally/semantically wrong DAG. BM25 retrieves a keyword-similar but wrong DAG."
+  },
+  {
+    "query": "When you get a chance, loop in a Finance manager \u2014 then restart the service on staging-db-02, and lastly deploy a server for Finance.",
+    "ground_truth_dag_text": "escalate_to_human -> restart_service, restart_service -> provision_vm",
+    "ground_truth_tools": [
+      "escalate_to_human",
+      "restart_service",
+      "provision_vm"
+    ],
+    "legr_top1_dag_text": "escalate_to_human -> restart_service, restart_service -> provision_vm",
+    "sbert_top1_dag_text": "db_read -> reset_password, db_read -> restart_service",
+    "bm25_top1_dag_text": "log_audit_event -> update_subscription, process_refund -> update_subscription",
+    "sbert_correct": false,
+    "bm25_correct": false,
+    "explanation": "LEGR retrieves the correct DAG (structure + tools). S-BERT retrieves a structurally/semantically wrong DAG. BM25 retrieves a keyword-similar but wrong DAG."
+  },
+  {
+    "query": "From Engineering: store the Legal config in the database, followed by reset Alice's password. Once that's done, process the payout for Diana. Last step: fire off a notification to Frank.",
+    "ground_truth_dag_text": "db_write -> reset_password, process_refund -> send_notification, reset_password -> process_refund",
+    "ground_truth_tools": [
+      "db_write",
+      "reset_password",
+      "process_refund",
+      "send_notification"
+    ],
+    "legr_top1_dag_text": "db_write -> reset_password, process_refund -> send_notification, reset_password -> process_refund",
+    "sbert_top1_dag_text": "check_status -> db_write, db_write -> reset_password, escalate_to_human -> check_status",
+    "bm25_top1_dag_text": "log_audit_event -> update_subscription, process_refund -> update_subscription",
+    "sbert_correct": false,
+    "bm25_correct": false,
+    "explanation": "LEGR retrieves the correct DAG (structure + tools). S-BERT retrieves a structurally/semantically wrong DAG. BM25 retrieves a keyword-similar but wrong DAG."
+  },
+  {
+    "query": "ASAP \u2014 verify auth-svc-04's health, and then notify the HR team.",
+    "ground_truth_dag_text": "check_status -> send_notification",
+    "ground_truth_tools": [
+      "check_status",
+      "send_notification"
+    ],
+    "legr_top1_dag_text": "check_status -> send_notification",
+    "sbert_top1_dag_text": "check_status -> reset_password, escalate_to_human -> reset_password",
+    "bm25_top1_dag_text": "log_audit_event -> update_subscription, process_refund -> update_subscription",
+    "sbert_correct": false,
+    "bm25_correct": false,
+    "explanation": "LEGR retrieves the correct DAG (structure + tools). S-BERT retrieves a structurally/semantically wrong DAG. BM25 retrieves a keyword-similar but wrong DAG."
+  },
+  {
+    "query": "From Legal: whip up a report for Legal. Once that's done, sweep payment-api-03 for IOCs. End with credit Alice's account.",
+    "ground_truth_dag_text": "generate_report -> scan_malware, scan_malware -> process_refund",
+    "ground_truth_tools": [
+      "generate_report",
+      "scan_malware",
+      "process_refund"
+    ],
+    "legr_top1_dag_text": "generate_report -> scan_malware, scan_malware -> process_refund",
+    "sbert_top1_dag_text": "generate_report -> update_subscription, process_refund -> update_subscription",
+    "bm25_top1_dag_text": "log_audit_event -> update_subscription, process_refund -> update_subscription",
+    "sbert_correct": false,
+    "bm25_correct": false,
+    "explanation": "LEGR retrieves the correct DAG (structure + tools). S-BERT retrieves a structurally/semantically wrong DAG. BM25 retrieves a keyword-similar but wrong DAG."
+  },
+  {
+    "query": "Time to give ml-infer-05 a kick and open a ticket for Frank, merge everything and escalate Diana's case to the on-call.",
+    "ground_truth_dag_text": "create_ticket -> escalate_to_human, restart_service -> escalate_to_human",
+    "ground_truth_tools": [
+      "restart_service",
+      "create_ticket",
+      "escalate_to_human"
+    ],
+    "legr_top1_dag_text": "create_ticket -> escalate_to_human, restart_service -> escalate_to_human",
+    "sbert_top1_dag_text": "process_refund -> escalate_to_human",
+    "bm25_top1_dag_text": "log_audit_event -> update_subscription, process_refund -> update_subscription",
+    "sbert_correct": false,
+    "bm25_correct": false,
+    "explanation": "LEGR retrieves the correct DAG (structure + tools). S-BERT retrieves a structurally/semantically wrong DAG. BM25 retrieves a keyword-similar but wrong DAG."
+  },
+  {
+    "query": "I need you to check the DB for Bob. Next, put together a report on ml-infer-05. After that, push the changes for Frank to the DB. Last step: do a security check on payment-api-03.",
+    "ground_truth_dag_text": "db_read -> generate_report, db_write -> scan_malware, generate_report -> db_write",
+    "ground_truth_tools": [
+      "db_read",
+      "generate_report",
+      "db_write",
+      "scan_malware"
+    ],
+    "legr_top1_dag_text": "db_read -> generate_report, db_write -> scan_malware, generate_report -> db_write",
+    "sbert_top1_dag_text": "db_read -> process_refund, update_subscription -> db_read",
+    "bm25_top1_dag_text": "log_audit_event -> update_subscription, process_refund -> update_subscription",
+    "sbert_correct": false,
+    "bm25_correct": false,
+    "explanation": "LEGR retrieves the correct DAG (structure + tools). S-BERT retrieves a structurally/semantically wrong DAG. BM25 retrieves a keyword-similar but wrong DAG."
+  },
+  {
+    "query": "Per Eve's request, compile a summary for Engineering, and then notify the Legal team.",
+    "ground_truth_dag_text": "generate_report -> send_notification",
+    "ground_truth_tools": [
+      "generate_report",
+      "send_notification"
+    ],
+    "legr_top1_dag_text": "generate_report -> send_notification",
+    "sbert_top1_dag_text": "check_status -> provision_vm, escalate_to_human -> check_status, provision_vm -> create_ticket",
+    "bm25_top1_dag_text": "log_audit_event -> update_subscription, process_refund -> update_subscription",
+    "sbert_correct": false,
+    "bm25_correct": false,
+    "explanation": "LEGR retrieves the correct DAG (structure + tools). S-BERT retrieves a structurally/semantically wrong DAG. BM25 retrieves a keyword-similar but wrong DAG."
+  }
+]

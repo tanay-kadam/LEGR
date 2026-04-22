@@ -1,0 +1,41 @@
+// Agentic Routing Paradigms
+digraph {
+	fontname=Helvetica fontsize=14 rankdir=TB size="10,5"
+	subgraph cluster_0 {
+		color=mistyrose fontname="Helvetica-Bold" label="A. Traditional LLM-as-Planner (Baseline)" style=filled
+		Query1 [label="User Query
+\"Update IT network state...\"" fillcolor=white fontname=Helvetica shape=box style=filled]
+		LLM [label="Frontier LLM
+(Autoregressive Generation)" fillcolor=lightsalmon fontname="Helvetica-Bold" shape=box style=filled]
+		Tokens [label="Tokens Generated:
+{\"tool\": \"HR_Update\"...}" fillcolor=white fontname=Courier shape=note style=filled]
+		Error [label="Semantic Confusion!
+Misrouted to HR Domain" fillcolor=tomato fontcolor=white fontname="Helvetica-Bold" shape=doubleoctagon style=filled]
+		Time1 [label="Latency: 3.5s" fontcolor=red fontname="Helvetica-Bold" shape=plaintext]
+		Query1 -> LLM
+		LLM -> Tokens
+		Tokens -> Error
+		LLM -> Time1 [style=dotted]
+	}
+	subgraph cluster_1 {
+		color=honeydew fontname="Helvetica-Bold" label="B. Latent Execution-Graph Routing (Ours)" style=filled
+		Query2 [label="User Query
+\"Update IT network state...\"" fillcolor=white fontname=Helvetica shape=box style=filled]
+		TextEnc [label="Text Encoder
+(S-BERT)" fillcolor=lightblue fontname="Helvetica-Bold" shape=box style=filled]
+		GraphEnc [label="Graph Encoder
+(PyG GCN)" fillcolor=lightblue fontname="Helvetica-Bold" shape=box style=filled]
+		DB [label="DAG Corpus" fillcolor=lightgrey fontname=Helvetica shape=cylinder style=filled]
+		Latent [label="Shared Latent Space
+(Graph-Aware Contrastive Alignment)" fillcolor=plum1 fontname="Helvetica-Bold" shape=ellipse style="filled,dashed"]
+		Success [label="Fast Latent Retrieval
+Structurally Perfect Tool DAG" fillcolor=palegreen fontname="Helvetica-Bold" shape=Mdiamond style=filled]
+		Time2 [label="Latency: 6ms" fontcolor=green4 fontname="Helvetica-Bold" shape=plaintext]
+		Query2 -> TextEnc
+		DB -> GraphEnc
+		TextEnc -> Latent [label=" Z_q"]
+		GraphEnc -> Latent [label=" Z_g"]
+		Latent -> Success
+		Latent -> Time2 [style=dotted]
+	}
+}

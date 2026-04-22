@@ -1,0 +1,660 @@
+{
+  "original": {
+    "total_rows": 1005,
+    "unique_labels": 15,
+    "class_counts": {
+      "query_database": 67,
+      "update_database": 67,
+      "reset_password": 67,
+      "create_ticket": 67,
+      "send_notification": 67,
+      "quarantine_system": 67,
+      "scan_malware": 67,
+      "generate_report": 67,
+      "process_refund": 67,
+      "update_subscription": 67,
+      "provision_vm": 67,
+      "restart_service": 67,
+      "check_status": 67,
+      "escalate_to_human": 67,
+      "log_audit_event": 67
+    },
+    "exact_duplicate_rate": 0.0,
+    "near_duplicate_rate": 0.0,
+    "avg_query_length": 44.3,
+    "cue_word_fraction": 0.9264,
+    "top_3grams": [
+      [
+        "i need you",
+        120
+      ],
+      [
+        "need you to",
+        120
+      ],
+      [
+        "when you have",
+        45
+      ],
+      [
+        "you have a",
+        45
+      ],
+      [
+        "have a moment",
+        45
+      ],
+      [
+        "to the database",
+        23
+      ],
+      [
+        "a new vm",
+        17
+      ],
+      [
+        "virtual machine for",
+        17
+      ],
+      [
+        "the service on",
+        17
+      ],
+      [
+        "the status of",
+        17
+      ],
+      [
+        "the database entry",
+        14
+      ],
+      [
+        "database entry for",
+        14
+      ],
+      [
+        "the database for",
+        14
+      ],
+      [
+        "case to a",
+        13
+      ],
+      [
+        "an incident ticket",
+        12
+      ],
+      [
+        "incident ticket for",
+        12
+      ],
+      [
+        "in the audit",
+        12
+      ],
+      [
+        "the audit log",
+        11
+      ],
+      [
+        "the database update",
+        10
+      ],
+      [
+        "database update for",
+        10
+      ]
+    ]
+  },
+  "lexical_cue_reduced": {
+    "total_rows": 1005,
+    "unique_labels": 15,
+    "class_counts": {
+      "check_status": 67,
+      "create_ticket": 67,
+      "escalate_to_human": 67,
+      "generate_report": 67,
+      "log_audit_event": 67,
+      "process_refund": 67,
+      "provision_vm": 67,
+      "quarantine_system": 67,
+      "query_database": 67,
+      "reset_password": 67,
+      "restart_service": 67,
+      "scan_malware": 67,
+      "send_notification": 67,
+      "update_database": 67,
+      "update_subscription": 67
+    },
+    "exact_duplicate_rate": 0.197,
+    "near_duplicate_rate": 0.0023,
+    "avg_query_length": 43.0,
+    "cue_word_fraction": 0.1751,
+    "top_3grams": [
+      [
+        "we need to",
+        39
+      ],
+      [
+        "can we get",
+        26
+      ],
+      [
+        "needs to be",
+        25
+      ],
+      [
+        "someone needs to",
+        22
+      ],
+      [
+        "isn't going to",
+        20
+      ],
+      [
+        "we get a",
+        19
+      ],
+      [
+        "want to see",
+        19
+      ],
+      [
+        "is asking for",
+        17
+      ],
+      [
+        "in a while",
+        15
+      ],
+      [
+        "need to make",
+        15
+      ],
+      [
+        "to the rest",
+        14
+      ],
+      [
+        "the rest of",
+        14
+      ],
+      [
+        "rest of the",
+        14
+      ],
+      [
+        "going on with",
+        13
+      ],
+      [
+        "don't forget to",
+        13
+      ],
+      [
+        "a new environment",
+        13
+      ],
+      [
+        "needs to reflect",
+        13
+      ],
+      [
+        "to reflect the",
+        13
+      ],
+      [
+        "we should have",
+        12
+      ],
+      [
+        "should have a",
+        12
+      ]
+    ]
+  },
+  "confusable_intents": {
+    "total_rows": 450,
+    "unique_labels": 15,
+    "class_counts": {
+      "check_status": 30,
+      "create_ticket": 30,
+      "escalate_to_human": 30,
+      "generate_report": 30,
+      "log_audit_event": 30,
+      "process_refund": 30,
+      "provision_vm": 30,
+      "quarantine_system": 30,
+      "query_database": 30,
+      "reset_password": 30,
+      "restart_service": 30,
+      "scan_malware": 30,
+      "send_notification": 30,
+      "update_database": 30,
+      "update_subscription": 30
+    },
+    "exact_duplicate_rate": 0.3822,
+    "near_duplicate_rate": 0.0097,
+    "avg_query_length": 48.1,
+    "cue_word_fraction": 0.5378,
+    "top_3grams": [
+      [
+        "in the system",
+        28
+      ],
+      [
+        "a record of",
+        22
+      ],
+      [
+        "-- isolate and",
+        20
+      ],
+      [
+        "file a record",
+        13
+      ],
+      [
+        "record of what",
+        13
+      ],
+      [
+        "of what happened",
+        13
+      ],
+      [
+        "what happened with",
+        13
+      ],
+      [
+        "access needs to",
+        13
+      ],
+      [
+        "needs to be",
+        13
+      ],
+      [
+        "to be fixed",
+        13
+      ],
+      [
+        "be fixed --",
+        13
+      ],
+      [
+        "fixed -- the",
+        13
+      ],
+      [
+        "-- the system",
+        13
+      ],
+      [
+        "the system locked",
+        13
+      ],
+      [
+        "system locked them",
+        13
+      ],
+      [
+        "locked them out",
+        13
+      ],
+      [
+        "-- is it",
+        12
+      ],
+      [
+        "is it healthy",
+        12
+      ],
+      [
+        "complaint so we",
+        12
+      ],
+      [
+        "so we can",
+        12
+      ]
+    ]
+  },
+  "paraphrase_heldout_train": {
+    "total_rows": 3770,
+    "unique_labels": 15,
+    "class_counts": {
+      "query_database": 265,
+      "update_database": 245,
+      "reset_password": 250,
+      "create_ticket": 225,
+      "send_notification": 235,
+      "quarantine_system": 260,
+      "scan_malware": 260,
+      "generate_report": 285,
+      "process_refund": 250,
+      "update_subscription": 275,
+      "provision_vm": 230,
+      "restart_service": 260,
+      "check_status": 220,
+      "escalate_to_human": 255,
+      "log_audit_event": 255
+    },
+    "exact_duplicate_rate": 0.0212,
+    "near_duplicate_rate": 0.0001,
+    "avg_query_length": 53.4,
+    "cue_word_fraction": 0.9324,
+    "top_3grams": [
+      [
+        "need you to",
+        338
+      ],
+      [
+        "-- that's what",
+        209
+      ],
+      [
+        "that's what needs",
+        209
+      ],
+      [
+        "what needs to",
+        209
+      ],
+      [
+        "needs to happen",
+        209
+      ],
+      [
+        "what we need",
+        195
+      ],
+      [
+        "we need is",
+        195
+      ],
+      [
+        "need is for",
+        195
+      ],
+      [
+        "would anyone be",
+        195
+      ],
+      [
+        "anyone be able",
+        195
+      ],
+      [
+        "be able to",
+        195
+      ],
+      [
+        "is it possible",
+        187
+      ],
+      [
+        "it possible to",
+        187
+      ],
+      [
+        "the situation requires",
+        182
+      ],
+      [
+        "when you have",
+        170
+      ],
+      [
+        "you have a",
+        170
+      ],
+      [
+        "have a moment",
+        170
+      ],
+      [
+        "it would help",
+        168
+      ],
+      [
+        "would help if",
+        168
+      ],
+      [
+        "could you please",
+        138
+      ]
+    ]
+  },
+  "paraphrase_heldout_test": {
+    "total_rows": 1255,
+    "unique_labels": 15,
+    "class_counts": {
+      "query_database": 70,
+      "update_database": 90,
+      "reset_password": 85,
+      "create_ticket": 110,
+      "send_notification": 100,
+      "quarantine_system": 75,
+      "scan_malware": 75,
+      "generate_report": 50,
+      "process_refund": 85,
+      "update_subscription": 60,
+      "provision_vm": 105,
+      "restart_service": 75,
+      "check_status": 115,
+      "escalate_to_human": 80,
+      "log_audit_event": 80
+    },
+    "exact_duplicate_rate": 0.008,
+    "near_duplicate_rate": 0.0002,
+    "avg_query_length": 54.4,
+    "cue_word_fraction": 0.9084,
+    "top_3grams": [
+      [
+        "need you to",
+        117
+      ],
+      [
+        "is it possible",
+        73
+      ],
+      [
+        "it possible to",
+        73
+      ],
+      [
+        "it would help",
+        70
+      ],
+      [
+        "would help if",
+        70
+      ],
+      [
+        "would anyone be",
+        66
+      ],
+      [
+        "anyone be able",
+        66
+      ],
+      [
+        "be able to",
+        66
+      ],
+      [
+        "-- that's what",
+        64
+      ],
+      [
+        "that's what needs",
+        64
+      ],
+      [
+        "what needs to",
+        64
+      ],
+      [
+        "needs to happen",
+        64
+      ],
+      [
+        "the situation requires",
+        60
+      ],
+      [
+        "what we need",
+        57
+      ],
+      [
+        "we need is",
+        57
+      ],
+      [
+        "need is for",
+        57
+      ],
+      [
+        "when you have",
+        55
+      ],
+      [
+        "you have a",
+        55
+      ],
+      [
+        "have a moment",
+        55
+      ],
+      [
+        "we request that",
+        53
+      ]
+    ]
+  },
+  "confusable_label_pairs": [
+    {
+      "true_label": "check_status",
+      "confusable_with": "query_database"
+    },
+    {
+      "true_label": "check_status",
+      "confusable_with": "scan_malware"
+    },
+    {
+      "true_label": "create_ticket",
+      "confusable_with": "send_notification"
+    },
+    {
+      "true_label": "create_ticket",
+      "confusable_with": "log_audit_event"
+    },
+    {
+      "true_label": "escalate_to_human",
+      "confusable_with": "send_notification"
+    },
+    {
+      "true_label": "escalate_to_human",
+      "confusable_with": "create_ticket"
+    },
+    {
+      "true_label": "generate_report",
+      "confusable_with": "log_audit_event"
+    },
+    {
+      "true_label": "generate_report",
+      "confusable_with": "query_database"
+    },
+    {
+      "true_label": "log_audit_event",
+      "confusable_with": "create_ticket"
+    },
+    {
+      "true_label": "log_audit_event",
+      "confusable_with": "generate_report"
+    },
+    {
+      "true_label": "process_refund",
+      "confusable_with": "update_subscription"
+    },
+    {
+      "true_label": "process_refund",
+      "confusable_with": "update_database"
+    },
+    {
+      "true_label": "provision_vm",
+      "confusable_with": "update_database"
+    },
+    {
+      "true_label": "provision_vm",
+      "confusable_with": "restart_service"
+    },
+    {
+      "true_label": "quarantine_system",
+      "confusable_with": "restart_service"
+    },
+    {
+      "true_label": "quarantine_system",
+      "confusable_with": "scan_malware"
+    },
+    {
+      "true_label": "query_database",
+      "confusable_with": "generate_report"
+    },
+    {
+      "true_label": "query_database",
+      "confusable_with": "check_status"
+    },
+    {
+      "true_label": "reset_password",
+      "confusable_with": "update_database"
+    },
+    {
+      "true_label": "reset_password",
+      "confusable_with": "quarantine_system"
+    },
+    {
+      "true_label": "restart_service",
+      "confusable_with": "provision_vm"
+    },
+    {
+      "true_label": "restart_service",
+      "confusable_with": "quarantine_system"
+    },
+    {
+      "true_label": "scan_malware",
+      "confusable_with": "check_status"
+    },
+    {
+      "true_label": "scan_malware",
+      "confusable_with": "quarantine_system"
+    },
+    {
+      "true_label": "send_notification",
+      "confusable_with": "create_ticket"
+    },
+    {
+      "true_label": "send_notification",
+      "confusable_with": "escalate_to_human"
+    },
+    {
+      "true_label": "update_database",
+      "confusable_with": "reset_password"
+    },
+    {
+      "true_label": "update_database",
+      "confusable_with": "log_audit_event"
+    },
+    {
+      "true_label": "update_subscription",
+      "confusable_with": "update_database"
+    },
+    {
+      "true_label": "update_subscription",
+      "confusable_with": "process_refund"
+    }
+  ],
+  "paraphrase_family_overlap": 0
+}

@@ -1,0 +1,315 @@
+{
+  "routing_analysis": {
+    "lexical_shortcut_pressure": {
+      "before": 0.9756,
+      "after_lexical_reduced": 0.2647,
+      "improvement": 0.7109
+    },
+    "class_balance": {
+      "original": {
+        "min": 67,
+        "max": 67,
+        "std": 0.0
+      },
+      "lexical_cue_reduced": {
+        "min": 67,
+        "max": 67,
+        "std": 0.0
+      },
+      "confusable_intents": {
+        "min": 30,
+        "max": 30,
+        "std": 0.0
+      },
+      "paraphrase_heldout_train": {
+        "min": 215,
+        "max": 290,
+        "std": 17.37
+      },
+      "paraphrase_heldout_test": {
+        "min": 45,
+        "max": 120,
+        "std": 17.37
+      }
+    },
+    "paraphrase_family_overlap": 0,
+    "confusable_label_pairs_covered": 60,
+    "confusable_pairs": [
+      {
+        "true_label": "approve_access",
+        "confusable_with": "transfer_ownership"
+      },
+      {
+        "true_label": "approve_access",
+        "confusable_with": "reset_password"
+      },
+      {
+        "true_label": "archive_data",
+        "confusable_with": "backup_database"
+      },
+      {
+        "true_label": "archive_data",
+        "confusable_with": "update_database"
+      },
+      {
+        "true_label": "backup_database",
+        "confusable_with": "archive_data"
+      },
+      {
+        "true_label": "backup_database",
+        "confusable_with": "query_database"
+      },
+      {
+        "true_label": "check_status",
+        "confusable_with": "scan_malware"
+      },
+      {
+        "true_label": "check_status",
+        "confusable_with": "query_database"
+      },
+      {
+        "true_label": "create_ticket",
+        "confusable_with": "send_notification"
+      },
+      {
+        "true_label": "create_ticket",
+        "confusable_with": "log_audit_event"
+      },
+      {
+        "true_label": "deploy_container",
+        "confusable_with": "run_pipeline"
+      },
+      {
+        "true_label": "deploy_container",
+        "confusable_with": "provision_vm"
+      },
+      {
+        "true_label": "disable_feature_flag",
+        "confusable_with": "rollback_deployment"
+      },
+      {
+        "true_label": "disable_feature_flag",
+        "confusable_with": "enable_feature_flag"
+      },
+      {
+        "true_label": "enable_feature_flag",
+        "confusable_with": "deploy_container"
+      },
+      {
+        "true_label": "enable_feature_flag",
+        "confusable_with": "disable_feature_flag"
+      },
+      {
+        "true_label": "escalate_to_human",
+        "confusable_with": "send_notification"
+      },
+      {
+        "true_label": "escalate_to_human",
+        "confusable_with": "create_ticket"
+      },
+      {
+        "true_label": "generate_report",
+        "confusable_with": "query_database"
+      },
+      {
+        "true_label": "generate_report",
+        "confusable_with": "log_audit_event"
+      },
+      {
+        "true_label": "invalidate_cache",
+        "confusable_with": "update_database"
+      },
+      {
+        "true_label": "invalidate_cache",
+        "confusable_with": "restart_service"
+      },
+      {
+        "true_label": "log_audit_event",
+        "confusable_with": "create_ticket"
+      },
+      {
+        "true_label": "log_audit_event",
+        "confusable_with": "generate_report"
+      },
+      {
+        "true_label": "process_refund",
+        "confusable_with": "update_subscription"
+      },
+      {
+        "true_label": "process_refund",
+        "confusable_with": "update_database"
+      },
+      {
+        "true_label": "provision_vm",
+        "confusable_with": "restart_service"
+      },
+      {
+        "true_label": "provision_vm",
+        "confusable_with": "update_database"
+      },
+      {
+        "true_label": "quarantine_system",
+        "confusable_with": "scan_malware"
+      },
+      {
+        "true_label": "quarantine_system",
+        "confusable_with": "restart_service"
+      },
+      {
+        "true_label": "query_database",
+        "confusable_with": "check_status"
+      },
+      {
+        "true_label": "query_database",
+        "confusable_with": "generate_report"
+      },
+      {
+        "true_label": "reset_password",
+        "confusable_with": "update_database"
+      },
+      {
+        "true_label": "reset_password",
+        "confusable_with": "quarantine_system"
+      },
+      {
+        "true_label": "restart_service",
+        "confusable_with": "provision_vm"
+      },
+      {
+        "true_label": "restart_service",
+        "confusable_with": "quarantine_system"
+      },
+      {
+        "true_label": "restore_backup",
+        "confusable_with": "restart_service"
+      },
+      {
+        "true_label": "restore_backup",
+        "confusable_with": "rollback_deployment"
+      },
+      {
+        "true_label": "revoke_access",
+        "confusable_with": "quarantine_system"
+      },
+      {
+        "true_label": "revoke_access",
+        "confusable_with": "rotate_api_key"
+      },
+      {
+        "true_label": "rollback_deployment",
+        "confusable_with": "restore_backup"
+      },
+      {
+        "true_label": "rollback_deployment",
+        "confusable_with": "restart_service"
+      },
+      {
+        "true_label": "rotate_api_key",
+        "confusable_with": "revoke_access"
+      },
+      {
+        "true_label": "rotate_api_key",
+        "confusable_with": "reset_password"
+      },
+      {
+        "true_label": "run_pipeline",
+        "confusable_with": "deploy_container"
+      },
+      {
+        "true_label": "run_pipeline",
+        "confusable_with": "restart_service"
+      },
+      {
+        "true_label": "scale_service",
+        "confusable_with": "provision_vm"
+      },
+      {
+        "true_label": "scale_service",
+        "confusable_with": "restart_service"
+      },
+      {
+        "true_label": "scan_malware",
+        "confusable_with": "check_status"
+      },
+      {
+        "true_label": "scan_malware",
+        "confusable_with": "quarantine_system"
+      },
+      {
+        "true_label": "schedule_maintenance",
+        "confusable_with": "create_ticket"
+      },
+      {
+        "true_label": "schedule_maintenance",
+        "confusable_with": "send_notification"
+      },
+      {
+        "true_label": "send_notification",
+        "confusable_with": "escalate_to_human"
+      },
+      {
+        "true_label": "send_notification",
+        "confusable_with": "create_ticket"
+      },
+      {
+        "true_label": "transfer_ownership",
+        "confusable_with": "approve_access"
+      },
+      {
+        "true_label": "transfer_ownership",
+        "confusable_with": "update_database"
+      },
+      {
+        "true_label": "update_database",
+        "confusable_with": "log_audit_event"
+      },
+      {
+        "true_label": "update_database",
+        "confusable_with": "reset_password"
+      },
+      {
+        "true_label": "update_subscription",
+        "confusable_with": "process_refund"
+      },
+      {
+        "true_label": "update_subscription",
+        "confusable_with": "update_database"
+      }
+    ]
+  },
+  "graph_analysis": {
+    "topology_diversity": {
+      "before": 12,
+      "after": 132
+    },
+    "motif_concentration": {
+      "before_entropy": 2.26,
+      "after_entropy": 3.303,
+      "before_families": 9,
+      "after_families": 20
+    },
+    "hard_negative_availability": {
+      "total": 312,
+      "types": {
+        "swap_edges": 52,
+        "swap_tools": 78,
+        "remove_edge": 52,
+        "add_edge": 52,
+        "extra_node": 78
+      }
+    },
+    "topology_heldout_evaluation": {
+      "train_families": 14,
+      "test_families": 5,
+      "overlap_families": 0,
+      "is_nontrivial": true,
+      "held_out_test_families": [
+        "asymmetric_fork_join",
+        "diamond",
+        "wide_fanin",
+        "wide_fanout",
+        "wide_fanout_deep"
+      ]
+    }
+  }
+}

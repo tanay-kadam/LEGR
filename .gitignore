@@ -1,0 +1,73 @@
+# Environment
+.env
+.venv/
+venv/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# API keys and credentials
+api_key.txt
+*.key
+*.pem
+
+# Large data files and caches
+*.npy
+*.pkl
+*.pickle
+*.pt
+*.pth
+ged_cache.npy
+
+# Directories with large files
+checkpoints/
+checkpoints_*/
+sweep_checkpoints/
+results/
+prev_results/
+new_results/
+wandb/
+outputs/
+.cache/
+
+# Logs
+*.log
+logs/
+
+# Temporary and build files
+*.tmp
+*~
+.DS_Store
+dist/
+build/

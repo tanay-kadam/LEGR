@@ -1,0 +1,901 @@
+source_row_id,original_query,transformed_query,label,generation_type,lexical_cues_removed,paraphrase_family,confusable_with
+-1,,"Tell them later if you want, but approve Charlie's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,"Tell them later if you want, but approve Diana's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,This is not a password problem; the request itself needs approval.,approve_access_request,confusable_intent,,,reset_user_password
+-1,,"Tell them later if you want, but approve Alice's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,"Tell them later if you want, but approve Grace's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,"Tell them later if you want, but approve Frank's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,"Tell them later if you want, but approve Bob's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,"Tell them later if you want, but approve Eve's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,This is not a password problem; the request itself needs approval.,approve_access_request,confusable_intent,,,reset_user_password
+-1,,"Tell them later if you want, but approve Frank's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,"Tell them later if you want, but approve Diana's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,This is not a password problem; the request itself needs approval.,approve_access_request,confusable_intent,,,reset_user_password
+-1,,"Tell them later if you want, but approve Frank's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,"Tell them later if you want, but approve Bob's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,This is not a password problem; the request itself needs approval.,approve_access_request,confusable_intent,,,reset_user_password
+-1,,This is not a password problem; the request itself needs approval.,approve_access_request,confusable_intent,,,reset_user_password
+-1,,"Tell them later if you want, but approve Frank's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,This is not a password problem; the request itself needs approval.,approve_access_request,confusable_intent,,,reset_user_password
+-1,,This is not a password problem; the request itself needs approval.,approve_access_request,confusable_intent,,,reset_user_password
+-1,,"Tell them later if you want, but approve Bob's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,"Tell them later if you want, but approve Alice's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,"Tell them later if you want, but approve Frank's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,This is not a password problem; the request itself needs approval.,approve_access_request,confusable_intent,,,reset_user_password
+-1,,"Tell them later if you want, but approve Charlie's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,"Tell them later if you want, but approve Diana's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,"Tell them later if you want, but approve Alice's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,"Tell them later if you want, but approve Alice's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,This is not a password problem; the request itself needs approval.,approve_access_request,confusable_intent,,,reset_user_password
+-1,,"Tell them later if you want, but approve Bob's pending access request now.",approve_access_request,confusable_intent,,,notify_access_change
+-1,,This is not a password problem; the request itself needs approval.,approve_access_request,confusable_intent,,,reset_user_password
+-1,,Do not capture a system snapshot; archive the stale customer records instead.,archive_customer_data,confusable_intent,,,snapshot_system_state
+-1,,Approval can wait; move the old customer data into archive storage now.,archive_customer_data,confusable_intent,,,authorize_data_export
+-1,,Approval can wait; move the old customer data into archive storage now.,archive_customer_data,confusable_intent,,,authorize_data_export
+-1,,Approval can wait; move the old customer data into archive storage now.,archive_customer_data,confusable_intent,,,authorize_data_export
+-1,,Approval can wait; move the old customer data into archive storage now.,archive_customer_data,confusable_intent,,,authorize_data_export
+-1,,Do not capture a system snapshot; archive the stale customer records instead.,archive_customer_data,confusable_intent,,,snapshot_system_state
+-1,,Do not capture a system snapshot; archive the stale customer records instead.,archive_customer_data,confusable_intent,,,snapshot_system_state
+-1,,Approval can wait; move the old customer data into archive storage now.,archive_customer_data,confusable_intent,,,authorize_data_export
+-1,,Approval can wait; move the old customer data into archive storage now.,archive_customer_data,confusable_intent,,,authorize_data_export
+-1,,Do not capture a system snapshot; archive the stale customer records instead.,archive_customer_data,confusable_intent,,,snapshot_system_state
+-1,,Do not capture a system snapshot; archive the stale customer records instead.,archive_customer_data,confusable_intent,,,snapshot_system_state
+-1,,Approval can wait; move the old customer data into archive storage now.,archive_customer_data,confusable_intent,,,authorize_data_export
+-1,,Approval can wait; move the old customer data into archive storage now.,archive_customer_data,confusable_intent,,,authorize_data_export
+-1,,Do not capture a system snapshot; archive the stale customer records instead.,archive_customer_data,confusable_intent,,,snapshot_system_state
+-1,,Do not capture a system snapshot; archive the stale customer records instead.,archive_customer_data,confusable_intent,,,snapshot_system_state
+-1,,Do not capture a system snapshot; archive the stale customer records instead.,archive_customer_data,confusable_intent,,,snapshot_system_state
+-1,,Approval can wait; move the old customer data into archive storage now.,archive_customer_data,confusable_intent,,,authorize_data_export
+-1,,Do not capture a system snapshot; archive the stale customer records instead.,archive_customer_data,confusable_intent,,,snapshot_system_state
+-1,,Do not capture a system snapshot; archive the stale customer records instead.,archive_customer_data,confusable_intent,,,snapshot_system_state
+-1,,Do not capture a system snapshot; archive the stale customer records instead.,archive_customer_data,confusable_intent,,,snapshot_system_state
+-1,,Do not capture a system snapshot; archive the stale customer records instead.,archive_customer_data,confusable_intent,,,snapshot_system_state
+-1,,Approval can wait; move the old customer data into archive storage now.,archive_customer_data,confusable_intent,,,authorize_data_export
+-1,,Do not capture a system snapshot; archive the stale customer records instead.,archive_customer_data,confusable_intent,,,snapshot_system_state
+-1,,Do not capture a system snapshot; archive the stale customer records instead.,archive_customer_data,confusable_intent,,,snapshot_system_state
+-1,,Approval can wait; move the old customer data into archive storage now.,archive_customer_data,confusable_intent,,,authorize_data_export
+-1,,Do not capture a system snapshot; archive the stale customer records instead.,archive_customer_data,confusable_intent,,,snapshot_system_state
+-1,,Approval can wait; move the old customer data into archive storage now.,archive_customer_data,confusable_intent,,,authorize_data_export
+-1,,Do not capture a system snapshot; archive the stale customer records instead.,archive_customer_data,confusable_intent,,,snapshot_system_state
+-1,,Approval can wait; move the old customer data into archive storage now.,archive_customer_data,confusable_intent,,,authorize_data_export
+-1,,Do not capture a system snapshot; archive the stale customer records instead.,archive_customer_data,confusable_intent,,,snapshot_system_state
+-1,,Do not provision a workspace first; assign Eve the correct access role.,assign_access_role,confusable_intent,,,provision_workspace
+-1,,"Approval aside, just give Bob the role they need for Marketing.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,"Approval aside, just give Charlie the role they need for Engineering.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,Do not provision a workspace first; assign Frank the correct access role.,assign_access_role,confusable_intent,,,provision_workspace
+-1,,"Approval aside, just give Grace the role they need for Legal.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,Do not provision a workspace first; assign Alice the correct access role.,assign_access_role,confusable_intent,,,provision_workspace
+-1,,"Approval aside, just give Frank the role they need for Finance.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,"Approval aside, just give Eve the role they need for Finance.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,Do not provision a workspace first; assign Diana the correct access role.,assign_access_role,confusable_intent,,,provision_workspace
+-1,,"Approval aside, just give Alice the role they need for HR.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,"Approval aside, just give Alice the role they need for Legal.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,"Approval aside, just give Frank the role they need for HR.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,Do not provision a workspace first; assign Charlie the correct access role.,assign_access_role,confusable_intent,,,provision_workspace
+-1,,"Approval aside, just give Grace the role they need for Engineering.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,"Approval aside, just give Frank the role they need for Engineering.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,"Approval aside, just give Diana the role they need for Finance.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,Do not provision a workspace first; assign Bob the correct access role.,assign_access_role,confusable_intent,,,provision_workspace
+-1,,"Approval aside, just give Diana the role they need for Marketing.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,"Approval aside, just give Diana the role they need for Legal.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,Do not provision a workspace first; assign Grace the correct access role.,assign_access_role,confusable_intent,,,provision_workspace
+-1,,"Approval aside, just give Charlie the role they need for Marketing.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,"Approval aside, just give Eve the role they need for Engineering.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,"Approval aside, just give Charlie the role they need for Finance.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,"Approval aside, just give Grace the role they need for Finance.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,"Approval aside, just give Eve the role they need for HR.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,"Approval aside, just give Eve the role they need for Marketing.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,"Approval aside, just give Alice the role they need for Engineering.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,"Approval aside, just give Grace the role they need for HR.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,"Approval aside, just give Bob the role they need for Engineering.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,"Approval aside, just give Diana the role they need for Engineering.",assign_access_role,confusable_intent,,,approve_access_request
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,This is not a feature-toggle decision; authorize the customer data handoff.,authorize_data_export,confusable_intent,,,enable_feature_flag
+-1,,This is not a feature-toggle decision; authorize the customer data handoff.,authorize_data_export,confusable_intent,,,enable_feature_flag
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,This is not a feature-toggle decision; authorize the customer data handoff.,authorize_data_export,confusable_intent,,,enable_feature_flag
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,This is not a feature-toggle decision; authorize the customer data handoff.,authorize_data_export,confusable_intent,,,enable_feature_flag
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,This is not a feature-toggle decision; authorize the customer data handoff.,authorize_data_export,confusable_intent,,,enable_feature_flag
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,This is not a feature-toggle decision; authorize the customer data handoff.,authorize_data_export,confusable_intent,,,enable_feature_flag
+-1,,This is not a feature-toggle decision; authorize the customer data handoff.,authorize_data_export,confusable_intent,,,enable_feature_flag
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,This is not a feature-toggle decision; authorize the customer data handoff.,authorize_data_export,confusable_intent,,,enable_feature_flag
+-1,,This is not a feature-toggle decision; authorize the customer data handoff.,authorize_data_export,confusable_intent,,,enable_feature_flag
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,This is not a feature-toggle decision; authorize the customer data handoff.,authorize_data_export,confusable_intent,,,enable_feature_flag
+-1,,Archiving can wait; first approve the requested data export.,authorize_data_export,confusable_intent,,,archive_customer_data
+-1,,"Before anyone restarts staging-db-02, tell Engineering whether it is actually healthy.",check_service_status,confusable_intent,,,restart_service
+-1,,"Instead of diving into the security feed, first tell me whether cdn-edge-06 is up for Engineering.",check_service_status,confusable_intent,,,inspect_security_alerts
+-1,,"Instead of diving into the security feed, first tell me whether payment-api-03 is up for Legal.",check_service_status,confusable_intent,,,inspect_security_alerts
+-1,,"Before anyone restarts payment-api-03, tell Engineering whether it is actually healthy.",check_service_status,confusable_intent,,,restart_service
+-1,,"Before anyone restarts staging-db-02, tell HR whether it is actually healthy.",check_service_status,confusable_intent,,,restart_service
+-1,,"Before anyone restarts payment-api-03, tell Legal whether it is actually healthy.",check_service_status,confusable_intent,,,restart_service
+-1,,"Instead of diving into the security feed, first tell me whether staging-db-02 is up for Marketing.",check_service_status,confusable_intent,,,inspect_security_alerts
+-1,,"Before anyone restarts auth-svc-04, tell Marketing whether it is actually healthy.",check_service_status,confusable_intent,,,restart_service
+-1,,"Before anyone restarts auth-svc-04, tell Legal whether it is actually healthy.",check_service_status,confusable_intent,,,restart_service
+-1,,"Instead of diving into the security feed, first tell me whether ml-infer-05 is up for HR.",check_service_status,confusable_intent,,,inspect_security_alerts
+-1,,"Instead of diving into the security feed, first tell me whether cdn-edge-06 is up for HR.",check_service_status,confusable_intent,,,inspect_security_alerts
+-1,,"Before anyone restarts cdn-edge-06, tell HR whether it is actually healthy.",check_service_status,confusable_intent,,,restart_service
+-1,,"Before anyone restarts ml-infer-05, tell Marketing whether it is actually healthy.",check_service_status,confusable_intent,,,restart_service
+-1,,"Before anyone restarts cdn-edge-06, tell Engineering whether it is actually healthy.",check_service_status,confusable_intent,,,restart_service
+-1,,"Before anyone restarts staging-db-02, tell Marketing whether it is actually healthy.",check_service_status,confusable_intent,,,restart_service
+-1,,"Before anyone restarts auth-svc-04, tell Engineering whether it is actually healthy.",check_service_status,confusable_intent,,,restart_service
+-1,,"Instead of diving into the security feed, first tell me whether cdn-edge-06 is up for Marketing.",check_service_status,confusable_intent,,,inspect_security_alerts
+-1,,"Instead of diving into the security feed, first tell me whether staging-db-02 is up for HR.",check_service_status,confusable_intent,,,inspect_security_alerts
+-1,,"Instead of diving into the security feed, first tell me whether payment-api-03 is up for Engineering.",check_service_status,confusable_intent,,,inspect_security_alerts
+-1,,"Instead of diving into the security feed, first tell me whether ml-infer-05 is up for Finance.",check_service_status,confusable_intent,,,inspect_security_alerts
+-1,,"Instead of diving into the security feed, first tell me whether prod-web-01 is up for Marketing.",check_service_status,confusable_intent,,,inspect_security_alerts
+-1,,"Instead of diving into the security feed, first tell me whether prod-web-01 is up for Finance.",check_service_status,confusable_intent,,,inspect_security_alerts
+-1,,"Before anyone restarts prod-web-01, tell Legal whether it is actually healthy.",check_service_status,confusable_intent,,,restart_service
+-1,,"Instead of diving into the security feed, first tell me whether staging-db-02 is up for Legal.",check_service_status,confusable_intent,,,inspect_security_alerts
+-1,,"Before anyone restarts auth-svc-04, tell HR whether it is actually healthy.",check_service_status,confusable_intent,,,restart_service
+-1,,"Instead of diving into the security feed, first tell me whether payment-api-03 is up for HR.",check_service_status,confusable_intent,,,inspect_security_alerts
+-1,,"Before anyone restarts prod-web-01, tell Marketing whether it is actually healthy.",check_service_status,confusable_intent,,,restart_service
+-1,,"Instead of diving into the security feed, first tell me whether prod-web-01 is up for HR.",check_service_status,confusable_intent,,,inspect_security_alerts
+-1,,"Before anyone restarts prod-web-01, tell Engineering whether it is actually healthy.",check_service_status,confusable_intent,,,restart_service
+-1,,"Instead of diving into the security feed, first tell me whether staging-db-02 is up for Engineering.",check_service_status,confusable_intent,,,inspect_security_alerts
+-1,,Do not provision anything yet; create a support case for Eve's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,Do not provision anything yet; create a support case for Frank's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,Do not provision anything yet; create a support case for Alice's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,"If this becomes bigger, someone can escalate it later, but open a tracked case now.",create_support_ticket,confusable_intent,,,escalate_security_incident
+-1,,Do not provision anything yet; create a support case for Diana's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,Do not provision anything yet; create a support case for Bob's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,Do not provision anything yet; create a support case for Grace's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,Do not provision anything yet; create a support case for Charlie's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,Do not provision anything yet; create a support case for Grace's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,Do not provision anything yet; create a support case for Bob's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,"If this becomes bigger, someone can escalate it later, but open a tracked case now.",create_support_ticket,confusable_intent,,,escalate_security_incident
+-1,,"If this becomes bigger, someone can escalate it later, but open a tracked case now.",create_support_ticket,confusable_intent,,,escalate_security_incident
+-1,,"If this becomes bigger, someone can escalate it later, but open a tracked case now.",create_support_ticket,confusable_intent,,,escalate_security_incident
+-1,,Do not provision anything yet; create a support case for Bob's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,Do not provision anything yet; create a support case for Bob's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,"If this becomes bigger, someone can escalate it later, but open a tracked case now.",create_support_ticket,confusable_intent,,,escalate_security_incident
+-1,,Do not provision anything yet; create a support case for Grace's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,Do not provision anything yet; create a support case for Diana's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,Do not provision anything yet; create a support case for Charlie's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,Do not provision anything yet; create a support case for Diana's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,Do not provision anything yet; create a support case for Charlie's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,"If this becomes bigger, someone can escalate it later, but open a tracked case now.",create_support_ticket,confusable_intent,,,escalate_security_incident
+-1,,"If this becomes bigger, someone can escalate it later, but open a tracked case now.",create_support_ticket,confusable_intent,,,escalate_security_incident
+-1,,"If this becomes bigger, someone can escalate it later, but open a tracked case now.",create_support_ticket,confusable_intent,,,escalate_security_incident
+-1,,Do not provision anything yet; create a support case for Grace's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,"If this becomes bigger, someone can escalate it later, but open a tracked case now.",create_support_ticket,confusable_intent,,,escalate_security_incident
+-1,,Do not provision anything yet; create a support case for Alice's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,"If this becomes bigger, someone can escalate it later, but open a tracked case now.",create_support_ticket,confusable_intent,,,escalate_security_incident
+-1,,Do not provision anything yet; create a support case for Alice's problem first.,create_support_ticket,confusable_intent,,,provision_workspace
+-1,,"If this becomes bigger, someone can escalate it later, but open a tracked case now.",create_support_ticket,confusable_intent,,,escalate_security_incident
+-1,,This is not workspace setup; ship the service release into production.,deploy_service_release,confusable_intent,,,provision_workspace
+-1,,"Undo it later if needed, but the immediate job is to roll the new release out.",deploy_service_release,confusable_intent,,,rollback_service_release
+-1,,"Undo it later if needed, but the immediate job is to roll the new release out.",deploy_service_release,confusable_intent,,,rollback_service_release
+-1,,This is not workspace setup; ship the service release into production.,deploy_service_release,confusable_intent,,,provision_workspace
+-1,,"Undo it later if needed, but the immediate job is to roll the new release out.",deploy_service_release,confusable_intent,,,rollback_service_release
+-1,,"Undo it later if needed, but the immediate job is to roll the new release out.",deploy_service_release,confusable_intent,,,rollback_service_release
+-1,,"Undo it later if needed, but the immediate job is to roll the new release out.",deploy_service_release,confusable_intent,,,rollback_service_release
+-1,,This is not workspace setup; ship the service release into production.,deploy_service_release,confusable_intent,,,provision_workspace
+-1,,"Undo it later if needed, but the immediate job is to roll the new release out.",deploy_service_release,confusable_intent,,,rollback_service_release
+-1,,"Undo it later if needed, but the immediate job is to roll the new release out.",deploy_service_release,confusable_intent,,,rollback_service_release
+-1,,This is not workspace setup; ship the service release into production.,deploy_service_release,confusable_intent,,,provision_workspace
+-1,,This is not workspace setup; ship the service release into production.,deploy_service_release,confusable_intent,,,provision_workspace
+-1,,"Undo it later if needed, but the immediate job is to roll the new release out.",deploy_service_release,confusable_intent,,,rollback_service_release
+-1,,This is not workspace setup; ship the service release into production.,deploy_service_release,confusable_intent,,,provision_workspace
+-1,,This is not workspace setup; ship the service release into production.,deploy_service_release,confusable_intent,,,provision_workspace
+-1,,"Undo it later if needed, but the immediate job is to roll the new release out.",deploy_service_release,confusable_intent,,,rollback_service_release
+-1,,"Undo it later if needed, but the immediate job is to roll the new release out.",deploy_service_release,confusable_intent,,,rollback_service_release
+-1,,"Undo it later if needed, but the immediate job is to roll the new release out.",deploy_service_release,confusable_intent,,,rollback_service_release
+-1,,This is not workspace setup; ship the service release into production.,deploy_service_release,confusable_intent,,,provision_workspace
+-1,,This is not workspace setup; ship the service release into production.,deploy_service_release,confusable_intent,,,provision_workspace
+-1,,"Undo it later if needed, but the immediate job is to roll the new release out.",deploy_service_release,confusable_intent,,,rollback_service_release
+-1,,"Undo it later if needed, but the immediate job is to roll the new release out.",deploy_service_release,confusable_intent,,,rollback_service_release
+-1,,"Undo it later if needed, but the immediate job is to roll the new release out.",deploy_service_release,confusable_intent,,,rollback_service_release
+-1,,This is not workspace setup; ship the service release into production.,deploy_service_release,confusable_intent,,,provision_workspace
+-1,,This is not workspace setup; ship the service release into production.,deploy_service_release,confusable_intent,,,provision_workspace
+-1,,This is not workspace setup; ship the service release into production.,deploy_service_release,confusable_intent,,,provision_workspace
+-1,,This is not workspace setup; ship the service release into production.,deploy_service_release,confusable_intent,,,provision_workspace
+-1,,This is not workspace setup; ship the service release into production.,deploy_service_release,confusable_intent,,,provision_workspace
+-1,,"Undo it later if needed, but the immediate job is to roll the new release out.",deploy_service_release,confusable_intent,,,rollback_service_release
+-1,,"Undo it later if needed, but the immediate job is to roll the new release out.",deploy_service_release,confusable_intent,,,rollback_service_release
+-1,,This is not about exporting data; activate the rollout flag instead.,enable_feature_flag,confusable_intent,,,authorize_data_export
+-1,,Write the note later; for now turn the feature on for Marketing.,enable_feature_flag,confusable_intent,,,record_release_note
+-1,,Write the note later; for now turn the feature on for Engineering.,enable_feature_flag,confusable_intent,,,record_release_note
+-1,,Write the note later; for now turn the feature on for HR.,enable_feature_flag,confusable_intent,,,record_release_note
+-1,,Write the note later; for now turn the feature on for Finance.,enable_feature_flag,confusable_intent,,,record_release_note
+-1,,Write the note later; for now turn the feature on for Legal.,enable_feature_flag,confusable_intent,,,record_release_note
+-1,,This is not about exporting data; activate the rollout flag instead.,enable_feature_flag,confusable_intent,,,authorize_data_export
+-1,,This is not about exporting data; activate the rollout flag instead.,enable_feature_flag,confusable_intent,,,authorize_data_export
+-1,,This is not about exporting data; activate the rollout flag instead.,enable_feature_flag,confusable_intent,,,authorize_data_export
+-1,,This is not about exporting data; activate the rollout flag instead.,enable_feature_flag,confusable_intent,,,authorize_data_export
+-1,,Write the note later; for now turn the feature on for Marketing.,enable_feature_flag,confusable_intent,,,record_release_note
+-1,,Write the note later; for now turn the feature on for Legal.,enable_feature_flag,confusable_intent,,,record_release_note
+-1,,This is not about exporting data; activate the rollout flag instead.,enable_feature_flag,confusable_intent,,,authorize_data_export
+-1,,Write the note later; for now turn the feature on for Engineering.,enable_feature_flag,confusable_intent,,,record_release_note
+-1,,This is not about exporting data; activate the rollout flag instead.,enable_feature_flag,confusable_intent,,,authorize_data_export
+-1,,Write the note later; for now turn the feature on for Engineering.,enable_feature_flag,confusable_intent,,,record_release_note
+-1,,This is not about exporting data; activate the rollout flag instead.,enable_feature_flag,confusable_intent,,,authorize_data_export
+-1,,This is not about exporting data; activate the rollout flag instead.,enable_feature_flag,confusable_intent,,,authorize_data_export
+-1,,Write the note later; for now turn the feature on for Marketing.,enable_feature_flag,confusable_intent,,,record_release_note
+-1,,Write the note later; for now turn the feature on for HR.,enable_feature_flag,confusable_intent,,,record_release_note
+-1,,This is not about exporting data; activate the rollout flag instead.,enable_feature_flag,confusable_intent,,,authorize_data_export
+-1,,Write the note later; for now turn the feature on for Marketing.,enable_feature_flag,confusable_intent,,,record_release_note
+-1,,This is not about exporting data; activate the rollout flag instead.,enable_feature_flag,confusable_intent,,,authorize_data_export
+-1,,Write the note later; for now turn the feature on for Engineering.,enable_feature_flag,confusable_intent,,,record_release_note
+-1,,This is not about exporting data; activate the rollout flag instead.,enable_feature_flag,confusable_intent,,,authorize_data_export
+-1,,Write the note later; for now turn the feature on for Finance.,enable_feature_flag,confusable_intent,,,record_release_note
+-1,,This is not about exporting data; activate the rollout flag instead.,enable_feature_flag,confusable_intent,,,authorize_data_export
+-1,,Write the note later; for now turn the feature on for Legal.,enable_feature_flag,confusable_intent,,,record_release_note
+-1,,Write the note later; for now turn the feature on for Legal.,enable_feature_flag,confusable_intent,,,record_release_note
+-1,,This is not about exporting data; activate the rollout flag instead.,enable_feature_flag,confusable_intent,,,authorize_data_export
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,Do not just open a generic case; escalate the security incident immediately.,escalate_security_incident,confusable_intent,,,create_support_ticket
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,Do not just open a generic case; escalate the security incident immediately.,escalate_security_incident,confusable_intent,,,create_support_ticket
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,Do not just open a generic case; escalate the security incident immediately.,escalate_security_incident,confusable_intent,,,create_support_ticket
+-1,,Do not just open a generic case; escalate the security incident immediately.,escalate_security_incident,confusable_intent,,,create_support_ticket
+-1,,Do not just open a generic case; escalate the security incident immediately.,escalate_security_incident,confusable_intent,,,create_support_ticket
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,Do not just open a generic case; escalate the security incident immediately.,escalate_security_incident,confusable_intent,,,create_support_ticket
+-1,,Do not just open a generic case; escalate the security incident immediately.,escalate_security_incident,confusable_intent,,,create_support_ticket
+-1,,Do not just open a generic case; escalate the security incident immediately.,escalate_security_incident,confusable_intent,,,create_support_ticket
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,Do not just open a generic case; escalate the security incident immediately.,escalate_security_incident,confusable_intent,,,create_support_ticket
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,Do not just open a generic case; escalate the security incident immediately.,escalate_security_incident,confusable_intent,,,create_support_ticket
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,Do not just open a generic case; escalate the security incident immediately.,escalate_security_incident,confusable_intent,,,create_support_ticket
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,Do not just open a generic case; escalate the security incident immediately.,escalate_security_incident,confusable_intent,,,create_support_ticket
+-1,,"We can record it later, but this security incident needs a human responder now.",escalate_security_incident,confusable_intent,,,log_compliance_event
+-1,,Update the account later; first produce a report of current access for Legal.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,This is not a release-readiness check; I need an access summary for Finance.,generate_access_report,confusable_intent,,,validate_release_readiness
+-1,,This is not a release-readiness check; I need an access summary for Marketing.,generate_access_report,confusable_intent,,,validate_release_readiness
+-1,,This is not a release-readiness check; I need an access summary for HR.,generate_access_report,confusable_intent,,,validate_release_readiness
+-1,,Update the account later; first produce a report of current access for Engineering.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,Update the account later; first produce a report of current access for Finance.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,This is not a release-readiness check; I need an access summary for Legal.,generate_access_report,confusable_intent,,,validate_release_readiness
+-1,,Update the account later; first produce a report of current access for Marketing.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,Update the account later; first produce a report of current access for HR.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,This is not a release-readiness check; I need an access summary for Engineering.,generate_access_report,confusable_intent,,,validate_release_readiness
+-1,,This is not a release-readiness check; I need an access summary for Engineering.,generate_access_report,confusable_intent,,,validate_release_readiness
+-1,,Update the account later; first produce a report of current access for Legal.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,This is not a release-readiness check; I need an access summary for Engineering.,generate_access_report,confusable_intent,,,validate_release_readiness
+-1,,Update the account later; first produce a report of current access for Finance.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,This is not a release-readiness check; I need an access summary for Finance.,generate_access_report,confusable_intent,,,validate_release_readiness
+-1,,Update the account later; first produce a report of current access for HR.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,Update the account later; first produce a report of current access for Marketing.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,Update the account later; first produce a report of current access for Finance.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,Update the account later; first produce a report of current access for Finance.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,Update the account later; first produce a report of current access for HR.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,This is not a release-readiness check; I need an access summary for HR.,generate_access_report,confusable_intent,,,validate_release_readiness
+-1,,Update the account later; first produce a report of current access for Marketing.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,Update the account later; first produce a report of current access for Legal.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,Update the account later; first produce a report of current access for Engineering.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,This is not a release-readiness check; I need an access summary for Engineering.,generate_access_report,confusable_intent,,,validate_release_readiness
+-1,,Update the account later; first produce a report of current access for Engineering.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,Update the account later; first produce a report of current access for Marketing.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,Update the account later; first produce a report of current access for Finance.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,Update the account later; first produce a report of current access for Marketing.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,Update the account later; first produce a report of current access for Finance.,generate_access_report,confusable_intent,,,update_identity_record
+-1,,"Before isolating anything, review the security alerts tied to prod-web-01.",inspect_security_alerts,confusable_intent,,,quarantine_endpoint
+-1,,I do not just need a health check; I need the security alerts on payment-api-03 inspected.,inspect_security_alerts,confusable_intent,,,check_service_status
+-1,,I do not just need a health check; I need the security alerts on staging-db-02 inspected.,inspect_security_alerts,confusable_intent,,,check_service_status
+-1,,I do not just need a health check; I need the security alerts on prod-web-01 inspected.,inspect_security_alerts,confusable_intent,,,check_service_status
+-1,,"Before isolating anything, review the security alerts tied to staging-db-02.",inspect_security_alerts,confusable_intent,,,quarantine_endpoint
+-1,,"Before isolating anything, review the security alerts tied to cdn-edge-06.",inspect_security_alerts,confusable_intent,,,quarantine_endpoint
+-1,,I do not just need a health check; I need the security alerts on ml-infer-05 inspected.,inspect_security_alerts,confusable_intent,,,check_service_status
+-1,,I do not just need a health check; I need the security alerts on cdn-edge-06 inspected.,inspect_security_alerts,confusable_intent,,,check_service_status
+-1,,"Before isolating anything, review the security alerts tied to payment-api-03.",inspect_security_alerts,confusable_intent,,,quarantine_endpoint
+-1,,I do not just need a health check; I need the security alerts on auth-svc-04 inspected.,inspect_security_alerts,confusable_intent,,,check_service_status
+-1,,"Before isolating anything, review the security alerts tied to auth-svc-04.",inspect_security_alerts,confusable_intent,,,quarantine_endpoint
+-1,,"Before isolating anything, review the security alerts tied to ml-infer-05.",inspect_security_alerts,confusable_intent,,,quarantine_endpoint
+-1,,I do not just need a health check; I need the security alerts on staging-db-02 inspected.,inspect_security_alerts,confusable_intent,,,check_service_status
+-1,,I do not just need a health check; I need the security alerts on staging-db-02 inspected.,inspect_security_alerts,confusable_intent,,,check_service_status
+-1,,I do not just need a health check; I need the security alerts on staging-db-02 inspected.,inspect_security_alerts,confusable_intent,,,check_service_status
+-1,,"Before isolating anything, review the security alerts tied to prod-web-01.",inspect_security_alerts,confusable_intent,,,quarantine_endpoint
+-1,,I do not just need a health check; I need the security alerts on payment-api-03 inspected.,inspect_security_alerts,confusable_intent,,,check_service_status
+-1,,"Before isolating anything, review the security alerts tied to prod-web-01.",inspect_security_alerts,confusable_intent,,,quarantine_endpoint
+-1,,I do not just need a health check; I need the security alerts on cdn-edge-06 inspected.,inspect_security_alerts,confusable_intent,,,check_service_status
+-1,,I do not just need a health check; I need the security alerts on ml-infer-05 inspected.,inspect_security_alerts,confusable_intent,,,check_service_status
+-1,,I do not just need a health check; I need the security alerts on auth-svc-04 inspected.,inspect_security_alerts,confusable_intent,,,check_service_status
+-1,,I do not just need a health check; I need the security alerts on auth-svc-04 inspected.,inspect_security_alerts,confusable_intent,,,check_service_status
+-1,,"Before isolating anything, review the security alerts tied to payment-api-03.",inspect_security_alerts,confusable_intent,,,quarantine_endpoint
+-1,,I do not just need a health check; I need the security alerts on payment-api-03 inspected.,inspect_security_alerts,confusable_intent,,,check_service_status
+-1,,"Before isolating anything, review the security alerts tied to auth-svc-04.",inspect_security_alerts,confusable_intent,,,quarantine_endpoint
+-1,,I do not just need a health check; I need the security alerts on payment-api-03 inspected.,inspect_security_alerts,confusable_intent,,,check_service_status
+-1,,"Before isolating anything, review the security alerts tied to staging-db-02.",inspect_security_alerts,confusable_intent,,,quarantine_endpoint
+-1,,I do not just need a health check; I need the security alerts on payment-api-03 inspected.,inspect_security_alerts,confusable_intent,,,check_service_status
+-1,,"Before isolating anything, review the security alerts tied to auth-svc-04.",inspect_security_alerts,confusable_intent,,,quarantine_endpoint
+-1,,"Before isolating anything, review the security alerts tied to payment-api-03.",inspect_security_alerts,confusable_intent,,,quarantine_endpoint
+-1,,This is not just an account update; we need an audit entry for what happened.,log_compliance_event,confusable_intent,,,update_identity_record
+-1,,"Investigate if needed, but make sure the action on prod-web-01 is logged for compliance.",log_compliance_event,confusable_intent,,,inspect_security_alerts
+-1,,"Investigate if needed, but make sure the action on cdn-edge-06 is logged for compliance.",log_compliance_event,confusable_intent,,,inspect_security_alerts
+-1,,"Investigate if needed, but make sure the action on auth-svc-04 is logged for compliance.",log_compliance_event,confusable_intent,,,inspect_security_alerts
+-1,,"Investigate if needed, but make sure the action on staging-db-02 is logged for compliance.",log_compliance_event,confusable_intent,,,inspect_security_alerts
+-1,,"Investigate if needed, but make sure the action on payment-api-03 is logged for compliance.",log_compliance_event,confusable_intent,,,inspect_security_alerts
+-1,,"Investigate if needed, but make sure the action on ml-infer-05 is logged for compliance.",log_compliance_event,confusable_intent,,,inspect_security_alerts
+-1,,This is not just an account update; we need an audit entry for what happened.,log_compliance_event,confusable_intent,,,update_identity_record
+-1,,"Investigate if needed, but make sure the action on ml-infer-05 is logged for compliance.",log_compliance_event,confusable_intent,,,inspect_security_alerts
+-1,,This is not just an account update; we need an audit entry for what happened.,log_compliance_event,confusable_intent,,,update_identity_record
+-1,,"Investigate if needed, but make sure the action on staging-db-02 is logged for compliance.",log_compliance_event,confusable_intent,,,inspect_security_alerts
+-1,,This is not just an account update; we need an audit entry for what happened.,log_compliance_event,confusable_intent,,,update_identity_record
+-1,,This is not just an account update; we need an audit entry for what happened.,log_compliance_event,confusable_intent,,,update_identity_record
+-1,,"Investigate if needed, but make sure the action on payment-api-03 is logged for compliance.",log_compliance_event,confusable_intent,,,inspect_security_alerts
+-1,,This is not just an account update; we need an audit entry for what happened.,log_compliance_event,confusable_intent,,,update_identity_record
+-1,,This is not just an account update; we need an audit entry for what happened.,log_compliance_event,confusable_intent,,,update_identity_record
+-1,,"Investigate if needed, but make sure the action on cdn-edge-06 is logged for compliance.",log_compliance_event,confusable_intent,,,inspect_security_alerts
+-1,,This is not just an account update; we need an audit entry for what happened.,log_compliance_event,confusable_intent,,,update_identity_record
+-1,,This is not just an account update; we need an audit entry for what happened.,log_compliance_event,confusable_intent,,,update_identity_record
+-1,,This is not just an account update; we need an audit entry for what happened.,log_compliance_event,confusable_intent,,,update_identity_record
+-1,,This is not just an account update; we need an audit entry for what happened.,log_compliance_event,confusable_intent,,,update_identity_record
+-1,,This is not just an account update; we need an audit entry for what happened.,log_compliance_event,confusable_intent,,,update_identity_record
+-1,,"Investigate if needed, but make sure the action on payment-api-03 is logged for compliance.",log_compliance_event,confusable_intent,,,inspect_security_alerts
+-1,,This is not just an account update; we need an audit entry for what happened.,log_compliance_event,confusable_intent,,,update_identity_record
+-1,,"Investigate if needed, but make sure the action on prod-web-01 is logged for compliance.",log_compliance_event,confusable_intent,,,inspect_security_alerts
+-1,,This is not just an account update; we need an audit entry for what happened.,log_compliance_event,confusable_intent,,,update_identity_record
+-1,,This is not just an account update; we need an audit entry for what happened.,log_compliance_event,confusable_intent,,,update_identity_record
+-1,,"Investigate if needed, but make sure the action on ml-infer-05 is logged for compliance.",log_compliance_event,confusable_intent,,,inspect_security_alerts
+-1,,This is not just an account update; we need an audit entry for what happened.,log_compliance_event,confusable_intent,,,update_identity_record
+-1,,"Investigate if needed, but make sure the action on ml-infer-05 is logged for compliance.",log_compliance_event,confusable_intent,,,inspect_security_alerts
+-1,,This is not a customer outreach task; notify Bob about the permission change.,notify_access_change,confusable_intent,,,send_customer_notification
+-1,,Do not just update the record; tell Charlie that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,This is not a customer outreach task; notify Charlie about the permission change.,notify_access_change,confusable_intent,,,send_customer_notification
+-1,,This is not a customer outreach task; notify Diana about the permission change.,notify_access_change,confusable_intent,,,send_customer_notification
+-1,,Do not just update the record; tell Eve that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,Do not just update the record; tell Frank that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,This is not a customer outreach task; notify Alice about the permission change.,notify_access_change,confusable_intent,,,send_customer_notification
+-1,,This is not a customer outreach task; notify Frank about the permission change.,notify_access_change,confusable_intent,,,send_customer_notification
+-1,,This is not a customer outreach task; notify Grace about the permission change.,notify_access_change,confusable_intent,,,send_customer_notification
+-1,,Do not just update the record; tell Grace that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,Do not just update the record; tell Bob that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,This is not a customer outreach task; notify Eve about the permission change.,notify_access_change,confusable_intent,,,send_customer_notification
+-1,,Do not just update the record; tell Diana that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,Do not just update the record; tell Alice that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,This is not a customer outreach task; notify Eve about the permission change.,notify_access_change,confusable_intent,,,send_customer_notification
+-1,,Do not just update the record; tell Alice that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,This is not a customer outreach task; notify Charlie about the permission change.,notify_access_change,confusable_intent,,,send_customer_notification
+-1,,Do not just update the record; tell Frank that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,Do not just update the record; tell Eve that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,Do not just update the record; tell Grace that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,This is not a customer outreach task; notify Eve about the permission change.,notify_access_change,confusable_intent,,,send_customer_notification
+-1,,Do not just update the record; tell Bob that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,Do not just update the record; tell Grace that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,Do not just update the record; tell Frank that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,Do not just update the record; tell Eve that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,Do not just update the record; tell Charlie that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,Do not just update the record; tell Diana that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,Do not just update the record; tell Alice that the access change happened.,notify_access_change,confusable_intent,,,update_identity_record
+-1,,This is not a customer outreach task; notify Diana about the permission change.,notify_access_change,confusable_intent,,,send_customer_notification
+-1,,This is not a customer outreach task; notify Alice about the permission change.,notify_access_change,confusable_intent,,,send_customer_notification
+-1,,The record update can come later; return the money for order #42017 now.,process_refund,confusable_intent,,,update_customer_record
+-1,,Do not roll a release back; reverse the mistaken customer charge instead.,process_refund,confusable_intent,,,rollback_service_release
+-1,,The record update can come later; return the money for order #31450 now.,process_refund,confusable_intent,,,update_customer_record
+-1,,The record update can come later; return the money for order #20891 now.,process_refund,confusable_intent,,,update_customer_record
+-1,,The record update can come later; return the money for order #53698 now.,process_refund,confusable_intent,,,update_customer_record
+-1,,The record update can come later; return the money for order #60122 now.,process_refund,confusable_intent,,,update_customer_record
+-1,,The record update can come later; return the money for order #10234 now.,process_refund,confusable_intent,,,update_customer_record
+-1,,Do not roll a release back; reverse the mistaken customer charge instead.,process_refund,confusable_intent,,,rollback_service_release
+-1,,Do not roll a release back; reverse the mistaken customer charge instead.,process_refund,confusable_intent,,,rollback_service_release
+-1,,Do not roll a release back; reverse the mistaken customer charge instead.,process_refund,confusable_intent,,,rollback_service_release
+-1,,Do not roll a release back; reverse the mistaken customer charge instead.,process_refund,confusable_intent,,,rollback_service_release
+-1,,The record update can come later; return the money for order #60122 now.,process_refund,confusable_intent,,,update_customer_record
+-1,,Do not roll a release back; reverse the mistaken customer charge instead.,process_refund,confusable_intent,,,rollback_service_release
+-1,,The record update can come later; return the money for order #53698 now.,process_refund,confusable_intent,,,update_customer_record
+-1,,Do not roll a release back; reverse the mistaken customer charge instead.,process_refund,confusable_intent,,,rollback_service_release
+-1,,Do not roll a release back; reverse the mistaken customer charge instead.,process_refund,confusable_intent,,,rollback_service_release
+-1,,Do not roll a release back; reverse the mistaken customer charge instead.,process_refund,confusable_intent,,,rollback_service_release
+-1,,The record update can come later; return the money for order #42017 now.,process_refund,confusable_intent,,,update_customer_record
+-1,,The record update can come later; return the money for order #60122 now.,process_refund,confusable_intent,,,update_customer_record
+-1,,The record update can come later; return the money for order #60122 now.,process_refund,confusable_intent,,,update_customer_record
+-1,,The record update can come later; return the money for order #42017 now.,process_refund,confusable_intent,,,update_customer_record
+-1,,The record update can come later; return the money for order #60122 now.,process_refund,confusable_intent,,,update_customer_record
+-1,,The record update can come later; return the money for order #10234 now.,process_refund,confusable_intent,,,update_customer_record
+-1,,The record update can come later; return the money for order #42017 now.,process_refund,confusable_intent,,,update_customer_record
+-1,,Do not roll a release back; reverse the mistaken customer charge instead.,process_refund,confusable_intent,,,rollback_service_release
+-1,,Do not roll a release back; reverse the mistaken customer charge instead.,process_refund,confusable_intent,,,rollback_service_release
+-1,,Do not roll a release back; reverse the mistaken customer charge instead.,process_refund,confusable_intent,,,rollback_service_release
+-1,,Do not roll a release back; reverse the mistaken customer charge instead.,process_refund,confusable_intent,,,rollback_service_release
+-1,,The record update can come later; return the money for order #31450 now.,process_refund,confusable_intent,,,update_customer_record
+-1,,Do not roll a release back; reverse the mistaken customer charge instead.,process_refund,confusable_intent,,,rollback_service_release
+-1,,Do not roll out an app yet; first get Diana's workspace ready in Engineering.,provision_workspace,confusable_intent,,,deploy_service_release
+-1,,Do not roll out an app yet; first get Bob's workspace ready in Legal.,provision_workspace,confusable_intent,,,deploy_service_release
+-1,,"Open a support case later if needed, but right now Eve needs a workspace for Marketing.",provision_workspace,confusable_intent,,,create_support_ticket
+-1,,"Open a support case later if needed, but right now Charlie needs a workspace for Marketing.",provision_workspace,confusable_intent,,,create_support_ticket
+-1,,"Open a support case later if needed, but right now Charlie needs a workspace for HR.",provision_workspace,confusable_intent,,,create_support_ticket
+-1,,Do not roll out an app yet; first get Bob's workspace ready in Marketing.,provision_workspace,confusable_intent,,,deploy_service_release
+-1,,"Open a support case later if needed, but right now Grace needs a workspace for Marketing.",provision_workspace,confusable_intent,,,create_support_ticket
+-1,,"Open a support case later if needed, but right now Diana needs a workspace for Legal.",provision_workspace,confusable_intent,,,create_support_ticket
+-1,,Do not roll out an app yet; first get Alice's workspace ready in Legal.,provision_workspace,confusable_intent,,,deploy_service_release
+-1,,"Open a support case later if needed, but right now Bob needs a workspace for Engineering.",provision_workspace,confusable_intent,,,create_support_ticket
+-1,,Do not roll out an app yet; first get Frank's workspace ready in Finance.,provision_workspace,confusable_intent,,,deploy_service_release
+-1,,"Open a support case later if needed, but right now Alice needs a workspace for Finance.",provision_workspace,confusable_intent,,,create_support_ticket
+-1,,"Open a support case later if needed, but right now Frank needs a workspace for HR.",provision_workspace,confusable_intent,,,create_support_ticket
+-1,,Do not roll out an app yet; first get Grace's workspace ready in Legal.,provision_workspace,confusable_intent,,,deploy_service_release
+-1,,Do not roll out an app yet; first get Charlie's workspace ready in Marketing.,provision_workspace,confusable_intent,,,deploy_service_release
+-1,,Do not roll out an app yet; first get Bob's workspace ready in Finance.,provision_workspace,confusable_intent,,,deploy_service_release
+-1,,Do not roll out an app yet; first get Diana's workspace ready in HR.,provision_workspace,confusable_intent,,,deploy_service_release
+-1,,"Open a support case later if needed, but right now Bob needs a workspace for Legal.",provision_workspace,confusable_intent,,,create_support_ticket
+-1,,Do not roll out an app yet; first get Frank's workspace ready in Marketing.,provision_workspace,confusable_intent,,,deploy_service_release
+-1,,Do not roll out an app yet; first get Alice's workspace ready in Engineering.,provision_workspace,confusable_intent,,,deploy_service_release
+-1,,"Open a support case later if needed, but right now Frank needs a workspace for Marketing.",provision_workspace,confusable_intent,,,create_support_ticket
+-1,,"Open a support case later if needed, but right now Grace needs a workspace for Engineering.",provision_workspace,confusable_intent,,,create_support_ticket
+-1,,"Open a support case later if needed, but right now Bob needs a workspace for HR.",provision_workspace,confusable_intent,,,create_support_ticket
+-1,,"Open a support case later if needed, but right now Charlie needs a workspace for Finance.",provision_workspace,confusable_intent,,,create_support_ticket
+-1,,"Open a support case later if needed, but right now Diana needs a workspace for Finance.",provision_workspace,confusable_intent,,,create_support_ticket
+-1,,"Open a support case later if needed, but right now Bob needs a workspace for Finance.",provision_workspace,confusable_intent,,,create_support_ticket
+-1,,"Open a support case later if needed, but right now Diana needs a workspace for Marketing.",provision_workspace,confusable_intent,,,create_support_ticket
+-1,,"Open a support case later if needed, but right now Eve needs a workspace for HR.",provision_workspace,confusable_intent,,,create_support_ticket
+-1,,Do not roll out an app yet; first get Frank's workspace ready in Engineering.,provision_workspace,confusable_intent,,,deploy_service_release
+-1,,Do not roll out an app yet; first get Charlie's workspace ready in Legal.,provision_workspace,confusable_intent,,,deploy_service_release
+-1,,"The alerts matter, but the immediate need is to isolate prod-web-01.",quarantine_endpoint,confusable_intent,,,inspect_security_alerts
+-1,,Do not just restart payment-api-03; contain it from the rest of the environment.,quarantine_endpoint,confusable_intent,,,restart_service
+-1,,"The alerts matter, but the immediate need is to isolate auth-svc-04.",quarantine_endpoint,confusable_intent,,,inspect_security_alerts
+-1,,Do not just restart cdn-edge-06; contain it from the rest of the environment.,quarantine_endpoint,confusable_intent,,,restart_service
+-1,,"The alerts matter, but the immediate need is to isolate cdn-edge-06.",quarantine_endpoint,confusable_intent,,,inspect_security_alerts
+-1,,"The alerts matter, but the immediate need is to isolate ml-infer-05.",quarantine_endpoint,confusable_intent,,,inspect_security_alerts
+-1,,"The alerts matter, but the immediate need is to isolate payment-api-03.",quarantine_endpoint,confusable_intent,,,inspect_security_alerts
+-1,,Do not just restart auth-svc-04; contain it from the rest of the environment.,quarantine_endpoint,confusable_intent,,,restart_service
+-1,,"The alerts matter, but the immediate need is to isolate staging-db-02.",quarantine_endpoint,confusable_intent,,,inspect_security_alerts
+-1,,Do not just restart prod-web-01; contain it from the rest of the environment.,quarantine_endpoint,confusable_intent,,,restart_service
+-1,,Do not just restart ml-infer-05; contain it from the rest of the environment.,quarantine_endpoint,confusable_intent,,,restart_service
+-1,,Do not just restart staging-db-02; contain it from the rest of the environment.,quarantine_endpoint,confusable_intent,,,restart_service
+-1,,Do not just restart ml-infer-05; contain it from the rest of the environment.,quarantine_endpoint,confusable_intent,,,restart_service
+-1,,"The alerts matter, but the immediate need is to isolate cdn-edge-06.",quarantine_endpoint,confusable_intent,,,inspect_security_alerts
+-1,,"The alerts matter, but the immediate need is to isolate auth-svc-04.",quarantine_endpoint,confusable_intent,,,inspect_security_alerts
+-1,,"The alerts matter, but the immediate need is to isolate staging-db-02.",quarantine_endpoint,confusable_intent,,,inspect_security_alerts
+-1,,Do not just restart auth-svc-04; contain it from the rest of the environment.,quarantine_endpoint,confusable_intent,,,restart_service
+-1,,"The alerts matter, but the immediate need is to isolate auth-svc-04.",quarantine_endpoint,confusable_intent,,,inspect_security_alerts
+-1,,Do not just restart auth-svc-04; contain it from the rest of the environment.,quarantine_endpoint,confusable_intent,,,restart_service
+-1,,"The alerts matter, but the immediate need is to isolate auth-svc-04.",quarantine_endpoint,confusable_intent,,,inspect_security_alerts
+-1,,Do not just restart prod-web-01; contain it from the rest of the environment.,quarantine_endpoint,confusable_intent,,,restart_service
+-1,,"The alerts matter, but the immediate need is to isolate auth-svc-04.",quarantine_endpoint,confusable_intent,,,inspect_security_alerts
+-1,,Do not just restart ml-infer-05; contain it from the rest of the environment.,quarantine_endpoint,confusable_intent,,,restart_service
+-1,,Do not just restart payment-api-03; contain it from the rest of the environment.,quarantine_endpoint,confusable_intent,,,restart_service
+-1,,Do not just restart auth-svc-04; contain it from the rest of the environment.,quarantine_endpoint,confusable_intent,,,restart_service
+-1,,"The alerts matter, but the immediate need is to isolate prod-web-01.",quarantine_endpoint,confusable_intent,,,inspect_security_alerts
+-1,,"The alerts matter, but the immediate need is to isolate prod-web-01.",quarantine_endpoint,confusable_intent,,,inspect_security_alerts
+-1,,Do not just restart payment-api-03; contain it from the rest of the environment.,quarantine_endpoint,confusable_intent,,,restart_service
+-1,,Do not just restart staging-db-02; contain it from the rest of the environment.,quarantine_endpoint,confusable_intent,,,restart_service
+-1,,"The alerts matter, but the immediate need is to isolate prod-web-01.",quarantine_endpoint,confusable_intent,,,inspect_security_alerts
+-1,,This is not a compliance record; write the note that documents the rollout.,record_release_note,confusable_intent,,,log_compliance_event
+-1,,The readiness check can wait; what we need now is a release note.,record_release_note,confusable_intent,,,validate_release_readiness
+-1,,The readiness check can wait; what we need now is a release note.,record_release_note,confusable_intent,,,validate_release_readiness
+-1,,The readiness check can wait; what we need now is a release note.,record_release_note,confusable_intent,,,validate_release_readiness
+-1,,This is not a compliance record; write the note that documents the rollout.,record_release_note,confusable_intent,,,log_compliance_event
+-1,,This is not a compliance record; write the note that documents the rollout.,record_release_note,confusable_intent,,,log_compliance_event
+-1,,This is not a compliance record; write the note that documents the rollout.,record_release_note,confusable_intent,,,log_compliance_event
+-1,,The readiness check can wait; what we need now is a release note.,record_release_note,confusable_intent,,,validate_release_readiness
+-1,,The readiness check can wait; what we need now is a release note.,record_release_note,confusable_intent,,,validate_release_readiness
+-1,,This is not a compliance record; write the note that documents the rollout.,record_release_note,confusable_intent,,,log_compliance_event
+-1,,The readiness check can wait; what we need now is a release note.,record_release_note,confusable_intent,,,validate_release_readiness
+-1,,This is not a compliance record; write the note that documents the rollout.,record_release_note,confusable_intent,,,log_compliance_event
+-1,,This is not a compliance record; write the note that documents the rollout.,record_release_note,confusable_intent,,,log_compliance_event
+-1,,This is not a compliance record; write the note that documents the rollout.,record_release_note,confusable_intent,,,log_compliance_event
+-1,,This is not a compliance record; write the note that documents the rollout.,record_release_note,confusable_intent,,,log_compliance_event
+-1,,This is not a compliance record; write the note that documents the rollout.,record_release_note,confusable_intent,,,log_compliance_event
+-1,,This is not a compliance record; write the note that documents the rollout.,record_release_note,confusable_intent,,,log_compliance_event
+-1,,The readiness check can wait; what we need now is a release note.,record_release_note,confusable_intent,,,validate_release_readiness
+-1,,The readiness check can wait; what we need now is a release note.,record_release_note,confusable_intent,,,validate_release_readiness
+-1,,This is not a compliance record; write the note that documents the rollout.,record_release_note,confusable_intent,,,log_compliance_event
+-1,,This is not a compliance record; write the note that documents the rollout.,record_release_note,confusable_intent,,,log_compliance_event
+-1,,The readiness check can wait; what we need now is a release note.,record_release_note,confusable_intent,,,validate_release_readiness
+-1,,The readiness check can wait; what we need now is a release note.,record_release_note,confusable_intent,,,validate_release_readiness
+-1,,The readiness check can wait; what we need now is a release note.,record_release_note,confusable_intent,,,validate_release_readiness
+-1,,The readiness check can wait; what we need now is a release note.,record_release_note,confusable_intent,,,validate_release_readiness
+-1,,The readiness check can wait; what we need now is a release note.,record_release_note,confusable_intent,,,validate_release_readiness
+-1,,This is not a compliance record; write the note that documents the rollout.,record_release_note,confusable_intent,,,log_compliance_event
+-1,,This is not a compliance record; write the note that documents the rollout.,record_release_note,confusable_intent,,,log_compliance_event
+-1,,The readiness check can wait; what we need now is a release note.,record_release_note,confusable_intent,,,validate_release_readiness
+-1,,The readiness check can wait; what we need now is a release note.,record_release_note,confusable_intent,,,validate_release_readiness
+-1,,"Track the issue if you want, but Grace mainly needs help getting back into the system.",reset_user_password,confusable_intent,,,create_support_ticket
+-1,,"Track the issue if you want, but Diana mainly needs help getting back into the system.",reset_user_password,confusable_intent,,,create_support_ticket
+-1,,The approval can wait; first fix Eve's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,"Track the issue if you want, but Eve mainly needs help getting back into the system.",reset_user_password,confusable_intent,,,create_support_ticket
+-1,,The approval can wait; first fix Bob's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,"Track the issue if you want, but Charlie mainly needs help getting back into the system.",reset_user_password,confusable_intent,,,create_support_ticket
+-1,,The approval can wait; first fix Diana's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,"Track the issue if you want, but Bob mainly needs help getting back into the system.",reset_user_password,confusable_intent,,,create_support_ticket
+-1,,The approval can wait; first fix Frank's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,The approval can wait; first fix Grace's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,"Track the issue if you want, but Frank mainly needs help getting back into the system.",reset_user_password,confusable_intent,,,create_support_ticket
+-1,,"Track the issue if you want, but Alice mainly needs help getting back into the system.",reset_user_password,confusable_intent,,,create_support_ticket
+-1,,The approval can wait; first fix Charlie's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,The approval can wait; first fix Alice's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,The approval can wait; first fix Eve's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,The approval can wait; first fix Alice's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,The approval can wait; first fix Grace's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,The approval can wait; first fix Alice's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,The approval can wait; first fix Alice's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,The approval can wait; first fix Charlie's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,The approval can wait; first fix Diana's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,The approval can wait; first fix Grace's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,The approval can wait; first fix Bob's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,The approval can wait; first fix Alice's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,"Track the issue if you want, but Diana mainly needs help getting back into the system.",reset_user_password,confusable_intent,,,create_support_ticket
+-1,,The approval can wait; first fix Grace's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,The approval can wait; first fix Alice's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,The approval can wait; first fix Diana's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,The approval can wait; first fix Bob's sign-in problem.,reset_user_password,confusable_intent,,,approve_access_request
+-1,,"Track the issue if you want, but Bob mainly needs help getting back into the system.",reset_user_password,confusable_intent,,,create_support_ticket
+-1,,Do not just report on prod-web-01; bring the service back for Finance.,restart_service,confusable_intent,,,check_service_status
+-1,,"If isolation is unnecessary, just get the service on cdn-edge-06 running again.",restart_service,confusable_intent,,,quarantine_endpoint
+-1,,Do not just report on cdn-edge-06; bring the service back for Engineering.,restart_service,confusable_intent,,,check_service_status
+-1,,Do not just report on payment-api-03; bring the service back for Marketing.,restart_service,confusable_intent,,,check_service_status
+-1,,Do not just report on payment-api-03; bring the service back for Engineering.,restart_service,confusable_intent,,,check_service_status
+-1,,Do not just report on staging-db-02; bring the service back for Engineering.,restart_service,confusable_intent,,,check_service_status
+-1,,Do not just report on cdn-edge-06; bring the service back for Legal.,restart_service,confusable_intent,,,check_service_status
+-1,,Do not just report on auth-svc-04; bring the service back for HR.,restart_service,confusable_intent,,,check_service_status
+-1,,"If isolation is unnecessary, just get the service on auth-svc-04 running again.",restart_service,confusable_intent,,,quarantine_endpoint
+-1,,Do not just report on ml-infer-05; bring the service back for Finance.,restart_service,confusable_intent,,,check_service_status
+-1,,Do not just report on staging-db-02; bring the service back for Marketing.,restart_service,confusable_intent,,,check_service_status
+-1,,"If isolation is unnecessary, just get the service on ml-infer-05 running again.",restart_service,confusable_intent,,,quarantine_endpoint
+-1,,Do not just report on prod-web-01; bring the service back for Engineering.,restart_service,confusable_intent,,,check_service_status
+-1,,"If isolation is unnecessary, just get the service on staging-db-02 running again.",restart_service,confusable_intent,,,quarantine_endpoint
+-1,,Do not just report on auth-svc-04; bring the service back for Engineering.,restart_service,confusable_intent,,,check_service_status
+-1,,Do not just report on ml-infer-05; bring the service back for Marketing.,restart_service,confusable_intent,,,check_service_status
+-1,,Do not just report on prod-web-01; bring the service back for HR.,restart_service,confusable_intent,,,check_service_status
+-1,,Do not just report on staging-db-02; bring the service back for Finance.,restart_service,confusable_intent,,,check_service_status
+-1,,Do not just report on payment-api-03; bring the service back for HR.,restart_service,confusable_intent,,,check_service_status
+-1,,Do not just report on staging-db-02; bring the service back for Legal.,restart_service,confusable_intent,,,check_service_status
+-1,,"If isolation is unnecessary, just get the service on payment-api-03 running again.",restart_service,confusable_intent,,,quarantine_endpoint
+-1,,Do not just report on staging-db-02; bring the service back for HR.,restart_service,confusable_intent,,,check_service_status
+-1,,Do not just report on ml-infer-05; bring the service back for Engineering.,restart_service,confusable_intent,,,check_service_status
+-1,,"If isolation is unnecessary, just get the service on prod-web-01 running again.",restart_service,confusable_intent,,,quarantine_endpoint
+-1,,Do not just report on payment-api-03; bring the service back for Legal.,restart_service,confusable_intent,,,check_service_status
+-1,,Do not just report on auth-svc-04; bring the service back for Finance.,restart_service,confusable_intent,,,check_service_status
+-1,,Do not just report on prod-web-01; bring the service back for Legal.,restart_service,confusable_intent,,,check_service_status
+-1,,Do not just report on auth-svc-04; bring the service back for Marketing.,restart_service,confusable_intent,,,check_service_status
+-1,,Do not just report on auth-svc-04; bring the service back for Legal.,restart_service,confusable_intent,,,check_service_status
+-1,,Do not just report on cdn-edge-06; bring the service back for Finance.,restart_service,confusable_intent,,,check_service_status
+-1,,This is not an approval question anymore; shut Grace out of the system.,revoke_system_access,confusable_intent,,,approve_access_request
+-1,,This is not an approval question anymore; shut Alice out of the system.,revoke_system_access,confusable_intent,,,approve_access_request
+-1,,This is not an approval question anymore; shut Diana out of the system.,revoke_system_access,confusable_intent,,,approve_access_request
+-1,,Do not isolate the machine; remove Frank's access instead.,revoke_system_access,confusable_intent,,,quarantine_endpoint
+-1,,Do not isolate the machine; remove Charlie's access instead.,revoke_system_access,confusable_intent,,,quarantine_endpoint
+-1,,Do not isolate the machine; remove Alice's access instead.,revoke_system_access,confusable_intent,,,quarantine_endpoint
+-1,,This is not an approval question anymore; shut Charlie out of the system.,revoke_system_access,confusable_intent,,,approve_access_request
+-1,,Do not isolate the machine; remove Grace's access instead.,revoke_system_access,confusable_intent,,,quarantine_endpoint
+-1,,This is not an approval question anymore; shut Bob out of the system.,revoke_system_access,confusable_intent,,,approve_access_request
+-1,,This is not an approval question anymore; shut Frank out of the system.,revoke_system_access,confusable_intent,,,approve_access_request
+-1,,Do not isolate the machine; remove Eve's access instead.,revoke_system_access,confusable_intent,,,quarantine_endpoint
+-1,,Do not isolate the machine; remove Diana's access instead.,revoke_system_access,confusable_intent,,,quarantine_endpoint
+-1,,This is not an approval question anymore; shut Eve out of the system.,revoke_system_access,confusable_intent,,,approve_access_request
+-1,,Do not isolate the machine; remove Bob's access instead.,revoke_system_access,confusable_intent,,,quarantine_endpoint
+-1,,This is not an approval question anymore; shut Alice out of the system.,revoke_system_access,confusable_intent,,,approve_access_request
+-1,,Do not isolate the machine; remove Eve's access instead.,revoke_system_access,confusable_intent,,,quarantine_endpoint
+-1,,This is not an approval question anymore; shut Eve out of the system.,revoke_system_access,confusable_intent,,,approve_access_request
+-1,,This is not an approval question anymore; shut Grace out of the system.,revoke_system_access,confusable_intent,,,approve_access_request
+-1,,Do not isolate the machine; remove Bob's access instead.,revoke_system_access,confusable_intent,,,quarantine_endpoint
+-1,,This is not an approval question anymore; shut Bob out of the system.,revoke_system_access,confusable_intent,,,approve_access_request
+-1,,Do not isolate the machine; remove Alice's access instead.,revoke_system_access,confusable_intent,,,quarantine_endpoint
+-1,,This is not an approval question anymore; shut Diana out of the system.,revoke_system_access,confusable_intent,,,approve_access_request
+-1,,Do not isolate the machine; remove Bob's access instead.,revoke_system_access,confusable_intent,,,quarantine_endpoint
+-1,,Do not isolate the machine; remove Diana's access instead.,revoke_system_access,confusable_intent,,,quarantine_endpoint
+-1,,This is not an approval question anymore; shut Alice out of the system.,revoke_system_access,confusable_intent,,,approve_access_request
+-1,,This is not an approval question anymore; shut Diana out of the system.,revoke_system_access,confusable_intent,,,approve_access_request
+-1,,This is not an approval question anymore; shut Grace out of the system.,revoke_system_access,confusable_intent,,,approve_access_request
+-1,,This is not an approval question anymore; shut Diana out of the system.,revoke_system_access,confusable_intent,,,approve_access_request
+-1,,Do not isolate the machine; remove Diana's access instead.,revoke_system_access,confusable_intent,,,quarantine_endpoint
+-1,,Do not isolate the machine; remove Charlie's access instead.,revoke_system_access,confusable_intent,,,quarantine_endpoint
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,"If failover is unnecessary, just undo the release.",rollback_service_release,confusable_intent,,,trigger_failover
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,"If failover is unnecessary, just undo the release.",rollback_service_release,confusable_intent,,,trigger_failover
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,"If failover is unnecessary, just undo the release.",rollback_service_release,confusable_intent,,,trigger_failover
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,"If failover is unnecessary, just undo the release.",rollback_service_release,confusable_intent,,,trigger_failover
+-1,,"If failover is unnecessary, just undo the release.",rollback_service_release,confusable_intent,,,trigger_failover
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,"If failover is unnecessary, just undo the release.",rollback_service_release,confusable_intent,,,trigger_failover
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,"If failover is unnecessary, just undo the release.",rollback_service_release,confusable_intent,,,trigger_failover
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,"If failover is unnecessary, just undo the release.",rollback_service_release,confusable_intent,,,trigger_failover
+-1,,"If failover is unnecessary, just undo the release.",rollback_service_release,confusable_intent,,,trigger_failover
+-1,,"If failover is unnecessary, just undo the release.",rollback_service_release,confusable_intent,,,trigger_failover
+-1,,"If failover is unnecessary, just undo the release.",rollback_service_release,confusable_intent,,,trigger_failover
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,"If failover is unnecessary, just undo the release.",rollback_service_release,confusable_intent,,,trigger_failover
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,This is not a new deployment; take the service back to the previous version.,rollback_service_release,confusable_intent,,,deploy_service_release
+-1,,Do not just adjust capacity yet; first stress the service and see how it behaves.,run_load_test,confusable_intent,,,scale_service_capacity
+-1,,This is not a launch-readiness question; I need the service load-tested.,run_load_test,confusable_intent,,,validate_release_readiness
+-1,,This is not a launch-readiness question; I need the service load-tested.,run_load_test,confusable_intent,,,validate_release_readiness
+-1,,This is not a launch-readiness question; I need the service load-tested.,run_load_test,confusable_intent,,,validate_release_readiness
+-1,,This is not a launch-readiness question; I need the service load-tested.,run_load_test,confusable_intent,,,validate_release_readiness
+-1,,Do not just adjust capacity yet; first stress the service and see how it behaves.,run_load_test,confusable_intent,,,scale_service_capacity
+-1,,Do not just adjust capacity yet; first stress the service and see how it behaves.,run_load_test,confusable_intent,,,scale_service_capacity
+-1,,This is not a launch-readiness question; I need the service load-tested.,run_load_test,confusable_intent,,,validate_release_readiness
+-1,,This is not a launch-readiness question; I need the service load-tested.,run_load_test,confusable_intent,,,validate_release_readiness
+-1,,Do not just adjust capacity yet; first stress the service and see how it behaves.,run_load_test,confusable_intent,,,scale_service_capacity
+-1,,Do not just adjust capacity yet; first stress the service and see how it behaves.,run_load_test,confusable_intent,,,scale_service_capacity
+-1,,This is not a launch-readiness question; I need the service load-tested.,run_load_test,confusable_intent,,,validate_release_readiness
+-1,,This is not a launch-readiness question; I need the service load-tested.,run_load_test,confusable_intent,,,validate_release_readiness
+-1,,This is not a launch-readiness question; I need the service load-tested.,run_load_test,confusable_intent,,,validate_release_readiness
+-1,,This is not a launch-readiness question; I need the service load-tested.,run_load_test,confusable_intent,,,validate_release_readiness
+-1,,Do not just adjust capacity yet; first stress the service and see how it behaves.,run_load_test,confusable_intent,,,scale_service_capacity
+-1,,Do not just adjust capacity yet; first stress the service and see how it behaves.,run_load_test,confusable_intent,,,scale_service_capacity
+-1,,Do not just adjust capacity yet; first stress the service and see how it behaves.,run_load_test,confusable_intent,,,scale_service_capacity
+-1,,Do not just adjust capacity yet; first stress the service and see how it behaves.,run_load_test,confusable_intent,,,scale_service_capacity
+-1,,Do not just adjust capacity yet; first stress the service and see how it behaves.,run_load_test,confusable_intent,,,scale_service_capacity
+-1,,This is not a launch-readiness question; I need the service load-tested.,run_load_test,confusable_intent,,,validate_release_readiness
+-1,,This is not a launch-readiness question; I need the service load-tested.,run_load_test,confusable_intent,,,validate_release_readiness
+-1,,This is not a launch-readiness question; I need the service load-tested.,run_load_test,confusable_intent,,,validate_release_readiness
+-1,,Do not just adjust capacity yet; first stress the service and see how it behaves.,run_load_test,confusable_intent,,,scale_service_capacity
+-1,,This is not a launch-readiness question; I need the service load-tested.,run_load_test,confusable_intent,,,validate_release_readiness
+-1,,Do not just adjust capacity yet; first stress the service and see how it behaves.,run_load_test,confusable_intent,,,scale_service_capacity
+-1,,Do not just adjust capacity yet; first stress the service and see how it behaves.,run_load_test,confusable_intent,,,scale_service_capacity
+-1,,Do not just adjust capacity yet; first stress the service and see how it behaves.,run_load_test,confusable_intent,,,scale_service_capacity
+-1,,Do not just adjust capacity yet; first stress the service and see how it behaves.,run_load_test,confusable_intent,,,scale_service_capacity
+-1,,This is not a launch-readiness question; I need the service load-tested.,run_load_test,confusable_intent,,,validate_release_readiness
+-1,,The maintenance schedule can wait; increase capacity on the service now.,scale_service_capacity,confusable_intent,,,schedule_maintenance_window
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,The maintenance schedule can wait; increase capacity on the service now.,scale_service_capacity,confusable_intent,,,schedule_maintenance_window
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,The maintenance schedule can wait; increase capacity on the service now.,scale_service_capacity,confusable_intent,,,schedule_maintenance_window
+-1,,The maintenance schedule can wait; increase capacity on the service now.,scale_service_capacity,confusable_intent,,,schedule_maintenance_window
+-1,,The maintenance schedule can wait; increase capacity on the service now.,scale_service_capacity,confusable_intent,,,schedule_maintenance_window
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,The maintenance schedule can wait; increase capacity on the service now.,scale_service_capacity,confusable_intent,,,schedule_maintenance_window
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,The maintenance schedule can wait; increase capacity on the service now.,scale_service_capacity,confusable_intent,,,schedule_maintenance_window
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,The maintenance schedule can wait; increase capacity on the service now.,scale_service_capacity,confusable_intent,,,schedule_maintenance_window
+-1,,The maintenance schedule can wait; increase capacity on the service now.,scale_service_capacity,confusable_intent,,,schedule_maintenance_window
+-1,,The maintenance schedule can wait; increase capacity on the service now.,scale_service_capacity,confusable_intent,,,schedule_maintenance_window
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,The maintenance schedule can wait; increase capacity on the service now.,scale_service_capacity,confusable_intent,,,schedule_maintenance_window
+-1,,This is not a customer-record edit; adjust the service footprint instead.,scale_service_capacity,confusable_intent,,,update_customer_record
+-1,,Do not send an access update; schedule downtime for the service instead.,schedule_maintenance_window,confusable_intent,,,notify_access_change
+-1,,"Test later if you want, but first put a maintenance window on the calendar.",schedule_maintenance_window,confusable_intent,,,run_load_test
+-1,,"Test later if you want, but first put a maintenance window on the calendar.",schedule_maintenance_window,confusable_intent,,,run_load_test
+-1,,Do not send an access update; schedule downtime for the service instead.,schedule_maintenance_window,confusable_intent,,,notify_access_change
+-1,,Do not send an access update; schedule downtime for the service instead.,schedule_maintenance_window,confusable_intent,,,notify_access_change
+-1,,"Test later if you want, but first put a maintenance window on the calendar.",schedule_maintenance_window,confusable_intent,,,run_load_test
+-1,,Do not send an access update; schedule downtime for the service instead.,schedule_maintenance_window,confusable_intent,,,notify_access_change
+-1,,Do not send an access update; schedule downtime for the service instead.,schedule_maintenance_window,confusable_intent,,,notify_access_change
+-1,,Do not send an access update; schedule downtime for the service instead.,schedule_maintenance_window,confusable_intent,,,notify_access_change
+-1,,Do not send an access update; schedule downtime for the service instead.,schedule_maintenance_window,confusable_intent,,,notify_access_change
+-1,,"Test later if you want, but first put a maintenance window on the calendar.",schedule_maintenance_window,confusable_intent,,,run_load_test
+-1,,Do not send an access update; schedule downtime for the service instead.,schedule_maintenance_window,confusable_intent,,,notify_access_change
+-1,,Do not send an access update; schedule downtime for the service instead.,schedule_maintenance_window,confusable_intent,,,notify_access_change
+-1,,"Test later if you want, but first put a maintenance window on the calendar.",schedule_maintenance_window,confusable_intent,,,run_load_test
+-1,,"Test later if you want, but first put a maintenance window on the calendar.",schedule_maintenance_window,confusable_intent,,,run_load_test
+-1,,"Test later if you want, but first put a maintenance window on the calendar.",schedule_maintenance_window,confusable_intent,,,run_load_test
+-1,,Do not send an access update; schedule downtime for the service instead.,schedule_maintenance_window,confusable_intent,,,notify_access_change
+-1,,"Test later if you want, but first put a maintenance window on the calendar.",schedule_maintenance_window,confusable_intent,,,run_load_test
+-1,,"Test later if you want, but first put a maintenance window on the calendar.",schedule_maintenance_window,confusable_intent,,,run_load_test
+-1,,Do not send an access update; schedule downtime for the service instead.,schedule_maintenance_window,confusable_intent,,,notify_access_change
+-1,,Do not send an access update; schedule downtime for the service instead.,schedule_maintenance_window,confusable_intent,,,notify_access_change
+-1,,Do not send an access update; schedule downtime for the service instead.,schedule_maintenance_window,confusable_intent,,,notify_access_change
+-1,,Do not send an access update; schedule downtime for the service instead.,schedule_maintenance_window,confusable_intent,,,notify_access_change
+-1,,Do not send an access update; schedule downtime for the service instead.,schedule_maintenance_window,confusable_intent,,,notify_access_change
+-1,,"Test later if you want, but first put a maintenance window on the calendar.",schedule_maintenance_window,confusable_intent,,,run_load_test
+-1,,"Test later if you want, but first put a maintenance window on the calendar.",schedule_maintenance_window,confusable_intent,,,run_load_test
+-1,,"Test later if you want, but first put a maintenance window on the calendar.",schedule_maintenance_window,confusable_intent,,,run_load_test
+-1,,Do not send an access update; schedule downtime for the service instead.,schedule_maintenance_window,confusable_intent,,,notify_access_change
+-1,,"Test later if you want, but first put a maintenance window on the calendar.",schedule_maintenance_window,confusable_intent,,,run_load_test
+-1,,"Test later if you want, but first put a maintenance window on the calendar.",schedule_maintenance_window,confusable_intent,,,run_load_test
+-1,,This is not an access-update notice; send the customer-facing message now.,send_customer_notification,confusable_intent,,,notify_access_change
+-1,,"Archive it later if you want, but the customer needs to be told first.",send_customer_notification,confusable_intent,,,archive_customer_data
+-1,,"Archive it later if you want, but the customer needs to be told first.",send_customer_notification,confusable_intent,,,archive_customer_data
+-1,,This is not an access-update notice; send the customer-facing message now.,send_customer_notification,confusable_intent,,,notify_access_change
+-1,,This is not an access-update notice; send the customer-facing message now.,send_customer_notification,confusable_intent,,,notify_access_change
+-1,,This is not an access-update notice; send the customer-facing message now.,send_customer_notification,confusable_intent,,,notify_access_change
+-1,,This is not an access-update notice; send the customer-facing message now.,send_customer_notification,confusable_intent,,,notify_access_change
+-1,,"Archive it later if you want, but the customer needs to be told first.",send_customer_notification,confusable_intent,,,archive_customer_data
+-1,,This is not an access-update notice; send the customer-facing message now.,send_customer_notification,confusable_intent,,,notify_access_change
+-1,,This is not an access-update notice; send the customer-facing message now.,send_customer_notification,confusable_intent,,,notify_access_change
+-1,,This is not an access-update notice; send the customer-facing message now.,send_customer_notification,confusable_intent,,,notify_access_change
+-1,,This is not an access-update notice; send the customer-facing message now.,send_customer_notification,confusable_intent,,,notify_access_change
+-1,,"Archive it later if you want, but the customer needs to be told first.",send_customer_notification,confusable_intent,,,archive_customer_data
+-1,,"Archive it later if you want, but the customer needs to be told first.",send_customer_notification,confusable_intent,,,archive_customer_data
+-1,,"Archive it later if you want, but the customer needs to be told first.",send_customer_notification,confusable_intent,,,archive_customer_data
+-1,,"Archive it later if you want, but the customer needs to be told first.",send_customer_notification,confusable_intent,,,archive_customer_data
+-1,,"Archive it later if you want, but the customer needs to be told first.",send_customer_notification,confusable_intent,,,archive_customer_data
+-1,,This is not an access-update notice; send the customer-facing message now.,send_customer_notification,confusable_intent,,,notify_access_change
+-1,,This is not an access-update notice; send the customer-facing message now.,send_customer_notification,confusable_intent,,,notify_access_change
+-1,,"Archive it later if you want, but the customer needs to be told first.",send_customer_notification,confusable_intent,,,archive_customer_data
+-1,,This is not an access-update notice; send the customer-facing message now.,send_customer_notification,confusable_intent,,,notify_access_change
+-1,,"Archive it later if you want, but the customer needs to be told first.",send_customer_notification,confusable_intent,,,archive_customer_data
+-1,,This is not an access-update notice; send the customer-facing message now.,send_customer_notification,confusable_intent,,,notify_access_change
+-1,,"Archive it later if you want, but the customer needs to be told first.",send_customer_notification,confusable_intent,,,archive_customer_data
+-1,,This is not an access-update notice; send the customer-facing message now.,send_customer_notification,confusable_intent,,,notify_access_change
+-1,,"Archive it later if you want, but the customer needs to be told first.",send_customer_notification,confusable_intent,,,archive_customer_data
+-1,,"Archive it later if you want, but the customer needs to be told first.",send_customer_notification,confusable_intent,,,archive_customer_data
+-1,,This is not an access-update notice; send the customer-facing message now.,send_customer_notification,confusable_intent,,,notify_access_change
+-1,,This is not an access-update notice; send the customer-facing message now.,send_customer_notification,confusable_intent,,,notify_access_change
+-1,,This is not an access-update notice; send the customer-facing message now.,send_customer_notification,confusable_intent,,,notify_access_change
+-1,,"Before failing over, capture the current state of ml-infer-05.",snapshot_system_state,confusable_intent,,,trigger_failover
+-1,,"Before failing over, capture the current state of staging-db-02.",snapshot_system_state,confusable_intent,,,trigger_failover
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,"Before failing over, capture the current state of auth-svc-04.",snapshot_system_state,confusable_intent,,,trigger_failover
+-1,,"Before failing over, capture the current state of prod-web-01.",snapshot_system_state,confusable_intent,,,trigger_failover
+-1,,"Before failing over, capture the current state of payment-api-03.",snapshot_system_state,confusable_intent,,,trigger_failover
+-1,,"Before failing over, capture the current state of cdn-edge-06.",snapshot_system_state,confusable_intent,,,trigger_failover
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,"Before failing over, capture the current state of cdn-edge-06.",snapshot_system_state,confusable_intent,,,trigger_failover
+-1,,"Before failing over, capture the current state of cdn-edge-06.",snapshot_system_state,confusable_intent,,,trigger_failover
+-1,,"Before failing over, capture the current state of prod-web-01.",snapshot_system_state,confusable_intent,,,trigger_failover
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,"Before failing over, capture the current state of cdn-edge-06.",snapshot_system_state,confusable_intent,,,trigger_failover
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,"Before failing over, capture the current state of cdn-edge-06.",snapshot_system_state,confusable_intent,,,trigger_failover
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,This is not a release note; take a system snapshot first.,snapshot_system_state,confusable_intent,,,record_release_note
+-1,,Capture the state later; switch to the standby system now.,trigger_failover,confusable_intent,,,snapshot_system_state
+-1,,This is not just a rollout reversal; move the workload to backup.,trigger_failover,confusable_intent,,,rollback_service_release
+-1,,Capture the state later; switch to the standby system now.,trigger_failover,confusable_intent,,,snapshot_system_state
+-1,,This is not just a rollout reversal; move the workload to backup.,trigger_failover,confusable_intent,,,rollback_service_release
+-1,,This is not just a rollout reversal; move the workload to backup.,trigger_failover,confusable_intent,,,rollback_service_release
+-1,,This is not just a rollout reversal; move the workload to backup.,trigger_failover,confusable_intent,,,rollback_service_release
+-1,,Capture the state later; switch to the standby system now.,trigger_failover,confusable_intent,,,snapshot_system_state
+-1,,Capture the state later; switch to the standby system now.,trigger_failover,confusable_intent,,,snapshot_system_state
+-1,,Capture the state later; switch to the standby system now.,trigger_failover,confusable_intent,,,snapshot_system_state
+-1,,This is not just a rollout reversal; move the workload to backup.,trigger_failover,confusable_intent,,,rollback_service_release
+-1,,Capture the state later; switch to the standby system now.,trigger_failover,confusable_intent,,,snapshot_system_state
+-1,,Capture the state later; switch to the standby system now.,trigger_failover,confusable_intent,,,snapshot_system_state
+-1,,This is not just a rollout reversal; move the workload to backup.,trigger_failover,confusable_intent,,,rollback_service_release
+-1,,This is not just a rollout reversal; move the workload to backup.,trigger_failover,confusable_intent,,,rollback_service_release
+-1,,This is not just a rollout reversal; move the workload to backup.,trigger_failover,confusable_intent,,,rollback_service_release
+-1,,This is not just a rollout reversal; move the workload to backup.,trigger_failover,confusable_intent,,,rollback_service_release
+-1,,Capture the state later; switch to the standby system now.,trigger_failover,confusable_intent,,,snapshot_system_state
+-1,,This is not just a rollout reversal; move the workload to backup.,trigger_failover,confusable_intent,,,rollback_service_release
+-1,,This is not just a rollout reversal; move the workload to backup.,trigger_failover,confusable_intent,,,rollback_service_release
+-1,,Capture the state later; switch to the standby system now.,trigger_failover,confusable_intent,,,snapshot_system_state
+-1,,Capture the state later; switch to the standby system now.,trigger_failover,confusable_intent,,,snapshot_system_state
+-1,,Capture the state later; switch to the standby system now.,trigger_failover,confusable_intent,,,snapshot_system_state
+-1,,This is not just a rollout reversal; move the workload to backup.,trigger_failover,confusable_intent,,,rollback_service_release
+-1,,This is not just a rollout reversal; move the workload to backup.,trigger_failover,confusable_intent,,,rollback_service_release
+-1,,This is not just a rollout reversal; move the workload to backup.,trigger_failover,confusable_intent,,,rollback_service_release
+-1,,This is not just a rollout reversal; move the workload to backup.,trigger_failover,confusable_intent,,,rollback_service_release
+-1,,This is not just a rollout reversal; move the workload to backup.,trigger_failover,confusable_intent,,,rollback_service_release
+-1,,Capture the state later; switch to the standby system now.,trigger_failover,confusable_intent,,,snapshot_system_state
+-1,,This is not just a rollout reversal; move the workload to backup.,trigger_failover,confusable_intent,,,rollback_service_release
+-1,,Capture the state later; switch to the standby system now.,trigger_failover,confusable_intent,,,snapshot_system_state
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,Do not set up new workspace gear; update the customer information on file.,update_customer_record,confusable_intent,,,provision_workspace
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,Do not set up new workspace gear; update the customer information on file.,update_customer_record,confusable_intent,,,provision_workspace
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,Do not set up new workspace gear; update the customer information on file.,update_customer_record,confusable_intent,,,provision_workspace
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,Do not set up new workspace gear; update the customer information on file.,update_customer_record,confusable_intent,,,provision_workspace
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,Do not set up new workspace gear; update the customer information on file.,update_customer_record,confusable_intent,,,provision_workspace
+-1,,Do not set up new workspace gear; update the customer information on file.,update_customer_record,confusable_intent,,,provision_workspace
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,Do not set up new workspace gear; update the customer information on file.,update_customer_record,confusable_intent,,,provision_workspace
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,Do not set up new workspace gear; update the customer information on file.,update_customer_record,confusable_intent,,,provision_workspace
+-1,,Do not set up new workspace gear; update the customer information on file.,update_customer_record,confusable_intent,,,provision_workspace
+-1,,Do not set up new workspace gear; update the customer information on file.,update_customer_record,confusable_intent,,,provision_workspace
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,Do not set up new workspace gear; update the customer information on file.,update_customer_record,confusable_intent,,,provision_workspace
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,Do not set up new workspace gear; update the customer information on file.,update_customer_record,confusable_intent,,,provision_workspace
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,"The refund can follow, but the customer record itself needs correction first.",update_customer_record,confusable_intent,,,process_refund
+-1,,Do not just log the action; correct the identity record itself.,update_identity_record,confusable_intent,,,log_compliance_event
+-1,,The report can come after; right now Grace's identity record needs updating.,update_identity_record,confusable_intent,,,generate_access_report
+-1,,The report can come after; right now Alice's identity record needs updating.,update_identity_record,confusable_intent,,,generate_access_report
+-1,,The report can come after; right now Bob's identity record needs updating.,update_identity_record,confusable_intent,,,generate_access_report
+-1,,The report can come after; right now Eve's identity record needs updating.,update_identity_record,confusable_intent,,,generate_access_report
+-1,,The report can come after; right now Charlie's identity record needs updating.,update_identity_record,confusable_intent,,,generate_access_report
+-1,,The report can come after; right now Frank's identity record needs updating.,update_identity_record,confusable_intent,,,generate_access_report
+-1,,The report can come after; right now Diana's identity record needs updating.,update_identity_record,confusable_intent,,,generate_access_report
+-1,,Do not just log the action; correct the identity record itself.,update_identity_record,confusable_intent,,,log_compliance_event
+-1,,The report can come after; right now Frank's identity record needs updating.,update_identity_record,confusable_intent,,,generate_access_report
+-1,,The report can come after; right now Alice's identity record needs updating.,update_identity_record,confusable_intent,,,generate_access_report
+-1,,The report can come after; right now Eve's identity record needs updating.,update_identity_record,confusable_intent,,,generate_access_report
+-1,,Do not just log the action; correct the identity record itself.,update_identity_record,confusable_intent,,,log_compliance_event
+-1,,Do not just log the action; correct the identity record itself.,update_identity_record,confusable_intent,,,log_compliance_event
+-1,,Do not just log the action; correct the identity record itself.,update_identity_record,confusable_intent,,,log_compliance_event
+-1,,Do not just log the action; correct the identity record itself.,update_identity_record,confusable_intent,,,log_compliance_event
+-1,,Do not just log the action; correct the identity record itself.,update_identity_record,confusable_intent,,,log_compliance_event
+-1,,Do not just log the action; correct the identity record itself.,update_identity_record,confusable_intent,,,log_compliance_event
+-1,,The report can come after; right now Bob's identity record needs updating.,update_identity_record,confusable_intent,,,generate_access_report
+-1,,Do not just log the action; correct the identity record itself.,update_identity_record,confusable_intent,,,log_compliance_event
+-1,,Do not just log the action; correct the identity record itself.,update_identity_record,confusable_intent,,,log_compliance_event
+-1,,Do not just log the action; correct the identity record itself.,update_identity_record,confusable_intent,,,log_compliance_event
+-1,,The report can come after; right now Alice's identity record needs updating.,update_identity_record,confusable_intent,,,generate_access_report
+-1,,The report can come after; right now Eve's identity record needs updating.,update_identity_record,confusable_intent,,,generate_access_report
+-1,,Do not just log the action; correct the identity record itself.,update_identity_record,confusable_intent,,,log_compliance_event
+-1,,The report can come after; right now Eve's identity record needs updating.,update_identity_record,confusable_intent,,,generate_access_report
+-1,,Do not just log the action; correct the identity record itself.,update_identity_record,confusable_intent,,,log_compliance_event
+-1,,The report can come after; right now Charlie's identity record needs updating.,update_identity_record,confusable_intent,,,generate_access_report
+-1,,The report can come after; right now Diana's identity record needs updating.,update_identity_record,confusable_intent,,,generate_access_report
+-1,,Do not just log the action; correct the identity record itself.,update_identity_record,confusable_intent,,,log_compliance_event
+-1,,Do not deploy yet; first confirm the release is ready to go live.,validate_release_readiness,confusable_intent,,,deploy_service_release
+-1,,This is not an access review; I need a readiness check for the release.,validate_release_readiness,confusable_intent,,,generate_access_report
+-1,,This is not an access review; I need a readiness check for the release.,validate_release_readiness,confusable_intent,,,generate_access_report
+-1,,This is not an access review; I need a readiness check for the release.,validate_release_readiness,confusable_intent,,,generate_access_report
+-1,,Do not deploy yet; first confirm the release is ready to go live.,validate_release_readiness,confusable_intent,,,deploy_service_release
+-1,,This is not an access review; I need a readiness check for the release.,validate_release_readiness,confusable_intent,,,generate_access_report
+-1,,This is not an access review; I need a readiness check for the release.,validate_release_readiness,confusable_intent,,,generate_access_report
+-1,,Do not deploy yet; first confirm the release is ready to go live.,validate_release_readiness,confusable_intent,,,deploy_service_release
+-1,,Do not deploy yet; first confirm the release is ready to go live.,validate_release_readiness,confusable_intent,,,deploy_service_release
+-1,,This is not an access review; I need a readiness check for the release.,validate_release_readiness,confusable_intent,,,generate_access_report
+-1,,Do not deploy yet; first confirm the release is ready to go live.,validate_release_readiness,confusable_intent,,,deploy_service_release
+-1,,This is not an access review; I need a readiness check for the release.,validate_release_readiness,confusable_intent,,,generate_access_report
+-1,,Do not deploy yet; first confirm the release is ready to go live.,validate_release_readiness,confusable_intent,,,deploy_service_release
+-1,,Do not deploy yet; first confirm the release is ready to go live.,validate_release_readiness,confusable_intent,,,deploy_service_release
+-1,,Do not deploy yet; first confirm the release is ready to go live.,validate_release_readiness,confusable_intent,,,deploy_service_release
+-1,,Do not deploy yet; first confirm the release is ready to go live.,validate_release_readiness,confusable_intent,,,deploy_service_release
+-1,,This is not an access review; I need a readiness check for the release.,validate_release_readiness,confusable_intent,,,generate_access_report
+-1,,This is not an access review; I need a readiness check for the release.,validate_release_readiness,confusable_intent,,,generate_access_report
+-1,,This is not an access review; I need a readiness check for the release.,validate_release_readiness,confusable_intent,,,generate_access_report
+-1,,Do not deploy yet; first confirm the release is ready to go live.,validate_release_readiness,confusable_intent,,,deploy_service_release
+-1,,This is not an access review; I need a readiness check for the release.,validate_release_readiness,confusable_intent,,,generate_access_report
+-1,,This is not an access review; I need a readiness check for the release.,validate_release_readiness,confusable_intent,,,generate_access_report
+-1,,This is not an access review; I need a readiness check for the release.,validate_release_readiness,confusable_intent,,,generate_access_report
+-1,,Do not deploy yet; first confirm the release is ready to go live.,validate_release_readiness,confusable_intent,,,deploy_service_release
+-1,,Do not deploy yet; first confirm the release is ready to go live.,validate_release_readiness,confusable_intent,,,deploy_service_release
+-1,,This is not an access review; I need a readiness check for the release.,validate_release_readiness,confusable_intent,,,generate_access_report
+-1,,Do not deploy yet; first confirm the release is ready to go live.,validate_release_readiness,confusable_intent,,,deploy_service_release
+-1,,This is not an access review; I need a readiness check for the release.,validate_release_readiness,confusable_intent,,,generate_access_report
+-1,,Do not deploy yet; first confirm the release is ready to go live.,validate_release_readiness,confusable_intent,,,deploy_service_release
+-1,,This is not an access review; I need a readiness check for the release.,validate_release_readiness,confusable_intent,,,generate_access_report
