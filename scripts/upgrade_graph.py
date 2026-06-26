@@ -25,7 +25,7 @@ from typing import Dict, List, Optional, Tuple
 
 import pandas as pd
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 from utils.graph_utils import (
     TOOL_VOCAB,

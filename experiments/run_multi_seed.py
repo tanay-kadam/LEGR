@@ -32,7 +32,7 @@ from typing import Dict, List, Optional
 
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 from legr_tool_count import add_tool_count_argument, apply_tool_count_override
 

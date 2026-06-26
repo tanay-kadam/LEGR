@@ -21,7 +21,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Tuple
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "src"))
 
 from routing_tiers import EXPLICIT_ROUTING_TOOL_NAMES_15
 from taxonomies import _ALL_TOOL_DESCRIPTIONS

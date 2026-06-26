@@ -44,7 +44,7 @@ def results_dir_for(model: str, tool_count: int) -> str:
 
 def run_split(preset: str, model: str, tool_count: int, out_dir: str) -> int:
     cmd = [
-        sys.executable, str(ROOT / "main.py"),
+        sys.executable, str(ROOT / "src" / "main.py"),
         "--tool_count", str(tool_count),
         "--dataset_preset", preset,
         "--results_dir", out_dir,

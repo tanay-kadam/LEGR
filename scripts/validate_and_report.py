@@ -19,7 +19,7 @@ from typing import Dict, List
 
 import pandas as pd
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 from utils.text_utils import (
     cue_word_fraction,

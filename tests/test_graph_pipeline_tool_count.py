@@ -7,10 +7,11 @@ import sys
 from pathlib import Path
 
 import pytest
-import vocab_config as vc
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "src"))
+
+import vocab_config as vc
 
 
 def _clear_modules(*names: str) -> None:

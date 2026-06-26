@@ -23,8 +23,8 @@ from typing import Dict, List
 
 import pandas as pd
 
-# Allow imports from repo root
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+# Allow imports of project modules from src/
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 from routing_benchmark_specs import (
     cue_word_fraction_routing_30,

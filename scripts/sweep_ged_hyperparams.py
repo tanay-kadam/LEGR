@@ -44,7 +44,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 
 
 def _parse_float_list(s: str) -> List[float]:
@@ -210,10 +210,10 @@ def main() -> None:
         return
 
     py = sys.executable
-    train_py = ROOT / "train.py"
-    eval_py = ROOT / "eval.py"
+    train_py = ROOT / "src" / "train.py"
+    eval_py = ROOT / "src" / "eval.py"
     if not train_py.is_file() or not eval_py.is_file():
-        raise FileNotFoundError("train.py and eval.py must live next to this script.")
+        raise FileNotFoundError("train.py and eval.py must exist under src/.")
 
     ckpt_root = ROOT / args.checkpoint_root
     results_dir = ROOT / args.results_dir

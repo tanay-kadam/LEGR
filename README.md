@@ -57,21 +57,22 @@ venv\Scripts\activate            # Windows
 ```
 
 **Step 2 — run one split.** This loads `base_cleaned.csv` for the 30-tool
-benchmark and prints the side-by-side report:
+benchmark and prints the side-by-side report (run all commands from the repo
+root):
 
 ```bash
-python main.py --tool_count 30 --dataset_preset routing_base_cleaned
+python src/main.py --tool_count 30 --dataset_preset routing_base_cleaned
 ```
 
 **Step 3 — run every split** to reproduce the full Experiment 1 table. Run these
 five commands (swap `30` for `15` or `45` to reproduce the other tool tiers):
 
 ```bash
-python main.py --tool_count 30 --dataset_preset routing_base_cleaned
-python main.py --tool_count 30 --dataset_preset routing_lexical_cue_reduced
-python main.py --tool_count 30 --dataset_preset routing_confusable_intents
-python main.py --tool_count 30 --dataset_preset routing_paraphrase_train
-python main.py --tool_count 30 --dataset_preset routing_paraphrase_test
+python src/main.py --tool_count 30 --dataset_preset routing_base_cleaned
+python src/main.py --tool_count 30 --dataset_preset routing_lexical_cue_reduced
+python src/main.py --tool_count 30 --dataset_preset routing_confusable_intents
+python src/main.py --tool_count 30 --dataset_preset routing_paraphrase_train
+python src/main.py --tool_count 30 --dataset_preset routing_paraphrase_test
 ```
 
 **Step 4 — read the results.** Each run writes two CSVs to
@@ -98,7 +99,7 @@ python scripts/run_routing_experiments.py --tool_counts 30 45
 To run on your own CSV instead of a preset:
 
 ```bash
-python main.py --dataset_path path/to/your.csv
+python src/main.py --dataset_path path/to/your.csv
 # columns auto-detected: query / transformed_query / text  and  ground_truth / label / tool
 # force them if needed: --query_col my_query --label_col my_label
 ```
@@ -122,16 +123,16 @@ venv\Scripts\activate            # Windows
 
 **Step 2 — train the main model (with GED loss).** Reads
 `upgraded/upgraded_30tools/{train,dev}.csv` by default; saves `best_model.pt`
-to `checkpoints_30tools/`:
+to `checkpoints_30tools/` (run from the repo root):
 
 ```bash
-python train.py --tool_count 30 --checkpoint_dir checkpoints_30tools
+python src/train.py --tool_count 30 --checkpoint_dir checkpoints_30tools
 ```
 
 **Step 3 — train the no-GED ablation model** (needed for the ablation table):
 
 ```bash
-python train.py --tool_count 30 --lambda_ged 0 --checkpoint_dir checkpoints_30tools_no_ged
+python src/train.py --tool_count 30 --lambda_ged 0 --checkpoint_dir checkpoints_30tools_no_ged
 ```
 
 **Step 4 — evaluate both models and the baselines in one command.** This scores
@@ -139,7 +140,7 @@ the two checkpoints plus S-BERT and BM25 on the held-out test set and writes the
 metrics CSV:
 
 ```bash
-python eval.py --tool_count 30 \
+python src/eval.py --tool_count 30 \
   --checkpoint checkpoints_30tools/best_model.pt checkpoints_30tools_no_ged/best_model.pt \
   --checkpoint_labels LEGR_WITH_GED LEGR_NO_GED \
   --dataset_csv upgraded/upgraded_30tools/test_topology_heldout.csv \
@@ -150,7 +151,7 @@ python eval.py --tool_count 30 \
 To evaluate just the main model on its own:
 
 ```bash
-python eval.py --tool_count 30 \
+python src/eval.py --tool_count 30 \
   --checkpoint checkpoints_30tools/best_model.pt \
   --dataset_csv upgraded/upgraded_30tools/test_topology_heldout.csv \
   --hard_negative_csv upgraded_data/graph_30tools/hard_negatives.csv \
@@ -171,7 +172,7 @@ python experiments/run_multi_seed.py --seeds 42 43 44 45 46
 Extra baseline — let an LLM generate the DAG directly:
 
 ```bash
-python llm_dag_baseline.py \
+python src/llm_dag_baseline.py \
   --input upgraded_data/graph_30tools/test_topology_heldout.csv \
   --provider ollama --model llama3.2 --max_examples 200
 ```
@@ -179,7 +180,7 @@ python llm_dag_baseline.py \
 GED-loss hyperparameter sweep:
 
 ```bash
-python sweep_ged_hyperparams.py \
+python scripts/sweep_ged_hyperparams.py \
   --train_csv upgraded/upgraded_30tools/train.csv \
   --val_csv   upgraded/upgraded_30tools/dev.csv \
   --dataset_csv upgraded/upgraded_30tools/test_topology_heldout.csv
@@ -192,41 +193,38 @@ knobs `--lambda_ged`, `--ged_scale`, `--ged_margin`.
 
 ## 4. Repository layout
 
-### Core — required to reproduce results
-
-**Experiment 1 (Taxonomy Routing)**
-
-```
-main.py                     # entry point
-evaluator.py                # runs both taxonomies, computes metrics
-routers.py                  # two-step hierarchical LLM router
-taxonomies.py               # Semantic + Tool-Bound trees
-llm_backends.py             # Gemini / Ollama backends
-dataset.py                  # canonical eval queries + dataset builders
-routing_tiers.py            # per-tier routing tool vocabularies
-routing_benchmark_specs.py  # 30-tool routing benchmark spec
-```
-
-**Experiment 2 (LEGR)**
+All Python source lives in `src/`. Run the entry points from the repo root as
+`python src/<file>.py`. Batch runners live in `scripts/` and `experiments/`.
 
 ```
-train.py                    # training loop
-eval.py                     # evaluation + S-BERT / BM25 baselines
-encoders.py                 # dual-encoder model (text + graph)
-loss.py                     # Graph-Aware Contrastive Loss
-legr_tool_count.py          # --tool_count CLI helper
-llm_dag_baseline.py         # optional LLM-generates-DAG baseline
-experiments/run_multi_seed.py   # optional multi-seed runner
-sweep_ged_hyperparams.py        # optional GED-loss sweep
-```
+src/
+├── main.py                     # Experiment 1 entry point
+├── evaluator.py                # runs both taxonomies, computes metrics
+├── routers.py                  # two-step hierarchical LLM router
+├── taxonomies.py               # Semantic + Tool-Bound trees
+├── llm_backends.py             # Gemini / Ollama backends
+├── dataset.py                  # canonical eval queries + dataset builders
+├── routing_tiers.py            # per-tier routing tool vocabularies
+├── routing_benchmark_specs.py  # 30-tool routing benchmark spec
+│
+├── train.py                    # Experiment 2 training loop
+├── eval.py                     # evaluation + S-BERT / BM25 baselines
+├── encoders.py                 # dual-encoder model (text + graph)
+├── loss.py                     # Graph-Aware Contrastive Loss
+├── legr_tool_count.py          # --tool_count CLI helper
+├── llm_dag_baseline.py         # optional LLM-generates-DAG baseline
+│
+├── vocab_config.py             # shared: active tool-count switch (15/30/45)
+├── data_synth.py               # shared: tool vocab + DAG/GED helpers
+└── utils/                      # shared: read_datafile() CSV/Parquet loader
 
-**Shared**
+scripts/
+├── run_routing_experiments.py  # batch runner for Experiment 1
+├── sweep_ged_hyperparams.py    # optional GED-loss sweep
+└── ...                         # dataset-build pipeline (not needed to reproduce)
 
-```
-vocab_config.py             # active tool-count switch (15/30/45)
-data_synth.py               # tool vocab + DAG/GED helpers (used by train/eval/dataset)
-utils/__init__.py           # read_datafile() CSV/Parquet loader
-scripts/run_routing_experiments.py  # batch runner for Experiment 1
+experiments/
+└── run_multi_seed.py           # optional multi-seed runner (Experiment 2)
 ```
 
 ### Datasets (committed, ready to use)

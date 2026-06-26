@@ -25,7 +25,9 @@ import sys
 import time
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(_REPO_ROOT))            # for `scripts.*` package imports
+sys.path.insert(0, str(_REPO_ROOT / "src"))    # for project modules (vocab_config, etc.)
 
 
 def main() -> None:
