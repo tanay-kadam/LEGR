@@ -105,11 +105,22 @@ def call_gemini(
 class OllamaBackend:
     """Wrapper around the Ollama Python client for structured LLM calls."""
 
-    def __init__(self, model_name: str = "llama3.2", base_url: str | None = None):
+    def __init__(
+        self,
+        model_name: str = "llama3.2",
+        base_url: str | None = None,
+        timeout_s: float | None = None,
+    ):
         import ollama as _ollama
         self._ollama = _ollama
         self.model_name = model_name
-        self._client = _ollama.Client(host=base_url) if base_url else _ollama.Client()
+        client_kwargs: Dict[str, Any] = {}
+        if timeout_s is not None and timeout_s > 0:
+            client_kwargs["timeout"] = timeout_s
+        self._client = (
+            _ollama.Client(host=base_url, **client_kwargs)
+            if base_url else _ollama.Client(**client_kwargs)
+        )
 
     def call(
         self,

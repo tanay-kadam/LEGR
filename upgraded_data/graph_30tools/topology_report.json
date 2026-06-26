@@ -1,116 +1,115 @@
 {
   "base_stats": {
-    "total_rows": 1560,
-    "unique_dag_ids": 78,
-    "avg_query_length": 126.6,
+    "total_rows": 1580,
+    "unique_dag_ids": 77,
+    "avg_query_length": 121.7,
     "node_count_distribution": {
-      "3": 600,
-      "4": 420,
+      "3": 800,
+      "2": 420,
+      "4": 280,
+      "7": 20,
       "1": 40,
-      "2": 480,
-      "7": 20
+      "5": 20
     }
   },
   "augmented_stats": {
     "total_rows": 480,
     "unique_dag_ids": 120,
-    "avg_query_length": 241.0,
+    "avg_query_length": 234.3,
     "node_count_distribution": {
       "4": 180,
-      "5": 196,
-      "7": 72,
-      "6": 32
+      "5": 204,
+      "7": 88,
+      "6": 8
     }
   },
   "base_unique_topo_hashes": 12,
   "base_topo_families": {
-    "chain_medium": 640,
-    "fanout": 120,
-    "fanin": 140,
+    "fanout": 200,
+    "chain_medium": 600,
+    "chain_short": 420,
+    "fanin": 200,
+    "chain_long": 40,
+    "diamond": 40,
     "single_node": 40,
-    "chain_short": 480,
-    "wide_fanin": 20,
-    "wide_fanout": 40,
-    "diamond": 60,
-    "chain_long": 20
+    "wide_fanout": 40
   },
   "augmented_topo_families": {
-    "y_shape": 40,
-    "multi_branch_independent": 52,
-    "wide_fanout_deep": 44,
-    "inverted_y": 52,
-    "hourglass": 36,
-    "asymmetric_fork_join": 40,
-    "repeated_tool": 44,
-    "w_shape": 36,
-    "deep_asymmetric_merge": 32,
+    "y_shape": 64,
+    "multi_branch_independent": 32,
+    "inverted_y": 28,
+    "w_shape": 48,
+    "double_diamond": 56,
     "diamond": 44,
-    "double_diamond": 28,
-    "long_chain_branched": 32
+    "hourglass": 48,
+    "long_chain_branched": 8,
+    "repeated_tool": 44,
+    "wide_fanout_deep": 32,
+    "deep_asymmetric_merge": 40,
+    "asymmetric_fork_join": 36
   },
   "combined_topo_families": {
-    "chain_medium": 640,
-    "fanout": 120,
-    "fanin": 140,
+    "fanout": 200,
+    "chain_medium": 600,
+    "chain_short": 420,
+    "fanin": 200,
+    "chain_long": 40,
+    "diamond": 84,
     "single_node": 40,
-    "chain_short": 480,
-    "wide_fanin": 20,
     "wide_fanout": 40,
-    "diamond": 104,
-    "chain_long": 20,
-    "y_shape": 40,
-    "multi_branch_independent": 52,
-    "wide_fanout_deep": 44,
-    "inverted_y": 52,
-    "hourglass": 36,
-    "asymmetric_fork_join": 40,
+    "y_shape": 64,
+    "multi_branch_independent": 32,
+    "inverted_y": 28,
+    "w_shape": 48,
+    "double_diamond": 56,
+    "hourglass": 48,
+    "long_chain_branched": 8,
     "repeated_tool": 44,
-    "w_shape": 36,
-    "deep_asymmetric_merge": 32,
-    "double_diamond": 28,
-    "long_chain_branched": 32
+    "wide_fanout_deep": 32,
+    "deep_asymmetric_merge": 40,
+    "asymmetric_fork_join": 36
   },
-  "hard_negative_count": 312,
+  "hard_negative_count": 322,
   "hard_negative_types": {
-    "swap_edges": 52,
-    "swap_tools": 78,
-    "remove_edge": 52,
-    "add_edge": 52,
-    "extra_node": 78
+    "swap_edges": 56,
+    "swap_tools": 77,
+    "remove_edge": 56,
+    "add_edge": 56,
+    "extra_node": 77
   },
   "train_stats": {
-    "total_rows": 1740,
-    "unique_dag_ids": 147,
-    "avg_query_length": 147.3,
+    "total_rows": 1828,
+    "unique_dag_ids": 155,
+    "avg_query_length": 145.4,
     "node_count_distribution": {
-      "3": 600,
-      "4": 436,
+      "3": 800,
+      "2": 420,
+      "4": 308,
+      "7": 108,
       "1": 40,
-      "2": 480,
-      "7": 48,
-      "5": 104,
-      "6": 32
+      "5": 144,
+      "6": 8
     }
   },
   "dev_stats": {
-    "total_rows": 52,
-    "unique_dag_ids": 13,
-    "avg_query_length": 225.0,
+    "total_rows": 32,
+    "unique_dag_ids": 8,
+    "avg_query_length": 225.2,
     "node_count_distribution": {
-      "5": 52
+      "5": 32
     }
   },
   "test_stats": {
-    "total_rows": 248,
-    "unique_dag_ids": 38,
-    "avg_query_length": 182.4,
+    "total_rows": 200,
+    "unique_dag_ids": 34,
+    "avg_query_length": 158.6,
     "node_count_distribution": {
-      "4": 164,
-      "7": 44,
-      "5": 40
+      "4": 152,
+      "5": 48
     }
   },
   "train_families": [
+    "asymmetric_fork_join",
     "chain_long",
     "chain_medium",
     "chain_short",
@@ -118,29 +117,27 @@
     "double_diamond",
     "fanin",
     "fanout",
-    "hourglass",
-    "inverted_y",
     "long_chain_branched",
     "repeated_tool",
     "single_node",
     "w_shape",
+    "wide_fanout_deep",
     "y_shape"
   ],
   "dev_families": [
     "multi_branch_independent"
   ],
   "test_families": [
-    "asymmetric_fork_join",
     "diamond",
-    "wide_fanin",
-    "wide_fanout",
-    "wide_fanout_deep"
+    "hourglass",
+    "inverted_y",
+    "wide_fanout"
   ],
   "train_test_family_overlap": [],
   "topology_diversity": {
     "before": 12,
     "after_base_plus_aug": 132
   },
-  "base_exact_dup_queries": 110,
-  "base_normalized_dup_queries": 110
+  "base_exact_dup_queries": 94,
+  "base_normalized_dup_queries": 94
 }

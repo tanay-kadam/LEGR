@@ -1,3 +1,0 @@
-taxonomy,total_queries,correct,accuracy_pct,branch_correct,branch_accuracy_pct,error_propagations,error_rate_pct,mean_latency_s,median_latency_s,p95_latency_s,total_prompt_tokens,total_completion_tokens,total_tokens,mean_tokens_per_query,estimated_cost_usd
-Semantic Taxonomy (Baseline),1255,815,64.9,874,69.6,0,0.0,3.934,2.002,3.42,491191,28967,520158,414.5,0.0
-Tool-Bound Taxonomy (Proposed),1255,1002,79.8,1039,82.8,0,0.0,2.041,2.037,2.138,570257,31830,602087,479.8,0.0

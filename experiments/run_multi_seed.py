@@ -34,6 +34,8 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from legr_tool_count import add_tool_count_argument, apply_tool_count_override
+
 
 def _train_and_eval_single_seed(
     seed: int,
@@ -44,8 +46,10 @@ def _train_and_eval_single_seed(
     hard_negative_csv: Optional[str] = None,
     graph_encoder_type: str = "gcn",
     epochs: int = 20,
+    tool_count: Optional[int] = None,
 ) -> Dict:
     """Train and evaluate for a single seed."""
+    apply_tool_count_override(tool_count)
     from train import TrainConfig, main as train_main
     from eval import evaluate
 
@@ -57,6 +61,7 @@ def _train_and_eval_single_seed(
         checkpoint_dir=str(seed_dir),
         graph_encoder_type=graph_encoder_type,
         epochs=epochs,
+        tool_count=tool_count,
     )
     if train_csv:
         cfg.train_csv = train_csv
@@ -92,8 +97,10 @@ def _eval_only_single_seed(
     checkpoint_dir: str,
     test_csv: Optional[str] = None,
     hard_negative_csv: Optional[str] = None,
+    tool_count: Optional[int] = None,
 ) -> Dict:
     """Evaluate an existing checkpoint for a single seed."""
+    apply_tool_count_override(tool_count)
     from eval import evaluate
 
     ckpt_path = Path(checkpoint_dir) / f"seed_{seed}" / "best_model.pt"
@@ -173,6 +180,7 @@ def aggregate_results(per_seed: List[Dict]) -> Dict:
 
 def main():
     p = argparse.ArgumentParser(description="Multi-seed LEGR training & evaluation")
+    add_tool_count_argument(p)
     p.add_argument("--seeds", type=int, nargs="+", default=[42, 43, 44, 45, 46],
                     help="List of random seeds")
     p.add_argument("--mode", type=str, default="train_eval",
@@ -214,6 +222,7 @@ def main():
                     hard_negative_csv=args.hard_negative_csv,
                     graph_encoder_type=args.graph_encoder_type,
                     epochs=args.epochs,
+                    tool_count=args.tool_count,
                 )
             else:
                 result = _eval_only_single_seed(
@@ -221,6 +230,7 @@ def main():
                     checkpoint_dir=args.checkpoint_dir,
                     test_csv=args.test_csv,
                     hard_negative_csv=args.hard_negative_csv,
+                    tool_count=args.tool_count,
                 )
             per_seed_results.append(result)
     else:
@@ -238,6 +248,7 @@ def main():
                         hard_negative_csv=args.hard_negative_csv,
                         graph_encoder_type=args.graph_encoder_type,
                         epochs=args.epochs,
+                        tool_count=args.tool_count,
                     )
                 else:
                     fut = executor.submit(
@@ -246,6 +257,7 @@ def main():
                         checkpoint_dir=args.checkpoint_dir,
                         test_csv=args.test_csv,
                         hard_negative_csv=args.hard_negative_csv,
+                        tool_count=args.tool_count,
                     )
                 futures[fut] = seed
 
@@ -265,6 +277,7 @@ def main():
     output = {
         "seeds": args.seeds,
         "mode": args.mode,
+        "tool_count": args.tool_count,
         "per_seed": per_seed_results,
         "aggregated_mean_std": aggregated,
     }

@@ -1,183 +1,265 @@
-# Agentic Tool-Bound Taxonomies — Comparative Experiment
+# Agentic Tool-Bound Taxonomies
 
-A research codebase that empirically compares two intent-routing strategies for AI agents:
+Research code for two complementary experiments on **how AI agents should route a
+user request to the right tool(s)**:
 
-| Strategy | Groups queries by… | Key question at each node |
-|---|---|---|
-| **Semantic Taxonomy** (baseline) | Human topic (*IT Support, Security, Billing*) | *"What is this query about?"* |
-| **Tool-Bound Taxonomy** (proposed) | Downstream API operation (*Read, Mutate, Orchestrate*) | *"What kind of action does this query need?"* |
+| # | Experiment | Entry point | Question |
+|---|------------|-------------|----------|
+| **1** | **Taxonomy Routing** — *Semantic* vs *Tool-Bound* hierarchies (LLM router) | `main.py` | Is it better to group tools by human topic or by the action they perform? |
+| **2** | **LEGR** — *Latent Execution-Graph Routing* (trained dual-encoder) | `train.py` / `eval.py` | Can a learned text↔graph model retrieve the correct multi-step execution DAG better than S-BERT / BM25 / an LLM? |
 
-Both taxonomies contain the same 15 leaf-level API tools.  
-The experiment routes 50 synthetic queries through each taxonomy via a two-step LLM-based hierarchical classifier, then compares **routing accuracy**, **latency**, and **token efficiency**.
+The two experiments are independent. You can reproduce either one on its own.
 
-## Quick Start
+---
+
+## 1. Setup
 
 ```bash
-# 1. Clone / navigate to the project
-cd "Agentic Tool-Bound Taxonomies"
+# Clone, then from the repo root:
+python -m venv venv
+venv\Scripts\activate            # Windows
+# source venv/bin/activate       # macOS / Linux
 
-# 2. Create a virtual environment (recommended)
-python -m venv .venv
-.venv\Scripts\activate        # Windows
-# source .venv/bin/activate   # macOS / Linux
-
-# 3. Install dependencies
 pip install -r requirements.txt
-
-# 4. Configure LLM (choose one)
-copy .env.example .env    # Windows
-# cp .env.example .env   # macOS / Linux
-
-# 5. Run the experiment
-python main.py
 ```
 
-### Using Ollama (recommended — no API key, no rate limits)
-
-1. Install [Ollama](https://ollama.com) and pull a model: `ollama pull llama3.2`
-2. In `.env` set: `USE_OLLAMA=true` and optionally `OLLAMA_MODEL=llama3.2`
-3. Run: `python main.py`
-
-### Using Gemini
-
-1. In `.env` set: `GEMINI_API_KEY=...` (get a free key at [Google AI Studio](https://aistudio.google.com/app/apikey))
-2. Run: `python main.py` (free tier has rate limits; use Ollama for full 50-query runs)
-
-### Scaled single-tool dataset (500–1000+ queries) for statistical power
-
-For Section 4.1 / 5.1, the 50-query set is too small for statistical significance. Use the programmatic scale-up:
+### Configure an LLM (only needed for Experiment 1 and the LLM DAG baseline)
 
 ```bash
-# 1,005 queries (67 per tool × 15 tools) — recommended for paper
-python main.py --scaled --n_per_tool 67
-
-# 510 queries (34 per tool)
-python main.py --scaled --n_per_tool 34
-
-# Save dataset to CSV, then run evaluator (e.g. overnight)
-python main.py --scaled --n_per_tool 67 --save_dataset results/single_tool_1005.csv
-# Later, re-run without regenerating:
-python main.py --dataset_path results/single_tool_1005.csv
+copy .env.example .env           # Windows  (cp on macOS/Linux)
 ```
 
-Generate the scaled dataset only (no evaluation):
+Then edit `.env` and pick **one**:
+
+- **Ollama (local, no API key, no rate limits — recommended):**
+  `USE_OLLAMA=true` and optionally `OLLAMA_MODEL=llama3.2`
+  (install [Ollama](https://ollama.com), then `ollama pull llama3.2`)
+- **Gemini:** `GEMINI_API_KEY=...` (free key at [Google AI Studio](https://aistudio.google.com/app/apikey))
+
+Experiment 2 (LEGR) needs no API key. W&B logging during training is optional
+(`W&B_API_KEY=...`); training still runs without it.
+
+---
+
+## 2. Reproduce Experiment 1 — Taxonomy Routing
+
+This routes every query through the **Semantic** taxonomy (baseline) and the
+**Tool-Bound** taxonomy (proposed), then reports routing accuracy, branch
+accuracy, hallucination rate, latency, and token cost side-by-side. The
+benchmark CSVs are already in the repo under `upgraded_data/routing_<N>tools/`
+(`N` = 15, 30, 45), so no data generation is needed.
+
+**Step 1 — activate the environment** (from the repo root):
 
 ```bash
-python dataset.py scaled 67 results/single_tool_dataset_scaled.csv
+venv\Scripts\activate            # Windows
+# source venv/bin/activate       # macOS / Linux
 ```
 
-### Using upgraded routing datasets (from `scripts/run_pipeline.py`)
-
-`main.py` now supports upgraded routing splits directly via presets and
-auto-maps upgraded columns (`transformed_query`, `label`) to
-(`query`, `ground_truth`).
+**Step 2 — run one split.** This loads `base_cleaned.csv` for the 30-tool
+benchmark and prints the side-by-side report:
 
 ```bash
-# Lexical cue reduced split
-python main.py --dataset_preset routing_lexical_cue_reduced
-
-# Confusable intents split
-python main.py --dataset_preset routing_confusable_intents
-
-# Paraphrase held-out train / test
-python main.py --dataset_preset routing_paraphrase_train
-python main.py --dataset_preset routing_paraphrase_test
+python main.py --tool_count 30 --dataset_preset routing_base_cleaned
 ```
 
-Equivalent explicit paths:
+**Step 3 — run every split** to reproduce the full Experiment 1 table. Run these
+five commands (swap `30` for `15` or `45` to reproduce the other tool tiers):
 
 ```bash
-python main.py --dataset_path upgraded_data/routing/lexical_cue_reduced.csv
-python main.py --dataset_path upgraded_data/routing/confusable_intents.csv
-python main.py --dataset_path upgraded_data/routing/paraphrase_heldout_test.csv
+python main.py --tool_count 30 --dataset_preset routing_base_cleaned
+python main.py --tool_count 30 --dataset_preset routing_lexical_cue_reduced
+python main.py --tool_count 30 --dataset_preset routing_confusable_intents
+python main.py --tool_count 30 --dataset_preset routing_paraphrase_train
+python main.py --tool_count 30 --dataset_preset routing_paraphrase_test
 ```
 
-### Using upgraded graph CSVs with `llm_dag_baseline.py`
+**Step 4 — read the results.** Each run writes two CSVs to
+`new_results/<model>_<N>tools/`:
+- `experiment_log_<split>.csv` — per-query predictions
+- `summary_metrics_<split>.csv` — aggregate metrics
 
-`llm_dag_baseline.py` now accepts either:
-- `.jsonl` (original LEGR export format), or
-- `.csv` with columns: `query`, `tools`, `edges` (plus optional `dag_id`, `dag_text`).
+What each split tests:
 
-Example with topology-held-out graph test split:
+| Preset (`--dataset_preset`) | CSV loaded | Purpose |
+|--------|----------------|---------|
+| `routing_base_cleaned` | `base_cleaned.csv` | Clean baseline |
+| `routing_lexical_cue_reduced` | `lexical_cue_reduced.csv` | Hard: direct action words removed |
+| `routing_confusable_intents` | `confusable_intents.csv` | Hard: surface-similar confusable intents |
+| `routing_paraphrase_train` | `paraphrase_heldout_train.csv` | Paraphrase generalization (train) |
+| `routing_paraphrase_test` | `paraphrase_heldout_test.csv` | Paraphrase generalization (test) |
+
+**Shortcut — run all splits, tool counts, and models in one command:**
+
+```bash
+python scripts/run_routing_experiments.py --tool_counts 30 45
+```
+
+To run on your own CSV instead of a preset:
+
+```bash
+python main.py --dataset_path path/to/your.csv
+# columns auto-detected: query / transformed_query / text  and  ground_truth / label / tool
+# force them if needed: --query_col my_query --label_col my_label
+```
+
+---
+
+## 3. Reproduce Experiment 2 — LEGR (train + evaluate)
+
+This trains the `LEGRDualEncoder` (text encoder + graph GCN) with the
+Graph-Aware Contrastive Loss, then evaluates retrieval (Recall@k, MRR,
+tool-set F1, GED error) against S-BERT and BM25 baselines. The training data is
+already in the repo at `upgraded/upgraded_30tools/`
+(`train.csv`, `dev.csv`, `test_topology_heldout.csv`).
+
+**Step 1 — activate the environment:**
+
+```bash
+venv\Scripts\activate            # Windows
+# source venv/bin/activate       # macOS / Linux
+```
+
+**Step 2 — train the main model (with GED loss).** Reads
+`upgraded/upgraded_30tools/{train,dev}.csv` by default; saves `best_model.pt`
+to `checkpoints_30tools/`:
+
+```bash
+python train.py --tool_count 30 --checkpoint_dir checkpoints_30tools
+```
+
+**Step 3 — train the no-GED ablation model** (needed for the ablation table):
+
+```bash
+python train.py --tool_count 30 --lambda_ged 0 --checkpoint_dir checkpoints_30tools_no_ged
+```
+
+**Step 4 — evaluate both models and the baselines in one command.** This scores
+the two checkpoints plus S-BERT and BM25 on the held-out test set and writes the
+metrics CSV:
+
+```bash
+python eval.py --tool_count 30 \
+  --checkpoint checkpoints_30tools/best_model.pt checkpoints_30tools_no_ged/best_model.pt \
+  --checkpoint_labels LEGR_WITH_GED LEGR_NO_GED \
+  --dataset_csv upgraded/upgraded_30tools/test_topology_heldout.csv \
+  --hard_negative_csv upgraded_data/graph_30tools/hard_negatives.csv \
+  --save_results results/legr_ged_ablation.csv
+```
+
+To evaluate just the main model on its own:
+
+```bash
+python eval.py --tool_count 30 \
+  --checkpoint checkpoints_30tools/best_model.pt \
+  --dataset_csv upgraded/upgraded_30tools/test_topology_heldout.csv \
+  --hard_negative_csv upgraded_data/graph_30tools/hard_negatives.csv \
+  --save_results results/legr_30tools_metrics.csv
+```
+
+**Step 5 — read the results.** Metrics are printed to the terminal and saved to
+the `--save_results` CSV path you passed above.
+
+### Optional steps
+
+Multi-seed run for mean ± std (statistical significance):
+
+```bash
+python experiments/run_multi_seed.py --seeds 42 43 44 45 46
+```
+
+Extra baseline — let an LLM generate the DAG directly:
 
 ```bash
 python llm_dag_baseline.py \
-  --input upgraded_data/graph/test_topology_heldout.csv \
-  --provider ollama \
-  --model llama3.2 \
-  --max_examples 200
+  --input upgraded_data/graph_30tools/test_topology_heldout.csv \
+  --provider ollama --model llama3.2 --max_examples 200
 ```
 
-## Recommended paper datasets
-
-For a NeurIPS-style benchmark section, report at least:
-
-- **Routing (single-tool):**
-  - Baseline: `results/single_tool_1005.csv`
-  - Hard lexical generalization: `upgraded_data/routing/lexical_cue_reduced.csv`
-  - Confusable intent stress-test: `upgraded_data/routing/confusable_intents.csv`
-  - Paraphrase generalization: train on `paraphrase_heldout_train.csv`, evaluate on `paraphrase_heldout_test.csv`
-
-- **Graph (multi-step / DAG):**
-  - Topology OOD test: `upgraded_data/graph/test_topology_heldout.csv`
-  - Hard negative retrieval pool: `upgraded_data/graph/hard_negatives.csv`
-  - Optional in-domain references: `upgraded_data/graph/train.csv`, `upgraded_data/graph/dev.csv`
-
-### Training/eval on upgraded graph splits
-
-`train.py` supports CSV-backed train/val inputs:
+GED-loss hyperparameter sweep:
 
 ```bash
-python train.py \
-  --train_csv upgraded_data/graph/train.csv \
-  --val_csv upgraded_data/graph/dev.csv \
-  --checkpoint_dir checkpoints_topology
+python sweep_ged_hyperparams.py \
+  --train_csv upgraded/upgraded_30tools/train.csv \
+  --val_csv   upgraded/upgraded_30tools/dev.csv \
+  --dataset_csv upgraded/upgraded_30tools/test_topology_heldout.csv
 ```
 
-`eval.py` supports CSV test override and hard-negative ranking metrics:
+Common training overrides: `--epochs`, `--lr`, `--batch_size`, and the GED-loss
+knobs `--lambda_ged`, `--ged_scale`, `--ged_margin`.
+
+---
+
+## 4. Repository layout
+
+### Core — required to reproduce results
+
+**Experiment 1 (Taxonomy Routing)**
+
+```
+main.py                     # entry point
+evaluator.py                # runs both taxonomies, computes metrics
+routers.py                  # two-step hierarchical LLM router
+taxonomies.py               # Semantic + Tool-Bound trees
+llm_backends.py             # Gemini / Ollama backends
+dataset.py                  # canonical eval queries + dataset builders
+routing_tiers.py            # per-tier routing tool vocabularies
+routing_benchmark_specs.py  # 30-tool routing benchmark spec
+```
+
+**Experiment 2 (LEGR)**
+
+```
+train.py                    # training loop
+eval.py                     # evaluation + S-BERT / BM25 baselines
+encoders.py                 # dual-encoder model (text + graph)
+loss.py                     # Graph-Aware Contrastive Loss
+legr_tool_count.py          # --tool_count CLI helper
+llm_dag_baseline.py         # optional LLM-generates-DAG baseline
+experiments/run_multi_seed.py   # optional multi-seed runner
+sweep_ged_hyperparams.py        # optional GED-loss sweep
+```
+
+**Shared**
+
+```
+vocab_config.py             # active tool-count switch (15/30/45)
+data_synth.py               # tool vocab + DAG/GED helpers (used by train/eval/dataset)
+utils/__init__.py           # read_datafile() CSV/Parquet loader
+scripts/run_routing_experiments.py  # batch runner for Experiment 1
+```
+
+### Datasets (committed, ready to use)
+
+```
+upgraded_data/routing_<N>tools/   # Experiment 1 routing splits (15/30/45 tools)
+upgraded/upgraded_30tools/        # Experiment 2 LEGR train/dev/test
+upgraded_data/graph_<N>tools/     # raw graph benchmark + hard negatives
+```
+
+### Tests
 
 ```bash
-python eval.py \
-  --checkpoint checkpoints_topology/best_model.pt \
-  --dataset_csv upgraded_data/graph/test_topology_heldout.csv \
-  --hard_negative_csv upgraded_data/graph/hard_negatives.csv \
-  --save_results results/legr_topology_heldout_metrics.csv
+pytest -q          # structural regression tests (no LLM calls required)
 ```
 
-## Project Structure
+---
 
-```
-├── dataset.py        # 50 synthetic queries with ground-truth API labels
-├── taxonomies.py     # Semantic tree (baseline) + Tool-Bound tree (proposed)
-├── llm_backends.py   # Gemini + Ollama backends for structured LLM calls
-├── routers.py        # Two-step LLM hierarchical router (Pydantic structured output)
-├── evaluator.py      # Runs both taxonomies, computes accuracy / latency / tokens
-├── main.py           # Entry point — runs experiment, prints report, exports CSV
-├── requirements.txt  # Python dependencies
-└── results/          # Created at runtime
-    ├── experiment_log.csv      # Per-query telemetry for both taxonomies
-    └── summary_metrics.csv     # Aggregate metrics side-by-side
-```
+## 5. Metrics
 
-## Metrics Collected
+**Experiment 1:** routing accuracy, branch accuracy, branch-OK/tool-wrong rate,
+hallucination rate, error propagation, latency (mean/median/P95), token usage, cost.
 
-| Metric | Description |
-|---|---|
-| **Routing Accuracy** | % of queries routed to the correct final API tool |
-| **Branch Accuracy** | % of queries routed to the correct top-level branch |
-| **Error Propagation** | Count of hallucinated branch/tool names |
-| **Latency** | Wall-clock time (mean, median, P95) per query |
-| **Token Efficiency** | Total prompt + completion tokens consumed |
-| **Estimated Cost** | USD cost (Gemini free tier = $0) |
+**Experiment 2:** Recall@{1,3,5}, MRR@{1,3,5}, tool-set F1, mean GED error,
+hard-negative ranking accuracy, inference latency.
 
-## Extending the Experiment
+---
 
-- **Add queries**: Append tuples to `RAW_DATASET` in `dataset.py`.
-- **Add APIs/tools**: Update `TOOL_DESCRIPTIONS` in `taxonomies.py` and place the new tool in both trees.
-- **Try other models**: Pass a different `model` string in `main.py`.
-- **Deeper trees**: Add a third level to the taxonomy dicts and extend `hierarchical_route()` in `routers.py`.
-
-## Requirements
+## 6. Requirements
 
 - Python 3.10+
-- **LLM**: Either **Ollama** (local, recommended) or a **Gemini API key** (free tier at [Google AI Studio](https://aistudio.google.com/app/apikey))
+- Experiment 1: `google-genai` or `ollama`, plus `pandas`, `pydantic`, `python-dotenv`
+- Experiment 2: `torch`, `torch_geometric`, `transformers`, `sentence-transformers`,
+  `networkx`, `rank-bm25`, `scikit-learn`, `wandb` (optional)
+
+See `requirements.txt` for pinned minimums.

@@ -69,7 +69,10 @@ def main() -> None:
 
     if args.regen_inputs:
         from scripts.regenerate_inputs import main as regen_main
-        regen_main()
+        regen_argv = []
+        if args.tool_count is not None:
+            regen_argv.extend(["--tool_count", str(args.tool_count)])
+        regen_main(regen_argv)
 
     if run_all or args.routing_only:
         from scripts.upgrade_routing import main as routing_main

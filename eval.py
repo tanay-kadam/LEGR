@@ -35,6 +35,7 @@ import argparse
 import csv
 import json
 import re
+import sys
 import time
 from collections import defaultdict
 from pathlib import Path
@@ -48,6 +49,14 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer, AutoModel
 from torch_geometric.data import Batch
+
+from legr_tool_count import (
+    add_tool_count_argument,
+    bootstrap_tool_count_from_argv,
+    get_active_tool_count,
+)
+
+_TOOL_COUNT_OVERRIDE = bootstrap_tool_count_from_argv(sys.argv)
 
 from data_synth import (
     TOOL_VOCAB,
@@ -73,6 +82,113 @@ def _text_model_name(cfg: TrainConfig) -> str:
     return getattr(cfg, "text_model_name", None) or getattr(
         cfg, "text_model", "sentence-transformers/all-MiniLM-L6-v2"
     )
+
+
+def _checkpoint_model_state(ckpt: Dict[str, Any]) -> Dict[str, Any]:
+    """Return the checkpoint model state dict using legacy fallbacks."""
+    model_state = ckpt.get("model_state") or ckpt.get("model_state_dict")
+    if model_state is None:
+        raise KeyError(
+            "Checkpoint has no 'model_state' or 'model_state_dict'."
+        )
+    return model_state
+
+
+def _infer_checkpoint_tool_count(ckpt: Dict[str, Any]) -> Optional[int]:
+    """Infer checkpoint tool-count metadata from config or embedding shape."""
+    config_dict = ckpt.get("config", {})
+    for candidate in (config_dict.get("tool_count"), ckpt.get("tool_count")):
+        if candidate is not None:
+            return int(candidate)
+
+    model_state = ckpt.get("model_state") or ckpt.get("model_state_dict")
+    if not isinstance(model_state, dict):
+        return None
+
+    for key in (
+        "graph_encoder.tool_embedding.weight",
+        "module.graph_encoder.tool_embedding.weight",
+    ):
+        if key not in model_state:
+            continue
+        weight = model_state[key]
+        if hasattr(weight, "shape") and len(weight.shape) >= 1:
+            return int(weight.shape[0] - 1)
+    return None
+
+
+def _validate_checkpoint_tool_count(
+    checkpoint_path: str,
+    ckpt: Dict[str, Any],
+) -> Optional[int]:
+    """Fail fast if the checkpoint tier does not match the active LEGR tier."""
+    checkpoint_tool_count = _infer_checkpoint_tool_count(ckpt)
+    active_tool_count = get_active_tool_count()
+    if (
+        checkpoint_tool_count is not None
+        and checkpoint_tool_count != active_tool_count
+    ):
+        raise ValueError(
+            f"Checkpoint {checkpoint_path} was trained for "
+            f"{checkpoint_tool_count} tools, but eval is running with "
+            f"{active_tool_count} tools. Re-run eval with "
+            f"--tool_count {checkpoint_tool_count} or load a matching checkpoint."
+        )
+    return checkpoint_tool_count
+
+
+LEGR_30TOOL_DEFAULT_DIR = Path("upgraded") / "upgraded_30tools"
+LEGR_30TOOL_TEST_CSV = LEGR_30TOOL_DEFAULT_DIR / "test_topology_heldout.csv"
+LEGR_30TOOL_HARD_NEGATIVE_CSV = LEGR_30TOOL_DEFAULT_DIR / "hard_negatives.csv"
+
+
+def _default_eval_csv_paths(tool_count: int) -> tuple[Optional[str], Optional[str]]:
+    """Return packaged eval defaults for LEGR tiers with curated datasets."""
+    if tool_count != 30:
+        return None, None
+    return str(LEGR_30TOOL_TEST_CSV), str(LEGR_30TOOL_HARD_NEGATIVE_CSV)
+
+
+def _resolve_eval_csv_paths(
+    dataset_csv: Optional[str],
+    hard_negative_csv: Optional[str],
+    *,
+    tool_count: Optional[int] = None,
+) -> tuple[Optional[str], Optional[str]]:
+    """Resolve explicit or default eval dataset paths for the current LEGR tier."""
+    resolved_tool_count = (
+        tool_count if tool_count is not None else get_active_tool_count()
+    )
+    default_dataset_csv, default_hard_negative_csv = _default_eval_csv_paths(
+        resolved_tool_count
+    )
+
+    if dataset_csv is None:
+        dataset_csv = default_dataset_csv
+    if (
+        hard_negative_csv is None
+        and default_hard_negative_csv is not None
+        and Path(default_hard_negative_csv).exists()
+    ):
+        hard_negative_csv = default_hard_negative_csv
+
+    required_paths: list[Path] = []
+    if dataset_csv is not None:
+        required_paths.append(Path(dataset_csv))
+    if hard_negative_csv is not None:
+        required_paths.append(Path(hard_negative_csv))
+
+    missing = [str(path) for path in required_paths if not path.exists()]
+    if missing:
+        raise FileNotFoundError(
+            "LEGR eval CSVs are missing: "
+            f"{', '.join(missing)}. Run "
+            "`python scripts/prepare_legr_30tool_dataset.py` "
+            "to build the packaged 30-tool dataset, "
+            "or pass valid --dataset_csv/--hard_negative_csv paths explicitly."
+        )
+
+    return dataset_csv, hard_negative_csv
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -165,9 +281,13 @@ def _load_model_and_tokenizer(
             "ensure train.main() returns the saved checkpoint path."
         )
     ckpt = torch.load(checkpoint_path, map_location=device, weights_only=False)
+    checkpoint_tool_count = _validate_checkpoint_tool_count(checkpoint_path, ckpt)
     config_dict = ckpt.get("config", {})
     cfg = TrainConfig(**{k: v for k, v in config_dict.items()
                          if k in TrainConfig.__dataclass_fields__})
+    if cfg.tool_count is None:
+        cfg.tool_count = checkpoint_tool_count
+    model_state = _checkpoint_model_state(ckpt)
 
     use_text = getattr(cfg, "use_text_node_features", False)
     text_feat_dim = getattr(cfg, "text_feature_dim", 0)
@@ -189,11 +309,6 @@ def _load_model_and_tokenizer(
         text_feature_dim=text_feat_dim,
     ).to(device)
 
-    model_state = ckpt.get("model_state") or ckpt.get("model_state_dict")
-    if model_state is None:
-        raise KeyError(
-            f"Checkpoint {checkpoint_path} has no 'model_state' or 'model_state_dict'."
-        )
     model.load_state_dict(model_state, strict=True)
     model.eval()
 
@@ -627,6 +742,10 @@ def evaluate_ablation_two(
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"\n  Device: {device}")
     print("  Mode: two-checkpoint LEGR ablation (same dataset, shared baselines)")
+    dataset_csv, hard_negative_csv = _resolve_eval_csv_paths(
+        dataset_csv,
+        hard_negative_csv,
+    )
 
     # Dataset once
     if dataset_csv:
@@ -758,6 +877,11 @@ def evaluate(
 
     model, cfg, tokenizer = _load_model_and_tokenizer(checkpoint_path, device)
     print(f"  Model loaded from {checkpoint_path}")
+    dataset_csv, hard_negative_csv = _resolve_eval_csv_paths(
+        dataset_csv,
+        hard_negative_csv,
+        tool_count=cfg.tool_count,
+    )
 
     # Load dataset
     if dataset_csv:
@@ -867,10 +991,11 @@ def evaluate(
 #  CLI
 # ═══════════════════════════════════════════════════════════════════════════
 
-def main():
+def parse_args():
     p = argparse.ArgumentParser(
         description="Evaluate LEGR dual-encoder (one or two checkpoints for GED ablation)",
     )
+    add_tool_count_argument(p, default=_TOOL_COUNT_OVERRIDE)
     p.add_argument(
         "--checkpoint",
         dest="checkpoint_groups",
@@ -900,7 +1025,11 @@ def main():
                     help="Directory to export case studies")
     p.add_argument("--max_case_studies", type=int, default=10)
     p.add_argument("--seed", type=int, default=42)
-    args = p.parse_args()
+    return p.parse_args()
+
+
+def main():
+    args = parse_args()
 
     # Flatten: supports `--checkpoint a b` and `--checkpoint a --checkpoint b`
     checkpoint_paths = [p for g in args.checkpoint_groups for p in g]

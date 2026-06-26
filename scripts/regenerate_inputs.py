@@ -22,12 +22,19 @@ Usage:
 
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
+
+from legr_tool_count import (
+    add_tool_count_argument,
+    apply_tool_count_override,
+    get_active_tool_count,
+)
 
 ROUTING_CSV = ROOT / "results" / "single_tool_dataset_scaled.csv"
 GRAPH_JSONL = ROOT / "outputs" / "legr_llm_test.jsonl"
@@ -88,11 +95,17 @@ def step2_graph() -> int:
     return n
 
 
-def main() -> None:
-    from vocab_config import ACTIVE_TOOL_COUNT
+def main(argv: list[str] | None = None) -> None:
+    p = argparse.ArgumentParser(
+        description="Regenerate routing and LEGR graph inputs for the active tool tier.",
+    )
+    add_tool_count_argument(p)
+    args = p.parse_args(argv)
+    apply_tool_count_override(args.tool_count)
+    active_tool_count = get_active_tool_count()
 
     print("=" * 60)
-    print(f"  Regenerate Pipeline Inputs  (ACTIVE_TOOL_COUNT={ACTIVE_TOOL_COUNT})")
+    print(f"  Regenerate Pipeline Inputs  (ACTIVE_TOOL_COUNT={active_tool_count})")
     print("=" * 60)
 
     n_routing = step1_routing()

@@ -43,6 +43,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, Optional
@@ -57,6 +58,14 @@ from tqdm import tqdm
 from transformers import AutoTokenizer
 
 import wandb
+
+from legr_tool_count import (
+    add_tool_count_argument,
+    bootstrap_tool_count_from_argv,
+    get_active_tool_count,
+)
+
+_TOOL_COUNT_OVERRIDE = bootstrap_tool_count_from_argv(sys.argv)
 
 from data_synth import LEGRDataset, build_splits, dag_to_pyg, NUM_TOOLS
 from encoders import LEGRDualEncoder, get_tokenizer
@@ -74,6 +83,7 @@ class TrainConfig:
     data_seed: int = 42
     train_csv: Optional[str] = None
     val_csv: Optional[str] = None
+    tool_count: Optional[int] = None
 
     # Architecture
     text_model: str = "sentence-transformers/all-MiniLM-L6-v2"
@@ -123,6 +133,88 @@ class _CSVSample:
     graph: object
     dag_id: int
     dag_nx: nx.DiGraph
+
+
+def _resolve_cfg_tool_count(cfg: TrainConfig) -> int:
+    """Ensure runtime config matches the already-active LEGR tier."""
+    active_tool_count = get_active_tool_count()
+    if cfg.tool_count is not None and cfg.tool_count != active_tool_count:
+        raise ValueError(
+            f"TrainConfig.tool_count={cfg.tool_count} does not match the active "
+            f"LEGR tool count ({active_tool_count}). Re-run with "
+            f"--tool_count {cfg.tool_count} before importing LEGR modules."
+        )
+    cfg.tool_count = active_tool_count
+    return active_tool_count
+
+
+LEGR_30TOOL_DEFAULT_DIR = Path("upgraded") / "upgraded_30tools"
+LEGR_30TOOL_TRAIN_CSV = LEGR_30TOOL_DEFAULT_DIR / "train.csv"
+LEGR_30TOOL_VAL_CSV = LEGR_30TOOL_DEFAULT_DIR / "dev.csv"
+
+
+def _default_train_val_csv_paths(tool_count: int) -> tuple[Optional[str], Optional[str]]:
+    """Return packaged CSV train/val defaults for the selected LEGR tier."""
+    if tool_count != 30:
+        return None, None
+    return str(LEGR_30TOOL_TRAIN_CSV), str(LEGR_30TOOL_VAL_CSV)
+
+
+def _resolve_train_val_csv_paths(cfg: TrainConfig) -> tuple[Optional[str], Optional[str]]:
+    """Resolve explicit or default CSV train/val paths for the current run."""
+    if cfg.train_csv or cfg.val_csv:
+        if not (cfg.train_csv and cfg.val_csv):
+            raise ValueError("Provide both --train_csv and --val_csv together.")
+        return cfg.train_csv, cfg.val_csv
+
+    tool_count = cfg.tool_count if cfg.tool_count is not None else get_active_tool_count()
+    train_csv, val_csv = _default_train_val_csv_paths(tool_count)
+    if train_csv is None or val_csv is None:
+        return None, None
+
+    missing = [
+        str(path)
+        for path in (Path(train_csv), Path(val_csv))
+        if not path.exists()
+    ]
+    if missing:
+        raise FileNotFoundError(
+            "Default 30-tool LEGR CSVs are missing: "
+            f"{', '.join(missing)}. Run "
+            "`python scripts/prepare_legr_30tool_dataset.py` "
+            "or pass --train_csv/--val_csv explicitly."
+        )
+
+    cfg.train_csv = train_csv
+    cfg.val_csv = val_csv
+    return train_csv, val_csv
+
+
+def _build_checkpoint_payload(
+    *,
+    epoch: int,
+    model,
+    criterion,
+    cfg: TrainConfig,
+    optimizer=None,
+    scheduler=None,
+    val_loss: float | None = None,
+) -> Dict[str, object]:
+    """Build a checkpoint payload with persisted tool-count metadata."""
+    payload: Dict[str, object] = {
+        "epoch": epoch,
+        "model_state": model.state_dict(),
+        "criterion_state": criterion.state_dict(),
+        "config": vars(cfg),
+        "tool_count": cfg.tool_count,
+    }
+    if optimizer is not None:
+        payload["optimizer_state"] = optimizer.state_dict()
+    if scheduler is not None:
+        payload["scheduler_state"] = scheduler.state_dict()
+    if val_loss is not None:
+        payload["val_loss"] = val_loss
+    return payload
 
 
 class CSVTrainDataset(torch.utils.data.Dataset):
@@ -455,14 +547,19 @@ def validate(
 
 def main(cfg: TrainConfig) -> str:
     torch.manual_seed(cfg.seed)
+    _resolve_cfg_tool_count(cfg)
 
     # ── Data ──────────────────────────────────────────────────────────────────
     print("Building dataset …")
-    if cfg.train_csv and cfg.val_csv:
-        print(f"  Using CSV train/val datasets:\n    train={cfg.train_csv}\n    val={cfg.val_csv}")
-        train_ds, val_ds = _build_csv_train_val_datasets(cfg.train_csv, cfg.val_csv)
-    elif cfg.train_csv or cfg.val_csv:
-        raise ValueError("Provide both --train_csv and --val_csv together.")
+    explicit_train_csv = cfg.train_csv
+    explicit_val_csv = cfg.val_csv
+    train_csv, val_csv = _resolve_train_val_csv_paths(cfg)
+    if train_csv and val_csv:
+        label = "CSV train/val datasets"
+        if explicit_train_csv is None and explicit_val_csv is None:
+            label = "default 30-tool CSV train/val datasets"
+        print(f"  Using {label}:\n    train={train_csv}\n    val={val_csv}")
+        train_ds, val_ds = _build_csv_train_val_datasets(train_csv, val_csv)
     else:
         train_ds, val_ds, _ = build_splits(
             entity_variants=cfg.entity_variants, seed=cfg.data_seed,
@@ -613,15 +710,18 @@ def main(cfg: TrainConfig) -> str:
             if improved:
                 best_val_loss = val_loss
                 patience_counter = 0
-                torch.save({
-                    "epoch": epoch,
-                    "model_state": model.state_dict(),
-                    "criterion_state": criterion.state_dict(),
-                    "optimizer_state": optimizer.state_dict(),
-                    "scheduler_state": scheduler.state_dict(),
-                    "val_loss": val_loss,
-                    "config": vars(cfg),
-                }, ckpt_dir / "best_model.pt")
+                torch.save(
+                    _build_checkpoint_payload(
+                        epoch=epoch,
+                        model=model,
+                        criterion=criterion,
+                        cfg=cfg,
+                        optimizer=optimizer,
+                        scheduler=scheduler,
+                        val_loss=val_loss,
+                    ),
+                    ckpt_dir / "best_model.pt",
+                )
             else:
                 patience_counter += 1
                 if patience_counter >= cfg.patience:
@@ -630,12 +730,15 @@ def main(cfg: TrainConfig) -> str:
                     break
 
     # Save final model
-    torch.save({
-        "epoch": epoch,
-        "model_state": model.state_dict(),
-        "criterion_state": criterion.state_dict(),
-        "config": vars(cfg),
-    }, ckpt_dir / "final_model.pt")
+    torch.save(
+        _build_checkpoint_payload(
+            epoch=epoch,
+            model=model,
+            criterion=criterion,
+            cfg=cfg,
+        ),
+        ckpt_dir / "final_model.pt",
+    )
 
     wandb.finish()
     print(f"\nTraining complete.  Best val loss: {best_val_loss:.4f}")
@@ -654,8 +757,11 @@ def main(cfg: TrainConfig) -> str:
 
 def parse_args() -> TrainConfig:
     p = argparse.ArgumentParser(description="Train the LEGR dual-encoder")
+    add_tool_count_argument(p, default=_TOOL_COUNT_OVERRIDE)
     cfg = TrainConfig()
     for name, default in vars(cfg).items():
+        if name == "tool_count":
+            continue
         ty = type(default) if default is not None else str
         if ty is bool:
             p.add_argument(f"--{name}", action="store_true", default=default)

@@ -4,6 +4,13 @@
 venv/
 ENV/
 
+# Paper source (not part of the public code release)
+paper.tex
+*.aux
+*.bbl
+*.blg
+*.synctex.gz
+
 # Python
 __pycache__/
 *.py[cod]
@@ -71,3 +78,20 @@ logs/
 .DS_Store
 dist/
 build/
+
+# Test / tooling caches
+.pytest_cache/
+.ipynb_checkpoints/
+test-artifacts/
+
+# GED distance cache
+.ged_cache/
+
+# Scratch, archives, and run snapshots (not needed to reproduce results)
+temp/
+archive/
+validation_results/
+sweep_csvs/
+# NOTE: "before changes/" is already committed. To stop tracking it run:
+#   git rm -r --cached "before changes"
+before changes/

@@ -22,6 +22,7 @@ from collections import Counter
 from typing import Dict, List, Optional, Set, Tuple
 
 import networkx as nx
+from vocab_config import ACTIVE_TOOL_COUNT
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -29,7 +30,7 @@ import networkx as nx
 #  data_synth.TOOL_VOCAB)
 # ─────────────────────────────────────────────────────────────────────────────
 
-TOOL_VOCAB: List[str] = [
+_FULL_TOOL_VOCAB: List[str] = [
     "db_read", "db_write", "reset_password", "create_ticket",
     "send_notification", "quarantine_system", "scan_malware",
     "generate_report", "process_refund", "update_subscription",
@@ -48,6 +49,8 @@ TOOL_VOCAB: List[str] = [
     "migrate_database", "tag_resource", "create_alert_rule",
     "acknowledge_alert", "merge_accounts", "export_data",
 ]
+
+TOOL_VOCAB: List[str] = _FULL_TOOL_VOCAB[:ACTIVE_TOOL_COUNT]
 
 
 # ─────────────────────────────────────────────────────────────────────────────
