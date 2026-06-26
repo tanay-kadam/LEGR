@@ -92,6 +92,7 @@ temp/
 archive/
 validation_results/
 sweep_csvs/
+PART1_RESEARCH_ANALYSIS.md
 # NOTE: "before changes/" is already committed. To stop tracking it run:
 #   git rm -r --cached "before changes"
 before changes/
