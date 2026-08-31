@@ -1,0 +1,31 @@
+dag_id,dag_text,tools,n_nodes,n_edges,action_group,topo_family,emb_dim
+0,backup_database -> deploy_container,backup_database;deploy_container,2,1,mixed,chain_short,256
+1,process_refund -> send_notification,process_refund;send_notification,2,1,mixed,chain_short,256
+2,log_audit_event -> escalate_to_human,log_audit_event;escalate_to_human,2,1,mixed,chain_short,256
+3,"reset_password -> rotate_api_key, rotate_api_key -> deploy_container, update_subscription -> reset_password",update_subscription;reset_password;rotate_api_key;deploy_container,4,3,mostly-write,chain_medium,256
+4,archive_data -> restore_backup,archive_data;restore_backup,2,1,mostly-write,chain_short,256
+5,"create_ticket -> send_notification, send_notification -> reset_password",create_ticket;send_notification;reset_password,3,2,mostly-orchestrate,chain_medium,256
+6,escalate_to_human -> archive_data,escalate_to_human;archive_data,2,1,mixed,chain_short,256
+7,archive_data -> scan_malware,archive_data;scan_malware,2,1,mixed,chain_short,256
+8,"archive_data -> enable_feature_flag, enable_feature_flag -> revoke_access",archive_data;enable_feature_flag;revoke_access,3,2,mostly-write,chain_medium,256
+9,"process_refund -> send_notification, update_subscription -> process_refund",update_subscription;process_refund;send_notification,3,2,mostly-write,chain_medium,256
+10,"revoke_access -> rotate_api_key, rotate_api_key -> log_audit_event",revoke_access;rotate_api_key;log_audit_event,3,2,mostly-write,chain_medium,256
+11,transfer_ownership -> invalidate_cache,transfer_ownership;invalidate_cache,2,1,mixed,chain_short,256
+12,"approve_access -> invalidate_cache, invalidate_cache -> run_pipeline, process_refund -> invalidate_cache",process_refund;approve_access;invalidate_cache;run_pipeline,4,3,mostly-write,fanin,256
+13,"approve_access -> generate_report, generate_report -> run_pipeline, rotate_api_key -> generate_report",approve_access;rotate_api_key;generate_report;run_pipeline,4,3,mixed,fanin,256
+14,"db_read -> revoke_access, log_audit_event -> disable_feature_flag, quarantine_system -> log_audit_event, revoke_access -> disable_feature_flag",quarantine_system;log_audit_event;db_read;revoke_access;disable_feature_flag,5,4,mixed,fanin,256
+15,"enable_feature_flag -> restore_backup, restore_backup -> rollback_deployment, rollback_deployment -> enable_feature_flag",rollback_deployment;enable_feature_flag;restore_backup;rollback_deployment,4,3,mixed,chain_medium,256
+16,"invalidate_cache -> revoke_access, rotate_api_key -> transfer_ownership, scan_malware -> invalidate_cache, transfer_ownership -> revoke_access",scan_malware;invalidate_cache;rotate_api_key;transfer_ownership;revoke_access,5,4,mostly-write,fanin,256
+17,"approve_access -> revoke_access, approve_access -> rotate_api_key, escalate_to_human -> approve_access, revoke_access -> schedule_maintenance, schedule_maintenance -> rotate_api_key, update_subscription -> escalate_to_human",update_subscription;escalate_to_human;approve_access;revoke_access;schedule_maintenance;rotate_api_key,6,6,mostly-write,fork_join,256
+18,"approve_access -> send_notification, deploy_container -> send_notification, send_notification -> scan_malware",approve_access;deploy_container;send_notification;scan_malware,4,3,mixed,fanin,256
+19,"backup_database -> scan_malware, db_write -> backup_database, scan_malware -> db_write",scan_malware;db_write;backup_database;scan_malware,4,3,mostly-read,chain_medium,256
+20,"backup_database -> provision_vm, provision_vm -> invalidate_cache, rollback_deployment -> provision_vm",backup_database;rollback_deployment;provision_vm;invalidate_cache,4,3,mixed,fanin,256
+21,"approve_access -> scan_malware, run_pipeline -> approve_access, scan_malware -> run_pipeline",scan_malware;run_pipeline;approve_access;scan_malware,4,3,mixed,chain_medium,256
+22,"check_status -> run_pipeline, rollback_deployment -> run_pipeline, run_pipeline -> archive_data",rollback_deployment;check_status;run_pipeline;archive_data,4,3,mixed,fanin,256
+23,"create_ticket -> restore_backup, db_write -> create_ticket, restore_backup -> db_write",db_write;create_ticket;restore_backup;db_write,4,3,mostly-write,chain_medium,256
+24,"provision_vm -> escalate_to_human, restart_service -> revoke_access, revoke_access -> escalate_to_human, schedule_maintenance -> provision_vm",restart_service;revoke_access;schedule_maintenance;provision_vm;escalate_to_human,5,4,mostly-orchestrate,fanin,256
+25,"invalidate_cache -> provision_vm, provision_vm -> restore_backup, reset_password -> run_pipeline, run_pipeline -> restore_backup",reset_password;run_pipeline;invalidate_cache;provision_vm;restore_backup,5,4,mostly-write,fanin,256
+26,"enable_feature_flag -> provision_vm, enable_feature_flag -> reset_password, provision_vm -> rollback_deployment, reset_password -> rollback_deployment",enable_feature_flag;provision_vm;reset_password;rollback_deployment,4,4,mostly-write,diamond,256
+27,"check_status -> provision_vm, check_status -> revoke_access, provision_vm -> schedule_maintenance, revoke_access -> schedule_maintenance",check_status;revoke_access;provision_vm;schedule_maintenance,4,4,mixed,diamond,256
+28,"provision_vm -> send_notification, provision_vm -> transfer_ownership, send_notification -> scale_service, transfer_ownership -> scale_service",provision_vm;transfer_ownership;send_notification;scale_service,4,4,mixed,diamond,256
+29,"approve_access -> db_read, approve_access -> escalate_to_human, db_read -> rollback_deployment, escalate_to_human -> rollback_deployment",approve_access;escalate_to_human;db_read;rollback_deployment,4,4,mixed,diamond,256

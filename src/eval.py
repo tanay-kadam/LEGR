@@ -72,7 +72,7 @@ from data_synth import (
     build_ged_matrix,
     register_tools,
 )
-from encoders import LEGRDualEncoder
+from encoders import LEGRDualEncoder, resolve_graph_encoder_settings
 from train import TrainConfig, _parse_tools, _parse_edges
 from utils import read_datafile
 
@@ -292,6 +292,7 @@ def _load_model_and_tokenizer(
     use_text = getattr(cfg, "use_text_node_features", False)
     text_feat_dim = getattr(cfg, "text_feature_dim", 0)
     tm = _text_model_name(cfg)
+    graph_encoder_type, tie_in_out, _bidirectional = resolve_graph_encoder_settings(cfg)
 
     # Architecture must match ``train.py`` / checkpoint (gcn_layers, node_embed_dim, …).
     model = LEGRDualEncoder(
@@ -304,9 +305,10 @@ def _load_model_and_tokenizer(
         freeze_text=cfg.freeze_text,
         num_frozen_layers=cfg.num_frozen_layers,
         max_topo_pos=cfg.max_topo_pos,
-        graph_encoder_type=getattr(cfg, "graph_encoder_type", "gcn"),
+        graph_encoder_type=graph_encoder_type,
         use_text_node_features=use_text,
         text_feature_dim=text_feat_dim,
+        tie_in_out=tie_in_out,
     ).to(device)
 
     model.load_state_dict(model_state, strict=True)
@@ -354,6 +356,7 @@ def encode_all_dags(
     dataset,
     device: torch.device,
     batch_size: int = 64,
+    bidirectional: bool = True,
 ) -> torch.Tensor:
     """Encode all unique DAGs in the dataset to graph embeddings."""
     all_embs = []
@@ -362,7 +365,7 @@ def encode_all_dags(
         graphs = []
         for j in range(i, min(i + batch_size, dataset.num_unique_dags)):
             G = dataset.get_unique_dag(j)
-            graphs.append(dag_to_pyg(G))
+            graphs.append(dag_to_pyg(G, bidirectional=bidirectional))
 
         batch = Batch.from_data_list(graphs)
         tp = getattr(batch, "topo_pos", None)
@@ -513,6 +516,7 @@ def evaluate_hard_negatives(
     hard_neg_df: pd.DataFrame,
     tokenizer,
     device: torch.device,
+    bidirectional: bool = True,
 ) -> Dict[str, float]:
     """Evaluate hard-negative ranking accuracy."""
     correct = 0
@@ -531,7 +535,7 @@ def evaluate_hard_negatives(
 
         try:
             neg_G = build_dag(neg_tools, neg_edges)
-            neg_pyg = dag_to_pyg(neg_G)
+            neg_pyg = dag_to_pyg(neg_G, bidirectional=bidirectional)
         except Exception:
             continue
 
@@ -770,9 +774,10 @@ def evaluate_ablation_two(
     for idx, (ckpt_path, label) in enumerate(zip(checkpoint_paths, labels)):
         print(f"\n  --- LEGR run: {label} ({ckpt_path}) ---")
         model, cfg, tokenizer = _load_model_and_tokenizer(ckpt_path, device)
+        _, _, bidirectional = resolve_graph_encoder_settings(cfg)
 
         q_embs = encode_all_queries(model, dataset, tokenizer, device)
-        d_embs = encode_all_dags(model, dataset, device)
+        d_embs = encode_all_dags(model, dataset, device, bidirectional=bidirectional)
         sim = torch.mm(q_embs, d_embs.t())
         legr_topk = sim.topk(k=5, dim=1).indices
 
@@ -784,6 +789,7 @@ def evaluate_ablation_two(
             hard_neg_df = read_datafile(hard_negative_csv)
             hn_metrics = evaluate_hard_negatives(
                 model, dataset, hard_neg_df, tokenizer, device,
+                bidirectional=bidirectional,
             )
             legr_metrics.update(hn_metrics)
             print(f"  {label} hard negatives: {hn_metrics}")
@@ -896,8 +902,9 @@ def evaluate(
 
     # LEGR retrieval
     print("\n  Running LEGR retrieval...")
+    _, _, bidirectional = resolve_graph_encoder_settings(cfg)
     q_embs = encode_all_queries(model, dataset, tokenizer, device)
-    d_embs = encode_all_dags(model, dataset, device)
+    d_embs = encode_all_dags(model, dataset, device, bidirectional=bidirectional)
 
     sim = torch.mm(q_embs, d_embs.t())
     legr_topk = sim.topk(k=5, dim=1).indices
@@ -932,6 +939,7 @@ def evaluate(
         hard_neg_df = read_datafile(hard_negative_csv)
         hn_metrics = evaluate_hard_negatives(
             model, dataset, hard_neg_df, tokenizer, device,
+            bidirectional=bidirectional,
         )
         legr_metrics.update(hn_metrics)
         print(f"  Hard negatives: {hn_metrics}")

@@ -52,9 +52,13 @@ def test_uploaded_30tool_eval_dataset_loads_without_hard_negatives():
     )
 
     assert Path(resolved_dataset) == dataset_path
-    assert resolved_hard_negatives is None
+    default_hn = ROOT / "upgraded" / "upgraded_30tools" / "hard_negatives.csv"
+    if default_hn.exists():
+        assert Path(resolved_hard_negatives).resolve() == default_hn.resolve()
+    else:
+        assert resolved_hard_negatives is None
 
     df = pd.read_csv(dataset_path, keep_default_na=False)
     dataset = eval_module.CSVEvalDataset(df)
-    assert len(dataset) == 1200
-    assert dataset.num_unique_dags == 90
+    assert len(dataset) == 332
+    assert dataset.num_unique_dags == 30

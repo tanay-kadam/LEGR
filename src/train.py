@@ -68,7 +68,7 @@ from legr_tool_count import (
 _TOOL_COUNT_OVERRIDE = bootstrap_tool_count_from_argv(sys.argv)
 
 from data_synth import LEGRDataset, build_splits, dag_to_pyg, NUM_TOOLS
-from encoders import LEGRDualEncoder, get_tokenizer
+from encoders import LEGRDualEncoder, get_tokenizer, resolve_graph_encoder_settings
 from loss import GraphAwareContrastiveLoss, compute_alignment_metrics
 
 
@@ -95,6 +95,7 @@ class TrainConfig:
     num_frozen_layers: int = 4
     max_topo_pos: int = 16
     graph_encoder_type: str = "gcn"
+    graph_direction: str = "gcn_undirected"
 
     # Loss — default GED prior (override to match older CSV baselines via CLI)
     temperature_init: float = 0.05
@@ -238,6 +239,9 @@ class CSVTrainDataset(torch.utils.data.Dataset):
     def get_ged_tensor(self) -> torch.Tensor:
         return torch.from_numpy(self.ged_matrix).float()
 
+    def get_unique_dag(self, dag_id: int) -> nx.DiGraph:
+        return self._unique_dags[dag_id]
+
 
 def _parse_tools(cell) -> list[str]:
     if cell is None:
@@ -284,6 +288,7 @@ def _dag_hash(G: nx.DiGraph) -> str:
 def _build_csv_train_val_datasets(
     train_csv: str,
     val_csv: str,
+    bidirectional: bool = True,
 ) -> tuple[CSVTrainDataset, CSVTrainDataset]:
     """Build train/val datasets from CSVs with shared DAG id space and GED matrix."""
     train_df = pd.read_csv(train_csv)
@@ -313,7 +318,9 @@ def _build_csv_train_val_datasets(
                 dag_hash_to_id[h] = len(unique_dags)
                 unique_dags.append(G)
                 dag_texts.append(row["dag_text"] if "dag_text" in df.columns and pd.notna(row["dag_text"]) else "")
-                dag_pyg_cache[dag_hash_to_id[h]] = dag_to_pyg(G)
+                dag_pyg_cache[dag_hash_to_id[h]] = dag_to_pyg(
+                    G, bidirectional=bidirectional,
+                )
             dag_id = dag_hash_to_id[h]
             samples.append(
                 _CSVSample(
@@ -551,6 +558,8 @@ def main(cfg: TrainConfig) -> str:
 
     # ── Data ──────────────────────────────────────────────────────────────────
     print("Building dataset …")
+    graph_encoder_type, tie_in_out, bidirectional = resolve_graph_encoder_settings(cfg)
+    cfg.graph_encoder_type = graph_encoder_type
     explicit_train_csv = cfg.train_csv
     explicit_val_csv = cfg.val_csv
     train_csv, val_csv = _resolve_train_val_csv_paths(cfg)
@@ -559,7 +568,9 @@ def main(cfg: TrainConfig) -> str:
         if explicit_train_csv is None and explicit_val_csv is None:
             label = "default 30-tool CSV train/val datasets"
         print(f"  Using {label}:\n    train={train_csv}\n    val={val_csv}")
-        train_ds, val_ds = _build_csv_train_val_datasets(train_csv, val_csv)
+        train_ds, val_ds = _build_csv_train_val_datasets(
+            train_csv, val_csv, bidirectional=bidirectional,
+        )
     else:
         train_ds, val_ds, _ = build_splits(
             entity_variants=cfg.entity_variants, seed=cfg.data_seed,
@@ -592,7 +603,8 @@ def main(cfg: TrainConfig) -> str:
         freeze_text=cfg.freeze_text,
         num_frozen_layers=cfg.num_frozen_layers,
         max_topo_pos=cfg.max_topo_pos,
-        graph_encoder_type=getattr(cfg, "graph_encoder_type", "gcn"),
+        graph_encoder_type=graph_encoder_type,
+        tie_in_out=tie_in_out,
     ).to(device)
 
     criterion = GraphAwareContrastiveLoss(

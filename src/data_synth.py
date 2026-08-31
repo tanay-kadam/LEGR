@@ -1575,15 +1575,15 @@ def build_dag(tools: List[str], edges: List[Tuple[int, int]]) -> nx.DiGraph:
     return G
 
 
-def dag_to_pyg(G: nx.DiGraph) -> Data:
+def dag_to_pyg(G: nx.DiGraph, bidirectional: bool = True) -> Data:
     """Convert a NetworkX DAG to a ``torch_geometric.data.Data`` object.
 
-    Node features are integer tool indices (shape ``[N, 1]``).  Edges are
-    made bidirectional so that standard GCN message-passing can propagate
-    information in both directions through the graph.  Each node also
-    receives a **topological position** encoding (its rank in a topological
-    sort of the original DAG) so the GCN can reason about execution order
-    despite operating on undirected edges.
+    Node features are integer tool indices (shape ``[N, 1]``).  By default
+    edges are made bidirectional so that standard GCN message-passing can
+    propagate information in both directions through the graph.  Pass
+    ``bidirectional=False`` to keep the original directed edges (directed
+    GNN ablation).  Each node also receives a **topological position**
+    encoding (its rank in a topological sort of the original DAG).
     """
     nodes = sorted(G.nodes())
     tool_indices = [TOOL_TO_IDX[G.nodes[n]["tool"]] for n in nodes]
@@ -1597,8 +1597,11 @@ def dag_to_pyg(G: nx.DiGraph) -> Data:
 
     src, dst = [], []
     for u, v in G.edges():
-        src.extend([u, v])
-        dst.extend([v, u])
+        src.append(u)
+        dst.append(v)
+        if bidirectional:
+            src.append(v)
+            dst.append(u)
 
     if src:
         edge_index = torch.tensor([src, dst], dtype=torch.long)

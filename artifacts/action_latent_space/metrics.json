@@ -1,0 +1,18 @@
+{
+  "n": 30,
+  "label_counts": {
+    "mostly-read": 1,
+    "mostly-write": 11,
+    "mostly-orchestrate": 2,
+    "mixed": 16
+  },
+  "majority_frac": 0.5333333333333333,
+  "silhouette": -0.010086598806083202,
+  "neighborhood_purity_k": 5,
+  "neighborhood_purity": 0.39333333333333337,
+  "ami_vs_1nn": -0.07258381543543473,
+  "evidence": "NO SUPPORT",
+  "embedding_space": "original",
+  "tsne_not_used_for_metrics": true,
+  "source": "synthetic_random"
+}

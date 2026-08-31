@@ -1,0 +1,10 @@
+tier,file,rows,dags,unique_queries,shortfalls
+15,train.csv,2922,140,2922,0
+15,dev.csv,587,43,587,0
+15,test_topology_heldout.csv,737,53,737,0
+30,train.csv,1692,161,1692,0
+30,dev.csv,403,55,403,0
+30,test_topology_heldout.csv,550,69,550,0
+45,train.csv,4316,271,4316,0
+45,dev.csv,585,81,585,0
+45,test_topology_heldout.csv,1325,123,1325,0

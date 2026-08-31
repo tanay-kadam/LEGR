@@ -1,0 +1,11 @@
+{
+  "experiment_id": "direction_ablation_tied_in_out",
+  "tool_count": 30,
+  "graph_direction": "tied_in_out",
+  "train_csv": "upgraded/upgraded_30tools/train.csv",
+  "val_csv": "upgraded/upgraded_30tools/dev.csv",
+  "test_csv": "upgraded/upgraded_30tools/test_topology_heldout.csv",
+  "checkpoint_dir": "artifacts/direction_ablation/checkpoints/tied_in_out",
+  "seed": 42,
+  "notes": "Same DirGNN class with W_in is W_out. Controlled directionality ablation."
+}

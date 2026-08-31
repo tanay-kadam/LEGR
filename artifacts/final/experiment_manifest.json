@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "generated": "2026-08-31",
+  "final_status": "NOT READY FOR PAPER",
+  "pytest": {
+    "passed": 138,
+    "xfailed": 1,
+    "failed": 0
+  },
+  "experiments": [
+    {
+      "experiment_name": "sbert_finetuned_2x2",
+      "status": "implemented_not_trained",
+      "git_commit": null,
+      "configuration": "artifacts/sbert_finetuned/configs/",
+      "random_seed": 42,
+      "dataset_version": "upgraded/upgraded_30tools",
+      "checkpoint": null,
+      "command": "python src/sbert_ft_baseline.py --tool_count 30 --lambda_ged 0 --checkpoint_dir artifacts/sbert_finetuned/checkpoints/cell1_untied_noged",
+      "output_directory": "artifacts/sbert_finetuned/",
+      "metrics_file": null,
+      "manager_review": "artifacts/reviews/sbert_manager_review.md",
+      "qa_report": "artifacts/tests/sbert_qa_report.md",
+      "paper_destination": "Table 2 row between Sentence-BERT and LEGR (no GED); Cell 2 vs LEGR isolates GNN given GACL",
+      "notes": "Untied primary; --tied secondary; copy TrainConfig from --legr_checkpoint when available"
+    },
+    {
+      "experiment_name": "action_latent_space",
+      "status": "implemented_pending_checkpoint",
+      "git_commit": null,
+      "configuration": "src/action_type_mapping.py",
+      "random_seed": 42,
+      "dataset_version": "upgraded/upgraded_30tools/test_topology_heldout.csv",
+      "checkpoint": null,
+      "command": "python scripts/analyze_action_latent_space.py --tool_count 30 --checkpoint <legr.pt> --output artifacts/action_latent_space",
+      "output_directory": "artifacts/action_latent_space/",
+      "metrics_file": "artifacts/action_latent_space/metrics.json",
+      "manager_review": "artifacts/reviews/action_manager_review.md",
+      "qa_report": "artifacts/tests/action_qa_report.md",
+      "paper_destination": "Appendix figure only if STRONG SUPPORT on real embeddings",
+      "notes": "Synthetic dry run used random embeddings; evidence NO SUPPORT is not a LEGR finding"
+    },
+    {
+      "experiment_name": "zero_shot_atomic",
+      "status": "implemented_pending_checkpoint",
+      "git_commit": null,
+      "configuration": "src/atomic_zero_shot.py",
+      "random_seed": 42,
+      "dataset_version": "upgraded_data/routing_15tools + upgraded/upgraded_15tools/test_topology_heldout.csv",
+      "checkpoint": null,
+      "command": "python scripts/eval_zero_shot_atomic.py --tool_count 15 --checkpoint <legr_15.pt> --output artifacts/zero_shot_atomic",
+      "output_directory": "artifacts/zero_shot_atomic/",
+      "metrics_file": null,
+      "manager_review": "artifacts/reviews/atomic_manager_review.md",
+      "qa_report": "artifacts/tests/atomic_qa_report.md",
+      "paper_destination": "Table 1 candidate row LEGR (zero-shot, unified corpus) only after OUTCOME A",
+      "notes": "Aliases query_database->db_read, update_database->db_write; 30-tool routing out of scope"
+    },
+    {
+      "experiment_name": "direction_ablation",
+      "status": "implemented_not_trained",
+      "git_commit": null,
+      "configuration": "artifacts/direction_ablation/configs/",
+      "random_seed": 42,
+      "dataset_version": "upgraded/upgraded_30tools",
+      "checkpoint": null,
+      "command": "python src/train.py --tool_count 30 --graph_direction directed --checkpoint_dir artifacts/direction_ablation/checkpoints/directed",
+      "output_directory": "artifacts/direction_ablation/",
+      "metrics_file": null,
+      "manager_review": "artifacts/reviews/direction_manager_review.md",
+      "qa_report": "artifacts/tests/direction_qa_report.md",
+      "paper_destination": "Ablation table row: directed vs tied_in_out; default GCN unchanged",
+      "notes": "Published LEGR is bidirectional GCN; DirGNN is new"
+    }
+  ]
+}

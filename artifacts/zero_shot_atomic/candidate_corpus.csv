@@ -1,0 +1,46 @@
+candidate_id,dag_hash,dag_text,is_one_node,n_nodes,n_edges
+0,69c8d0fbc2ce97c0,generate_report -> send_notification,False,2,1
+1,68056fe7f7f36984,"check_status -> generate_report, db_read -> generate_report",False,3,2
+2,2138ed02b210ef4c,"check_status -> escalate_to_human, check_status -> scan_malware, escalate_to_human -> create_ticket, scan_malware -> create_ticket",False,4,4
+3,ae4329d66b08b124,check_status -> db_write,False,2,1
+4,4cc0d3bfc26ee6b0,create_ticket -> scan_malware,False,2,1
+5,34c108d936ff3458,"generate_report -> scan_malware, scan_malware -> process_refund",False,3,2
+6,c36bcc5d23d8141a,"check_status -> process_refund, scan_malware -> check_status",False,3,2
+7,fabed092836dc4a9,"escalate_to_human -> log_audit_event, log_audit_event -> reset_password",False,3,2
+8,dab7c7c0bf02ab40,"create_ticket -> process_refund, escalate_to_human -> provision_vm, provision_vm -> create_ticket",False,4,3
+9,8657d6aa30cef529,"create_ticket -> generate_report, quarantine_system -> generate_report",False,3,2
+10,c47210bcacfa8441,"check_status -> escalate_to_human, create_ticket -> update_subscription, generate_report -> update_subscription, scan_malware -> create_ticket, scan_malware -> generate_report, send_notification -> escalate_to_human, update_subscription -> check_status, update_subscription -> send_notification",False,7,8
+11,8b99524bd6486204,"escalate_to_human -> db_write, escalate_to_human -> scan_malware, escalate_to_human -> send_notification, send_notification -> generate_report",False,5,4
+12,40f8528abe8c3d55,"escalate_to_human -> reset_password, quarantine_system -> reset_password, reset_password -> log_audit_event",False,4,3
+13,36a4f4f500b26e36,"create_ticket -> send_notification, provision_vm -> send_notification, send_notification -> escalate_to_human, send_notification -> restart_service",False,5,4
+14,24da99f2cfd36816,"check_status -> quarantine_system, check_status -> scan_malware, quarantine_system -> send_notification, scan_malware -> send_notification",False,4,4
+15,69d222809997ab75,"db_write -> provision_vm, update_subscription -> create_ticket, update_subscription -> db_read, update_subscription -> db_write",False,5,4
+16,fe90f74f379b42db,"db_read -> provision_vm, escalate_to_human -> provision_vm, generate_report -> escalate_to_human, restart_service -> db_read",False,5,4
+17,099b57c99c4fb944,"db_read -> db_write, db_read -> process_refund, db_write -> db_read, db_write -> provision_vm, escalate_to_human -> db_write, process_refund -> db_read, process_refund -> escalate_to_human, provision_vm -> process_refund",False,7,8
+18,30740f739af419c6,"generate_report -> reset_password, reset_password -> create_ticket, reset_password -> send_notification",False,4,3
+19,145f4eca6e60dde8,"db_read -> db_write, db_read -> provision_vm, db_read -> scan_malware, db_read -> update_subscription, provision_vm -> update_subscription, update_subscription -> update_subscription",False,7,6
+20,3a1f26b7742a62c7,"create_ticket -> send_notification, log_audit_event -> send_notification, process_refund -> create_ticket, process_refund -> log_audit_event, send_notification -> reset_password",False,5,5
+21,e90b2438a257d340,"escalate_to_human -> process_refund, generate_report -> escalate_to_human, process_refund -> restart_service, send_notification -> restart_service",False,5,4
+22,43c890676de42559,"check_status -> log_audit_event, db_read -> send_notification, quarantine_system -> log_audit_event, send_notification -> quarantine_system",False,5,4
+23,31685aa405d70484,"escalate_to_human -> check_status, escalate_to_human -> log_audit_event, escalate_to_human -> reset_password, log_audit_event -> scan_malware",False,5,4
+24,acb738d40cbd2a59,"check_status -> restart_service, reset_password -> check_status, restart_service -> reset_password",False,4,3
+25,4a5a483c288806b5,"db_read -> generate_report, escalate_to_human -> generate_report, generate_report -> create_ticket, scan_malware -> db_read, scan_malware -> escalate_to_human",False,5,5
+26,e71a06e918988d8a,"escalate_to_human -> db_read, process_refund -> quarantine_system, provision_vm -> escalate_to_human, quarantine_system -> db_read",False,5,4
+27,812d7bbe18dd176c,"db_read -> check_status, db_read -> process_refund, scan_malware -> db_read",False,4,3
+28,3b5550e4e0a4ecb4,"create_ticket -> provision_vm, provision_vm -> provision_vm, provision_vm -> restart_service, provision_vm -> scan_malware, reset_password -> create_ticket, reset_password -> scan_malware, scan_malware -> provision_vm, scan_malware -> restart_service",False,7,8
+29,2dfe0c9ca886480a,"db_write -> process_refund, process_refund -> provision_vm, send_notification -> process_refund",False,4,3
+30,c075ba5194905a51,db_read,True,1,0
+31,2ba287c7bceef863,db_write,True,1,0
+32,4632095c7ecdbea3,reset_password,True,1,0
+33,b6eb2205ba11c689,create_ticket,True,1,0
+34,3b5c38def94bf432,send_notification,True,1,0
+35,43bbfbd408acca12,quarantine_system,True,1,0
+36,f65a937304c782d7,scan_malware,True,1,0
+37,e016d1581a5ac7e4,generate_report,True,1,0
+38,87eec42c34918c50,process_refund,True,1,0
+39,b4fee0a1fa908eb2,update_subscription,True,1,0
+40,8b972a29695f50ff,provision_vm,True,1,0
+41,09a99426b009dc67,restart_service,True,1,0
+42,ae4042df120cfd08,check_status,True,1,0
+43,71ea91f239af7106,escalate_to_human,True,1,0
+44,448970c79532232f,log_audit_event,True,1,0

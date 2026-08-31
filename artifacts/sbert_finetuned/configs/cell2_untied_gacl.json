@@ -1,0 +1,14 @@
+{
+  "experiment_id": "sbert_ft_cell2_untied_gacl",
+  "tool_count": 30,
+  "tied": false,
+  "lambda_ged": 0.30,
+  "ged_scale": 2.5,
+  "ged_margin": 0.05,
+  "train_csv": "upgraded/upgraded_30tools/train.csv",
+  "val_csv": "upgraded/upgraded_30tools/dev.csv",
+  "test_csv": "upgraded/upgraded_30tools/test_topology_heldout.csv",
+  "hard_negative_csv": "upgraded_data/graph_30tools/hard_negatives.csv",
+  "checkpoint_dir": "artifacts/sbert_finetuned/checkpoints/cell2_untied_ged",
+  "seed": 42
+}

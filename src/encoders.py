@@ -28,6 +28,25 @@ from torch_geometric.nn import GCNConv, GATConv, global_mean_pool
 from transformers import AutoModel, AutoTokenizer
 
 
+def resolve_graph_encoder_settings(cfg) -> tuple[str, bool, bool]:
+    """Map training/eval config to ``(graph_encoder_type, tie_in_out, bidirectional)``.
+
+    Default LEGR behaviour is bidirectional GCN (``gcn_undirected``).
+    Directed ablation modes keep the original DAG orientation.
+    """
+    direction = getattr(cfg, "graph_direction", "gcn_undirected") or "gcn_undirected"
+    gtype = getattr(cfg, "graph_encoder_type", "gcn") or "gcn"
+    if direction == "directed":
+        return "directed", False, False
+    if direction == "tied_in_out":
+        return "directed", True, False
+    if gtype == "directed_tied":
+        return "directed", True, False
+    if gtype == "directed":
+        return "directed", False, False
+    return gtype, False, True
+
+
 def get_tokenizer(model_name: str):
     """Load a HuggingFace ``AutoTokenizer`` for the given pretrained model."""
     return AutoTokenizer.from_pretrained(model_name)
@@ -249,6 +268,101 @@ class GATGraphEncoder(nn.Module):
 
 
 # ═══════════════════════════════════════════════════════════════════════════
+#  Directed graph encoder (W_self / W_in / W_out)
+# ═══════════════════════════════════════════════════════════════════════════
+
+class DirectedGraphEncoder(nn.Module):
+    """Directed message passing: ``h_v = W_self x_v + W_in Σ_{u→v} x_u + W_out Σ_{v→w} x_w``.
+
+    ``tie_in_out=True`` shares ``W_in`` and ``W_out`` (controlled directionality
+    ablation). Isolated nodes (empty ``edge_index``) use ``W_self`` only.
+    """
+
+    def __init__(
+        self,
+        num_tools: int,
+        tool_embed_dim: int = 64,
+        hidden_dim: int = 128,
+        embed_dim: int = 256,
+        num_layers: int = 3,
+        max_topo_pos: int = 32,
+        use_text_node_features: bool = False,
+        text_feature_dim: int = 0,
+        tie_in_out: bool = False,
+    ):
+        super().__init__()
+        self.max_topo_pos = max_topo_pos
+        self.tie_in_out = bool(tie_in_out)
+        self.tool_embedding = nn.Embedding(num_tools + 1, tool_embed_dim, padding_idx=0)
+        self.topo_embedding = nn.Embedding(max_topo_pos + 1, tool_embed_dim)
+
+        input_dim = tool_embed_dim * 2
+        if use_text_node_features and text_feature_dim > 0:
+            self.text_proj = nn.Linear(text_feature_dim, tool_embed_dim)
+            input_dim += tool_embed_dim
+        else:
+            self.text_proj = None
+
+        self.W_self = nn.ModuleList()
+        self.W_in = nn.ModuleList()
+        self.W_out = nn.ModuleList() if not self.tie_in_out else None
+        self.norms = nn.ModuleList()
+        for i in range(num_layers):
+            in_dim = input_dim if i == 0 else hidden_dim
+            self.W_self.append(nn.Linear(in_dim, hidden_dim))
+            self.W_in.append(nn.Linear(in_dim, hidden_dim, bias=False))
+            if not self.tie_in_out:
+                self.W_out.append(nn.Linear(in_dim, hidden_dim, bias=False))
+            self.norms.append(nn.LayerNorm(hidden_dim))
+
+        self.proj = nn.Linear(hidden_dim, embed_dim)
+
+    def _out_linear(self, layer: int) -> nn.Linear:
+        if self.tie_in_out:
+            return self.W_in[layer]
+        return self.W_out[layer]
+
+    def forward(
+        self,
+        x: torch.Tensor,
+        edge_index: torch.Tensor,
+        batch: torch.Tensor,
+        topo_pos: torch.Tensor | None = None,
+    ) -> torch.Tensor:
+        tool_emb = self.tool_embedding(x.squeeze(-1))
+
+        if topo_pos is not None:
+            topo_emb = self.topo_embedding(topo_pos.clamp(max=self.max_topo_pos))
+        else:
+            topo_emb = torch.zeros_like(tool_emb)
+
+        h = torch.cat([tool_emb, topo_emb], dim=-1)
+
+        if self.text_proj is not None:
+            text_feat = torch.zeros(h.size(0), self.text_proj.in_features,
+                                    device=h.device)
+            h = torch.cat([h, self.text_proj(text_feat)], dim=-1)
+
+        src = edge_index[0]
+        dst = edge_index[1]
+        n_nodes = h.size(0)
+
+        for i, (w_self, w_in, norm) in enumerate(zip(self.W_self, self.W_in, self.norms)):
+            w_out = self._out_linear(i)
+            h_new = w_self(h)
+            if src.numel() > 0:
+                in_agg = h.new_zeros(n_nodes, h_new.size(-1))
+                out_agg = h.new_zeros(n_nodes, h_new.size(-1))
+                in_agg.index_add_(0, dst, w_in(h)[src])
+                out_agg.index_add_(0, src, w_out(h)[dst])
+                h_new = h_new + in_agg + out_agg
+            h = F.relu(norm(h_new))
+
+        graph_emb = global_mean_pool(h, batch)
+        return self.proj(graph_emb)
+
+
+# ═══════════════════════════════════════════════════════════════════════════
 #  Dual Encoder
 # ═══════════════════════════════════════════════════════════════════════════
 
@@ -279,6 +393,7 @@ class LEGRDualEncoder(nn.Module):
         node_embed_dim: int | None = None,
         gcn_hidden: int | None = None,
         freeze_text: bool | None = None,
+        tie_in_out: bool = False,
     ):
         if gcn_layers is not None:
             graph_num_layers = gcn_layers
@@ -291,6 +406,8 @@ class LEGRDualEncoder(nn.Module):
 
         super().__init__()
         self.embed_dim = embed_dim
+        self.graph_encoder_type = graph_encoder_type
+        self.tie_in_out = bool(tie_in_out)
 
         self.text_encoder = TextEncoder(
             model_name=text_model_name,
@@ -299,7 +416,6 @@ class LEGRDualEncoder(nn.Module):
             num_frozen_layers=num_frozen_layers,
         )
 
-        GraphEncoderClass = GATGraphEncoder if graph_encoder_type == "gat" else GCNGraphEncoder
         gnn_kwargs = dict(
             num_tools=num_tools,
             tool_embed_dim=tool_embed_dim,
@@ -312,8 +428,12 @@ class LEGRDualEncoder(nn.Module):
         )
         if graph_encoder_type == "gat":
             gnn_kwargs["num_heads"] = graph_num_heads
-
-        self.graph_encoder = GraphEncoderClass(**gnn_kwargs)
+            self.graph_encoder = GATGraphEncoder(**gnn_kwargs)
+        elif graph_encoder_type == "directed":
+            gnn_kwargs["tie_in_out"] = self.tie_in_out
+            self.graph_encoder = DirectedGraphEncoder(**gnn_kwargs)
+        else:
+            self.graph_encoder = GCNGraphEncoder(**gnn_kwargs)
 
     def encode_text(
         self,

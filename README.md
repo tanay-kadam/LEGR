@@ -194,6 +194,15 @@ python scripts/sweep_ged_hyperparams.py \
 Common training overrides: `--epochs`, `--lr`, `--batch_size`, and the GED-loss
 knobs `--lambda_ged`, `--ged_scale`, `--ged_margin`.
 
+### Additional experiments (implemented; train/eval deferred)
+
+Code, configs, and tests live under `src/sbert_ft_baseline.py`,
+`scripts/analyze_action_latent_space.py`, `scripts/eval_zero_shot_atomic.py`,
+and `--graph_direction {directed,tied_in_out}` on `src/train.py`.
+Repro commands: `artifacts/sbert_finetuned/repro.md`,
+`artifacts/direction_ablation/repro.md`, `artifacts/final/FINAL_REPORT.md`.
+Do not copy metrics into the paper until those runs complete.
+
 ---
 
 ## 4. Repository layout
