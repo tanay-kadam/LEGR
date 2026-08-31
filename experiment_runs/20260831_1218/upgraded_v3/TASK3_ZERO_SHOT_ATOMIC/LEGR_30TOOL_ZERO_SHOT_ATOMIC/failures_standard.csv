@@ -1,0 +1,89 @@
+query,gt_tool,rank_of_one_node,top1_is_one_node,top1_dag_text,top1_cosine,gt_cosine
+Please check the database entry for Eve.,db_read,2,True,db_write,0.5875462889671326,0.5611202120780945
+Can you bring up the database entry for #20891?,db_read,2,True,db_write,0.6110801696777344,0.5883334875106812
+Could you bring up the database entry for #31450 for me?,db_read,2,True,db_write,0.6162338852882385,0.5928087830543518
+Kindly check the database entry for Eve.,db_read,3,True,backup_database,0.5618066191673279,0.5286667943000793
+Kindly bring up the database entry for #53698.,db_read,2,True,db_write,0.5927092432975769,0.5770756602287292
+store the revised details for Grace.,db_write,2,True,archive_data,0.5579632520675659,0.5359695553779602
+Kindly store the revised details for Eve.,db_write,2,True,archive_data,0.5592476725578308,0.549302339553833
+log a helpdesk issue for Bob.,create_ticket,3,True,log_audit_event,0.6162578463554382,0.4101542830467224
+raise a service request for HR.,create_ticket,16,True,update_subscription,0.49254655838012695,0.3306804299354553
+open a service desk case for Alice.,create_ticket,2,True,escalate_to_human,0.545974850654602,0.49886876344680786
+Please log an issue against staging-db-02.,create_ticket,3,True,log_audit_event,0.5381767153739929,0.458212673664093
+Please raise a service request for Finance.,create_ticket,15,True,process_refund,0.5448153018951416,0.39149466156959534
+Please open a service desk case for Diana.,create_ticket,2,True,escalate_to_human,0.5353770852088928,0.5348602533340454
+Can you log a helpdesk issue for Grace?,create_ticket,3,True,log_audit_event,0.653987467288971,0.3995002806186676
+Could you log a helpdesk issue for Frank for me?,create_ticket,3,True,log_audit_event,0.64988112449646,0.43807750940322876
+Could you create a service request for auth-svc-04 for me?,create_ticket,16,True,enable_feature_flag,0.52718585729599,0.3859458267688751
+I need you to log a helpdesk issue for Engineering.,create_ticket,3,True,log_audit_event,0.648535430431366,0.4484788477420807
+I need you to raise a service request for Marketing.,create_ticket,20,True,send_notification,0.5069268941879272,0.336610347032547
+I need you to open a service desk case for Eve.,create_ticket,3,True,escalate_to_human,0.5426087379455566,0.5124303698539734
+We should log an issue against prod-web-01.,create_ticket,3,True,log_audit_event,0.5800630450248718,0.5166320204734802
+We should open a service desk case for Alice.,create_ticket,2,True,escalate_to_human,0.5392569899559021,0.5185319781303406
+We should create a service request for prod-web-01.,create_ticket,9,True,provision_vm,0.5182638168334961,0.45791688561439514
+Let's log an issue against ml-infer-05.,create_ticket,3,True,log_audit_event,0.5629603862762451,0.4892882704734802
+Let's raise a support request on behalf of Bob.,create_ticket,8,True,approve_access,0.5506040453910828,0.4257979393005371
+Kindly log an issue against cdn-edge-06.,create_ticket,3,True,log_audit_event,0.5482052564620972,0.44545575976371765
+Kindly create a service request for staging-db-02.,create_ticket,15,False,backup_database -> deploy_container,0.5140959024429321,0.37379565834999084
+forward the update to Charlie.,send_notification,2,True,transfer_ownership,0.5331388115882874,0.4925162196159363
+Can you forward the latest update to Legal?,send_notification,5,True,rollback_deployment,0.46900859475135803,0.39787009358406067
+Please contain prod-web-01 immediately.,quarantine_system,2,True,restart_service,0.5253344178199768,0.508050262928009
+Could you contain payment-api-03 immediately for me?,quarantine_system,2,True,invalidate_cache,0.5228872895240784,0.5174900889396667
+I need you to contain staging-db-02 immediately.,quarantine_system,2,True,restart_service,0.5331858396530151,0.5052165985107422
+We should contain auth-svc-04 immediately.,quarantine_system,3,True,restart_service,0.5315204858779907,0.5020188689231873
+Let's contain staging-db-02 immediately.,quarantine_system,2,True,restart_service,0.5537148714065552,0.5183398723602295
+check prod-web-01 for indicators of compromise.,scan_malware,2,True,check_status,0.6229568719863892,0.5529226064682007
+Please check payment-api-03 for indicators of compromise.,scan_malware,2,True,check_status,0.6089006662368774,0.5126113891601562
+Can you check payment-api-03 for indicators of compromise?,scan_malware,2,True,check_status,0.5809889435768127,0.44969210028648376
+Could you check prod-web-01 for indicators of compromise for me?,scan_malware,2,True,check_status,0.624763011932373,0.5328754782676697
+I need you to check ml-infer-05 for indicators of compromise.,scan_malware,2,True,check_status,0.6796727776527405,0.5703390836715698
+We should check staging-db-02 for indicators of compromise.,scan_malware,2,True,check_status,0.6571229696273804,0.5644912123680115
+Let's check staging-db-02 for indicators of compromise.,scan_malware,2,True,check_status,0.6912750601768494,0.5212657451629639
+Kindly check staging-db-02 for indicators of compromise.,scan_malware,2,True,check_status,0.629228949546814,0.5462663173675537
+"When you have a moment, check staging-db-02 for indicators of compromise.",scan_malware,2,True,check_status,0.6456496119499207,0.5383625030517578
+Please generate a diagnostics report for payment-api-03.,generate_report,3,True,check_status,0.6147815585136414,0.4424362778663635
+Can you compile a health summary for payment-api-03?,generate_report,2,True,check_status,0.4958376884460449,0.49360644817352295
+Could you generate a diagnostics report for payment-api-03 for me?,generate_report,2,True,check_status,0.5280874371528625,0.4659063518047333
+I need you to generate a diagnostics report for prod-web-01.,generate_report,2,True,check_status,0.5902952551841736,0.4792385399341583
+I need you to compile a health summary for prod-web-01.,generate_report,2,True,check_status,0.5827381610870361,0.5560605525970459
+Kindly generate a diagnostics report for cdn-edge-06.,generate_report,3,True,check_status,0.5625967979431152,0.3375115692615509
+send Eve a payout reversal.,process_refund,2,False,process_refund -> send_notification,0.660851001739502,0.6452310085296631
+Please send Eve a payout reversal.,process_refund,2,False,process_refund -> send_notification,0.680142879486084,0.6615830063819885
+Can you send Bob a payout reversal?,process_refund,2,False,process_refund -> send_notification,0.6619318723678589,0.6523472666740417
+Let's send Alice a payout reversal.,process_refund,2,False,process_refund -> send_notification,0.6632841229438782,0.6620315313339233
+"When you have a moment, return the money to Diana.",process_refund,2,False,process_refund -> send_notification,0.5750919580459595,0.5628024935722351
+bring the service on staging-db-02 back up.,restart_service,6,True,restore_backup,0.5618599653244019,0.4212580621242523
+Please bring the service on payment-api-03 back up.,restart_service,3,True,restore_backup,0.6021623015403748,0.4809686243534088
+Can you bring the service on staging-db-02 back up?,restart_service,8,True,restore_backup,0.560100793838501,0.3816305994987488
+Could you bring the service on auth-svc-04 back up for me?,restart_service,5,True,restore_backup,0.600592315196991,0.42627575993537903
+I need you to bring the service on staging-db-02 back up.,restart_service,5,True,restore_backup,0.5777803063392639,0.44003334641456604
+We should bring the service on prod-web-01 back up.,restart_service,5,True,restore_backup,0.593822717666626,0.44019073247909546
+Let's bring the service on prod-web-01 back up.,restart_service,3,True,restore_backup,0.6084271669387817,0.4847669303417206
+Kindly bring the service on cdn-edge-06 back up.,restart_service,6,True,restore_backup,0.5816885232925415,0.4035440683364868
+Please route the cdn-edge-06 incident to a live responder.,escalate_to_human,2,True,create_ticket,0.5656449794769287,0.5044173002243042
+Please send Charlie's case for human review.,escalate_to_human,7,True,send_notification,0.5197530388832092,0.39554277062416077
+Please transfer Grace's case to a person.,escalate_to_human,2,False,process_refund -> send_notification,0.49161407351493835,0.47954997420310974
+Can you send the prod-web-01 issue for human handling?,escalate_to_human,2,True,create_ticket,0.4991438388824463,0.47691336274147034
+Can you send Grace's case for human review?,escalate_to_human,7,True,send_notification,0.531378448009491,0.38629481196403503
+Can you transfer Bob's case to a person?,escalate_to_human,6,True,transfer_ownership,0.4641895890235901,0.3783828914165497
+Could you route the issue to the HR manager for me?,escalate_to_human,2,True,create_ticket,0.5862510204315186,0.5068020224571228
+Could you send Bob's case for human review for me?,escalate_to_human,10,True,send_notification,0.48989859223365784,0.34467214345932007
+Could you escalate the request to someone in Marketing for me?,escalate_to_human,2,True,send_notification,0.5523566007614136,0.5401728749275208
+I need you to hand Bob's request to a live agent.,escalate_to_human,2,True,approve_access,0.5474347472190857,0.5414029359817505
+I need you to transfer Alice's case to a person.,escalate_to_human,6,False,escalate_to_human -> archive_data,0.49302539229393005,0.43609529733657837
+We should route the auth-svc-04 incident to a live responder.,escalate_to_human,2,True,create_ticket,0.5485978126525879,0.510530948638916
+We should send Diana's case for human review.,escalate_to_human,7,True,send_notification,0.5412951111793518,0.3995925188064575
+Let's send Grace's case for human review.,escalate_to_human,7,True,send_notification,0.5283665657043457,0.41468095779418945
+Let's escalate the alert on auth-svc-04 to a person.,escalate_to_human,2,True,send_notification,0.6431756615638733,0.5359222888946533
+Let's transfer Alice's case to a person.,escalate_to_human,3,False,process_refund -> send_notification,0.5051851272583008,0.46612727642059326
+Kindly send Bob's case for human review.,escalate_to_human,6,True,send_notification,0.549981415271759,0.41169828176498413
+Kindly transfer Alice's case to a person.,escalate_to_human,4,False,process_refund -> send_notification,0.48485976457595825,0.43642717599868774
+"When you have a moment, get a human to review the problem on prod-web-01.",escalate_to_human,5,True,check_status,0.5801270008087158,0.5080528259277344
+create a trail entry for auth-svc-04.,log_audit_event,4,True,restart_service,0.5217249393463135,0.4464503824710846
+Please document the action taken on payment-api-03.,log_audit_event,2,True,create_ticket,0.5260936617851257,0.5240921974182129
+Can you document the action taken on staging-db-02?,log_audit_event,3,True,create_ticket,0.4904814064502716,0.46411749720573425
+Could you create a trail entry for staging-db-02 for me?,log_audit_event,12,True,create_ticket,0.5089495182037354,0.4132247269153595
+I need you to capture the event associated with #60122.,log_audit_event,4,True,escalate_to_human,0.5744802951812744,0.5091536641120911
+I need you to create a trail entry for prod-web-01.,log_audit_event,13,True,restart_service,0.5575512647628784,0.41041478514671326
+We should write a compliance entry for cdn-edge-06.,log_audit_event,2,True,generate_report,0.5215862393379211,0.5201888084411621
+"When you have a moment, record the incident involving prod-web-01 in the audit trail.",log_audit_event,2,False,log_audit_event -> escalate_to_human,0.6260218620300293,0.6242243647575378

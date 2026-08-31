@@ -1,0 +1,1 @@
+python scripts/eval_zero_shot_atomic.py --tool_count 15 --checkpoint experiment_runs/20260831_1218/upgraded/TASK4_DIRECTION_ABLATION/LEGR_DEFAULT_GCN_15TOOL/best_model.pt --output experiment_runs/20260831_1218/upgraded/TASK3_ZERO_SHOT_ATOMIC/LEGR_15TOOL_ZERO_SHOT_ATOMIC/independent_rerun

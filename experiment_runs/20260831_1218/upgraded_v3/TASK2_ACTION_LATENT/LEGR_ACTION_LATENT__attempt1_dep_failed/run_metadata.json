@@ -1,0 +1,22 @@
+{
+  "run_id": "upgraded_v3__task2_latent__legr__action_type_analysis__seed_42",
+  "run_name": "upgraded_v3__task2_latent__legr__action_type_analysis__seed_42",
+  "dataset": "upgraded_v3",
+  "task": "task2_latent",
+  "model": "legr",
+  "variant": "action_type_analysis",
+  "tool_count": 30,
+  "kind": "latent_eval",
+  "seed": 42,
+  "device_requirement": "cuda",
+  "out_dir": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1218\\upgraded_v3\\TASK2_ACTION_LATENT\\LEGR_ACTION_LATENT",
+  "status": "FAILED",
+  "dependencies": [
+    "upgraded_v3__dep_legr__legr_gcn__gcn_undirected__seed_42"
+  ],
+  "expected_checkpoint": null,
+  "expected_outputs": [],
+  "verified": false,
+  "error": "dependency not VERIFIED: upgraded_v3__dep_legr__legr_gcn__gcn_undirected__seed_42 (FAILED)",
+  "ended": "2026-08-31T17:06:42.118147+00:00"
+}

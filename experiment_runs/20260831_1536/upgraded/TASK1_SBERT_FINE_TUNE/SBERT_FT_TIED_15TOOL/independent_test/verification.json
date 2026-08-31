@@ -1,0 +1,29 @@
+{
+  "arch": "sbert_ft",
+  "checkpoint": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1536\\upgraded\\TASK1_SBERT_FINE_TUNE\\SBERT_FT_TIED_15TOOL\\best_model.pt",
+  "checkpoint_sha256": "92b9e744059db97bc6c6bb9c02ab01730ac206325fe8cd0e00f8c887c62f0fea",
+  "dataset_csv": "C:\\Users\\tkadam\\LEGR\\upgraded\\upgraded_15tools\\test_topology_heldout.csv",
+  "n_eval": 592,
+  "n_unique_dags": 30,
+  "device": "cuda:0",
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "tied": true,
+  "lambda_ged": 0.0,
+  "tool_count": 15,
+  "seed": 42,
+  "epoch": 85,
+  "metrics": {
+    "tool_set_f1": 1.0,
+    "mean_ged_error": 0.0,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "mrr@1": 1.0,
+    "mrr@3": 1.0,
+    "mrr@5": 1.0
+  },
+  "range_errors": [],
+  "forward_finite": true,
+  "verified_load": true,
+  "param_count": 22811776
+}

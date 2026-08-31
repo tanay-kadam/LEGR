@@ -1,0 +1,1 @@
+C:\Users\tkadam\LEGR\venv\Scripts\python.exe C:\Users\tkadam\LEGR\scripts\eval_zero_shot_atomic.py --tool_count 30 --output C:\Users\tkadam\LEGR\experiment_runs\20260831_1218\upgraded\TASK3_ZERO_SHOT_ATOMIC\LEGR_30TOOL_ZERO_SHOT_ATOMIC

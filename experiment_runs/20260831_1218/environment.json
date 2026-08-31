@@ -1,0 +1,24 @@
+{
+  "python_executable": "C:\\Users\\tkadam\\LEGR\\venv\\Scripts\\python.exe",
+  "python_version": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "torch": "2.11.0+cu128",
+  "torch_cuda_version": "12.8",
+  "cuda_available": true,
+  "device_count": 1,
+  "cudnn_version": 91900,
+  "gpu_model": "NVIDIA RTX 6000 Ada Generation",
+  "gpu_index": 0,
+  "gpu_memory_bytes": 51526500352,
+  "gpu_memory_gb": 47.99,
+  "selected_device": "cuda:0",
+  "sanity_tensor_device": "cuda:0",
+  "disk_free_gb": 1074.4,
+  "git": {
+    "commit": "fae6f498512f442218366b8fb264ff35c3834f1c",
+    "branch": "main",
+    "dirty": true
+  },
+  "nvidia_smi": "0, NVIDIA RTX 6000 Ada Generation, 0 %, 1217 MiB, 49140 MiB, 38",
+  "captured_at": "2026-08-31T16:35:59.522555+00:00"
+}

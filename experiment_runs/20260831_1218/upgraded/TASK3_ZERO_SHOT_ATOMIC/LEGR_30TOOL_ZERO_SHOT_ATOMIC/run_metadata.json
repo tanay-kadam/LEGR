@@ -1,0 +1,126 @@
+{
+  "run_id": "upgraded__task3_atomic__legr_30tool__zero_shot_atomic__seed_42",
+  "run_name": "upgraded__task3_atomic__legr_30tool__zero_shot_atomic__seed_42",
+  "dataset": "upgraded",
+  "task": "task3_atomic",
+  "model": "legr_30tool",
+  "variant": "zero_shot_atomic",
+  "tool_count": 30,
+  "kind": "atomic_eval",
+  "seed": 42,
+  "device_requirement": "cuda",
+  "out_dir": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1218\\upgraded\\TASK3_ZERO_SHOT_ATOMIC\\LEGR_30TOOL_ZERO_SHOT_ATOMIC",
+  "status": "VERIFIED",
+  "dependencies": [
+    "upgraded__dep_legr__legr_gcn__gcn_undirected__seed_42"
+  ],
+  "expected_checkpoint": null,
+  "expected_outputs": [],
+  "verified": true,
+  "runtime_s": 14.730389595031738,
+  "failure_class": "implementation",
+  "ended": "2026-08-31T19:02:59.120740+00:00",
+  "retry_reason": "attempt1 captured script rejection of --tool_count 30. Retry uses 30-tool frozen GCN + routing_15tools queries (no routing_30 OOV aliases).",
+  "source_checkpoint": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1218\\upgraded\\TASK4_DIRECTION_ABLATION\\LEGR_DEFAULT_GCN_30TOOL\\best_model.pt",
+  "source_checkpoint_sha256": "2bc1615e01f4fb3a514a355392b6b3273251fb20caba5087f8dbe01c62e53365",
+  "returncode": 0,
+  "metrics": {
+    "per_condition": {
+      "Standard": {
+        "n": 1005,
+        "correct": 641,
+        "accuracy_pct": 63.8,
+        "recall@1": 0.6378109452736318,
+        "recall@3": 0.8139303482587065,
+        "recall@5": 0.8427860696517413,
+        "mean_rank": 3.000995024875622,
+        "multi_node_steal_rate": 0.29850746268656714
+      },
+      "Lexical": {
+        "n": 1005,
+        "correct": 317,
+        "accuracy_pct": 31.5,
+        "recall@1": 0.3154228855721393,
+        "recall@3": 0.5651741293532339,
+        "recall@5": 0.6985074626865672,
+        "mean_rank": 4.939303482587064,
+        "multi_node_steal_rate": 0.4696517412935323
+      },
+      "Confusable": {
+        "n": 450,
+        "correct": 164,
+        "accuracy_pct": 36.4,
+        "recall@1": 0.36444444444444446,
+        "recall@3": 0.6422222222222222,
+        "recall@5": 0.74,
+        "mean_rank": 4.1066666666666665,
+        "multi_node_steal_rate": 0.44
+      },
+      "Paraphrase": {
+        "n": 1255,
+        "correct": 820,
+        "accuracy_pct": 65.3,
+        "recall@1": 0.6533864541832669,
+        "recall@3": 0.8199203187250996,
+        "recall@5": 0.8661354581673307,
+        "mean_rank": 2.594422310756972,
+        "multi_node_steal_rate": 0.2597609561752988
+      }
+    },
+    "aggregate": {
+      "n": 3715,
+      "correct": 1942,
+      "accuracy_pct": 52.3
+    }
+  },
+  "independent_rerun": {
+    "per_condition": {
+      "Standard": {
+        "n": 1005,
+        "correct": 641,
+        "accuracy_pct": 63.8,
+        "recall@1": 0.6378109452736318,
+        "recall@3": 0.8139303482587065,
+        "recall@5": 0.8427860696517413,
+        "mean_rank": 3.000995024875622,
+        "multi_node_steal_rate": 0.29850746268656714
+      },
+      "Lexical": {
+        "n": 1005,
+        "correct": 317,
+        "accuracy_pct": 31.5,
+        "recall@1": 0.3154228855721393,
+        "recall@3": 0.5651741293532339,
+        "recall@5": 0.6985074626865672,
+        "mean_rank": 4.939303482587064,
+        "multi_node_steal_rate": 0.4696517412935323
+      },
+      "Confusable": {
+        "n": 450,
+        "correct": 164,
+        "accuracy_pct": 36.4,
+        "recall@1": 0.36444444444444446,
+        "recall@3": 0.6422222222222222,
+        "recall@5": 0.74,
+        "mean_rank": 4.1066666666666665,
+        "multi_node_steal_rate": 0.44
+      },
+      "Paraphrase": {
+        "n": 1255,
+        "correct": 820,
+        "accuracy_pct": 65.3,
+        "recall@1": 0.6533864541832669,
+        "recall@3": 0.8199203187250996,
+        "recall@5": 0.8661354581673307,
+        "mean_rank": 2.594422310756972,
+        "multi_node_steal_rate": 0.2597609561752988
+      }
+    },
+    "aggregate": {
+      "n": 3715,
+      "correct": 1942,
+      "accuracy_pct": 52.3
+    }
+  },
+  "metric_diffs": []
+}

@@ -1,0 +1,185 @@
+query,gt_tool,rank_of_one_node,top1_is_one_node,top1_dag_text,top1_cosine,gt_cosine
+Scan payment-api-03 -- is it healthy?,check_status,2,True,scan_malware,0.6135558485984802,0.6033505201339722
+Scan auth-svc-04 -- is it healthy?,check_status,2,True,scan_malware,0.6477174758911133,0.6399103403091431
+Scan payment-api-03 -- is it healthy?,check_status,2,True,scan_malware,0.6135558485984802,0.6033505201339722
+Scan payment-api-03 -- is it healthy?,check_status,2,True,scan_malware,0.6135558485984802,0.6033505201339722
+Notify the team by creating a formal issue for cdn-edge-06.,create_ticket,3,True,send_notification,0.6638888120651245,0.5241475701332092
+Log Diana's complaint so we can follow up.,create_ticket,2,True,log_audit_event,0.6688387989997864,0.5611668229103088
+Log Frank's complaint so we can follow up.,create_ticket,2,True,log_audit_event,0.6715332865715027,0.5548316240310669
+Send a record of this problem to the tracking system.,create_ticket,2,True,send_notification,0.6759184002876282,0.538178026676178
+Notify the team by creating a formal issue for ml-infer-05.,create_ticket,3,True,send_notification,0.6569335460662842,0.5058467388153076
+Notify the team by creating a formal issue for payment-api-03.,create_ticket,2,True,send_notification,0.6666805148124695,0.535205066204071
+Log Grace's complaint so we can follow up.,create_ticket,2,True,log_audit_event,0.6499678492546082,0.5698654651641846
+Notify the team by creating a formal issue for staging-db-02.,create_ticket,3,True,send_notification,0.6497291326522827,0.5218848586082458
+Notify the team by creating a formal issue for auth-svc-04.,create_ticket,3,True,send_notification,0.6631786823272705,0.5329402089118958
+Notify the team by creating a formal issue for prod-web-01.,create_ticket,3,True,send_notification,0.6613302826881409,0.5141119360923767
+Log Charlie's complaint so we can follow up.,create_ticket,2,True,log_audit_event,0.6584466695785522,0.5599614381790161
+Log Eve's complaint so we can follow up.,create_ticket,2,True,log_audit_event,0.659252941608429,0.5922573804855347
+Log Bob's complaint so we can follow up.,create_ticket,2,True,log_audit_event,0.6575445532798767,0.5693058371543884
+Log Alice's complaint so we can follow up.,create_ticket,2,True,log_audit_event,0.652351438999176,0.5333679914474487
+Log Bob's complaint so we can follow up.,create_ticket,2,True,log_audit_event,0.6575445532798767,0.5693058371543884
+Log Diana's complaint so we can follow up.,create_ticket,2,True,log_audit_event,0.6688387989997864,0.5611668229103088
+Log Eve's complaint so we can follow up.,create_ticket,2,True,log_audit_event,0.659252941608429,0.5922573804855347
+Notify the team by creating a formal issue for cdn-edge-06.,create_ticket,3,True,send_notification,0.6638888120651245,0.5241475701332092
+Send a record of this problem to the tracking system.,create_ticket,2,True,send_notification,0.6759184002876282,0.538178026676178
+Send a record of this problem to the tracking system.,create_ticket,2,True,send_notification,0.6759184002876282,0.538178026676178
+Notify the team by creating a formal issue for cdn-edge-06.,create_ticket,3,True,send_notification,0.6638888120651245,0.5241475701332092
+Notify the team by creating a formal issue for auth-svc-04.,create_ticket,3,True,send_notification,0.6631786823272705,0.5329402089118958
+Log Charlie's complaint so we can follow up.,create_ticket,2,True,log_audit_event,0.6584466695785522,0.5599614381790161
+Log Frank's complaint so we can follow up.,create_ticket,2,True,log_audit_event,0.6715332865715027,0.5548316240310669
+Send a record of this problem to the tracking system.,create_ticket,2,True,send_notification,0.6759184002876282,0.538178026676178
+Send a record of this problem to the tracking system.,create_ticket,2,True,send_notification,0.6759184002876282,0.538178026676178
+Send a record of this problem to the tracking system.,create_ticket,2,True,send_notification,0.6759184002876282,0.538178026676178
+Send a record of this problem to the tracking system.,create_ticket,2,True,send_notification,0.6759184002876282,0.538178026676178
+Send a record of this problem to the tracking system.,create_ticket,2,True,send_notification,0.6759184002876282,0.538178026676178
+Send a record of this problem to the tracking system.,create_ticket,2,True,send_notification,0.6759184002876282,0.538178026676178
+Notify a manager that Frank's case needs attention.,escalate_to_human,2,True,send_notification,0.661068320274353,0.4746283292770386
+Send this to a real person for Frank.,escalate_to_human,3,True,send_notification,0.6473091840744019,0.5336341261863708
+Send this to a real person for Alice.,escalate_to_human,3,True,send_notification,0.65887451171875,0.5465362071990967
+Send this to a real person for Eve.,escalate_to_human,3,True,send_notification,0.6573023200035095,0.5430428385734558
+Send this to a real person for Bob.,escalate_to_human,3,True,send_notification,0.6592991948127747,0.5557861924171448
+Send this to a real person for Grace.,escalate_to_human,3,True,send_notification,0.668175995349884,0.4682770371437073
+Notify a manager that Diana's case needs attention.,escalate_to_human,2,True,send_notification,0.6578825116157532,0.4905143082141876
+Notify a manager that Grace's case needs attention.,escalate_to_human,3,True,send_notification,0.6607723236083984,0.4674648642539978
+Notify a manager that Bob's case needs attention.,escalate_to_human,2,True,send_notification,0.654856264591217,0.4873315989971161
+Notify a manager that Eve's case needs attention.,escalate_to_human,2,True,send_notification,0.6716135740280151,0.5016400218009949
+Notify a manager that Charlie's case needs attention.,escalate_to_human,2,True,send_notification,0.6361332535743713,0.48721209168434143
+Create an escalation path for Eve.,escalate_to_human,2,True,create_ticket,0.5552452802658081,0.5427530407905579
+Create an escalation path for Grace.,escalate_to_human,2,True,create_ticket,0.5815799832344055,0.5595253705978394
+Send this to a real person for Diana.,escalate_to_human,3,True,send_notification,0.6613439917564392,0.5324044227600098
+Notify a manager that Alice's case needs attention.,escalate_to_human,2,True,send_notification,0.6503167152404785,0.48752886056900024
+Send this to a real person for Charlie.,escalate_to_human,3,True,send_notification,0.6086452007293701,0.5386865139007568
+Notify a manager that Diana's case needs attention.,escalate_to_human,2,True,send_notification,0.6578825116157532,0.4905143082141876
+Notify a manager that Diana's case needs attention.,escalate_to_human,2,True,send_notification,0.6578825116157532,0.4905143082141876
+Notify a manager that Charlie's case needs attention.,escalate_to_human,2,True,send_notification,0.6361332535743713,0.48721209168434143
+Create an escalation path for Eve.,escalate_to_human,2,True,create_ticket,0.5552452802658081,0.5427530407905579
+Notify a manager that Eve's case needs attention.,escalate_to_human,2,True,send_notification,0.6716135740280151,0.5016400218009949
+Send this to a real person for Charlie.,escalate_to_human,3,True,send_notification,0.6086452007293701,0.5386865139007568
+Send this to a real person for Frank.,escalate_to_human,3,True,send_notification,0.6473092436790466,0.5336340069770813
+Send this to a real person for Bob.,escalate_to_human,3,True,send_notification,0.6592991948127747,0.5557861924171448
+Log the quarterly metrics into a document.,generate_report,2,True,log_audit_event,0.5658177137374878,0.4928322732448578
+Pull the data and compile findings for Marketing.,generate_report,2,True,db_read,0.6227266788482666,0.6168824434280396
+Pull the data and compile findings for Engineering.,generate_report,2,True,db_read,0.6215289235115051,0.593063235282898
+Pull the data and compile findings for HR.,generate_report,2,True,db_read,0.6397264003753662,0.6101396083831787
+Pull the data and compile findings for Legal.,generate_report,2,True,db_read,0.6180368661880493,0.5986706614494324
+Pull the data and compile findings for HR.,generate_report,2,True,db_read,0.6397264003753662,0.6101396083831787
+Pull the data and compile findings for Finance.,generate_report,2,True,db_read,0.625906765460968,0.618701696395874
+Pull the data and compile findings for HR.,generate_report,2,True,db_read,0.6397264003753662,0.6101396083831787
+Log the quarterly metrics into a document.,generate_report,2,True,log_audit_event,0.5658177137374878,0.4928322732448578
+Log the quarterly metrics into a document.,generate_report,2,True,log_audit_event,0.5658177137374878,0.4928322732448578
+Log the quarterly metrics into a document.,generate_report,2,True,log_audit_event,0.5658177137374878,0.4928322732448578
+Log the quarterly metrics into a document.,generate_report,2,True,log_audit_event,0.5658177137374878,0.4928322732448578
+Pull the data and compile findings for Legal.,generate_report,2,True,db_read,0.6180368661880493,0.5986706614494324
+Log the quarterly metrics into a document.,generate_report,2,True,log_audit_event,0.5658177137374878,0.4928322732448578
+Pull the data and compile findings for HR.,generate_report,2,True,db_read,0.6397264003753662,0.6101396083831787
+Log the quarterly metrics into a document.,generate_report,2,True,log_audit_event,0.5658177137374878,0.4928322732448578
+Pull the data and compile findings for Legal.,generate_report,2,True,db_read,0.6180368661880493,0.5986706614494324
+Pull the data and compile findings for Legal.,generate_report,2,True,db_read,0.6180368661880493,0.5986706614494324
+Pull the data and compile findings for Engineering.,generate_report,2,True,db_read,0.6215289235115051,0.593063235282898
+File a record of what happened with payment-api-03.,log_audit_event,8,False,check_status -> db_write,0.5273683071136475,0.3197057247161865
+File a record of what happened with cdn-edge-06.,log_audit_event,7,False,check_status -> db_write,0.5124386548995972,0.3400574326515198
+Document the action taken on Charlie's account.,log_audit_event,8,True,process_refund,0.6010932326316833,0.3748551905155182
+Report the incident to the compliance trail.,log_audit_event,2,True,create_ticket,0.6182103157043457,0.5893735289573669
+File a record of what happened with prod-web-01.,log_audit_event,12,False,check_status -> db_write,0.5389409065246582,0.28835049271583557
+Document the action taken on Alice's account.,log_audit_event,8,True,process_refund,0.5828430652618408,0.4453904330730438
+Document the action taken on Frank's account.,log_audit_event,6,True,process_refund,0.6078040599822998,0.42108213901519775
+Document the action taken on Bob's account.,log_audit_event,8,True,process_refund,0.591325044631958,0.4116690456867218
+Document the action taken on Diana's account.,log_audit_event,6,True,process_refund,0.5927037000656128,0.4324904680252075
+Document the action taken on Eve's account.,log_audit_event,8,True,process_refund,0.591984212398529,0.4375342130661011
+File a record of what happened with ml-infer-05.,log_audit_event,13,False,check_status -> db_write,0.5535627603530884,0.2824840843677521
+File a record of what happened with auth-svc-04.,log_audit_event,10,False,check_status -> db_write,0.5358003973960876,0.3269185721874237
+Document the action taken on Grace's account.,log_audit_event,4,True,process_refund,0.5676761865615845,0.46085232496261597
+File a record of what happened with staging-db-02.,log_audit_event,13,False,check_status -> db_write,0.5552532076835632,0.26249778270721436
+Report the incident to the compliance trail.,log_audit_event,2,True,create_ticket,0.6182101368904114,0.5893734693527222
+File a record of what happened with ml-infer-05.,log_audit_event,13,False,check_status -> db_write,0.5535627603530884,0.2824840843677521
+Report the incident to the compliance trail.,log_audit_event,2,True,create_ticket,0.6182101368904114,0.5893734693527222
+File a record of what happened with staging-db-02.,log_audit_event,13,False,check_status -> db_write,0.5552532076835632,0.26249778270721436
+Document the action taken on Frank's account.,log_audit_event,6,True,process_refund,0.6078041791915894,0.42108210921287537
+Report the incident to the compliance trail.,log_audit_event,2,True,create_ticket,0.6182101368904114,0.5893734693527222
+Report the incident to the compliance trail.,log_audit_event,2,True,create_ticket,0.6182101368904114,0.5893734693527222
+Document the action taken on Grace's account.,log_audit_event,4,True,process_refund,0.5676761865615845,0.46085232496261597
+File a record of what happened with ml-infer-05.,log_audit_event,13,False,check_status -> db_write,0.5535627603530884,0.2824840843677521
+File a record of what happened with staging-db-02.,log_audit_event,13,False,check_status -> db_write,0.5552532076835632,0.26249778270721436
+Report the incident to the compliance trail.,log_audit_event,2,True,create_ticket,0.6182101368904114,0.5893734693527222
+File a record of what happened with auth-svc-04.,log_audit_event,10,False,check_status -> db_write,0.5358003973960876,0.3269185721874237
+File a record of what happened with prod-web-01.,log_audit_event,12,False,check_status -> db_write,0.5389408469200134,0.288350373506546
+File a record of what happened with ml-infer-05.,log_audit_event,13,False,check_status -> db_write,0.5535627603530884,0.2824840843677521
+Document the action taken on Grace's account.,log_audit_event,4,True,process_refund,0.5676761865615845,0.46085232496261597
+Document the action taken on Diana's account.,log_audit_event,6,True,process_refund,0.5927037000656128,0.4324904680252075
+Set up another host -- the current cdn-edge-06 isn't cutting it.,provision_vm,3,True,quarantine_system,0.5447912812232971,0.49338963627815247
+Set up another host -- the current ml-infer-05 isn't cutting it.,provision_vm,4,True,quarantine_system,0.5605142116546631,0.4716958701610565
+Set up another host -- the current auth-svc-04 isn't cutting it.,provision_vm,5,True,quarantine_system,0.5672445893287659,0.44040825963020325
+Set up another host -- the current staging-db-02 isn't cutting it.,provision_vm,5,True,quarantine_system,0.6003344655036926,0.4512951672077179
+Restart the setup process for Marketing's new environment.,provision_vm,2,True,restart_service,0.5716047286987305,0.5544149875640869
+Set up another host -- the current payment-api-03 isn't cutting it.,provision_vm,5,True,quarantine_system,0.5481921434402466,0.4650200605392456
+Restart the setup process for Finance's new environment.,provision_vm,2,True,restart_service,0.564528226852417,0.534191370010376
+Restart the setup process for Legal's new environment.,provision_vm,2,True,restart_service,0.5758827328681946,0.5622066259384155
+Set up another host -- the current prod-web-01 isn't cutting it.,provision_vm,5,True,quarantine_system,0.5653446912765503,0.4694085419178009
+Restart the setup process for Engineering's new environment.,provision_vm,2,True,restart_service,0.5789542198181152,0.5487246513366699
+Set up another host -- the current payment-api-03 isn't cutting it.,provision_vm,5,True,quarantine_system,0.5481921434402466,0.4650200605392456
+Set up another host -- the current payment-api-03 isn't cutting it.,provision_vm,5,True,quarantine_system,0.5481921434402466,0.4650200605392456
+Set up another host -- the current staging-db-02 isn't cutting it.,provision_vm,5,True,quarantine_system,0.6003344655036926,0.4512951672077179
+Set up another host -- the current cdn-edge-06 isn't cutting it.,provision_vm,3,True,quarantine_system,0.5447912812232971,0.49338963627815247
+Set up another host -- the current payment-api-03 isn't cutting it.,provision_vm,5,True,quarantine_system,0.5481921434402466,0.4650200605392456
+Restart the setup process for Legal's new environment.,provision_vm,2,True,restart_service,0.5758827328681946,0.5622066259384155
+Set up another host -- the current ml-infer-05 isn't cutting it.,provision_vm,4,True,quarantine_system,0.5605142116546631,0.4716958701610565
+cdn-edge-06 is infected -- shut down its connections.,quarantine_system,2,True,scan_malware,0.570099949836731,0.5339454412460327
+Scan and lock down payment-api-03 immediately.,quarantine_system,2,True,scan_malware,0.632575511932373,0.6262372732162476
+ml-infer-05 is infected -- shut down its connections.,quarantine_system,2,True,scan_malware,0.5615316033363342,0.5530915260314941
+auth-svc-04 is infected -- shut down its connections.,quarantine_system,2,True,scan_malware,0.5685122609138489,0.5461232662200928
+Scan and lock down cdn-edge-06 immediately.,quarantine_system,2,True,scan_malware,0.660703182220459,0.6311485171318054
+payment-api-03 is infected -- shut down its connections.,quarantine_system,2,True,scan_malware,0.5749581456184387,0.5649057030677795
+Scan and lock down auth-svc-04 immediately.,quarantine_system,2,True,scan_malware,0.6422908306121826,0.6366879940032959
+payment-api-03 is infected -- shut down its connections.,quarantine_system,2,True,scan_malware,0.5749581456184387,0.5649057030677795
+auth-svc-04 is infected -- shut down its connections.,quarantine_system,2,True,scan_malware,0.5685122609138489,0.5461232662200928
+Scan and lock down payment-api-03 immediately.,quarantine_system,2,True,scan_malware,0.632575511932373,0.6262372732162476
+ml-infer-05 is infected -- shut down its connections.,quarantine_system,2,True,scan_malware,0.5615316033363342,0.5530915260314941
+Scan and lock down auth-svc-04 immediately.,quarantine_system,2,True,scan_malware,0.6422908306121826,0.6366879940032959
+I need a report of Grace's transactions from the database.,db_read,2,True,generate_report,0.585204541683197,0.5064085721969604
+I need a report of Diana's transactions from the database.,db_read,2,True,generate_report,0.5612328052520752,0.519345223903656
+I need a report of Frank's transactions from the database.,db_read,2,True,generate_report,0.5711665749549866,0.5179531574249268
+I need a report of Charlie's transactions from the database.,db_read,2,True,generate_report,0.5547366738319397,0.5202991366386414
+I need a report of Eve's transactions from the database.,db_read,2,True,generate_report,0.5983670949935913,0.5198290944099426
+I need a report of Alice's transactions from the database.,db_read,2,True,generate_report,0.611109733581543,0.5264092683792114
+I need a report of Bob's transactions from the database.,db_read,2,True,generate_report,0.593843936920166,0.5360100269317627
+I need a report of Diana's transactions from the database.,db_read,2,True,generate_report,0.5612328052520752,0.519345223903656
+Frank's access needs to be fixed -- the system locked them out.,reset_password,3,True,quarantine_system,0.526048481464386,0.4374515116214752
+Grace's access needs to be fixed -- the system locked them out.,reset_password,3,True,quarantine_system,0.49516913294792175,0.4556950032711029
+Diana's access needs to be fixed -- the system locked them out.,reset_password,4,True,quarantine_system,0.519863486289978,0.429470419883728
+Alice's access needs to be fixed -- the system locked them out.,reset_password,3,True,quarantine_system,0.4975910186767578,0.4646265506744385
+Eve's access needs to be fixed -- the system locked them out.,reset_password,4,True,quarantine_system,0.5463060140609741,0.4460984766483307
+Bob's access needs to be fixed -- the system locked them out.,reset_password,3,True,escalate_to_human,0.4892895817756653,0.44144779443740845
+Charlie's access needs to be fixed -- the system locked them out.,reset_password,3,True,quarantine_system,0.5103328824043274,0.4195224642753601
+Diana's access needs to be fixed -- the system locked them out.,reset_password,4,True,quarantine_system,0.519863486289978,0.429470419883728
+Frank's access needs to be fixed -- the system locked them out.,reset_password,3,True,quarantine_system,0.526048481464386,0.4374515116214752
+Eve's access needs to be fixed -- the system locked them out.,reset_password,4,True,quarantine_system,0.5463060140609741,0.4460984766483307
+Charlie's access needs to be fixed -- the system locked them out.,reset_password,3,True,quarantine_system,0.5103328824043274,0.4195224642753601
+Frank's access needs to be fixed -- the system locked them out.,reset_password,3,True,quarantine_system,0.526048481464386,0.4374515116214752
+Bob's access needs to be fixed -- the system locked them out.,reset_password,3,True,escalate_to_human,0.4892895817756653,0.44144779443740845
+The service on auth-svc-04 is failing -- isolate and reboot.,restart_service,2,True,quarantine_system,0.6039743423461914,0.5848025679588318
+Bring staging-db-02 back to life.,restart_service,2,True,quarantine_system,0.4988846778869629,0.4890621304512024
+The service on staging-db-02 is failing -- isolate and reboot.,restart_service,2,True,quarantine_system,0.6174991130828857,0.551112711429596
+The service on cdn-edge-06 is failing -- isolate and reboot.,restart_service,2,True,quarantine_system,0.5906117558479309,0.5562922358512878
+The service on auth-svc-04 is failing -- isolate and reboot.,restart_service,2,True,quarantine_system,0.6039743423461914,0.5848025679588318
+Check staging-db-02 for anything suspicious.,scan_malware,2,True,check_status,0.6592469215393066,0.6432867050170898
+Check staging-db-02 for anything suspicious.,scan_malware,2,True,check_status,0.6592469215393066,0.6432867050170898
+Check staging-db-02 for anything suspicious.,scan_malware,2,True,check_status,0.6592469215393066,0.6432867050170898
+Reset the outdated values for Grace in the system.,db_write,2,True,reset_password,0.49776723980903625,0.4673454463481903
+Log the corrected entry for Frank.,db_write,4,True,log_audit_event,0.6691717505455017,0.41671547293663025
+Log the corrected entry for Eve.,db_write,2,True,log_audit_event,0.6203628182411194,0.44766560196876526
+Log the corrected entry for Grace.,db_write,5,True,log_audit_event,0.671556830406189,0.38538405299186707
+Log the corrected entry for Bob.,db_write,4,True,log_audit_event,0.6412052512168884,0.43310052156448364
+Log the corrected entry for Diana.,db_write,3,True,log_audit_event,0.6407089829444885,0.4545786678791046
+Log the corrected entry for Alice.,db_write,4,True,log_audit_event,0.6414340138435364,0.4146983027458191
+Log the corrected entry for Charlie.,db_write,4,True,log_audit_event,0.6423032283782959,0.4349058270454407
+Reset the outdated values for Grace in the system.,db_write,2,True,reset_password,0.49776723980903625,0.4673454463481903
+Log the corrected entry for Charlie.,db_write,4,True,log_audit_event,0.6423032283782959,0.4349058270454407
+Reset the outdated values for Grace in the system.,db_write,2,True,reset_password,0.49776723980903625,0.4673454463481903
+Refund the difference after the plan change for Diana.,update_subscription,2,True,process_refund,0.5776851177215576,0.45235326886177063
+Refund the difference after the plan change for Eve.,update_subscription,2,True,process_refund,0.574535071849823,0.4890601336956024
+Refund the difference after the plan change for Frank.,update_subscription,2,True,process_refund,0.560612142086029,0.4730391204357147
+Refund the difference after the plan change for Charlie.,update_subscription,2,True,process_refund,0.5559890866279602,0.4646976590156555
+Refund the difference after the plan change for Grace.,update_subscription,2,True,process_refund,0.5537128448486328,0.4520103335380554
+Refund the difference after the plan change for Alice.,update_subscription,2,True,process_refund,0.569720983505249,0.463518887758255
+Refund the difference after the plan change for Bob.,update_subscription,2,True,process_refund,0.5696260333061218,0.47448766231536865
+Refund the difference after the plan change for Alice.,update_subscription,2,True,process_refund,0.569720983505249,0.463518887758255

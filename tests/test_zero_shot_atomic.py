@@ -35,9 +35,19 @@ def test_alias_map_covers_routing_15():
     assert alias_routing_tool("create_ticket") == "create_ticket"
 
 
-def test_unmapped_routing_label_rejected():
+def test_legr_15_tools_are_prefix_of_30():
+    from data_synth import _FULL_TOOL_VOCAB
+
+    assert list(LEGR_15_TOOLS) == list(_FULL_TOOL_VOCAB[:15])
+    assert all(t in _FULL_TOOL_VOCAB[:30] for t in LEGR_15_TOOLS)
+
+
+def test_routing_30_labels_remain_oov_for_frozen_legr():
+    """routing_30tools must not be aliased onto the DAG embedding table."""
     with pytest.raises(UnmappedRoutingToolError):
         alias_routing_tool("check_service_status")
+    with pytest.raises(UnmappedRoutingToolError):
+        alias_routing_tool("quarantine_endpoint")
 
 
 def test_one_node_graph_has_no_edges():

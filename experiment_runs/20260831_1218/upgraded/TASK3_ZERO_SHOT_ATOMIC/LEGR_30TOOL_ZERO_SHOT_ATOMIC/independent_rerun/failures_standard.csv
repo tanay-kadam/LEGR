@@ -1,0 +1,365 @@
+query,gt_tool,rank_of_one_node,top1_is_one_node,top1_dag_text,top1_cosine,gt_cosine
+look up the record for #60122.,db_read,7,False,process_refund -> send_notification,0.4041961431503296,0.22369441390037537
+pull Alice's account details.,db_read,18,False,"create_ticket -> send_notification, send_notification -> reset_password",0.48119157552719116,0.11738882958889008
+retrieve information on Frank.,db_read,10,False,"create_ticket -> send_notification, send_notification -> reset_password",0.4517722725868225,0.1325332671403885
+check the database entry for Charlie.,db_read,9,True,db_write,0.3866102397441864,0.2366417646408081
+fetch the record linked to #20891.,db_read,12,False,process_refund -> send_notification,0.38321325182914734,0.1825501173734665
+search for transaction #20891 in the database.,db_read,10,False,process_refund -> send_notification,0.3126262426376343,0.17676372826099396
+bring up Bob's account information.,db_read,15,False,"create_ticket -> send_notification, send_notification -> reset_password",0.5152470469474792,0.1358691304922104
+search the database for Frank.,db_read,9,False,"create_ticket -> send_notification, send_notification -> reset_password",0.36963844299316406,0.20286156237125397
+Please look up the record for Alice.,db_read,9,False,escalate_to_human -> archive_data,0.3876950740814209,0.20837339758872986
+Please retrieve the entry for #60122.,db_read,8,False,process_refund -> send_notification,0.41544109582901,0.25086554884910583
+Please retrieve information on Frank.,db_read,10,False,"create_ticket -> send_notification, send_notification -> reset_password",0.4217202663421631,0.16982214152812958
+Please check the database entry for Eve.,db_read,7,True,db_write,0.4074747562408447,0.289687842130661
+Please fetch the record linked to #10234.,db_read,11,False,process_refund -> send_notification,0.3835950493812561,0.1764378696680069
+Please search for transaction #53698 in the database.,db_read,8,False,process_refund -> send_notification,0.36231160163879395,0.22044870257377625
+Please bring up Diana's account information.,db_read,12,False,"create_ticket -> send_notification, send_notification -> reset_password",0.47502025961875916,0.2200171798467636
+Please search the database for Alice.,db_read,9,False,escalate_to_human -> archive_data,0.3788803517818451,0.23752711713314056
+Can you look up the record for Alice?,db_read,13,False,escalate_to_human -> archive_data,0.38241782784461975,0.16982749104499817
+Can you pull Bob's account details?,db_read,18,False,"create_ticket -> send_notification, send_notification -> reset_password",0.39441803097724915,0.07656849920749664
+Can you check the database for #53698?,db_read,9,True,db_write,0.3365860879421234,0.1999715268611908
+Can you pull the details associated with #53698?,db_read,10,False,escalate_to_human -> archive_data,0.32893308997154236,0.1820012331008911
+Can you fetch Alice's profile from the database?,db_read,17,False,"create_ticket -> send_notification, send_notification -> reset_password",0.31380993127822876,0.07054588943719864
+Can you read the record tied to Eve?,db_read,16,False,process_refund -> send_notification,0.3049342632293701,0.10615424066781998
+Can you bring up the database entry for #20891?,db_read,9,True,db_write,0.44697457551956177,0.23794123530387878
+Can you read back the data for #60122?,db_read,10,False,archive_data -> restore_backup,0.41130614280700684,0.20788970589637756
+Could you look up the record for #60122 for me?,db_read,11,False,process_refund -> send_notification,0.3910343050956726,0.17138448357582092
+Could you pull Frank's account details for me?,db_read,19,False,"create_ticket -> send_notification, send_notification -> reset_password",0.3863923251628876,0.07650896906852722
+Could you retrieve information on Eve for me?,db_read,11,False,escalate_to_human -> archive_data,0.4028145968914032,0.16304267942905426
+Could you check the database entry for Diana for me?,db_read,7,True,db_write,0.38240379095077515,0.256355345249176
+Could you fetch the record linked to #20891 for me?,db_read,14,False,process_refund -> send_notification,0.3635571002960205,0.1750083714723587
+Could you search for transaction #42017 in the database for me?,db_read,8,True,db_write,0.31514257192611694,0.19356007874011993
+Could you bring up the database entry for #31450 for me?,db_read,6,True,db_write,0.4497227668762207,0.26201802492141724
+Could you read back the data for #10234 for me?,db_read,10,False,escalate_to_human -> archive_data,0.3949768543243408,0.24276991188526154
+I need you to look up the record for #20891.,db_read,4,False,process_refund -> send_notification,0.43255507946014404,0.3202435374259949
+I need you to retrieve the entry for #60122.,db_read,6,False,process_refund -> send_notification,0.4134142994880676,0.29469192028045654
+I need you to retrieve information on Diana.,db_read,9,False,"create_ticket -> send_notification, send_notification -> reset_password",0.4322691261768341,0.24940283596515656
+I need you to pull the details associated with #31450.,db_read,4,False,escalate_to_human -> archive_data,0.3611413240432739,0.34402504563331604
+I need you to fetch the record linked to #31450.,db_read,8,False,process_refund -> send_notification,0.4137730598449707,0.25319352746009827
+I need you to read the record tied to Bob.,db_read,11,False,"create_ticket -> send_notification, send_notification -> reset_password",0.3116394877433777,0.15660136938095093
+I need you to bring up Bob's account information.,db_read,14,False,"create_ticket -> send_notification, send_notification -> reset_password",0.5164397954940796,0.23496980965137482
+I need you to search the database for Grace.,db_read,9,False,"create_ticket -> send_notification, send_notification -> reset_password",0.3765076696872711,0.2196063995361328
+We should look up the record for Charlie.,db_read,10,False,escalate_to_human -> archive_data,0.32858046889305115,0.20525184273719788
+We should pull Alice's account details.,db_read,15,False,"create_ticket -> send_notification, send_notification -> reset_password",0.4247051775455475,0.17569506168365479
+We should retrieve information on Alice.,db_read,8,False,"create_ticket -> send_notification, send_notification -> reset_password",0.4344228208065033,0.2489105463027954
+We should check the database entry for Diana.,db_read,8,True,db_write,0.4079136550426483,0.28595441579818726
+We should fetch the record linked to #10234.,db_read,11,False,process_refund -> send_notification,0.3845401406288147,0.21243125200271606
+We should read the record tied to Charlie.,db_read,13,False,process_refund -> send_notification,0.2851654589176178,0.14881137013435364
+We should bring up Grace's account information.,db_read,15,False,"create_ticket -> send_notification, send_notification -> reset_password",0.47371917963027954,0.19614875316619873
+We should search the database for Charlie.,db_read,8,False,escalate_to_human -> archive_data,0.38180312514305115,0.24810700118541718
+Let's look up the record for Charlie.,db_read,14,False,process_refund -> send_notification,0.32814109325408936,0.14145512878894806
+Let's retrieve the entry for #10234.,db_read,10,False,process_refund -> send_notification,0.38226789236068726,0.2057495415210724
+Let's check the database for #60122.,db_read,7,True,db_write,0.42303338646888733,0.2545626759529114
+Let's pull the details associated with #42017.,db_read,6,True,generate_report,0.295639306306839,0.2545318007469177
+Let's fetch Eve's profile from the database.,db_read,12,False,"create_ticket -> send_notification, send_notification -> reset_password",0.4076358377933502,0.15071313083171844
+Let's search for transaction #10234 in the database.,db_read,9,True,db_write,0.3083915710449219,0.16753706336021423
+Let's bring up Alice's account information.,db_read,15,False,"create_ticket -> send_notification, send_notification -> reset_password",0.49254846572875977,0.17345361411571503
+Let's search the database for Eve.,db_read,8,True,db_write,0.37820231914520264,0.2264254093170166
+Kindly look up the record for #31450.,db_read,7,False,process_refund -> send_notification,0.4172285795211792,0.24150608479976654
+Kindly pull Grace's account details.,db_read,18,False,"create_ticket -> send_notification, send_notification -> reset_password",0.353376179933548,0.12852126359939575
+Kindly check the database for #60122.,db_read,7,True,db_write,0.3811738193035126,0.2423977553844452
+Kindly check the database entry for Eve.,db_read,8,True,db_write,0.36545541882514954,0.24445092678070068
+Kindly fetch Grace's profile from the database.,db_read,12,False,"create_ticket -> send_notification, send_notification -> reset_password",0.3811013102531433,0.12481271475553513
+Kindly read the record tied to Charlie.,db_read,14,False,process_refund -> send_notification,0.32713383436203003,0.13813507556915283
+Kindly bring up the database entry for #53698.,db_read,5,True,db_write,0.4285813868045807,0.2689760625362396
+Kindly search the database for Bob.,db_read,10,False,escalate_to_human -> archive_data,0.3556402325630188,0.15918058156967163
+"When you have a moment, look up the record for Frank.",db_read,8,False,"create_ticket -> send_notification, send_notification -> reset_password",0.408761590719223,0.24614399671554565
+"When you have a moment, retrieve the entry for #10234.",db_read,9,False,process_refund -> send_notification,0.39832639694213867,0.22923363745212555
+"When you have a moment, retrieve information on Frank.",db_read,9,False,"create_ticket -> send_notification, send_notification -> reset_password",0.46602895855903625,0.23725619912147522
+reset Bob's password.,reset_password,2,False,"create_ticket -> send_notification, send_notification -> reset_password",0.46263593435287476,0.4617542326450348
+replace Alice's current password.,reset_password,2,False,"reset_password -> rotate_api_key, rotate_api_key -> deploy_container, update_subscription -> reset_password",0.5314255356788635,0.4875241219997406
+invalidate the old password and create a new one for Bob.,reset_password,2,False,"reset_password -> rotate_api_key, rotate_api_key -> deploy_container, update_subscription -> reset_password",0.4994450509548187,0.4824571907520294
+Can you rotate Eve's login credentials?,reset_password,2,False,"reset_password -> rotate_api_key, rotate_api_key -> deploy_container, update_subscription -> reset_password",0.491100013256073,0.4518265426158905
+Can you replace Charlie's current password?,reset_password,2,False,"reset_password -> rotate_api_key, rotate_api_key -> deploy_container, update_subscription -> reset_password",0.5091511607170105,0.44812047481536865
+Can you invalidate the old password and create a new one for Alice?,reset_password,2,False,"reset_password -> rotate_api_key, rotate_api_key -> deploy_container, update_subscription -> reset_password",0.49212464690208435,0.4611358642578125
+Could you reset Frank's password for me?,reset_password,2,False,"create_ticket -> send_notification, send_notification -> reset_password",0.40531566739082336,0.4043111205101013
+Could you replace Charlie's current password for me?,reset_password,2,False,"reset_password -> rotate_api_key, rotate_api_key -> deploy_container, update_subscription -> reset_password",0.46659258008003235,0.4380823075771332
+Let's replace Bob's current password.,reset_password,2,False,"reset_password -> rotate_api_key, rotate_api_key -> deploy_container, update_subscription -> reset_password",0.4975440502166748,0.4943682551383972
+"When you have a moment, reset Alice's password.",reset_password,2,False,"create_ticket -> send_notification, send_notification -> reset_password",0.5109168291091919,0.4711511433124542
+"When you have a moment, issue a new password for Charlie.",reset_password,2,False,"create_ticket -> send_notification, send_notification -> reset_password",0.5405976176261902,0.5226522088050842
+"When you have a moment, force a password reset for Grace.",reset_password,2,False,"create_ticket -> send_notification, send_notification -> reset_password",0.4595714211463928,0.4388507306575775
+file a case for Bob.,create_ticket,15,False,process_refund -> send_notification,0.37396132946014404,0.21560074388980865
+create a support case for prod-web-01.,create_ticket,9,False,backup_database -> deploy_container,0.36676356196403503,0.20488367974758148
+log a helpdesk issue for Bob.,create_ticket,8,False,log_audit_event -> escalate_to_human,0.478543758392334,0.20363560318946838
+raise a service request for HR.,create_ticket,17,True,update_subscription,0.34031882882118225,0.14141203463077545
+submit a ticket for Alice.,create_ticket,3,False,process_refund -> send_notification,0.41679176688194275,0.33211201429367065
+open a service desk case for Alice.,create_ticket,16,True,provision_vm,0.3622046411037445,0.18556645512580872
+create a tracking issue for Frank.,create_ticket,3,False,escalate_to_human -> archive_data,0.40819042921066284,0.38836371898651123
+Please open an incident ticket for auth-svc-04.,create_ticket,2,False,log_audit_event -> escalate_to_human,0.3449134826660156,0.34477201104164124
+Please file a case for Alice.,create_ticket,16,False,escalate_to_human -> archive_data,0.4204278588294983,0.24241499602794647
+Please create a support case for ml-infer-05.,create_ticket,12,False,backup_database -> deploy_container,0.4111602008342743,0.23922650516033173
+Please log an issue against staging-db-02.,create_ticket,12,False,log_audit_event -> escalate_to_human,0.4921175539493561,0.18177294731140137
+Please raise a service request for Finance.,create_ticket,18,False,process_refund -> send_notification,0.3669338822364807,0.17236357927322388
+Please submit a ticket for Frank.,create_ticket,3,False,process_refund -> send_notification,0.3334454894065857,0.28622904419898987
+Please open a service desk case for Diana.,create_ticket,17,False,process_refund -> send_notification,0.35296183824539185,0.18340402841567993
+Please create a support issue for HR.,create_ticket,6,False,backup_database -> deploy_container,0.40151530504226685,0.32190585136413574
+Can you file a case for Charlie?,create_ticket,12,False,process_refund -> send_notification,0.33590206503868103,0.22666454315185547
+Can you log a helpdesk issue for Grace?,create_ticket,6,False,log_audit_event -> escalate_to_human,0.4637085795402527,0.21773429214954376
+Can you raise an incident for auth-svc-04?,create_ticket,4,False,log_audit_event -> escalate_to_human,0.2897588908672333,0.25745663046836853
+Can you submit a ticket for Bob?,create_ticket,2,False,process_refund -> send_notification,0.413527250289917,0.31777223944664
+Can you open a tracking case for HR?,create_ticket,2,False,escalate_to_human -> archive_data,0.3403288722038269,0.281635582447052
+Can you create a support issue for Finance?,create_ticket,2,True,provision_vm,0.32647544145584106,0.3115885257720947
+Could you file a bug for payment-api-03 for me?,create_ticket,3,False,escalate_to_human -> archive_data,0.36274343729019165,0.3382132649421692
+Could you create an incident ticket for Diana for me?,create_ticket,2,False,escalate_to_human -> archive_data,0.3573935329914093,0.3448377251625061
+Could you log a helpdesk issue for Frank for me?,create_ticket,7,False,log_audit_event -> escalate_to_human,0.4776950776576996,0.2346433401107788
+Could you raise an incident for payment-api-03 for me?,create_ticket,3,False,process_refund -> send_notification,0.3491435647010803,0.2707245647907257
+Could you submit a ticket for host auth-svc-04 for me?,create_ticket,2,False,process_refund -> send_notification,0.33774566650390625,0.2943089008331299
+Could you open a tracking issue for ml-infer-05 for me?,create_ticket,2,False,escalate_to_human -> archive_data,0.3917244076728821,0.36727598309516907
+Could you create a service request for auth-svc-04 for me?,create_ticket,23,True,quarantine_system,0.271771103143692,0.1274576485157013
+I need you to open an incident ticket for prod-web-01.,create_ticket,2,False,escalate_to_human -> archive_data,0.37345317006111145,0.36881890892982483
+I need you to file a case for Bob.,create_ticket,13,False,process_refund -> send_notification,0.3949539065361023,0.24174681305885315
+I need you to create an incident ticket for Bob.,create_ticket,3,False,process_refund -> send_notification,0.3921529948711395,0.36402398347854614
+I need you to log a helpdesk issue for Engineering.,create_ticket,8,False,log_audit_event -> escalate_to_human,0.49477624893188477,0.24140821397304535
+I need you to raise a service request for Marketing.,create_ticket,21,True,send_notification,0.37599262595176697,0.13636107742786407
+I need you to submit a ticket for Alice.,create_ticket,5,False,process_refund -> send_notification,0.4285188615322113,0.33216583728790283
+I need you to open a service desk case for Eve.,create_ticket,16,True,provision_vm,0.38708069920539856,0.20257185399532318
+I need you to create a tracking issue for Eve.,create_ticket,3,False,escalate_to_human -> archive_data,0.4667048156261444,0.3964453935623169
+We should open a support ticket for Bob.,create_ticket,3,False,transfer_ownership -> invalidate_cache,0.3205636441707611,0.2933758795261383
+We should file a case for the HR team.,create_ticket,10,False,escalate_to_human -> archive_data,0.403236448764801,0.276071697473526
+We should create a support case for staging-db-02.,create_ticket,14,False,backup_database -> deploy_container,0.4519058167934418,0.22085365653038025
+We should log an issue against prod-web-01.,create_ticket,9,False,log_audit_event -> escalate_to_human,0.49722957611083984,0.20665928721427917
+We should raise an incident for cdn-edge-06.,create_ticket,12,False,backup_database -> deploy_container,0.3495333194732666,0.21463534235954285
+We should submit a ticket for the Engineering group.,create_ticket,10,True,provision_vm,0.3696831166744232,0.29339689016342163
+We should open a service desk case for Alice.,create_ticket,19,True,provision_vm,0.3642696142196655,0.1812850385904312
+We should create a service request for prod-web-01.,create_ticket,17,False,backup_database -> deploy_container,0.348754346370697,0.1644333451986313
+Let's open a support ticket for Grace.,create_ticket,2,False,transfer_ownership -> invalidate_cache,0.3362707793712616,0.30732089281082153
+Let's file a case for the Marketing team.,create_ticket,9,False,escalate_to_human -> archive_data,0.42432931065559387,0.28297245502471924
+Let's log an issue against ml-infer-05.,create_ticket,7,False,log_audit_event -> escalate_to_human,0.48135751485824585,0.21806062757968903
+Let's raise a support request on behalf of Bob.,create_ticket,16,True,update_subscription,0.36068111658096313,0.17215827107429504
+Let's submit a ticket for Charlie.,create_ticket,2,False,process_refund -> send_notification,0.4020049571990967,0.33468204736709595
+Let's open a tracking issue for cdn-edge-06.,create_ticket,2,False,log_audit_event -> escalate_to_human,0.38049712777137756,0.3741450011730194
+Let's create a support issue for Legal.,create_ticket,5,True,db_read,0.3681540787220001,0.32732903957366943
+Kindly file a case for the HR team.,create_ticket,9,False,escalate_to_human -> archive_data,0.4064590036869049,0.2615661323070526
+Kindly create an incident ticket for Bob.,create_ticket,5,False,log_audit_event -> escalate_to_human,0.35798242688179016,0.3066050708293915
+Kindly log an issue against cdn-edge-06.,create_ticket,7,False,log_audit_event -> escalate_to_human,0.4800630211830139,0.14545147120952606
+Kindly raise an incident for ml-infer-05.,create_ticket,8,False,backup_database -> deploy_container,0.2913089990615845,0.22912320494651794
+Kindly submit a ticket for host ml-infer-05.,create_ticket,4,True,provision_vm,0.34815946221351624,0.2699505388736725
+Kindly open a tracking case for Legal.,create_ticket,3,False,escalate_to_human -> archive_data,0.3919089436531067,0.32561418414115906
+Kindly create a service request for staging-db-02.,create_ticket,26,False,backup_database -> deploy_container,0.3263477087020874,0.08243270218372345
+"When you have a moment, open a support ticket for Grace.",create_ticket,9,True,send_notification,0.35905423760414124,0.26512283086776733
+"When you have a moment, file a case for Diana.",create_ticket,12,False,process_refund -> send_notification,0.41847914457321167,0.23926697671413422
+"When you have a moment, create an incident ticket for Grace.",create_ticket,5,False,process_refund -> send_notification,0.3985763490200043,0.31987959146499634
+send a heads-up to Alice.,send_notification,3,False,"create_ticket -> send_notification, send_notification -> reset_password",0.44371339678764343,0.4094306230545044
+forward the update to Charlie.,send_notification,2,True,update_subscription,0.4079112112522125,0.3690216839313507
+Please notify Frank.,send_notification,2,False,"create_ticket -> send_notification, send_notification -> reset_password",0.4398754835128784,0.43818849325180054
+Can you send a heads-up to Diana?,send_notification,2,False,process_refund -> send_notification,0.4134289622306824,0.36928340792655945
+Can you drop a message to Charlie?,send_notification,2,False,process_refund -> send_notification,0.4471665620803833,0.4387417733669281
+Could you notify Grace for me?,send_notification,2,False,"create_ticket -> send_notification, send_notification -> reset_password",0.42689773440361023,0.3914077579975128
+Could you send a heads-up to Diana for me?,send_notification,3,False,process_refund -> send_notification,0.39667364954948425,0.34449630975723267
+I need you to forward the update to Diana.,send_notification,2,True,db_write,0.41272327303886414,0.40807268023490906
+We should notify Diana.,send_notification,2,False,"create_ticket -> send_notification, send_notification -> reset_password",0.4328426420688629,0.4192882478237152
+Let's alert Frank.,send_notification,2,False,"create_ticket -> send_notification, send_notification -> reset_password",0.4084089398384094,0.4054139256477356
+Kindly send a heads-up to Bob.,send_notification,3,False,process_refund -> send_notification,0.40510639548301697,0.3900095522403717
+contain ml-infer-05 immediately.,quarantine_system,5,False,transfer_ownership -> invalidate_cache,0.3422605097293854,0.236085444688797
+segment staging-db-02 from the rest of the environment.,quarantine_system,3,False,backup_database -> deploy_container,0.3683658540248871,0.3114728331565857
+Please contain prod-web-01 immediately.,quarantine_system,4,False,transfer_ownership -> invalidate_cache,0.36647894978523254,0.2765918970108032
+Please segment cdn-edge-06 from the rest of the environment.,quarantine_system,3,True,check_status,0.372032105922699,0.35387441515922546
+Can you contain ml-infer-05 immediately?,quarantine_system,4,False,transfer_ownership -> invalidate_cache,0.3157651722431183,0.2181083858013153
+Could you contain payment-api-03 immediately for me?,quarantine_system,2,False,transfer_ownership -> invalidate_cache,0.34294813871383667,0.2981950044631958
+Could you segment staging-db-02 from the rest of the environment for me?,quarantine_system,3,False,backup_database -> deploy_container,0.3811981678009033,0.3679734468460083
+I need you to take auth-svc-04 off the network.,quarantine_system,2,False,transfer_ownership -> invalidate_cache,0.37651777267456055,0.3731379806995392
+I need you to contain staging-db-02 immediately.,quarantine_system,4,False,transfer_ownership -> invalidate_cache,0.3966786861419678,0.3216352164745331
+We should contain auth-svc-04 immediately.,quarantine_system,6,False,transfer_ownership -> invalidate_cache,0.4257509708404541,0.25621554255485535
+We should segment ml-infer-05 from the rest of the environment.,quarantine_system,3,True,check_status,0.3990826904773712,0.31363892555236816
+Let's contain staging-db-02 immediately.,quarantine_system,5,False,transfer_ownership -> invalidate_cache,0.3947080671787262,0.2849220633506775
+Let's segment prod-web-01 from the rest of the environment.,quarantine_system,2,True,check_status,0.34138432145118713,0.31615716218948364
+Kindly quarantine host auth-svc-04.,quarantine_system,2,True,scan_malware,0.3875541687011719,0.3698498606681824
+Kindly contain cdn-edge-06 immediately.,quarantine_system,3,False,transfer_ownership -> invalidate_cache,0.34793394804000854,0.2979625165462494
+"When you have a moment, quarantine host cdn-edge-06.",quarantine_system,2,True,scan_malware,0.4255233407020569,0.38374507427215576
+check prod-web-01 for indicators of compromise.,scan_malware,4,True,check_status,0.38577884435653687,0.23528560996055603
+inspect staging-db-02 for malware activity.,scan_malware,2,False,"approve_access -> scan_malware, run_pipeline -> approve_access, scan_malware -> run_pipeline",0.43491441011428833,0.40307989716529846
+sweep prod-web-01 for infections.,scan_malware,2,False,"approve_access -> scan_malware, run_pipeline -> approve_access, scan_malware -> run_pipeline",0.4248619079589844,0.396920382976532
+Please check payment-api-03 for indicators of compromise.,scan_malware,8,True,check_status,0.38152629137039185,0.20029564201831818
+Please run an IOC check against staging-db-02.,scan_malware,2,True,check_status,0.36869943141937256,0.326098769903183
+Can you check payment-api-03 for indicators of compromise?,scan_malware,7,True,check_status,0.31859099864959717,0.13289852440357208
+Can you inspect ml-infer-05 for malware activity?,scan_malware,2,False,"approve_access -> scan_malware, run_pipeline -> approve_access, scan_malware -> run_pipeline",0.40054750442504883,0.344134122133255
+Can you sweep payment-api-03 for infections?,scan_malware,2,False,"approve_access -> scan_malware, run_pipeline -> approve_access, scan_malware -> run_pipeline",0.4191800355911255,0.4056795835494995
+Could you check prod-web-01 for indicators of compromise for me?,scan_malware,5,True,check_status,0.4094284176826477,0.2247828245162964
+Could you inspect prod-web-01 for malware activity for me?,scan_malware,2,False,"approve_access -> scan_malware, run_pipeline -> approve_access, scan_malware -> run_pipeline",0.360879123210907,0.33937761187553406
+Could you sweep cdn-edge-06 for infections for me?,scan_malware,2,False,"approve_access -> scan_malware, run_pipeline -> approve_access, scan_malware -> run_pipeline",0.38633498549461365,0.36730194091796875
+Could you run an IOC check against staging-db-02 for me?,scan_malware,2,True,check_status,0.32451796531677246,0.28056150674819946
+I need you to check ml-infer-05 for indicators of compromise.,scan_malware,10,True,check_status,0.4521842896938324,0.2115597426891327
+We should check staging-db-02 for indicators of compromise.,scan_malware,3,True,check_status,0.48581936955451965,0.26225993037223816
+We should run an IOC check against ml-infer-05.,scan_malware,2,True,check_status,0.3373485803604126,0.3108956813812256
+Let's check staging-db-02 for indicators of compromise.,scan_malware,7,True,check_status,0.49994373321533203,0.20205624401569366
+Kindly check staging-db-02 for indicators of compromise.,scan_malware,2,True,check_status,0.4360777735710144,0.2647712826728821
+Kindly inspect cdn-edge-06 for malware activity.,scan_malware,2,False,"approve_access -> scan_malware, run_pipeline -> approve_access, scan_malware -> run_pipeline",0.40044093132019043,0.3916056752204895
+"When you have a moment, check staging-db-02 for indicators of compromise.",scan_malware,3,True,check_status,0.4367148280143738,0.28265929222106934
+Please generate a diagnostics report for payment-api-03.,generate_report,3,True,check_status,0.37656205892562866,0.26349636912345886
+I need you to generate a diagnostics report for prod-web-01.,generate_report,3,True,check_status,0.3793621063232422,0.265897274017334
+I need you to compile a health summary for prod-web-01.,generate_report,2,True,check_status,0.5187717080116272,0.47694554924964905
+Kindly generate a diagnostics report for cdn-edge-06.,generate_report,9,True,check_status,0.3653170168399811,0.12752139568328857
+process the refund for Charlie.,process_refund,2,False,process_refund -> send_notification,0.5761656165122986,0.5648261308670044
+return the money to Diana.,process_refund,2,False,process_refund -> send_notification,0.452897846698761,0.3955684006214142
+credit Frank's account.,process_refund,3,False,process_refund -> send_notification,0.41169312596321106,0.3804103136062622
+reverse the payment for Charlie.,process_refund,3,False,"process_refund -> send_notification, update_subscription -> process_refund",0.46144700050354004,0.4334701895713806
+send Eve a payout reversal.,process_refund,3,False,process_refund -> send_notification,0.5923302173614502,0.46016523241996765
+refund the charge for Bob.,process_refund,3,False,"process_refund -> send_notification, update_subscription -> process_refund",0.5153529644012451,0.49029067158699036
+put the refund through for Bob.,process_refund,2,False,process_refund -> send_notification,0.5589227676391602,0.540425181388855
+Please process the refund for Frank.,process_refund,2,False,process_refund -> send_notification,0.5692031979560852,0.5415093898773193
+Please return the money to Frank.,process_refund,2,False,process_refund -> send_notification,0.4569063186645508,0.3989518880844116
+Please reverse the payment for Bob.,process_refund,3,False,process_refund -> send_notification,0.4935078024864197,0.45926377177238464
+Please send Eve a payout reversal.,process_refund,3,False,process_refund -> send_notification,0.6012126207351685,0.4683820307254791
+Please refund the charge for Eve.,process_refund,2,False,process_refund -> send_notification,0.5540634393692017,0.5402130484580994
+Please put the refund through for Charlie.,process_refund,2,False,process_refund -> send_notification,0.5735877156257629,0.5608047246932983
+Can you process the refund for Eve?,process_refund,2,False,process_refund -> send_notification,0.5967358946800232,0.5620513558387756
+Can you credit Charlie's account?,process_refund,3,False,process_refund -> send_notification,0.458359032869339,0.4229910671710968
+Can you reverse the payment for Charlie?,process_refund,2,False,"process_refund -> send_notification, update_subscription -> process_refund",0.4831322133541107,0.4626694619655609
+Can you send Bob a payout reversal?,process_refund,3,False,process_refund -> send_notification,0.5846676230430603,0.45771363377571106
+Can you refund the charge for Diana?,process_refund,2,False,"process_refund -> send_notification, update_subscription -> process_refund",0.524380624294281,0.5176485180854797
+Could you issue a refund to Eve for me?,process_refund,2,False,process_refund -> send_notification,0.560789942741394,0.5539477467536926
+Could you process the refund for Eve for me?,process_refund,2,False,process_refund -> send_notification,0.6009003520011902,0.5598371028900146
+Could you return the money to Frank for me?,process_refund,2,False,process_refund -> send_notification,0.4412565231323242,0.3824547231197357
+Could you credit Charlie's account for me?,process_refund,3,False,process_refund -> send_notification,0.4661359190940857,0.40114501118659973
+Could you reverse the payment for Diana for me?,process_refund,3,False,process_refund -> send_notification,0.48317790031433105,0.4549470841884613
+Could you send Diana a payout reversal for me?,process_refund,3,False,process_refund -> send_notification,0.5769020318984985,0.4563995897769928
+Could you put the refund through for Bob for me?,process_refund,2,False,process_refund -> send_notification,0.5399900674819946,0.5283294320106506
+I need you to refund transaction #53698.,process_refund,2,False,process_refund -> send_notification,0.553625762462616,0.5217270255088806
+I need you to process the refund for Diana.,process_refund,2,False,process_refund -> send_notification,0.6025932431221008,0.5494494438171387
+I need you to process a refund for #60122.,process_refund,2,False,process_refund -> send_notification,0.6341500878334045,0.5723370313644409
+I need you to reverse the payment for Frank.,process_refund,3,False,process_refund -> send_notification,0.48490211367607117,0.438549280166626
+I need you to return the funds for #10234.,process_refund,2,False,process_refund -> send_notification,0.511108934879303,0.4289151430130005
+I need you to undo the charge associated with #31450.,process_refund,2,False,process_refund -> send_notification,0.4183183014392853,0.40938809514045715
+I need you to put the refund through for Eve.,process_refund,2,False,process_refund -> send_notification,0.6149019598960876,0.5637303590774536
+We should refund transaction #60122.,process_refund,2,False,process_refund -> send_notification,0.5481920838356018,0.5297281742095947
+We should reverse the charge tied to #60122.,process_refund,2,False,process_refund -> send_notification,0.44784706830978394,0.41560858488082886
+We should return the money to Eve.,process_refund,2,False,process_refund -> send_notification,0.4836170971393585,0.4072878658771515
+We should credit Charlie's account.,process_refund,3,False,process_refund -> send_notification,0.42691314220428467,0.3948768079280853
+We should reverse the payment for Grace.,process_refund,3,False,process_refund -> send_notification,0.4411880075931549,0.4379746615886688
+We should send Grace a payout reversal.,process_refund,2,False,process_refund -> send_notification,0.5262610912322998,0.44753459095954895
+We should refund the charge for Bob.,process_refund,2,False,process_refund -> send_notification,0.5130882859230042,0.5020822286605835
+Let's refund transaction #31450.,process_refund,2,False,process_refund -> send_notification,0.5535223484039307,0.5406080484390259
+Let's process the refund for Bob.,process_refund,2,False,process_refund -> send_notification,0.5685150027275085,0.5313031077384949
+Let's credit Bob's account.,process_refund,4,False,process_refund -> send_notification,0.4292896091938019,0.37799811363220215
+Let's reverse the payment for Alice.,process_refund,2,False,process_refund -> send_notification,0.47765621542930603,0.44598135352134705
+Let's send Alice a payout reversal.,process_refund,2,False,process_refund -> send_notification,0.5748765468597412,0.45689859986305237
+Let's put the refund through for Diana.,process_refund,2,False,process_refund -> send_notification,0.560146152973175,0.5436290502548218
+Kindly issue a refund to Eve.,process_refund,2,False,process_refund -> send_notification,0.576559841632843,0.5649230480194092
+Kindly process the refund for Grace.,process_refund,2,False,process_refund -> send_notification,0.5785539150238037,0.5383018851280212
+Kindly credit Diana's account.,process_refund,3,False,process_refund -> send_notification,0.44522151350975037,0.3704111576080322
+Kindly send Frank a payout reversal.,process_refund,2,False,process_refund -> send_notification,0.5586599707603455,0.4494852125644684
+Kindly refund the charge for Eve.,process_refund,2,False,process_refund -> send_notification,0.5541760921478271,0.534092903137207
+Kindly put the refund through for Bob.,process_refund,2,False,process_refund -> send_notification,0.5870603322982788,0.5601661801338196
+"When you have a moment, refund transaction #60122.",process_refund,2,False,process_refund -> send_notification,0.5843303799629211,0.4905260503292084
+"When you have a moment, reverse the charge tied to #60122.",process_refund,2,False,process_refund -> send_notification,0.46839141845703125,0.37287160754203796
+"When you have a moment, return the money to Diana.",process_refund,2,False,process_refund -> send_notification,0.5060614347457886,0.36053603887557983
+Can you deploy a fresh virtual machine for Legal?,provision_vm,2,False,"enable_feature_flag -> provision_vm, enable_feature_flag -> reset_password, provision_vm -> rollback_deployment, reset_password -> rollback_deployment",0.48025232553482056,0.4326833188533783
+bring the service on staging-db-02 back up.,restart_service,2,False,backup_database -> deploy_container,0.43118831515312195,0.2912571430206299
+Please bring the service on payment-api-03 back up.,restart_service,4,False,backup_database -> deploy_container,0.41431358456611633,0.30356281995773315
+Can you bring the service on staging-db-02 back up?,restart_service,6,False,backup_database -> deploy_container,0.40470224618911743,0.22993148863315582
+Could you bring the service on auth-svc-04 back up for me?,restart_service,10,False,backup_database -> deploy_container,0.39352747797966003,0.20708751678466797
+I need you to bring the service on staging-db-02 back up.,restart_service,7,False,backup_database -> deploy_container,0.45811179280281067,0.2739846408367157
+We should bounce the service running on ml-infer-05.,restart_service,2,False,backup_database -> deploy_container,0.41035589575767517,0.39002886414527893
+We should bring the service on prod-web-01 back up.,restart_service,6,False,backup_database -> deploy_container,0.4618964195251465,0.2757352292537689
+Let's bring the service on prod-web-01 back up.,restart_service,4,False,backup_database -> deploy_container,0.4548438489437103,0.3055325746536255
+Kindly bring the service on cdn-edge-06 back up.,restart_service,6,False,backup_database -> deploy_container,0.4470406770706177,0.23732629418373108
+escalate Alice's case to a human agent.,escalate_to_human,11,False,"provision_vm -> send_notification, provision_vm -> transfer_ownership, send_notification -> scale_service, transfer_ownership -> scale_service",0.31452468037605286,0.20536400377750397
+get a human involved for Frank.,escalate_to_human,7,False,"create_ticket -> send_notification, send_notification -> reset_password",0.343065470457077,0.24227674305438995
+route the issue to the Marketing manager.,escalate_to_human,5,False,escalate_to_human -> archive_data,0.3462067246437073,0.30035173892974854
+wake up the on-call for prod-web-01.,escalate_to_human,3,True,restart_service,0.2925524413585663,0.26645198464393616
+hand the cdn-edge-06 case to an engineer.,escalate_to_human,13,False,"provision_vm -> send_notification, provision_vm -> transfer_ownership, send_notification -> scale_service, transfer_ownership -> scale_service",0.29521918296813965,0.17994675040245056
+escalate this issue for Eve to the support team.,escalate_to_human,7,True,provision_vm,0.36392128467559814,0.29782795906066895
+Please escalate Bob's case to a human agent.,escalate_to_human,10,False,process_refund -> send_notification,0.3236671984195709,0.2307685762643814
+Please get a human involved for Bob.,escalate_to_human,10,False,"create_ticket -> send_notification, send_notification -> reset_password",0.37176433205604553,0.2538844645023346
+Please route the cdn-edge-06 incident to a live responder.,escalate_to_human,5,False,process_refund -> send_notification,0.30707108974456787,0.22366167604923248
+Please hand Diana's request to a live agent.,escalate_to_human,25,False,transfer_ownership -> invalidate_cache,0.3469434976577759,0.14065033197402954
+Please send Charlie's case for human review.,escalate_to_human,17,False,process_refund -> send_notification,0.3784455358982086,0.21950820088386536
+Please escalate this issue for Eve to the support team.,escalate_to_human,8,True,provision_vm,0.36646223068237305,0.29388946294784546
+Please transfer Grace's case to a person.,escalate_to_human,21,False,transfer_ownership -> invalidate_cache,0.37484803795814514,0.15883393585681915
+Can you get a human involved for Eve?,escalate_to_human,11,False,"provision_vm -> send_notification, provision_vm -> transfer_ownership, send_notification -> scale_service, transfer_ownership -> scale_service",0.31509822607040405,0.23692582547664642
+Can you route Charlie's issue to the on-call engineer?,escalate_to_human,2,True,create_ticket,0.311057984828949,0.2858724296092987
+Can you send the prod-web-01 issue for human handling?,escalate_to_human,13,True,db_read,0.32171401381492615,0.2387423813343048
+Can you send Grace's case for human review?,escalate_to_human,15,False,process_refund -> send_notification,0.37097403407096863,0.2251129448413849
+Can you escalate this issue for Charlie to the support team?,escalate_to_human,6,True,update_subscription,0.33017292618751526,0.2558191120624542
+Can you transfer Bob's case to a person?,escalate_to_human,27,False,process_refund -> send_notification,0.33633318543434143,0.046251364052295685
+Could you escalate Bob's case to a human agent for me?,escalate_to_human,7,False,"provision_vm -> send_notification, provision_vm -> transfer_ownership, send_notification -> scale_service, transfer_ownership -> scale_service",0.32796531915664673,0.21719980239868164
+Could you get a human involved for Charlie for me?,escalate_to_human,18,False,transfer_ownership -> invalidate_cache,0.34809020161628723,0.17425332963466644
+Could you route Alice's issue to the on-call engineer for me?,escalate_to_human,4,False,escalate_to_human -> archive_data,0.37309741973876953,0.3031782805919647
+Could you route the issue to the HR manager for me?,escalate_to_human,3,False,escalate_to_human -> archive_data,0.39384251832962036,0.3204481303691864
+Could you send Bob's case for human review for me?,escalate_to_human,18,False,process_refund -> send_notification,0.36752498149871826,0.19317933917045593
+Could you escalate the request to someone in Marketing for me?,escalate_to_human,3,False,process_refund -> send_notification,0.33131179213523865,0.29640820622444153
+Could you escalate this issue for Alice to the support team for me?,escalate_to_human,15,True,update_subscription,0.3687843978404999,0.2410990297794342
+Could you loop in a human for the prod-web-01 incident for me?,escalate_to_human,2,False,log_audit_event -> escalate_to_human,0.3162258267402649,0.24931015074253082
+I need you to escalate Eve's case to a human agent.,escalate_to_human,11,False,process_refund -> send_notification,0.37876200675964355,0.27466678619384766
+I need you to get a human involved for Charlie.,escalate_to_human,15,False,transfer_ownership -> invalidate_cache,0.3795446753501892,0.2342170625925064
+I need you to route Frank's issue to the on-call engineer.,escalate_to_human,2,False,escalate_to_human -> archive_data,0.3659985065460205,0.35232052206993103
+I need you to hand Bob's request to a live agent.,escalate_to_human,20,False,process_refund -> send_notification,0.3566729426383972,0.17113138735294342
+I need you to get the Legal team lead involved.,escalate_to_human,3,True,db_read,0.39667627215385437,0.3584364652633667
+I need you to loop in a manager for Alice.,escalate_to_human,10,False,escalate_to_human -> archive_data,0.3753971457481384,0.26012736558914185
+I need you to escalate this issue for Grace to the support team.,escalate_to_human,9,True,update_subscription,0.37855273485183716,0.28929322957992554
+I need you to transfer Alice's case to a person.,escalate_to_human,26,False,escalate_to_human -> archive_data,0.40233615040779114,0.08630584925413132
+We should escalate Eve's case to a human agent.,escalate_to_human,8,False,"provision_vm -> send_notification, provision_vm -> transfer_ownership, send_notification -> scale_service, transfer_ownership -> scale_service",0.3720220923423767,0.26678466796875
+We should get a human involved for Charlie.,escalate_to_human,10,False,transfer_ownership -> invalidate_cache,0.35031071305274963,0.23565544188022614
+We should route the auth-svc-04 incident to a live responder.,escalate_to_human,6,False,process_refund -> send_notification,0.30372294783592224,0.2255270630121231
+We should hand Diana's request to a live agent.,escalate_to_human,22,False,transfer_ownership -> invalidate_cache,0.3457682132720947,0.15374070405960083
+We should send Diana's case for human review.,escalate_to_human,18,False,process_refund -> send_notification,0.36504411697387695,0.2015276551246643
+We should escalate this issue for Bob to the support team.,escalate_to_human,8,True,update_subscription,0.3704782724380493,0.27433133125305176
+Let's escalate Charlie's case to a human agent.,escalate_to_human,11,False,"provision_vm -> send_notification, provision_vm -> transfer_ownership, send_notification -> scale_service, transfer_ownership -> scale_service",0.3324475586414337,0.2126408964395523
+Let's get a human involved for Grace.,escalate_to_human,9,False,"create_ticket -> send_notification, send_notification -> reset_password",0.32370805740356445,0.24302946031093597
+Let's route Diana's issue to the on-call engineer.,escalate_to_human,2,False,escalate_to_human -> archive_data,0.37222492694854736,0.3475426733493805
+Let's hand Alice's request to a live agent.,escalate_to_human,24,False,transfer_ownership -> invalidate_cache,0.37930962443351746,0.11865638941526413
+Let's send Grace's case for human review.,escalate_to_human,13,False,log_audit_event -> escalate_to_human,0.3664521872997284,0.24538476765155792
+Let's loop in a manager for Alice.,escalate_to_human,6,False,"create_ticket -> send_notification, send_notification -> reset_password",0.3017353117465973,0.2513412833213806
+Let's escalate the alert on auth-svc-04 to a person.,escalate_to_human,5,True,send_notification,0.4225247800350189,0.29066362977027893
+Let's transfer Alice's case to a person.,escalate_to_human,25,False,process_refund -> send_notification,0.38448160886764526,0.10541324317455292
+Kindly escalate Eve's case to a human agent.,escalate_to_human,8,False,process_refund -> send_notification,0.34767481684684753,0.2679751217365265
+Kindly get a human involved for Frank.,escalate_to_human,8,False,"create_ticket -> send_notification, send_notification -> reset_password",0.33903637528419495,0.2569720149040222
+Kindly hand Alice's request to a live agent.,escalate_to_human,21,False,process_refund -> send_notification,0.3576982915401459,0.1558629274368286
+Kindly send Bob's case for human review.,escalate_to_human,8,False,log_audit_event -> escalate_to_human,0.38349583745002747,0.2599131166934967
+Kindly escalate this issue for Charlie to the support team.,escalate_to_human,12,True,update_subscription,0.3655950725078583,0.2680337429046631
+Kindly transfer Alice's case to a person.,escalate_to_human,25,False,process_refund -> send_notification,0.37308043241500854,0.07902243733406067
+"When you have a moment, escalate Bob's case to a human agent.",escalate_to_human,8,False,process_refund -> send_notification,0.3696504831314087,0.2560380697250366
+"When you have a moment, get a human to review the problem on prod-web-01.",escalate_to_human,5,True,check_status,0.40981820225715637,0.34848177433013916
+record the activity tied to #53698.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.43088358640670776,0.3979019820690155
+write an audit entry for the HR group.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5266480445861816,0.5217913389205933
+create a trail entry for auth-svc-04.,log_audit_event,7,False,log_audit_event -> escalate_to_human,0.38241496682167053,0.24408040940761566
+Please log an audit event for auth-svc-04.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5909014344215393,0.5528175234794617
+Please record a compliance event for Legal.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5357640981674194,0.44897329807281494
+Please write a compliance entry for payment-api-03.,log_audit_event,6,False,log_audit_event -> escalate_to_human,0.4595118463039398,0.31576696038246155
+Please capture Grace's activity in the compliance log.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5692777633666992,0.526411235332489
+Please add a compliance record for Legal.,log_audit_event,3,False,log_audit_event -> escalate_to_human,0.49267444014549255,0.3822800815105438
+Please document the action taken on payment-api-03.,log_audit_event,4,False,process_refund -> send_notification,0.4122816324234009,0.3237653970718384
+Please create a compliance log entry for Eve.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5912922024726868,0.5363208651542664
+Can you log an audit event for #53698?,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5516859889030457,0.5420770645141602
+Can you record a compliance event for Engineering?,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.4873071312904358,0.4685732424259186
+Can you write an audit entry for Eve?,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5261043310165405,0.4770199656486511
+Can you capture the Engineering event in the audit trail?,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5107786655426025,0.5043144226074219
+Can you document the action taken on staging-db-02?,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.3453759253025055,0.3111121654510498
+Can you create an audit trail entry for #31450?,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5672236680984497,0.5322772264480591
+Could you log an audit event for cdn-edge-06 for me?,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5555464625358582,0.5377705097198486
+Could you record a compliance event for Engineering for me?,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.520043134689331,0.48046377301216125
+Could you write an audit entry for the Finance group for me?,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5463780760765076,0.4718072712421417
+Could you capture staging-db-02's event in the audit log for me?,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.528708815574646,0.5223358273506165
+Could you document the event for Alice in the audit trail for me?,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5529698133468628,0.4998202919960022
+Could you create a trail entry for staging-db-02 for me?,log_audit_event,14,False,log_audit_event -> escalate_to_human,0.3448754549026489,0.21038824319839478
+I need you to log an audit event for prod-web-01.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5887535810470581,0.5655505657196045
+I need you to record a compliance event for Legal.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5162351131439209,0.47562751173973083
+I need you to write a compliance entry for #42017.,log_audit_event,4,False,log_audit_event -> escalate_to_human,0.4603819251060486,0.3551182150840759
+I need you to capture the event associated with #60122.,log_audit_event,5,False,process_refund -> send_notification,0.4019674062728882,0.3001197874546051
+I need you to add an audit log entry for auth-svc-04.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.6217180490493774,0.5739648938179016
+I need you to document the event for Charlie in the audit trail.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5578467845916748,0.5014809370040894
+I need you to create a trail entry for prod-web-01.,log_audit_event,14,False,log_audit_event -> escalate_to_human,0.37313589453697205,0.21327657997608185
+We should log an audit event for payment-api-03.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5874519348144531,0.5787644982337952
+We should record the activity tied to #60122.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.4617517292499542,0.4011080265045166
+We should write a compliance entry for cdn-edge-06.,log_audit_event,5,False,log_audit_event -> escalate_to_human,0.48760300874710083,0.3323931097984314
+We should capture auth-svc-04's event in the audit log.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5677409172058105,0.5486403107643127
+We should store an audit record for Frank.,log_audit_event,3,True,db_write,0.3819066882133484,0.3783959746360779
+We should add Bob's action to the audit log.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5930606722831726,0.587882936000824
+We should document the event linked to #31450.,log_audit_event,4,False,log_audit_event -> escalate_to_human,0.4498351514339447,0.32945120334625244
+We should create an audit trail entry for HR.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.6089634895324707,0.5664992332458496
+Let's log Frank's action in the audit trail.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.570263147354126,0.5689786076545715
+Let's record an audit event for Diana.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.49671316146850586,0.455801397562027
+Let's write an audit entry for Alice.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5247138142585754,0.4623319208621979
+Let's capture ml-infer-05's event in the audit log.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5535226464271545,0.5358884334564209
+Let's add #31450 to the audit log.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5611906051635742,0.5162623524665833
+Let's document the event for Grace in the audit trail.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5390957593917847,0.4742586612701416
+Let's create an audit trail entry for #20891.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.6146467924118042,0.5540377497673035
+Kindly log an audit event for #10234.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.575465738773346,0.5667038559913635
+Kindly record an audit event for Alice.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5537810325622559,0.5123370289802551
+Kindly write an audit entry for Bob.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.562879741191864,0.4875696003437042
+Kindly capture Grace's activity in the compliance log.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5700889825820923,0.5276173949241638
+Kindly add an audit log entry for ml-infer-05.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.6031935214996338,0.5631333589553833
+Kindly document the event for HR in the audit log.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5898103713989258,0.5310774445533752
+Kindly create a compliance log entry for Charlie.,log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5994560122489929,0.5506142973899841
+"When you have a moment, record the incident involving prod-web-01 in the audit trail.",log_audit_event,2,False,log_audit_event -> escalate_to_human,0.5609779357910156,0.507978081703186
+"When you have a moment, write an audit entry for the Legal group.",log_audit_event,2,False,log_audit_event -> escalate_to_human,0.527605414390564,0.5102439522743225

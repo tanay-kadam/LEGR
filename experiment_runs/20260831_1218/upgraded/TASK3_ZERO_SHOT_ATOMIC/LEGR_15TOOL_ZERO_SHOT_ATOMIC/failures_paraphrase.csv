@@ -1,0 +1,234 @@
+query,gt_tool,rank_of_one_node,top1_is_one_node,top1_dag_text,top1_cosine,gt_cosine
+"Yo, persist the changes for frank.",db_write,2,True,db_read,0.5259265303611755,0.5129119157791138
+It would help if store the revised data tied to #60122 for me.,db_write,2,False,check_status -> db_write,0.6367653012275696,0.631047248840332
+"Yo, store the revised data tied to #60122 for me.",db_write,2,True,db_read,0.6498000621795654,0.6199550032615662
+Please store the revised data tied to #60122 for me.,db_write,2,True,db_read,0.6500792503356934,0.6241390705108643
+I need you to store the revised details for Alice.,db_write,2,True,db_read,0.6676689982414246,0.5518496632575989
+It would help if store the revised details for alice.,db_write,3,True,db_read,0.6629279851913452,0.5558509826660156
+"Hey, can you store the revised details for alice.",db_write,2,True,db_read,0.6886847019195557,0.5448248386383057
+I'd appreciate it if you could store the revised details for alice.,db_write,3,True,db_read,0.6562416553497314,0.4854072630405426
+Could someone store the revised details for alice?,db_write,2,True,db_read,0.6392868757247925,0.5416650176048279
+We should store the revised details for Frank.,db_write,2,True,db_read,0.6045368313789368,0.5401161909103394
+Could you please we should store the revised details for frank.,db_write,2,True,db_read,0.6162134408950806,0.527061402797699
+The situation requires we should store the revised details for frank.,db_write,2,True,create_ticket,0.5644713640213013,0.5423579812049866
+Would anyone be able to we should store the revised details for frank?,db_write,2,True,db_read,0.5605646967887878,0.5546075701713562
+"Yo, we should store the revised details for frank.",db_write,3,True,db_read,0.6359160542488098,0.539598286151886
+Let's commit the Legal configuration update.,db_write,6,True,update_subscription,0.5003211498260498,0.3622118830680847
+Would anyone be able to let's commit the legal configuration update?,db_write,4,True,update_subscription,0.46877092123031616,0.3664723336696625
+The situation requires let's commit the legal configuration update.,db_write,4,True,update_subscription,0.4787428677082062,0.37211182713508606
+Please let's commit the legal configuration update.,db_write,7,True,update_subscription,0.4994463324546814,0.3644147217273712
+Do me a favor and let's commit the legal configuration update.,db_write,8,True,update_subscription,0.49572741985321045,0.3335714638233185
+open an incident ticket for payment-api-03.,create_ticket,3,False,create_ticket -> scan_malware,0.6324176788330078,0.5749393105506897
+Could you please open an incident ticket for payment-api-03.,create_ticket,3,False,create_ticket -> scan_malware,0.633794367313385,0.58379065990448
+The situation requires open an incident ticket for payment-api-03.,create_ticket,3,False,create_ticket -> scan_malware,0.6327061057090759,0.5679242610931396
+Could someone open an incident ticket for payment-api-03?,create_ticket,2,False,create_ticket -> scan_malware,0.633007287979126,0.5834918022155762
+"Hey, can you open an incident ticket for payment-api-03.",create_ticket,2,False,create_ticket -> scan_malware,0.6265857815742493,0.5885173678398132
+log a helpdesk issue for Bob.,create_ticket,5,True,log_audit_event,0.6118410229682922,0.4527682662010193
+"Hey, can you log a helpdesk issue for bob.",create_ticket,4,False,generate_report -> send_notification,0.5963159799575806,0.5065298080444336
+Is it possible to log a helpdesk issue for bob?,create_ticket,6,True,log_audit_event,0.606801450252533,0.4595891833305359
+It would help if log a helpdesk issue for bob.,create_ticket,4,False,generate_report -> send_notification,0.6011472940444946,0.5156261920928955
+Could you please log a helpdesk issue for bob.,create_ticket,6,False,generate_report -> send_notification,0.5921409130096436,0.472899466753006
+The situation requires open a service desk case for alice.,create_ticket,2,True,escalate_to_human,0.5338572263717651,0.5321521162986755
+Who can open a service desk case for alice?,create_ticket,2,True,escalate_to_human,0.5073077082633972,0.4751446545124054
+Please log an issue against staging-db-02.,create_ticket,7,False,create_ticket -> scan_malware,0.6122671961784363,0.3934032618999481
+Could you please log an issue against staging-db-02.,create_ticket,6,False,create_ticket -> scan_malware,0.612496554851532,0.3894661068916321
+Quick one -- log an issue against staging-db-02.,create_ticket,5,False,create_ticket -> scan_malware,0.6029739379882812,0.41569867730140686
+Is it possible to log an issue against staging-db-02?,create_ticket,7,False,create_ticket -> scan_malware,0.5703246593475342,0.3632148802280426
+What we need is for log an issue against staging-db-02.,create_ticket,4,False,create_ticket -> scan_malware,0.637614905834198,0.4505803883075714
+Can you raise an incident for auth-svc-04?,create_ticket,3,False,create_ticket -> scan_malware,0.5250970721244812,0.4583049416542053
+raise an incident for auth-svc-04 -- that's what needs to happen.,create_ticket,3,False,create_ticket -> scan_malware,0.5869154334068298,0.470226526260376
+We request that you raise an incident for auth-svc-04.,create_ticket,2,False,create_ticket -> scan_malware,0.5599997639656067,0.49250003695487976
+Gonna need you to raise an incident for auth-svc-04.,create_ticket,2,False,create_ticket -> scan_malware,0.5359815955162048,0.47182607650756836
+Who can raise an incident for auth-svc-04?,create_ticket,4,False,create_ticket -> scan_malware,0.531834602355957,0.4377894699573517
+Can you create a support issue for Finance?,create_ticket,2,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.5799208879470825,0.5331497192382812
+Is it possible to create a support issue for finance?,create_ticket,2,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.589299201965332,0.516737699508667
+What we need is for create a support issue for finance.,create_ticket,2,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.5765916705131531,0.56459641456604
+Please create a support issue for finance.,create_ticket,2,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.5524662733078003,0.5490748286247253
+"Yo, create a support issue for finance.",create_ticket,2,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.5559354424476624,0.5456060767173767
+Could you open an incident ticket for cdn-edge-06 for me?,create_ticket,2,False,create_ticket -> scan_malware,0.6144721508026123,0.5969852209091187
+Quick one -- open an incident ticket for cdn-edge-06 for me.,create_ticket,3,False,create_ticket -> scan_malware,0.616514265537262,0.5772849321365356
+Would anyone be able to open an incident ticket for cdn-edge-06 for me?,create_ticket,2,False,create_ticket -> scan_malware,0.6108276844024658,0.5921621918678284
+It would help if open an incident ticket for cdn-edge-06 for me.,create_ticket,3,False,create_ticket -> scan_malware,0.6365053653717041,0.5799658894538879
+Kindly open an incident ticket for cdn-edge-06 for me.,create_ticket,3,False,create_ticket -> scan_malware,0.6132789850234985,0.5747307538986206
+Could you log a helpdesk issue for Frank for me?,create_ticket,5,False,generate_report -> send_notification,0.5871641039848328,0.49076080322265625
+Gonna need you to log a helpdesk issue for frank for me.,create_ticket,5,True,log_audit_event,0.5747956037521362,0.47793707251548767
+Could someone log a helpdesk issue for frank for me?,create_ticket,5,False,generate_report -> send_notification,0.5872353315353394,0.485740602016449
+I'd appreciate it if you could log a helpdesk issue for frank for me.,create_ticket,6,False,generate_report -> send_notification,0.5670129656791687,0.48087307810783386
+log a helpdesk issue for frank for me -- that's what needs to happen.,create_ticket,6,False,create_ticket -> scan_malware,0.5959745049476624,0.4774819612503052
+Could you submit a ticket for host auth-svc-04 for me?,create_ticket,3,False,create_ticket -> scan_malware,0.5942844748497009,0.5175319910049438
+What we need is for submit a ticket for host auth-svc-04 for me.,create_ticket,2,False,create_ticket -> scan_malware,0.6211541891098022,0.5432192087173462
+Would anyone be able to submit a ticket for host auth-svc-04 for me?,create_ticket,3,False,create_ticket -> scan_malware,0.5869875550270081,0.5186019539833069
+Could you please submit a ticket for host auth-svc-04 for me.,create_ticket,3,False,create_ticket -> scan_malware,0.5975529551506042,0.5037090182304382
+"Yo, submit a ticket for host auth-svc-04 for me.",create_ticket,3,False,create_ticket -> scan_malware,0.5991628170013428,0.5112651586532593
+Could you create a service request for auth-svc-04 for me?,create_ticket,6,False,create_ticket -> scan_malware,0.557573139667511,0.4350186288356781
+Could someone create a service request for auth-svc-04 for me?,create_ticket,6,False,create_ticket -> scan_malware,0.5513690114021301,0.4388050436973572
+I'd appreciate it if you could create a service request for auth-svc-04 for me.,create_ticket,5,False,create_ticket -> scan_malware,0.5588451623916626,0.4494231343269348
+Need you to create a service request for auth-svc-04 for me.,create_ticket,6,False,create_ticket -> scan_malware,0.5664770007133484,0.43400976061820984
+The situation requires create a service request for auth-svc-04 for me.,create_ticket,7,False,create_ticket -> scan_malware,0.5749756693840027,0.4339735805988312
+I need you to open an incident ticket for prod-web-01.,create_ticket,2,False,create_ticket -> scan_malware,0.6181604266166687,0.5808879733085632
+Could someone open an incident ticket for prod-web-01?,create_ticket,2,False,create_ticket -> scan_malware,0.6110615134239197,0.5745744705200195
+The situation requires open an incident ticket for prod-web-01.,create_ticket,3,False,create_ticket -> scan_malware,0.6171172261238098,0.5552564859390259
+Would you mind open an incident ticket for prod-web-01.,create_ticket,2,False,create_ticket -> scan_malware,0.6217052936553955,0.578913152217865
+Quick one -- open an incident ticket for prod-web-01.,create_ticket,3,False,create_ticket -> scan_malware,0.6083576679229736,0.5657360553741455
+It would help if open a service desk case for eve.,create_ticket,2,False,create_ticket -> scan_malware,0.5875794887542725,0.5423170328140259
+Who can open a service desk case for eve?,create_ticket,4,True,escalate_to_human,0.4944329857826233,0.44840002059936523
+We should create a support case for staging-db-02.,create_ticket,3,False,create_ticket -> scan_malware,0.6157859563827515,0.5219805836677551
+We request that you we should create a support case for staging-db-02.,create_ticket,3,False,create_ticket -> scan_malware,0.6178227663040161,0.550325870513916
+Could someone we should create a support case for staging-db-02?,create_ticket,3,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.590292751789093,0.5167943239212036
+we should create a support case for staging-db-02 -- that's what needs to happen.,create_ticket,3,False,create_ticket -> scan_malware,0.6165405511856079,0.5226625800132751
+"Hey, can you we should create a support case for staging-db-02.",create_ticket,3,False,create_ticket -> scan_malware,0.6000421643257141,0.552780270576477
+We should log an issue against prod-web-01.,create_ticket,6,False,create_ticket -> scan_malware,0.6408027410507202,0.3963407576084137
+Would anyone be able to we should log an issue against prod-web-01?,create_ticket,7,False,create_ticket -> scan_malware,0.6360896229743958,0.40946799516677856
+Could you please we should log an issue against prod-web-01.,create_ticket,6,False,create_ticket -> scan_malware,0.6347057223320007,0.40092557668685913
+Gonna need you to we should log an issue against prod-web-01.,create_ticket,6,False,create_ticket -> scan_malware,0.6266374588012695,0.4271238148212433
+The situation requires we should log an issue against prod-web-01.,create_ticket,5,False,create_ticket -> scan_malware,0.6373929381370544,0.4203024208545685
+Let's open a tracking issue for cdn-edge-06.,create_ticket,3,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.6071940660476685,0.4871522784233093
+It would help if let's open a tracking issue for cdn-edge-06.,create_ticket,4,False,create_ticket -> scan_malware,0.6115929484367371,0.4840986728668213
+I'd appreciate it if you could let's open a tracking issue for cdn-edge-06.,create_ticket,4,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.5997451543807983,0.48615941405296326
+"Hey, can you let's open a tracking issue for cdn-edge-06.",create_ticket,3,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.60996413230896,0.5143547654151917
+Is it possible to let's open a tracking issue for cdn-edge-06?,create_ticket,3,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.6678757667541504,0.5056183338165283
+let's create a support issue for legal -- that's what needs to happen.,create_ticket,2,False,create_ticket -> scan_malware,0.5838224291801453,0.5769252777099609
+Can you forward the latest update to Legal?,send_notification,2,False,generate_report -> send_notification,0.46933895349502563,0.46797436475753784
+It would help if forward the latest update to legal.,send_notification,8,False,generate_report -> send_notification,0.4688989818096161,0.368434339761734
+Is it possible to forward the latest update to legal?,send_notification,5,True,update_subscription,0.4412197172641754,0.39475223422050476
+We should forward the latest update to Engineering.,send_notification,2,False,generate_report -> send_notification,0.5590928792953491,0.49564993381500244
+Could you please we should forward the latest update to engineering.,send_notification,2,False,generate_report -> send_notification,0.5598329901695251,0.4945596158504486
+Could someone we should forward the latest update to engineering?,send_notification,2,False,generate_report -> send_notification,0.5571945905685425,0.5276536345481873
+"Yo, we should forward the latest update to engineering.",send_notification,2,False,generate_report -> send_notification,0.5481005907058716,0.5213464498519897
+we should forward the latest update to engineering -- that's what needs to happen.,send_notification,6,False,generate_report -> send_notification,0.5117230415344238,0.4220537543296814
+The situation requires we should segment ml-infer-05 from the rest of the environment.,quarantine_system,2,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.5253042578697205,0.4891984462738037
+I'd appreciate it if you could scan prod-web-01 for suspicious artifacts.,scan_malware,2,False,create_ticket -> scan_malware,0.7003223299980164,0.6789933443069458
+Do me a favor and scan prod-web-01 for suspicious artifacts.,scan_malware,2,False,create_ticket -> scan_malware,0.7165464162826538,0.6878480911254883
+It would help if scan prod-web-01 for suspicious artifacts.,scan_malware,2,False,create_ticket -> scan_malware,0.7055717706680298,0.6823019981384277
+It would help if inspect ml-infer-05 for malware activity.,scan_malware,2,False,create_ticket -> scan_malware,0.7165094017982483,0.7163895964622498
+Please run an IOC check against staging-db-02.,scan_malware,2,False,create_ticket -> scan_malware,0.6880510449409485,0.6418396830558777
+Could you please run an ioc check against staging-db-02.,scan_malware,2,False,create_ticket -> scan_malware,0.6899556517601013,0.6424384713172913
+What we need is for run an ioc check against staging-db-02.,scan_malware,2,False,create_ticket -> scan_malware,0.7120717763900757,0.6441619992256165
+Is it possible to run an ioc check against staging-db-02?,scan_malware,2,False,create_ticket -> scan_malware,0.6513898372650146,0.6492807269096375
+Need you to run an ioc check against staging-db-02.,scan_malware,2,False,create_ticket -> scan_malware,0.6914461255073547,0.6282833814620972
+Could someone run an ioc check against cdn-edge-06?,scan_malware,2,False,create_ticket -> scan_malware,0.6681502461433411,0.6523095369338989
+Could you please run an ioc check against cdn-edge-06.,scan_malware,2,False,create_ticket -> scan_malware,0.698941707611084,0.6604723930358887
+Need you to run an ioc check against cdn-edge-06.,scan_malware,2,False,create_ticket -> scan_malware,0.7069712281227112,0.6475550532341003
+What we need is for run an ioc check against cdn-edge-06.,scan_malware,2,False,create_ticket -> scan_malware,0.726211428642273,0.6644519567489624
+Could you scan payment-api-03 for malicious files for me?,scan_malware,2,False,create_ticket -> scan_malware,0.7270439863204956,0.7230352759361267
+Would anyone be able to scan payment-api-03 for malicious files for me?,scan_malware,2,False,create_ticket -> scan_malware,0.7360756397247314,0.7243281006813049
+It would help if scan payment-api-03 for malicious files for me.,scan_malware,2,False,create_ticket -> scan_malware,0.7424206137657166,0.7239547371864319
+Would you mind scan payment-api-03 for malicious files for me.,scan_malware,2,False,create_ticket -> scan_malware,0.7389889359474182,0.7287750244140625
+I need you to scan auth-svc-04 for malicious files.,scan_malware,2,False,create_ticket -> scan_malware,0.7562142610549927,0.7313005328178406
+It would help if scan auth-svc-04 for malicious files.,scan_malware,2,False,create_ticket -> scan_malware,0.7455634474754333,0.7366198301315308
+I need you to check ml-infer-05 for indicators of compromise.,scan_malware,6,True,check_status,0.6491866707801819,0.47592902183532715
+Would anyone be able to check ml-infer-05 for indicators of compromise?,scan_malware,7,True,check_status,0.6637406945228577,0.44858336448669434
+"Hey, can you check ml-infer-05 for indicators of compromise.",scan_malware,5,True,check_status,0.6668331623077393,0.4844316840171814
+I'd appreciate it if you could check ml-infer-05 for indicators of compromise.,scan_malware,6,True,check_status,0.657224178314209,0.46735382080078125
+What we need is for check ml-infer-05 for indicators of compromise.,scan_malware,6,True,check_status,0.6410868763923645,0.4512811601161957
+I need you to perform a threat scan on auth-svc-04.,scan_malware,2,False,create_ticket -> scan_malware,0.7550710439682007,0.7263190746307373
+"Yo, perform a threat scan on auth-svc-04.",scan_malware,2,False,create_ticket -> scan_malware,0.7420969009399414,0.7383126020431519
+perform a threat scan on auth-svc-04 -- that's what needs to happen.,scan_malware,2,False,create_ticket -> scan_malware,0.7578026056289673,0.7216026782989502
+We request that you perform a threat scan on auth-svc-04.,scan_malware,2,False,create_ticket -> scan_malware,0.7391397953033447,0.7220155596733093
+I need you to run an IOC check against prod-web-01.,scan_malware,2,False,create_ticket -> scan_malware,0.6952889561653137,0.6524600982666016
+The situation requires run an ioc check against prod-web-01.,scan_malware,2,False,create_ticket -> scan_malware,0.6954994797706604,0.6471505761146545
+Would you mind run an ioc check against prod-web-01.,scan_malware,2,False,create_ticket -> scan_malware,0.6926565170288086,0.6768538355827332
+"Yo, run an ioc check against prod-web-01.",scan_malware,2,False,create_ticket -> scan_malware,0.676689863204956,0.6641589403152466
+Could someone run an ioc check against prod-web-01?,scan_malware,3,False,create_ticket -> scan_malware,0.6510870456695557,0.6410594582557678
+We should scan cdn-edge-06 for malicious files.,scan_malware,2,False,create_ticket -> scan_malware,0.7584055662155151,0.7464819550514221
+Who can we should scan cdn-edge-06 for malicious files?,scan_malware,2,False,create_ticket -> scan_malware,0.7400073409080505,0.7211794853210449
+"Hey, can you we should scan cdn-edge-06 for malicious files.",scan_malware,2,False,create_ticket -> scan_malware,0.7508454918861389,0.7354751825332642
+Could you please we should scan cdn-edge-06 for malicious files.,scan_malware,2,False,create_ticket -> scan_malware,0.7505949139595032,0.7368181347846985
+The situation requires we should scan cdn-edge-06 for malicious files.,scan_malware,2,False,create_ticket -> scan_malware,0.7892473340034485,0.722255289554596
+Let's perform a threat scan on payment-api-03.,scan_malware,2,False,create_ticket -> scan_malware,0.7453455924987793,0.7340580224990845
+Need you to let's perform a threat scan on payment-api-03.,scan_malware,2,False,create_ticket -> scan_malware,0.745490312576294,0.7261835336685181
+I'd appreciate it if you could let's perform a threat scan on payment-api-03.,scan_malware,2,False,create_ticket -> scan_malware,0.7254190444946289,0.7148919701576233
+let's perform a threat scan on payment-api-03 -- that's what needs to happen.,scan_malware,2,False,create_ticket -> scan_malware,0.755702555179596,0.7104132175445557
+Kindly check staging-db-02 for indicators of compromise.,scan_malware,4,True,check_status,0.6385748386383057,0.5424357056617737
+Gonna need you to check staging-db-02 for indicators of compromise.,scan_malware,4,True,check_status,0.6569205522537231,0.5143625736236572
+Who can check staging-db-02 for indicators of compromise?,scan_malware,6,True,check_status,0.6450543999671936,0.4619254469871521
+Could you please check staging-db-02 for indicators of compromise.,scan_malware,4,True,check_status,0.6633335947990417,0.5143687725067139
+The situation requires check staging-db-02 for indicators of compromise.,scan_malware,4,True,check_status,0.6279343366622925,0.49711117148399353
+Kindly run an IOC check against auth-svc-04.,scan_malware,2,False,create_ticket -> scan_malware,0.6954335570335388,0.6423514485359192
+Would you mind run an ioc check against auth-svc-04.,scan_malware,2,False,create_ticket -> scan_malware,0.7038299441337585,0.6763235330581665
+Need you to run an ioc check against auth-svc-04.,scan_malware,2,False,create_ticket -> scan_malware,0.6984951496124268,0.6367923021316528
+It would help if run an ioc check against auth-svc-04.,scan_malware,2,False,create_ticket -> scan_malware,0.6824507713317871,0.6451717019081116
+Can you draft a metrics report for Marketing?,generate_report,2,False,generate_report -> send_notification,0.6812703013420105,0.6521033644676208
+Is it possible to draft a metrics report for marketing?,generate_report,2,False,generate_report -> send_notification,0.6590505838394165,0.647363543510437
+Do me a favor and draft a metrics report for marketing.,generate_report,2,False,generate_report -> send_notification,0.6693518161773682,0.6649566292762756
+draft a metrics report for marketing -- that's what needs to happen.,generate_report,2,False,generate_report -> send_notification,0.6803990602493286,0.6637324094772339
+We request that you draft a metrics report for marketing.,generate_report,2,False,generate_report -> send_notification,0.7083311080932617,0.6625362634658813
+Could you generate a diagnostics report for payment-api-03 for me?,generate_report,5,False,"check_status -> generate_report, db_read -> generate_report",0.6584163904190063,0.5250620245933533
+Quick one -- generate a diagnostics report for payment-api-03 for me.,generate_report,7,False,"check_status -> generate_report, db_read -> generate_report",0.6437974572181702,0.4857758581638336
+Kindly generate a diagnostics report for payment-api-03 for me.,generate_report,8,False,"check_status -> generate_report, db_read -> generate_report",0.6357300281524658,0.48076292872428894
+Is it possible to generate a diagnostics report for payment-api-03 for me?,generate_report,5,False,"check_status -> generate_report, db_read -> generate_report",0.6661994457244873,0.5301600098609924
+generate a diagnostics report for payment-api-03 for me -- that's what needs to happen.,generate_report,6,False,"check_status -> generate_report, db_read -> generate_report",0.6501789689064026,0.5209288001060486
+I'd appreciate it if you could compile a summary for engineering for me.,generate_report,2,False,generate_report -> send_notification,0.6372596621513367,0.6278789043426514
+I need you to prepare the reporting bundle for Engineering.,generate_report,3,False,generate_report -> send_notification,0.6390188336372375,0.5927311778068542
+Please prepare the reporting bundle for engineering.,generate_report,3,False,generate_report -> send_notification,0.6161370873451233,0.5707010626792908
+"Hey, can you prepare the reporting bundle for engineering.",generate_report,2,False,generate_report -> send_notification,0.6441776752471924,0.5965427160263062
+Who can prepare the reporting bundle for engineering?,generate_report,3,False,generate_report -> send_notification,0.614443838596344,0.5741509795188904
+The situation requires prepare the reporting bundle for engineering.,generate_report,3,False,generate_report -> send_notification,0.6203460097312927,0.5642239451408386
+Let's prepare the reporting bundle for HR.,generate_report,3,False,generate_report -> send_notification,0.6163010001182556,0.5904058814048767
+Would you mind let's prepare the reporting bundle for hr.,generate_report,3,False,generate_report -> send_notification,0.6508241295814514,0.5732296109199524
+It would help if let's prepare the reporting bundle for hr.,generate_report,3,False,generate_report -> send_notification,0.6312416791915894,0.5734994411468506
+Gonna need you to let's prepare the reporting bundle for hr.,generate_report,2,False,generate_report -> send_notification,0.6504911780357361,0.5942752957344055
+Could someone let's prepare the reporting bundle for hr?,generate_report,3,False,generate_report -> send_notification,0.6297447085380554,0.5897653698921204
+Kindly prepare the reporting bundle for HR.,generate_report,3,False,generate_report -> send_notification,0.6242982745170593,0.5754348039627075
+Please prepare the reporting bundle for hr.,generate_report,3,False,generate_report -> send_notification,0.6097714900970459,0.570690929889679
+Would anyone be able to prepare the reporting bundle for hr?,generate_report,3,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.6305745244026184,0.5839029550552368
+prepare the reporting bundle for hr -- that's what needs to happen.,generate_report,3,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.6139004230499268,0.5526490211486816
+Gonna need you to prepare the reporting bundle for hr.,generate_report,2,False,generate_report -> send_notification,0.6354953646659851,0.5987834334373474
+let's send alice a payout reversal -- that's what needs to happen.,process_refund,2,True,send_notification,0.619175374507904,0.6088241338729858
+We request that you let's send alice a payout reversal.,process_refund,2,True,send_notification,0.6666192412376404,0.6146280169487
+Could you bring the service on auth-svc-04 back up for me?,restart_service,3,True,quarantine_system,0.5018336772918701,0.4450315535068512
+Would you mind bring the service on auth-svc-04 back up for me.,restart_service,5,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.5043739080429077,0.4149264395236969
+It would help if bring the service on auth-svc-04 back up for me.,restart_service,5,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.5265620350837708,0.41764211654663086
+Quick one -- bring the service on auth-svc-04 back up for me.,restart_service,3,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.519315779209137,0.4454309344291687
+Could someone bring the service on auth-svc-04 back up for me?,restart_service,3,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.5109230875968933,0.44229891896247864
+It would help if cycle cdn-edge-06.,restart_service,3,True,check_status,0.5502920150756836,0.45871198177337646
+It would help if cycle cdn-edge-06.,restart_service,3,True,check_status,0.5502920150756836,0.45871198177337646
+The situation requires review the status of ml-infer-05.,check_status,2,False,create_ticket -> scan_malware,0.5700670480728149,0.5480491518974304
+Please route the cdn-edge-06 incident to a live responder.,escalate_to_human,5,False,create_ticket -> scan_malware,0.5623449683189392,0.47978219389915466
+Could you please route the cdn-edge-06 incident to a live responder.,escalate_to_human,4,False,create_ticket -> scan_malware,0.5302594304084778,0.484014630317688
+"Hey, can you route the cdn-edge-06 incident to a live responder.",escalate_to_human,4,True,create_ticket,0.5404379367828369,0.48696792125701904
+It would help if route the cdn-edge-06 incident to a live responder.,escalate_to_human,5,False,create_ticket -> scan_malware,0.5982859134674072,0.4512093961238861
+Who can route the cdn-edge-06 incident to a live responder?,escalate_to_human,2,False,create_ticket -> scan_malware,0.5369619131088257,0.4971752464771271
+Can you send the prod-web-01 issue for human handling?,escalate_to_human,3,True,send_notification,0.6164257526397705,0.553621232509613
+"Hey, can you send the prod-web-01 issue for human handling.",escalate_to_human,3,False,generate_report -> send_notification,0.6141304969787598,0.5573932528495789
+We request that you send the prod-web-01 issue for human handling.,escalate_to_human,3,False,generate_report -> send_notification,0.6165707111358643,0.5565185546875
+It would help if send the prod-web-01 issue for human handling.,escalate_to_human,3,False,generate_report -> send_notification,0.5899487733840942,0.5276053547859192
+Who can send the prod-web-01 issue for human handling?,escalate_to_human,3,True,send_notification,0.6154904961585999,0.5597468614578247
+Can you send Grace's case for human review?,escalate_to_human,3,True,send_notification,0.6970410346984863,0.41118064522743225
+Please send grace's case for human review.,escalate_to_human,3,True,send_notification,0.6833370327949524,0.42066046595573425
+Would anyone be able to send grace's case for human review?,escalate_to_human,5,False,generate_report -> send_notification,0.6717684268951416,0.38443753123283386
+Do me a favor and send grace's case for human review.,escalate_to_human,8,False,generate_report -> send_notification,0.6639153361320496,0.3890693783760071
+It would help if send grace's case for human review.,escalate_to_human,3,False,generate_report -> send_notification,0.6888253092765808,0.4195369482040405
+Could you send Bob's case for human review for me?,escalate_to_human,4,False,generate_report -> send_notification,0.6523331999778748,0.4109121859073639
+Kindly send bob's case for human review for me.,escalate_to_human,3,False,generate_report -> send_notification,0.662636935710907,0.45768263936042786
+Would anyone be able to send bob's case for human review for me?,escalate_to_human,4,False,generate_report -> send_notification,0.6394632458686829,0.38483721017837524
+Need you to send bob's case for human review for me.,escalate_to_human,4,False,generate_report -> send_notification,0.6761155128479004,0.4357876777648926
+It would help if send bob's case for human review for me.,escalate_to_human,5,False,generate_report -> send_notification,0.6654751896858215,0.4213593006134033
+Could you escalate the request to someone in Marketing for me?,escalate_to_human,2,True,send_notification,0.6119288802146912,0.5641168355941772
+Kindly escalate the request to someone in marketing for me.,escalate_to_human,2,True,send_notification,0.5810985565185547,0.5792809724807739
+Need you to escalate the request to someone in marketing for me.,escalate_to_human,2,True,send_notification,0.5969436764717102,0.5754578709602356
+Who can escalate the request to someone in marketing for me?,escalate_to_human,2,True,send_notification,0.5915520191192627,0.582249104976654
+What we need is for escalate this issue for grace to the support team.,escalate_to_human,2,False,generate_report -> send_notification,0.586414635181427,0.5853796005249023
+We should route the auth-svc-04 incident to a live responder.,escalate_to_human,4,False,create_ticket -> scan_malware,0.5773991346359253,0.48377153277397156
+Would you mind we should route the auth-svc-04 incident to a live responder.,escalate_to_human,4,False,create_ticket -> scan_malware,0.5582141876220703,0.4782778024673462
+Quick one -- we should route the auth-svc-04 incident to a live responder.,escalate_to_human,5,False,create_ticket -> scan_malware,0.5752610564231873,0.48075929284095764
+we should route the auth-svc-04 incident to a live responder -- that's what needs to happen.,escalate_to_human,5,False,create_ticket -> scan_malware,0.5829557180404663,0.47226789593696594
+Would anyone be able to we should route the auth-svc-04 incident to a live responder?,escalate_to_human,5,False,create_ticket -> scan_malware,0.5314918160438538,0.4710497260093689
+"When you have a moment, get a human to review the problem on prod-web-01.",escalate_to_human,2,False,create_ticket -> scan_malware,0.5302621722221375,0.5298133492469788
+"We request that you when you have a moment, get a human to review the problem on prod-web-01.",escalate_to_human,2,False,create_ticket -> scan_malware,0.5287806391716003,0.5208743214607239
+"Gonna need you to when you have a moment, get a human to review the problem on prod-web-01.",escalate_to_human,3,False,generate_report -> send_notification,0.5148056745529175,0.5048246383666992
+create a trail entry for auth-svc-04.,log_audit_event,7,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.538327693939209,0.38868996500968933
+create a trail entry for auth-svc-04 -- that's what needs to happen.,log_audit_event,13,False,create_ticket -> scan_malware,0.5538272261619568,0.31342342495918274
+Quick one -- create a trail entry for auth-svc-04.,log_audit_event,8,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.5380204916000366,0.3873150646686554
+Could someone create a trail entry for auth-svc-04?,log_audit_event,7,False,"create_ticket -> generate_report, quarantine_system -> generate_report",0.5286945700645447,0.41265732049942017
+Would you mind create a trail entry for auth-svc-04.,log_audit_event,7,False,create_ticket -> scan_malware,0.5384431481361389,0.41050341725349426
+Can you document the action taken on staging-db-02?,log_audit_event,2,False,generate_report -> send_notification,0.6006285548210144,0.5146157741546631
+Is it possible to document the action taken on staging-db-02?,log_audit_event,2,False,generate_report -> send_notification,0.577873945236206,0.5200845003128052
+Do me a favor and document the action taken on staging-db-02.,log_audit_event,4,False,generate_report -> send_notification,0.593694806098938,0.4720149636268616
+We request that you document the action taken on staging-db-02.,log_audit_event,4,False,generate_report -> send_notification,0.5896390080451965,0.47193336486816406
+The situation requires document the action taken on staging-db-02.,log_audit_event,7,False,generate_report -> send_notification,0.5956685543060303,0.43201422691345215
+I need you to write a compliance entry for #42017.,log_audit_event,2,False,generate_report -> send_notification,0.6223191618919373,0.5355162024497986
+Gonna need you to write a compliance entry for #42017.,log_audit_event,2,False,generate_report -> send_notification,0.6189725995063782,0.5492986440658569
+Would anyone be able to write a compliance entry for #42017?,log_audit_event,3,False,generate_report -> send_notification,0.6306238770484924,0.5318575501441956
+The situation requires write a compliance entry for #42017.,log_audit_event,5,False,generate_report -> send_notification,0.6313180923461914,0.5042247176170349
+Would you mind write a compliance entry for #42017.,log_audit_event,2,False,generate_report -> send_notification,0.6544661521911621,0.5466092824935913

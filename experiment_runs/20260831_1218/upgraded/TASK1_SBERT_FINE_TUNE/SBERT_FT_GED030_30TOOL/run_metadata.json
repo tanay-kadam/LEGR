@@ -1,0 +1,20 @@
+{
+  "run_id": "upgraded__task1_sbert__sbert_ft__ged_030__tool30__seed_42",
+  "run_name": "upgraded__task1_sbert__sbert_ft__ged_030__tool30__seed_42",
+  "dataset": "upgraded",
+  "task": "task1_sbert",
+  "model": "sbert_ft",
+  "variant": "ged_030",
+  "tool_count": 30,
+  "kind": "sbert_train",
+  "seed": 42,
+  "device_requirement": "cuda",
+  "out_dir": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1218\\upgraded\\TASK1_SBERT_FINE_TUNE\\SBERT_FT_GED030_30TOOL",
+  "status": "PENDING",
+  "dependencies": [],
+  "expected_checkpoint": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1218\\upgraded\\TASK1_SBERT_FINE_TUNE\\SBERT_FT_GED030_30TOOL\\best_model.pt",
+  "expected_outputs": [],
+  "verified": false,
+  "added_for": "SBERT FT on upgraded 15/30/45 only; reuse existing LEGR checkpoints for comparison",
+  "start": "2026-08-31T19:35:39.750595+00:00"
+}

@@ -1,0 +1,70 @@
+dag_id,dag_text,tools,n_nodes,n_edges,action_group,topo_family,emb_dim,tsne_x,tsne_y
+0,backup_database -> deploy_container,backup_database;deploy_container,2,1,mixed,chain_short,256,4.631865,-1.8725988
+1,process_refund -> send_notification,process_refund;send_notification,2,1,mixed,chain_short,256,3.6032333,4.922652
+2,log_audit_event -> escalate_to_human,log_audit_event;escalate_to_human,2,1,mixed,chain_short,256,2.4313788,3.2972252
+3,"reset_password -> rotate_api_key, rotate_api_key -> deploy_container, update_subscription -> reset_password",update_subscription;reset_password;rotate_api_key;deploy_container,4,3,mostly-write,chain_medium,256,0.27632535,-0.24033011
+4,archive_data -> restore_backup,archive_data;restore_backup,2,1,mostly-write,chain_short,256,4.053282,-4.5338683
+5,"create_ticket -> send_notification, send_notification -> reset_password",create_ticket;send_notification;reset_password,3,2,mostly-orchestrate,chain_medium,256,2.1952972,5.15871
+6,escalate_to_human -> archive_data,escalate_to_human;archive_data,2,1,mixed,chain_short,256,3.495966,-4.8735504
+7,archive_data -> scan_malware,archive_data;scan_malware,2,1,mixed,chain_short,256,3.2896152,-4.4224577
+8,"archive_data -> enable_feature_flag, enable_feature_flag -> revoke_access",archive_data;enable_feature_flag;revoke_access,3,2,mostly-write,chain_medium,256,2.6508317,-5.2372656
+9,"process_refund -> send_notification, update_subscription -> process_refund",update_subscription;process_refund;send_notification,3,2,mostly-write,chain_medium,256,3.322464,5.224037
+10,"revoke_access -> rotate_api_key, rotate_api_key -> log_audit_event",revoke_access;rotate_api_key;log_audit_event,3,2,mostly-write,chain_medium,256,-0.14891775,0.5627797
+11,transfer_ownership -> invalidate_cache,transfer_ownership;invalidate_cache,2,1,mixed,chain_short,256,5.5293865,-3.4011838
+12,"approve_access -> invalidate_cache, invalidate_cache -> run_pipeline, process_refund -> invalidate_cache",process_refund;approve_access;invalidate_cache;run_pipeline,4,3,mostly-write,fanin,256,-0.86698556,-4.6897798
+13,"approve_access -> generate_report, generate_report -> run_pipeline, rotate_api_key -> generate_report",approve_access;rotate_api_key;generate_report;run_pipeline,4,3,mixed,fanin,256,-0.44983643,1.685236
+14,"db_read -> revoke_access, log_audit_event -> disable_feature_flag, quarantine_system -> log_audit_event, revoke_access -> disable_feature_flag",quarantine_system;log_audit_event;db_read;revoke_access;disable_feature_flag,5,4,mixed,fanin,256,-1.2813444,-0.27015853
+15,"enable_feature_flag -> restore_backup, restore_backup -> rollback_deployment, rollback_deployment -> enable_feature_flag",rollback_deployment;enable_feature_flag;restore_backup;rollback_deployment,4,3,mixed,chain_medium,256,-2.0468183,-3.6511424
+16,"invalidate_cache -> revoke_access, rotate_api_key -> transfer_ownership, scan_malware -> invalidate_cache, transfer_ownership -> revoke_access",scan_malware;invalidate_cache;rotate_api_key;transfer_ownership;revoke_access,5,4,mostly-write,fanin,256,-2.0713315,0.3995629
+17,"approve_access -> revoke_access, approve_access -> rotate_api_key, escalate_to_human -> approve_access, revoke_access -> schedule_maintenance, schedule_maintenance -> rotate_api_key, update_subscription -> escalate_to_human",update_subscription;escalate_to_human;approve_access;revoke_access;schedule_maintenance;rotate_api_key,6,6,mostly-write,fork_join,256,-3.461647,-0.14881828
+18,"approve_access -> send_notification, deploy_container -> send_notification, send_notification -> scan_malware",approve_access;deploy_container;send_notification;scan_malware,4,3,mixed,fanin,256,-2.992542,1.5325676
+19,"backup_database -> scan_malware, db_write -> backup_database, scan_malware -> db_write",scan_malware;db_write;backup_database;scan_malware,4,3,mostly-read,chain_medium,256,1.0349106,-4.3054533
+20,"backup_database -> provision_vm, provision_vm -> invalidate_cache, rollback_deployment -> provision_vm",backup_database;rollback_deployment;provision_vm;invalidate_cache,4,3,mixed,fanin,256,-0.59406126,-4.183832
+21,"approve_access -> scan_malware, run_pipeline -> approve_access, scan_malware -> run_pipeline",scan_malware;run_pipeline;approve_access;scan_malware,4,3,mixed,chain_medium,256,-2.3464658,1.3138437
+22,"check_status -> run_pipeline, rollback_deployment -> run_pipeline, run_pipeline -> archive_data",rollback_deployment;check_status;run_pipeline;archive_data,4,3,mixed,fanin,256,-1.0032173,-2.8998237
+23,"create_ticket -> restore_backup, db_write -> create_ticket, restore_backup -> db_write",db_write;create_ticket;restore_backup;db_write,4,3,mostly-write,chain_medium,256,1.1860046,-3.5111666
+24,"provision_vm -> escalate_to_human, restart_service -> revoke_access, revoke_access -> escalate_to_human, schedule_maintenance -> provision_vm",restart_service;revoke_access;schedule_maintenance;provision_vm;escalate_to_human,5,4,mostly-orchestrate,fanin,256,-3.9484782,-0.61324203
+25,"invalidate_cache -> provision_vm, provision_vm -> restore_backup, reset_password -> run_pipeline, run_pipeline -> restore_backup",reset_password;run_pipeline;invalidate_cache;provision_vm;restore_backup,5,4,mostly-write,fanin,256,-0.4710664,-3.485816
+26,"enable_feature_flag -> provision_vm, enable_feature_flag -> reset_password, provision_vm -> rollback_deployment, reset_password -> rollback_deployment",enable_feature_flag;provision_vm;reset_password;rollback_deployment,4,4,mostly-write,diamond,256,-1.6019233,-3.8674445
+27,"check_status -> provision_vm, check_status -> revoke_access, provision_vm -> schedule_maintenance, revoke_access -> schedule_maintenance",check_status;revoke_access;provision_vm;schedule_maintenance,4,4,mixed,diamond,256,-3.8154247,-1.0765209
+28,"provision_vm -> send_notification, provision_vm -> transfer_ownership, send_notification -> scale_service, transfer_ownership -> scale_service",provision_vm;transfer_ownership;send_notification;scale_service,4,4,mixed,diamond,256,0.8203843,-1.8633718
+29,"approve_access -> db_read, approve_access -> escalate_to_human, db_read -> rollback_deployment, escalate_to_human -> rollback_deployment",approve_access;escalate_to_human;db_read;rollback_deployment,4,4,mixed,diamond,256,-2.5890267,-3.4177878
+30,"backup_database -> log_audit_event, schedule_maintenance -> backup_database, schedule_maintenance -> send_notification, send_notification -> log_audit_event",schedule_maintenance;send_notification;backup_database;log_audit_event,4,4,mixed,diamond,256,3.3890154,-2.456422
+31,"check_status -> escalate_to_human, check_status -> restart_service, escalate_to_human -> create_ticket, restart_service -> create_ticket",check_status;restart_service;escalate_to_human;create_ticket,4,4,mostly-orchestrate,diamond,256,-4.1200647,-2.1739247
+32,"archive_data -> db_read, rotate_api_key -> db_read, scale_service -> archive_data, scale_service -> rotate_api_key",scale_service;rotate_api_key;archive_data;db_read,4,4,mostly-write,diamond,256,0.3199728,-2.3122835
+33,"check_status -> process_refund, db_read -> process_refund, quarantine_system -> check_status, quarantine_system -> db_read",quarantine_system;check_status;db_read;process_refund,4,4,mixed,diamond,256,-3.952414,-2.023074
+34,"disable_feature_flag -> restart_service, disable_feature_flag -> scan_malware, restart_service -> run_pipeline, scan_malware -> run_pipeline",disable_feature_flag;restart_service;scan_malware;run_pipeline,4,4,mixed,diamond,256,-1.9190471,-2.2408717
+35,"quarantine_system -> approve_access, schedule_maintenance -> approve_access, transfer_ownership -> quarantine_system, transfer_ownership -> schedule_maintenance",transfer_ownership;schedule_maintenance;quarantine_system;approve_access,4,4,mostly-orchestrate,diamond,256,-2.664892,-0.65810037
+36,"backup_database -> reset_password, disable_feature_flag -> reset_password, generate_report -> backup_database, generate_report -> disable_feature_flag",generate_report;disable_feature_flag;backup_database;reset_password,4,4,mixed,diamond,256,0.5748532,-5.513456
+37,"backup_database -> rollback_deployment, db_write -> backup_database, db_write -> deploy_container, deploy_container -> rollback_deployment",db_write;backup_database;deploy_container;rollback_deployment,4,4,mixed,diamond,256,0.5215091,-4.0203905
+38,"escalate_to_human -> schedule_maintenance, scan_malware -> schedule_maintenance, update_subscription -> escalate_to_human, update_subscription -> scan_malware",update_subscription;scan_malware;escalate_to_human;schedule_maintenance,4,4,mixed,diamond,256,-3.883668,0.24353337
+39,db_read,db_read,1,0,mostly-read,single_node,256,4.8987236,2.2700686
+40,db_write,db_write,1,0,mostly-write,single_node,256,2.118066,-2.9201853
+41,reset_password,reset_password,1,0,mostly-write,single_node,256,2.0562878,1.7965424
+42,create_ticket,create_ticket,1,0,mostly-orchestrate,single_node,256,4.862146,4.1264834
+43,send_notification,send_notification,1,0,mostly-orchestrate,single_node,256,4.2083173,2.874208
+44,quarantine_system,quarantine_system,1,0,mostly-orchestrate,single_node,256,5.3583703,0.029051729
+45,scan_malware,scan_malware,1,0,mostly-read,single_node,256,4.720108,1.1775646
+46,generate_report,generate_report,1,0,mostly-read,single_node,256,3.3637955,1.8851228
+47,process_refund,process_refund,1,0,mostly-write,single_node,256,4.151507,4.594116
+48,update_subscription,update_subscription,1,0,mostly-write,single_node,256,5.329374,2.8217592
+49,provision_vm,provision_vm,1,0,mostly-write,single_node,256,3.0131185,-0.5461532
+50,restart_service,restart_service,1,0,mostly-orchestrate,single_node,256,6.392488,0.27986836
+51,check_status,check_status,1,0,mostly-read,single_node,256,6.729181,-0.46711156
+52,escalate_to_human,escalate_to_human,1,0,mostly-orchestrate,single_node,256,2.2945158,3.2779188
+53,log_audit_event,log_audit_event,1,0,mostly-read,single_node,256,3.2110276,3.136755
+54,deploy_container,deploy_container,1,0,mostly-write,single_node,256,5.26,-1.4071805
+55,rollback_deployment,rollback_deployment,1,0,mostly-orchestrate,single_node,256,6.4195566,-2.7886655
+56,rotate_api_key,rotate_api_key,1,0,mostly-write,single_node,256,1.6571901,0.6039798
+57,backup_database,backup_database,1,0,mostly-read,single_node,256,4.2791452,-2.0949497
+58,restore_backup,restore_backup,1,0,mostly-write,single_node,256,6.9513464,-1.4893634
+59,scale_service,scale_service,1,0,mostly-write,single_node,256,2.715406,-0.96983004
+60,run_pipeline,run_pipeline,1,0,mostly-orchestrate,single_node,256,4.195,-0.4083763
+61,approve_access,approve_access,1,0,mostly-write,single_node,256,3.299782,1.1618485
+62,revoke_access,revoke_access,1,0,mostly-write,single_node,256,5.427431,1.7102692
+63,transfer_ownership,transfer_ownership,1,0,mostly-orchestrate,single_node,256,6.9171205,1.1531675
+64,schedule_maintenance,schedule_maintenance,1,0,mostly-orchestrate,single_node,256,5.773156,-1.024582
+65,archive_data,archive_data,1,0,mostly-write,single_node,256,3.8492324,-4.471598
+66,enable_feature_flag,enable_feature_flag,1,0,mostly-write,single_node,256,3.6708143,0.49992937
+67,disable_feature_flag,disable_feature_flag,1,0,mostly-write,single_node,256,5.0816884,0.040567692
+68,invalidate_cache,invalidate_cache,1,0,mostly-write,single_node,256,5.624181,-2.836241

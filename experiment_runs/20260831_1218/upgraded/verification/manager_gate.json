@@ -1,0 +1,20 @@
+{
+  "dataset": "upgraded",
+  "all_executed": true,
+  "cuda_training": true,
+  "verified_or_documented": true,
+  "unambiguous_names": true,
+  "statuses": {
+    "upgraded__dep_legr__legr_gcn__gcn_undirected__seed_42": "VERIFIED",
+    "upgraded__dep_legr__legr_gcn__gcn_undirected_15__seed_42": "VERIFIED",
+    "upgraded__task1_sbert__sbert_ft__ged_0__seed_42": "VERIFIED",
+    "upgraded__task1_sbert__sbert_ft__ged_030__seed_42": "VERIFIED",
+    "upgraded__task1_sbert__sbert_ft__tied_weights__seed_42": "VERIFIED",
+    "upgraded__task4_dirgnn__dirgnn__directed__seed_42": "VERIFIED",
+    "upgraded__task4_dirgnn__dirgnn__tied_in_out__seed_42": "VERIFIED",
+    "upgraded__task2_latent__legr__action_type_analysis__seed_42": "VERIFIED",
+    "upgraded__task3_atomic__legr_15tool__zero_shot_atomic__seed_42": "VERIFIED",
+    "upgraded__task3_atomic__legr_30tool__zero_shot_atomic__seed_42": "FAILED"
+  },
+  "pass": true
+}

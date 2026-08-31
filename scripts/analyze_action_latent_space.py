@@ -222,10 +222,19 @@ def main():
         "cuda" if __import__("torch").cuda.is_available() else "cpu"
     )
     embeddings, source = encode_or_synthetic(args, dataset, device)
+    np.save(out_dir / "embeddings.npy", embeddings)
+    embedding_kind = (
+        "RANDOM_EMBEDDINGS_DRY_RUN"
+        if source == "synthetic_random"
+        else "REAL_CHECKPOINT_EMBEDDINGS"
+    )
+    (out_dir / "embedding_kind.txt").write_text(embedding_kind + "\n", encoding="utf-8")
     frame = build_plot_frame(dataset, embeddings)
     counts = frame["action_group"].value_counts().to_dict()
     diag = embedding_diagnostics(embeddings, frame["action_group"].tolist())
     diag["source"] = source
+    diag["embedding_kind"] = embedding_kind
+    diag["device"] = str(device)
     (out_dir / "metrics.json").write_text(json.dumps(diag, indent=2, default=str), encoding="utf-8")
     (out_dir / "counts.json").write_text(json.dumps(counts, indent=2), encoding="utf-8")
     frame.to_csv(out_dir / "plotting_data.csv", index=False)

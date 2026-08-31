@@ -341,6 +341,99 @@ def gen_inverted_y(rng: random.Random, vocab: List[str]) -> Tuple[List[str], Lis
     return tools, edges
 
 
+def gen_skip_chain(rng: random.Random, vocab: List[str]) -> Tuple[List[str], List[Tuple[int, int]]]:
+    """Six-stage chain with two dependency-skipping residual edges."""
+    tools = _sample_tools(rng, 6, vocab)
+    edges = [
+        (0, 1), (1, 2), (2, 3), (3, 4), (4, 5),
+        (0, 3), (2, 5),
+    ]
+    return tools, edges
+
+
+def gen_fork_of_forks(rng: random.Random, vocab: List[str]) -> Tuple[List[str], List[Tuple[int, int]]]:
+    """A root forks twice, producing four independent leaf operations."""
+    tools = _sample_tools(rng, 7, vocab)
+    edges = [(0, 1), (0, 2), (1, 3), (1, 4), (2, 5), (2, 6)]
+    return tools, edges
+
+
+def gen_join_of_joins(rng: random.Random, vocab: List[str]) -> Tuple[List[str], List[Tuple[int, int]]]:
+    """Four roots reduce pairwise and then converge at a final sink."""
+    tools = _sample_tools(rng, 7, vocab)
+    edges = [(0, 4), (1, 4), (2, 5), (3, 5), (4, 6), (5, 6)]
+    return tools, edges
+
+
+def gen_staggered_fork_join(rng: random.Random, vocab: List[str]) -> Tuple[List[str], List[Tuple[int, int]]]:
+    """Two unequal branches converge and continue through a tail stage."""
+    tools = _sample_tools(rng, 7, vocab)
+    edges = [(0, 1), (0, 2), (1, 3), (2, 4), (4, 5), (3, 6), (5, 6)]
+    return tools, edges
+
+
+def gen_diamond_sidecar(rng: random.Random, vocab: List[str]) -> Tuple[List[str], List[Tuple[int, int]]]:
+    """A diamond and a side chain share a root and meet at the final sink."""
+    tools = _sample_tools(rng, 7, vocab)
+    edges = [
+        (0, 1), (0, 2), (1, 3), (2, 3),
+        (0, 4), (4, 5), (3, 6), (5, 6),
+    ]
+    return tools, edges
+
+
+def gen_dual_source_pipeline(rng: random.Random, vocab: List[str]) -> Tuple[List[str], List[Tuple[int, int]]]:
+    """Two sources feed a main path and a side path that merge at the end."""
+    tools = _sample_tools(rng, 6, vocab)
+    edges = [(0, 2), (1, 2), (2, 3), (1, 4), (3, 5), (4, 5)]
+    return tools, edges
+
+
+def gen_fanout_reduce_expand(rng: random.Random, vocab: List[str]) -> Tuple[List[str], List[Tuple[int, int]]]:
+    """Three-way broadcast, reduction, then a two-way final broadcast."""
+    tools = _sample_tools(rng, 7, vocab)
+    edges = [
+        (0, 1), (0, 2), (0, 3),
+        (1, 4), (2, 4), (3, 4),
+        (4, 5), (4, 6),
+    ]
+    return tools, edges
+
+
+def gen_three_stage_hourglass(rng: random.Random, vocab: List[str]) -> Tuple[List[str], List[Tuple[int, int]]]:
+    """Three roots reduce, expand to three branches, reduce, and finish."""
+    tools = _sample_tools(rng, 9, vocab)
+    edges = [
+        (0, 3), (1, 3), (2, 3),
+        (3, 4), (3, 5), (3, 6),
+        (4, 7), (5, 7), (6, 7),
+        (7, 8),
+    ]
+    return tools, edges
+
+
+def gen_parallel_reducers(rng: random.Random, vocab: List[str]) -> Tuple[List[str], List[Tuple[int, int]]]:
+    """Three sources feed two reducers, which broadcast to three sinks."""
+    tools = _sample_tools(rng, 8, vocab)
+    edges = [
+        (0, 3), (0, 4), (1, 3), (1, 4), (2, 3), (2, 4),
+        (3, 5), (3, 6), (3, 7),
+        (4, 5), (4, 6), (4, 7),
+    ]
+    return tools, edges
+
+
+def gen_multi_stage_broadcast(rng: random.Random, vocab: List[str]) -> Tuple[List[str], List[Tuple[int, int]]]:
+    """A two-level broadcast tree whose four leaves converge at one sink."""
+    tools = _sample_tools(rng, 8, vocab)
+    edges = [
+        (0, 1), (0, 2),
+        (1, 3), (1, 4), (2, 5), (2, 6),
+        (3, 7), (4, 7), (5, 7), (6, 7),
+    ]
+    return tools, edges
+
+
 TOPOLOGY_GENERATORS = {
     "diamond": gen_diamond,
     "asymmetric_fork_join": gen_asymmetric_fork_join,
@@ -354,6 +447,16 @@ TOPOLOGY_GENERATORS = {
     "wide_fanout_deep": gen_wide_fanout_deep,
     "y_shape": gen_y_shape,
     "inverted_y": gen_inverted_y,
+    "skip_chain": gen_skip_chain,
+    "fork_of_forks": gen_fork_of_forks,
+    "join_of_joins": gen_join_of_joins,
+    "staggered_fork_join": gen_staggered_fork_join,
+    "diamond_sidecar": gen_diamond_sidecar,
+    "dual_source_pipeline": gen_dual_source_pipeline,
+    "fanout_reduce_expand": gen_fanout_reduce_expand,
+    "three_stage_hourglass": gen_three_stage_hourglass,
+    "parallel_reducers": gen_parallel_reducers,
+    "multi_stage_broadcast": gen_multi_stage_broadcast,
 }
 
 

@@ -1,0 +1,73 @@
+query,gt_tool,rank_of_one_node,top1_is_one_node,top1_dag_text,top1_cosine,gt_cosine
+Can you bring up the database entry for #20891?,db_read,2,True,db_write,0.6475863456726074,0.6224533915519714
+Could you bring up the database entry for #31450 for me?,db_read,2,True,db_write,0.6419717073440552,0.6263297200202942
+Please write the revised Finance config back.,db_write,2,True,update_subscription,0.5319574475288391,0.5112959742546082
+log a helpdesk issue for Bob.,create_ticket,2,True,log_audit_event,0.6476337313652039,0.5622727274894714
+raise a service request for HR.,create_ticket,4,True,provision_vm,0.613849937915802,0.5372613072395325
+Please log an issue against staging-db-02.,create_ticket,2,True,log_audit_event,0.5913825035095215,0.5861090421676636
+Please raise a service request for Finance.,create_ticket,3,True,provision_vm,0.6414965391159058,0.5689242482185364
+Can you log a helpdesk issue for Grace?,create_ticket,2,True,log_audit_event,0.6841166615486145,0.558343768119812
+Could you log a helpdesk issue for Frank for me?,create_ticket,3,True,log_audit_event,0.6453334093093872,0.556425929069519
+Could you create a service request for auth-svc-04 for me?,create_ticket,3,True,restart_service,0.6842190623283386,0.5466650128364563
+I need you to log a helpdesk issue for Engineering.,create_ticket,2,True,log_audit_event,0.6644618511199951,0.5869943499565125
+I need you to raise a service request for Marketing.,create_ticket,5,True,provision_vm,0.6778521537780762,0.5451682806015015
+We should log an issue against prod-web-01.,create_ticket,2,True,log_audit_event,0.628140926361084,0.6203503012657166
+We should create a service request for prod-web-01.,create_ticket,3,True,restart_service,0.6742212176322937,0.5263819694519043
+Let's log an issue against ml-infer-05.,create_ticket,2,True,log_audit_event,0.6367632150650024,0.5736964344978333
+Let's raise a support request on behalf of Bob.,create_ticket,3,True,escalate_to_human,0.6172704696655273,0.5295671224594116
+Kindly log an issue against cdn-edge-06.,create_ticket,2,True,log_audit_event,0.6243571043014526,0.5779067277908325
+Kindly create a service request for staging-db-02.,create_ticket,3,True,restart_service,0.6197080016136169,0.4610176086425781
+forward the update to Charlie.,send_notification,3,True,update_subscription,0.5686396360397339,0.489441841840744
+Can you forward the latest update to Legal?,send_notification,2,True,update_subscription,0.5643754601478577,0.5081223249435425
+Please contain prod-web-01 immediately.,quarantine_system,2,True,restart_service,0.6135605573654175,0.6116662621498108
+Please segment cdn-edge-06 from the rest of the environment.,quarantine_system,2,True,restart_service,0.6104522347450256,0.603540301322937
+Could you contain payment-api-03 immediately for me?,quarantine_system,2,True,restart_service,0.6234972476959229,0.59661465883255
+I need you to segment cdn-edge-06 from the rest of the environment.,quarantine_system,2,True,restart_service,0.5916295051574707,0.5881391763687134
+We should contain auth-svc-04 immediately.,quarantine_system,2,True,restart_service,0.6221820116043091,0.5965230464935303
+We should segment ml-infer-05 from the rest of the environment.,quarantine_system,2,True,restart_service,0.5710451602935791,0.5585069060325623
+Let's segment prod-web-01 from the rest of the environment.,quarantine_system,2,True,restart_service,0.6352706551551819,0.6294505000114441
+Kindly segment payment-api-03 from the rest of the environment.,quarantine_system,2,True,restart_service,0.6052790284156799,0.55838543176651
+check prod-web-01 for indicators of compromise.,scan_malware,2,True,check_status,0.6945950984954834,0.6535825729370117
+Please check payment-api-03 for indicators of compromise.,scan_malware,2,True,check_status,0.641057550907135,0.6263216137886047
+Can you check payment-api-03 for indicators of compromise?,scan_malware,2,True,check_status,0.6502054929733276,0.6033897995948792
+Could you check prod-web-01 for indicators of compromise for me?,scan_malware,2,True,check_status,0.7000918984413147,0.6192947626113892
+I need you to check ml-infer-05 for indicators of compromise.,scan_malware,2,True,check_status,0.729723334312439,0.6472781896591187
+We should check staging-db-02 for indicators of compromise.,scan_malware,2,True,check_status,0.7049727439880371,0.667746901512146
+Let's check staging-db-02 for indicators of compromise.,scan_malware,2,True,check_status,0.7370220422744751,0.609013557434082
+Kindly check staging-db-02 for indicators of compromise.,scan_malware,2,True,check_status,0.6672297716140747,0.6550546288490295
+"When you have a moment, check staging-db-02 for indicators of compromise.",scan_malware,2,True,check_status,0.6875627040863037,0.5904086828231812
+Please generate a diagnostics report for payment-api-03.,generate_report,3,True,check_status,0.6250323057174683,0.5559036731719971
+Can you compile a health summary for payment-api-03?,generate_report,2,False,"check_status -> generate_report, db_read -> generate_report",0.6284821033477783,0.48876678943634033
+Could you generate a diagnostics report for payment-api-03 for me?,generate_report,2,False,"check_status -> generate_report, db_read -> generate_report",0.6067400574684143,0.5915096998214722
+I need you to generate a diagnostics report for prod-web-01.,generate_report,2,True,check_status,0.613405704498291,0.5580311417579651
+I need you to compile a health summary for prod-web-01.,generate_report,3,False,"check_status -> generate_report, db_read -> generate_report",0.6295133233070374,0.501640260219574
+Kindly generate a diagnostics report for cdn-edge-06.,generate_report,6,True,check_status,0.6343618035316467,0.4386696219444275
+Can you bring the service on staging-db-02 back up?,restart_service,2,True,quarantine_system,0.5170066356658936,0.5159882307052612
+route the issue to the Marketing manager.,escalate_to_human,2,True,create_ticket,0.5747517347335815,0.5492169260978699
+Please route the cdn-edge-06 incident to a live responder.,escalate_to_human,2,True,create_ticket,0.6116854548454285,0.5577054619789124
+Please send Charlie's case for human review.,escalate_to_human,4,True,send_notification,0.5406385660171509,0.44894999265670776
+Please transfer Grace's case to a person.,escalate_to_human,3,True,create_ticket,0.5152259469032288,0.4627433121204376
+Can you send the prod-web-01 issue for human handling?,escalate_to_human,3,True,create_ticket,0.5756620764732361,0.5649378299713135
+Can you send Grace's case for human review?,escalate_to_human,8,True,send_notification,0.5719823241233826,0.3646177053451538
+Can you transfer Bob's case to a person?,escalate_to_human,3,True,process_refund,0.45068424940109253,0.4031202495098114
+Could you route the issue to the HR manager for me?,escalate_to_human,2,True,create_ticket,0.5987537503242493,0.5958401560783386
+Could you send Bob's case for human review for me?,escalate_to_human,6,True,create_ticket,0.5424475073814392,0.3838360905647278
+I need you to escalate this issue for Grace to the support team.,escalate_to_human,2,True,send_notification,0.6169392466545105,0.6126883029937744
+I need you to transfer Alice's case to a person.,escalate_to_human,4,True,create_ticket,0.5081503987312317,0.4779244661331177
+We should route the auth-svc-04 incident to a live responder.,escalate_to_human,2,True,create_ticket,0.6581879258155823,0.5521681308746338
+We should send Diana's case for human review.,escalate_to_human,5,True,send_notification,0.5655619502067566,0.4304991066455841
+Let's send Grace's case for human review.,escalate_to_human,8,True,send_notification,0.5496883988380432,0.39398637413978577
+Let's escalate the alert on auth-svc-04 to a person.,escalate_to_human,2,True,send_notification,0.694031834602356,0.5738118886947632
+Let's transfer Alice's case to a person.,escalate_to_human,2,True,process_refund,0.5349395275115967,0.5000215172767639
+Kindly send Bob's case for human review.,escalate_to_human,4,True,send_notification,0.602659285068512,0.4733034670352936
+Kindly transfer Alice's case to a person.,escalate_to_human,3,True,create_ticket,0.4911409020423889,0.47040680050849915
+record the activity tied to #53698.,log_audit_event,2,True,db_read,0.5716290473937988,0.5359169244766235
+create a trail entry for auth-svc-04.,log_audit_event,8,True,restart_service,0.6397789716720581,0.4275141656398773
+Please write a compliance entry for payment-api-03.,log_audit_event,4,True,create_ticket,0.582262396812439,0.5143874287605286
+Please document the action taken on payment-api-03.,log_audit_event,6,True,create_ticket,0.6041099429130554,0.48516911268234253
+Can you document the action taken on staging-db-02?,log_audit_event,4,True,create_ticket,0.6155291795730591,0.4785461723804474
+Could you create a trail entry for staging-db-02 for me?,log_audit_event,10,True,restart_service,0.6522161364555359,0.37569940090179443
+I need you to capture the event associated with #60122.,log_audit_event,4,True,create_ticket,0.6062779426574707,0.5622623562812805
+I need you to create a trail entry for prod-web-01.,log_audit_event,9,True,restart_service,0.6862365007400513,0.3911742866039276
+We should write a compliance entry for cdn-edge-06.,log_audit_event,2,True,create_ticket,0.6087020039558411,0.5595167875289917
+We should document the event linked to #31450.,log_audit_event,2,True,create_ticket,0.6339085102081299,0.5739338397979736

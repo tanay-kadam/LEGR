@@ -1,0 +1,28 @@
+{
+  "arch": "legr",
+  "checkpoint": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1218\\upgraded_v3\\TASK4_DIRECTION_ABLATION\\DIRGNN_TIED_IN_OUT\\best_model.pt",
+  "checkpoint_sha256": "355f84f7fe07d657f5c9f419f2a4ce4f1dfe503bae877dc8f2a7394a68df0df6",
+  "dataset_csv": "C:\\Users\\tkadam\\LEGR\\upgraded_v3\\upgraded_30tools\\test_topology_heldout.csv",
+  "n_eval": 550,
+  "n_unique_dags": 69,
+  "device": "cuda:0",
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "graph_direction": "tied_in_out",
+  "graph_encoder_type": "directed",
+  "bidirectional": false,
+  "tool_count": 30,
+  "seed": 42,
+  "metrics": {
+    "tool_set_f1": 0.9072554112554113,
+    "mean_ged_error": 0.6290909090909091,
+    "recall@1": 0.8254545454545454,
+    "recall@3": 0.9618181818181818,
+    "recall@5": 0.990909090909091,
+    "mrr@1": 0.8254545454545454,
+    "mrr@3": 0.8848484848484847,
+    "mrr@5": 0.8912121212121209
+  },
+  "range_errors": [],
+  "forward_finite": true,
+  "verified_load": true
+}

@@ -1,0 +1,89 @@
+query,gt_tool,rank_of_one_node,top1_is_one_node,top1_dag_text,top1_cosine,gt_cosine
+Can you bring up the database entry for #20891?,db_read,2,True,db_write,0.647586464881897,0.6224532723426819
+Do me a favor and let's commit the legal configuration update.,db_write,2,True,update_subscription,0.5937642455101013,0.5855540633201599
+log a helpdesk issue for Bob.,create_ticket,2,True,log_audit_event,0.6476337909698486,0.5622726678848267
+"Hey, can you log a helpdesk issue for bob.",create_ticket,2,True,log_audit_event,0.6607687473297119,0.6000851988792419
+Is it possible to log a helpdesk issue for bob?,create_ticket,3,True,log_audit_event,0.6457077860832214,0.5500456690788269
+It would help if log a helpdesk issue for bob.,create_ticket,2,True,log_audit_event,0.6363298892974854,0.6232690215110779
+Could you please log a helpdesk issue for bob.,create_ticket,2,True,log_audit_event,0.6330593824386597,0.5593451261520386
+Please log an issue against staging-db-02.,create_ticket,2,True,log_audit_event,0.5913827419281006,0.5861089825630188
+Could you please log an issue against staging-db-02.,create_ticket,2,True,log_audit_event,0.6010018587112427,0.5858725309371948
+Is it possible to log an issue against staging-db-02?,create_ticket,2,True,log_audit_event,0.6393693089485168,0.5391384363174438
+What we need is for log an issue against staging-db-02.,create_ticket,2,True,log_audit_event,0.6302180290222168,0.6289414763450623
+Could you log a helpdesk issue for Frank for me?,create_ticket,3,True,log_audit_event,0.6453334093093872,0.5564260482788086
+Gonna need you to log a helpdesk issue for frank for me.,create_ticket,2,True,log_audit_event,0.6882678866386414,0.571281373500824
+Could someone log a helpdesk issue for frank for me?,create_ticket,3,True,log_audit_event,0.6290050745010376,0.5356093645095825
+I'd appreciate it if you could log a helpdesk issue for frank for me.,create_ticket,2,True,log_audit_event,0.6714287996292114,0.6040728688240051
+log a helpdesk issue for frank for me -- that's what needs to happen.,create_ticket,2,True,log_audit_event,0.6675078272819519,0.635572075843811
+Could you create a service request for auth-svc-04 for me?,create_ticket,3,True,restart_service,0.6842190027236938,0.5466650724411011
+Could someone create a service request for auth-svc-04 for me?,create_ticket,3,True,restart_service,0.6674525141716003,0.5341638922691345
+I'd appreciate it if you could create a service request for auth-svc-04 for me.,create_ticket,2,True,restart_service,0.681016743183136,0.5874608159065247
+Need you to create a service request for auth-svc-04 for me.,create_ticket,3,True,restart_service,0.6676972508430481,0.5243233442306519
+The situation requires create a service request for auth-svc-04 for me.,create_ticket,2,True,restart_service,0.6408625245094299,0.5675264596939087
+We should log an issue against prod-web-01.,create_ticket,2,True,log_audit_event,0.628140926361084,0.6203502416610718
+Would anyone be able to we should log an issue against prod-web-01?,create_ticket,2,True,log_audit_event,0.6585255861282349,0.6081430912017822
+Could you please we should log an issue against prod-web-01.,create_ticket,2,True,log_audit_event,0.6267847418785095,0.6105955839157104
+Gonna need you to we should log an issue against prod-web-01.,create_ticket,2,True,log_audit_event,0.659166693687439,0.6183598637580872
+Can you forward the latest update to Legal?,send_notification,2,True,update_subscription,0.5643753409385681,0.5081223249435425
+It would help if forward the latest update to legal.,send_notification,3,True,update_subscription,0.584833025932312,0.5123515129089355
+Is it possible to forward the latest update to legal?,send_notification,2,True,update_subscription,0.5079690217971802,0.43230754137039185
+Could you contain payment-api-03 immediately for me?,quarantine_system,2,True,restart_service,0.6234972476959229,0.59661465883255
+"Yo, contain payment-api-03 immediately for me.",quarantine_system,2,True,restart_service,0.6326075792312622,0.6257168054580688
+Please contain payment-api-03 immediately for me.,quarantine_system,2,True,restart_service,0.6431785821914673,0.6058589220046997
+We should segment ml-infer-05 from the rest of the environment.,quarantine_system,2,True,restart_service,0.5710451602935791,0.5585069060325623
+Gonna need you to we should segment ml-infer-05 from the rest of the environment.,quarantine_system,2,True,restart_service,0.6198891401290894,0.6095693707466125
+Kindly we should segment ml-infer-05 from the rest of the environment.,quarantine_system,2,True,restart_service,0.5657607913017273,0.5365762710571289
+The situation requires we should segment ml-infer-05 from the rest of the environment.,quarantine_system,3,True,restart_service,0.5599982142448425,0.5161718130111694
+I need you to check ml-infer-05 for indicators of compromise.,scan_malware,2,True,check_status,0.7297232747077942,0.6472783088684082
+Would anyone be able to check ml-infer-05 for indicators of compromise?,scan_malware,2,True,check_status,0.7198246121406555,0.6093252301216125
+"Hey, can you check ml-infer-05 for indicators of compromise.",scan_malware,2,True,check_status,0.719694197177887,0.6599025130271912
+I'd appreciate it if you could check ml-infer-05 for indicators of compromise.,scan_malware,2,True,check_status,0.7251744866371155,0.6510998010635376
+What we need is for check ml-infer-05 for indicators of compromise.,scan_malware,2,True,check_status,0.7348518371582031,0.606471061706543
+Kindly check staging-db-02 for indicators of compromise.,scan_malware,2,True,check_status,0.6672297120094299,0.6550545692443848
+Gonna need you to check staging-db-02 for indicators of compromise.,scan_malware,2,True,check_status,0.716472864151001,0.6550146341323853
+Who can check staging-db-02 for indicators of compromise?,scan_malware,2,True,check_status,0.68122398853302,0.5809741616249084
+Could you please check staging-db-02 for indicators of compromise.,scan_malware,2,True,check_status,0.6999403238296509,0.6476123332977295
+The situation requires check staging-db-02 for indicators of compromise.,scan_malware,2,True,check_status,0.7065141797065735,0.6239093542098999
+Could you generate a diagnostics report for payment-api-03 for me?,generate_report,2,False,"check_status -> generate_report, db_read -> generate_report",0.6067400574684143,0.5915096998214722
+Quick one -- generate a diagnostics report for payment-api-03 for me.,generate_report,3,True,check_status,0.6400314569473267,0.5849647521972656
+Kindly generate a diagnostics report for payment-api-03 for me.,generate_report,3,True,check_status,0.5868456363677979,0.549983561038971
+Is it possible to generate a diagnostics report for payment-api-03 for me?,generate_report,2,False,"check_status -> generate_report, db_read -> generate_report",0.60048907995224,0.5559815764427185
+"I'd appreciate it if you could when you have a moment, see if payment-api-03 is up.",check_status,2,True,restart_service,0.6546945571899414,0.6244103908538818
+Please route the cdn-edge-06 incident to a live responder.,escalate_to_human,2,True,create_ticket,0.6116854548454285,0.5577053427696228
+Could you please route the cdn-edge-06 incident to a live responder.,escalate_to_human,2,True,create_ticket,0.6010127067565918,0.5440062880516052
+"Hey, can you route the cdn-edge-06 incident to a live responder.",escalate_to_human,2,True,create_ticket,0.6160144805908203,0.5568129420280457
+It would help if route the cdn-edge-06 incident to a live responder.,escalate_to_human,2,True,create_ticket,0.6133102178573608,0.5599722862243652
+Who can route the cdn-edge-06 incident to a live responder?,escalate_to_human,2,True,create_ticket,0.5938735008239746,0.529869019985199
+Can you send the prod-web-01 issue for human handling?,escalate_to_human,3,True,create_ticket,0.5756621956825256,0.5649378299713135
+"Hey, can you send the prod-web-01 issue for human handling.",escalate_to_human,4,True,restart_service,0.5994069576263428,0.5848619341850281
+We request that you send the prod-web-01 issue for human handling.,escalate_to_human,2,True,send_notification,0.6152027249336243,0.6094568967819214
+Who can send the prod-web-01 issue for human handling?,escalate_to_human,3,True,send_notification,0.5627984404563904,0.5519459843635559
+Can you send Grace's case for human review?,escalate_to_human,8,True,send_notification,0.5719825029373169,0.3646177053451538
+Please send grace's case for human review.,escalate_to_human,6,True,send_notification,0.5836187601089478,0.4406798779964447
+Would anyone be able to send grace's case for human review?,escalate_to_human,7,True,create_ticket,0.5429909229278564,0.3498479127883911
+Do me a favor and send grace's case for human review.,escalate_to_human,9,False,generate_report -> send_notification,0.5238073468208313,0.3721795082092285
+It would help if send grace's case for human review.,escalate_to_human,4,True,send_notification,0.5808160305023193,0.48049649596214294
+Could you send Bob's case for human review for me?,escalate_to_human,6,True,create_ticket,0.5424473285675049,0.3838360905647278
+Kindly send bob's case for human review for me.,escalate_to_human,4,True,send_notification,0.5738611817359924,0.48714762926101685
+Would anyone be able to send bob's case for human review for me?,escalate_to_human,6,True,create_ticket,0.5350053906440735,0.36191561818122864
+Need you to send bob's case for human review for me.,escalate_to_human,4,True,send_notification,0.5785435438156128,0.456987202167511
+It would help if send bob's case for human review for me.,escalate_to_human,4,True,send_notification,0.5743618607521057,0.49009478092193604
+Need you to escalate the request to someone in marketing for me.,escalate_to_human,2,True,send_notification,0.6235459446907043,0.619378387928009
+I need you to escalate this issue for Grace to the support team.,escalate_to_human,2,True,send_notification,0.616939127445221,0.6126881241798401
+We should route the auth-svc-04 incident to a live responder.,escalate_to_human,2,True,create_ticket,0.6581879258155823,0.5521680116653442
+Would you mind we should route the auth-svc-04 incident to a live responder.,escalate_to_human,2,True,create_ticket,0.6538223624229431,0.5373187065124512
+Quick one -- we should route the auth-svc-04 incident to a live responder.,escalate_to_human,2,True,create_ticket,0.6641799211502075,0.5780956745147705
+we should route the auth-svc-04 incident to a live responder -- that's what needs to happen.,escalate_to_human,2,True,create_ticket,0.653847873210907,0.5761693716049194
+Would anyone be able to we should route the auth-svc-04 incident to a live responder?,escalate_to_human,2,True,create_ticket,0.6205899119377136,0.49976834654808044
+"Gonna need you to when you have a moment, get a human to review the problem on prod-web-01.",escalate_to_human,2,True,restart_service,0.5914163589477539,0.5821803212165833
+create a trail entry for auth-svc-04.,log_audit_event,8,True,restart_service,0.6397789716720581,0.42751413583755493
+create a trail entry for auth-svc-04 -- that's what needs to happen.,log_audit_event,8,True,restart_service,0.6257210969924927,0.4151214361190796
+Quick one -- create a trail entry for auth-svc-04.,log_audit_event,8,True,restart_service,0.6379872560501099,0.43013447523117065
+Could someone create a trail entry for auth-svc-04?,log_audit_event,7,True,restart_service,0.6268423199653625,0.44648703932762146
+Would you mind create a trail entry for auth-svc-04.,log_audit_event,6,True,restart_service,0.6514660120010376,0.4810159504413605
+Can you document the action taken on staging-db-02?,log_audit_event,4,True,create_ticket,0.6155291199684143,0.47854599356651306
+Is it possible to document the action taken on staging-db-02?,log_audit_event,2,True,create_ticket,0.5743606090545654,0.450226753950119
+Do me a favor and document the action taken on staging-db-02.,log_audit_event,8,True,create_ticket,0.6639283299446106,0.4613512456417084
+We request that you document the action taken on staging-db-02.,log_audit_event,8,True,create_ticket,0.6345821619033813,0.4851280748844147
+The situation requires document the action taken on staging-db-02.,log_audit_event,6,True,create_ticket,0.6825849413871765,0.45508840680122375
+The situation requires write a compliance entry for #42017.,log_audit_event,2,True,create_ticket,0.6211128830909729,0.5676111578941345

@@ -1,0 +1,1 @@
+python scripts/eval_zero_shot_atomic.py --tool_count 30 --checkpoint experiment_runs/20260831_1218/upgraded_v3/TASK4_DIRECTION_ABLATION/LEGR_DEFAULT_GCN_30TOOL/best_model.pt --compositional_csv upgraded_v3/upgraded_30tools/test_topology_heldout.csv --device cuda --output experiment_runs/20260831_1218/upgraded_v3/TASK3_ZERO_SHOT_ATOMIC/LEGR_30TOOL_ZERO_SHOT_ATOMIC

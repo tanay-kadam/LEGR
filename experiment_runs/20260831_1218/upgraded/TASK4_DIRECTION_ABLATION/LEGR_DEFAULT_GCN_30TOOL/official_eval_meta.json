@@ -1,0 +1,7 @@
+{
+  "returncode": 0,
+  "elapsed_s": 18.919520139694214,
+  "pid": 15576,
+  "stdout": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1218\\upgraded\\TASK4_DIRECTION_ABLATION\\LEGR_DEFAULT_GCN_30TOOL\\official_eval\\stdout.log",
+  "stderr": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1218\\upgraded\\TASK4_DIRECTION_ABLATION\\LEGR_DEFAULT_GCN_30TOOL\\official_eval\\stderr.log"
+}

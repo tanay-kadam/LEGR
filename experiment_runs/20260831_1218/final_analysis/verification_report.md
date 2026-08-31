@@ -1,0 +1,22 @@
+# Verification report
+
+- `upgraded__dep_legr__legr_gcn__gcn_undirected__seed_42`: **VERIFIED** verified=True sha=2bc1615e01f4fb3a514a355392b6b3273251fb20caba5087f8dbe01c62e53365
+- `upgraded__dep_legr__legr_gcn__gcn_undirected_15__seed_42`: **VERIFIED** verified=True sha=f3c5a5ae4ae21f4ab3b35a92672aff58979fa49baf4473354f3ca991a6f8ab3b
+- `upgraded__task1_sbert__sbert_ft__ged_0__seed_42`: **VERIFIED** verified=True sha=675f72418f04de4aeb3c52930c0dbcb130e15b093e33207489661abc5200e671
+- `upgraded__task1_sbert__sbert_ft__ged_030__seed_42`: **VERIFIED** verified=True sha=150532cb2aa3492b79e48ea77a1386c95643b141512e978c81b442d5878217c9
+- `upgraded__task1_sbert__sbert_ft__tied_weights__seed_42`: **VERIFIED** verified=True sha=295f155675abe20e80c9d72a0739ed2c7d60d83ddf069f7c2baeb8827f5cbc74
+- `upgraded__task4_dirgnn__dirgnn__directed__seed_42`: **VERIFIED** verified=True sha=3d6df776d0e8f7bec1e619d0a2efe636a873ac3b748e1f939d6a2e853a0221d0
+- `upgraded__task4_dirgnn__dirgnn__tied_in_out__seed_42`: **VERIFIED** verified=True sha=00ace94573c63ff12a0fb721bd0fd2061ab2ef37875ccd977d392653b1c8c561
+- `upgraded__task2_latent__legr__action_type_analysis__seed_42`: **VERIFIED** verified=True sha=2bc1615e01f4fb3a514a355392b6b3273251fb20caba5087f8dbe01c62e53365
+- `upgraded__task3_atomic__legr_15tool__zero_shot_atomic__seed_42`: **VERIFIED** verified=True sha=f3c5a5ae4ae21f4ab3b35a92672aff58979fa49baf4473354f3ca991a6f8ab3b
+- `upgraded__task3_atomic__legr_30tool__zero_shot_atomic__seed_42`: **VERIFIED** verified=True sha=2bc1615e01f4fb3a514a355392b6b3273251fb20caba5087f8dbe01c62e53365
+- `upgraded_v3__dep_legr__legr_gcn__gcn_undirected__seed_42`: **VERIFIED** verified=True sha=576e98d7fe165a8d36471051048a5422cb6f6af237a1360ddc2ebb436cf927e3
+- `upgraded_v3__dep_legr__legr_gcn__gcn_undirected_15__seed_42`: **VERIFIED** verified=True sha=43ce2c18be93bc71cdbbbe6bdd05299787031761e25f6626c2a582896633f45c
+- `upgraded_v3__task1_sbert__sbert_ft__ged_0__seed_42`: **VERIFIED** verified=True sha=3a7bf64776c6da61abc1f021ddae82ad79ce8928006ef14303d3601de3ec8b84
+- `upgraded_v3__task1_sbert__sbert_ft__ged_030__seed_42`: **VERIFIED** verified=True sha=9b9a8fdea78ab3ca7af145af147b484cec92ae5fbd28b940dfd69d5632b23e2c
+- `upgraded_v3__task1_sbert__sbert_ft__tied_weights__seed_42`: **VERIFIED** verified=True sha=7b8667ca55c070ea47caae0bf1440e9985c717f65d095ed74be3824e6639bec7
+- `upgraded_v3__task4_dirgnn__dirgnn__directed__seed_42`: **VERIFIED** verified=True sha=6b1eceb6effd6ffb0257edba17e236a87e050d67c0c6b4dd42925ba2417b0a5d
+- `upgraded_v3__task4_dirgnn__dirgnn__tied_in_out__seed_42`: **VERIFIED** verified=True sha=355f84f7fe07d657f5c9f419f2a4ce4f1dfe503bae877dc8f2a7394a68df0df6
+- `upgraded_v3__task2_latent__legr__action_type_analysis__seed_42`: **VERIFIED** verified=True sha=576e98d7fe165a8d36471051048a5422cb6f6af237a1360ddc2ebb436cf927e3
+- `upgraded_v3__task3_atomic__legr_15tool__zero_shot_atomic__seed_42`: **VERIFIED** verified=True sha=43ce2c18be93bc71cdbbbe6bdd05299787031761e25f6626c2a582896633f45c
+- `upgraded_v3__task3_atomic__legr_30tool__zero_shot_atomic__seed_42`: **VERIFIED** verified=True sha=576e98d7fe165a8d36471051048a5422cb6f6af237a1360ddc2ebb436cf927e3

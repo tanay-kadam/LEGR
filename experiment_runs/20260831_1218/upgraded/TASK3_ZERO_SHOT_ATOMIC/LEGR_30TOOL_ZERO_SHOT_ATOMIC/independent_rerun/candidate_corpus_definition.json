@@ -1,0 +1,72 @@
+{
+  "compositional_csv": "upgraded/upgraded_30tools/test_topology_heldout.csv",
+  "n_compositional_unique": 30,
+  "n_one_node_injected": 15,
+  "n_unified": 45,
+  "encoder_tool_count": 30,
+  "query_benchmark": "routing_15tools",
+  "routing_30_benchmark_used": false,
+  "aliases": {
+    "query_database": "db_read",
+    "update_database": "db_write"
+  },
+  "legr_15_tools": [
+    "db_read",
+    "db_write",
+    "reset_password",
+    "create_ticket",
+    "send_notification",
+    "quarantine_system",
+    "scan_malware",
+    "generate_report",
+    "process_refund",
+    "update_subscription",
+    "provision_vm",
+    "restart_service",
+    "check_status",
+    "escalate_to_human",
+    "log_audit_event"
+  ],
+  "one_node_tools": [
+    "db_read",
+    "db_write",
+    "reset_password",
+    "create_ticket",
+    "send_notification",
+    "quarantine_system",
+    "scan_malware",
+    "generate_report",
+    "process_refund",
+    "update_subscription",
+    "provision_vm",
+    "restart_service",
+    "check_status",
+    "escalate_to_human",
+    "log_audit_event"
+  ],
+  "self_loops": "Not added by us. GCNConv may add self-loops internally.",
+  "fake_edges": false,
+  "protocol_note": "Atomic queries and one-node candidates are the 15-tool routing benchmark, aliased onto LEGR DAG names. --tool_count selects the frozen encoder and compositional DAG pool only. routing_30tools is not used (labels are OOV for the DAG embedding table).",
+  "stress_conditions": {
+    "Standard": {
+      "path": "upgraded_data/routing_15tools/base_cleaned.csv",
+      "n": 1005,
+      "n_aliased_labels": 15
+    },
+    "Lexical": {
+      "path": "upgraded_data/routing_15tools/lexical_cue_reduced.csv",
+      "n": 1005,
+      "n_aliased_labels": 15
+    },
+    "Confusable": {
+      "path": "upgraded_data/routing_15tools/confusable_intents.csv",
+      "n": 450,
+      "n_aliased_labels": 15
+    },
+    "Paraphrase": {
+      "path": "upgraded_data/routing_15tools/paraphrase_heldout_test.csv",
+      "n": 1255,
+      "n_aliased_labels": 15
+    }
+  }
+}

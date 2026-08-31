@@ -165,12 +165,18 @@ def _resolve_eval_csv_paths(
 
     if dataset_csv is None:
         dataset_csv = default_dataset_csv
-    if (
-        hard_negative_csv is None
-        and default_hard_negative_csv is not None
-        and Path(default_hard_negative_csv).exists()
-    ):
-        hard_negative_csv = default_hard_negative_csv
+    if hard_negative_csv is None:
+        using_default_dataset = (
+            dataset_csv is not None
+            and default_dataset_csv is not None
+            and Path(dataset_csv).resolve() == Path(default_dataset_csv).resolve()
+        )
+        if (
+            using_default_dataset
+            and default_hard_negative_csv is not None
+            and Path(default_hard_negative_csv).exists()
+        ):
+            hard_negative_csv = default_hard_negative_csv
 
     required_paths: list[Path] = []
     if dataset_csv is not None:

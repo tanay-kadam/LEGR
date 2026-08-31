@@ -592,6 +592,8 @@ def main(cfg: TrainConfig) -> str:
 
     # ── Model & loss ──────────────────────────────────────────────────────────
     device = torch.device(cfg.device)
+    if device.type == "cuda" and not torch.cuda.is_available():
+        raise RuntimeError("BLOCKED_CUDA: device=cuda but torch.cuda.is_available() is False")
 
     model = LEGRDualEncoder(
         num_tools=NUM_TOOLS,
@@ -606,6 +608,8 @@ def main(cfg: TrainConfig) -> str:
         graph_encoder_type=graph_encoder_type,
         tie_in_out=tie_in_out,
     ).to(device)
+    if device.type == "cuda" and next(model.parameters()).device.type != "cuda":
+        raise RuntimeError(f"LEGR parameters are not on CUDA: {next(model.parameters()).device}")
 
     criterion = GraphAwareContrastiveLoss(
         temperature_init=cfg.temperature_init,
@@ -677,7 +681,8 @@ def main(cfg: TrainConfig) -> str:
     best_val_loss = float("inf")
     patience_counter = 0
 
-    print(f"Training on {device}  |  "
+    gpu_name = torch.cuda.get_device_name(device) if device.type == "cuda" else "n/a"
+    print(f"Training on {device} ({gpu_name})  |  "
           f"{len(train_ds)} train · {len(val_ds)} val  |  "
           f"{train_ds.num_unique_dags} unique DAGs\n")
 

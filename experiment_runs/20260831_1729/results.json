@@ -1,0 +1,68 @@
+[
+  {
+    "tools": 45,
+    "variant": "ged_0",
+    "epochs": 5,
+    "out_dir": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1729\\upgraded\\TASK1_SBERT_FINE_TUNE\\SBERT_FT_GED0_45TOOL",
+    "train_returncode": 0,
+    "checkpoint": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1729\\upgraded\\TASK1_SBERT_FINE_TUNE\\SBERT_FT_GED0_45TOOL\\best_model.pt",
+    "verify_returncode": 0,
+    "metrics": {
+      "tool_set_f1": 0.9734233897415716,
+      "mean_ged_error": 0.2609090909090909,
+      "recall@1": 0.9463636363636364,
+      "recall@3": 0.9954545454545455,
+      "recall@5": 0.9990909090909091,
+      "mrr@1": 0.9463636363636364,
+      "mrr@3": 0.9692424242424246,
+      "mrr@5": 0.9700606060606062
+    },
+    "n_eval": 1100,
+    "best_epoch": 5,
+    "status": "VERIFIED"
+  },
+  {
+    "tools": 45,
+    "variant": "ged_030",
+    "epochs": 5,
+    "out_dir": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1729\\upgraded\\TASK1_SBERT_FINE_TUNE\\SBERT_FT_GED030_45TOOL",
+    "train_returncode": 0,
+    "checkpoint": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1729\\upgraded\\TASK1_SBERT_FINE_TUNE\\SBERT_FT_GED030_45TOOL\\best_model.pt",
+    "verify_returncode": 0,
+    "metrics": {
+      "tool_set_f1": 0.9738779351961171,
+      "mean_ged_error": 0.2590909090909091,
+      "recall@1": 0.9481818181818182,
+      "recall@3": 0.9954545454545455,
+      "recall@5": 0.9990909090909091,
+      "mrr@1": 0.9481818181818182,
+      "mrr@3": 0.9701515151515154,
+      "mrr@5": 0.9709696969696971
+    },
+    "n_eval": 1100,
+    "best_epoch": 5,
+    "status": "VERIFIED"
+  },
+  {
+    "tools": 45,
+    "variant": "tied_weights",
+    "epochs": 5,
+    "out_dir": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1729\\upgraded\\TASK1_SBERT_FINE_TUNE\\SBERT_FT_TIED_45TOOL",
+    "train_returncode": 0,
+    "checkpoint": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1729\\upgraded\\TASK1_SBERT_FINE_TUNE\\SBERT_FT_TIED_45TOOL\\best_model.pt",
+    "verify_returncode": 0,
+    "metrics": {
+      "tool_set_f1": 0.9862957497048406,
+      "mean_ged_error": 0.14363636363636365,
+      "recall@1": 0.9745454545454545,
+      "recall@3": 0.9972727272727273,
+      "recall@5": 1.0,
+      "mrr@1": 0.9745454545454545,
+      "mrr@3": 0.985,
+      "mrr@5": 0.9856818181818182
+    },
+    "n_eval": 1100,
+    "best_epoch": 5,
+    "status": "VERIFIED"
+  }
+]

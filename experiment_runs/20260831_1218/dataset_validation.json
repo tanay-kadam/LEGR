@@ -1,0 +1,27 @@
+{
+  "validated_at": "2026-08-31T16:22:00Z",
+  "notes": "Fingerprints from SHA256 of committed CSVs. upgraded != upgraded_v3. No files modified during validation.",
+  "upgraded": {
+    "root": "C:\\Users\\tkadam\\LEGR\\upgraded",
+    "upgraded_15tools/train.csv": {"rows": 2814, "sha256": "3d71d1d7b04064dd0d5205b43c54ccf2f95c3106660a7a44181e6fb5fc1d9017"},
+    "upgraded_15tools/dev.csv": {"rows": 564, "sha256": "8d188a6fd3e9faab9cac3fd3fafb88a92ebb924a53107abbd7686aca6fb35bbd"},
+    "upgraded_15tools/test_topology_heldout.csv": {"rows": 592, "sha256": "47b2ec3f0c14727e67721ff73e8e524727906c8847635037153baae0b511be45"},
+    "upgraded_30tools/train.csv": {"rows": 1396, "sha256": "ffc4c5463414d077eb645eacae4378769c7ca2f24a0247954a3538f52b05c25a"},
+    "upgraded_30tools/dev.csv": {"rows": 332, "sha256": "14320105a734abb631412fc89c25799a05c15e573a2fff18a44e8d2b27f4de46"},
+    "upgraded_30tools/test_topology_heldout.csv": {"rows": 332, "sha256": "6e189bae86914deede6241615ec698e9094e2753f1760e3f1b8ef80fb8e27e81"},
+    "upgraded_30tools/hard_negatives.csv": {"rows": 322, "sha256": "6ce361d6bebaa75cc618e08cacf0fde9b6fed4e23d289d57a4308b1e5398ddf2"}
+  },
+  "upgraded_v3": {
+    "root": "C:\\Users\\tkadam\\LEGR\\upgraded_v3",
+    "upgraded_15tools/train.csv": {"rows": 2922, "sha256": "4668c68b50528b876b62195d9c54e1e5ac0a11b0c2c1e7b61fd2cb7019b12df4"},
+    "upgraded_15tools/dev.csv": {"rows": 587, "sha256": "6cb1667ef83b09db60eba024a7de5335047c62ad8a907c93ad5c1157b917391c"},
+    "upgraded_15tools/test_topology_heldout.csv": {"rows": 737, "sha256": "1a3fe69f4405f36b73d0b02d9103ed0e3363370123314ebc1cf08d49e6957a59"},
+    "upgraded_30tools/train.csv": {"rows": 1692, "sha256": "2588e9d2c554c5b34a69fad2690d83e635ebb7ad792e6fc54ae3574a8b8aa45f"},
+    "upgraded_30tools/dev.csv": {"rows": 403, "sha256": "50169238707b913512099495234ea09d157d668192a9e18ea4b95a0d46a7d486"},
+    "upgraded_30tools/test_topology_heldout.csv": {"rows": 550, "sha256": "7e35efe16fe62d691533050de5baca46bd42d60bcf1c411c857343ae81639ffe"},
+    "hard_negatives": "ABSENT — Dataset B LEGR eval does not attach upgraded hard negatives"
+  },
+  "schema": {
+    "graph_splits": ["query", "dag_id", "dag_text", "tools", "edges", "topo_family", "source", "split"]
+  }
+}

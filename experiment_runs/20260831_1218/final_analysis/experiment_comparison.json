@@ -1,0 +1,82 @@
+[
+  {
+    "experiment": "SBERT_FT_GED0",
+    "upgraded": "R@1=0.9217; F1=0.9721; GED=0.2078",
+    "upgraded_v3": "R@1=0.9273; F1=0.9654; GED=0.1564",
+    "verified": "YES",
+    "upgraded_status": "VERIFIED",
+    "upgraded_v3_status": "VERIFIED"
+  },
+  {
+    "experiment": "SBERT_FT_GED030",
+    "upgraded": "R@1=0.9217; F1=0.9721; GED=0.2078",
+    "upgraded_v3": "R@1=0.9273; F1=0.9654; GED=0.1564",
+    "verified": "YES",
+    "upgraded_status": "VERIFIED",
+    "upgraded_v3_status": "VERIFIED"
+  },
+  {
+    "experiment": "SBERT_FT_TIED",
+    "upgraded": "R@1=0.9458; F1=0.9810; GED=0.1807",
+    "upgraded_v3": "R@1=0.9364; F1=0.9595; GED=0.1509",
+    "verified": "YES",
+    "upgraded_status": "VERIFIED",
+    "upgraded_v3_status": "VERIFIED"
+  },
+  {
+    "experiment": "LEGR_ACTION_LATENT",
+    "upgraded": "NO SUPPORT sil=-0.011417719535529613",
+    "upgraded_v3": "NO SUPPORT sil=-0.013153651729226112",
+    "verified": "YES",
+    "upgraded_status": "VERIFIED",
+    "upgraded_v3_status": "VERIFIED"
+  },
+  {
+    "experiment": "LEGR_15TOOL_ZERO_SHOT_ATOMIC",
+    "upgraded": "Standard=84.0; Lexical=50.7; Confusable=45.1; Paraphrase=81.4",
+    "upgraded_v3": "Standard=92.8; Lexical=62.1; Confusable=59.1; Paraphrase=93.0",
+    "verified": "YES",
+    "upgraded_status": "VERIFIED",
+    "upgraded_v3_status": "VERIFIED"
+  },
+  {
+    "experiment": "LEGR_30TOOL_ZERO_SHOT_ATOMIC",
+    "upgraded": "Standard=63.8; Lexical=31.5; Confusable=36.4; Paraphrase=65.3",
+    "upgraded_v3": "Standard=91.2; Lexical=59.0; Confusable=51.6; Paraphrase=89.9",
+    "verified": "YES",
+    "upgraded_status": "VERIFIED",
+    "upgraded_v3_status": "VERIFIED"
+  },
+  {
+    "experiment": "DIRGNN_DIRECTED",
+    "upgraded": "R@1=0.6747; F1=0.8080; GED=1.0693",
+    "upgraded_v3": "R@1=0.7509; F1=0.8683; GED=0.8982",
+    "verified": "YES",
+    "upgraded_status": "VERIFIED",
+    "upgraded_v3_status": "VERIFIED"
+  },
+  {
+    "experiment": "DIRGNN_TIED_IN_OUT",
+    "upgraded": "R@1=0.7892; F1=0.8989; GED=0.5964",
+    "upgraded_v3": "R@1=0.8255; F1=0.9073; GED=0.6291",
+    "verified": "YES",
+    "upgraded_status": "VERIFIED",
+    "upgraded_v3_status": "VERIFIED"
+  },
+  {
+    "experiment": "LEGR_DEFAULT_GCN_30",
+    "upgraded": "R@1=0.8524; F1=0.9057; GED=0.4910",
+    "upgraded_v3": "R@1=0.9182; F1=0.9573; GED=0.2109",
+    "verified": "YES",
+    "upgraded_status": "VERIFIED",
+    "upgraded_v3_status": "VERIFIED"
+  },
+  {
+    "experiment": "LEGR_DEFAULT_GCN_15",
+    "upgraded": "R@1=0.9561; F1=0.9937; GED=0.1318",
+    "upgraded_v3": "R@1=0.9674; F1=0.9889; GED=0.1791",
+    "verified": "YES",
+    "upgraded_status": "VERIFIED",
+    "upgraded_v3_status": "VERIFIED"
+  }
+]

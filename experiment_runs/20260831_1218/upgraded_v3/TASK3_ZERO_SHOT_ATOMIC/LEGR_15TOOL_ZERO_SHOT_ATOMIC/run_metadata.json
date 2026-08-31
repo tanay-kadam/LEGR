@@ -1,0 +1,124 @@
+{
+  "run_id": "upgraded_v3__task3_atomic__legr_15tool__zero_shot_atomic__seed_42",
+  "run_name": "upgraded_v3__task3_atomic__legr_15tool__zero_shot_atomic__seed_42",
+  "dataset": "upgraded_v3",
+  "task": "task3_atomic",
+  "model": "legr_15tool",
+  "variant": "zero_shot_atomic",
+  "tool_count": 15,
+  "kind": "atomic_eval",
+  "seed": 42,
+  "device_requirement": "cuda",
+  "out_dir": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1218\\upgraded_v3\\TASK3_ZERO_SHOT_ATOMIC\\LEGR_15TOOL_ZERO_SHOT_ATOMIC",
+  "status": "VERIFIED",
+  "dependencies": [
+    "upgraded_v3__dep_legr__legr_gcn__gcn_undirected_15__seed_42"
+  ],
+  "expected_checkpoint": null,
+  "expected_outputs": [],
+  "verified": true,
+  "source_checkpoint": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1218\\upgraded_v3\\TASK4_DIRECTION_ABLATION\\LEGR_DEFAULT_GCN_15TOOL\\best_model.pt",
+  "source_checkpoint_sha256": "43ce2c18be93bc71cdbbbe6bdd05299787031761e25f6626c2a582896633f45c",
+  "runtime_s": 21.881684064865112,
+  "returncode": 0,
+  "metrics": {
+    "per_condition": {
+      "Standard": {
+        "n": 1005,
+        "correct": 933,
+        "accuracy_pct": 92.8,
+        "recall@1": 0.9283582089552239,
+        "recall@3": 0.9830845771144279,
+        "recall@5": 0.9920398009950249,
+        "mean_rank": 1.1492537313432836,
+        "multi_node_steal_rate": 0.0029850746268656717
+      },
+      "Lexical": {
+        "n": 1005,
+        "correct": 624,
+        "accuracy_pct": 62.1,
+        "recall@1": 0.6208955223880597,
+        "recall@3": 0.8557213930348259,
+        "recall@5": 0.9711442786069652,
+        "mean_rank": 1.8945273631840795,
+        "multi_node_steal_rate": 0.005970149253731343
+      },
+      "Confusable": {
+        "n": 450,
+        "correct": 266,
+        "accuracy_pct": 59.1,
+        "recall@1": 0.5911111111111111,
+        "recall@3": 0.9022222222222223,
+        "recall@5": 0.9533333333333334,
+        "mean_rank": 1.9644444444444444,
+        "multi_node_steal_rate": 0.028888888888888888
+      },
+      "Paraphrase": {
+        "n": 1255,
+        "correct": 1167,
+        "accuracy_pct": 93.0,
+        "recall@1": 0.9298804780876494,
+        "recall@3": 0.9840637450199203,
+        "recall@5": 0.9888446215139443,
+        "mean_rank": 1.1474103585657371,
+        "multi_node_steal_rate": 0.002390438247011952
+      }
+    },
+    "aggregate": {
+      "n": 3715,
+      "correct": 2990,
+      "accuracy_pct": 80.5
+    }
+  },
+  "independent_rerun": {
+    "per_condition": {
+      "Standard": {
+        "n": 1005,
+        "correct": 933,
+        "accuracy_pct": 92.8,
+        "recall@1": 0.9283582089552239,
+        "recall@3": 0.9830845771144279,
+        "recall@5": 0.9920398009950249,
+        "mean_rank": 1.1492537313432836,
+        "multi_node_steal_rate": 0.0029850746268656717
+      },
+      "Lexical": {
+        "n": 1005,
+        "correct": 624,
+        "accuracy_pct": 62.1,
+        "recall@1": 0.6208955223880597,
+        "recall@3": 0.8557213930348259,
+        "recall@5": 0.9711442786069652,
+        "mean_rank": 1.8945273631840795,
+        "multi_node_steal_rate": 0.005970149253731343
+      },
+      "Confusable": {
+        "n": 450,
+        "correct": 266,
+        "accuracy_pct": 59.1,
+        "recall@1": 0.5911111111111111,
+        "recall@3": 0.9022222222222223,
+        "recall@5": 0.9533333333333334,
+        "mean_rank": 1.9644444444444444,
+        "multi_node_steal_rate": 0.028888888888888888
+      },
+      "Paraphrase": {
+        "n": 1255,
+        "correct": 1167,
+        "accuracy_pct": 93.0,
+        "recall@1": 0.9298804780876494,
+        "recall@3": 0.9840637450199203,
+        "recall@5": 0.9888446215139443,
+        "mean_rank": 1.1474103585657371,
+        "multi_node_steal_rate": 0.002390438247011952
+      }
+    },
+    "aggregate": {
+      "n": 3715,
+      "correct": 2990,
+      "accuracy_pct": 80.5
+    }
+  },
+  "metric_diffs": [],
+  "ended": "2026-08-31T17:07:25.398172+00:00"
+}

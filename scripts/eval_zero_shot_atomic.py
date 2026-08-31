@@ -6,6 +6,12 @@ corpus and measures whether the correct one-node graph is retrieved.
 
 Does not retrain. Does not register OOV routing names.
 
+``--tool_count`` selects the frozen LEGR encoder and the compositional DAG
+pool (15- or 30-tool). Atomic *queries* always come from
+``upgraded_data/routing_15tools`` because those labels alias onto the LEGR
+DAG vocabulary. ``routing_30tools`` is a separate routing-only benchmark
+and is never registered into a frozen embedding table.
+
 Usage::
 
     python scripts/eval_zero_shot_atomic.py --tool_count 15 \\
@@ -17,6 +23,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -178,18 +185,21 @@ def parse_args():
         default="upgraded/upgraded_15tools/test_topology_heldout.csv",
     )
     p.add_argument("--output", default="artifacts/zero_shot_atomic")
+    p.add_argument("--device", default="cuda")
     p.add_argument("--dry_run", action="store_true", help="Build corpus only; no encoder")
     return p.parse_args()
 
 
 def main():
     args = parse_args()
-    if args.tool_count != 15:
+    if args.tool_count not in (15, 30):
         raise ValueError(
-            "Zero-shot atomic eval is defined for the 15-tool routing benchmark "
-            "plus the two-name alias map. 30-tool is out of scope (vocab mismatch)."
+            "Zero-shot atomic eval supports --tool_count 15 or 30. "
+            "Queries always use routing_15tools (LEGR DAG aliases). "
+            "routing_30tools labels are a separate vocabulary and are OOV "
+            "for a frozen DAG encoder."
         )
-    apply_tool_count_override(15)
+    apply_tool_count_override(args.tool_count)
     out_dir = Path(args.output)
     if not out_dir.is_absolute():
         out_dir = ROOT / out_dir
@@ -223,10 +233,20 @@ def main():
         "n_compositional_unique": comp_ds.num_unique_dags,
         "n_one_node_injected": len(extra),
         "n_unified": len(unique),
+        "encoder_tool_count": args.tool_count,
+        "query_benchmark": "routing_15tools",
+        "routing_30_benchmark_used": False,
         "aliases": {"query_database": "db_read", "update_database": "db_write"},
         "legr_15_tools": list(LEGR_15_TOOLS),
+        "one_node_tools": list(LEGR_15_TOOLS),
         "self_loops": "Not added by us. GCNConv may add self-loops internally.",
         "fake_edges": False,
+        "protocol_note": (
+            "Atomic queries and one-node candidates are the 15-tool routing "
+            "benchmark, aliased onto LEGR DAG names. --tool_count selects the "
+            "frozen encoder and compositional DAG pool only. routing_30tools "
+            "is not used (labels are OOV for the DAG embedding table)."
+        ),
     }
     stress_preview = {}
     for name, path in STRESS_CSVS.items():
@@ -258,7 +278,12 @@ def main():
         print("Dry run / no checkpoint: corpus written.")
         return
 
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    want_cuda = str(args.device).startswith("cuda")
+    if want_cuda and not torch.cuda.is_available():
+        raise RuntimeError("CUDA required for encoder eval but torch.cuda.is_available() is False")
+    device = torch.device(args.device if want_cuda else "cpu")
+    if want_cuda:
+        print(f"Zero-shot atomic encoder on {device} ({torch.cuda.get_device_name(device)})")
     model, cfg, tokenizer = _load_model_and_tokenizer(args.checkpoint, device)
     model.eval()
     _, _, bidirectional = resolve_graph_encoder_settings(cfg)
@@ -295,8 +320,10 @@ def main():
         encoding="utf-8",
     )
     (out_dir / "repro.md").write_text(
-        f"python scripts/eval_zero_shot_atomic.py --tool_count 15 "
+        f"python scripts/eval_zero_shot_atomic.py --tool_count {args.tool_count} "
         f"--checkpoint {_repo_rel(args.checkpoint) if args.checkpoint else 'path/to/best_model.pt'} "
+        f"--compositional_csv {_repo_rel(comp_csv)} "
+        f"--device {args.device} "
         f"--output {_repo_rel(out_dir)}\n",
         encoding="utf-8",
     )
@@ -336,3 +363,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # Windows CUDA driver teardown can hang after a finished eval.
+    os._exit(0)

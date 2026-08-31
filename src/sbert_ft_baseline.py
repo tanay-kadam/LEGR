@@ -437,6 +437,8 @@ def main(cfg: TrainConfig, *, tied: bool = False, eval_after: bool = True) -> st
     )
 
     device = torch.device(cfg.device)
+    if device.type == "cuda" and not torch.cuda.is_available():
+        raise RuntimeError("BLOCKED_CUDA: device=cuda but torch.cuda.is_available() is False")
     model = SBERTFineTuneDualEncoder(
         embed_dim=cfg.embed_dim,
         text_model_name=cfg.text_model,
@@ -444,6 +446,12 @@ def main(cfg: TrainConfig, *, tied: bool = False, eval_after: bool = True) -> st
         num_frozen_layers=cfg.num_frozen_layers,
         tied=tied,
     ).to(device)
+    if device.type == "cuda" and next(model.parameters()).device.type != "cuda":
+        raise RuntimeError(f"SBERT-FT parameters are not on CUDA: {next(model.parameters()).device}")
+    print(
+        f"  device={device}  cuda={torch.cuda.is_available()}  "
+        f"gpu={torch.cuda.get_device_name(device) if device.type == 'cuda' else 'n/a'}"
+    )
     criterion = GraphAwareContrastiveLoss(
         temperature_init=cfg.temperature_init,
         lambda_ged=cfg.lambda_ged,
@@ -540,6 +548,12 @@ def main(cfg: TrainConfig, *, tied: bool = False, eval_after: bool = True) -> st
     if wandb is not None:
         wandb.finish()
 
+    best = ckpt_dir / "best_model.pt"
+    if eval_after and best.exists():
+        ckpt_best = torch.load(best, map_location=device, weights_only=False)
+        model.load_state_dict(ckpt_best["model_state"])
+        print(f"  Reloaded best checkpoint for eval: {best} (epoch={ckpt_best.get('epoch')})")
+
     if eval_after:
         eval_path = Path(cfg.train_csv).with_name("test_topology_heldout.csv")
         if not eval_path.exists():
@@ -564,7 +578,6 @@ def main(cfg: TrainConfig, *, tied: bool = False, eval_after: bool = True) -> st
                     json.dumps(metrics, indent=2), encoding="utf-8",
                 )
 
-    best = ckpt_dir / "best_model.pt"
     return str(best if best.exists() else ckpt_dir / "final_model.pt")
 
 

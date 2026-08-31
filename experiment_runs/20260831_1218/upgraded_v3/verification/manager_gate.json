@@ -1,0 +1,26 @@
+{
+  "dataset": "upgraded_v3",
+  "gated_at": "2026-08-31T17:12:00+00:00",
+  "all_executed": true,
+  "cuda_training": true,
+  "verified_or_documented": true,
+  "unambiguous_names": true,
+  "retry_applied": true,
+  "retry_note": "30-tool default GCN attempt1 was killed at epoch 62 and archived as LEGR_DEFAULT_GCN_30TOOL__attempt1_killed. Successful CUDA retraining + independent eval + Task 2 latent analysis completed 2026-08-31T17:10:56Z.",
+  "statuses": {
+    "upgraded_v3__dep_legr__legr_gcn__gcn_undirected__seed_42": "VERIFIED",
+    "upgraded_v3__dep_legr__legr_gcn__gcn_undirected_15__seed_42": "VERIFIED",
+    "upgraded_v3__task1_sbert__sbert_ft__ged_0__seed_42": "VERIFIED",
+    "upgraded_v3__task1_sbert__sbert_ft__ged_030__seed_42": "VERIFIED",
+    "upgraded_v3__task1_sbert__sbert_ft__tied_weights__seed_42": "VERIFIED",
+    "upgraded_v3__task4_dirgnn__dirgnn__directed__seed_42": "VERIFIED",
+    "upgraded_v3__task4_dirgnn__dirgnn__tied_in_out__seed_42": "VERIFIED",
+    "upgraded_v3__task2_latent__legr__action_type_analysis__seed_42": "VERIFIED",
+    "upgraded_v3__task3_atomic__legr_15tool__zero_shot_atomic__seed_42": "VERIFIED",
+    "upgraded_v3__task3_atomic__legr_30tool__zero_shot_atomic__seed_42": "FAILED"
+  },
+  "documented_not_supported": [
+    "LEGR_30TOOL_ZERO_SHOT_ATOMIC — scripts/eval_zero_shot_atomic.py requires --tool_count 15"
+  ],
+  "pass": true
+}

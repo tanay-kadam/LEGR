@@ -1,0 +1,382 @@
+query,gt_tool,rank_of_one_node,top1_is_one_node,top1_dag_text,top1_cosine,gt_cosine
+We haven't heard from staging-db-02 in a while.,check_status,2,True,quarantine_system,0.6238647699356079,0.581454873085022
+We haven't heard from ml-infer-05 in a while.,check_status,2,True,quarantine_system,0.6090304255485535,0.5704417824745178
+We haven't heard from auth-svc-04 in a while.,check_status,3,True,quarantine_system,0.6209660172462463,0.5584776997566223
+We haven't heard from payment-api-03 in a while.,check_status,2,True,quarantine_system,0.6343662738800049,0.5920359492301941
+I'd like a pulse on payment-api-03.,check_status,3,True,restart_service,0.643319845199585,0.5625819563865662
+I'd like a pulse on staging-db-02.,check_status,3,True,quarantine_system,0.6173744201660156,0.5815386176109314
+We haven't heard from cdn-edge-06 in a while.,check_status,2,True,quarantine_system,0.6195809245109558,0.562608003616333
+I'd like a pulse on prod-web-01.,check_status,3,True,restart_service,0.6408668160438538,0.5793778300285339
+We haven't heard from prod-web-01 in a while.,check_status,2,True,quarantine_system,0.6372625827789307,0.5929797291755676
+I'd like a pulse on auth-svc-04.,check_status,3,True,restart_service,0.644389808177948,0.5513367056846619
+I'd like a pulse on cdn-edge-06.,check_status,3,True,quarantine_system,0.6042467951774597,0.5727628469467163
+I'd like a pulse on ml-infer-05.,check_status,3,True,restart_service,0.6340065598487854,0.5651084184646606
+We haven't heard from auth-svc-04 in a while.,check_status,3,True,quarantine_system,0.6209660172462463,0.5584776997566223
+Make sure this doesn't slip through the cracks.,create_ticket,2,True,escalate_to_human,0.5441374182701111,0.5216109156608582
+We should have a reference number for Frank's issue.,create_ticket,2,True,escalate_to_human,0.5218425393104553,0.5142525434494019
+We should have a reference number for Charlie's issue.,create_ticket,3,True,escalate_to_human,0.5164892673492432,0.5040571689605713
+This needs to be logged for follow-up.,create_ticket,3,True,log_audit_event,0.6755034923553467,0.5653958320617676
+We should have a reference number for Alice's issue.,create_ticket,3,True,escalate_to_human,0.5525165796279907,0.5110132098197937
+This should be documented somewhere official.,create_ticket,2,True,generate_report,0.6477375030517578,0.6058352589607239
+Someone should formalize this complaint from Bob.,create_ticket,5,True,send_notification,0.6076822876930237,0.4707014560699463
+Can we get a formal record of Alice's problem?,create_ticket,2,False,generate_report -> send_notification,0.3431105613708496,0.3164016604423523
+Someone should formalize this complaint from Eve.,create_ticket,3,True,send_notification,0.6070422530174255,0.500339925289154
+We should have a reference number for Diana's issue.,create_ticket,3,True,db_read,0.5644852519035339,0.5040664672851562
+Eve reported something that needs tracking.,create_ticket,2,True,generate_report,0.685967743396759,0.6632989645004272
+Can we get a formal record of Diana's problem?,create_ticket,2,True,db_read,0.34006422758102417,0.337346613407135
+Someone should formalize this complaint from Frank.,create_ticket,4,True,send_notification,0.5773259401321411,0.474471777677536
+Charlie reported something that needs tracking.,create_ticket,2,True,generate_report,0.6705030798912048,0.623390793800354
+Someone should formalize this complaint from Alice.,create_ticket,5,True,send_notification,0.589286744594574,0.45660388469696045
+Alice reported something that needs tracking.,create_ticket,2,True,generate_report,0.6681101322174072,0.6344690918922424
+Someone should formalize this complaint from Grace.,create_ticket,3,True,send_notification,0.5867301225662231,0.48055052757263184
+Someone should formalize this complaint from Diana.,create_ticket,4,True,send_notification,0.5873314142227173,0.4610653817653656
+Someone should formalize this complaint from Charlie.,create_ticket,4,True,send_notification,0.5527375340461731,0.45187947154045105
+Can we get a formal record of Grace's problem?,create_ticket,2,False,"escalate_to_human -> log_audit_event, log_audit_event -> reset_password",0.35230347514152527,0.3431539535522461
+Grace reported something that needs tracking.,create_ticket,2,True,generate_report,0.6747423410415649,0.6393146514892578
+Eve reported something that needs tracking.,create_ticket,2,True,generate_report,0.685967743396759,0.6632989645004272
+Frank reported something that needs tracking.,create_ticket,2,True,generate_report,0.6562509536743164,0.6280181407928467
+We should have a reference number for Bob's issue.,create_ticket,2,True,escalate_to_human,0.5520533323287964,0.5279815196990967
+This needs to be logged for follow-up.,create_ticket,3,True,log_audit_event,0.6755034923553467,0.5653958320617676
+Bob reported something that needs tracking.,create_ticket,2,True,generate_report,0.6855014562606812,0.6333279609680176
+We should have a reference number for Frank's issue.,create_ticket,2,True,escalate_to_human,0.5218425393104553,0.5142525434494019
+Diana reported something that needs tracking.,create_ticket,2,True,generate_report,0.6441096067428589,0.6168668270111084
+This should be documented somewhere official.,create_ticket,2,True,generate_report,0.6477375030517578,0.6058352589607239
+Make sure this doesn't slip through the cracks.,create_ticket,2,True,escalate_to_human,0.5441374182701111,0.5216109156608582
+We should have a reference number for Alice's issue.,create_ticket,3,True,escalate_to_human,0.5525165796279907,0.5110132098197937
+This needs to be logged for follow-up.,create_ticket,3,True,log_audit_event,0.6755034923553467,0.5653958320617676
+Alice reported something that needs tracking.,create_ticket,2,True,generate_report,0.6681101322174072,0.6344690918922424
+We should have a reference number for Frank's issue.,create_ticket,2,True,escalate_to_human,0.5218425393104553,0.5142525434494019
+Alice reported something that needs tracking.,create_ticket,2,True,generate_report,0.6681101322174072,0.6344690918922424
+This needs to be logged for follow-up.,create_ticket,3,True,log_audit_event,0.6755034923553467,0.5653958320617676
+Someone should formalize this complaint from Diana.,create_ticket,4,True,send_notification,0.5873314142227173,0.4610653817653656
+We need human intervention for Eve.,escalate_to_human,2,True,restart_service,0.522682249546051,0.5035678744316101
+This is beyond what automation can handle.,escalate_to_human,3,True,send_notification,0.5985233187675476,0.5342012047767639
+We need someone with judgment on this.,escalate_to_human,6,True,create_ticket,0.5242671966552734,0.47069045901298523
+Can we get a senior person to look at Grace's case?,escalate_to_human,2,True,create_ticket,0.43774092197418213,0.3997604250907898
+Can we get a senior person to look at Eve's case?,escalate_to_human,2,True,create_ticket,0.46017587184906006,0.44316548109054565
+Grace's case is too nuanced for a bot.,escalate_to_human,2,True,provision_vm,0.43818211555480957,0.4310099184513092
+Eve's case is too nuanced for a bot.,escalate_to_human,2,True,create_ticket,0.4506323039531708,0.4503684639930725
+Can we get a senior person to look at Charlie's case?,escalate_to_human,2,True,db_read,0.4030629098415375,0.40254080295562744
+The automated response isn't going to cut it for Frank.,escalate_to_human,3,True,send_notification,0.6200259923934937,0.540830671787262
+We need human intervention for Grace.,escalate_to_human,3,True,restart_service,0.4843212962150574,0.4629287123680115
+The automated response isn't going to cut it for Alice.,escalate_to_human,3,True,send_notification,0.6266034245491028,0.5793623328208923
+The automated response isn't going to cut it for Diana.,escalate_to_human,4,True,send_notification,0.6183945536613464,0.5595204830169678
+The automated response isn't going to cut it for Bob.,escalate_to_human,3,True,send_notification,0.6395083069801331,0.5845045447349548
+The automated response isn't going to cut it for Charlie.,escalate_to_human,4,True,process_refund,0.6118903160095215,0.5573221445083618
+The automated response isn't going to cut it for Grace.,escalate_to_human,5,True,send_notification,0.6331979036331177,0.5326350331306458
+The automated response isn't going to cut it for Eve.,escalate_to_human,4,True,send_notification,0.6226537227630615,0.5255448222160339
+Can we get a senior person to look at Diana's case?,escalate_to_human,3,True,db_read,0.45441728830337524,0.40835127234458923
+The automated response isn't going to cut it for Frank.,escalate_to_human,3,True,send_notification,0.6200259923934937,0.540830671787262
+The automated response isn't going to cut it for Frank.,escalate_to_human,3,True,send_notification,0.6200259923934937,0.540830671787262
+We need human intervention for Eve.,escalate_to_human,2,True,restart_service,0.522682249546051,0.5035678744316101
+Can we get a senior person to look at Eve's case?,escalate_to_human,2,True,create_ticket,0.46017587184906006,0.44316548109054565
+We need human intervention for Grace.,escalate_to_human,3,True,restart_service,0.4843212962150574,0.4629287123680115
+Can we get a senior person to look at Grace's case?,escalate_to_human,2,True,create_ticket,0.43774092197418213,0.3997604250907898
+We need someone with judgment on this.,escalate_to_human,6,True,create_ticket,0.5242671966552734,0.47069045901298523
+We owe Finance a write-up.,generate_report,3,True,process_refund,0.6510540246963501,0.4870467782020569
+Management is asking for numbers.,generate_report,4,True,escalate_to_human,0.5376967191696167,0.4512387812137604
+We owe Engineering a write-up.,generate_report,4,True,process_refund,0.5809168815612793,0.543167769908905
+Stakeholders want to see the data in a digestible format.,generate_report,3,True,db_read,0.6106486916542053,0.5030960440635681
+We owe HR a write-up.,generate_report,4,True,process_refund,0.6372297406196594,0.5028318166732788
+We owe Marketing a write-up.,generate_report,4,True,process_refund,0.6222734451293945,0.4967244863510132
+We owe Legal a write-up.,generate_report,4,True,process_refund,0.5990987420082092,0.4665374159812927
+Management is asking for numbers.,generate_report,4,True,escalate_to_human,0.5376967191696167,0.4512387812137604
+Management is asking for numbers.,generate_report,4,True,escalate_to_human,0.5376967191696167,0.4512387812137604
+Management is asking for numbers.,generate_report,4,True,escalate_to_human,0.5376967191696167,0.4512387812137604
+Management is asking for numbers.,generate_report,4,True,escalate_to_human,0.5376967191696167,0.4512387812137604
+Management is asking for numbers.,generate_report,4,True,escalate_to_human,0.5376967191696167,0.4512387812137604
+Management is asking for numbers.,generate_report,4,True,escalate_to_human,0.5376967191696167,0.4512387812137604
+Management is asking for numbers.,generate_report,4,True,escalate_to_human,0.5376967191696167,0.4512387812137604
+Management is asking for numbers.,generate_report,4,True,escalate_to_human,0.5376967191696167,0.4512387812137604
+Stakeholders want to see the data in a digestible format.,generate_report,3,True,db_read,0.6106486320495605,0.5030959248542786
+Management is asking for numbers.,generate_report,4,True,escalate_to_human,0.5376968383789062,0.4512389004230499
+We owe Legal a write-up.,generate_report,4,True,process_refund,0.5990986824035645,0.46653732657432556
+We owe Finance a write-up.,generate_report,3,True,process_refund,0.6510541439056396,0.4870467483997345
+Stakeholders want to see the data in a digestible format.,generate_report,3,True,db_read,0.6106486320495605,0.5030959248542786
+This action needs to be documented for regulators.,log_audit_event,5,True,generate_report,0.6395241618156433,0.5025665163993835
+This needs to be in the official record.,log_audit_event,4,True,db_read,0.590283215045929,0.4779759645462036
+We need a record of what just happened.,log_audit_event,2,True,db_read,0.5541597008705139,0.5150124430656433
+The regulator will ask if we documented this.,log_audit_event,8,True,generate_report,0.6185083985328674,0.463449090719223
+This should be traceable later if anyone asks.,log_audit_event,10,True,db_read,0.6342247724533081,0.4736242890357971
+Make sure there's a trace of what was done.,log_audit_event,3,True,create_ticket,0.5555468797683716,0.5392640233039856
+The regulator will ask if we documented this.,log_audit_event,8,True,generate_report,0.6185083985328674,0.463449090719223
+This needs to be in the official record.,log_audit_event,4,True,db_read,0.590283215045929,0.4779759645462036
+This needs to be in the official record.,log_audit_event,4,True,db_read,0.590283215045929,0.4779759645462036
+This action needs to be documented for regulators.,log_audit_event,5,True,generate_report,0.6395241618156433,0.5025665163993835
+This action needs to be documented for regulators.,log_audit_event,5,True,generate_report,0.6395241618156433,0.5025665163993835
+Make sure there's a trace of what was done.,log_audit_event,3,True,create_ticket,0.5555468797683716,0.5392640233039856
+We need a record of what just happened.,log_audit_event,2,True,db_read,0.5541597008705139,0.5150124430656433
+This needs to be in the official record.,log_audit_event,4,True,db_read,0.590283215045929,0.4779759645462036
+This should be traceable later if anyone asks.,log_audit_event,10,True,db_read,0.6342247724533081,0.4736242890357971
+This should be traceable later if anyone asks.,log_audit_event,10,True,db_read,0.6342247724533081,0.4736242890357971
+This action needs to be documented for regulators.,log_audit_event,5,True,generate_report,0.6395241618156433,0.5025665163993835
+This action needs to be documented for regulators.,log_audit_event,5,True,generate_report,0.6395241618156433,0.5025665163993835
+This action needs to be documented for regulators.,log_audit_event,5,True,generate_report,0.6395241618156433,0.5025665163993835
+Make sure there's a trace of what was done.,log_audit_event,3,True,create_ticket,0.5555468797683716,0.5392640233039856
+We need a record of what just happened.,log_audit_event,2,True,db_read,0.5541597008705139,0.5150124430656433
+This action needs to be documented for regulators.,log_audit_event,5,True,generate_report,0.6395241618156433,0.5025665163993835
+Make sure there's a trace of what was done.,log_audit_event,3,True,create_ticket,0.5555468797683716,0.5392640233039856
+This action needs to be documented for regulators.,log_audit_event,5,True,generate_report,0.6395241618156433,0.5025665163993835
+This needs to be in the official record.,log_audit_event,4,True,db_read,0.590283215045929,0.4779759645462036
+This action needs to be documented for regulators.,log_audit_event,5,True,generate_report,0.6395241618156433,0.5025665163993835
+We need a record of what just happened.,log_audit_event,2,True,db_read,0.5541597008705139,0.5150124430656433
+The regulator will ask if we documented this.,log_audit_event,8,True,generate_report,0.6185083985328674,0.463449090719223
+The regulator will ask if we documented this.,log_audit_event,8,True,generate_report,0.6185083985328674,0.463449090719223
+This needs to be in the official record.,log_audit_event,4,True,db_read,0.590283215045929,0.4779759645462036
+The regulator will ask if we documented this.,log_audit_event,8,True,generate_report,0.6185083985328674,0.463449090719223
+The regulator will ask if we documented this.,log_audit_event,8,True,generate_report,0.6185084581375122,0.46344923973083496
+Make sure there's a trace of what was done.,log_audit_event,3,True,create_ticket,0.5555468797683716,0.5392639636993408
+The regulator will ask if we documented this.,log_audit_event,8,True,generate_report,0.6185084581375122,0.46344923973083496
+This should be traceable later if anyone asks.,log_audit_event,10,True,db_read,0.6342248320579529,0.4736242890357971
+Make sure there's a trace of what was done.,log_audit_event,3,True,create_ticket,0.5555468797683716,0.5392639636993408
+This action needs to be documented for regulators.,log_audit_event,5,True,generate_report,0.6395244002342224,0.5025665163993835
+The regulator will ask if we documented this.,log_audit_event,8,True,generate_report,0.6185084581375122,0.46344923973083496
+There was a billing mistake with #53698.,process_refund,2,True,update_subscription,0.577998697757721,0.5753305554389954
+Marketing's current resources aren't enough.,provision_vm,2,True,db_read,0.540633499622345,0.527847409248352
+HR's current resources aren't enough.,provision_vm,3,True,db_read,0.5481449961662292,0.49406805634498596
+We're short on infrastructure for Finance.,provision_vm,3,True,process_refund,0.6297293901443481,0.5481793880462646
+We're running out of capacity for HR.,provision_vm,2,True,process_refund,0.4847216010093689,0.47170260548591614
+Finance's current resources aren't enough.,provision_vm,4,True,generate_report,0.4932306110858917,0.4745546281337738
+Legal's current resources aren't enough.,provision_vm,3,True,generate_report,0.5752544403076172,0.5353970527648926
+We're running out of capacity for Finance.,provision_vm,2,True,process_refund,0.518447756767273,0.5049226880073547
+HR's current resources aren't enough.,provision_vm,3,True,db_read,0.5481449365615845,0.49406811594963074
+We're short on infrastructure for Finance.,provision_vm,3,True,process_refund,0.6297293901443481,0.5481793880462646
+payment-api-03 is showing signs of compromise.,quarantine_system,4,True,check_status,0.6613143682479858,0.4690732955932617
+Something on prod-web-01 looks compromised.,quarantine_system,4,True,scan_malware,0.7252694964408875,0.49810177087783813
+That box is behaving erratically -- cut it off.,quarantine_system,4,True,provision_vm,0.6067785620689392,0.4223799705505371
+Something on ml-infer-05 looks compromised.,quarantine_system,4,True,scan_malware,0.6769284605979919,0.5006883144378662
+prod-web-01 is showing signs of compromise.,quarantine_system,3,True,check_status,0.7025244832038879,0.49184614419937134
+cdn-edge-06 is a risk to the rest of the infrastructure.,quarantine_system,4,True,scan_malware,0.6185181140899658,0.5163606405258179
+Something on staging-db-02 looks compromised.,quarantine_system,4,True,scan_malware,0.6612858772277832,0.49902060627937317
+ml-infer-05 is a risk to the rest of the infrastructure.,quarantine_system,2,True,scan_malware,0.5986594557762146,0.5357709527015686
+Something on cdn-edge-06 looks compromised.,quarantine_system,4,True,scan_malware,0.7206399440765381,0.48818033933639526
+ml-infer-05 is showing signs of compromise.,quarantine_system,4,True,check_status,0.6755943894386292,0.39744582772254944
+staging-db-02 is showing signs of compromise.,quarantine_system,3,True,check_status,0.6815475225448608,0.45883798599243164
+prod-web-01 is a risk to the rest of the infrastructure.,quarantine_system,2,True,scan_malware,0.6077938675880432,0.5703672766685486
+auth-svc-04 is a risk to the rest of the infrastructure.,quarantine_system,4,True,scan_malware,0.6357235312461853,0.5638331174850464
+Get ml-infer-05 out of the environment until we know more.,quarantine_system,2,True,check_status,0.5547835826873779,0.551647961139679
+cdn-edge-06 is showing signs of compromise.,quarantine_system,4,True,check_status,0.6874614357948303,0.43865928053855896
+Something on payment-api-03 looks compromised.,quarantine_system,4,True,scan_malware,0.7007735371589661,0.48035579919815063
+Something on auth-svc-04 looks compromised.,quarantine_system,4,True,scan_malware,0.6996076703071594,0.49105289578437805
+ml-infer-05 is a risk to the rest of the infrastructure.,quarantine_system,2,True,scan_malware,0.5986594557762146,0.5357709527015686
+auth-svc-04 is showing signs of compromise.,quarantine_system,4,True,check_status,0.6623768210411072,0.4934593141078949
+staging-db-02 is a risk to the rest of the infrastructure.,quarantine_system,2,True,scan_malware,0.5653511881828308,0.5550890564918518
+payment-api-03 is a risk to the rest of the infrastructure.,quarantine_system,2,True,scan_malware,0.5914307832717896,0.5463302135467529
+That box is behaving erratically -- cut it off.,quarantine_system,4,True,provision_vm,0.6067785620689392,0.4223799705505371
+ml-infer-05 is a risk to the rest of the infrastructure.,quarantine_system,2,True,scan_malware,0.5986594557762146,0.5357709527015686
+payment-api-03 is showing signs of compromise.,quarantine_system,4,True,check_status,0.6613143682479858,0.4690732955932617
+Something on cdn-edge-06 looks compromised.,quarantine_system,4,True,scan_malware,0.7206399440765381,0.48818033933639526
+"We got a question about #31450, need context.",db_read,2,True,escalate_to_human,0.630926787853241,0.5846037864685059
+"We got a question about #60122, need context.",db_read,2,True,escalate_to_human,0.623824417591095,0.5539001226425171
+"We got a question about #10234, need context.",db_read,2,True,escalate_to_human,0.5983947515487671,0.5600360631942749
+"We got a question about #42017, need context.",db_read,2,True,escalate_to_human,0.6116402745246887,0.6006105542182922
+What do we have on file for Frank?,db_read,2,True,create_ticket,0.5626058578491211,0.5557238459587097
+Grace is complaining about being locked out.,reset_password,4,True,create_ticket,0.5425317883491516,0.4622012972831726
+Eve is complaining about being locked out.,reset_password,7,True,create_ticket,0.5721908211708069,0.43470025062561035
+Charlie says the system won't let them in.,reset_password,2,True,escalate_to_human,0.5274455547332764,0.4800688326358795
+Diana says the system won't let them in.,reset_password,2,True,escalate_to_human,0.5413058400154114,0.4948970675468445
+Alice is complaining about being locked out.,reset_password,4,True,escalate_to_human,0.5384348630905151,0.47733205556869507
+Alice is locked out of their account.,reset_password,2,True,process_refund,0.49183711409568787,0.488136887550354
+Frank says the system won't let them in.,reset_password,2,True,escalate_to_human,0.5148431062698364,0.4965573847293854
+Diana is complaining about being locked out.,reset_password,5,True,create_ticket,0.5496512651443481,0.4476102590560913
+Charlie is locked out of their account.,reset_password,5,True,process_refund,0.46777957677841187,0.40937671065330505
+Frank is locked out of their account.,reset_password,4,True,process_refund,0.47301632165908813,0.4322167932987213
+Bob is complaining about being locked out.,reset_password,6,True,create_ticket,0.5638207197189331,0.44274836778640747
+Bob keeps getting 'access denied'.,reset_password,2,True,escalate_to_human,0.48230624198913574,0.4737316370010376
+Eve is locked out of their account.,reset_password,3,True,quarantine_system,0.5081084370613098,0.47033029794692993
+Frank is complaining about being locked out.,reset_password,5,True,create_ticket,0.5386134386062622,0.4506213068962097
+Alice says the system won't let them in.,reset_password,2,True,escalate_to_human,0.5589272379875183,0.5207995176315308
+We need to restore Charlie's access.,reset_password,2,True,process_refund,0.4722526967525482,0.4651377499103546
+Charlie is complaining about being locked out.,reset_password,5,True,create_ticket,0.5482246279716492,0.43956243991851807
+Bob is locked out of their account.,reset_password,4,True,process_refund,0.5012450218200684,0.44123199582099915
+Bob says the system won't let them in.,reset_password,2,True,escalate_to_human,0.5296227931976318,0.48487427830696106
+Grace is locked out of their account.,reset_password,2,True,process_refund,0.4516832232475281,0.4437626004219055
+Diana is locked out of their account.,reset_password,4,True,db_read,0.49948981404304504,0.4259762763977051
+Something on payment-api-03 stopped working.,restart_service,2,True,check_status,0.6451470851898193,0.5504575371742249
+Requests to staging-db-02 are timing out.,restart_service,3,True,check_status,0.6159009337425232,0.5251007676124573
+staging-db-02 has been unresponsive.,restart_service,4,True,check_status,0.6024706959724426,0.42614850401878357
+Something on prod-web-01 stopped working.,restart_service,2,True,check_status,0.6286805868148804,0.5274133682250977
+Requests to payment-api-03 are timing out.,restart_service,2,True,check_status,0.6338549852371216,0.5690699815750122
+Requests to auth-svc-04 are timing out.,restart_service,2,True,check_status,0.6214842796325684,0.5769218802452087
+ml-infer-05 hasn't responded in a while.,restart_service,2,True,check_status,0.6129766702651978,0.6014455556869507
+Requests to ml-infer-05 are timing out.,restart_service,2,True,check_status,0.6013044714927673,0.5299429893493652
+Users are complaining that cdn-edge-06 is down.,restart_service,3,True,check_status,0.6108420491218567,0.48371079564094543
+Users are complaining that staging-db-02 is down.,restart_service,3,True,check_status,0.6025932431221008,0.48531562089920044
+The service on ml-infer-05 is in a bad state.,restart_service,2,True,check_status,0.6174609065055847,0.5597167611122131
+Users are complaining that ml-infer-05 is down.,restart_service,2,True,check_status,0.6051099300384521,0.522708535194397
+cdn-edge-06 is stuck and not serving requests.,restart_service,2,True,check_status,0.5804846882820129,0.5299737453460693
+The service on auth-svc-04 is in a bad state.,restart_service,2,True,check_status,0.6278876066207886,0.6190605759620667
+Something on cdn-edge-06 stopped working.,restart_service,2,True,check_status,0.6336249113082886,0.46183210611343384
+Users are complaining that prod-web-01 is down.,restart_service,2,True,check_status,0.6028887033462524,0.5260659456253052
+ml-infer-05 has been unresponsive.,restart_service,5,True,check_status,0.5884882211685181,0.4240427017211914
+Requests to prod-web-01 are timing out.,restart_service,2,True,check_status,0.6222389340400696,0.558970034122467
+staging-db-02 is stuck and not serving requests.,restart_service,2,True,check_status,0.5557705163955688,0.5290383696556091
+Users are complaining that auth-svc-04 is down.,restart_service,2,True,check_status,0.5967624187469482,0.5292325019836426
+Something on ml-infer-05 stopped working.,restart_service,2,True,check_status,0.6030779480934143,0.49871543049812317
+The service on payment-api-03 is in a bad state.,restart_service,2,True,check_status,0.6330156326293945,0.6179415583610535
+The service on prod-web-01 is in a bad state.,restart_service,2,True,check_status,0.6557354927062988,0.609923243522644
+cdn-edge-06 has been unresponsive.,restart_service,5,True,check_status,0.6067202091217041,0.4203864634037018
+Requests to cdn-edge-06 are timing out.,restart_service,3,True,check_status,0.6351252198219299,0.5333237648010254
+cdn-edge-06 hasn't responded in a while.,restart_service,2,True,escalate_to_human,0.6132862567901611,0.5988368988037109
+Users are complaining that payment-api-03 is down.,restart_service,2,True,check_status,0.5979983806610107,0.5320769548416138
+prod-web-01 has been unresponsive.,restart_service,2,True,check_status,0.6153343319892883,0.48697367310523987
+staging-db-02 hasn't responded in a while.,restart_service,2,True,check_status,0.628593385219574,0.5901776552200317
+prod-web-01 is stuck and not serving requests.,restart_service,2,True,check_status,0.5798261165618896,0.5699175596237183
+auth-svc-04 has been unresponsive.,restart_service,2,True,check_status,0.5815837383270264,0.5112051367759705
+Something on auth-svc-04 stopped working.,restart_service,2,True,check_status,0.6041082143783569,0.5475099682807922
+payment-api-03 has been unresponsive.,restart_service,2,True,check_status,0.5957289934158325,0.4965878427028656
+Something on staging-db-02 stopped working.,restart_service,3,True,check_status,0.6307163834571838,0.5018486976623535
+The application on staging-db-02 is frozen.,restart_service,2,True,quarantine_system,0.5696026086807251,0.5419601202011108
+The service on cdn-edge-06 is in a bad state.,restart_service,3,True,check_status,0.6392872333526611,0.5368616580963135
+ml-infer-05 has been unresponsive.,restart_service,5,True,check_status,0.5884882211685181,0.4240427017211914
+The service on staging-db-02 is in a bad state.,restart_service,3,True,check_status,0.6054798364639282,0.5408638715744019
+Users are complaining that prod-web-01 is down.,restart_service,2,True,check_status,0.6028887033462524,0.5260659456253052
+Users are complaining that prod-web-01 is down.,restart_service,2,True,check_status,0.6028887033462524,0.5260659456253052
+Something weird is going on with ml-infer-05.,scan_malware,4,True,check_status,0.7022427916526794,0.46844953298568726
+auth-svc-04 might have been breached.,scan_malware,2,False,create_ticket -> scan_malware,0.5796241164207458,0.5567160248756409
+cdn-edge-06 might have been breached.,scan_malware,2,False,create_ticket -> scan_malware,0.574386477470398,0.561580240726471
+cdn-edge-06 has been flagged for unusual behavior.,scan_malware,3,True,check_status,0.6356797218322754,0.5544129014015198
+Is auth-svc-04 clean? We're not sure.,scan_malware,2,True,check_status,0.6508253216743469,0.6210294365882874
+Something weird is going on with payment-api-03.,scan_malware,6,True,check_status,0.7061164379119873,0.4534428119659424
+We're seeing unusual activity on staging-db-02.,scan_malware,2,True,check_status,0.646142840385437,0.5617347955703735
+Something weird is going on with cdn-edge-06.,scan_malware,3,True,check_status,0.7232131958007812,0.49421533942222595
+ml-infer-05 might have been breached.,scan_malware,3,True,check_status,0.5589281320571899,0.5537596344947815
+Is ml-infer-05 clean? We're not sure.,scan_malware,2,True,check_status,0.6016848683357239,0.5943217873573303
+payment-api-03 has been flagged for unusual behavior.,scan_malware,6,True,check_status,0.6430661082267761,0.5129123330116272
+There could be something bad running on auth-svc-04.,scan_malware,3,True,check_status,0.671680212020874,0.5041849613189697
+payment-api-03 might have been breached.,scan_malware,2,False,create_ticket -> scan_malware,0.5795053839683533,0.5493605732917786
+We're seeing unusual activity on ml-infer-05.,scan_malware,2,True,check_status,0.6465957760810852,0.5772201418876648
+We should look into what's happening on prod-web-01.,scan_malware,2,True,check_status,0.7484012246131897,0.5672202706336975
+ml-infer-05 has been flagged for unusual behavior.,scan_malware,4,True,check_status,0.627716600894928,0.5360782742500305
+We're seeing unusual activity on cdn-edge-06.,scan_malware,2,True,check_status,0.6450412273406982,0.5942931175231934
+Is prod-web-01 clean? We're not sure.,scan_malware,2,True,check_status,0.6625475883483887,0.6051063537597656
+We're seeing unusual activity on prod-web-01.,scan_malware,2,True,check_status,0.6508565545082092,0.5920612812042236
+There could be something bad running on payment-api-03.,scan_malware,6,True,check_status,0.6767069101333618,0.44334840774536133
+There could be something bad running on ml-infer-05.,scan_malware,3,True,check_status,0.7024030089378357,0.5062010884284973
+There could be something bad running on cdn-edge-06.,scan_malware,3,True,check_status,0.697841465473175,0.47646158933639526
+Something weird is going on with staging-db-02.,scan_malware,3,True,check_status,0.7022534608840942,0.4653548300266266
+We should look into what's happening on ml-infer-05.,scan_malware,2,True,check_status,0.7518957853317261,0.5509705543518066
+We're seeing unusual activity on payment-api-03.,scan_malware,2,True,check_status,0.6442841291427612,0.5659474730491638
+staging-db-02 has been flagged for unusual behavior.,scan_malware,5,True,check_status,0.6394420862197876,0.506653368473053
+We need to make sure staging-db-02 is safe.,scan_malware,2,True,quarantine_system,0.6283289194107056,0.6216171383857727
+prod-web-01 has been flagged for unusual behavior.,scan_malware,4,True,check_status,0.6768051981925964,0.5639866590499878
+Is staging-db-02 clean? We're not sure.,scan_malware,2,True,check_status,0.6713969111442566,0.6153973937034607
+There could be something bad running on staging-db-02.,scan_malware,2,True,check_status,0.6902430057525635,0.4821961224079132
+We should look into what's happening on cdn-edge-06.,scan_malware,2,True,check_status,0.7216963768005371,0.5693923830986023
+We're seeing unusual activity on auth-svc-04.,scan_malware,2,True,check_status,0.6275064945220947,0.6128695607185364
+We should look into what's happening on payment-api-03.,scan_malware,2,True,check_status,0.7309069633483887,0.5240092277526855
+We should look into what's happening on auth-svc-04.,scan_malware,2,True,check_status,0.7172289490699768,0.5649572014808655
+auth-svc-04 has been flagged for unusual behavior.,scan_malware,5,True,check_status,0.6336421966552734,0.5394564867019653
+There could be something bad running on prod-web-01.,scan_malware,4,True,check_status,0.685969889163971,0.4447675943374634
+Something weird is going on with prod-web-01.,scan_malware,4,True,check_status,0.709832489490509,0.46411001682281494
+We should look into what's happening on staging-db-02.,scan_malware,2,True,check_status,0.7321657538414001,0.5427800416946411
+Something weird is going on with auth-svc-04.,scan_malware,4,True,check_status,0.6863924264907837,0.4947775900363922
+We're seeing unusual activity on cdn-edge-06.,scan_malware,2,True,check_status,0.645041286945343,0.5942931771278381
+Is payment-api-03 clean? We're not sure.,scan_malware,2,True,check_status,0.6584658026695251,0.5921425819396973
+prod-web-01 has been flagged for unusual behavior.,scan_malware,4,True,check_status,0.6768051981925964,0.5639866590499878
+We should look into what's happening on cdn-edge-06.,scan_malware,2,True,check_status,0.7216963768005371,0.5693923830986023
+staging-db-02 might have been breached.,scan_malware,3,False,create_ticket -> scan_malware,0.5317983031272888,0.512216329574585
+Something weird is going on with cdn-edge-06.,scan_malware,3,True,check_status,0.7232131958007812,0.49421530961990356
+We need to make sure staging-db-02 is safe.,scan_malware,2,True,quarantine_system,0.6283289194107056,0.6216171383857727
+Time to reach out to Eve about the outcome.,send_notification,2,True,escalate_to_human,0.617284893989563,0.577268660068512
+Grace is waiting for an update.,send_notification,5,True,db_read,0.5389599204063416,0.4290991723537445
+Make sure Legal hears about this.,send_notification,2,True,create_ticket,0.5849038362503052,0.5582592487335205
+Time to reach out to Alice about the outcome.,send_notification,2,True,escalate_to_human,0.6255478858947754,0.5967243313789368
+Diana is waiting for an update.,send_notification,4,True,db_read,0.578396737575531,0.4328605532646179
+HR hasn't been informed yet.,send_notification,2,True,db_read,0.6292392015457153,0.5763088464736938
+Time to reach out to Bob about the outcome.,send_notification,2,True,escalate_to_human,0.6142511367797852,0.5692319869995117
+Keep Bob in the loop.,send_notification,3,True,escalate_to_human,0.601572573184967,0.4198872745037079
+Diana needs to know what happened.,send_notification,6,True,db_read,0.6065031290054321,0.33701395988464355
+Time to reach out to Diana about the outcome.,send_notification,2,True,escalate_to_human,0.5996193289756775,0.5711263418197632
+Charlie is waiting for an update.,send_notification,5,True,db_read,0.555555522441864,0.4245508909225464
+Time to reach out to Charlie about the outcome.,send_notification,2,True,escalate_to_human,0.6082341074943542,0.5166627168655396
+Keep Frank in the loop.,send_notification,3,True,escalate_to_human,0.5579574108123779,0.3868243396282196
+Make sure Finance hears about this.,send_notification,3,True,create_ticket,0.5704160928726196,0.5222229361534119
+Keep Alice in the loop.,send_notification,3,True,escalate_to_human,0.6166172623634338,0.44078966975212097
+Frank needs to know what happened.,send_notification,6,True,db_read,0.5369820594787598,0.307555228471756
+Someone needs to loop Alice in.,send_notification,4,True,escalate_to_human,0.7090078592300415,0.44308629631996155
+Alice needs to know what happened.,send_notification,4,True,db_read,0.5926433801651001,0.37704044580459595
+Keep Diana in the loop.,send_notification,4,True,escalate_to_human,0.5774806141853333,0.40666380524635315
+Someone needs to loop Frank in.,send_notification,4,True,escalate_to_human,0.6760653853416443,0.3922465145587921
+Someone needs to loop Bob in.,send_notification,4,True,escalate_to_human,0.7048589587211609,0.4079631567001343
+Someone needs to loop Charlie in.,send_notification,5,True,escalate_to_human,0.681563138961792,0.3590502142906189
+Time to reach out to Frank about the outcome.,send_notification,2,True,escalate_to_human,0.599268913269043,0.5526012778282166
+Finance hasn't been informed yet.,send_notification,3,True,db_read,0.6040716767311096,0.5039641857147217
+Legal hasn't been informed yet.,send_notification,2,True,db_read,0.604860782623291,0.5505595207214355
+Alice is waiting for an update.,send_notification,3,True,update_subscription,0.565571665763855,0.4910161793231964
+Eve needs to know what happened.,send_notification,3,True,db_read,0.6148415803909302,0.3884775638580322
+Grace needs to know what happened.,send_notification,4,True,db_read,0.5436594486236572,0.31564345955848694
+Eve is waiting for an update.,send_notification,5,True,update_subscription,0.5587545037269592,0.47633957862854004
+Bob needs to know what happened.,send_notification,4,True,db_read,0.5920720100402832,0.3770189583301544
+Keep Grace in the loop.,send_notification,4,True,escalate_to_human,0.5292803645133972,0.37390732765197754
+Someone needs to loop Eve in.,send_notification,5,True,escalate_to_human,0.7083166241645813,0.41851115226745605
+Keep Charlie in the loop.,send_notification,3,True,escalate_to_human,0.571542501449585,0.368786484003067
+Marketing hasn't been informed yet.,send_notification,2,True,db_read,0.586955189704895,0.567682683467865
+Frank is waiting for an update.,send_notification,4,True,update_subscription,0.5618720054626465,0.4438699185848236
+Someone needs to loop Diana in.,send_notification,5,True,escalate_to_human,0.6931207776069641,0.4188709855079651
+Bob is waiting for an update.,send_notification,3,True,update_subscription,0.5575463175773621,0.4869947135448456
+Alice needs to know what happened.,send_notification,4,True,db_read,0.5926433801651001,0.37704044580459595
+Charlie needs to know what happened.,send_notification,8,True,db_read,0.5670167803764343,0.28351980447769165
+Someone needs to loop Grace in.,send_notification,4,True,escalate_to_human,0.6513437032699585,0.41094616055488586
+Time to reach out to Grace about the outcome.,send_notification,2,True,escalate_to_human,0.5826524496078491,0.5595587491989136
+Keep Eve in the loop.,send_notification,3,True,escalate_to_human,0.5976101160049438,0.4319682717323303
+We got new details for Charlie that need to go into the system.,db_write,2,True,db_read,0.5668284893035889,0.4888039827346802
+Grace's profile doesn't reflect the latest info.,db_write,2,True,db_read,0.6990554332733154,0.5565686821937561
+Eve's profile doesn't reflect the latest info.,db_write,2,True,db_read,0.7077944278717041,0.5746387243270874
+The data for Charlie is outdated.,db_write,2,True,db_read,0.65421462059021,0.6067483425140381
+Some fields for Eve are wrong -- please sort it out.,db_write,8,True,db_read,0.6400560140609741,0.4527062475681305
+We got new details for Diana that need to go into the system.,db_write,2,True,db_read,0.5822864174842834,0.5211537480354309
+Please correct Frank's address in our system.,db_write,3,True,db_read,0.4969213008880615,0.4814434051513672
+Please correct Grace's address in our system.,db_write,4,True,db_read,0.5156846046447754,0.48335766792297363
+We got new details for Eve that need to go into the system.,db_write,2,True,db_read,0.558153510093689,0.5034554600715637
+We got new details for Bob that need to go into the system.,db_write,4,True,db_read,0.5670692324638367,0.4845522940158844
+We got new details for Alice that need to go into the system.,db_write,4,True,db_read,0.5685781240463257,0.4885982573032379
+Bob's information has changed and needs correcting.,db_write,2,True,db_read,0.5690038204193115,0.568779468536377
+There are incorrect entries for Grace that need patching.,db_write,4,True,update_subscription,0.5254684686660767,0.4563840329647064
+There are incorrect entries for Diana that need patching.,db_write,3,True,db_read,0.5239545106887817,0.4953489303588867
+The data for Alice is outdated.,db_write,2,True,db_read,0.6639423966407776,0.628238320350647
+Some fields for Bob are wrong -- please sort it out.,db_write,8,True,db_read,0.6413909792900085,0.43211129307746887
+Please correct Eve's address in our system.,db_write,2,True,db_read,0.5262961983680725,0.5158153176307678
+Alice's information has changed and needs correcting.,db_write,2,True,db_read,0.5693336129188538,0.5684815049171448
+The data for Diana is outdated.,db_write,2,True,db_read,0.6567116379737854,0.6187822222709656
+There are incorrect entries for Bob that need patching.,db_write,5,True,update_subscription,0.5668451189994812,0.46540409326553345
+The data for Grace is outdated.,db_write,2,True,db_read,0.6508226990699768,0.6330917477607727
+We need to amend the entry for Alice.,db_write,2,True,reset_password,0.5652731657028198,0.5526614189147949
+Some fields for Frank are wrong -- please sort it out.,db_write,10,True,db_read,0.6330690383911133,0.41868001222610474
+Some fields for Alice are wrong -- please sort it out.,db_write,10,True,db_read,0.638958752155304,0.4169234335422516
+Alice's profile doesn't reflect the latest info.,db_write,2,True,db_read,0.6942505240440369,0.5390151739120483
+Some fields for Grace are wrong -- please sort it out.,db_write,8,True,db_read,0.616585373878479,0.41710031032562256
+Some fields for Charlie are wrong -- please sort it out.,db_write,8,True,db_read,0.6340607404708862,0.41938209533691406
+The data for Bob is outdated.,db_write,2,True,db_read,0.6574745178222656,0.6237954497337341
+Diana's profile doesn't reflect the latest info.,db_write,2,True,db_read,0.721371054649353,0.5736238360404968
+There are incorrect entries for Alice that need patching.,db_write,4,True,update_subscription,0.5470513105392456,0.4632601737976074
+Charlie's profile doesn't reflect the latest info.,db_write,2,True,db_read,0.7058331370353699,0.5497480630874634
+Please correct Diana's address in our system.,db_write,2,True,db_read,0.5485531091690063,0.5174994468688965
+We got new details for Frank that need to go into the system.,db_write,3,True,db_read,0.5440153479576111,0.48408395051956177
+There are incorrect entries for Eve that need patching.,db_write,5,True,update_subscription,0.5342941880226135,0.47999444603919983
+There are incorrect entries for Charlie that need patching.,db_write,4,True,update_subscription,0.5522956252098083,0.46388760209083557
+Some fields for Diana are wrong -- please sort it out.,db_write,5,True,db_read,0.6542059779167175,0.4482860565185547
+Bob's profile doesn't reflect the latest info.,db_write,2,True,db_read,0.7070267796516418,0.5452054142951965
+There are incorrect entries for Frank that need patching.,db_write,5,True,update_subscription,0.5592601895332336,0.4636668264865875
+Frank's profile doesn't reflect the latest info.,db_write,2,True,db_read,0.6970089673995972,0.5574142336845398
+Please correct Charlie's address in our system.,db_write,2,True,db_read,0.4904569983482361,0.4644806683063507
+Please correct Bob's address in our system.,db_write,4,True,db_read,0.48776015639305115,0.46409401297569275
+The data for Eve is outdated.,db_write,2,True,db_read,0.6307619214057922,0.6122297644615173
+Please correct Alice's address in our system.,db_write,5,True,db_read,0.5017179250717163,0.4639286398887634
+Please correct Grace's address in our system.,db_write,4,True,db_read,0.5156846046447754,0.48335766792297363
+We got new details for Grace that need to go into the system.,db_write,3,True,db_read,0.5570363998413086,0.4896990954875946
+Frank is requesting more capacity.,update_subscription,3,True,process_refund,0.5036202073097229,0.4471874535083771
+Charlie is requesting more capacity.,update_subscription,5,True,process_refund,0.5007709264755249,0.4135991632938385
+Bob's service needs don't match what they're paying for.,update_subscription,2,True,process_refund,0.6689637899398804,0.5081055760383606
+The contract terms for Diana have changed.,update_subscription,2,True,db_write,0.4804125428199768,0.48027414083480835
+Eve is requesting more capacity.,update_subscription,5,True,provision_vm,0.5376178026199341,0.43666377663612366
+Alice's service needs don't match what they're paying for.,update_subscription,2,True,process_refund,0.66628098487854,0.5038051009178162
+Alice is requesting more capacity.,update_subscription,5,True,process_refund,0.531273603439331,0.444908082485199
+Grace's service needs don't match what they're paying for.,update_subscription,2,True,process_refund,0.6457756757736206,0.4911903440952301
+Eve's service needs don't match what they're paying for.,update_subscription,2,True,process_refund,0.654557466506958,0.5070726275444031
+Diana's service needs don't match what they're paying for.,update_subscription,3,True,process_refund,0.6501202583312988,0.45185643434524536
+Frank's service needs don't match what they're paying for.,update_subscription,2,True,process_refund,0.6297783851623535,0.4922751188278198
+Diana is requesting more capacity.,update_subscription,8,True,process_refund,0.49874168634414673,0.37873023748397827
+Charlie's service needs don't match what they're paying for.,update_subscription,3,True,process_refund,0.6282265782356262,0.4690341353416443
+Grace is requesting more capacity.,update_subscription,5,True,reset_password,0.48379620909690857,0.43476977944374084
+Bob is requesting more capacity.,update_subscription,5,True,process_refund,0.5237865447998047,0.43070149421691895

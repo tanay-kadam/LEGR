@@ -1,0 +1,22 @@
+{
+  "tools": 15,
+  "variant": "tied_weights",
+  "epochs": 5,
+  "out_dir": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1724\\upgraded\\TASK1_SBERT_FINE_TUNE\\SBERT_FT_TIED_15TOOL",
+  "train_returncode": 0,
+  "checkpoint": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1724\\upgraded\\TASK1_SBERT_FINE_TUNE\\SBERT_FT_TIED_15TOOL\\best_model.pt",
+  "verify_returncode": 0,
+  "metrics": {
+    "tool_set_f1": 0.9837998712998712,
+    "mean_ged_error": 0.28547297297297297,
+    "recall@1": 0.9510135135135135,
+    "recall@3": 0.9983108108108109,
+    "recall@5": 1.0,
+    "mrr@1": 0.9510135135135135,
+    "mrr@3": 0.9738175675675675,
+    "mrr@5": 0.9742398648648649
+  },
+  "n_eval": 592,
+  "best_epoch": 5,
+  "status": "VERIFIED"
+}

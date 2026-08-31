@@ -1,0 +1,51 @@
+{
+  "compositional_csv": "upgraded_v3/upgraded_15tools/test_topology_heldout.csv",
+  "n_compositional_unique": 53,
+  "n_one_node_injected": 15,
+  "n_unified": 53,
+  "aliases": {
+    "query_database": "db_read",
+    "update_database": "db_write"
+  },
+  "legr_15_tools": [
+    "db_read",
+    "db_write",
+    "reset_password",
+    "create_ticket",
+    "send_notification",
+    "quarantine_system",
+    "scan_malware",
+    "generate_report",
+    "process_refund",
+    "update_subscription",
+    "provision_vm",
+    "restart_service",
+    "check_status",
+    "escalate_to_human",
+    "log_audit_event"
+  ],
+  "self_loops": "Not added by us. GCNConv may add self-loops internally.",
+  "fake_edges": false,
+  "stress_conditions": {
+    "Standard": {
+      "path": "upgraded_data/routing_15tools/base_cleaned.csv",
+      "n": 1005,
+      "n_aliased_labels": 15
+    },
+    "Lexical": {
+      "path": "upgraded_data/routing_15tools/lexical_cue_reduced.csv",
+      "n": 1005,
+      "n_aliased_labels": 15
+    },
+    "Confusable": {
+      "path": "upgraded_data/routing_15tools/confusable_intents.csv",
+      "n": 450,
+      "n_aliased_labels": 15
+    },
+    "Paraphrase": {
+      "path": "upgraded_data/routing_15tools/paraphrase_heldout_test.csv",
+      "n": 1255,
+      "n_aliased_labels": 15
+    }
+  }
+}

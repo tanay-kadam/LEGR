@@ -1,0 +1,119 @@
+{
+  "tool_count": 15,
+  "hard_negative_csv": "C:\\Users\\tkadam\\LEGR\\upgraded_data\\graph_15tools\\hard_negatives.csv",
+  "legr_checkpoint": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1218\\upgraded\\TASK4_DIRECTION_ABLATION\\LEGR_DEFAULT_GCN_15TOOL\\best_model.pt",
+  "sbert_checkpoint": "C:\\Users\\tkadam\\LEGR\\experiment_runs\\20260831_1536\\upgraded\\TASK1_SBERT_FINE_TUNE\\SBERT_FT_GED030_15TOOL\\best_model.pt",
+  "sbert_tied": false,
+  "sbert_lambda_ged": 0.3,
+  "sbert_epoch": 91,
+  "device": "cpu",
+  "skipped": 0,
+  "protocol": {
+    "threshold_reject_acc": "fraction of (query, hard-neg DAG) pairs with cosine < 0.5",
+    "pairwise_gold_beats_neg": "fraction where cosine(query, gold DAG) > cosine(query, hard-neg DAG)"
+  },
+  "LEGR": {
+    "overall": {
+      "n": 305,
+      "threshold_reject_acc": 0.2328,
+      "false_positive_rate": 0.7672,
+      "mean_sim_neg": 0.5959,
+      "pairwise_n": 305,
+      "pairwise_gold_beats_neg": 0.9049
+    },
+    "by_type": {
+      "add_edge": {
+        "n": 53,
+        "threshold_reject_acc": 0.0,
+        "false_positive_rate": 1.0,
+        "mean_sim_neg": 0.7881,
+        "pairwise_n": 53,
+        "pairwise_gold_beats_neg": 0.7736
+      },
+      "extra_node": {
+        "n": 73,
+        "threshold_reject_acc": 0.0137,
+        "false_positive_rate": 0.9863,
+        "mean_sim_neg": 0.689,
+        "pairwise_n": 73,
+        "pairwise_gold_beats_neg": 0.9589
+      },
+      "remove_edge": {
+        "n": 53,
+        "threshold_reject_acc": 0.0,
+        "false_positive_rate": 1.0,
+        "mean_sim_neg": 0.7218,
+        "pairwise_n": 53,
+        "pairwise_gold_beats_neg": 0.9811
+      },
+      "swap_edges": {
+        "n": 53,
+        "threshold_reject_acc": 0.0,
+        "false_positive_rate": 1.0,
+        "mean_sim_neg": 0.7734,
+        "pairwise_n": 53,
+        "pairwise_gold_beats_neg": 0.7547
+      },
+      "swap_tools": {
+        "n": 73,
+        "threshold_reject_acc": 0.9589,
+        "false_positive_rate": 0.0411,
+        "mean_sim_neg": 0.1429,
+        "pairwise_n": 73,
+        "pairwise_gold_beats_neg": 1.0
+      }
+    }
+  },
+  "SBERT_FT": {
+    "overall": {
+      "n": 305,
+      "threshold_reject_acc": 0.2328,
+      "false_positive_rate": 0.7672,
+      "mean_sim_neg": 0.6194,
+      "pairwise_n": 305,
+      "pairwise_gold_beats_neg": 0.918
+    },
+    "by_type": {
+      "add_edge": {
+        "n": 53,
+        "threshold_reject_acc": 0.0,
+        "false_positive_rate": 1.0,
+        "mean_sim_neg": 0.8472,
+        "pairwise_n": 53,
+        "pairwise_gold_beats_neg": 0.8679
+      },
+      "extra_node": {
+        "n": 73,
+        "threshold_reject_acc": 0.0,
+        "false_positive_rate": 1.0,
+        "mean_sim_neg": 0.7578,
+        "pairwise_n": 73,
+        "pairwise_gold_beats_neg": 0.9726
+      },
+      "remove_edge": {
+        "n": 53,
+        "threshold_reject_acc": 0.0,
+        "false_positive_rate": 1.0,
+        "mean_sim_neg": 0.711,
+        "pairwise_n": 53,
+        "pairwise_gold_beats_neg": 0.9623
+      },
+      "swap_edges": {
+        "n": 53,
+        "threshold_reject_acc": 0.0,
+        "false_positive_rate": 1.0,
+        "mean_sim_neg": 0.8488,
+        "pairwise_n": 53,
+        "pairwise_gold_beats_neg": 0.7358
+      },
+      "swap_tools": {
+        "n": 73,
+        "threshold_reject_acc": 0.9726,
+        "false_positive_rate": 0.0274,
+        "mean_sim_neg": 0.0827,
+        "pairwise_n": 73,
+        "pairwise_gold_beats_neg": 1.0
+      }
+    }
+  }
+}

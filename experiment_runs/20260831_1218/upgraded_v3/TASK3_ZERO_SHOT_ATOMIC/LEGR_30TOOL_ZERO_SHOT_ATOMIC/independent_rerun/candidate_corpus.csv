@@ -1,0 +1,70 @@
+candidate_id,dag_hash,dag_text,is_one_node,n_nodes,n_edges
+0,979753c190ec278b,backup_database -> deploy_container,False,2,1
+1,73a1302669134b1c,process_refund -> send_notification,False,2,1
+2,07dcd6965f4905c7,log_audit_event -> escalate_to_human,False,2,1
+3,81d22ef4e8cbd32e,"reset_password -> rotate_api_key, rotate_api_key -> deploy_container, update_subscription -> reset_password",False,4,3
+4,b632d4bbb054d42e,archive_data -> restore_backup,False,2,1
+5,00e7f7d490fa9f22,"create_ticket -> send_notification, send_notification -> reset_password",False,3,2
+6,b08a7d857a1432d9,escalate_to_human -> archive_data,False,2,1
+7,9be1efe3328a6438,archive_data -> scan_malware,False,2,1
+8,1187a0279dfd1baa,"archive_data -> enable_feature_flag, enable_feature_flag -> revoke_access",False,3,2
+9,fa20847ce48938c2,"process_refund -> send_notification, update_subscription -> process_refund",False,3,2
+10,fc4bcf1384b61905,"revoke_access -> rotate_api_key, rotate_api_key -> log_audit_event",False,3,2
+11,fe563372e6c719ca,transfer_ownership -> invalidate_cache,False,2,1
+12,2acee006455c9d8a,"approve_access -> invalidate_cache, invalidate_cache -> run_pipeline, process_refund -> invalidate_cache",False,4,3
+13,3bb735ab1bc4bb72,"approve_access -> generate_report, generate_report -> run_pipeline, rotate_api_key -> generate_report",False,4,3
+14,8c1b5d53916e43f4,"db_read -> revoke_access, log_audit_event -> disable_feature_flag, quarantine_system -> log_audit_event, revoke_access -> disable_feature_flag",False,5,4
+15,6ec376ca8cd9519d,"enable_feature_flag -> restore_backup, restore_backup -> rollback_deployment, rollback_deployment -> enable_feature_flag",False,4,3
+16,43330185a734cc77,"invalidate_cache -> revoke_access, rotate_api_key -> transfer_ownership, scan_malware -> invalidate_cache, transfer_ownership -> revoke_access",False,5,4
+17,9abf4d07ae9d684c,"approve_access -> revoke_access, approve_access -> rotate_api_key, escalate_to_human -> approve_access, revoke_access -> schedule_maintenance, schedule_maintenance -> rotate_api_key, update_subscription -> escalate_to_human",False,6,6
+18,de637f36c335856d,"approve_access -> send_notification, deploy_container -> send_notification, send_notification -> scan_malware",False,4,3
+19,94d197352d735a9b,"backup_database -> scan_malware, db_write -> backup_database, scan_malware -> db_write",False,4,3
+20,71a7f3bc4dcfc0eb,"backup_database -> provision_vm, provision_vm -> invalidate_cache, rollback_deployment -> provision_vm",False,4,3
+21,f50734b55dfb9d8a,"approve_access -> scan_malware, run_pipeline -> approve_access, scan_malware -> run_pipeline",False,4,3
+22,91866a7808949024,"check_status -> run_pipeline, rollback_deployment -> run_pipeline, run_pipeline -> archive_data",False,4,3
+23,9401ceba80f5d047,"create_ticket -> restore_backup, db_write -> create_ticket, restore_backup -> db_write",False,4,3
+24,ba1ca91c3a161a5c,"provision_vm -> escalate_to_human, restart_service -> revoke_access, revoke_access -> escalate_to_human, schedule_maintenance -> provision_vm",False,5,4
+25,97d08cd04cffb699,"invalidate_cache -> provision_vm, provision_vm -> restore_backup, reset_password -> run_pipeline, run_pipeline -> restore_backup",False,5,4
+26,cf1e30ad3eb40e5c,"enable_feature_flag -> provision_vm, enable_feature_flag -> reset_password, provision_vm -> rollback_deployment, reset_password -> rollback_deployment",False,4,4
+27,e716fc0927406903,"check_status -> provision_vm, check_status -> revoke_access, provision_vm -> schedule_maintenance, revoke_access -> schedule_maintenance",False,4,4
+28,542632f5f09ea80f,"provision_vm -> send_notification, provision_vm -> transfer_ownership, send_notification -> scale_service, transfer_ownership -> scale_service",False,4,4
+29,3470dad38b86447d,"approve_access -> db_read, approve_access -> escalate_to_human, db_read -> rollback_deployment, escalate_to_human -> rollback_deployment",False,4,4
+30,c3c136032049c593,"backup_database -> log_audit_event, schedule_maintenance -> backup_database, schedule_maintenance -> send_notification, send_notification -> log_audit_event",False,4,4
+31,e20bcdd4c77f0f71,"check_status -> escalate_to_human, check_status -> restart_service, escalate_to_human -> create_ticket, restart_service -> create_ticket",False,4,4
+32,fa165fbe625a1bc1,"archive_data -> db_read, rotate_api_key -> db_read, scale_service -> archive_data, scale_service -> rotate_api_key",False,4,4
+33,5841fd9ce11a6917,"check_status -> process_refund, db_read -> process_refund, quarantine_system -> check_status, quarantine_system -> db_read",False,4,4
+34,0c60157472fcff83,"disable_feature_flag -> restart_service, disable_feature_flag -> scan_malware, restart_service -> run_pipeline, scan_malware -> run_pipeline",False,4,4
+35,744a5ecd0d44139e,"quarantine_system -> approve_access, schedule_maintenance -> approve_access, transfer_ownership -> quarantine_system, transfer_ownership -> schedule_maintenance",False,4,4
+36,b7e595c1b903b571,"backup_database -> reset_password, disable_feature_flag -> reset_password, generate_report -> backup_database, generate_report -> disable_feature_flag",False,4,4
+37,612e6cfa6271a60b,"backup_database -> rollback_deployment, db_write -> backup_database, db_write -> deploy_container, deploy_container -> rollback_deployment",False,4,4
+38,fb19b1f3aa9b33ac,"escalate_to_human -> schedule_maintenance, scan_malware -> schedule_maintenance, update_subscription -> escalate_to_human, update_subscription -> scan_malware",False,4,4
+39,c075ba5194905a51,db_read,True,1,0
+40,2ba287c7bceef863,db_write,True,1,0
+41,4632095c7ecdbea3,reset_password,True,1,0
+42,b6eb2205ba11c689,create_ticket,True,1,0
+43,3b5c38def94bf432,send_notification,True,1,0
+44,43bbfbd408acca12,quarantine_system,True,1,0
+45,f65a937304c782d7,scan_malware,True,1,0
+46,e016d1581a5ac7e4,generate_report,True,1,0
+47,87eec42c34918c50,process_refund,True,1,0
+48,b4fee0a1fa908eb2,update_subscription,True,1,0
+49,8b972a29695f50ff,provision_vm,True,1,0
+50,09a99426b009dc67,restart_service,True,1,0
+51,ae4042df120cfd08,check_status,True,1,0
+52,71ea91f239af7106,escalate_to_human,True,1,0
+53,448970c79532232f,log_audit_event,True,1,0
+54,427637dba5de2d36,deploy_container,True,1,0
+55,3a84e559446915c6,rollback_deployment,True,1,0
+56,2cb37638f53712e1,rotate_api_key,True,1,0
+57,e399b0c7135ac1a2,backup_database,True,1,0
+58,d1d658d55c65808d,restore_backup,True,1,0
+59,db78a96a4643d024,scale_service,True,1,0
+60,20ba613b18cd2f96,run_pipeline,True,1,0
+61,d8875b7c1a35e2e5,approve_access,True,1,0
+62,ad9f9ee97f20485f,revoke_access,True,1,0
+63,c81300a62701fa2b,transfer_ownership,True,1,0
+64,f0be9f0151f21263,schedule_maintenance,True,1,0
+65,1e99f554a5060f8e,archive_data,True,1,0
+66,79c2d45d3a679e9f,enable_feature_flag,True,1,0
+67,14353fd5d2e9c49d,disable_feature_flag,True,1,0
+68,a3493f3105f8ea2d,invalidate_cache,True,1,0
