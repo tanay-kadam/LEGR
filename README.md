@@ -8,7 +8,12 @@ user request to the right tool(s)**:
 | **1** | **Taxonomy Routing** — *Semantic* vs *Tool-Bound* hierarchies (LLM router) | `main.py` | Is it better to group tools by human topic or by the action they perform? |
 | **2** | **LEGR** — *Latent Execution-Graph Routing* (trained dual-encoder) | `train.py` / `eval.py` | Can a learned text↔graph model retrieve the correct multi-step execution DAG better than S-BERT / BM25 / an LLM? |
 
-The two experiments are independent. You can reproduce either one on its own.
+A third module, **Stage 0: Validated Graph Extraction**, constructs execution-DAG
+corpora from agent traces via confidence-weighted LLM extraction and hard
+acyclicity enforcement. It also provides an audit script for measuring
+structural validity of generative baselines.
+
+The three experiments are independent. You can reproduce any of them on its own.
 
 ---
 
@@ -207,12 +212,13 @@ src/
 ├── routing_tiers.py            # per-tier routing tool vocabularies
 ├── routing_benchmark_specs.py  # 30-tool routing benchmark spec
 │
+├── dag_extract.py              # Stage 0: validated DAG extraction
 ├── train.py                    # Experiment 2 training loop
 ├── eval.py                     # evaluation + S-BERT / BM25 baselines
 ├── encoders.py                 # dual-encoder model (text + graph)
 ├── loss.py                     # Graph-Aware Contrastive Loss
 ├── legr_tool_count.py          # --tool_count CLI helper
-├── llm_dag_baseline.py         # optional LLM-generates-DAG baseline
+├── llm_dag_baseline.py         # LLM-generates-DAG baseline (+ validity tracking)
 │
 ├── vocab_config.py             # shared: active tool-count switch (15/30/45)
 ├── data_synth.py               # shared: tool vocab + DAG/GED helpers
@@ -221,10 +227,37 @@ src/
 scripts/
 ├── run_routing_experiments.py  # batch runner for Experiment 1
 ├── sweep_ged_hyperparams.py    # optional GED-loss sweep
+├── audit_dag_validity.py       # structural validity audit of baselines
 └── ...                         # dataset-build pipeline (not needed to reproduce)
 
 experiments/
 └── run_multi_seed.py           # optional multi-seed runner (Experiment 2)
+```
+
+### Stage 0: Validated Graph Extraction
+
+Extract a DAG corpus from natural-language traces with structural validation:
+
+```bash
+python src/dag_extract.py --input traces.txt --provider ollama --model llama3.2 --output corpus.csv
+```
+
+Re-run the generative baselines with structural validity tracking:
+
+```bash
+python src/llm_dag_baseline.py --tool_count 30 \
+  --input upgraded/upgraded_30tools/test_topology_heldout.csv \
+  --provider ollama --model llama3.2 \
+  --progress_path new_results/llm_dag_llama3.2_30tools.progress.jsonl \
+  --save_results new_results/llm_dag_llama3.2_30tools.csv
+```
+
+Audit structural validity of saved predictions:
+
+```bash
+python scripts/audit_dag_validity.py \
+  --progress new_results/llm_dag_llama3.2_30tools.progress.jsonl \
+  --labels "Llama 3.2 30T"
 ```
 
 ### Datasets (committed, ready to use)

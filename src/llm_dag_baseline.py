@@ -53,6 +53,7 @@ from data_synth import (
     compute_ged,
     export_llm_routing_corpus_jsonl,
 )
+from dag_extract import check_structural_validity
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -264,6 +265,9 @@ def _aggregate_progress(
     ]
     parse_failures = sum(1 for rec in ordered if rec.get("parse_failure"))
     exact_matches = sum(int(rec.get("exact_match", 0)) for rec in ordered)
+    cyclic_count = sum(1 for rec in ordered if rec.get("had_cycle"))
+    valid_count = sum(1 for rec in ordered if rec.get("structurally_valid"))
+    non_parse_fail = [r for r in ordered if not r.get("parse_failure")]
 
     results = {
         "provider": provider,
@@ -274,6 +278,12 @@ def _aggregate_progress(
         "tool_set_f1": round(np.mean(tool_f1s), 4) if tool_f1s else 0.0,
         "mean_ged_error": round(np.mean(ged_errors), 4) if ged_errors else 0.0,
         "exact_match_rate": round(exact_matches / max(total_examples, 1), 4),
+        "cyclic_count": cyclic_count,
+        "cyclic_rate": round(cyclic_count / max(len(non_parse_fail), 1), 4),
+        "structurally_valid_count": valid_count,
+        "structural_validity_rate": round(
+            valid_count / max(len(non_parse_fail), 1), 4
+        ),
     }
 
     if latencies:
@@ -369,6 +379,11 @@ def evaluate_llm_baseline(
                 "ged_error": None,
                 "exact_match": 0,
                 "error": str(e),
+                "pred_tools": [],
+                "pred_edges": [],
+                "had_cycle": False,
+                "n_edges_removed": 0,
+                "structurally_valid": False,
             }
             completed_records[i] = record
             if progress_path:
@@ -403,6 +418,11 @@ def evaluate_llm_baseline(
                 "ged_error": None,
                 "exact_match": 0,
                 "error": "empty_or_invalid_prediction",
+                "pred_tools": [],
+                "pred_edges": [],
+                "had_cycle": False,
+                "n_edges_removed": 0,
+                "structurally_valid": False,
             }
             completed_records[i] = record
             if progress_path:
@@ -427,6 +447,9 @@ def evaluate_llm_baseline(
             continue
 
         tool_f1 = _compute_tool_f1(gt_tools, pred_tools)
+
+        validity = check_structural_validity(pred_tools, pred_edges)
+
         ged = None
         exact_match = 0
         try:
@@ -445,6 +468,11 @@ def evaluate_llm_baseline(
             "tool_f1": round(tool_f1, 6),
             "ged_error": ged,
             "exact_match": exact_match,
+            "pred_tools": pred_tools,
+            "pred_edges": pred_edges,
+            "had_cycle": validity["has_cycle"],
+            "n_edges_removed": 0,
+            "structurally_valid": validity["is_dag"] and validity["is_connected"],
         }
         completed_records[i] = record
         if progress_path:
