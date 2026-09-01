@@ -42,6 +42,26 @@ def test_invalid_branch_selection_stops_before_tool_step():
     assert backend.call_count == 1
 
 
+def test_tool_name_from_branch_step_recovers_its_unique_branch():
+    backend = _FakeBackend(
+        responses=[
+            _resp("query_database"),
+            _resp("The correct tool is query_database."),
+        ]
+    )
+
+    result = hierarchical_route(
+        query="Look up the existing database record for customer 42.",
+        taxonomy=TOOL_BOUND_TAXONOMY,
+        llm_backend=backend,
+    )
+
+    assert result["selected_branch"] == "Data Retrieval & Monitoring"
+    assert result["predicted_tool"] == "query_database"
+    assert result["error"] is None
+    assert backend.call_count == 2
+
+
 def test_valid_text_branch_and_tool_are_normalized_to_exact_choices():
     backend = _FakeBackend(
         responses=[

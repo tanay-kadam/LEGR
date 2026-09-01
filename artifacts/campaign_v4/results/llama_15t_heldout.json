@@ -1,0 +1,17 @@
+{
+  "provider": "ollama",
+  "model": "llama3.2:3b",
+  "total_examples": 50,
+  "completed_examples": 50,
+  "parse_failures": 5,
+  "tool_set_f1": 0.0513,
+  "mean_ged_error": 8.4167,
+  "exact_match_rate": 0.0,
+  "cyclic_count": 9,
+  "cyclic_rate": 0.2,
+  "structurally_valid_count": 36,
+  "structural_validity_rate": 0.8,
+  "mean_latency_s": 0.911,
+  "median_latency_s": 0.779,
+  "p95_latency_s": 1.083
+}

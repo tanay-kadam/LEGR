@@ -17,7 +17,7 @@ https://github.com/krumiaa/DAGLLM (Apache-2.0 License)
 
 Usage
 -----
-    $ python src/dag_extract.py --input traces.txt --provider ollama --model llama3.2
+    $ python src/dag_extract.py --input traces.txt --llm-profile ollama_llama
     $ python src/dag_extract.py --input traces.txt --output corpus.csv --provider gemini
 """
 
@@ -269,9 +269,10 @@ def check_structural_validity(
 def extract_dag(
     query: str,
     provider: str = "ollama",
-    model: str = "llama3.2",
+    model: str = "llama3.2:3b",
     client=None,
     ollama_backend=None,
+    llm_backend=None,
     request_timeout_s: float | None = 120.0,
 ) -> Dict[str, Any]:
     """Extract a validated DAG from a natural-language query.
@@ -284,7 +285,11 @@ def extract_dag(
     t0 = time.perf_counter()
 
     try:
-        if provider == "ollama":
+        backend = llm_backend or ollama_backend
+        if backend is not None:
+            resp = backend.call(system_prompt, query)
+            raw = resp.text
+        elif provider == "ollama":
             if ollama_backend is None:
                 from llm_backends import OllamaBackend
                 ollama_backend = OllamaBackend(
@@ -299,6 +304,12 @@ def extract_dag(
                 api_key = os.environ.get("GEMINI_API_KEY", "")
                 client = genai.Client(api_key=api_key)
             resp = call_gemini(client, model, system_prompt, query)
+            raw = resp.text
+        elif provider == "azure_openai":
+            from llm_backends import create_llm_provider
+            resp = create_llm_provider(
+                "azure_openai", timeout_s=request_timeout_s
+            ).call(system_prompt, query)
             raw = resp.text
         else:
             raise ValueError(f"Unknown provider: {provider}")
@@ -399,8 +410,14 @@ def main():
     p.add_argument("--output", type=str, default=None,
                     help="Output CSV path (default: extracted_corpus.csv)")
     p.add_argument("--provider", type=str, default="ollama",
-                    choices=["ollama", "gemini"])
-    p.add_argument("--model", type=str, default="llama3.2")
+                    choices=["ollama", "gemini", "azure_openai"])
+    p.add_argument("--model", type=str, default="llama3.2:3b")
+    p.add_argument(
+        "--llm-profile",
+        choices=["azure_openai", "ollama_llama", "ollama_gpt_oss"],
+        default=None,
+        help="Load provider and model from configs/llm_providers.json.",
+    )
     p.add_argument("--max_examples", type=int, default=0,
                     help="Max traces to process (0 = all)")
     p.add_argument("--request_timeout_s", type=float, default=120.0)
@@ -420,8 +437,14 @@ def main():
     output_path = args.output or "extracted_corpus.csv"
 
     ollama_backend = None
+    llm_backend = None
     client = None
-    if args.provider == "ollama":
+    if args.llm_profile:
+        from llm_backends import create_llm_provider
+        llm_backend = create_llm_provider(
+            args.llm_profile, timeout_s=args.request_timeout_s
+        )
+    elif args.provider == "ollama":
         from llm_backends import OllamaBackend
         ollama_backend = OllamaBackend(
             model_name=args.model, timeout_s=args.request_timeout_s,
@@ -440,6 +463,7 @@ def main():
         result = extract_dag(
             query, provider=args.provider, model=args.model,
             client=client, ollama_backend=ollama_backend,
+            llm_backend=llm_backend,
             request_timeout_s=args.request_timeout_s,
         )
         if result.get("parse_failure"):

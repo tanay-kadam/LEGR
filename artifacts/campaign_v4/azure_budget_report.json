@@ -1,0 +1,133 @@
+{
+  "connectivity": {
+    "success": true,
+    "deployment": "gpt-4o",
+    "endpoint_hostname": "https://paper-ncsu.openai.azure.com",
+    "error": null,
+    "latency_s": 0.675,
+    "sample_response": "Hello",
+    "prompt_tokens": 26,
+    "completion_tokens": 2
+  },
+  "pilot_summary": {
+    "dags_tested": 10,
+    "successful": 10,
+    "failed": 0,
+    "budget": {
+      "total_prompt_tokens": 4508,
+      "total_completion_tokens": 2832,
+      "total_calls": 10,
+      "failed_calls": 0,
+      "total_latency_s": 33.1,
+      "estimated_cost_usd": 0.0147
+    }
+  },
+  "cost_projection": {
+    "total_dags_to_generate": 10,
+    "projected_cost_usd": 0.01,
+    "budget_limit_usd": 30.0,
+    "within_budget": true
+  },
+  "pilot_details": [
+    {
+      "dag_hash": "a6ef3b9403982ff1",
+      "family": "chain_long_5",
+      "n_queries_generated": 4,
+      "prompt_tokens": 442,
+      "completion_tokens": 334,
+      "latency_s": 3.87,
+      "error": null,
+      "sample_query": "First, retrieve the record from the database. Then, use the information to read the user's profile. Next, create a support ticket based on the profile details. After that, check the user's subscription status to ensure it's active. Finally, verify the current status of the service."
+    },
+    {
+      "dag_hash": "cdd682465be2d441",
+      "family": "hourglass",
+      "n_queries_generated": 4,
+      "prompt_tokens": 477,
+      "completion_tokens": 256,
+      "latency_s": 3.02,
+      "error": null,
+      "sample_query": "Can you first pull the database record and user profile? Once both are ready, create a support ticket. After that, check the subscription status and the service status simultaneously."
+    },
+    {
+      "dag_hash": "18a918b9c6b678cc",
+      "family": "w_shape",
+      "n_queries_generated": 4,
+      "prompt_tokens": 477,
+      "completion_tokens": 329,
+      "latency_s": 4.09,
+      "error": null,
+      "sample_query": "I need a workflow that first reads a database record, then uses that to fetch the user profile. At the same time, create a support ticket. Once the support ticket is created, check the subscription status. Finally, after both the user profile and subscription status are ready, check the service status."
+    },
+    {
+      "dag_hash": "d28222f94940565f",
+      "family": "multi_branch_independent",
+      "n_queries_generated": 4,
+      "prompt_tokens": 477,
+      "completion_tokens": 285,
+      "latency_s": 3.53,
+      "error": null,
+      "sample_query": "Start by retrieving the database record. Once that's done, check the user's profile, their subscription status, and create a support ticket all at the same time. After the subscription status is retrieved, check the service status to complete the process."
+    },
+    {
+      "dag_hash": "4de18802d22fce97",
+      "family": "chain_medium_3",
+      "n_queries_generated": 4,
+      "prompt_tokens": 392,
+      "completion_tokens": 258,
+      "latency_s": 2.34,
+      "error": null,
+      "sample_query": "First, look through the access logs to gather relevant information. Then, use that data to create a support ticket. Finally, once the ticket has been created, retrieve the associated database record for further investigation."
+    },
+    {
+      "dag_hash": "631f106a261cdd31",
+      "family": "fanout_2",
+      "n_queries_generated": 4,
+      "prompt_tokens": 427,
+      "completion_tokens": 254,
+      "latency_s": 3.75,
+      "error": null,
+      "sample_query": "First, review the access logs to see if there are any unusual entries. Once that's done, create a support ticket to report any issues you find. At the same time, retrieve the relevant database records for further investigation."
+    },
+    {
+      "dag_hash": "068b890e4b95fb26",
+      "family": "fanin_2",
+      "n_queries_generated": 4,
+      "prompt_tokens": 427,
+      "completion_tokens": 195,
+      "latency_s": 2.04,
+      "error": null,
+      "sample_query": "Can you look through the access logs and create a support ticket at the same time? Once both of those tasks are finished, read the corresponding database record."
+    },
+    {
+      "dag_hash": "5c482e4485817d4b",
+      "family": "chain_long_5",
+      "n_queries_generated": 4,
+      "prompt_tokens": 440,
+      "completion_tokens": 332,
+      "latency_s": 3.39,
+      "error": null,
+      "sample_query": "First, create a support ticket for the issue. Once that's done, reset the user's password. Then, retrieve the user's record from the database. After that, update their subscription plan as needed. Finally, change their username if required."
+    },
+    {
+      "dag_hash": "55203c827cb85d0d",
+      "family": "hourglass",
+      "n_queries_generated": 4,
+      "prompt_tokens": 475,
+      "completion_tokens": 277,
+      "latency_s": 3.69,
+      "error": null,
+      "sample_query": "Please create a support ticket and reset the user's password at the same time. Once both of those are done, read the database record. After that, update the user's subscription plan and edit their username simultaneously."
+    },
+    {
+      "dag_hash": "1fbb33aa36eb6249",
+      "family": "w_shape",
+      "n_queries_generated": 4,
+      "prompt_tokens": 474,
+      "completion_tokens": 312,
+      "latency_s": 3.37,
+      "error": null,
+      "sample_query": "Please start by creating a support ticket. Once that's done, reset the user's password. At the same time, read the database record for the user and, after that, update their subscription plan. Once both the password reset and the subscription update are completed, go ahead and edit the user's username."
+    }
+  ]
+}

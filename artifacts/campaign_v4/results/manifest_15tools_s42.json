@@ -1,0 +1,60 @@
+{
+  "campaign": "campaign_v4",
+  "tier": 15,
+  "seed": 42,
+  "device": "cpu",
+  "timestamp": "2026-09-01T06:53:06.970942",
+  "python_version": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+  "runs": [
+    {
+      "label": "legr_legacy_no_ged_15t",
+      "success": true,
+      "elapsed_s": 1315.2,
+      "returncode": 0,
+      "stdout_tail": "  R@1 0.163  |  tau 0.0370 * best\nEpoch  12  |  train_loss 0.6642  |  val_loss 2.1779  |  R@1 0.168  |  tau 0.0363\nEpoch  13  |  train_loss 0.6555  |  val_loss 2.1724  |  R@1 0.166  |  tau 0.0358\nEpoch  14  |  train_loss 0.6085  |  val_loss 2.1692  |  R@1 0.168  |  tau 0.0356\nEpoch  15  |  train_loss 0.6403  |  val_loss 2.1682  |  R@1 0.168  |  tau 0.0355\n\nTraining complete.  Best val loss: 2.1477\nCheckpoints saved to C:\\Users\\tkadam\\LEGR\\artifacts\\campaign_v4\\results\\legr_legacy_no_ged_15t_s42\n",
+      "stderr_tail": "1 [01:15<00:25,  8.39s/it, loss=0.6465]\nTrain epoch 15:  82%|########1 | 9/11 [01:15<00:16,  8.49s/it, loss=0.6465]\nTrain epoch 15:  82%|########1 | 9/11 [01:23<00:16,  8.49s/it, loss=0.5945]\nTrain epoch 15:  91%|######### | 10/11 [01:23<00:08,  8.34s/it, loss=0.5945]\nTrain epoch 15:  91%|######### | 10/11 [01:33<00:08,  8.34s/it, loss=0.5749]\nTrain epoch 15: 100%|##########| 11/11 [01:33<00:00,  8.76s/it, loss=0.5749]\n                                                                            \n"
+    },
+    {
+      "label": "legr_legacy_ged_15t",
+      "success": true,
+      "elapsed_s": 947.8,
+      "returncode": 0,
+      "stdout_tail": "  |  R@1 0.163  |  tau 0.0370 * best\nEpoch  12  |  train_loss 0.6722  |  val_loss 2.1804  |  R@1 0.166  |  tau 0.0363\nEpoch  13  |  train_loss 0.6627  |  val_loss 2.1766  |  R@1 0.166  |  tau 0.0359\nEpoch  14  |  train_loss 0.6158  |  val_loss 2.1730  |  R@1 0.166  |  tau 0.0357\nEpoch  15  |  train_loss 0.6477  |  val_loss 2.1718  |  R@1 0.167  |  tau 0.0356\n\nTraining complete.  Best val loss: 2.1534\nCheckpoints saved to C:\\Users\\tkadam\\LEGR\\artifacts\\campaign_v4\\results\\legr_legacy_ged_15t_s42\n",
+      "stderr_tail": "1 [00:43<00:14,  4.72s/it, loss=0.6586]\nTrain epoch 15:  82%|########1 | 9/11 [00:43<00:09,  4.95s/it, loss=0.6586]\nTrain epoch 15:  82%|########1 | 9/11 [00:48<00:09,  4.95s/it, loss=0.6028]\nTrain epoch 15:  91%|######### | 10/11 [00:48<00:05,  5.05s/it, loss=0.6028]\nTrain epoch 15:  91%|######### | 10/11 [00:53<00:05,  5.05s/it, loss=0.5803]\nTrain epoch 15: 100%|##########| 11/11 [00:53<00:00,  4.96s/it, loss=0.5803]\n                                                                            \n"
+    },
+    {
+      "label": "legr_directed_no_ged_15t",
+      "success": true,
+      "elapsed_s": 1415.5,
+      "returncode": 0,
+      "stdout_tail": "01  |  R@1 0.162  |  tau 0.0360\nEpoch  12  |  train_loss 0.4773  |  val_loss 2.4368  |  R@1 0.163  |  tau 0.0353\nEpoch  13  |  train_loss 0.4503  |  val_loss 2.4095  |  R@1 0.162  |  tau 0.0349\nEpoch  14  |  train_loss 0.4155  |  val_loss 2.3992  |  R@1 0.162  |  tau 0.0346\nEpoch  15  |  train_loss 0.4216  |  val_loss 2.4012  |  R@1 0.163  |  tau 0.0345\n\nTraining complete.  Best val loss: 2.3816\nCheckpoints saved to C:\\Users\\tkadam\\LEGR\\artifacts\\campaign_v4\\results\\legr_directed_no_ged_15t_s42\n",
+      "stderr_tail": "1 [01:18<00:28,  9.43s/it, loss=0.4682]\nTrain epoch 15:  82%|########1 | 9/11 [01:18<00:17,  8.88s/it, loss=0.4682]\nTrain epoch 15:  82%|########1 | 9/11 [01:25<00:17,  8.88s/it, loss=0.4293]\nTrain epoch 15:  91%|######### | 10/11 [01:25<00:08,  8.36s/it, loss=0.4293]\nTrain epoch 15:  91%|######### | 10/11 [01:31<00:08,  8.36s/it, loss=0.3888]\nTrain epoch 15: 100%|##########| 11/11 [01:31<00:00,  7.59s/it, loss=0.3888]\n                                                                            \n"
+    },
+    {
+      "label": "legr_directed_ged_15t",
+      "success": true,
+      "elapsed_s": 808.9,
+      "returncode": 0,
+      "stdout_tail": ".4058  |  R@1 0.162  |  tau 0.0360\nEpoch  12  |  train_loss 0.4805  |  val_loss 2.4407  |  R@1 0.163  |  tau 0.0353\nEpoch  13  |  train_loss 0.4526  |  val_loss 2.4116  |  R@1 0.162  |  tau 0.0349\nEpoch  14  |  train_loss 0.4181  |  val_loss 2.4028  |  R@1 0.162  |  tau 0.0346\nEpoch  15  |  train_loss 0.4238  |  val_loss 2.4052  |  R@1 0.163  |  tau 0.0345\n\nTraining complete.  Best val loss: 2.3930\nCheckpoints saved to C:\\Users\\tkadam\\LEGR\\artifacts\\campaign_v4\\results\\legr_directed_ged_15t_s42\n",
+      "stderr_tail": "1 [00:41<00:14,  4.95s/it, loss=0.4712]\nTrain epoch 15:  82%|########1 | 9/11 [00:41<00:09,  4.95s/it, loss=0.4712]\nTrain epoch 15:  82%|########1 | 9/11 [00:46<00:09,  4.95s/it, loss=0.4317]\nTrain epoch 15:  91%|######### | 10/11 [00:46<00:04,  4.95s/it, loss=0.4317]\nTrain epoch 15:  91%|######### | 10/11 [00:51<00:04,  4.95s/it, loss=0.3900]\nTrain epoch 15: 100%|##########| 11/11 [00:51<00:00,  4.91s/it, loss=0.3900]\n                                                                            \n"
+    },
+    {
+      "label": "sbert_ft_no_ged_15t",
+      "success": true,
+      "elapsed_s": 770.7,
+      "returncode": 0,
+      "stdout_tail": " |  R@1 0.167 * best\nEpoch  10  |  train 0.9378  |  val 2.1512  |  R@1 0.167\n  Reloaded best checkpoint for eval: artifacts\\campaign_v4\\results\\sbert_ft_no_ged_15t_s42\\best_model.pt (epoch=9)\nEval data\\campaign_v4\\campaign_v4_15tools\\test_topology_heldout.csv: {'tool_set_f1': np.float64(0.9781296296296298), 'mean_ged_error': np.float64(0.31), 'recall@1': 0.92, 'recall@3': 0.9933333333333333, 'recall@5': 0.9933333333333333, 'mrr@1': 0.92, 'mrr@3': 0.9561111111111112, 'mrr@5': 0.9561111111111112}\n",
+      "stderr_tail": ".14s/it, loss=0.8588]\nSBERT-FT epoch 10:  82%|########1 | 9/11 [00:54<00:12,  6.13s/it, loss=0.8588]\nSBERT-FT epoch 10:  82%|########1 | 9/11 [01:00<00:12,  6.13s/it, loss=0.8098]\nSBERT-FT epoch 10:  91%|######### | 10/11 [01:00<00:05,  5.99s/it, loss=0.8098]\nSBERT-FT epoch 10:  91%|######### | 10/11 [01:07<00:05,  5.99s/it, loss=0.8995]\nSBERT-FT epoch 10: 100%|##########| 11/11 [01:07<00:00,  6.32s/it, loss=0.8995]\n                                                                               \n"
+    },
+    {
+      "label": "sbert_ft_ged_15t",
+      "success": false,
+      "elapsed_s": 741.6,
+      "returncode": 1,
+      "stdout_tail": "90  |  R@1 0.162 * best\nEpoch   5  |  train 1.4384  |  val 2.2397  |  R@1 0.164 * best\nEpoch   6  |  train 1.1549  |  val 2.2247  |  R@1 0.168 * best\nEpoch   7  |  train 1.0552  |  val 2.1611  |  R@1 0.167 * best\nEpoch   8  |  train 0.9712  |  val 2.1810  |  R@1 0.167\nEpoch   9  |  train 0.9542  |  val 2.1494  |  R@1 0.167 * best\nEpoch  10  |  train 0.9378  |  val 2.1512  |  R@1 0.167\n  Reloaded best checkpoint for eval: artifacts\\campaign_v4\\results\\sbert_ft_ged_15t_s42\\best_model.pt (epoch=9)\n",
+      "stderr_tail": "val_after=not extras[\"skip_eval\"])\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\tkadam\\LEGR\\src\\sbert_ft_baseline.py\", line 567, in main\n    from eval import CSVEvalDataset\n  File \"C:\\Users\\tkadam\\LEGR\\src\\eval.py\", line 76, in <module>\n    from encoders_v2 import LEGRDualEncoderV2, LEGRDualEncoderV3\nImportError: cannot import name 'LEGRDualEncoderV3' from 'encoders_v2' (C:\\Users\\tkadam\\LEGR\\src\\encoders_v2.py). Did you mean: 'LEGRDualEncoderV2'?\n"
+    }
+  ],
+  "pytorch_version": "2.13.0+cpu",
+  "cuda_available": false
+}

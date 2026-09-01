@@ -73,6 +73,7 @@ from data_synth import (
     register_tools,
 )
 from encoders import LEGRDualEncoder, resolve_graph_encoder_settings
+from encoders_v2 import LEGRDualEncoderV2, LEGRDualEncoderV3
 from train import TrainConfig, _parse_tools, _parse_edges
 from utils import read_datafile
 
@@ -279,6 +280,7 @@ class CSVEvalDataset(torch.utils.data.Dataset):
 def _load_model_and_tokenizer(
     checkpoint_path: str,
     device: torch.device,
+    dataset_csv: Optional[str] = None,
 ) -> Tuple[LEGRDualEncoder, TrainConfig, object]:
     """Load a trained LEGR model from checkpoint."""
     if not checkpoint_path:
@@ -287,12 +289,26 @@ def _load_model_and_tokenizer(
             "ensure train.main() returns the saved checkpoint path."
         )
     ckpt = torch.load(checkpoint_path, map_location=device, weights_only=False)
-    checkpoint_tool_count = _validate_checkpoint_tool_count(checkpoint_path, ckpt)
+    checkpoint_tool_count = _infer_checkpoint_tool_count(ckpt)
     config_dict = ckpt.get("config", {})
     cfg = TrainConfig(**{k: v for k, v in config_dict.items()
                          if k in TrainConfig.__dataclass_fields__})
     if cfg.tool_count is None:
         cfg.tool_count = checkpoint_tool_count
+
+    # Register tools from eval CSV so NUM_TOOLS matches the checkpoint
+    if dataset_csv and Path(dataset_csv).exists():
+        import pandas as _pd
+        _df = _pd.read_csv(dataset_csv)
+        if "tools" in _df.columns:
+            _all_tools = set()
+            for t in _df["tools"].dropna():
+                _all_tools.update(t.split(";"))
+            _all_tools.discard("")
+            if _all_tools:
+                register_tools(list(_all_tools))
+
+    import data_synth as _ds
     model_state = _checkpoint_model_state(ckpt)
 
     use_text = getattr(cfg, "use_text_node_features", False)
@@ -300,22 +316,48 @@ def _load_model_and_tokenizer(
     tm = _text_model_name(cfg)
     graph_encoder_type, tie_in_out, _bidirectional = resolve_graph_encoder_settings(cfg)
 
-    # Architecture must match ``train.py`` / checkpoint (gcn_layers, node_embed_dim, …).
-    model = LEGRDualEncoder(
-        num_tools=NUM_TOOLS,
-        text_model_name=tm,
-        embed_dim=cfg.embed_dim,
-        gcn_layers=cfg.gcn_layers,
-        node_embed_dim=cfg.node_embed_dim,
-        gcn_hidden=cfg.gcn_hidden,
-        freeze_text=cfg.freeze_text,
-        num_frozen_layers=cfg.num_frozen_layers,
-        max_topo_pos=cfg.max_topo_pos,
-        graph_encoder_type=graph_encoder_type,
-        use_text_node_features=use_text,
-        text_feature_dim=text_feat_dim,
-        tie_in_out=tie_in_out,
-    ).to(device)
+    if graph_encoder_type == "setgnn_tied":
+        model = LEGRDualEncoderV3(
+            embed_dim=cfg.embed_dim,
+            text_model_name=tm,
+            graph_hidden_dim=cfg.gcn_hidden,
+            graph_num_layers=cfg.gcn_layers,
+            node_feature_dim=cfg.node_embed_dim,
+            max_topo_pos=cfg.max_topo_pos,
+            freeze_text_backbone=cfg.freeze_text,
+            num_frozen_layers=cfg.num_frozen_layers,
+            tie_in_out=tie_in_out,
+        ).to(device)
+        model.precompute_tool_features(list(_ds.TOOL_VOCAB), device)
+    elif graph_encoder_type == "directed_text":
+        model = LEGRDualEncoderV2(
+            embed_dim=cfg.embed_dim,
+            text_model_name=tm,
+            graph_hidden_dim=cfg.gcn_hidden,
+            graph_num_layers=cfg.gcn_layers,
+            node_feature_dim=cfg.node_embed_dim,
+            max_topo_pos=cfg.max_topo_pos,
+            freeze_text_backbone=cfg.freeze_text,
+            num_frozen_layers=cfg.num_frozen_layers,
+            tie_in_out=tie_in_out,
+        ).to(device)
+        model.precompute_tool_features(list(_ds.TOOL_VOCAB), device)
+    else:
+        model = LEGRDualEncoder(
+            num_tools=_ds.NUM_TOOLS,
+            text_model_name=tm,
+            embed_dim=cfg.embed_dim,
+            gcn_layers=cfg.gcn_layers,
+            node_embed_dim=cfg.node_embed_dim,
+            gcn_hidden=cfg.gcn_hidden,
+            freeze_text=cfg.freeze_text,
+            num_frozen_layers=cfg.num_frozen_layers,
+            max_topo_pos=cfg.max_topo_pos,
+            graph_encoder_type=graph_encoder_type,
+            use_text_node_features=use_text,
+            text_feature_dim=text_feat_dim,
+            tie_in_out=tie_in_out,
+        ).to(device)
 
     model.load_state_dict(model_state, strict=True)
     model.eval()
@@ -779,7 +821,7 @@ def evaluate_ablation_two(
 
     for idx, (ckpt_path, label) in enumerate(zip(checkpoint_paths, labels)):
         print(f"\n  --- LEGR run: {label} ({ckpt_path}) ---")
-        model, cfg, tokenizer = _load_model_and_tokenizer(ckpt_path, device)
+        model, cfg, tokenizer = _load_model_and_tokenizer(ckpt_path, device, dataset_csv=dataset_csv)
         _, _, bidirectional = resolve_graph_encoder_settings(cfg)
 
         q_embs = encode_all_queries(model, dataset, tokenizer, device)
@@ -887,7 +929,7 @@ def evaluate(
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"\n  Device: {device}")
 
-    model, cfg, tokenizer = _load_model_and_tokenizer(checkpoint_path, device)
+    model, cfg, tokenizer = _load_model_and_tokenizer(checkpoint_path, device, dataset_csv=dataset_csv)
     print(f"  Model loaded from {checkpoint_path}")
     dataset_csv, hard_negative_csv = _resolve_eval_csv_paths(
         dataset_csv,

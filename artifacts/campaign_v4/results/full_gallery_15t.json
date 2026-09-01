@@ -1,0 +1,33 @@
+{
+  "tier": 15,
+  "n_queries": 300,
+  "gallery_size": 322,
+  "test_unique_dags": 50,
+  "corpus_unique_dags": 272,
+  "frozen_sbert_dag_text": {
+    "recall@1": 0.0167,
+    "recall@3": 0.1,
+    "recall@5": 0.2367
+  },
+  "frozen_sbert_tools_only": {
+    "recall@1": 0.2867,
+    "recall@3": 0.29,
+    "recall@5": 0.2967
+  },
+  "sbert_ft_dag_text": {
+    "recall@1": 0.2133,
+    "recall@3": 0.61,
+    "recall@5": 0.8533
+  },
+  "sbert_ft_tools_only": {
+    "recall@1": 0.6467,
+    "recall@3": 0.65,
+    "recall@5": 0.6567
+  },
+  "legr_toolname_ged": {
+    "recall@1": 0.2,
+    "recall@3": 0.4,
+    "recall@5": 0.5033
+  },
+  "legr_gallery_unique": 322
+}

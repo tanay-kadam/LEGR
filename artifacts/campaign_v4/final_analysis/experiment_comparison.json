@@ -1,0 +1,475 @@
+{
+  "campaign": "campaign_v4",
+  "generated_at": "2026-09-01T05:38:11.100511",
+  "tiers": {
+    "15": {
+      "tier": 15,
+      "models": {
+        "legr_legacy_no_ged_15t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 75.7,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\legr_legacy_no_ged_15t_s42"
+        },
+        "legr_legacy_ged_15t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 73.6,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\legr_legacy_ged_15t_s42"
+        },
+        "legr_directed_no_ged_15t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 78.1,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\legr_directed_no_ged_15t_s42"
+        },
+        "legr_directed_ged_15t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 90.5,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\legr_directed_ged_15t_s42"
+        },
+        "sbert_ft_no_ged_15t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 130.4,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\sbert_ft_no_ged_15t_s42"
+        },
+        "sbert_ft_ged_15t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 131.9,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\sbert_ft_ged_15t_s42"
+        },
+        "BM25": {
+          "type": "baseline",
+          "test_indomain": {
+            "recall@1": 0.0,
+            "mrr@1": 0.0,
+            "recall@3": 0.0,
+            "mrr@3": 0.0,
+            "recall@5": 0.0,
+            "mrr@5": 0.0,
+            "num_queries": 192,
+            "corpus_size": 1632
+          },
+          "test_topology_heldout": {
+            "recall@1": 0.0,
+            "mrr@1": 0.0,
+            "recall@3": 0.0,
+            "mrr@3": 0.0,
+            "recall@5": 0.0,
+            "mrr@5": 0.0,
+            "num_queries": 300,
+            "corpus_size": 1632
+          }
+        },
+        "Frozen_SBERT": {
+          "type": "baseline",
+          "test_indomain": {
+            "recall@1": 0.0,
+            "mrr@1": 0.0,
+            "recall@3": 0.0,
+            "mrr@3": 0.0,
+            "recall@5": 0.0,
+            "mrr@5": 0.0,
+            "num_queries": 192,
+            "corpus_size": 1632
+          },
+          "test_topology_heldout": {
+            "recall@1": 0.0,
+            "mrr@1": 0.0,
+            "recall@3": 0.0,
+            "mrr@3": 0.0,
+            "recall@5": 0.0,
+            "mrr@5": 0.0,
+            "num_queries": 300,
+            "corpus_size": 1632
+          }
+        },
+        "Llama_3.2_3B": {
+          "type": "generative_baseline",
+          "test_topology_heldout": {
+            "tool_set_f1": 0.0513,
+            "mean_ged_error": 8.4167,
+            "exact_match_rate": 0.0,
+            "parse_failures": 5,
+            "structural_validity_rate": 0.8,
+            "cyclic_rate": 0.2,
+            "mean_latency_s": 0.911,
+            "n_examples": 50
+          }
+        },
+        "GPT_OSS_120B": {
+          "type": "generative_baseline",
+          "test_topology_heldout": {
+            "tool_set_f1": 0.0364,
+            "mean_ged_error": 4.0,
+            "exact_match_rate": 0.0,
+            "parse_failures": 37,
+            "structural_validity_rate": 1.0,
+            "cyclic_rate": 0.0,
+            "mean_latency_s": 1.338,
+            "n_examples": 50
+          }
+        }
+      }
+    },
+    "30": {
+      "tier": 30,
+      "models": {
+        "legr_legacy_no_ged_30t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 82.5,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\legr_legacy_no_ged_30t_s42"
+        },
+        "legr_legacy_ged_30t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 78.5,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\legr_legacy_ged_30t_s42"
+        },
+        "legr_directed_no_ged_30t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 85.2,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\legr_directed_no_ged_30t_s42"
+        },
+        "legr_directed_ged_30t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 97.5,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\legr_directed_ged_30t_s42"
+        },
+        "sbert_ft_no_ged_30t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 151.9,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\sbert_ft_no_ged_30t_s42"
+        },
+        "sbert_ft_ged_30t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 149.7,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\sbert_ft_ged_30t_s42"
+        },
+        "BM25": {
+          "type": "baseline",
+          "test_indomain": {
+            "recall@1": 0.0,
+            "mrr@1": 0.0,
+            "recall@3": 0.0,
+            "mrr@3": 0.0,
+            "recall@5": 0.0,
+            "mrr@5": 0.0,
+            "num_queries": 276,
+            "corpus_size": 2310
+          },
+          "test_topology_heldout": {
+            "recall@1": 0.0,
+            "mrr@1": 0.0,
+            "recall@3": 0.0,
+            "mrr@3": 0.0,
+            "recall@5": 0.0,
+            "mrr@5": 0.0,
+            "num_queries": 420,
+            "corpus_size": 2310
+          }
+        },
+        "Frozen_SBERT": {
+          "type": "baseline",
+          "test_indomain": {
+            "recall@1": 0.0,
+            "mrr@1": 0.0,
+            "recall@3": 0.0,
+            "mrr@3": 0.0,
+            "recall@5": 0.0,
+            "mrr@5": 0.0,
+            "num_queries": 276,
+            "corpus_size": 2310
+          },
+          "test_topology_heldout": {
+            "recall@1": 0.0,
+            "mrr@1": 0.0,
+            "recall@3": 0.0,
+            "mrr@3": 0.0,
+            "recall@5": 0.0,
+            "mrr@5": 0.0,
+            "num_queries": 420,
+            "corpus_size": 2310
+          }
+        },
+        "Llama_3.2_3B": {
+          "type": "generative_baseline",
+          "test_topology_heldout": {
+            "tool_set_f1": 0.0263,
+            "mean_ged_error": 7.1628,
+            "exact_match_rate": 0.0,
+            "parse_failures": 2,
+            "structural_validity_rate": 0.8958,
+            "cyclic_rate": 0.1042,
+            "mean_latency_s": 0.949,
+            "n_examples": 50
+          }
+        },
+        "GPT_OSS_120B": {
+          "type": "generative_baseline",
+          "test_topology_heldout": {
+            "tool_set_f1": 0.0,
+            "mean_ged_error": 4.0,
+            "exact_match_rate": 0.0,
+            "parse_failures": 46,
+            "structural_validity_rate": 1.0,
+            "cyclic_rate": 0.0,
+            "mean_latency_s": 2.414,
+            "n_examples": 50
+          }
+        }
+      }
+    },
+    "45": {
+      "tier": 45,
+      "models": {
+        "legr_legacy_no_ged_45t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 96.6,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\legr_legacy_no_ged_45t_s42"
+        },
+        "legr_legacy_ged_45t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 100.8,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\legr_legacy_ged_45t_s42"
+        },
+        "legr_directed_no_ged_45t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 106.2,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\legr_directed_no_ged_45t_s42"
+        },
+        "legr_directed_ged_45t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 120.0,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\legr_directed_ged_45t_s42"
+        },
+        "sbert_ft_no_ged_45t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 185.3,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\sbert_ft_no_ged_45t_s42"
+        },
+        "sbert_ft_ged_45t": {
+          "type": "training",
+          "success": true,
+          "elapsed_s": 149.2,
+          "checkpoint_dir": "artifacts\\campaign_v4\\results\\sbert_ft_ged_45t_s42"
+        },
+        "BM25": {
+          "type": "baseline",
+          "test_indomain": {
+            "recall@1": 0.0,
+            "mrr@1": 0.0,
+            "recall@3": 0.0,
+            "mrr@3": 0.0,
+            "recall@5": 0.0,
+            "mrr@5": 0.0,
+            "num_queries": 396,
+            "corpus_size": 3300
+          },
+          "test_topology_heldout": {
+            "recall@1": 0.0,
+            "mrr@1": 0.0,
+            "recall@3": 0.0,
+            "mrr@3": 0.0,
+            "recall@5": 0.0,
+            "mrr@5": 0.0,
+            "num_queries": 600,
+            "corpus_size": 3300
+          }
+        },
+        "Frozen_SBERT": {
+          "type": "baseline",
+          "test_indomain": {
+            "recall@1": 0.0,
+            "mrr@1": 0.0,
+            "recall@3": 0.0,
+            "mrr@3": 0.0,
+            "recall@5": 0.0,
+            "mrr@5": 0.0,
+            "num_queries": 396,
+            "corpus_size": 3300
+          },
+          "test_topology_heldout": {
+            "recall@1": 0.0,
+            "mrr@1": 0.0,
+            "recall@3": 0.0,
+            "mrr@3": 0.0,
+            "recall@5": 0.0,
+            "mrr@5": 0.0,
+            "num_queries": 600,
+            "corpus_size": 3300
+          }
+        },
+        "Llama_3.2_3B": {
+          "type": "generative_baseline",
+          "test_topology_heldout": {
+            "tool_set_f1": 0.0908,
+            "mean_ged_error": 7.2222,
+            "exact_match_rate": 0.0,
+            "parse_failures": 4,
+            "structural_validity_rate": 0.9783,
+            "cyclic_rate": 0.0217,
+            "mean_latency_s": 0.944,
+            "n_examples": 50
+          }
+        },
+        "GPT_OSS_120B": {
+          "type": "generative_baseline",
+          "test_topology_heldout": {
+            "tool_set_f1": 0.0,
+            "mean_ged_error": 4.0,
+            "exact_match_rate": 0.0,
+            "parse_failures": 49,
+            "structural_validity_rate": 1.0,
+            "cyclic_rate": 0.0,
+            "mean_latency_s": 2.489,
+            "n_examples": 50
+          }
+        }
+      }
+    }
+  },
+  "sbert_eval_details": {
+    "sbert_ft_no_ged_15t": {
+      "tool_set_f1": 0.9748518518518517,
+      "mean_ged_error": 0.3233333333333333,
+      "recall@1": 0.92,
+      "recall@3": 0.99,
+      "recall@5": 0.9933333333333333,
+      "mrr@1": 0.92,
+      "mrr@3": 0.9527777777777777,
+      "mrr@5": 0.9536111111111111,
+      "hardneg_pairs_evaluated": 312,
+      "hardneg_ranking_accuracy": 1.0,
+      "hardneg_false_positive_rate": 0.0
+    },
+    "sbert_ft_ged_15t": {
+      "tool_set_f1": 0.9748518518518517,
+      "mean_ged_error": 0.3233333333333333,
+      "recall@1": 0.92,
+      "recall@3": 0.99,
+      "recall@5": 0.9933333333333333,
+      "mrr@1": 0.92,
+      "mrr@3": 0.9527777777777777,
+      "mrr@5": 0.9536111111111111,
+      "hardneg_pairs_evaluated": 312,
+      "hardneg_ranking_accuracy": 1.0,
+      "hardneg_false_positive_rate": 0.0
+    },
+    "sbert_ft_no_ged_30t": {
+      "tool_set_f1": 0.9767857142857143,
+      "mean_ged_error": 0.18333333333333332,
+      "recall@1": 0.9642857142857143,
+      "recall@3": 0.9952380952380953,
+      "recall@5": 0.9976190476190476,
+      "mrr@1": 0.9642857142857143,
+      "mrr@3": 0.978174603174603,
+      "mrr@5": 0.9787698412698411,
+      "hardneg_pairs_evaluated": 312,
+      "hardneg_ranking_accuracy": 1.0,
+      "hardneg_false_positive_rate": 0.0
+    },
+    "sbert_ft_ged_30t": {
+      "tool_set_f1": 0.9767857142857143,
+      "mean_ged_error": 0.18333333333333332,
+      "recall@1": 0.9642857142857143,
+      "recall@3": 0.9952380952380953,
+      "recall@5": 0.9976190476190476,
+      "mrr@1": 0.9642857142857143,
+      "mrr@3": 0.978174603174603,
+      "mrr@5": 0.9787698412698411,
+      "hardneg_pairs_evaluated": 312,
+      "hardneg_ranking_accuracy": 1.0,
+      "hardneg_false_positive_rate": 0.0
+    },
+    "sbert_ft_no_ged_45t": {
+      "tool_set_f1": 0.9734259259259261,
+      "mean_ged_error": 0.19666666666666666,
+      "recall@1": 0.9566666666666667,
+      "recall@3": 0.9916666666666667,
+      "recall@5": 0.9933333333333333,
+      "mrr@1": 0.9566666666666667,
+      "mrr@3": 0.9730555555555555,
+      "mrr@5": 0.9734722222222221,
+      "hardneg_pairs_evaluated": 312,
+      "hardneg_ranking_accuracy": 1.0,
+      "hardneg_false_positive_rate": 0.0
+    },
+    "sbert_ft_ged_45t": {
+      "tool_set_f1": 0.9734259259259261,
+      "mean_ged_error": 0.19666666666666666,
+      "recall@1": 0.9566666666666667,
+      "recall@3": 0.9916666666666667,
+      "recall@5": 0.9933333333333333,
+      "mrr@1": 0.9566666666666667,
+      "mrr@3": 0.9730555555555555,
+      "mrr@5": 0.9734722222222221,
+      "hardneg_pairs_evaluated": 312,
+      "hardneg_ranking_accuracy": 1.0,
+      "hardneg_false_positive_rate": 0.0
+    }
+  },
+  "legr_checkpoints": {
+    "legr_legacy_no_ged_15t": {
+      "checkpoint_exists": true,
+      "checkpoint_path": "artifacts\\campaign_v4\\results\\legr_legacy_no_ged_15t_s42\\best_model.pt"
+    },
+    "legr_legacy_ged_15t": {
+      "checkpoint_exists": true,
+      "checkpoint_path": "artifacts\\campaign_v4\\results\\legr_legacy_ged_15t_s42\\best_model.pt"
+    },
+    "legr_directed_no_ged_15t": {
+      "checkpoint_exists": true,
+      "checkpoint_path": "artifacts\\campaign_v4\\results\\legr_directed_no_ged_15t_s42\\best_model.pt"
+    },
+    "legr_directed_ged_15t": {
+      "checkpoint_exists": true,
+      "checkpoint_path": "artifacts\\campaign_v4\\results\\legr_directed_ged_15t_s42\\best_model.pt"
+    },
+    "legr_legacy_no_ged_30t": {
+      "checkpoint_exists": true,
+      "checkpoint_path": "artifacts\\campaign_v4\\results\\legr_legacy_no_ged_30t_s42\\best_model.pt"
+    },
+    "legr_legacy_ged_30t": {
+      "checkpoint_exists": true,
+      "checkpoint_path": "artifacts\\campaign_v4\\results\\legr_legacy_ged_30t_s42\\best_model.pt"
+    },
+    "legr_directed_no_ged_30t": {
+      "checkpoint_exists": true,
+      "checkpoint_path": "artifacts\\campaign_v4\\results\\legr_directed_no_ged_30t_s42\\best_model.pt"
+    },
+    "legr_directed_ged_30t": {
+      "checkpoint_exists": true,
+      "checkpoint_path": "artifacts\\campaign_v4\\results\\legr_directed_ged_30t_s42\\best_model.pt"
+    },
+    "legr_legacy_no_ged_45t": {
+      "checkpoint_exists": true,
+      "checkpoint_path": "artifacts\\campaign_v4\\results\\legr_legacy_no_ged_45t_s42\\best_model.pt"
+    },
+    "legr_legacy_ged_45t": {
+      "checkpoint_exists": true,
+      "checkpoint_path": "artifacts\\campaign_v4\\results\\legr_legacy_ged_45t_s42\\best_model.pt"
+    },
+    "legr_directed_no_ged_45t": {
+      "checkpoint_exists": true,
+      "checkpoint_path": "artifacts\\campaign_v4\\results\\legr_directed_no_ged_45t_s42\\best_model.pt"
+    },
+    "legr_directed_ged_45t": {
+      "checkpoint_exists": true,
+      "checkpoint_path": "artifacts\\campaign_v4\\results\\legr_directed_ged_45t_s42\\best_model.pt"
+    }
+  }
+}

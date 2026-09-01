@@ -9,7 +9,7 @@ Usage:
     python scripts/run_routing_experiments.py                          # 30+45 tools, both models, all splits
     python scripts/run_routing_experiments.py --tool_counts 45         # 45 tools only
     python scripts/run_routing_experiments.py --tool_counts 30 45      # both
-    python scripts/run_routing_experiments.py --models llama3.2        # single model
+    python scripts/run_routing_experiments.py --models llama3.2:3b     # single model
     python scripts/run_routing_experiments.py --splits confusable_intents base_cleaned
 """
 
@@ -32,8 +32,8 @@ SPLITS = [
 ]
 
 MODEL_SLUG = {
-    "gpt-oss:120b-cloud": "gpt-oss",
-    "llama3.2": "llama3.2",
+    "gpt-oss:120b-cloud": "gpt-oss-120b-cloud",
+    "llama3.2:3b": "llama3.2-3b",
 }
 
 
@@ -73,8 +73,8 @@ def run_split(preset: str, model: str, tool_count: int, out_dir: str) -> int:
 def main():
     p = argparse.ArgumentParser(description="Run routing experiments")
     p.add_argument("--models", nargs="+",
-                   default=["gpt-oss:120b-cloud", "llama3.2"],
-                   help="Ollama model names (default: gpt-oss:120b-cloud llama3.2)")
+                   default=["gpt-oss:120b-cloud", "llama3.2:3b"],
+                   help="Ollama model names (default: gpt-oss:120b-cloud llama3.2:3b)")
     p.add_argument("--tool_counts", nargs="+", type=int,
                    default=[30, 45],
                    help="Tool counts to evaluate (default: 30 45)")

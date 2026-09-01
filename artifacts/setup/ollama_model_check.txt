@@ -1,0 +1,22 @@
+timestamp_utc: 2026-08-31T23:22:39.729699+00:00
+ollama_cli_status: PASS
+ollama_version_cli: ollama version is 0.33.2
+ollama_version_api: 0.33.2
+base_url: http://localhost:11434
+service_status: PASS
+service_error: 
+installed_models: gpt-oss:120b-cloud, llama3.2:3b
+llama3.2:3b.installed: True
+llama3.2:3b.status: PASS
+llama3.2:3b.latency_s: 2.721
+llama3.2:3b.response_received: True
+llama3.2:3b.exact_marker: True
+llama3.2:3b.error_category: 
+llama3.2:3b.error: 
+gpt-oss:120b-cloud.installed: True
+gpt-oss:120b-cloud.status: PASS
+gpt-oss:120b-cloud.latency_s: 2.792
+gpt-oss:120b-cloud.response_received: True
+gpt-oss:120b-cloud.exact_marker: True
+gpt-oss:120b-cloud.error_category: 
+gpt-oss:120b-cloud.error: 

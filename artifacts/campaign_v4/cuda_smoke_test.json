@@ -1,0 +1,45 @@
+{
+  "device": "cpu",
+  "cuda_available": false,
+  "gpu_name": null,
+  "cuda_version": null,
+  "pytorch_version": "2.13.0+cpu",
+  "results": {
+    "C01_cuda_available": {
+      "status": "FAIL",
+      "detail": ""
+    },
+    "C01_gpu_info": {
+      "status": "FAIL",
+      "detail": "No CUDA device found"
+    },
+    "C02_legacy_model": {
+      "status": "PASS",
+      "detail": "22,900,160 parameters"
+    },
+    "C03_legacy_forward": {
+      "status": "PASS",
+      "detail": "z_text=torch.Size([1, 256]), z_graph=torch.Size([1, 256])"
+    },
+    "C04_v2_model": {
+      "status": "PASS",
+      "detail": "45,733,376 parameters"
+    },
+    "C05_v2_text_features": {
+      "status": "PASS",
+      "detail": "node_features=torch.Size([2, 64]), z_graph=torch.Size([1, 256])"
+    },
+    "C06_v2_full_forward": {
+      "status": "PASS",
+      "detail": "z_text=torch.Size([1, 256]), z_graph=torch.Size([1, 256]), cos_sim=-0.0318"
+    },
+    "C07_direction_preserved": {
+      "status": "PASS",
+      "detail": "forward vs reversed cosine=0.9501 (should be < 1.0)"
+    },
+    "C08_loss_function": {
+      "status": "PASS",
+      "detail": "loss=2.0241, r@1=N/A"
+    }
+  }
+}

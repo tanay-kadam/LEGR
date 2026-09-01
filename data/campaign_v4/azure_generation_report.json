@@ -1,0 +1,24 @@
+{
+  "total_budget": {
+    "total_prompt_tokens": 1447171,
+    "total_completion_tokens": 1102497,
+    "total_calls": 2781,
+    "failed_calls": 0,
+    "total_latency_s": 12970.76,
+    "estimated_cost_usd": 5.0993
+  },
+  "tiers": {
+    "15": {
+      "unique_dags": 651,
+      "total_queries_generated": 3906
+    },
+    "30": {
+      "unique_dags": 916,
+      "total_queries_generated": 5496
+    },
+    "45": {
+      "unique_dags": 1313,
+      "total_queries_generated": 7878
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "timestamp_utc": "2026-08-31T23:23:53.152353+00:00",
+  "all_passed": false,
+  "providers": [
+    {
+      "profile": "azure_openai",
+      "provider": "",
+      "model_or_deployment": "",
+      "generation_status": "FAIL",
+      "integration_status": "FAIL",
+      "status": "FAIL",
+      "latency_s": 0.001,
+      "prediction": null,
+      "error_category": "configuration",
+      "error": "Missing required Azure OpenAI environment variable: AZURE_OPENAI_ENDPOINT"
+    },
+    {
+      "profile": "ollama_llama",
+      "provider": "ollama",
+      "model_or_deployment": "llama3.2:3b",
+      "generation_status": "PASS",
+      "integration_status": "PASS",
+      "status": "PASS",
+      "latency_s": 2.926,
+      "prediction": "query_database",
+      "error_category": "",
+      "error": ""
+    },
+    {
+      "profile": "ollama_gpt_oss",
+      "provider": "ollama",
+      "model_or_deployment": "gpt-oss:120b-cloud",
+      "generation_status": "PASS",
+      "integration_status": "PASS",
+      "status": "PASS",
+      "latency_s": 5.144,
+      "prediction": "query_database",
+      "error_category": "",
+      "error": ""
+    }
+  ]
+}

@@ -20,7 +20,7 @@ Usage
 -----
     $ python llm_dag_baseline.py --input outputs/legr_llm_test.jsonl
     $ python llm_dag_baseline.py --input upgraded_data/graph/test_topology_heldout.csv \\
-                                  --provider ollama --model llama3.2 --max_examples 200
+                                  --llm-profile ollama_llama --max_examples 200
 """
 
 from __future__ import annotations
@@ -117,15 +117,26 @@ Rules:
 - Only use tools from the vocabulary above
 - Indices in edges refer to positions in the tools list (0-based)
 - The result must form a valid DAG (no cycles)
-- Output valid JSON only, no explanation"""
+- Output ONLY valid JSON, no explanation or markdown"""
 
 
-def _build_system_prompt() -> str:
-    tool_list = "\n".join(f"  - {t}: {TOOL_DESCRIPTIONS[t]}" for t in TOOL_VOCAB)
+def _build_system_prompt(tool_vocab: list[str] | None = None) -> str:
+    vocab = tool_vocab if tool_vocab is not None else TOOL_VOCAB
+    tool_list = "\n".join(f"  - {t}" for t in vocab)
     return _SYSTEM_PROMPT.format(tool_list=tool_list)
 
 
-def _parse_llm_response(text: str) -> Tuple[List[str], List[List[int]]]:
+def _extract_tool_vocab_from_corpus(corpus: list[dict]) -> list[str]:
+    """Extract the unique tool vocabulary from the evaluation corpus."""
+    tools = set()
+    for row in corpus:
+        for t in row.get("tools", []):
+            if t:
+                tools.add(t)
+    return sorted(tools)
+
+
+def _parse_llm_response(text: str, valid_tools: set[str] | None = None) -> Tuple[List[str], List[List[int]]]:
     """Parse LLM JSON response into (tools, edges)."""
     cleaned = re.sub(r"```(?:json)?\s*", "", text)
     cleaned = cleaned.replace("```", "").strip()
@@ -150,11 +161,15 @@ def _parse_llm_response(text: str) -> Tuple[List[str], List[List[int]]]:
     if not isinstance(edges, list):
         edges = []
 
-    tools = [str(t).strip() for t in tools if str(t).strip() in TOOL_VOCAB]
+    vocab_set = valid_tools if valid_tools is not None else set(TOOL_VOCAB)
+    tools = [str(t).strip() for t in tools if str(t).strip() in vocab_set]
     valid_edges = []
     for e in edges:
         if isinstance(e, (list, tuple)) and len(e) == 2:
-            s, d = int(e[0]), int(e[1])
+            try:
+                s, d = int(e[0]), int(e[1])
+            except (ValueError, TypeError):
+                continue
             if 0 <= s < len(tools) and 0 <= d < len(tools) and s != d:
                 valid_edges.append([s, d])
 
@@ -168,9 +183,14 @@ def _call_llm(
     model: str,
     client=None,
     ollama_backend=None,
+    llm_backend=None,
     request_timeout_s: float | None = None,
+    max_tokens: int = 1024,
 ) -> str:
     """Call the LLM and return raw text response."""
+    backend = llm_backend or ollama_backend
+    if backend is not None:
+        return backend.call(system_prompt, query, max_tokens=max_tokens).text
     if provider == "ollama":
         if ollama_backend is None:
             from llm_backends import OllamaBackend
@@ -178,7 +198,7 @@ def _call_llm(
                 model_name=model,
                 timeout_s=request_timeout_s,
             )
-        resp = ollama_backend.call(system_prompt, query)
+        resp = ollama_backend.call(system_prompt, query, max_tokens=max_tokens)
         return resp.text
     elif provider == "gemini":
         from llm_backends import call_gemini
@@ -188,6 +208,11 @@ def _call_llm(
             client = genai.Client(api_key=api_key)
         resp = call_gemini(client, model, system_prompt, query)
         return resp.text
+    elif provider == "azure_openai":
+        from llm_backends import create_llm_provider
+        return create_llm_provider(
+            "azure_openai", timeout_s=request_timeout_s
+        ).call(system_prompt, query).text
     else:
         raise ValueError(f"Unknown provider: {provider}")
 
@@ -299,7 +324,8 @@ def _aggregate_progress(
 def evaluate_llm_baseline(
     corpus: List[Dict],
     provider: str = "ollama",
-    model: str = "llama3.2",
+    model: str = "llama3.2:3b",
+    llm_profile: str | None = None,
     max_examples: int = 0,
     inter_query_delay: float = 0.5,
     request_timeout_s: float | None = 120.0,
@@ -309,12 +335,23 @@ def evaluate_llm_baseline(
     progress_every: int = 20,
 ) -> Dict[str, Any]:
     """Run the LLM DAG generation baseline on the corpus."""
-    system_prompt = _build_system_prompt()
+    corpus_tool_vocab = _extract_tool_vocab_from_corpus(corpus)
+    valid_tool_set = set(corpus_tool_vocab)
+    system_prompt = _build_system_prompt(corpus_tool_vocab)
+    print(f"  Tool vocabulary: {len(corpus_tool_vocab)} tools from corpus")
 
     client = None
     ollama_backend = None
+    llm_backend = None
 
-    if provider == "ollama":
+    if llm_profile:
+        from llm_backends import create_llm_provider
+        llm_backend = create_llm_provider(
+            llm_profile, timeout_s=request_timeout_s
+        )
+        provider = llm_backend.provider_name
+        model = llm_backend.model_name
+    elif provider == "ollama":
         from llm_backends import OllamaBackend
         ollama_backend = OllamaBackend(
             model_name=model,
@@ -366,9 +403,10 @@ def evaluate_llm_baseline(
             raw = _call_llm(
                 query, system_prompt, provider, model,
                 client=client, ollama_backend=ollama_backend,
+                llm_backend=llm_backend,
                 request_timeout_s=request_timeout_s,
             )
-            pred_tools, pred_edges = _parse_llm_response(raw)
+            pred_tools, pred_edges = _parse_llm_response(raw, valid_tools=valid_tool_set)
         except Exception as e:
             print(f"  Error on example {i}: {e}")
             record = {
@@ -532,10 +570,16 @@ def main():
     p.add_argument("--input", type=str, default="outputs/legr_llm_test.jsonl",
                     help="JSONL or CSV input file with query/tools/edges")
     p.add_argument("--provider", type=str, default="ollama",
-                    choices=["ollama", "gemini"],
+                    choices=["ollama", "gemini", "azure_openai"],
                     help="LLM provider (default: ollama)")
-    p.add_argument("--model", type=str, default="llama3.2",
-                    help="Model name (default: llama3.2)")
+    p.add_argument("--model", type=str, default="llama3.2:3b",
+                    help="Model name (default: llama3.2:3b)")
+    p.add_argument(
+        "--llm-profile",
+        choices=["azure_openai", "ollama_llama", "ollama_gpt_oss"],
+        default=None,
+        help="Load provider and model from configs/llm_providers.json.",
+    )
     p.add_argument("--max_examples", type=int, default=0,
                     help="Max examples to evaluate (0 = all)")
     p.add_argument("--inter_query_delay", type=float, default=0.5,
@@ -566,6 +610,7 @@ def main():
         corpus,
         provider=args.provider,
         model=args.model,
+        llm_profile=args.llm_profile,
         max_examples=args.max_examples,
         inter_query_delay=args.inter_query_delay,
         request_timeout_s=args.request_timeout_s,

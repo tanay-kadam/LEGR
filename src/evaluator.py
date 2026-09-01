@@ -22,7 +22,7 @@ from typing import Any, Dict, List, Optional, Tuple
 import pandas as pd
 
 from dataset import build_dataset
-from llm_backends import OllamaBackend
+from llm_backends import LLMProvider
 from routers import RoutingResult, hierarchical_route
 from taxonomies import (
     ALL_TOOLS,
@@ -41,7 +41,7 @@ def _run_taxonomy(
     df: pd.DataFrame,
     client=None,
     model: str = "",
-    llm_backend: Optional[OllamaBackend] = None,
+    llm_backend: Optional[LLMProvider] = None,
     inter_query_delay: float = 0.3,
 ) -> Tuple[Dict[str, Any], List[RoutingResult]]:
     """Route every query in *df* through *taxonomy* and compute metrics."""
@@ -234,7 +234,7 @@ def run_experiment(
     client=None,
     model: str = "",
     inter_query_delay: float = 0.3,
-    llm_backend: Optional[OllamaBackend] = None,
+    llm_backend: Optional[LLMProvider] = None,
     df: Optional[pd.DataFrame] = None,
 ) -> Tuple[Dict, Dict, List[RoutingResult], List[RoutingResult]]:
     """Run the full comparative experiment (Semantic vs Tool-Bound).

@@ -1,0 +1,13 @@
+{
+  "tool_set_f1": 0.981074074074074,
+  "mean_ged_error": 0.29,
+  "recall@1": 0.9266666666666666,
+  "recall@3": 0.9933333333333333,
+  "recall@5": 0.9966666666666667,
+  "mrr@1": 0.9266666666666666,
+  "mrr@3": 0.9588888888888889,
+  "mrr@5": 0.9595555555555556,
+  "hardneg_pairs_evaluated": 312,
+  "hardneg_ranking_accuracy": 0.9936,
+  "hardneg_false_positive_rate": 0.0064
+}

@@ -67,8 +67,9 @@ from legr_tool_count import (
 
 _TOOL_COUNT_OVERRIDE = bootstrap_tool_count_from_argv(sys.argv)
 
-from data_synth import LEGRDataset, build_splits, dag_to_pyg, NUM_TOOLS
+from data_synth import LEGRDataset, build_splits, dag_to_pyg, NUM_TOOLS, register_tools
 from encoders import LEGRDualEncoder, get_tokenizer, resolve_graph_encoder_settings
+from encoders_v2 import LEGRDualEncoderV2, LEGRDualEncoderV3
 from loss import GraphAwareContrastiveLoss, compute_alignment_metrics
 
 
@@ -96,6 +97,7 @@ class TrainConfig:
     max_topo_pos: int = 16
     graph_encoder_type: str = "gcn"
     graph_direction: str = "gcn_undirected"
+    use_text_node_features: bool = False
 
     # Loss — default GED prior (override to match older CSV baselines via CLI)
     temperature_init: float = 0.05
@@ -298,6 +300,14 @@ def _build_csv_train_val_datasets(
         missing = required - set(df.columns)
         if missing:
             raise ValueError(f"{name} CSV missing columns {sorted(missing)}; found {list(df.columns)}")
+
+    # Auto-register any tool names not in the original vocabulary
+    all_tools: set[str] = set()
+    for df in (train_df, val_df):
+        for _, row in df.iterrows():
+            all_tools.update(_parse_tools(row["tools"]))
+    if all_tools:
+        register_tools(sorted(all_tools))
 
     # Build shared unique DAG pool across train+val
     unique_dags: list[nx.DiGraph] = []
@@ -595,19 +605,52 @@ def main(cfg: TrainConfig) -> str:
     if device.type == "cuda" and not torch.cuda.is_available():
         raise RuntimeError("BLOCKED_CUDA: device=cuda but torch.cuda.is_available() is False")
 
-    model = LEGRDualEncoder(
-        num_tools=NUM_TOOLS,
-        text_model_name=cfg.text_model,
-        embed_dim=cfg.embed_dim,
-        gcn_layers=cfg.gcn_layers,
-        node_embed_dim=cfg.node_embed_dim,
-        gcn_hidden=cfg.gcn_hidden,
-        freeze_text=cfg.freeze_text,
-        num_frozen_layers=cfg.num_frozen_layers,
-        max_topo_pos=cfg.max_topo_pos,
-        graph_encoder_type=graph_encoder_type,
-        tie_in_out=tie_in_out,
-    ).to(device)
+    import data_synth as _ds
+    use_v2 = graph_encoder_type == "directed_text"
+    use_v3 = graph_encoder_type == "setgnn_tied"
+    cfg.use_text_node_features = use_v2 or use_v3
+    if use_v3:
+        print("  Architecture: LEGRDualEncoderV3 (tied MiniLM + node-set pool + directed GNN)")
+        model = LEGRDualEncoderV3(
+            embed_dim=cfg.embed_dim,
+            text_model_name=cfg.text_model,
+            graph_hidden_dim=cfg.gcn_hidden,
+            graph_num_layers=cfg.gcn_layers,
+            node_feature_dim=cfg.node_embed_dim,
+            max_topo_pos=cfg.max_topo_pos,
+            freeze_text_backbone=cfg.freeze_text,
+            num_frozen_layers=cfg.num_frozen_layers,
+            tie_in_out=tie_in_out,
+        ).to(device)
+        model.precompute_tool_features(list(_ds.TOOL_VOCAB), device)
+    elif use_v2:
+        print("  Architecture: LEGRDualEncoderV2 (tool-name MiniLM node features + directed GNN)")
+        model = LEGRDualEncoderV2(
+            embed_dim=cfg.embed_dim,
+            text_model_name=cfg.text_model,
+            graph_hidden_dim=cfg.gcn_hidden,
+            graph_num_layers=cfg.gcn_layers,
+            node_feature_dim=cfg.node_embed_dim,
+            max_topo_pos=cfg.max_topo_pos,
+            freeze_text_backbone=cfg.freeze_text,
+            num_frozen_layers=cfg.num_frozen_layers,
+            tie_in_out=tie_in_out,
+        ).to(device)
+        model.precompute_tool_features(list(_ds.TOOL_VOCAB), device)
+    else:
+        model = LEGRDualEncoder(
+            num_tools=_ds.NUM_TOOLS,
+            text_model_name=cfg.text_model,
+            embed_dim=cfg.embed_dim,
+            gcn_layers=cfg.gcn_layers,
+            node_embed_dim=cfg.node_embed_dim,
+            gcn_hidden=cfg.gcn_hidden,
+            freeze_text=cfg.freeze_text,
+            num_frozen_layers=cfg.num_frozen_layers,
+            max_topo_pos=cfg.max_topo_pos,
+            graph_encoder_type=graph_encoder_type,
+            tie_in_out=tie_in_out,
+        ).to(device)
     if device.type == "cuda" and next(model.parameters()).device.type != "cuda":
         raise RuntimeError(f"LEGR parameters are not on CUDA: {next(model.parameters()).device}")
 
@@ -627,6 +670,20 @@ def main(cfg: TrainConfig) -> str:
         "params": list(model.graph_encoder.parameters()),
         "lr": cfg.lr,
     })
+    if use_v2:
+        param_groups.append({
+            "params": list(model.node_feature_encoder.proj.parameters()),
+            "lr": cfg.lr,
+        })
+    if use_v3:
+        param_groups.append({
+            "params": (
+                list(model.node_proj.parameters())
+                + list(model.set_attn.parameters())
+                + list(model.fuse.parameters())
+            ),
+            "lr": cfg.lr,
+        })
     param_groups.append({
         "params": list(criterion.parameters()),
         "lr": cfg.lr,
@@ -665,13 +722,18 @@ def main(cfg: TrainConfig) -> str:
     print(f"LR  backbone={cfg.text_backbone_lr}  heads/GCN={cfg.lr}\n")
 
     # ── W&B ───────────────────────────────────────────────────────────────────
-    wandb.init(
-        project=cfg.wandb_project,
-        entity=cfg.wandb_entity,
-        name=cfg.wandb_run_name,
-        config=vars(cfg),
-    )
-    wandb.watch(model, log="gradients", log_freq=50)
+    _wandb_ok = False
+    try:
+        wandb.init(
+            project=cfg.wandb_project,
+            entity=cfg.wandb_entity,
+            name=cfg.wandb_run_name,
+            config=vars(cfg),
+        )
+        wandb.watch(model, log="gradients", log_freq=50)
+        _wandb_ok = True
+    except Exception as _wandb_err:
+        print(f"W&B init failed ({_wandb_err}); training continues without W&B logging.")
 
     # ── Checkpoint directory ──────────────────────────────────────────────────
     ckpt_dir = Path(cfg.checkpoint_dir)
@@ -694,14 +756,15 @@ def main(cfg: TrainConfig) -> str:
         )
         scheduler.step()
 
-        wandb.log({f"train/{k}": v for k, v in train_metrics.items()},
-                  step=epoch)
-        group_lrs = scheduler.get_last_lr()
-        wandb.log({
-            "lr/text_backbone": group_lrs[0],
-            "lr/text_head": group_lrs[1] if len(group_lrs) > 1 else group_lrs[0],
-            "lr/gcn": group_lrs[2] if len(group_lrs) > 2 else group_lrs[0],
-        }, step=epoch)
+        if _wandb_ok:
+            wandb.log({f"train/{k}": v for k, v in train_metrics.items()},
+                      step=epoch)
+            group_lrs = scheduler.get_last_lr()
+            wandb.log({
+                "lr/text_backbone": group_lrs[0],
+                "lr/text_head": group_lrs[1] if len(group_lrs) > 1 else group_lrs[0],
+                "lr/gcn": group_lrs[2] if len(group_lrs) > 2 else group_lrs[0],
+            }, step=epoch)
 
         # Validation
         if epoch % cfg.val_every == 0:
@@ -709,8 +772,9 @@ def main(cfg: TrainConfig) -> str:
                 model, criterion, val_loader, ged_full, device,
                 ged_global_max=ged_global_max,
             )
-            wandb.log({f"val/{k}": v for k, v in val_metrics.items()},
-                      step=epoch)
+            if _wandb_ok:
+                wandb.log({f"val/{k}": v for k, v in val_metrics.items()},
+                          step=epoch)
 
             val_loss = val_metrics["loss_total"]
             improved = val_loss < best_val_loss
@@ -757,7 +821,8 @@ def main(cfg: TrainConfig) -> str:
         ckpt_dir / "final_model.pt",
     )
 
-    wandb.finish()
+    if _wandb_ok:
+        wandb.finish()
     print(f"\nTraining complete.  Best val loss: {best_val_loss:.4f}")
     print(f"Checkpoints saved to {ckpt_dir.resolve()}")
 

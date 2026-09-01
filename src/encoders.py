@@ -36,6 +36,16 @@ def resolve_graph_encoder_settings(cfg) -> tuple[str, bool, bool]:
     """
     direction = getattr(cfg, "graph_direction", "gcn_undirected") or "gcn_undirected"
     gtype = getattr(cfg, "graph_encoder_type", "gcn") or "gcn"
+    if gtype in ("setgnn_tied", "legr_setgnn_tied") or direction in (
+        "setgnn_tied",
+        "legr_setgnn_tied",
+    ):
+        return "setgnn_tied", False, False
+    if gtype in ("directed_text", "legr_directed_toolname") or direction in (
+        "directed_text",
+        "legr_directed_toolname",
+    ):
+        return "directed_text", False, False
     if direction == "directed":
         return "directed", False, False
     if direction == "tied_in_out":

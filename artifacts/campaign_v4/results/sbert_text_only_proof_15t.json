@@ -1,0 +1,87 @@
+{
+  "tier": 15,
+  "n_queries": 300,
+  "gallery_size": 322,
+  "n_twin_pairs": 927,
+  "n_toolsets_with_twins": 49,
+  "frac_queries_where_gold_has_lowest_gallery_index_among_twins": 0.98,
+  "sbert_ft_full_gallery": {
+    "dag_text": {
+      "recall@1": 0.2133,
+      "recall@3": 0.61,
+      "recall@5": 0.8533
+    },
+    "tools_only": {
+      "recall@1": 0.6467,
+      "recall@3": 0.65,
+      "recall@5": 0.6567
+    },
+    "reversed_edges_dag_text": {
+      "recall@1": 0.15,
+      "recall@3": 0.5967,
+      "recall@5": 0.8667
+    }
+  },
+  "sbert_ft_embedding_collapse": {
+    "mean_cosine_twin_dag_text": 0.9463,
+    "mean_cosine_twin_tools_only": 0.9998,
+    "mean_cosine_twin_reversed": 0.9432,
+    "mean_cosine_diff_toolset_dag_text": 0.1833,
+    "mean_cosine_diff_toolset_tools_only": 0.1873,
+    "frac_twin_pairs_tools_cos_gt_0.99": 1.0,
+    "frac_twin_pairs_text_cos_gt_0.99": 0.0367
+  },
+  "sbert_ft_same_toolset_ranking": {
+    "dag_text": {
+      "n_queries_with_twins": 300,
+      "same_toolset_r@1": 0.2333,
+      "chance_same_toolset_r@1": 0.1538
+    },
+    "tools_only": {
+      "n_queries_with_twins": 300,
+      "same_toolset_r@1": 0.69,
+      "chance_same_toolset_r@1": 0.1538
+    },
+    "reversed_edges_dag_text": {
+      "n_queries_with_twins": 300,
+      "same_toolset_r@1": 0.17,
+      "chance_same_toolset_r@1": 0.1538
+    }
+  },
+  "sbert_ft_tools_only_tiebreak": {
+    "note": "Twins have essentially identical tools-only vectors. argmax on a tie returns the first gallery index. Test DAGs were concatenated first, so gold is often that first index.",
+    "pick_lowest_gallery_index_on_tie": 0.9733,
+    "pick_highest_gallery_index_on_tie": 0.0,
+    "pick_random_tied_twin": 0.1467
+  },
+  "legr": {
+    "toolname_ged": {
+      "full_gallery": {
+        "recall@1": 0.2,
+        "recall@3": 0.4,
+        "recall@5": 0.5033
+      },
+      "same_toolset_ranking": {
+        "n_queries_with_twins": 300,
+        "same_toolset_r@1": 0.2733,
+        "chance_same_toolset_r@1": 0.1538
+      },
+      "mean_cosine_twin": 0.4317,
+      "mean_cosine_diff_toolset": 0.1787
+    },
+    "setgnn_tied_no_ged": {
+      "full_gallery": {
+        "recall@1": 0.21,
+        "recall@3": 0.5667,
+        "recall@5": 0.8133
+      },
+      "same_toolset_ranking": {
+        "n_queries_with_twins": 300,
+        "same_toolset_r@1": 0.2367,
+        "chance_same_toolset_r@1": 0.1538
+      },
+      "mean_cosine_twin": 0.6256,
+      "mean_cosine_diff_toolset": 0.2249
+    }
+  }
+}

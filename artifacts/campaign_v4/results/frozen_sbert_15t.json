@@ -1,0 +1,24 @@
+{
+  "tier": 15,
+  "model": "Frozen_SBERT (all-MiniLM-L6-v2)",
+  "test_indomain": {
+    "recall@1": 0.0,
+    "mrr@1": 0.0,
+    "recall@3": 0.0,
+    "mrr@3": 0.0,
+    "recall@5": 0.0,
+    "mrr@5": 0.0,
+    "num_queries": 192,
+    "corpus_size": 1632
+  },
+  "test_topology_heldout": {
+    "recall@1": 0.0,
+    "mrr@1": 0.0,
+    "recall@3": 0.0,
+    "mrr@3": 0.0,
+    "recall@5": 0.0,
+    "mrr@5": 0.0,
+    "num_queries": 300,
+    "corpus_size": 1632
+  }
+}

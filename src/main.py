@@ -7,7 +7,7 @@ prints a formatted summary report to the terminal.
 Usage
 -----
     $ cp .env.example .env
-    $ # Edit .env and set GEMINI_API_KEY=... or USE_OLLAMA=true
+    $ # Edit .env and set LLM_PROFILE=ollama_llama or azure_openai
     $ python main.py                    # 50-query canonical dataset
     $ python main.py --scaled           # 1,005 queries (n_per_tool=67) for statistical power
     $ python main.py --scaled --n_per_tool 34   # 510 queries
@@ -183,6 +183,14 @@ def print_misrouted(sem_records, tb_records) -> None:
 def parse_args():
     p = argparse.ArgumentParser(
         description="Run Semantic vs Tool-Bound taxonomy routing experiment.",
+    )
+    p.add_argument(
+        "--llm_profile",
+        "--llm-profile",
+        dest="llm_profile",
+        choices=["azure_openai", "ollama_llama", "ollama_gpt_oss"],
+        default=None,
+        help="Configured LLM profile (also read from LLM_PROFILE).",
     )
     p.add_argument(
         "--tool_count",
@@ -366,14 +374,22 @@ def main() -> None:
     args = parse_args()
     tool_count = args.tool_count or _TOOL_COUNT_OVERRIDE
     use_ollama = os.environ.get("USE_OLLAMA", "").strip().lower() in ("1", "true", "yes")
-    ollama_model = os.environ.get("OLLAMA_MODEL", "llama3.2").strip() or "llama3.2"
+    ollama_model = (
+        os.environ.get("OLLAMA_MODEL", "llama3.2:3b").strip()
+        or "llama3.2:3b"
+    )
     api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
+    profile_name = args.llm_profile or os.environ.get("LLM_PROFILE", "").strip()
 
     client = None
     model = ""
     llm_backend = None
 
-    if use_ollama:
+    if profile_name:
+        from llm_backends import create_llm_provider
+        llm_backend = create_llm_provider(profile_name)
+        model_label = f"{llm_backend.provider_name} ({llm_backend.model_name})"
+    elif use_ollama:
         from llm_backends import OllamaBackend
         llm_backend = OllamaBackend(model_name=ollama_model)
         model_label = f"Ollama ({ollama_model})"
@@ -385,11 +401,11 @@ def main() -> None:
     else:
         print(
             "ERROR: No LLM configured.\n"
-            "  Option 1 — Use Ollama (local, no API key):\n"
-            "    Set USE_OLLAMA=true in .env\n"
-            "    Optional: OLLAMA_MODEL=llama3.2 (default)\n"
-            "    Run: ollama pull llama3.2\n"
-            "  Option 2 — Use Gemini:\n"
+            "  Preferred — select a configured profile:\n"
+            "    Set LLM_PROFILE=ollama_llama, ollama_gpt_oss, or azure_openai\n"
+            "  Legacy Ollama — set USE_OLLAMA=true and optionally:\n"
+            "    OLLAMA_MODEL=llama3.2:3b\n"
+            "  Legacy Gemini:\n"
             "    Set GEMINI_API_KEY=... in .env\n"
             "    Get a free key at: https://aistudio.google.com/app/apikey"
         )

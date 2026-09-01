@@ -1,0 +1,9 @@
+timestamp_utc: 2026-09-01T00:12:40.875847+00:00
+status: PASS
+endpoint_hostname: paper-ncsu.openai.azure.com
+deployment: gpt-4o
+api_mode: v1
+response_received: true
+exact_marker: true
+error_category: 
+error: 

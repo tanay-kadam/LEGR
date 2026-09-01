@@ -1,0 +1,24 @@
+{
+  "profiles": {
+    "azure_openai": {
+      "provider": "azure_openai",
+      "endpoint_env": "AZURE_OPENAI_ENDPOINT",
+      "api_key_env": "AZURE_OPENAI_API_KEY",
+      "deployment_env": "AZURE_OPENAI_DEPLOYMENT"
+    },
+    "ollama_llama": {
+      "provider": "ollama",
+      "base_url_env": "OLLAMA_BASE_URL",
+      "default_base_url": "http://localhost:11434",
+      "model_env": "OLLAMA_LLAMA_MODEL",
+      "model": "llama3.2:3b"
+    },
+    "ollama_gpt_oss": {
+      "provider": "ollama",
+      "base_url_env": "OLLAMA_BASE_URL",
+      "default_base_url": "http://localhost:11434",
+      "model_env": "OLLAMA_GPT_OSS_MODEL",
+      "model": "gpt-oss:120b-cloud"
+    }
+  }
+}

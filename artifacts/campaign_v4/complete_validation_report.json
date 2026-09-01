@@ -1,0 +1,129 @@
+{
+  "timestamp": "2026-09-01T04:18:46.915512",
+  "total_tests": 30,
+  "passed": 30,
+  "failed": 0,
+  "critical_failures": [],
+  "results": {
+    "V01_row_count_15": {
+      "status": "PASS",
+      "detail": "3906 rows"
+    },
+    "V02_tools_in_vocab_15": {
+      "status": "PASS",
+      "detail": "15 tools used"
+    },
+    "V03_no_heldout_leak_15": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "V04_heldout_only_15": {
+      "status": "PASS",
+      "detail": "families={'asymmetric_fork_join', 'diamond'}"
+    },
+    "V05_no_dag_leakage_15": {
+      "status": "PASS",
+      "detail": "overlap=0"
+    },
+    "V06_twin_density_15": {
+      "status": "PASS",
+      "detail": "100.0%"
+    },
+    "V07_query_diversity_15": {
+      "status": "PASS",
+      "detail": "avg 6.0 unique queries/DAG"
+    },
+    "V08_azure_queries_15": {
+      "status": "PASS",
+      "detail": "azure=100%, sources={'azure_gpt4o': 3906}"
+    },
+    "V09_topology_diversity_15": {
+      "status": "PASS",
+      "detail": "22 families, 651 unique DAGs"
+    },
+    "V10_acyclicity_15": {
+      "status": "PASS",
+      "detail": "0 cyclic"
+    },
+    "V01_row_count_30": {
+      "status": "PASS",
+      "detail": "5496 rows"
+    },
+    "V02_tools_in_vocab_30": {
+      "status": "PASS",
+      "detail": "30 tools used"
+    },
+    "V03_no_heldout_leak_30": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "V04_heldout_only_30": {
+      "status": "PASS",
+      "detail": "families={'asymmetric_fork_join', 'diamond'}"
+    },
+    "V05_no_dag_leakage_30": {
+      "status": "PASS",
+      "detail": "overlap=0"
+    },
+    "V06_twin_density_30": {
+      "status": "PASS",
+      "detail": "100.0%"
+    },
+    "V07_query_diversity_30": {
+      "status": "PASS",
+      "detail": "avg 6.0 unique queries/DAG"
+    },
+    "V08_azure_queries_30": {
+      "status": "PASS",
+      "detail": "azure=100%, sources={'azure_gpt4o': 5496}"
+    },
+    "V09_topology_diversity_30": {
+      "status": "PASS",
+      "detail": "22 families, 916 unique DAGs"
+    },
+    "V10_acyclicity_30": {
+      "status": "PASS",
+      "detail": "0 cyclic"
+    },
+    "V01_row_count_45": {
+      "status": "PASS",
+      "detail": "7878 rows"
+    },
+    "V02_tools_in_vocab_45": {
+      "status": "PASS",
+      "detail": "45 tools used"
+    },
+    "V03_no_heldout_leak_45": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "V04_heldout_only_45": {
+      "status": "PASS",
+      "detail": "families={'asymmetric_fork_join', 'diamond'}"
+    },
+    "V05_no_dag_leakage_45": {
+      "status": "PASS",
+      "detail": "overlap=0"
+    },
+    "V06_twin_density_45": {
+      "status": "PASS",
+      "detail": "100.0%"
+    },
+    "V07_query_diversity_45": {
+      "status": "PASS",
+      "detail": "avg 6.0 unique queries/DAG"
+    },
+    "V08_azure_queries_45": {
+      "status": "PASS",
+      "detail": "azure=100%, sources={'azure_gpt4o': 7878}"
+    },
+    "V09_topology_diversity_45": {
+      "status": "PASS",
+      "detail": "22 families, 1313 unique DAGs"
+    },
+    "V10_acyclicity_45": {
+      "status": "PASS",
+      "detail": "0 cyclic"
+    }
+  }
+}

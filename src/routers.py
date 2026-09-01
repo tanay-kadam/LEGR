@@ -20,8 +20,14 @@ from typing import Any, Dict, List, Literal, Optional
 
 from pydantic import BaseModel, Field, create_model
 
-from llm_backends import OllamaBackend, call_gemini
-from taxonomies import ALL_TOOLS, TOOL_DESCRIPTIONS, format_taxonomy_prompt, get_tools_for_branch
+from llm_backends import LLMProvider, call_gemini
+from taxonomies import (
+    ALL_TOOLS,
+    TOOL_DESCRIPTIONS,
+    format_taxonomy_prompt,
+    get_branch_for_tool,
+    get_tools_for_branch,
+)
 
 
 @dataclass
@@ -205,7 +211,7 @@ def hierarchical_route(
     taxonomy: dict,
     client=None,
     model: str = "",
-    llm_backend: Optional[OllamaBackend] = None,
+    llm_backend: Optional[LLMProvider] = None,
 ) -> Dict[str, Any]:
     """Route a query through a two-step hierarchical classification."""
     branch_text = _build_branch_text(taxonomy)
@@ -247,6 +253,14 @@ def hierarchical_route(
         selected_branch = str(resp1.parsed.branch)
     else:
         selected_branch = _match_choice(resp1.text, branch_names)
+
+    # Some reasoning models return the final tool despite a branch-only prompt.
+    # Recover only when the text identifies one valid tool and that tool maps to
+    # exactly one branch in the active taxonomy.
+    if selected_branch is None:
+        returned_tool = _extract_tool_candidate(resp1.text, all_valid_tools)
+        if returned_tool is not None:
+            selected_branch = get_branch_for_tool(taxonomy, returned_tool)
 
     if selected_branch is None:
         latency = time.perf_counter() - t0

@@ -1,0 +1,24 @@
+{
+  "tier": 45,
+  "model": "BM25",
+  "test_indomain": {
+    "recall@1": 0.0,
+    "mrr@1": 0.0,
+    "recall@3": 0.0,
+    "mrr@3": 0.0,
+    "recall@5": 0.0,
+    "mrr@5": 0.0,
+    "num_queries": 396,
+    "corpus_size": 3300
+  },
+  "test_topology_heldout": {
+    "recall@1": 0.0,
+    "mrr@1": 0.0,
+    "recall@3": 0.0,
+    "mrr@3": 0.0,
+    "recall@5": 0.0,
+    "mrr@5": 0.0,
+    "num_queries": 600,
+    "corpus_size": 3300
+  }
+}

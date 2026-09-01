@@ -492,13 +492,18 @@ def main(cfg: TrainConfig, *, tied: bool = False, eval_after: bool = True) -> st
         "drop_last": True,
     })
 
+    _wandb_ok = False
     if wandb is not None:
-        wandb.init(
-            project=cfg.wandb_project,
-            entity=cfg.wandb_entity,
-            name=cfg.wandb_run_name or f"sbert-ft-tied{tied}-ged{cfg.lambda_ged}",
-            config={**vars(cfg), "tied": tied},
-        )
+        try:
+            wandb.init(
+                project=cfg.wandb_project,
+                entity=cfg.wandb_entity,
+                name=cfg.wandb_run_name or f"sbert-ft-tied{tied}-ged{cfg.lambda_ged}",
+                config={**vars(cfg), "tied": tied},
+            )
+            _wandb_ok = True
+        except Exception as _e:
+            print(f"  W&B init failed ({_e}); continuing without W&B.")
 
     best_val_loss = float("inf")
     patience_counter = 0
@@ -509,13 +514,13 @@ def main(cfg: TrainConfig, *, tied: bool = False, eval_after: bool = True) -> st
             ged_full, device, cfg.max_grad_norm, epoch, ged_global_max,
         )
         scheduler.step()
-        if wandb is not None:
+        if _wandb_ok:
             wandb.log({f"train/{k}": v for k, v in train_metrics.items()}, step=epoch)
         if epoch % cfg.val_every == 0:
             val_metrics = validate_sbert(
                 model, criterion, val_loader, ged_full, device, ged_global_max,
             )
-            if wandb is not None:
+            if _wandb_ok:
                 wandb.log({f"val/{k}": v for k, v in val_metrics.items()}, step=epoch)
             val_loss = val_metrics["loss_total"]
             improved = val_loss < best_val_loss
@@ -545,7 +550,7 @@ def main(cfg: TrainConfig, *, tied: bool = False, eval_after: bool = True) -> st
         | {"tied": tied, "arch": "sbert_ft"},
         ckpt_dir / "final_model.pt",
     )
-    if wandb is not None:
+    if _wandb_ok:
         wandb.finish()
 
     best = ckpt_dir / "best_model.pt"

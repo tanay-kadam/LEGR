@@ -1,5 +1,7 @@
 # Environment
 .env
+.env.local
+.env.*.local
 .venv/
 venv/
 ENV/
@@ -96,3 +98,10 @@ PART1_RESEARCH_ANALYSIS.md
 # NOTE: "before changes/" is already committed. To stop tracking it run:
 #   git rm -r --cached "before changes"
 before changes/
+
+# Campaign v4 eval metrics (JSON/CSV). Model weights stay ignored via *.pt below.
+!artifacts/campaign_v4/results/
+!artifacts/campaign_v4/results/**
+artifacts/campaign_v4/results/**/*.pt
+*.pt
+*.pth

@@ -37,8 +37,8 @@ copy .env.example .env           # Windows  (cp on macOS/Linux)
 Then edit `.env` and pick **one**:
 
 - **Ollama (local, no API key, no rate limits — recommended):**
-  `USE_OLLAMA=true` and optionally `OLLAMA_MODEL=llama3.2`
-  (install [Ollama](https://ollama.com), then `ollama pull llama3.2`)
+  `LLM_PROFILE=ollama_llama` or `LLM_PROFILE=ollama_gpt_oss`
+  (install [Ollama](https://ollama.com), then pull `llama3.2:3b` and `gpt-oss:120b-cloud`)
 - **Gemini:** `GEMINI_API_KEY=...` (free key at [Google AI Studio](https://aistudio.google.com/app/apikey))
 
 Experiment 2 (LEGR) needs no API key. W&B logging during training is optional
@@ -179,7 +179,7 @@ Extra baseline — let an LLM generate the DAG directly:
 ```bash
 python src/llm_dag_baseline.py \
   --input upgraded_data/graph_30tools/test_topology_heldout.csv \
-  --provider ollama --model llama3.2 --max_examples 200
+  --llm-profile ollama_llama --max_examples 200
 ```
 
 GED-loss hyperparameter sweep:
@@ -248,7 +248,7 @@ experiments/
 Extract a DAG corpus from natural-language traces with structural validation:
 
 ```bash
-python src/dag_extract.py --input traces.txt --provider ollama --model llama3.2 --output corpus.csv
+python src/dag_extract.py --input traces.txt --llm-profile ollama_llama --output corpus.csv
 ```
 
 Re-run the generative baselines with structural validity tracking:
@@ -256,7 +256,7 @@ Re-run the generative baselines with structural validity tracking:
 ```bash
 python src/llm_dag_baseline.py --tool_count 30 \
   --input upgraded/upgraded_30tools/test_topology_heldout.csv \
-  --provider ollama --model llama3.2 \
+  --llm-profile ollama_llama \
   --progress_path new_results/llm_dag_llama3.2_30tools.progress.jsonl \
   --save_results new_results/llm_dag_llama3.2_30tools.csv
 ```

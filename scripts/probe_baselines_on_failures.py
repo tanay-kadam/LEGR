@@ -12,7 +12,7 @@ Usage
     python scripts/probe_baselines_on_failures.py \
         --tool_count 30 \
         --failures new_results/failures_30tools_1200/legr_failures.json \
-        --model llama3.2 --model gpt-oss:120b-cloud
+        --model llama3.2:3b --model gpt-oss:120b-cloud
 """
 
 from __future__ import annotations
