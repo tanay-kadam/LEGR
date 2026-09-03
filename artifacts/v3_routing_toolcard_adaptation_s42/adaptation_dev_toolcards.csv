@@ -1,0 +1,31 @@
+query,class_id,routing_tool,legr_tool,template_id
+Which tool handles the following intent? Read / query data from a database.,0,query_database,db_read,dev_0
+Appropriate API: query database; supported action: read / query data from a database.,0,query_database,db_read,dev_1
+Which tool handles the following intent? Write / update data in a database.,1,update_database,db_write,dev_0
+Appropriate API: update database; supported action: write / update data in a database.,1,update_database,db_write,dev_1
+Which tool handles the following intent? Reset a user's password or credentials.,2,reset_password,reset_password,dev_0
+Appropriate API: reset password; supported action: reset a user's password or credentials.,2,reset_password,reset_password,dev_1
+Which tool handles the following intent? Create a support or incident ticket.,3,create_ticket,create_ticket,dev_0
+Appropriate API: create ticket; supported action: create a support or incident ticket.,3,create_ticket,create_ticket,dev_1
+"Which tool handles the following intent? Send an email, alert, or notification.",4,send_notification,send_notification,dev_0
+"Appropriate API: send notification; supported action: send an email, alert, or notification.",4,send_notification,send_notification,dev_1
+Which tool handles the following intent? Isolate a compromised or misbehaving system.,5,quarantine_system,quarantine_system,dev_0
+Appropriate API: quarantine system; supported action: isolate a compromised or misbehaving system.,5,quarantine_system,quarantine_system,dev_1
+Which tool handles the following intent? Run a malware or vulnerability scan.,6,scan_malware,scan_malware,dev_0
+Appropriate API: scan malware; supported action: run a malware or vulnerability scan.,6,scan_malware,scan_malware,dev_1
+Which tool handles the following intent? Generate an analytics or compliance report.,7,generate_report,generate_report,dev_0
+Appropriate API: generate report; supported action: generate an analytics or compliance report.,7,generate_report,generate_report,dev_1
+Which tool handles the following intent? Process a financial refund or credit.,8,process_refund,process_refund,dev_0
+Appropriate API: process refund; supported action: process a financial refund or credit.,8,process_refund,process_refund,dev_1
+"Which tool handles the following intent? Update, upgrade, or cancel a subscription.",9,update_subscription,update_subscription,dev_0
+"Appropriate API: update subscription; supported action: update, upgrade, or cancel a subscription.",9,update_subscription,update_subscription,dev_1
+Which tool handles the following intent? Provision a new virtual machine or instance.,10,provision_vm,provision_vm,dev_0
+Appropriate API: provision vm; supported action: provision a new virtual machine or instance.,10,provision_vm,provision_vm,dev_1
+Which tool handles the following intent? Restart a service or application process.,11,restart_service,restart_service,dev_0
+Appropriate API: restart service; supported action: restart a service or application process.,11,restart_service,restart_service,dev_1
+"Which tool handles the following intent? Check system, service, or request status.",12,check_status,check_status,dev_0
+"Appropriate API: check status; supported action: check system, service, or request status.",12,check_status,check_status,dev_1
+Which tool handles the following intent? Escalate an issue to a human agent.,13,escalate_to_human,escalate_to_human,dev_0
+Appropriate API: escalate to human; supported action: escalate an issue to a human agent.,13,escalate_to_human,escalate_to_human,dev_1
+Which tool handles the following intent? Record an event in the audit / compliance log.,14,log_audit_event,log_audit_event,dev_0
+Appropriate API: log audit event; supported action: record an event in the audit / compliance log.,14,log_audit_event,log_audit_event,dev_1

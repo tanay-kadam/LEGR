@@ -1,0 +1,136 @@
+{
+  "dataset": "campaign_v4",
+  "tier": 45,
+  "seed": 42,
+  "gallery_protocol": "unique(candidate_corpus UNION evaluated_test_split)",
+  "models": {
+    "legr_directed_ged_45t_s42": {
+      "checkpoint_epoch": 15,
+      "graph_encoder_type": "directed",
+      "graph_direction": "directed",
+      "lambda_ged": 0.3,
+      "test_indomain": {
+        "tool_set_f1": 0.1451623012229073,
+        "mean_ged_error": 6.23989898989899,
+        "recall@1": 0.04292929292929293,
+        "recall@3": 0.07575757575757576,
+        "recall@5": 0.10353535353535354,
+        "mrr@1": 0.04292929292929293,
+        "mrr@3": 0.05765993265993267,
+        "mrr@5": 0.06397306397306397,
+        "exact_dag_accuracy": 0.04292929292929293,
+        "num_queries": 396,
+        "gallery_unique_dags": 616
+      },
+      "test_topology_heldout": {
+        "tool_set_f1": 0.13960185185185187,
+        "mean_ged_error": 7.078333333333333,
+        "recall@1": 0.0016666666666666668,
+        "recall@3": 0.015,
+        "recall@5": 0.025,
+        "mrr@1": 0.0016666666666666668,
+        "mrr@3": 0.006944444444444445,
+        "mrr@5": 0.009194444444444444,
+        "exact_dag_accuracy": 0.0016666666666666668,
+        "num_queries": 600,
+        "gallery_unique_dags": 650
+      }
+    },
+    "legr_directed_no_ged_45t_s42": {
+      "checkpoint_epoch": 6,
+      "graph_encoder_type": "directed",
+      "graph_direction": "directed",
+      "lambda_ged": 0.0,
+      "test_indomain": {
+        "tool_set_f1": 0.13391326686781233,
+        "mean_ged_error": 6.348484848484849,
+        "recall@1": 0.03787878787878788,
+        "recall@3": 0.07323232323232323,
+        "recall@5": 0.09090909090909091,
+        "mrr@1": 0.03787878787878788,
+        "mrr@3": 0.05429292929292928,
+        "mrr@5": 0.0582070707070707,
+        "exact_dag_accuracy": 0.03787878787878788,
+        "num_queries": 396,
+        "gallery_unique_dags": 616
+      },
+      "test_topology_heldout": {
+        "tool_set_f1": 0.14102777777777778,
+        "mean_ged_error": 6.915,
+        "recall@1": 0.0033333333333333335,
+        "recall@3": 0.021666666666666667,
+        "recall@5": 0.03166666666666667,
+        "mrr@1": 0.0033333333333333335,
+        "mrr@3": 0.01111111111111111,
+        "mrr@5": 0.01361111111111111,
+        "exact_dag_accuracy": 0.0033333333333333335,
+        "num_queries": 600,
+        "gallery_unique_dags": 650
+      }
+    },
+    "legr_legacy_ged_45t_s42": {
+      "checkpoint_epoch": 6,
+      "graph_encoder_type": "gcn",
+      "graph_direction": "gcn_undirected",
+      "lambda_ged": 0.3,
+      "test_indomain": {
+        "tool_set_f1": 0.13558273937061815,
+        "mean_ged_error": 6.959595959595959,
+        "recall@1": 0.020202020202020204,
+        "recall@3": 0.05303030303030303,
+        "recall@5": 0.06060606060606061,
+        "mrr@1": 0.020202020202020204,
+        "mrr@3": 0.03451178451178452,
+        "mrr@5": 0.036405723905723913,
+        "exact_dag_accuracy": 0.020202020202020204,
+        "num_queries": 396,
+        "gallery_unique_dags": 616
+      },
+      "test_topology_heldout": {
+        "tool_set_f1": 0.14817592592592593,
+        "mean_ged_error": 7.366666666666666,
+        "recall@1": 0.0016666666666666668,
+        "recall@3": 0.006666666666666667,
+        "recall@5": 0.01,
+        "mrr@1": 0.0016666666666666668,
+        "mrr@3": 0.003611111111111111,
+        "mrr@5": 0.004361111111111111,
+        "exact_dag_accuracy": 0.0016666666666666668,
+        "num_queries": 600,
+        "gallery_unique_dags": 650
+      }
+    },
+    "legr_legacy_no_ged_45t_s42": {
+      "checkpoint_epoch": 33,
+      "graph_encoder_type": "gcn",
+      "graph_direction": "gcn_undirected",
+      "lambda_ged": 0.0,
+      "test_indomain": {
+        "tool_set_f1": 0.15078162578162577,
+        "mean_ged_error": 5.921717171717172,
+        "recall@1": 0.06313131313131314,
+        "recall@3": 0.08838383838383838,
+        "recall@5": 0.10353535353535354,
+        "mrr@1": 0.06313131313131314,
+        "mrr@3": 0.07407407407407407,
+        "mrr@5": 0.07748316498316499,
+        "exact_dag_accuracy": 0.06313131313131314,
+        "num_queries": 396,
+        "gallery_unique_dags": 616
+      },
+      "test_topology_heldout": {
+        "tool_set_f1": 0.12861111111111112,
+        "mean_ged_error": 7.5616666666666665,
+        "recall@1": 0.0016666666666666668,
+        "recall@3": 0.01,
+        "recall@5": 0.018333333333333333,
+        "mrr@1": 0.0016666666666666668,
+        "mrr@3": 0.005277777777777778,
+        "mrr@5": 0.007194444444444444,
+        "exact_dag_accuracy": 0.0016666666666666668,
+        "num_queries": 600,
+        "gallery_unique_dags": 650
+      }
+    }
+  }
+}

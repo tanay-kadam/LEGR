@@ -1,0 +1,7 @@
+taxonomy,label,count
+action_label,Data Retrieval,131
+action_label,Orchestration,6
+action_label,State Modification,116
+semantic_label,Account & Subscription,58
+semantic_label,Data & Access Management,51
+semantic_label,Service & Incident Operations,87

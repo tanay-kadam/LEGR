@@ -1,0 +1,1006 @@
+id,query,ground_truth,domain_note,ground_truth_tool,class_id,predicted_tool,correct,rank,top5_tools
+0,look up the record for #60122.,query_database,,db_read,0,generate_report,False,2,generate_report;db_read;process_refund;db_write;create_ticket
+1,pull Alice's account details.,query_database,,db_read,0,update_subscription,False,3,update_subscription;escalate_to_human;db_read;generate_report;reset_password
+2,retrieve information on Frank.,query_database,,db_read,0,db_read,True,1,db_read;generate_report;escalate_to_human;quarantine_system;provision_vm
+3,check the database entry for Charlie.,query_database,,db_read,0,db_read,True,1,db_read;db_write;generate_report;scan_malware;quarantine_system
+4,fetch the record linked to #20891.,query_database,,db_read,0,generate_report,False,4,generate_report;process_refund;db_write;db_read;provision_vm
+5,search for transaction #20891 in the database.,query_database,,db_read,0,db_read,True,1,db_read;generate_report;db_write;process_refund;reset_password
+6,bring up Bob's account information.,query_database,,db_read,0,update_subscription,False,8,update_subscription;provision_vm;escalate_to_human;quarantine_system;generate_report
+7,search the database for Frank.,query_database,,db_read,0,db_read,True,1,db_read;db_write;generate_report;provision_vm;escalate_to_human
+8,Please look up the record for Alice.,query_database,,db_read,0,escalate_to_human,False,4,escalate_to_human;generate_report;db_write;db_read;create_ticket
+9,Please retrieve the entry for #60122.,query_database,,db_read,0,generate_report,False,4,generate_report;provision_vm;process_refund;db_read;reset_password
+10,Please retrieve information on Frank.,query_database,,db_read,0,generate_report,False,6,generate_report;provision_vm;escalate_to_human;create_ticket;quarantine_system
+11,Please check the database entry for Eve.,query_database,,db_read,0,db_write,False,2,db_write;db_read;generate_report;provision_vm;scan_malware
+12,Please fetch the record linked to #10234.,query_database,,db_read,0,generate_report,False,2,generate_report;db_read;db_write;process_refund;provision_vm
+13,Please search for transaction #53698 in the database.,query_database,,db_read,0,db_read,True,1,db_read;db_write;generate_report;reset_password;scan_malware
+14,Please bring up Diana's account information.,query_database,,db_read,0,db_read,True,1,db_read;generate_report;db_write;provision_vm;escalate_to_human
+15,Please search the database for Alice.,query_database,,db_read,0,db_read,True,1,db_read;db_write;generate_report;escalate_to_human;provision_vm
+16,Can you look up the record for Alice?,query_database,,db_read,0,escalate_to_human,False,3,escalate_to_human;generate_report;db_read;db_write;create_ticket
+17,Can you pull Bob's account details?,query_database,,db_read,0,update_subscription,False,2,update_subscription;db_read;reset_password;scan_malware;generate_report
+18,Can you check the database for #53698?,query_database,,db_read,0,db_read,True,1,db_read;db_write;generate_report;scan_malware;provision_vm
+19,Can you pull the details associated with #53698?,query_database,,db_read,0,generate_report,False,6,generate_report;provision_vm;process_refund;create_ticket;escalate_to_human
+20,Can you fetch Alice's profile from the database?,query_database,,db_read,0,db_read,True,1,db_read;db_write;generate_report;scan_malware;reset_password
+21,Can you read the record tied to Eve?,query_database,,db_read,0,db_write,False,3,db_write;generate_report;db_read;escalate_to_human;provision_vm
+22,Can you bring up the database entry for #20891?,query_database,,db_read,0,generate_report,False,3,generate_report;db_write;db_read;provision_vm;reset_password
+23,Can you read back the data for #60122?,query_database,,db_read,0,db_read,True,1,db_read;generate_report;db_write;provision_vm;process_refund
+24,Could you look up the record for #60122 for me?,query_database,,db_read,0,generate_report,False,2,generate_report;db_read;db_write;process_refund;provision_vm
+25,Could you pull Frank's account details for me?,query_database,,db_read,0,update_subscription,False,5,update_subscription;generate_report;provision_vm;reset_password;db_read
+26,Could you retrieve information on Eve for me?,query_database,,db_read,0,generate_report,False,2,generate_report;db_read;db_write;log_audit_event;send_notification
+27,Could you check the database entry for Diana for me?,query_database,,db_read,0,db_read,True,1,db_read;db_write;generate_report;scan_malware;provision_vm
+28,Could you fetch the record linked to #20891 for me?,query_database,,db_read,0,generate_report,False,3,generate_report;db_write;db_read;create_ticket;provision_vm
+29,Could you search for transaction #42017 in the database for me?,query_database,,db_read,0,db_read,True,1,db_read;db_write;generate_report;reset_password;scan_malware
+30,Could you bring up the database entry for #31450 for me?,query_database,,db_read,0,db_write,False,3,db_write;generate_report;db_read;provision_vm;create_ticket
+31,Could you read back the data for #10234 for me?,query_database,,db_read,0,generate_report,False,2,generate_report;db_read;db_write;process_refund;provision_vm
+32,I need you to look up the record for #20891.,query_database,,db_read,0,generate_report,False,9,generate_report;create_ticket;process_refund;provision_vm;db_write
+33,I need you to retrieve the entry for #60122.,query_database,,db_read,0,generate_report,False,5,generate_report;provision_vm;process_refund;db_write;db_read
+34,I need you to retrieve information on Diana.,query_database,,db_read,0,db_read,True,1,db_read;generate_report;db_write;escalate_to_human;provision_vm
+35,I need you to pull the details associated with #31450.,query_database,,db_read,0,generate_report,False,9,generate_report;provision_vm;create_ticket;db_write;process_refund
+36,I need you to fetch the record linked to #31450.,query_database,,db_read,0,generate_report,False,3,generate_report;db_write;db_read;provision_vm;process_refund
+37,I need you to read the record tied to Bob.,query_database,,db_read,0,generate_report,False,6,generate_report;escalate_to_human;reset_password;process_refund;create_ticket
+38,I need you to bring up Bob's account information.,query_database,,db_read,0,generate_report,False,8,generate_report;provision_vm;update_subscription;reset_password;scan_malware
+39,I need you to search the database for Grace.,query_database,,db_read,0,db_read,True,1,db_read;db_write;reset_password;generate_report;scan_malware
+40,We should look up the record for Charlie.,query_database,,db_read,0,generate_report,False,3,generate_report;quarantine_system;db_read;process_refund;scan_malware
+41,We should pull Alice's account details.,query_database,,db_read,0,update_subscription,False,4,update_subscription;escalate_to_human;generate_report;db_read;send_notification
+42,We should retrieve information on Alice.,query_database,,db_read,0,escalate_to_human,False,4,escalate_to_human;generate_report;send_notification;db_read;quarantine_system
+43,We should check the database entry for Diana.,query_database,,db_read,0,db_read,True,1,db_read;db_write;generate_report;scan_malware;provision_vm
+44,We should fetch the record linked to #10234.,query_database,,db_read,0,generate_report,False,2,generate_report;db_read;db_write;process_refund;provision_vm
+45,We should read the record tied to Charlie.,query_database,,db_read,0,generate_report,False,4,generate_report;quarantine_system;process_refund;db_read;restart_service
+46,We should bring up Grace's account information.,query_database,,db_read,0,update_subscription,False,6,update_subscription;reset_password;scan_malware;generate_report;provision_vm
+47,We should search the database for Charlie.,query_database,,db_read,0,db_read,True,1,db_read;generate_report;db_write;quarantine_system;scan_malware
+48,Let's look up the record for Charlie.,query_database,,db_read,0,generate_report,False,4,generate_report;process_refund;quarantine_system;db_read;scan_malware
+49,Let's retrieve the entry for #10234.,query_database,,db_read,0,generate_report,False,5,generate_report;process_refund;provision_vm;create_ticket;db_read
+50,Let's check the database for #60122.,query_database,,db_read,0,db_read,True,1,db_read;db_write;generate_report;provision_vm;process_refund
+51,Let's pull the details associated with #42017.,query_database,,db_read,0,generate_report,False,13,generate_report;provision_vm;process_refund;send_notification;create_ticket
+52,Let's fetch Eve's profile from the database.,query_database,,db_read,0,db_read,True,1,db_read;db_write;generate_report;scan_malware;provision_vm
+53,Let's search for transaction #10234 in the database.,query_database,,db_read,0,db_read,True,1,db_read;generate_report;db_write;process_refund;reset_password
+54,Let's bring up Alice's account information.,query_database,,db_read,0,escalate_to_human,False,7,escalate_to_human;update_subscription;generate_report;provision_vm;reset_password
+55,Let's search the database for Eve.,query_database,,db_read,0,db_write,False,2,db_write;db_read;generate_report;provision_vm;quarantine_system
+56,Kindly look up the record for #31450.,query_database,,db_read,0,generate_report,False,3,generate_report;db_write;db_read;process_refund;create_ticket
+57,Kindly pull Grace's account details.,query_database,,db_read,0,update_subscription,False,7,update_subscription;reset_password;generate_report;provision_vm;escalate_to_human
+58,Kindly check the database for #60122.,query_database,,db_read,0,db_read,True,1,db_read;db_write;generate_report;provision_vm;process_refund
+59,Kindly check the database entry for Eve.,query_database,,db_read,0,db_write,False,2,db_write;db_read;generate_report;provision_vm;scan_malware
+60,Kindly fetch Grace's profile from the database.,query_database,,db_read,0,db_read,True,1,db_read;scan_malware;reset_password;generate_report;db_write
+61,Kindly read the record tied to Charlie.,query_database,,db_read,0,generate_report,False,5,generate_report;process_refund;quarantine_system;escalate_to_human;db_read
+62,Kindly bring up the database entry for #53698.,query_database,,db_read,0,db_read,True,1,db_read;db_write;generate_report;provision_vm;reset_password
+63,Kindly search the database for Bob.,query_database,,db_read,0,db_read,True,1,db_read;db_write;generate_report;reset_password;scan_malware
+64,"When you have a moment, look up the record for Frank.",query_database,,db_read,0,generate_report,False,8,generate_report;escalate_to_human;provision_vm;quarantine_system;create_ticket
+65,"When you have a moment, retrieve the entry for #10234.",query_database,,db_read,0,generate_report,False,4,generate_report;process_refund;provision_vm;db_read;log_audit_event
+66,"When you have a moment, retrieve information on Frank.",query_database,,db_read,0,generate_report,False,6,generate_report;escalate_to_human;send_notification;quarantine_system;provision_vm
+67,save the latest data for Bob to the database.,update_database,,db_write,1,db_read,False,2,db_read;db_write;generate_report;provision_vm;quarantine_system
+68,write Grace's updated information back to the database.,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;update_subscription;reset_password
+69,persist the database changes for Marketing.,update_database,,db_write,1,db_write,True,1,db_write;db_read;provision_vm;update_subscription;generate_report
+70,commit the new record for Alice to the database.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;provision_vm;escalate_to_human;db_read
+71,update the stored Finance settings in the database.,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;reset_password
+72,store the revised details for Grace.,update_database,,db_write,1,update_subscription,False,2,update_subscription;db_write;generate_report;provision_vm;reset_password
+73,push the latest update for #10234 into the database.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;db_read;provision_vm;process_refund
+74,apply the database update for Diana.,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;process_refund
+75,Please save the changes for #31450 to the database.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;provision_vm;db_read;process_refund
+76,Please write Diana's updated information back to the database.,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;process_refund
+77,Please persist the changes for Frank.,update_database,,db_write,1,provision_vm,False,10,provision_vm;update_subscription;create_ticket;generate_report;quarantine_system
+78,Please commit the new record for Grace to the database.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;provision_vm;db_read;reset_password
+79,Please update the database entry for #31450.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;db_read;provision_vm;process_refund
+80,Please write the revised Finance config back.,update_database,,db_write,1,provision_vm,False,7,provision_vm;process_refund;update_subscription;generate_report;reset_password
+81,Please push the Marketing database changes live.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;provision_vm;quarantine_system;db_read
+82,Please apply the database update for Finance.,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;reset_password;provision_vm
+83,Can you save the latest data for Frank to the database?,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;quarantine_system
+84,Can you write Charlie's updated information back to the database?,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;quarantine_system
+85,Can you persist the database update for #53698?,update_database,,db_write,1,db_write,True,1,db_write;generate_report;db_read;provision_vm;reset_password
+86,Can you commit the new record for Frank to the database?,update_database,,db_write,1,db_write,True,1,db_write;generate_report;provision_vm;db_read;create_ticket
+87,Can you update the stored Finance settings in the database?,update_database,,db_write,1,db_write,True,1,db_write;reset_password;provision_vm;db_read;generate_report
+88,Can you store the revised data tied to #53698?,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;process_refund;provision_vm
+89,Can you push Frank's data update into the database?,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;quarantine_system
+90,Can you apply the database update for Bob?,update_database,,db_write,1,db_write,True,1,db_write;db_read;provision_vm;generate_report;reset_password
+91,Could you store the Finance configuration in the database for me?,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;reset_password;provision_vm
+92,Could you write the updated data for #42017 back to the database for me?,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;process_refund
+93,Could you persist the changes for Diana for me?,update_database,,db_write,1,provision_vm,False,3,provision_vm;generate_report;db_write;update_subscription;reset_password
+94,Could you commit the new record for Charlie to the database for me?,update_database,,db_write,1,db_write,True,1,db_write;generate_report;db_read;provision_vm;create_ticket
+95,Could you update the database entry for Frank for me?,update_database,,db_write,1,db_write,True,1,db_write;generate_report;provision_vm;db_read;reset_password
+96,Could you store the revised data tied to #60122 for me?,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;process_refund
+97,Could you push Eve's data update into the database for me?,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;quarantine_system
+98,Could you apply the database update for Bob for me?,update_database,,db_write,1,db_write,True,1,db_write;generate_report;db_read;provision_vm;reset_password
+99,I need you to save the latest data for Frank to the database.,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;quarantine_system
+100,I need you to write Charlie's updated information back to the database.,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;quarantine_system
+101,I need you to persist the changes for Grace.,update_database,,db_write,1,update_subscription,False,8,update_subscription;reset_password;provision_vm;process_refund;generate_report
+102,I need you to commit the Engineering configuration update.,update_database,,db_write,1,provision_vm,False,6,provision_vm;generate_report;create_ticket;quarantine_system;process_refund
+103,I need you to update the database entry for Grace.,update_database,,db_write,1,db_write,True,1,db_write;reset_password;generate_report;provision_vm;db_read
+104,I need you to store the revised details for Alice.,update_database,,db_write,1,escalate_to_human,False,3,escalate_to_human;generate_report;db_write;update_subscription;provision_vm
+105,I need you to push Grace's data update into the database.,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;quarantine_system
+106,I need you to apply the database write for #31450.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;db_read;provision_vm;create_ticket
+107,We should save the latest data for Diana to the database.,update_database,,db_write,1,db_read,False,2,db_read;db_write;generate_report;provision_vm;process_refund
+108,We should write Charlie's updated information back to the database.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;db_read;provision_vm;quarantine_system
+109,We should persist the database update for #10234.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;db_read;provision_vm;process_refund
+110,We should commit the new record for Bob to the database.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;provision_vm;db_read;escalate_to_human
+111,We should update the database entry for Eve.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;db_read;provision_vm;quarantine_system
+112,We should store the revised details for Frank.,update_database,,db_write,1,update_subscription,False,4,update_subscription;generate_report;provision_vm;db_write;escalate_to_human
+113,We should push Charlie's data update into the database.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;db_read;provision_vm;quarantine_system
+114,We should apply the database update for Finance.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;db_read;provision_vm;reset_password
+115,Let's save the latest data for Frank to the database.,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;quarantine_system
+116,Let's write the updated data for #42017 back to the database.,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;process_refund
+117,Let's persist the database update for #42017.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;provision_vm;db_read;process_refund
+118,Let's commit the Legal configuration update.,update_database,,db_write,1,provision_vm,False,10,provision_vm;create_ticket;generate_report;process_refund;escalate_to_human
+119,Let's update the database entry for Bob.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;db_read;provision_vm;reset_password
+120,Let's store the revised details for Charlie.,update_database,,db_write,1,generate_report,False,6,generate_report;provision_vm;update_subscription;process_refund;escalate_to_human
+121,Let's push Bob's data update into the database.,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;quarantine_system
+122,Let's apply the database update for Bob.,update_database,,db_write,1,db_write,True,1,db_write;provision_vm;generate_report;db_read;quarantine_system
+123,Kindly save the latest data for Frank to the database.,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;quarantine_system
+124,Kindly write Eve's updated information back to the database.,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;process_refund
+125,Kindly persist the changes for Eve.,update_database,,db_write,1,provision_vm,False,3,provision_vm;generate_report;db_write;update_subscription;process_refund
+126,Kindly commit the new record for Charlie to the database.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;provision_vm;db_read;quarantine_system
+127,Kindly update the database entry for Frank.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;provision_vm;db_read;quarantine_system
+128,Kindly store the revised details for Eve.,update_database,,db_write,1,db_write,True,1,db_write;generate_report;provision_vm;escalate_to_human;process_refund
+129,Kindly push Diana's data update into the database.,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;quarantine_system
+130,Kindly apply the database update for HR.,update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;reset_password;process_refund
+131,"When you have a moment, save the latest data for Diana to the database.",update_database,,db_write,1,db_read,False,2,db_read;db_write;generate_report;provision_vm;process_refund
+132,"When you have a moment, write the updated data for #31450 back to the database.",update_database,,db_write,1,db_write,True,1,db_write;db_read;generate_report;provision_vm;process_refund
+133,"When you have a moment, persist the changes for Bob.",update_database,,db_write,1,provision_vm,False,12,provision_vm;update_subscription;process_refund;quarantine_system;escalate_to_human
+134,reset Bob's password.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;process_refund;restart_service
+135,issue a new password for Eve.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;scan_malware;provision_vm;escalate_to_human
+136,force a password reset for Alice.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;escalate_to_human;process_refund;provision_vm
+137,rotate Grace's login credentials.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;scan_malware;provision_vm;create_ticket
+138,replace Alice's current password.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;escalate_to_human;provision_vm;scan_malware
+139,set a fresh password for Grace.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;provision_vm;quarantine_system
+140,trigger a credential reset for Alice.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;escalate_to_human;provision_vm;process_refund
+141,invalidate the old password and create a new one for Bob.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;scan_malware;provision_vm;process_refund
+142,Please reset Frank's password.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;scan_malware;provision_vm;quarantine_system
+143,Please issue a new password for Bob.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;create_ticket;provision_vm
+144,Please force a password reset for Grace.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;process_refund;provision_vm
+145,Please rotate Frank's login credentials.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;scan_malware;provision_vm;escalate_to_human
+146,Please replace Diana's current password.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;escalate_to_human;generate_report
+147,Please set a fresh password for Eve.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;provision_vm;quarantine_system
+148,Please trigger a credential reset for Alice.,reset_password,,reset_password,2,reset_password,True,1,reset_password;escalate_to_human;update_subscription;provision_vm;process_refund
+149,Please invalidate the old password and create a new one for Diana.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;provision_vm;update_subscription;generate_report
+150,Can you reset Diana's password?,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;process_refund;generate_report
+151,Can you issue a new password for Eve?,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;scan_malware;provision_vm;generate_report
+152,Can you force a password reset for Diana?,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;process_refund;provision_vm
+153,Can you rotate Eve's login credentials?,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;scan_malware;provision_vm;escalate_to_human
+154,Can you replace Charlie's current password?,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;provision_vm;process_refund
+155,Can you set a fresh password for Eve?,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;provision_vm;generate_report
+156,Can you trigger a credential reset for Grace?,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;restart_service;process_refund;scan_malware
+157,Can you invalidate the old password and create a new one for Alice?,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;escalate_to_human;provision_vm;scan_malware
+158,Could you reset Frank's password for me?,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;provision_vm;generate_report
+159,Could you issue a new password for Frank for me?,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;create_ticket;provision_vm;scan_malware
+160,Could you force a password reset for Alice for me?,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;escalate_to_human;provision_vm;scan_malware
+161,Could you rotate Grace's login credentials for me?,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;scan_malware;provision_vm;create_ticket
+162,Could you replace Charlie's current password for me?,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;provision_vm;quarantine_system
+163,Could you set a fresh password for Grace for me?,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;scan_malware;provision_vm;log_audit_event
+164,Could you trigger a credential reset for Frank for me?,reset_password,,reset_password,2,reset_password,True,1,reset_password;provision_vm;update_subscription;create_ticket;process_refund
+165,Could you invalidate the old password and create a new one for Charlie for me?,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;provision_vm;update_subscription;quarantine_system
+166,I need you to reset Alice's password.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;escalate_to_human;provision_vm;scan_malware
+167,I need you to issue a new password for Charlie.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;provision_vm;create_ticket
+168,I need you to force a password reset for Diana.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;provision_vm;update_subscription;process_refund
+169,I need you to rotate Bob's login credentials.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;scan_malware;provision_vm;create_ticket
+170,I need you to replace Diana's current password.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;generate_report;provision_vm
+171,I need you to set a fresh password for Alice.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;escalate_to_human;provision_vm;scan_malware
+172,I need you to trigger a credential reset for Frank.,reset_password,,reset_password,2,reset_password,True,1,reset_password;provision_vm;update_subscription;create_ticket;quarantine_system
+173,I need you to invalidate the old password and create a new one for Frank.,reset_password,,reset_password,2,reset_password,True,1,reset_password;provision_vm;update_subscription;scan_malware;generate_report
+174,We should reset Charlie's password.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;quarantine_system;update_subscription;provision_vm
+175,We should issue a new password for Eve.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;provision_vm;escalate_to_human
+176,We should force a password reset for Grace.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;scan_malware;process_refund;provision_vm
+177,We should rotate Bob's login credentials.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;scan_malware;quarantine_system;escalate_to_human
+178,We should replace Eve's current password.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;scan_malware;escalate_to_human;provision_vm
+179,We should set a fresh password for Alice.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;escalate_to_human;provision_vm;scan_malware
+180,We should trigger a credential reset for Grace.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;restart_service;process_refund;provision_vm
+181,We should invalidate the old password and create a new one for Frank.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;provision_vm;scan_malware;escalate_to_human
+182,Let's reset Grace's password.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;scan_malware;provision_vm;process_refund
+183,Let's issue a new password for Frank.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;create_ticket;escalate_to_human;provision_vm
+184,Let's force a password reset for Eve.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;provision_vm;process_refund
+185,Let's rotate Bob's login credentials.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;scan_malware;escalate_to_human;provision_vm
+186,Let's replace Bob's current password.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;scan_malware;escalate_to_human;provision_vm
+187,Let's set a fresh password for Charlie.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;quarantine_system;provision_vm
+188,Let's trigger a credential reset for Grace.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;restart_service;provision_vm;process_refund
+189,Let's invalidate the old password and create a new one for Bob.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;provision_vm;scan_malware;escalate_to_human
+190,Kindly reset Eve's password.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;provision_vm;process_refund
+191,Kindly issue a new password for Grace.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;create_ticket;provision_vm
+192,Kindly force a password reset for Eve.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;provision_vm;process_refund
+193,Kindly rotate Alice's login credentials.,reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;escalate_to_human;scan_malware;provision_vm
+194,Kindly replace Eve's current password.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;provision_vm;escalate_to_human
+195,Kindly set a fresh password for Charlie.,reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;quarantine_system;update_subscription;provision_vm
+196,Kindly trigger a credential reset for Diana.,reset_password,,reset_password,2,reset_password,True,1,reset_password;process_refund;restart_service;provision_vm;update_subscription
+197,Kindly invalidate the old password and create a new one for Alice.,reset_password,,reset_password,2,reset_password,True,1,reset_password;escalate_to_human;update_subscription;provision_vm;scan_malware
+198,"When you have a moment, reset Alice's password.",reset_password,,reset_password,2,reset_password,True,1,reset_password;update_subscription;escalate_to_human;provision_vm;process_refund
+199,"When you have a moment, issue a new password for Charlie.",reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;provision_vm;quarantine_system
+200,"When you have a moment, force a password reset for Grace.",reset_password,,reset_password,2,reset_password,True,1,reset_password;scan_malware;update_subscription;process_refund;provision_vm
+201,open an incident ticket for payment-api-03.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;process_refund;provision_vm;escalate_to_human
+202,file a case for Bob.,create_ticket,,create_ticket,3,escalate_to_human,False,2,escalate_to_human;create_ticket;provision_vm;quarantine_system;send_notification
+203,create a support case for prod-web-01.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;provision_vm;generate_report;quarantine_system;escalate_to_human
+204,log a helpdesk issue for Bob.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;log_audit_event;process_refund;generate_report;escalate_to_human
+205,raise a service request for HR.,create_ticket,,create_ticket,3,process_refund,False,2,process_refund;create_ticket;quarantine_system;provision_vm;restart_service
+206,submit a ticket for Alice.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;escalate_to_human;provision_vm;generate_report;send_notification
+207,open a service desk case for Alice.,create_ticket,,create_ticket,3,escalate_to_human,False,5,escalate_to_human;provision_vm;quarantine_system;send_notification;create_ticket
+208,create a tracking issue for Frank.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;provision_vm;generate_report;escalate_to_human;quarantine_system
+209,Please open an incident ticket for auth-svc-04.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;process_refund;reset_password;log_audit_event
+210,Please file a case for Alice.,create_ticket,,create_ticket,3,escalate_to_human,False,2,escalate_to_human;create_ticket;provision_vm;generate_report;send_notification
+211,Please create a support case for ml-infer-05.,create_ticket,,create_ticket,3,generate_report,False,4,generate_report;provision_vm;send_notification;create_ticket;quarantine_system
+212,Please log an issue against staging-db-02.,create_ticket,,create_ticket,3,generate_report,False,3,generate_report;log_audit_event;create_ticket;db_write;process_refund
+213,Please raise a service request for Finance.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;process_refund;provision_vm;generate_report;quarantine_system
+214,Please submit a ticket for Frank.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;provision_vm;escalate_to_human;generate_report;quarantine_system
+215,Please open a service desk case for Diana.,create_ticket,,create_ticket,3,escalate_to_human,False,6,escalate_to_human;quarantine_system;generate_report;provision_vm;process_refund
+216,Please create a support issue for HR.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;process_refund;provision_vm;escalate_to_human
+217,Can you open an incident ticket for staging-db-02?,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;process_refund;db_write;escalate_to_human
+218,Can you file a case for Charlie?,create_ticket,,create_ticket,3,escalate_to_human,False,2,escalate_to_human;create_ticket;quarantine_system;generate_report;provision_vm
+219,Can you create an incident ticket for Eve?,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;escalate_to_human;provision_vm;quarantine_system
+220,Can you log a helpdesk issue for Grace?,create_ticket,,create_ticket,3,log_audit_event,False,2,log_audit_event;create_ticket;generate_report;process_refund;reset_password
+221,Can you raise an incident for auth-svc-04?,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;escalate_to_human;quarantine_system;provision_vm;generate_report
+222,Can you submit a ticket for Bob?,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;escalate_to_human;provision_vm;generate_report;process_refund
+223,Can you open a tracking case for HR?,create_ticket,,create_ticket,3,escalate_to_human,False,3,escalate_to_human;generate_report;create_ticket;provision_vm;quarantine_system
+224,Can you create a support issue for Finance?,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;provision_vm;process_refund;escalate_to_human
+225,Could you open an incident ticket for cdn-edge-06 for me?,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;provision_vm;process_refund;escalate_to_human
+226,Could you file a bug for payment-api-03 for me?,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;provision_vm;process_refund;quarantine_system
+227,Could you create an incident ticket for Diana for me?,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;escalate_to_human;provision_vm;process_refund
+228,Could you log a helpdesk issue for Frank for me?,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;process_refund;log_audit_event;provision_vm
+229,Could you raise an incident for payment-api-03 for me?,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;provision_vm;escalate_to_human;process_refund
+230,Could you submit a ticket for host auth-svc-04 for me?,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;provision_vm;reset_password;quarantine_system
+231,Could you open a tracking issue for ml-infer-05 for me?,create_ticket,,create_ticket,3,generate_report,False,7,generate_report;provision_vm;send_notification;process_refund;quarantine_system
+232,Could you create a service request for auth-svc-04 for me?,create_ticket,,create_ticket,3,quarantine_system,False,2,quarantine_system;create_ticket;generate_report;provision_vm;process_refund
+233,I need you to open an incident ticket for prod-web-01.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;provision_vm;process_refund;escalate_to_human
+234,I need you to file a case for Bob.,create_ticket,,create_ticket,3,escalate_to_human,False,2,escalate_to_human;create_ticket;provision_vm;generate_report;quarantine_system
+235,I need you to create an incident ticket for Bob.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;escalate_to_human;provision_vm;quarantine_system
+236,I need you to log a helpdesk issue for Engineering.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;process_refund;log_audit_event;provision_vm
+237,I need you to raise a service request for Marketing.,create_ticket,,create_ticket,3,provision_vm,False,6,provision_vm;send_notification;quarantine_system;generate_report;process_refund
+238,I need you to submit a ticket for Alice.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;escalate_to_human;generate_report;provision_vm;send_notification
+239,I need you to open a service desk case for Eve.,create_ticket,,create_ticket,3,generate_report,False,7,generate_report;provision_vm;quarantine_system;escalate_to_human;send_notification
+240,I need you to create a tracking issue for Eve.,create_ticket,,create_ticket,3,generate_report,False,3,generate_report;provision_vm;create_ticket;send_notification;quarantine_system
+241,We should open a support ticket for Bob.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;process_refund;provision_vm;generate_report;log_audit_event
+242,We should file a case for the HR team.,create_ticket,,create_ticket,3,escalate_to_human,False,2,escalate_to_human;create_ticket;generate_report;send_notification;quarantine_system
+243,We should create a support case for staging-db-02.,create_ticket,,create_ticket,3,generate_report,False,3,generate_report;db_write;create_ticket;provision_vm;process_refund
+244,We should log an issue against prod-web-01.,create_ticket,,create_ticket,3,generate_report,False,2,generate_report;create_ticket;log_audit_event;process_refund;provision_vm
+245,We should raise an incident for cdn-edge-06.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;provision_vm;generate_report;process_refund;quarantine_system
+246,We should submit a ticket for the Engineering group.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;send_notification;provision_vm;quarantine_system
+247,We should open a service desk case for Alice.,create_ticket,,create_ticket,3,escalate_to_human,False,5,escalate_to_human;quarantine_system;send_notification;provision_vm;create_ticket
+248,We should create a service request for prod-web-01.,create_ticket,,create_ticket,3,provision_vm,False,4,provision_vm;generate_report;quarantine_system;create_ticket;process_refund
+249,Let's open a support ticket for Grace.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;log_audit_event;update_subscription;provision_vm;process_refund
+250,Let's file a case for the Marketing team.,create_ticket,,create_ticket,3,escalate_to_human,False,4,escalate_to_human;send_notification;provision_vm;create_ticket;generate_report
+251,Let's create an incident ticket for Alice.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;escalate_to_human;generate_report;provision_vm;process_refund
+252,Let's log an issue against ml-infer-05.,create_ticket,,create_ticket,3,generate_report,False,4,generate_report;log_audit_event;process_refund;create_ticket;quarantine_system
+253,Let's raise a support request on behalf of Bob.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;escalate_to_human;provision_vm;process_refund;send_notification
+254,Let's submit a ticket for Charlie.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;provision_vm;escalate_to_human;generate_report;quarantine_system
+255,Let's open a tracking issue for cdn-edge-06.,create_ticket,,create_ticket,3,generate_report,False,2,generate_report;create_ticket;provision_vm;send_notification;process_refund
+256,Let's create a support issue for Legal.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;escalate_to_human;generate_report;provision_vm;process_refund
+257,Kindly open an incident ticket for staging-db-02.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;process_refund;db_write;escalate_to_human
+258,Kindly file a case for the HR team.,create_ticket,,create_ticket,3,escalate_to_human,False,2,escalate_to_human;create_ticket;generate_report;send_notification;provision_vm
+259,Kindly create an incident ticket for Bob.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;escalate_to_human;generate_report;provision_vm;process_refund
+260,Kindly log an issue against cdn-edge-06.,create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;generate_report;process_refund;log_audit_event;provision_vm
+261,Kindly raise an incident for ml-infer-05.,create_ticket,,create_ticket,3,generate_report,False,5,generate_report;process_refund;provision_vm;quarantine_system;create_ticket
+262,Kindly submit a ticket for host ml-infer-05.,create_ticket,,create_ticket,3,generate_report,False,2,generate_report;create_ticket;provision_vm;process_refund;quarantine_system
+263,Kindly open a tracking case for Legal.,create_ticket,,create_ticket,3,escalate_to_human,False,2,escalate_to_human;create_ticket;generate_report;provision_vm;process_refund
+264,Kindly create a service request for staging-db-02.,create_ticket,,create_ticket,3,db_write,False,7,db_write;db_read;generate_report;provision_vm;quarantine_system
+265,"When you have a moment, open a support ticket for Grace.",create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;process_refund;log_audit_event;provision_vm;escalate_to_human
+266,"When you have a moment, file a case for Diana.",create_ticket,,create_ticket,3,escalate_to_human,False,2,escalate_to_human;create_ticket;generate_report;quarantine_system;provision_vm
+267,"When you have a moment, create an incident ticket for Grace.",create_ticket,,create_ticket,3,create_ticket,True,1,create_ticket;escalate_to_human;provision_vm;generate_report;quarantine_system
+268,notify the Legal team.,send_notification,,send_notification,4,escalate_to_human,False,2,escalate_to_human;send_notification;create_ticket;provision_vm;quarantine_system
+269,send an alert to Finance.,send_notification,,send_notification,4,send_notification,True,1,send_notification;generate_report;escalate_to_human;provision_vm;create_ticket
+270,email the update to Engineering.,send_notification,,send_notification,4,provision_vm,False,5,provision_vm;generate_report;create_ticket;quarantine_system;send_notification
+271,send a heads-up to Alice.,send_notification,,send_notification,4,escalate_to_human,False,3,escalate_to_human;create_ticket;send_notification;provision_vm;quarantine_system
+272,push a notification to Legal.,send_notification,,send_notification,4,send_notification,True,1,send_notification;escalate_to_human;provision_vm;create_ticket;quarantine_system
+273,forward the update to Charlie.,send_notification,,send_notification,4,provision_vm,False,6,provision_vm;quarantine_system;escalate_to_human;generate_report;create_ticket
+274,alert Legal.,send_notification,,send_notification,4,escalate_to_human,False,2,escalate_to_human;send_notification;generate_report;quarantine_system;provision_vm
+275,drop a message to the Legal team.,send_notification,,send_notification,4,escalate_to_human,False,2,escalate_to_human;send_notification;create_ticket;provision_vm;generate_report
+276,Please send an update to Diana.,send_notification,,send_notification,4,generate_report,False,7,generate_report;escalate_to_human;provision_vm;create_ticket;db_write
+277,Please notify Frank.,send_notification,,send_notification,4,send_notification,True,1,send_notification;provision_vm;escalate_to_human;quarantine_system;generate_report
+278,Please email the update to Engineering.,send_notification,,send_notification,4,provision_vm,False,6,provision_vm;generate_report;quarantine_system;create_ticket;escalate_to_human
+279,Please send a heads-up to Engineering.,send_notification,,send_notification,4,generate_report,False,6,generate_report;create_ticket;provision_vm;escalate_to_human;quarantine_system
+280,Please push a notification to Diana.,send_notification,,send_notification,4,send_notification,True,1,send_notification;provision_vm;generate_report;escalate_to_human;quarantine_system
+281,Please forward the latest update to Marketing.,send_notification,,send_notification,4,provision_vm,False,2,provision_vm;send_notification;escalate_to_human;quarantine_system;generate_report
+282,Please alert Engineering.,send_notification,,send_notification,4,generate_report,False,2,generate_report;send_notification;quarantine_system;escalate_to_human;provision_vm
+283,Please drop a message to Bob.,send_notification,,send_notification,4,send_notification,True,1,send_notification;provision_vm;quarantine_system;escalate_to_human;generate_report
+284,Can you send an update to Bob?,send_notification,,send_notification,4,provision_vm,False,2,provision_vm;send_notification;escalate_to_human;generate_report;quarantine_system
+285,Can you send an alert to Finance?,send_notification,,send_notification,4,send_notification,True,1,send_notification;generate_report;provision_vm;quarantine_system;escalate_to_human
+286,Can you email the update to HR?,send_notification,,send_notification,4,generate_report,False,4,generate_report;provision_vm;escalate_to_human;send_notification;quarantine_system
+287,Can you send a heads-up to Diana?,send_notification,,send_notification,4,escalate_to_human,False,5,escalate_to_human;generate_report;provision_vm;create_ticket;send_notification
+288,Can you push a notification to Bob?,send_notification,,send_notification,4,send_notification,True,1,send_notification;provision_vm;quarantine_system;escalate_to_human;create_ticket
+289,Can you forward the latest update to Legal?,send_notification,,send_notification,4,escalate_to_human,False,6,escalate_to_human;provision_vm;create_ticket;generate_report;update_subscription
+290,Can you alert Bob?,send_notification,,send_notification,4,send_notification,True,1,send_notification;quarantine_system;escalate_to_human;provision_vm;generate_report
+291,Can you drop a message to Charlie?,send_notification,,send_notification,4,send_notification,True,1,send_notification;provision_vm;quarantine_system;generate_report;escalate_to_human
+292,Could you notify the Finance team for me?,send_notification,,send_notification,4,send_notification,True,1,send_notification;generate_report;provision_vm;create_ticket;escalate_to_human
+293,Could you notify Grace for me?,send_notification,,send_notification,4,send_notification,True,1,send_notification;update_subscription;escalate_to_human;provision_vm;quarantine_system
+294,Could you email Alice the latest status for me?,send_notification,,send_notification,4,escalate_to_human,False,2,escalate_to_human;send_notification;generate_report;provision_vm;create_ticket
+295,Could you send a heads-up to Diana for me?,send_notification,,send_notification,4,escalate_to_human,False,5,escalate_to_human;generate_report;create_ticket;provision_vm;send_notification
+296,Could you push a notification to Grace for me?,send_notification,,send_notification,4,send_notification,True,1,send_notification;provision_vm;generate_report;quarantine_system;update_subscription
+297,Could you forward the latest update to HR for me?,send_notification,,send_notification,4,generate_report,False,5,generate_report;escalate_to_human;provision_vm;create_ticket;send_notification
+298,Could you alert Engineering for me?,send_notification,,send_notification,4,send_notification,True,1,send_notification;generate_report;quarantine_system;escalate_to_human;provision_vm
+299,Could you drop a message to the Engineering team for me?,send_notification,,send_notification,4,send_notification,True,1,send_notification;generate_report;provision_vm;quarantine_system;escalate_to_human
+300,I need you to send an update to Frank.,send_notification,,send_notification,4,provision_vm,False,6,provision_vm;generate_report;create_ticket;escalate_to_human;quarantine_system
+301,I need you to notify Eve.,send_notification,,send_notification,4,send_notification,True,1,send_notification;escalate_to_human;generate_report;quarantine_system;provision_vm
+302,I need you to email Alice the latest status.,send_notification,,send_notification,4,escalate_to_human,False,2,escalate_to_human;send_notification;generate_report;provision_vm;create_ticket
+303,I need you to send a heads-up to Finance.,send_notification,,send_notification,4,create_ticket,False,10,create_ticket;generate_report;provision_vm;update_subscription;reset_password
+304,I need you to push a notification to Bob.,send_notification,,send_notification,4,send_notification,True,1,send_notification;provision_vm;quarantine_system;generate_report;escalate_to_human
+305,I need you to forward the update to Diana.,send_notification,,send_notification,4,escalate_to_human,False,8,escalate_to_human;generate_report;provision_vm;create_ticket;quarantine_system
+306,I need you to alert Legal.,send_notification,,send_notification,4,escalate_to_human,False,2,escalate_to_human;send_notification;generate_report;quarantine_system;create_ticket
+307,I need you to drop a message to Diana.,send_notification,,send_notification,4,generate_report,False,2,generate_report;send_notification;escalate_to_human;provision_vm;quarantine_system
+308,We should send an update to Grace.,send_notification,,send_notification,4,update_subscription,False,3,update_subscription;provision_vm;send_notification;quarantine_system;reset_password
+309,We should notify Diana.,send_notification,,send_notification,4,send_notification,True,1,send_notification;escalate_to_human;quarantine_system;generate_report;provision_vm
+310,We should email Alice the latest status.,send_notification,,send_notification,4,escalate_to_human,False,2,escalate_to_human;send_notification;generate_report;provision_vm;quarantine_system
+311,We should send a heads-up to Bob.,send_notification,,send_notification,4,quarantine_system,False,2,quarantine_system;send_notification;escalate_to_human;provision_vm;create_ticket
+312,We should push a notification to Diana.,send_notification,,send_notification,4,send_notification,True,1,send_notification;generate_report;provision_vm;quarantine_system;escalate_to_human
+313,We should forward the latest update to Engineering.,send_notification,,send_notification,4,provision_vm,False,6,provision_vm;generate_report;quarantine_system;escalate_to_human;create_ticket
+314,We should alert Legal.,send_notification,,send_notification,4,send_notification,True,1,send_notification;escalate_to_human;quarantine_system;generate_report;provision_vm
+315,We should drop a message to the Marketing team.,send_notification,,send_notification,4,send_notification,True,1,send_notification;provision_vm;quarantine_system;generate_report;escalate_to_human
+316,Let's send an update to Grace.,send_notification,,send_notification,4,update_subscription,False,4,update_subscription;provision_vm;reset_password;send_notification;escalate_to_human
+317,Let's notify Grace.,send_notification,,send_notification,4,send_notification,True,1,send_notification;provision_vm;escalate_to_human;update_subscription;quarantine_system
+318,Let's email Diana the latest status.,send_notification,,send_notification,4,escalate_to_human,False,3,escalate_to_human;generate_report;send_notification;quarantine_system;provision_vm
+319,Let's send a heads-up to Charlie.,send_notification,,send_notification,4,quarantine_system,False,4,quarantine_system;provision_vm;escalate_to_human;send_notification;create_ticket
+320,Let's push a notification to Diana.,send_notification,,send_notification,4,send_notification,True,1,send_notification;provision_vm;generate_report;escalate_to_human;quarantine_system
+321,Let's forward the latest update to HR.,send_notification,,send_notification,4,escalate_to_human,False,7,escalate_to_human;generate_report;quarantine_system;provision_vm;create_ticket
+322,Let's alert Frank.,send_notification,,send_notification,4,send_notification,True,1,send_notification;escalate_to_human;provision_vm;quarantine_system;generate_report
+323,Let's drop a message to Frank.,send_notification,,send_notification,4,send_notification,True,1,send_notification;provision_vm;escalate_to_human;quarantine_system;generate_report
+324,Kindly notify the Finance team.,send_notification,,send_notification,4,send_notification,True,1,send_notification;generate_report;provision_vm;quarantine_system;escalate_to_human
+325,Kindly send an alert to Finance.,send_notification,,send_notification,4,generate_report,False,2,generate_report;send_notification;provision_vm;escalate_to_human;create_ticket
+326,Kindly email Charlie the latest status.,send_notification,,send_notification,4,send_notification,True,1,send_notification;generate_report;quarantine_system;escalate_to_human;provision_vm
+327,Kindly send a heads-up to Bob.,send_notification,,send_notification,4,escalate_to_human,False,5,escalate_to_human;create_ticket;quarantine_system;provision_vm;send_notification
+328,Kindly push a notification to Alice.,send_notification,,send_notification,4,send_notification,True,1,send_notification;escalate_to_human;provision_vm;generate_report;create_ticket
+329,Kindly forward the latest update to HR.,send_notification,,send_notification,4,generate_report,False,7,generate_report;escalate_to_human;provision_vm;quarantine_system;process_refund
+330,Kindly alert Frank.,send_notification,,send_notification,4,escalate_to_human,False,2,escalate_to_human;send_notification;quarantine_system;provision_vm;generate_report
+331,Kindly drop a message to Eve.,send_notification,,send_notification,4,send_notification,True,1,send_notification;generate_report;provision_vm;escalate_to_human;quarantine_system
+332,"When you have a moment, notify the Engineering team.",send_notification,,send_notification,4,send_notification,True,1,send_notification;quarantine_system;escalate_to_human;provision_vm;generate_report
+333,"When you have a moment, send an alert to Engineering.",send_notification,,send_notification,4,send_notification,True,1,send_notification;quarantine_system;generate_report;escalate_to_human;provision_vm
+334,"When you have a moment, email the update to Engineering.",send_notification,,send_notification,4,provision_vm,False,3,provision_vm;generate_report;send_notification;quarantine_system;escalate_to_human
+335,isolate ml-infer-05 from the network.,quarantine_system,,quarantine_system,5,generate_report,False,3,generate_report;scan_malware;quarantine_system;send_notification;provision_vm
+336,quarantine host auth-svc-04.,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;scan_malware;provision_vm;reset_password;escalate_to_human
+337,take ml-infer-05 off the network.,quarantine_system,,quarantine_system,5,generate_report,False,2,generate_report;quarantine_system;provision_vm;send_notification;scan_malware
+338,contain ml-infer-05 immediately.,quarantine_system,,quarantine_system,5,generate_report,False,2,generate_report;quarantine_system;provision_vm;send_notification;scan_malware
+339,segment staging-db-02 from the rest of the environment.,quarantine_system,,quarantine_system,5,db_write,False,5,db_write;db_read;generate_report;provision_vm;quarantine_system
+340,pull prod-web-01 out of production.,quarantine_system,,quarantine_system,5,generate_report,False,3,generate_report;provision_vm;quarantine_system;process_refund;scan_malware
+341,lock down ml-infer-05.,quarantine_system,,quarantine_system,5,generate_report,False,2,generate_report;quarantine_system;provision_vm;scan_malware;process_refund
+342,move prod-web-01 into quarantine.,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;provision_vm;scan_malware;generate_report;process_refund
+343,Please isolate staging-db-02 from the network.,quarantine_system,,quarantine_system,5,db_write,False,3,db_write;generate_report;quarantine_system;db_read;provision_vm
+344,Please quarantine host prod-web-01.,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;scan_malware;provision_vm;generate_report;send_notification
+345,Please take ml-infer-05 off the network.,quarantine_system,,quarantine_system,5,generate_report,False,2,generate_report;quarantine_system;provision_vm;scan_malware;send_notification
+346,Please contain prod-web-01 immediately.,quarantine_system,,quarantine_system,5,generate_report,False,3,generate_report;provision_vm;quarantine_system;create_ticket;scan_malware
+347,Please segment cdn-edge-06 from the rest of the environment.,quarantine_system,,quarantine_system,5,provision_vm,False,4,provision_vm;generate_report;send_notification;quarantine_system;create_ticket
+348,Please pull staging-db-02 out of production.,quarantine_system,,quarantine_system,5,db_write,False,6,db_write;generate_report;db_read;process_refund;provision_vm
+349,Please lock down auth-svc-04.,quarantine_system,,quarantine_system,5,reset_password,False,3,reset_password;scan_malware;quarantine_system;provision_vm;create_ticket
+350,Please move prod-web-01 into quarantine.,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;provision_vm;scan_malware;generate_report;escalate_to_human
+351,Can you isolate staging-db-02 from the network?,quarantine_system,,quarantine_system,5,db_write,False,4,db_write;db_read;generate_report;quarantine_system;provision_vm
+352,Can you quarantine host ml-infer-05?,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;scan_malware;provision_vm;generate_report;send_notification
+353,Can you take ml-infer-05 off the network?,quarantine_system,,quarantine_system,5,generate_report,False,2,generate_report;quarantine_system;provision_vm;scan_malware;send_notification
+354,Can you contain ml-infer-05 immediately?,quarantine_system,,quarantine_system,5,generate_report,False,2,generate_report;quarantine_system;scan_malware;provision_vm;process_refund
+355,Can you segment prod-web-01 from the rest of the environment?,quarantine_system,,quarantine_system,5,provision_vm,False,3,provision_vm;generate_report;quarantine_system;scan_malware;send_notification
+356,Can you pull auth-svc-04 out of production?,quarantine_system,,quarantine_system,5,generate_report,False,3,generate_report;reset_password;quarantine_system;provision_vm;process_refund
+357,Can you lock down cdn-edge-06?,quarantine_system,,quarantine_system,5,provision_vm,False,2,provision_vm;quarantine_system;scan_malware;create_ticket;generate_report
+358,Can you move ml-infer-05 into quarantine?,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;provision_vm;scan_malware;generate_report;process_refund
+359,Could you isolate ml-infer-05 from the network for me?,quarantine_system,,quarantine_system,5,generate_report,False,3,generate_report;scan_malware;quarantine_system;provision_vm;send_notification
+360,Could you quarantine host ml-infer-05 for me?,quarantine_system,,quarantine_system,5,scan_malware,False,2,scan_malware;quarantine_system;generate_report;provision_vm;send_notification
+361,Could you take payment-api-03 off the network for me?,quarantine_system,,quarantine_system,5,provision_vm,False,3,provision_vm;generate_report;quarantine_system;update_subscription;scan_malware
+362,Could you contain payment-api-03 immediately for me?,quarantine_system,,quarantine_system,5,generate_report,False,4,generate_report;provision_vm;create_ticket;quarantine_system;scan_malware
+363,Could you segment staging-db-02 from the rest of the environment for me?,quarantine_system,,quarantine_system,5,generate_report,False,5,generate_report;db_write;db_read;provision_vm;quarantine_system
+364,Could you pull cdn-edge-06 out of production for me?,quarantine_system,,quarantine_system,5,generate_report,False,6,generate_report;provision_vm;db_write;create_ticket;send_notification
+365,Could you lock down cdn-edge-06 for me?,quarantine_system,,quarantine_system,5,provision_vm,False,5,provision_vm;create_ticket;scan_malware;generate_report;quarantine_system
+366,Could you move payment-api-03 into quarantine for me?,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;provision_vm;generate_report;scan_malware;process_refund
+367,I need you to isolate staging-db-02 from the network.,quarantine_system,,quarantine_system,5,generate_report,False,5,generate_report;db_write;db_read;provision_vm;quarantine_system
+368,I need you to quarantine host payment-api-03.,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;provision_vm;scan_malware;generate_report;create_ticket
+369,I need you to take auth-svc-04 off the network.,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;provision_vm;generate_report;reset_password;scan_malware
+370,I need you to contain staging-db-02 immediately.,quarantine_system,,quarantine_system,5,generate_report,False,4,generate_report;db_write;provision_vm;quarantine_system;db_read
+371,I need you to segment cdn-edge-06 from the rest of the environment.,quarantine_system,,quarantine_system,5,provision_vm,False,5,provision_vm;generate_report;send_notification;create_ticket;quarantine_system
+372,I need you to pull cdn-edge-06 out of production.,quarantine_system,,quarantine_system,5,generate_report,False,3,generate_report;provision_vm;quarantine_system;process_refund;create_ticket
+373,I need you to lock down payment-api-03.,quarantine_system,,quarantine_system,5,provision_vm,False,5,provision_vm;generate_report;create_ticket;process_refund;quarantine_system
+374,I need you to move auth-svc-04 into quarantine.,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;scan_malware;provision_vm;reset_password;generate_report
+375,We should isolate payment-api-03 from the network.,quarantine_system,,quarantine_system,5,generate_report,False,3,generate_report;provision_vm;quarantine_system;process_refund;escalate_to_human
+376,We should quarantine host prod-web-01.,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;scan_malware;provision_vm;generate_report;send_notification
+377,We should take prod-web-01 off the network.,quarantine_system,,quarantine_system,5,provision_vm,False,2,provision_vm;quarantine_system;generate_report;scan_malware;process_refund
+378,We should contain auth-svc-04 immediately.,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;scan_malware;reset_password;generate_report;provision_vm
+379,We should segment ml-infer-05 from the rest of the environment.,quarantine_system,,quarantine_system,5,generate_report,False,3,generate_report;send_notification;quarantine_system;provision_vm;process_refund
+380,We should pull ml-infer-05 out of production.,quarantine_system,,quarantine_system,5,generate_report,False,3,generate_report;process_refund;quarantine_system;provision_vm;send_notification
+381,We should lock down prod-web-01.,quarantine_system,,quarantine_system,5,scan_malware,False,3,scan_malware;provision_vm;quarantine_system;generate_report;reset_password
+382,We should move ml-infer-05 into quarantine.,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;provision_vm;generate_report;scan_malware;process_refund
+383,Let's isolate staging-db-02 from the network.,quarantine_system,,quarantine_system,5,generate_report,False,3,generate_report;db_write;quarantine_system;provision_vm;db_read
+384,Let's quarantine host ml-infer-05.,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;provision_vm;scan_malware;generate_report;send_notification
+385,Let's take payment-api-03 off the network.,quarantine_system,,quarantine_system,5,provision_vm,False,3,provision_vm;generate_report;quarantine_system;process_refund;update_subscription
+386,Let's contain staging-db-02 immediately.,quarantine_system,,quarantine_system,5,generate_report,False,4,generate_report;db_write;provision_vm;quarantine_system;process_refund
+387,Let's segment prod-web-01 from the rest of the environment.,quarantine_system,,quarantine_system,5,provision_vm,False,3,provision_vm;generate_report;quarantine_system;send_notification;process_refund
+388,Let's pull staging-db-02 out of production.,quarantine_system,,quarantine_system,5,db_write,False,6,db_write;generate_report;db_read;provision_vm;process_refund
+389,Let's lock down payment-api-03.,quarantine_system,,quarantine_system,5,provision_vm,False,5,provision_vm;generate_report;process_refund;create_ticket;quarantine_system
+390,Let's move payment-api-03 into quarantine.,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;provision_vm;generate_report;scan_malware;process_refund
+391,Kindly isolate staging-db-02 from the network.,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;db_read;db_write;generate_report;provision_vm
+392,Kindly quarantine host auth-svc-04.,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;scan_malware;provision_vm;reset_password;escalate_to_human
+393,Kindly take ml-infer-05 off the network.,quarantine_system,,quarantine_system,5,generate_report,False,2,generate_report;quarantine_system;scan_malware;provision_vm;send_notification
+394,Kindly contain cdn-edge-06 immediately.,quarantine_system,,quarantine_system,5,generate_report,False,4,generate_report;provision_vm;create_ticket;quarantine_system;send_notification
+395,Kindly segment payment-api-03 from the rest of the environment.,quarantine_system,,quarantine_system,5,generate_report,False,5,generate_report;provision_vm;process_refund;create_ticket;quarantine_system
+396,Kindly pull ml-infer-05 out of production.,quarantine_system,,quarantine_system,5,generate_report,False,3,generate_report;process_refund;quarantine_system;provision_vm;send_notification
+397,Kindly lock down cdn-edge-06.,quarantine_system,,quarantine_system,5,provision_vm,False,3,provision_vm;create_ticket;quarantine_system;scan_malware;generate_report
+398,Kindly move ml-infer-05 into quarantine.,quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;scan_malware;provision_vm;generate_report;process_refund
+399,"When you have a moment, isolate prod-web-01 from the network.",quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;provision_vm;generate_report;scan_malware;escalate_to_human
+400,"When you have a moment, quarantine host cdn-edge-06.",quarantine_system,,quarantine_system,5,quarantine_system,True,1,quarantine_system;provision_vm;scan_malware;generate_report;send_notification
+401,"When you have a moment, take ml-infer-05 off the network.",quarantine_system,,quarantine_system,5,generate_report,False,2,generate_report;quarantine_system;send_notification;provision_vm;process_refund
+402,run a malware scan on payment-api-03.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;provision_vm;generate_report;process_refund
+403,scan cdn-edge-06 for malicious files.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;send_notification
+404,check prod-web-01 for indicators of compromise.,scan_malware,,scan_malware,6,generate_report,False,7,generate_report;send_notification;quarantine_system;log_audit_event;provision_vm
+405,inspect staging-db-02 for malware activity.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;db_read;db_write
+406,perform a threat scan on payment-api-03.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;escalate_to_human
+407,sweep prod-web-01 for infections.,scan_malware,,scan_malware,6,quarantine_system,False,2,quarantine_system;scan_malware;provision_vm;generate_report;process_refund
+408,scan prod-web-01 for suspicious artifacts.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;send_notification
+409,run an IOC check against cdn-edge-06.,scan_malware,,scan_malware,6,quarantine_system,False,7,quarantine_system;generate_report;send_notification;provision_vm;create_ticket
+410,Please run a malware scan on ml-infer-05.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;send_notification
+411,Please scan staging-db-02 for malicious files.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;db_read;generate_report;db_write
+412,Please check payment-api-03 for indicators of compromise.,scan_malware,,scan_malware,6,generate_report,False,10,generate_report;send_notification;create_ticket;provision_vm;log_audit_event
+413,Please inspect ml-infer-05 for malware activity.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;send_notification
+414,Please perform a threat scan on staging-db-02.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;db_write
+415,Please sweep cdn-edge-06 for infections.,scan_malware,,scan_malware,6,quarantine_system,False,3,quarantine_system;escalate_to_human;scan_malware;provision_vm;send_notification
+416,Please scan payment-api-03 for suspicious artifacts.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;escalate_to_human
+417,Please run an IOC check against staging-db-02.,scan_malware,,scan_malware,6,db_write,False,11,db_write;generate_report;db_read;quarantine_system;provision_vm
+418,Can you run a malware scan on cdn-edge-06?,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;provision_vm;generate_report;send_notification
+419,Can you scan cdn-edge-06 for malicious files?,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;send_notification
+420,Can you check payment-api-03 for indicators of compromise?,scan_malware,,scan_malware,6,generate_report,False,10,generate_report;send_notification;log_audit_event;create_ticket;quarantine_system
+421,Can you inspect ml-infer-05 for malware activity?,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;log_audit_event;provision_vm
+422,Can you perform a threat scan on auth-svc-04?,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;reset_password;escalate_to_human;log_audit_event
+423,Can you sweep payment-api-03 for infections?,scan_malware,,scan_malware,6,quarantine_system,False,2,quarantine_system;scan_malware;escalate_to_human;process_refund;provision_vm
+424,Can you scan prod-web-01 for suspicious artifacts?,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;escalate_to_human
+425,Can you run an IOC check against cdn-edge-06?,scan_malware,,scan_malware,6,generate_report,False,9,generate_report;quarantine_system;send_notification;provision_vm;process_refund
+426,Could you run a malware scan on auth-svc-04 for me?,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;reset_password;generate_report;log_audit_event
+427,Could you scan payment-api-03 for malicious files for me?,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;log_audit_event
+428,Could you check prod-web-01 for indicators of compromise for me?,scan_malware,,scan_malware,6,generate_report,False,6,generate_report;send_notification;quarantine_system;log_audit_event;provision_vm
+429,Could you inspect prod-web-01 for malware activity for me?,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;log_audit_event;provision_vm
+430,Could you perform a threat scan on payment-api-03 for me?,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;escalate_to_human
+431,Could you sweep cdn-edge-06 for infections for me?,scan_malware,,scan_malware,6,quarantine_system,False,2,quarantine_system;scan_malware;escalate_to_human;provision_vm;generate_report
+432,Could you scan payment-api-03 for suspicious artifacts for me?,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;log_audit_event;provision_vm
+433,Could you run an IOC check against staging-db-02 for me?,scan_malware,,scan_malware,6,db_write,False,10,db_write;generate_report;db_read;quarantine_system;check_status
+434,I need you to run a malware scan on cdn-edge-06.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;provision_vm;generate_report;send_notification
+435,I need you to scan auth-svc-04 for malicious files.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;reset_password;generate_report;log_audit_event
+436,I need you to check ml-infer-05 for indicators of compromise.,scan_malware,,scan_malware,6,generate_report,False,7,generate_report;send_notification;quarantine_system;log_audit_event;provision_vm
+437,I need you to inspect cdn-edge-06 for malware activity.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;send_notification
+438,I need you to perform a threat scan on auth-svc-04.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;reset_password
+439,I need you to sweep ml-infer-05 for infections.,scan_malware,,scan_malware,6,quarantine_system,False,2,quarantine_system;scan_malware;generate_report;provision_vm;process_refund
+440,I need you to scan prod-web-01 for suspicious artifacts.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;send_notification
+441,I need you to run an IOC check against prod-web-01.,scan_malware,,scan_malware,6,generate_report,False,4,generate_report;quarantine_system;provision_vm;scan_malware;process_refund
+442,We should run a malware scan on prod-web-01.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;send_notification
+443,We should scan cdn-edge-06 for malicious files.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;send_notification
+444,We should check staging-db-02 for indicators of compromise.,scan_malware,,scan_malware,6,generate_report,False,12,generate_report;send_notification;db_write;quarantine_system;log_audit_event
+445,We should inspect ml-infer-05 for malware activity.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;send_notification
+446,We should perform a threat scan on prod-web-01.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;send_notification
+447,We should sweep payment-api-03 for infections.,scan_malware,,scan_malware,6,quarantine_system,False,4,quarantine_system;escalate_to_human;provision_vm;scan_malware;send_notification
+448,We should scan ml-infer-05 for suspicious artifacts.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;generate_report;quarantine_system;send_notification;log_audit_event
+449,We should run an IOC check against ml-infer-05.,scan_malware,,scan_malware,6,generate_report,False,5,generate_report;quarantine_system;send_notification;process_refund;scan_malware
+450,Let's run a malware scan on staging-db-02.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;db_write
+451,Let's scan auth-svc-04 for malicious files.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;reset_password;log_audit_event;escalate_to_human
+452,Let's check staging-db-02 for indicators of compromise.,scan_malware,,scan_malware,6,generate_report,False,12,generate_report;send_notification;db_write;check_status;db_read
+453,Let's inspect prod-web-01 for malware activity.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;process_refund
+454,Let's perform a threat scan on payment-api-03.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;send_notification
+455,Let's sweep payment-api-03 for infections.,scan_malware,,scan_malware,6,quarantine_system,False,7,quarantine_system;escalate_to_human;provision_vm;send_notification;generate_report
+456,Let's scan prod-web-01 for suspicious artifacts.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;send_notification;provision_vm
+457,Let's run an IOC check against payment-api-03.,scan_malware,,scan_malware,6,generate_report,False,10,generate_report;quarantine_system;process_refund;provision_vm;send_notification
+458,Kindly run a malware scan on staging-db-02.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;db_write
+459,Kindly scan cdn-edge-06 for malicious files.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;send_notification
+460,Kindly check staging-db-02 for indicators of compromise.,scan_malware,,scan_malware,6,generate_report,False,12,generate_report;db_write;db_read;log_audit_event;send_notification
+461,Kindly inspect cdn-edge-06 for malware activity.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;send_notification
+462,Kindly perform a threat scan on prod-web-01.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;escalate_to_human
+463,Kindly sweep payment-api-03 for infections.,scan_malware,,scan_malware,6,quarantine_system,False,3,quarantine_system;escalate_to_human;scan_malware;process_refund;provision_vm
+464,Kindly scan ml-infer-05 for suspicious artifacts.,scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;send_notification;log_audit_event
+465,Kindly run an IOC check against auth-svc-04.,scan_malware,,scan_malware,6,quarantine_system,False,2,quarantine_system;scan_malware;restart_service;log_audit_event;generate_report
+466,"When you have a moment, run a malware scan on ml-infer-05.",scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;send_notification
+467,"When you have a moment, scan cdn-edge-06 for malicious files.",scan_malware,,scan_malware,6,scan_malware,True,1,scan_malware;quarantine_system;generate_report;provision_vm;send_notification
+468,"When you have a moment, check staging-db-02 for indicators of compromise.",scan_malware,,scan_malware,6,generate_report,False,12,generate_report;send_notification;log_audit_event;check_status;quarantine_system
+469,generate a report for Finance.,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;process_refund;db_write;provision_vm
+470,compile a summary for Finance.,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;process_refund;provision_vm;db_write
+471,create the analytics report for Legal.,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;log_audit_event;escalate_to_human;send_notification
+472,produce a compliance report for Engineering.,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;provision_vm;process_refund;quarantine_system
+473,put together a performance summary for Finance.,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;process_refund;provision_vm;log_audit_event
+474,build a report package for Marketing.,generate_report,,generate_report,7,generate_report,True,1,generate_report;provision_vm;send_notification;create_ticket;process_refund
+475,prepare the reporting bundle for Legal.,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;provision_vm;escalate_to_human;send_notification
+476,draft a metrics report for Finance.,generate_report,,generate_report,7,generate_report,True,1,generate_report;process_refund;provision_vm;create_ticket;send_notification
+477,Please generate a diagnostics report for payment-api-03.,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;process_refund;quarantine_system;send_notification
+478,Please compile a summary for Finance.,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;provision_vm;process_refund;db_write
+479,Please create the analytics report for Engineering.,generate_report,,generate_report,7,generate_report,True,1,generate_report;provision_vm;process_refund;create_ticket;log_audit_event
+480,Please produce a compliance report for Legal.,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;escalate_to_human;process_refund;provision_vm
+481,Please put together a performance summary for Engineering.,generate_report,,generate_report,7,generate_report,True,1,generate_report;provision_vm;process_refund;create_ticket;quarantine_system
+482,Please build an operations summary for auth-svc-04.,generate_report,,generate_report,7,generate_report,True,1,generate_report;log_audit_event;create_ticket;quarantine_system;reset_password
+483,Please prepare the reporting bundle for Finance.,generate_report,,generate_report,7,generate_report,True,1,generate_report;provision_vm;update_subscription;process_refund;send_notification
+484,Please draft a metrics report for Finance.,generate_report,,generate_report,7,generate_report,True,1,generate_report;provision_vm;process_refund;log_audit_event;create_ticket
+485,Can you generate a report for Legal?,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;escalate_to_human;provision_vm;send_notification
+486,Can you compile a health summary for payment-api-03?,generate_report,,generate_report,7,generate_report,True,1,generate_report;provision_vm;create_ticket;process_refund;update_subscription
+487,Can you create an analytics report for payment-api-03?,generate_report,,generate_report,7,generate_report,True,1,generate_report;process_refund;create_ticket;provision_vm;log_audit_event
+488,Can you produce a compliance report for Finance?,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;log_audit_event;process_refund;db_write
+489,Can you put together a performance summary for Engineering?,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;provision_vm;process_refund;send_notification
+490,Can you build an operations summary for cdn-edge-06?,generate_report,,generate_report,7,generate_report,True,1,generate_report;provision_vm;create_ticket;send_notification;process_refund
+491,Can you prepare the reporting bundle for Legal?,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;provision_vm;send_notification;escalate_to_human
+492,Can you draft a metrics report for Marketing?,generate_report,,generate_report,7,generate_report,True,1,generate_report;send_notification;provision_vm;process_refund;db_write
+493,Could you generate a diagnostics report for payment-api-03 for me?,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;send_notification;quarantine_system;process_refund
+494,Could you compile a summary for Engineering for me?,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;provision_vm;send_notification;escalate_to_human
+495,Could you create the analytics report for Marketing for me?,generate_report,,generate_report,7,generate_report,True,1,generate_report;send_notification;provision_vm;db_write;db_read
+496,Could you produce a compliance report for Marketing for me?,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;provision_vm;send_notification;process_refund
+497,Could you put together a performance summary for HR for me?,generate_report,,generate_report,7,generate_report,True,1,generate_report;process_refund;create_ticket;log_audit_event;send_notification
+498,Could you build a report package for Legal for me?,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;escalate_to_human;provision_vm;send_notification
+499,Could you prepare the reporting bundle for HR for me?,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;send_notification;provision_vm;process_refund
+500,Could you draft a metrics report for Marketing for me?,generate_report,,generate_report,7,generate_report,True,1,generate_report;send_notification;provision_vm;process_refund;quarantine_system
+501,I need you to generate a diagnostics report for prod-web-01.,generate_report,,generate_report,7,generate_report,True,1,generate_report;quarantine_system;provision_vm;create_ticket;scan_malware
+502,I need you to compile a health summary for prod-web-01.,generate_report,,generate_report,7,generate_report,True,1,generate_report;provision_vm;quarantine_system;create_ticket;send_notification
+503,I need you to create the analytics report for Marketing.,generate_report,,generate_report,7,generate_report,True,1,generate_report;send_notification;provision_vm;db_write;db_read
+504,I need you to produce a compliance report for Finance.,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;log_audit_event;process_refund;provision_vm
+505,I need you to put together a performance summary for HR.,generate_report,,generate_report,7,generate_report,True,1,generate_report;process_refund;create_ticket;provision_vm;send_notification
+506,I need you to build an operations summary for payment-api-03.,generate_report,,generate_report,7,generate_report,True,1,generate_report;provision_vm;create_ticket;process_refund;send_notification
+507,I need you to prepare the reporting bundle for Engineering.,generate_report,,generate_report,7,generate_report,True,1,generate_report;provision_vm;create_ticket;send_notification;quarantine_system
+508,I need you to draft a metrics report for HR.,generate_report,,generate_report,7,generate_report,True,1,generate_report;process_refund;send_notification;log_audit_event;provision_vm
+509,We should generate a report for Legal.,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;escalate_to_human;provision_vm;process_refund
+510,We should compile a summary for Marketing.,generate_report,,generate_report,7,generate_report,True,1,generate_report;send_notification;update_subscription;provision_vm;quarantine_system
+511,We should create an analytics report for cdn-edge-06.,generate_report,,generate_report,7,generate_report,True,1,generate_report;send_notification;provision_vm;create_ticket;process_refund
+512,We should produce a compliance report for Marketing.,generate_report,,generate_report,7,generate_report,True,1,generate_report;send_notification;provision_vm;create_ticket;quarantine_system
+513,We should put together a performance summary for Legal.,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;escalate_to_human;process_refund;send_notification
+514,We should build an operations summary for ml-infer-05.,generate_report,,generate_report,7,generate_report,True,1,generate_report;send_notification;process_refund;provision_vm;quarantine_system
+515,We should prepare the reporting bundle for Engineering.,generate_report,,generate_report,7,generate_report,True,1,generate_report;provision_vm;send_notification;quarantine_system;create_ticket
+516,We should draft a metrics report for Legal.,generate_report,,generate_report,7,generate_report,True,1,generate_report;send_notification;escalate_to_human;create_ticket;process_refund
+517,Let's generate a report for HR.,generate_report,,generate_report,7,generate_report,True,1,generate_report;process_refund;escalate_to_human;create_ticket;quarantine_system
+518,Let's compile a summary for Finance.,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;provision_vm;process_refund;update_subscription
+519,Let's create the analytics report for Marketing.,generate_report,,generate_report,7,generate_report,True,1,generate_report;send_notification;provision_vm;process_refund;quarantine_system
+520,Let's produce a compliance report for Engineering.,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;provision_vm;quarantine_system;process_refund
+521,Let's put together a performance summary for Legal.,generate_report,,generate_report,7,create_ticket,False,2,create_ticket;generate_report;escalate_to_human;process_refund;provision_vm
+522,Let's build a report package for Engineering.,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;provision_vm;send_notification;process_refund
+523,Let's prepare the reporting bundle for HR.,generate_report,,generate_report,7,generate_report,True,1,generate_report;provision_vm;send_notification;process_refund;quarantine_system
+524,Let's draft a metrics report for HR.,generate_report,,generate_report,7,generate_report,True,1,generate_report;process_refund;send_notification;quarantine_system;escalate_to_human
+525,Kindly generate a diagnostics report for cdn-edge-06.,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;send_notification;check_status;quarantine_system
+526,Kindly compile a summary for Finance.,generate_report,,generate_report,7,generate_report,True,1,generate_report;create_ticket;process_refund;db_write;provision_vm
+527,Kindly create the analytics report for Marketing.,generate_report,,generate_report,7,generate_report,True,1,generate_report;send_notification;provision_vm;process_refund;db_read
+528,Kindly produce a compliance report for Legal.,generate_report,,generate_report,7,create_ticket,False,2,create_ticket;generate_report;process_refund;escalate_to_human;log_audit_event
+529,Kindly put together a performance summary for Engineering.,generate_report,,generate_report,7,generate_report,True,1,generate_report;provision_vm;process_refund;create_ticket;quarantine_system
+530,Kindly build a report package for Marketing.,generate_report,,generate_report,7,generate_report,True,1,generate_report;provision_vm;send_notification;process_refund;create_ticket
+531,Kindly prepare the reporting bundle for HR.,generate_report,,generate_report,7,generate_report,True,1,generate_report;process_refund;send_notification;provision_vm;quarantine_system
+532,Kindly draft a metrics report for Engineering.,generate_report,,generate_report,7,generate_report,True,1,generate_report;send_notification;provision_vm;process_refund;quarantine_system
+533,"When you have a moment, generate a report for HR.",generate_report,,generate_report,7,generate_report,True,1,generate_report;send_notification;log_audit_event;process_refund;escalate_to_human
+534,"When you have a moment, compile a summary for Marketing.",generate_report,,generate_report,7,generate_report,True,1,generate_report;send_notification;provision_vm;update_subscription;process_refund
+535,"When you have a moment, create an analytics report for cdn-edge-06.",generate_report,,generate_report,7,generate_report,True,1,generate_report;send_notification;log_audit_event;provision_vm;check_status
+536,refund transaction #42017.,process_refund,,process_refund,8,process_refund,True,1,process_refund;provision_vm;generate_report;create_ticket;update_subscription
+537,process the refund for Charlie.,process_refund,,process_refund,8,process_refund,True,1,process_refund;quarantine_system;provision_vm;generate_report;escalate_to_human
+538,return the money to Diana.,process_refund,,process_refund,8,process_refund,True,1,process_refund;escalate_to_human;provision_vm;create_ticket;restart_service
+539,credit Frank's account.,process_refund,,process_refund,8,update_subscription,False,9,update_subscription;provision_vm;reset_password;generate_report;escalate_to_human
+540,reverse the payment for Charlie.,process_refund,,process_refund,8,escalate_to_human,False,4,escalate_to_human;quarantine_system;provision_vm;process_refund;create_ticket
+541,send Eve a payout reversal.,process_refund,,process_refund,8,escalate_to_human,False,6,escalate_to_human;provision_vm;send_notification;generate_report;quarantine_system
+542,refund the charge for Bob.,process_refund,,process_refund,8,process_refund,True,1,process_refund;provision_vm;create_ticket;escalate_to_human;restart_service
+543,put the refund through for Bob.,process_refund,,process_refund,8,process_refund,True,1,process_refund;escalate_to_human;provision_vm;create_ticket;quarantine_system
+544,Please refund transaction #42017.,process_refund,,process_refund,8,process_refund,True,1,process_refund;provision_vm;generate_report;create_ticket;update_subscription
+545,Please process the refund for Frank.,process_refund,,process_refund,8,process_refund,True,1,process_refund;provision_vm;create_ticket;generate_report;escalate_to_human
+546,Please return the money to Frank.,process_refund,,process_refund,8,provision_vm,False,4,provision_vm;escalate_to_human;create_ticket;process_refund;update_subscription
+547,Please issue the refund linked to #60122.,process_refund,,process_refund,8,provision_vm,False,2,provision_vm;process_refund;create_ticket;generate_report;quarantine_system
+548,Please reverse the payment for Bob.,process_refund,,process_refund,8,escalate_to_human,False,5,escalate_to_human;provision_vm;quarantine_system;create_ticket;process_refund
+549,Please send Eve a payout reversal.,process_refund,,process_refund,8,escalate_to_human,False,6,escalate_to_human;provision_vm;send_notification;generate_report;quarantine_system
+550,Please refund the charge for Eve.,process_refund,,process_refund,8,provision_vm,False,2,provision_vm;process_refund;update_subscription;generate_report;escalate_to_human
+551,Please put the refund through for Charlie.,process_refund,,process_refund,8,process_refund,True,1,process_refund;provision_vm;escalate_to_human;quarantine_system;generate_report
+552,Can you refund transaction #42017?,process_refund,,process_refund,8,process_refund,True,1,process_refund;provision_vm;generate_report;update_subscription;create_ticket
+553,Can you process the refund for Eve?,process_refund,,process_refund,8,process_refund,True,1,process_refund;generate_report;provision_vm;db_write;quarantine_system
+554,Can you process a refund for #10234?,process_refund,,process_refund,8,process_refund,True,1,process_refund;generate_report;create_ticket;provision_vm;restart_service
+555,Can you credit Charlie's account?,process_refund,,process_refund,8,update_subscription,False,9,update_subscription;reset_password;provision_vm;scan_malware;generate_report
+556,Can you reverse the payment for Charlie?,process_refund,,process_refund,8,provision_vm,False,4,provision_vm;escalate_to_human;quarantine_system;process_refund;create_ticket
+557,Can you send Bob a payout reversal?,process_refund,,process_refund,8,escalate_to_human,False,5,escalate_to_human;provision_vm;create_ticket;send_notification;process_refund
+558,Can you refund the charge for Diana?,process_refund,,process_refund,8,process_refund,True,1,process_refund;provision_vm;update_subscription;generate_report;reset_password
+559,Can you put the refund through for Grace?,process_refund,,process_refund,8,process_refund,True,1,process_refund;reset_password;provision_vm;create_ticket;update_subscription
+560,Could you issue a refund to Eve for me?,process_refund,,process_refund,8,provision_vm,False,3,provision_vm;generate_report;process_refund;create_ticket;escalate_to_human
+561,Could you process the refund for Eve for me?,process_refund,,process_refund,8,generate_report,False,2,generate_report;process_refund;provision_vm;db_write;quarantine_system
+562,Could you return the money to Frank for me?,process_refund,,process_refund,8,escalate_to_human,False,5,escalate_to_human;provision_vm;create_ticket;update_subscription;process_refund
+563,Could you credit Charlie's account for me?,process_refund,,process_refund,8,update_subscription,False,12,update_subscription;reset_password;scan_malware;provision_vm;generate_report
+564,Could you reverse the payment for Diana for me?,process_refund,,process_refund,8,escalate_to_human,False,6,escalate_to_human;generate_report;provision_vm;create_ticket;db_write
+565,Could you send Diana a payout reversal for me?,process_refund,,process_refund,8,escalate_to_human,False,5,escalate_to_human;generate_report;create_ticket;provision_vm;process_refund
+566,Could you refund the charge for Frank for me?,process_refund,,process_refund,8,provision_vm,False,4,provision_vm;update_subscription;create_ticket;process_refund;escalate_to_human
+567,Could you put the refund through for Bob for me?,process_refund,,process_refund,8,escalate_to_human,False,4,escalate_to_human;provision_vm;create_ticket;process_refund;generate_report
+568,I need you to refund transaction #53698.,process_refund,,process_refund,8,process_refund,True,1,process_refund;generate_report;provision_vm;reset_password;create_ticket
+569,I need you to process the refund for Diana.,process_refund,,process_refund,8,process_refund,True,1,process_refund;generate_report;db_write;db_read;escalate_to_human
+570,I need you to process a refund for #60122.,process_refund,,process_refund,8,process_refund,True,1,process_refund;generate_report;provision_vm;create_ticket;quarantine_system
+571,I need you to issue the refund linked to #20891.,process_refund,,process_refund,8,create_ticket,False,4,create_ticket;provision_vm;generate_report;process_refund;escalate_to_human
+572,I need you to reverse the payment for Frank.,process_refund,,process_refund,8,escalate_to_human,False,7,escalate_to_human;provision_vm;create_ticket;generate_report;quarantine_system
+573,I need you to return the funds for #10234.,process_refund,,process_refund,8,generate_report,False,3,generate_report;create_ticket;process_refund;provision_vm;reset_password
+574,I need you to undo the charge associated with #31450.,process_refund,,process_refund,8,provision_vm,False,3,provision_vm;generate_report;process_refund;create_ticket;quarantine_system
+575,I need you to put the refund through for Eve.,process_refund,,process_refund,8,generate_report,False,3,generate_report;provision_vm;process_refund;escalate_to_human;db_write
+576,We should refund transaction #60122.,process_refund,,process_refund,8,process_refund,True,1,process_refund;provision_vm;generate_report;update_subscription;create_ticket
+577,We should reverse the charge tied to #60122.,process_refund,,process_refund,8,provision_vm,False,4,provision_vm;quarantine_system;generate_report;process_refund;escalate_to_human
+578,We should return the money to Eve.,process_refund,,process_refund,8,process_refund,True,1,process_refund;restart_service;provision_vm;quarantine_system;db_write
+579,We should credit Charlie's account.,process_refund,,process_refund,8,update_subscription,False,9,update_subscription;quarantine_system;provision_vm;reset_password;scan_malware
+580,We should reverse the payment for Grace.,process_refund,,process_refund,8,update_subscription,False,3,update_subscription;provision_vm;process_refund;reset_password;escalate_to_human
+581,We should send Grace a payout reversal.,process_refund,,process_refund,8,update_subscription,False,4,update_subscription;provision_vm;send_notification;process_refund;escalate_to_human
+582,We should refund the charge for Bob.,process_refund,,process_refund,8,process_refund,True,1,process_refund;provision_vm;restart_service;quarantine_system;escalate_to_human
+583,We should put the refund through for Frank.,process_refund,,process_refund,8,provision_vm,False,2,provision_vm;process_refund;escalate_to_human;create_ticket;generate_report
+584,Let's refund transaction #31450.,process_refund,,process_refund,8,process_refund,True,1,process_refund;generate_report;provision_vm;create_ticket;db_write
+585,Let's process the refund for Bob.,process_refund,,process_refund,8,process_refund,True,1,process_refund;restart_service;provision_vm;quarantine_system;create_ticket
+586,Let's process a refund for #20891.,process_refund,,process_refund,8,process_refund,True,1,process_refund;generate_report;create_ticket;provision_vm;quarantine_system
+587,Let's credit Bob's account.,process_refund,,process_refund,8,update_subscription,False,8,update_subscription;reset_password;provision_vm;quarantine_system;escalate_to_human
+588,Let's reverse the payment for Alice.,process_refund,,process_refund,8,escalate_to_human,False,7,escalate_to_human;provision_vm;create_ticket;update_subscription;generate_report
+589,Let's send Alice a payout reversal.,process_refund,,process_refund,8,escalate_to_human,False,7,escalate_to_human;provision_vm;create_ticket;send_notification;generate_report
+590,Let's undo the charge associated with #20891.,process_refund,,process_refund,8,provision_vm,False,4,provision_vm;create_ticket;generate_report;process_refund;reset_password
+591,Let's put the refund through for Diana.,process_refund,,process_refund,8,process_refund,True,1,process_refund;escalate_to_human;generate_report;provision_vm;create_ticket
+592,Kindly issue a refund to Eve.,process_refund,,process_refund,8,process_refund,True,1,process_refund;provision_vm;generate_report;escalate_to_human;create_ticket
+593,Kindly process the refund for Grace.,process_refund,,process_refund,8,process_refund,True,1,process_refund;reset_password;restart_service;escalate_to_human;provision_vm
+594,Kindly process a refund for #10234.,process_refund,,process_refund,8,process_refund,True,1,process_refund;generate_report;create_ticket;restart_service;provision_vm
+595,Kindly credit Diana's account.,process_refund,,process_refund,8,generate_report,False,10,generate_report;db_read;escalate_to_human;update_subscription;reset_password
+596,Kindly credit back the payment for #42017.,process_refund,,process_refund,8,process_refund,True,1,process_refund;provision_vm;update_subscription;generate_report;create_ticket
+597,Kindly send Frank a payout reversal.,process_refund,,process_refund,8,escalate_to_human,False,8,escalate_to_human;provision_vm;create_ticket;send_notification;generate_report
+598,Kindly refund the charge for Eve.,process_refund,,process_refund,8,process_refund,True,1,process_refund;provision_vm;escalate_to_human;generate_report;update_subscription
+599,Kindly put the refund through for Bob.,process_refund,,process_refund,8,process_refund,True,1,process_refund;escalate_to_human;create_ticket;provision_vm;generate_report
+600,"When you have a moment, refund transaction #60122.",process_refund,,process_refund,8,process_refund,True,1,process_refund;generate_report;provision_vm;update_subscription;quarantine_system
+601,"When you have a moment, reverse the charge tied to #60122.",process_refund,,process_refund,8,provision_vm,False,2,provision_vm;process_refund;generate_report;quarantine_system;escalate_to_human
+602,"When you have a moment, return the money to Diana.",process_refund,,process_refund,8,process_refund,True,1,process_refund;escalate_to_human;provision_vm;quarantine_system;generate_report
+603,update Diana's subscription plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;generate_report;create_ticket;process_refund
+604,change Diana's billing tier.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;process_refund;generate_report;escalate_to_human
+605,switch Bob to a different plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;process_refund;quarantine_system;create_ticket
+606,modify Bob's subscription.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;escalate_to_human;create_ticket;quarantine_system
+607,adjust Frank's account plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;create_ticket;generate_report
+608,move Frank to the new billing plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;create_ticket;generate_report;escalate_to_human
+609,revise Alice's subscription tier.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;escalate_to_human;provision_vm;send_notification;generate_report
+610,change the plan on Grace's account.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;quarantine_system;create_ticket
+611,Please update Grace's subscription plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;reset_password;provision_vm;generate_report;create_ticket
+612,Please change Grace's billing tier.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;process_refund;quarantine_system
+613,Please switch Alice to a different plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;escalate_to_human;create_ticket;process_refund
+614,Please modify Grace's subscription.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;reset_password;provision_vm;escalate_to_human;scan_malware
+615,Please adjust Diana's account plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;reset_password;provision_vm;generate_report;escalate_to_human
+616,Please move Bob to the new billing plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;create_ticket;process_refund
+617,Please revise Bob's subscription tier.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;send_notification;process_refund;quarantine_system
+618,Please change the plan on Frank's account.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;create_ticket;reset_password;quarantine_system
+619,Can you update Eve's subscription plan?,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;generate_report;reset_password;send_notification
+620,Can you change Diana's billing tier?,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;generate_report;process_refund;create_ticket
+621,Can you switch Alice to a different plan?,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;escalate_to_human;create_ticket;generate_report
+622,Can you modify Eve's subscription?,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;generate_report;reset_password;send_notification
+623,Can you adjust Bob's account plan?,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;reset_password;provision_vm;create_ticket;generate_report
+624,Can you move Grace to the new billing plan?,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;create_ticket;generate_report
+625,Can you revise Alice's subscription tier?,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;escalate_to_human;generate_report;send_notification
+626,Can you change the plan on Diana's account?,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;generate_report;process_refund
+627,Could you update Bob's subscription plan for me?,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;create_ticket;generate_report
+628,Could you change Grace's billing tier for me?,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;generate_report;create_ticket
+629,Could you switch Eve to a different plan for me?,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;generate_report;quarantine_system;db_write
+630,Could you modify Eve's subscription for me?,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;generate_report;reset_password;send_notification
+631,Could you adjust Eve's account plan for me?,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;reset_password;provision_vm;generate_report;scan_malware
+632,Could you move Charlie to the new billing plan for me?,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;generate_report;create_ticket;reset_password
+633,Could you revise Grace's subscription tier for me?,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;generate_report;send_notification
+634,Could you change the plan on Diana's account for me?,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;generate_report;reset_password;create_ticket
+635,I need you to update Eve's subscription plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;generate_report;send_notification;quarantine_system
+636,I need you to change Grace's billing tier.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;generate_report;create_ticket
+637,I need you to switch Frank to a different plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;create_ticket;generate_report;quarantine_system
+638,I need you to modify Eve's subscription.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;generate_report;send_notification;quarantine_system
+639,I need you to adjust Diana's account plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;generate_report;create_ticket
+640,I need you to move Grace to the new billing plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;create_ticket;generate_report
+641,I need you to revise Eve's subscription tier.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;generate_report;send_notification;quarantine_system
+642,I need you to change the plan on Diana's account.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;generate_report;reset_password;create_ticket
+643,We should update Bob's subscription plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;send_notification;reset_password;quarantine_system
+644,We should change Frank's billing tier.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;quarantine_system;send_notification;create_ticket
+645,We should switch Grace to a different plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;process_refund;quarantine_system
+646,We should modify Diana's subscription.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;generate_report;escalate_to_human;quarantine_system
+647,We should adjust Diana's account plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;reset_password;provision_vm;generate_report;escalate_to_human
+648,We should move Charlie to the new billing plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;quarantine_system;generate_report;process_refund
+649,We should revise Grace's subscription tier.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;send_notification;process_refund
+650,We should change the plan on Bob's account.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;quarantine_system;process_refund
+651,Let's update Grace's subscription plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;send_notification;generate_report
+652,Let's change Frank's billing tier.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;escalate_to_human;create_ticket;generate_report
+653,Let's switch Charlie to a different plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;quarantine_system;process_refund;generate_report
+654,Let's modify Grace's subscription.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;escalate_to_human;create_ticket
+655,Let's adjust Grace's account plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;reset_password;provision_vm;scan_malware;generate_report
+656,Let's move Eve to the new billing plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;generate_report;reset_password;process_refund
+657,Let's revise Diana's subscription tier.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;generate_report;process_refund;send_notification
+658,Let's change the plan on Charlie's account.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;quarantine_system;process_refund
+659,Kindly update Diana's subscription plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;generate_report;create_ticket;process_refund
+660,Kindly change Alice's billing tier.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;escalate_to_human;create_ticket;generate_report
+661,Kindly switch Frank to a different plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;create_ticket;escalate_to_human;quarantine_system
+662,Kindly modify Bob's subscription.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;create_ticket;escalate_to_human
+663,Kindly adjust Charlie's account plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;generate_report;quarantine_system
+664,Kindly move Charlie to the new billing plan.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;process_refund;generate_report;create_ticket
+665,Kindly revise Charlie's subscription tier.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;send_notification;quarantine_system;generate_report
+666,Kindly change the plan on Eve's account.,update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;reset_password;generate_report;quarantine_system
+667,"When you have a moment, update Alice's subscription plan.",update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;escalate_to_human;send_notification;generate_report
+668,"When you have a moment, change Bob's billing tier.",update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;send_notification;process_refund;quarantine_system
+669,"When you have a moment, switch Bob to a different plan.",update_subscription,,update_subscription,9,update_subscription,True,1,update_subscription;provision_vm;process_refund;quarantine_system;escalate_to_human
+670,provision a new VM for Finance.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;create_ticket;update_subscription;generate_report;process_refund
+671,spin up a virtual machine for Legal.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;escalate_to_human;quarantine_system;create_ticket;scan_malware
+672,launch a new instance for Finance.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;generate_report;create_ticket;process_refund;quarantine_system
+673,create a server for Finance.,provision_vm,,provision_vm,10,generate_report,False,2,generate_report;provision_vm;db_write;create_ticket;scan_malware
+674,stand up a VM for Engineering.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;create_ticket;quarantine_system;generate_report;escalate_to_human
+675,deploy a fresh virtual machine for Legal.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;quarantine_system;create_ticket;escalate_to_human;process_refund
+676,bring up a compute instance for Marketing.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;generate_report;send_notification;quarantine_system;escalate_to_human
+677,allocate a new VM to HR.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;create_ticket;generate_report;process_refund;update_subscription
+678,Please provision a new VM for Legal.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;create_ticket;escalate_to_human;generate_report;update_subscription
+679,Please spin up a virtual machine for Engineering.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;quarantine_system;scan_malware;generate_report;escalate_to_human
+680,Please launch a new instance for Finance.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;generate_report;create_ticket;process_refund;quarantine_system
+681,Please create a server for Legal.,provision_vm,,provision_vm,10,generate_report,False,2,generate_report;provision_vm;create_ticket;escalate_to_human;quarantine_system
+682,Please stand up a VM for Legal.,provision_vm,,provision_vm,10,escalate_to_human,False,3,escalate_to_human;create_ticket;provision_vm;update_subscription;generate_report
+683,Please deploy a fresh virtual machine for HR.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;quarantine_system;process_refund;restart_service;create_ticket
+684,Please bring up a compute instance for Engineering.,provision_vm,,provision_vm,10,generate_report,False,2,generate_report;provision_vm;create_ticket;quarantine_system;escalate_to_human
+685,Please allocate a new VM to HR.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;create_ticket;generate_report;update_subscription;process_refund
+686,Can you provision a new VM for Legal?,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;create_ticket;generate_report;update_subscription;escalate_to_human
+687,Can you spin up a virtual machine for Legal?,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;quarantine_system;escalate_to_human;create_ticket;scan_malware
+688,Can you launch a new instance for Engineering?,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;generate_report;quarantine_system;create_ticket;process_refund
+689,Can you create a server for Marketing?,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;generate_report;send_notification;quarantine_system;db_write
+690,Can you stand up a VM for Marketing?,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;update_subscription;quarantine_system;send_notification;create_ticket
+691,Can you deploy a fresh virtual machine for Legal?,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;create_ticket;quarantine_system;escalate_to_human;process_refund
+692,Can you bring up a compute instance for Legal?,provision_vm,,provision_vm,10,escalate_to_human,False,3,escalate_to_human;generate_report;provision_vm;create_ticket;quarantine_system
+693,Can you allocate a new VM to HR?,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;create_ticket;generate_report;update_subscription;process_refund
+694,Could you provision a new VM for HR for me?,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;create_ticket;generate_report;update_subscription;quarantine_system
+695,Could you spin up a virtual machine for HR for me?,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;quarantine_system;scan_malware;reset_password;generate_report
+696,Could you launch a new instance for Finance for me?,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;generate_report;create_ticket;db_write;quarantine_system
+697,Could you create a server for Legal for me?,provision_vm,,provision_vm,10,generate_report,False,2,generate_report;provision_vm;create_ticket;escalate_to_human;quarantine_system
+698,Could you stand up a VM for Finance for me?,provision_vm,,provision_vm,10,create_ticket,False,4,create_ticket;update_subscription;generate_report;provision_vm;reset_password
+699,Could you deploy a fresh virtual machine for Marketing for me?,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;quarantine_system;generate_report;create_ticket;scan_malware
+700,Could you bring up a compute instance for Legal for me?,provision_vm,,provision_vm,10,generate_report,False,3,generate_report;escalate_to_human;provision_vm;create_ticket;quarantine_system
+701,Could you allocate a new VM to Legal for me?,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;create_ticket;generate_report;update_subscription;escalate_to_human
+702,I need you to provision a new VM for Legal.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;create_ticket;generate_report;quarantine_system;escalate_to_human
+703,I need you to spin up a virtual machine for Marketing.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;quarantine_system;generate_report;scan_malware;escalate_to_human
+704,I need you to launch a new instance for Finance.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;generate_report;create_ticket;process_refund;db_write
+705,I need you to create a server for Legal.,provision_vm,,provision_vm,10,generate_report,False,2,generate_report;provision_vm;create_ticket;quarantine_system;escalate_to_human
+706,I need you to stand up a VM for Finance.,provision_vm,,provision_vm,10,update_subscription,False,4,update_subscription;generate_report;create_ticket;provision_vm;reset_password
+707,I need you to deploy a fresh virtual machine for HR.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;quarantine_system;create_ticket;process_refund;generate_report
+708,I need you to bring up a compute instance for HR.,provision_vm,,provision_vm,10,generate_report,False,2,generate_report;provision_vm;process_refund;create_ticket;escalate_to_human
+709,I need you to allocate a new VM to Engineering.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;create_ticket;generate_report;quarantine_system;update_subscription
+710,We should provision a new VM for Legal.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;create_ticket;quarantine_system;generate_report;update_subscription
+711,We should spin up a virtual machine for HR.,provision_vm,,provision_vm,10,quarantine_system,False,2,quarantine_system;provision_vm;escalate_to_human;process_refund;generate_report
+712,We should launch a new instance for HR.,provision_vm,,provision_vm,10,generate_report,False,2,generate_report;provision_vm;quarantine_system;process_refund;create_ticket
+713,We should create a server for Engineering.,provision_vm,,provision_vm,10,generate_report,False,2,generate_report;provision_vm;quarantine_system;send_notification;db_write
+714,We should stand up a VM for Engineering.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;quarantine_system;generate_report;create_ticket;send_notification
+715,We should deploy a fresh virtual machine for Legal.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;quarantine_system;create_ticket;process_refund;escalate_to_human
+716,We should bring up a compute instance for Legal.,provision_vm,,provision_vm,10,escalate_to_human,False,3,escalate_to_human;generate_report;provision_vm;create_ticket;process_refund
+717,We should allocate a new VM to Finance.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;update_subscription;generate_report;create_ticket;reset_password
+718,Let's provision a new VM for Marketing.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;send_notification;update_subscription;generate_report;quarantine_system
+719,Let's spin up a virtual machine for Legal.,provision_vm,,provision_vm,10,escalate_to_human,False,2,escalate_to_human;provision_vm;quarantine_system;create_ticket;generate_report
+720,Let's launch a new instance for Marketing.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;generate_report;quarantine_system;send_notification;create_ticket
+721,Let's create a server for Finance.,provision_vm,,provision_vm,10,generate_report,False,2,generate_report;provision_vm;db_write;create_ticket;quarantine_system
+722,Let's stand up a VM for Legal.,provision_vm,,provision_vm,10,create_ticket,False,3,create_ticket;escalate_to_human;provision_vm;update_subscription;quarantine_system
+723,Let's deploy a fresh virtual machine for Marketing.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;quarantine_system;restart_service;process_refund;send_notification
+724,Let's bring up a compute instance for Legal.,provision_vm,,provision_vm,10,escalate_to_human,False,2,escalate_to_human;provision_vm;create_ticket;generate_report;process_refund
+725,Let's allocate a new VM to Marketing.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;update_subscription;generate_report;quarantine_system;create_ticket
+726,Kindly provision a new VM for Legal.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;create_ticket;escalate_to_human;generate_report;quarantine_system
+727,Kindly spin up a virtual machine for Marketing.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;quarantine_system;scan_malware;generate_report;update_subscription
+728,Kindly launch a new instance for Engineering.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;generate_report;quarantine_system;create_ticket;process_refund
+729,Kindly create a server for Legal.,provision_vm,,provision_vm,10,generate_report,False,3,generate_report;create_ticket;provision_vm;escalate_to_human;quarantine_system
+730,Kindly stand up a VM for Engineering.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;create_ticket;generate_report;quarantine_system;scan_malware
+731,Kindly deploy a fresh virtual machine for HR.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;quarantine_system;process_refund;restart_service;create_ticket
+732,Kindly bring up a compute instance for Engineering.,provision_vm,,provision_vm,10,generate_report,False,2,generate_report;provision_vm;create_ticket;process_refund;quarantine_system
+733,Kindly allocate a new VM to Finance.,provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;create_ticket;update_subscription;generate_report;reset_password
+734,"When you have a moment, provision a new VM for Engineering.",provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;create_ticket;generate_report;quarantine_system;send_notification
+735,"When you have a moment, spin up a virtual machine for Engineering.",provision_vm,,provision_vm,10,quarantine_system,False,2,quarantine_system;provision_vm;escalate_to_human;scan_malware;generate_report
+736,"When you have a moment, launch a new instance for Engineering.",provision_vm,,provision_vm,10,provision_vm,True,1,provision_vm;generate_report;quarantine_system;create_ticket;process_refund
+737,restart the service on staging-db-02.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;db_write;provision_vm;quarantine_system
+738,reboot staging-db-02.,restart_service,,restart_service,11,restart_service,True,1,restart_service;db_write;process_refund;provision_vm;generate_report
+739,bounce the service running on prod-web-01.,restart_service,,restart_service,11,quarantine_system,False,3,quarantine_system;provision_vm;restart_service;process_refund;generate_report
+740,cycle ml-infer-05.,restart_service,,restart_service,11,generate_report,False,10,generate_report;send_notification;provision_vm;quarantine_system;process_refund
+741,restart staging-db-02's service process.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;db_write;provision_vm;quarantine_system
+742,bring the service on staging-db-02 back up.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;db_write;provision_vm;quarantine_system
+743,reload the service hosted on staging-db-02.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;db_write;provision_vm;quarantine_system
+744,perform a service restart on auth-svc-04.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;quarantine_system;provision_vm;reset_password
+745,Please restart the service on cdn-edge-06.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;provision_vm;quarantine_system;generate_report
+746,Please reboot prod-web-01.,restart_service,,restart_service,11,restart_service,True,1,restart_service;provision_vm;process_refund;quarantine_system;generate_report
+747,Please bounce the service running on ml-infer-05.,restart_service,,restart_service,11,generate_report,False,6,generate_report;quarantine_system;process_refund;provision_vm;send_notification
+748,Please cycle staging-db-02.,restart_service,,restart_service,11,db_write,False,8,db_write;generate_report;db_read;provision_vm;quarantine_system
+749,Please restart cdn-edge-06's service process.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;provision_vm;generate_report;quarantine_system
+750,Please bring the service on payment-api-03 back up.,restart_service,,restart_service,11,process_refund,False,5,process_refund;provision_vm;quarantine_system;generate_report;restart_service
+751,Please reload the service hosted on payment-api-03.,restart_service,,restart_service,11,process_refund,False,2,process_refund;restart_service;provision_vm;quarantine_system;create_ticket
+752,Please perform a service restart on staging-db-02.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;db_write;provision_vm;generate_report
+753,Can you restart the service on ml-infer-05?,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;provision_vm;quarantine_system;generate_report
+754,Can you reboot ml-infer-05?,restart_service,,restart_service,11,process_refund,False,2,process_refund;restart_service;provision_vm;generate_report;quarantine_system
+755,Can you bounce the service running on cdn-edge-06?,restart_service,,restart_service,11,quarantine_system,False,5,quarantine_system;provision_vm;process_refund;generate_report;restart_service
+756,Can you cycle cdn-edge-06?,restart_service,,restart_service,11,provision_vm,False,11,provision_vm;generate_report;quarantine_system;create_ticket;process_refund
+757,Can you restart prod-web-01's service process?,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;provision_vm;quarantine_system;generate_report
+758,Can you bring the service on staging-db-02 back up?,restart_service,,restart_service,11,restart_service,True,1,restart_service;db_write;process_refund;db_read;generate_report
+759,Can you reload the service hosted on payment-api-03?,restart_service,,restart_service,11,process_refund,False,2,process_refund;restart_service;provision_vm;quarantine_system;create_ticket
+760,Can you perform a service restart on prod-web-01?,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;provision_vm;quarantine_system;generate_report
+761,Could you restart the service on ml-infer-05 for me?,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;provision_vm;quarantine_system;generate_report
+762,Could you reboot prod-web-01 for me?,restart_service,,restart_service,11,provision_vm,False,5,provision_vm;process_refund;quarantine_system;generate_report;restart_service
+763,Could you bounce the service running on payment-api-03 for me?,restart_service,,restart_service,11,quarantine_system,False,8,quarantine_system;generate_report;provision_vm;process_refund;send_notification
+764,Could you cycle ml-infer-05 for me?,restart_service,,restart_service,11,generate_report,False,13,generate_report;provision_vm;quarantine_system;scan_malware;db_write
+765,Could you restart cdn-edge-06's service process for me?,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;provision_vm;quarantine_system;generate_report
+766,Could you bring the service on auth-svc-04 back up for me?,restart_service,,restart_service,11,process_refund,False,2,process_refund;restart_service;quarantine_system;provision_vm;generate_report
+767,Could you reload the service hosted on auth-svc-04 for me?,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;provision_vm;quarantine_system;create_ticket
+768,Could you perform a service restart on cdn-edge-06 for me?,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;provision_vm;quarantine_system;generate_report
+769,I need you to restart the service on staging-db-02.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;db_write;provision_vm;generate_report
+770,I need you to reboot prod-web-01.,restart_service,,restart_service,11,provision_vm,False,2,provision_vm;restart_service;process_refund;quarantine_system;generate_report
+771,I need you to bounce the service running on ml-infer-05.,restart_service,,restart_service,11,generate_report,False,7,generate_report;quarantine_system;provision_vm;send_notification;process_refund
+772,I need you to cycle cdn-edge-06.,restart_service,,restart_service,11,provision_vm,False,12,provision_vm;generate_report;quarantine_system;create_ticket;send_notification
+773,I need you to restart cdn-edge-06's service process.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;provision_vm;quarantine_system;generate_report
+774,I need you to bring the service on staging-db-02 back up.,restart_service,,restart_service,11,db_write,False,3,db_write;generate_report;restart_service;process_refund;db_read
+775,I need you to reload the service hosted on prod-web-01.,restart_service,,restart_service,11,restart_service,True,1,restart_service;provision_vm;process_refund;quarantine_system;generate_report
+776,I need you to perform a service restart on cdn-edge-06.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;provision_vm;quarantine_system;generate_report
+777,We should restart the service on payment-api-03.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;provision_vm;quarantine_system;generate_report
+778,We should reboot cdn-edge-06.,restart_service,,restart_service,11,process_refund,False,2,process_refund;restart_service;provision_vm;quarantine_system;generate_report
+779,We should bounce the service running on ml-infer-05.,restart_service,,restart_service,11,generate_report,False,6,generate_report;quarantine_system;send_notification;process_refund;provision_vm
+780,We should cycle prod-web-01.,restart_service,,restart_service,11,provision_vm,False,13,provision_vm;generate_report;quarantine_system;scan_malware;process_refund
+781,We should restart ml-infer-05's service process.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;quarantine_system;provision_vm;generate_report
+782,We should bring the service on prod-web-01 back up.,restart_service,,restart_service,11,process_refund,False,5,process_refund;provision_vm;quarantine_system;generate_report;restart_service
+783,We should reload the service hosted on payment-api-03.,restart_service,,restart_service,11,process_refund,False,3,process_refund;provision_vm;restart_service;generate_report;quarantine_system
+784,We should perform a service restart on ml-infer-05.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;quarantine_system;provision_vm;generate_report
+785,Let's restart the service on auth-svc-04.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;quarantine_system;provision_vm;reset_password
+786,Let's reboot cdn-edge-06.,restart_service,,restart_service,11,restart_service,True,1,restart_service;provision_vm;process_refund;quarantine_system;generate_report
+787,Let's bounce the service running on payment-api-03.,restart_service,,restart_service,11,quarantine_system,False,7,quarantine_system;provision_vm;process_refund;generate_report;send_notification
+788,Let's cycle prod-web-01.,restart_service,,restart_service,11,provision_vm,False,13,provision_vm;generate_report;quarantine_system;send_notification;process_refund
+789,Let's restart ml-infer-05's service process.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;provision_vm;quarantine_system;generate_report
+790,Let's bring the service on prod-web-01 back up.,restart_service,,restart_service,11,process_refund,False,5,process_refund;provision_vm;quarantine_system;generate_report;restart_service
+791,Let's reload the service hosted on auth-svc-04.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;provision_vm;quarantine_system;create_ticket
+792,Let's perform a service restart on auth-svc-04.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;quarantine_system;provision_vm;reset_password
+793,Kindly restart the service on prod-web-01.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;provision_vm;quarantine_system;generate_report
+794,Kindly reboot auth-svc-04.,restart_service,,restart_service,11,restart_service,True,1,restart_service;reset_password;process_refund;quarantine_system;provision_vm
+795,Kindly bounce the service running on payment-api-03.,restart_service,,restart_service,11,quarantine_system,False,6,quarantine_system;process_refund;provision_vm;generate_report;send_notification
+796,Kindly cycle cdn-edge-06.,restart_service,,restart_service,11,provision_vm,False,11,provision_vm;generate_report;quarantine_system;send_notification;create_ticket
+797,Kindly restart auth-svc-04's service process.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;quarantine_system;reset_password;provision_vm
+798,Kindly bring the service on cdn-edge-06 back up.,restart_service,,restart_service,11,process_refund,False,3,process_refund;provision_vm;restart_service;quarantine_system;generate_report
+799,Kindly reload the service hosted on staging-db-02.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;db_write;provision_vm;generate_report
+800,Kindly perform a service restart on auth-svc-04.,restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;quarantine_system;provision_vm;reset_password
+801,"When you have a moment, restart the service on staging-db-02.",restart_service,,restart_service,11,restart_service,True,1,restart_service;process_refund;db_write;provision_vm;generate_report
+802,"When you have a moment, reboot cdn-edge-06.",restart_service,,restart_service,11,process_refund,False,3,process_refund;provision_vm;restart_service;quarantine_system;generate_report
+803,"When you have a moment, bounce the service running on ml-infer-05.",restart_service,,restart_service,11,quarantine_system,False,6,quarantine_system;generate_report;send_notification;process_refund;provision_vm
+804,check the status of cdn-edge-06.,check_status,,check_status,12,generate_report,False,7,generate_report;send_notification;provision_vm;create_ticket;quarantine_system
+805,verify whether payment-api-03 is healthy.,check_status,,check_status,12,send_notification,False,2,send_notification;check_status;generate_report;quarantine_system;provision_vm
+806,see if ml-infer-05 is up.,check_status,,check_status,12,generate_report,False,7,generate_report;send_notification;quarantine_system;scan_malware;process_refund
+807,inspect the current state of ml-infer-05.,check_status,,check_status,12,generate_report,False,8,generate_report;scan_malware;process_refund;quarantine_system;log_audit_event
+808,look into auth-svc-04's health.,check_status,,check_status,12,quarantine_system,False,11,quarantine_system;generate_report;scan_malware;reset_password;escalate_to_human
+809,confirm that auth-svc-04 is running normally.,check_status,,check_status,12,reset_password,False,6,reset_password;quarantine_system;scan_malware;log_audit_event;restart_service
+810,check whether cdn-edge-06 is operational.,check_status,,check_status,12,send_notification,False,3,send_notification;generate_report;check_status;provision_vm;quarantine_system
+811,review the status of ml-infer-05.,check_status,,check_status,12,generate_report,False,9,generate_report;process_refund;send_notification;quarantine_system;scan_malware
+812,Please check the status of payment-api-03.,check_status,,check_status,12,generate_report,False,5,generate_report;send_notification;process_refund;provision_vm;check_status
+813,Please verify whether staging-db-02 is healthy.,check_status,,check_status,12,db_write,False,6,db_write;db_read;generate_report;restart_service;quarantine_system
+814,Please see if prod-web-01 is up.,check_status,,check_status,12,generate_report,False,10,generate_report;provision_vm;quarantine_system;create_ticket;send_notification
+815,Please inspect the current state of payment-api-03.,check_status,,check_status,12,generate_report,False,8,generate_report;process_refund;provision_vm;create_ticket;quarantine_system
+816,Please look into auth-svc-04's health.,check_status,,check_status,12,quarantine_system,False,12,quarantine_system;reset_password;generate_report;scan_malware;escalate_to_human
+817,Please confirm that staging-db-02 is running normally.,check_status,,check_status,12,db_read,False,4,db_read;db_write;generate_report;check_status;provision_vm
+818,Please check whether auth-svc-04 is operational.,check_status,,check_status,12,generate_report,False,4,generate_report;log_audit_event;quarantine_system;check_status;send_notification
+819,Please review the status of ml-infer-05.,check_status,,check_status,12,generate_report,False,10,generate_report;process_refund;quarantine_system;send_notification;provision_vm
+820,Can you check the status of ml-infer-05?,check_status,,check_status,12,generate_report,False,6,generate_report;send_notification;quarantine_system;process_refund;scan_malware
+821,Can you verify whether cdn-edge-06 is healthy?,check_status,,check_status,12,send_notification,False,2,send_notification;check_status;generate_report;quarantine_system;restart_service
+822,Can you see if auth-svc-04 is up?,check_status,,check_status,12,log_audit_event,False,5,log_audit_event;quarantine_system;scan_malware;reset_password;check_status
+823,Can you inspect the current state of payment-api-03?,check_status,,check_status,12,generate_report,False,4,generate_report;process_refund;log_audit_event;check_status;quarantine_system
+824,Can you look into prod-web-01's health?,check_status,,check_status,12,generate_report,False,12,generate_report;quarantine_system;provision_vm;scan_malware;process_refund
+825,Can you confirm that auth-svc-04 is running normally?,check_status,,check_status,12,log_audit_event,False,5,log_audit_event;reset_password;quarantine_system;scan_malware;check_status
+826,Can you check whether payment-api-03 is operational?,check_status,,check_status,12,generate_report,False,2,generate_report;check_status;quarantine_system;process_refund;send_notification
+827,Can you review the status of auth-svc-04?,check_status,,check_status,12,log_audit_event,False,2,log_audit_event;check_status;generate_report;quarantine_system;send_notification
+828,Could you check the status of staging-db-02 for me?,check_status,,check_status,12,db_write,False,4,db_write;db_read;generate_report;check_status;send_notification
+829,Could you verify whether payment-api-03 is healthy for me?,check_status,,check_status,12,generate_report,False,2,generate_report;check_status;send_notification;quarantine_system;provision_vm
+830,Could you see if payment-api-03 is up for me?,check_status,,check_status,12,generate_report,False,7,generate_report;provision_vm;send_notification;create_ticket;process_refund
+831,Could you inspect the current state of payment-api-03 for me?,check_status,,check_status,12,generate_report,False,5,generate_report;process_refund;log_audit_event;provision_vm;check_status
+832,Could you look into ml-infer-05's health for me?,check_status,,check_status,12,generate_report,False,13,generate_report;quarantine_system;process_refund;db_write;send_notification
+833,Could you confirm that cdn-edge-06 is running normally for me?,check_status,,check_status,12,generate_report,False,2,generate_report;check_status;send_notification;quarantine_system;provision_vm
+834,Could you check whether payment-api-03 is operational for me?,check_status,,check_status,12,generate_report,False,2,generate_report;check_status;send_notification;provision_vm;quarantine_system
+835,Could you review the status of ml-infer-05 for me?,check_status,,check_status,12,generate_report,False,8,generate_report;send_notification;process_refund;quarantine_system;db_write
+836,I need you to check the status of ml-infer-05.,check_status,,check_status,12,generate_report,False,9,generate_report;send_notification;quarantine_system;provision_vm;process_refund
+837,I need you to verify whether staging-db-02 is healthy.,check_status,,check_status,12,db_write,False,4,db_write;db_read;generate_report;check_status;quarantine_system
+838,I need you to see if staging-db-02 is up.,check_status,,check_status,12,db_write,False,6,db_write;generate_report;db_read;provision_vm;send_notification
+839,I need you to inspect the current state of cdn-edge-06.,check_status,,check_status,12,generate_report,False,7,generate_report;provision_vm;create_ticket;send_notification;quarantine_system
+840,I need you to look into auth-svc-04's health.,check_status,,check_status,12,quarantine_system,False,11,quarantine_system;generate_report;reset_password;scan_malware;provision_vm
+841,I need you to confirm that ml-infer-05 is running normally.,check_status,,check_status,12,generate_report,False,8,generate_report;quarantine_system;send_notification;provision_vm;process_refund
+842,I need you to check whether staging-db-02 is operational.,check_status,,check_status,12,db_write,False,4,db_write;db_read;generate_report;check_status;provision_vm
+843,I need you to review the status of cdn-edge-06.,check_status,,check_status,12,generate_report,False,7,generate_report;send_notification;create_ticket;provision_vm;quarantine_system
+844,We should check the status of auth-svc-04.,check_status,,check_status,12,log_audit_event,False,4,log_audit_event;generate_report;quarantine_system;check_status;send_notification
+845,We should verify whether cdn-edge-06 is healthy.,check_status,,check_status,12,send_notification,False,7,send_notification;quarantine_system;generate_report;provision_vm;restart_service
+846,We should see if cdn-edge-06 is up.,check_status,,check_status,12,generate_report,False,7,generate_report;send_notification;provision_vm;quarantine_system;process_refund
+847,We should inspect the current state of auth-svc-04.,check_status,,check_status,12,log_audit_event,False,9,log_audit_event;quarantine_system;generate_report;scan_malware;reset_password
+848,We should look into auth-svc-04's health.,check_status,,check_status,12,quarantine_system,False,12,quarantine_system;generate_report;escalate_to_human;scan_malware;send_notification
+849,We should confirm that prod-web-01 is running normally.,check_status,,check_status,12,generate_report,False,9,generate_report;quarantine_system;provision_vm;scan_malware;process_refund
+850,We should check whether payment-api-03 is operational.,check_status,,check_status,12,generate_report,False,6,generate_report;send_notification;quarantine_system;provision_vm;process_refund
+851,We should review the status of staging-db-02.,check_status,,check_status,12,db_write,False,4,db_write;generate_report;db_read;check_status;process_refund
+852,Let's check the status of auth-svc-04.,check_status,,check_status,12,log_audit_event,False,3,log_audit_event;generate_report;check_status;quarantine_system;send_notification
+853,Let's verify whether cdn-edge-06 is healthy.,check_status,,check_status,12,send_notification,False,5,send_notification;quarantine_system;generate_report;provision_vm;check_status
+854,Let's see if staging-db-02 is up.,check_status,,check_status,12,db_write,False,6,db_write;generate_report;db_read;provision_vm;send_notification
+855,Let's inspect the current state of payment-api-03.,check_status,,check_status,12,generate_report,False,7,generate_report;process_refund;provision_vm;quarantine_system;create_ticket
+856,Let's look into cdn-edge-06's health.,check_status,,check_status,12,generate_report,False,9,generate_report;provision_vm;quarantine_system;send_notification;create_ticket
+857,Let's confirm that ml-infer-05 is running normally.,check_status,,check_status,12,generate_report,False,7,generate_report;quarantine_system;process_refund;send_notification;scan_malware
+858,Let's check whether payment-api-03 is operational.,check_status,,check_status,12,generate_report,False,6,generate_report;send_notification;provision_vm;quarantine_system;process_refund
+859,Let's review the status of auth-svc-04.,check_status,,check_status,12,log_audit_event,False,9,log_audit_event;generate_report;quarantine_system;process_refund;escalate_to_human
+860,Kindly check the status of ml-infer-05.,check_status,,check_status,12,generate_report,False,9,generate_report;send_notification;process_refund;quarantine_system;scan_malware
+861,Kindly verify whether payment-api-03 is healthy.,check_status,,check_status,12,generate_report,False,5,generate_report;send_notification;quarantine_system;provision_vm;check_status
+862,Kindly see if auth-svc-04 is up.,check_status,,check_status,12,reset_password,False,12,reset_password;quarantine_system;scan_malware;generate_report;log_audit_event
+863,Kindly inspect the current state of cdn-edge-06.,check_status,,check_status,12,generate_report,False,7,generate_report;provision_vm;create_ticket;process_refund;send_notification
+864,Kindly look into ml-infer-05's health.,check_status,,check_status,12,generate_report,False,13,generate_report;quarantine_system;send_notification;process_refund;provision_vm
+865,Kindly confirm that payment-api-03 is running normally.,check_status,,check_status,12,generate_report,False,7,generate_report;provision_vm;quarantine_system;process_refund;scan_malware
+866,Kindly check whether payment-api-03 is operational.,check_status,,check_status,12,generate_report,False,3,generate_report;process_refund;check_status;quarantine_system;provision_vm
+867,Kindly review the status of cdn-edge-06.,check_status,,check_status,12,generate_report,False,7,generate_report;create_ticket;send_notification;provision_vm;process_refund
+868,"When you have a moment, check the status of auth-svc-04.",check_status,,check_status,12,log_audit_event,False,5,log_audit_event;generate_report;quarantine_system;send_notification;check_status
+869,"When you have a moment, verify whether payment-api-03 is healthy.",check_status,,check_status,12,send_notification,False,5,send_notification;generate_report;quarantine_system;provision_vm;check_status
+870,"When you have a moment, see if payment-api-03 is up.",check_status,,check_status,12,generate_report,False,6,generate_report;send_notification;provision_vm;process_refund;quarantine_system
+871,escalate Alice's case to a human agent.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;provision_vm;send_notification;create_ticket
+872,get a human involved for Frank.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;create_ticket;quarantine_system;provision_vm;send_notification
+873,route Bob's issue to the on-call engineer.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;provision_vm;create_ticket;quarantine_system;process_refund
+874,route the issue to the Marketing manager.,escalate_to_human,,escalate_to_human,13,provision_vm,False,5,provision_vm;generate_report;process_refund;quarantine_system;escalate_to_human
+875,wake up the on-call for prod-web-01.,escalate_to_human,,escalate_to_human,13,quarantine_system,False,5,quarantine_system;provision_vm;generate_report;process_refund;escalate_to_human
+876,hand the cdn-edge-06 case to an engineer.,escalate_to_human,,escalate_to_human,13,create_ticket,False,2,create_ticket;escalate_to_human;provision_vm;generate_report;quarantine_system
+877,escalate this issue for Eve to the support team.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;provision_vm;create_ticket;send_notification;generate_report
+878,bring a Finance manager into the loop.,escalate_to_human,,escalate_to_human,13,process_refund,False,6,process_refund;provision_vm;generate_report;update_subscription;create_ticket
+879,Please escalate Bob's case to a human agent.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;provision_vm;send_notification;create_ticket
+880,Please get a human involved for Bob.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;create_ticket;provision_vm;send_notification
+881,Please route the cdn-edge-06 incident to a live responder.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;create_ticket;provision_vm;quarantine_system;generate_report
+882,Please hand Diana's request to a live agent.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;provision_vm;generate_report;create_ticket;quarantine_system
+883,Please send Charlie's case for human review.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;send_notification;generate_report;create_ticket
+884,Please loop in a manager for Frank.,escalate_to_human,,escalate_to_human,13,provision_vm,False,4,provision_vm;quarantine_system;generate_report;escalate_to_human;send_notification
+885,Please escalate this issue for Eve to the support team.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;provision_vm;create_ticket;send_notification;generate_report
+886,Please transfer Grace's case to a person.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;create_ticket;provision_vm;update_subscription;quarantine_system
+887,Can you escalate the issue on ml-infer-05 to the on-call engineer?,escalate_to_human,,escalate_to_human,13,provision_vm,False,4,provision_vm;generate_report;quarantine_system;escalate_to_human;process_refund
+888,Can you get a human involved for Eve?,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;generate_report;create_ticket;provision_vm
+889,Can you route Charlie's issue to the on-call engineer?,escalate_to_human,,escalate_to_human,13,provision_vm,False,3,provision_vm;quarantine_system;escalate_to_human;create_ticket;generate_report
+890,Can you send the prod-web-01 issue for human handling?,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;generate_report;create_ticket;provision_vm;quarantine_system
+891,Can you send Grace's case for human review?,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;create_ticket;send_notification;generate_report;quarantine_system
+892,Can you loop in a manager for Bob?,escalate_to_human,,escalate_to_human,13,provision_vm,False,5,provision_vm;quarantine_system;send_notification;generate_report;escalate_to_human
+893,Can you escalate this issue for Charlie to the support team?,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;create_ticket;provision_vm;quarantine_system;send_notification
+894,Can you transfer Bob's case to a person?,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;create_ticket;provision_vm;quarantine_system;generate_report
+895,Could you escalate Bob's case to a human agent for me?,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;provision_vm;create_ticket;send_notification
+896,Could you get a human involved for Charlie for me?,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;create_ticket;generate_report;provision_vm
+897,Could you route Alice's issue to the on-call engineer for me?,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;provision_vm;generate_report;create_ticket;quarantine_system
+898,Could you route the issue to the HR manager for me?,escalate_to_human,,escalate_to_human,13,generate_report,False,5,generate_report;process_refund;create_ticket;provision_vm;escalate_to_human
+899,Could you send Bob's case for human review for me?,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;create_ticket;send_notification;generate_report;quarantine_system
+900,Could you escalate the request to someone in Marketing for me?,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;provision_vm;send_notification;create_ticket;quarantine_system
+901,Could you escalate this issue for Alice to the support team for me?,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;create_ticket;provision_vm;send_notification;generate_report
+902,Could you loop in a human for the prod-web-01 incident for me?,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;generate_report;quarantine_system;create_ticket;provision_vm
+903,I need you to escalate Eve's case to a human agent.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;provision_vm;send_notification;generate_report
+904,I need you to get a human involved for Charlie.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;create_ticket;generate_report;provision_vm
+905,I need you to route Frank's issue to the on-call engineer.,escalate_to_human,,escalate_to_human,13,provision_vm,False,3,provision_vm;create_ticket;escalate_to_human;generate_report;quarantine_system
+906,I need you to hand Bob's request to a live agent.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;provision_vm;quarantine_system;create_ticket;generate_report
+907,I need you to get the Legal team lead involved.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;create_ticket;generate_report;provision_vm;send_notification
+908,I need you to loop in a manager for Alice.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;provision_vm;generate_report;send_notification;quarantine_system
+909,I need you to escalate this issue for Grace to the support team.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;create_ticket;provision_vm;send_notification;generate_report
+910,I need you to transfer Alice's case to a person.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;create_ticket;provision_vm;generate_report;send_notification
+911,We should escalate Eve's case to a human agent.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;send_notification;provision_vm;generate_report
+912,We should get a human involved for Charlie.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;send_notification;create_ticket;provision_vm
+913,We should route the auth-svc-04 incident to a live responder.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;create_ticket;provision_vm;generate_report
+914,We should hand Diana's request to a live agent.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;provision_vm;generate_report;create_ticket
+915,We should send Diana's case for human review.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;generate_report;quarantine_system;send_notification;create_ticket
+916,We should loop in a manager for Charlie.,escalate_to_human,,escalate_to_human,13,quarantine_system,False,6,quarantine_system;provision_vm;send_notification;generate_report;process_refund
+917,We should escalate this issue for Bob to the support team.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;create_ticket;quarantine_system;provision_vm;process_refund
+918,We should bring a Engineering manager into the loop.,escalate_to_human,,escalate_to_human,13,quarantine_system,False,4,quarantine_system;provision_vm;generate_report;escalate_to_human;process_refund
+919,Let's escalate Charlie's case to a human agent.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;provision_vm;send_notification;create_ticket
+920,Let's get a human involved for Grace.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;create_ticket;quarantine_system;provision_vm;reset_password
+921,Let's route Diana's issue to the on-call engineer.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;provision_vm;generate_report;quarantine_system;process_refund
+922,Let's hand Alice's request to a live agent.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;provision_vm;create_ticket;quarantine_system;send_notification
+923,Let's send Grace's case for human review.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;send_notification;create_ticket;provision_vm
+924,Let's loop in a manager for Alice.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;provision_vm;quarantine_system;send_notification;generate_report
+925,Let's escalate the alert on auth-svc-04 to a person.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;send_notification;quarantine_system;provision_vm;generate_report
+926,Let's transfer Alice's case to a person.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;create_ticket;provision_vm;send_notification;quarantine_system
+927,Kindly escalate Eve's case to a human agent.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;send_notification;provision_vm;generate_report
+928,Kindly get a human involved for Frank.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;create_ticket;quarantine_system;provision_vm;generate_report
+929,Kindly route Frank's issue to the on-call engineer.,escalate_to_human,,escalate_to_human,13,provision_vm,False,3,provision_vm;create_ticket;escalate_to_human;generate_report;quarantine_system
+930,Kindly hand Alice's request to a live agent.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;create_ticket;provision_vm;generate_report;quarantine_system
+931,Kindly send Bob's case for human review.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;create_ticket;send_notification;generate_report
+932,Kindly loop in a manager for Bob.,escalate_to_human,,escalate_to_human,13,provision_vm,False,5,provision_vm;quarantine_system;send_notification;generate_report;escalate_to_human
+933,Kindly escalate this issue for Charlie to the support team.,escalate_to_human,,escalate_to_human,13,create_ticket,False,2,create_ticket;escalate_to_human;provision_vm;quarantine_system;generate_report
+934,Kindly transfer Alice's case to a person.,escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;create_ticket;provision_vm;generate_report;send_notification
+935,"When you have a moment, escalate Bob's case to a human agent.",escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;quarantine_system;send_notification;provision_vm;create_ticket
+936,"When you have a moment, get a human to review the problem on prod-web-01.",escalate_to_human,,escalate_to_human,13,escalate_to_human,True,1,escalate_to_human;generate_report;quarantine_system;provision_vm;create_ticket
+937,"When you have a moment, route Eve's issue to the on-call engineer.",escalate_to_human,,escalate_to_human,13,provision_vm,False,3,provision_vm;generate_report;escalate_to_human;quarantine_system;send_notification
+938,log the event under the audit record for Legal.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;check_status;create_ticket;process_refund
+939,record the activity tied to #53698.,log_audit_event,,log_audit_event,14,generate_report,False,4,generate_report;process_refund;reset_password;log_audit_event;db_write
+940,write an audit entry for the HR group.,log_audit_event,,log_audit_event,14,send_notification,False,2,send_notification;log_audit_event;generate_report;escalate_to_human;quarantine_system
+941,capture ml-infer-05's event in the audit log.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;process_refund;scan_malware;db_read
+942,store an audit record for staging-db-02.,log_audit_event,,log_audit_event,14,db_read,False,6,db_read;db_write;generate_report;check_status;provision_vm
+943,add Grace's action to the audit log.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;reset_password;generate_report;scan_malware;process_refund
+944,document the event for HR in the audit log.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;check_status;process_refund;send_notification
+945,create a trail entry for auth-svc-04.,log_audit_event,,log_audit_event,14,reset_password,False,5,reset_password;generate_report;create_ticket;scan_malware;log_audit_event
+946,Please log an audit event for auth-svc-04.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;scan_malware;reset_password;check_status
+947,Please record a compliance event for Legal.,log_audit_event,,log_audit_event,14,create_ticket,False,3,create_ticket;generate_report;log_audit_event;escalate_to_human;process_refund
+948,Please write a compliance entry for payment-api-03.,log_audit_event,,log_audit_event,14,generate_report,False,8,generate_report;create_ticket;provision_vm;process_refund;escalate_to_human
+949,Please capture Grace's activity in the compliance log.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;reset_password;generate_report;process_refund;scan_malware
+950,Please store an audit record for ml-infer-05.,log_audit_event,,log_audit_event,14,db_write,False,7,db_write;generate_report;db_read;scan_malware;process_refund
+951,Please add a compliance record for Legal.,log_audit_event,,log_audit_event,14,create_ticket,False,8,create_ticket;generate_report;escalate_to_human;provision_vm;process_refund
+952,Please document the action taken on payment-api-03.,log_audit_event,,log_audit_event,14,generate_report,False,8,generate_report;provision_vm;create_ticket;process_refund;escalate_to_human
+953,Please create a compliance log entry for Eve.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;reset_password;create_ticket;process_refund
+954,Can you log an audit event for #53698?,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;reset_password;process_refund;scan_malware
+955,Can you record a compliance event for Engineering?,log_audit_event,,log_audit_event,14,generate_report,False,3,generate_report;create_ticket;log_audit_event;process_refund;quarantine_system
+956,Can you write an audit entry for Eve?,log_audit_event,,log_audit_event,14,generate_report,False,2,generate_report;log_audit_event;db_write;send_notification;escalate_to_human
+957,Can you capture the Engineering event in the audit trail?,log_audit_event,,log_audit_event,14,generate_report,False,2,generate_report;log_audit_event;scan_malware;quarantine_system;send_notification
+958,Can you store an audit record for Grace?,log_audit_event,,log_audit_event,14,db_read,False,4,db_read;db_write;generate_report;log_audit_event;reset_password
+959,Can you add Bob's action to the audit log?,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;scan_malware;quarantine_system;reset_password
+960,Can you document the action taken on staging-db-02?,log_audit_event,,log_audit_event,14,generate_report,False,11,generate_report;db_write;db_read;provision_vm;create_ticket
+961,Can you create an audit trail entry for #31450?,log_audit_event,,log_audit_event,14,generate_report,False,3,generate_report;db_write;log_audit_event;db_read;scan_malware
+962,Could you log an audit event for cdn-edge-06 for me?,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;send_notification;check_status;scan_malware
+963,Could you record a compliance event for Engineering for me?,log_audit_event,,log_audit_event,14,generate_report,False,3,generate_report;create_ticket;log_audit_event;quarantine_system;provision_vm
+964,Could you write an audit entry for the Finance group for me?,log_audit_event,,log_audit_event,14,generate_report,False,3,generate_report;send_notification;log_audit_event;db_write;quarantine_system
+965,Could you capture staging-db-02's event in the audit log for me?,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;db_read;db_write;check_status
+966,Could you store an audit record for staging-db-02 for me?,log_audit_event,,log_audit_event,14,db_read,False,4,db_read;db_write;generate_report;log_audit_event;check_status
+967,Could you add Eve's action to the audit log for me?,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;scan_malware;db_write;quarantine_system
+968,Could you document the event for Alice in the audit trail for me?,log_audit_event,,log_audit_event,14,generate_report,False,2,generate_report;log_audit_event;escalate_to_human;send_notification;create_ticket
+969,Could you create a trail entry for staging-db-02 for me?,log_audit_event,,log_audit_event,14,db_write,False,12,db_write;generate_report;db_read;provision_vm;create_ticket
+970,I need you to log an audit event for prod-web-01.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;scan_malware;create_ticket;quarantine_system
+971,I need you to record a compliance event for Legal.,log_audit_event,,log_audit_event,14,create_ticket,False,3,create_ticket;generate_report;log_audit_event;escalate_to_human;process_refund
+972,I need you to write a compliance entry for #42017.,log_audit_event,,log_audit_event,14,generate_report,False,11,generate_report;create_ticket;provision_vm;process_refund;quarantine_system
+973,I need you to capture the event associated with #60122.,log_audit_event,,log_audit_event,14,generate_report,False,8,generate_report;provision_vm;send_notification;create_ticket;process_refund
+974,I need you to store an audit record for Eve.,log_audit_event,,log_audit_event,14,db_write,False,4,db_write;generate_report;db_read;log_audit_event;quarantine_system
+975,I need you to add an audit log entry for auth-svc-04.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;reset_password;generate_report;scan_malware;check_status
+976,I need you to document the event for Charlie in the audit trail.,log_audit_event,,log_audit_event,14,generate_report,False,2,generate_report;log_audit_event;send_notification;quarantine_system;create_ticket
+977,I need you to create a trail entry for prod-web-01.,log_audit_event,,log_audit_event,14,generate_report,False,11,generate_report;provision_vm;create_ticket;scan_malware;quarantine_system
+978,We should log an audit event for payment-api-03.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;check_status;process_refund;send_notification
+979,We should record the activity tied to #60122.,log_audit_event,,log_audit_event,14,generate_report,False,3,generate_report;process_refund;log_audit_event;db_write;send_notification
+980,We should write a compliance entry for cdn-edge-06.,log_audit_event,,log_audit_event,14,generate_report,False,11,generate_report;create_ticket;provision_vm;send_notification;quarantine_system
+981,We should capture auth-svc-04's event in the audit log.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;scan_malware;reset_password;check_status
+982,We should store an audit record for Frank.,log_audit_event,,log_audit_event,14,db_write,False,12,db_write;generate_report;db_read;escalate_to_human;quarantine_system
+983,We should add Bob's action to the audit log.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;quarantine_system;escalate_to_human;send_notification
+984,We should document the event linked to #31450.,log_audit_event,,log_audit_event,14,generate_report,False,8,generate_report;create_ticket;provision_vm;send_notification;process_refund
+985,We should create an audit trail entry for HR.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;quarantine_system;scan_malware;check_status
+986,Let's log Frank's action in the audit trail.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;escalate_to_human;process_refund;reset_password
+987,Let's record an audit event for Diana.,log_audit_event,,log_audit_event,14,generate_report,False,3,generate_report;db_write;log_audit_event;db_read;escalate_to_human
+988,Let's write an audit entry for Alice.,log_audit_event,,log_audit_event,14,escalate_to_human,False,4,escalate_to_human;generate_report;send_notification;log_audit_event;db_write
+989,Let's capture ml-infer-05's event in the audit log.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;process_refund;scan_malware;quarantine_system
+990,Let's store an audit record for staging-db-02.,log_audit_event,,log_audit_event,14,db_write,False,4,db_write;db_read;generate_report;log_audit_event;check_status
+991,Let's add #31450 to the audit log.,log_audit_event,,log_audit_event,14,generate_report,False,2,generate_report;log_audit_event;reset_password;process_refund;create_ticket
+992,Let's document the event for Grace in the audit trail.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;create_ticket;send_notification;process_refund
+993,Let's create an audit trail entry for #20891.,log_audit_event,,log_audit_event,14,generate_report,False,2,generate_report;log_audit_event;reset_password;scan_malware;process_refund
+994,Kindly log an audit event for #10234.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;process_refund;create_ticket;reset_password
+995,Kindly record an audit event for Alice.,log_audit_event,,log_audit_event,14,escalate_to_human,False,2,escalate_to_human;log_audit_event;generate_report;send_notification;db_write
+996,Kindly write an audit entry for Bob.,log_audit_event,,log_audit_event,14,generate_report,False,2,generate_report;log_audit_event;escalate_to_human;quarantine_system;scan_malware
+997,Kindly capture Grace's activity in the compliance log.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;reset_password;generate_report;process_refund;scan_malware
+998,Kindly store an audit record for payment-api-03.,log_audit_event,,log_audit_event,14,db_read,False,4,db_read;generate_report;db_write;log_audit_event;process_refund
+999,Kindly add an audit log entry for ml-infer-05.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;scan_malware;process_refund;db_read
+1000,Kindly document the event for HR in the audit log.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;process_refund;check_status;scan_malware
+1001,Kindly create a compliance log entry for Charlie.,log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;create_ticket;process_refund;reset_password
+1002,"When you have a moment, log an audit event for auth-svc-04.",log_audit_event,,log_audit_event,14,log_audit_event,True,1,log_audit_event;generate_report;scan_malware;check_status;quarantine_system
+1003,"When you have a moment, record the incident involving prod-web-01 in the audit trail.",log_audit_event,,log_audit_event,14,generate_report,False,2,generate_report;log_audit_event;quarantine_system;escalate_to_human;process_refund
+1004,"When you have a moment, write an audit entry for the Legal group.",log_audit_event,,log_audit_event,14,send_notification,False,2,send_notification;log_audit_event;generate_report;escalate_to_human;create_ticket

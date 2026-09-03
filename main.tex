@@ -30,15 +30,8 @@
 
 \maketitle
 \begin{abstract}
-Mapping natural-language requests to executable tool workflows (which we call \emph{intent mapping}) is a bottleneck in agentic systems. Two brittleness modes recur: semantic drift during single-tool selection, and edge hallucination during multi-step planning. We address each with a decoupled retriever. For single-tool selection, we pair a zero-shot LLM router with a \emph{Functional Categorization}, a scheme that groups tools by \emph{action type} rather than domain topic; this training-free single-tool retriever improves routing accuracy by up to 18.5 percentage points under lexical variation. For multi-step planning, we replace autoregressive plan generation ($\mathcal{O}(N)$ sequential decoding, prone to structural edge hallucination) with \textbf{Latent Execution-Graph Retrieval (LEGR)}, a dual-encoder model that retrieves an execution DAG from a pre-indexed corpus and is trained with a graph-aware contrastive objective regularized by graph edit distance. On benchmarks derived from ToolBench and BFCL, LEGR retrieves the correct DAG on a held-out topology family (Diamond) with Recall@1 of 0.963. Because retrieval cost depends on corpus size and not plan size, LEGR's mean latency stays flat at 4.39\,ms, roughly $400$--$625\times$ below the two autoregressive LLM baselines we compare against. Code and data: \href{https://github.com/tanay-kadam/LEGR}{LEGR}.
+Mapping natural-language requests to executable tool workflows (which we call \emph{intent mapping}) is a bottleneck in agentic systems. Two brittleness modes recur: semantic drift during single-tool selection and edge hallucination during multi-step planning. We address each with a decoupled retriever. For single-tool selection, we pair a zero-shot LLM router with a \emph{Functional Categorization} that groups tools by action type rather than topic. For multi-step planning, we introduce \textbf{Latent Execution-Graph Retrieval (LEGR)}, a dual encoder that retrieves a pre-validated execution DAG. The current V3 architecture shares one MiniLM backbone between requests and tool-name nodes and fuses an attention-pooled node-set representation with a directed GNN representation. We evaluate on Campaign V4, which contains 651, 916, and 1,313 unique DAGs at 15, 30, and 45 tools and reserves Diamond and Asymmetric Fork-Join families for topology-held-out testing. On the full 45-tool gallery, LEGR V3 reaches exact-DAG Recall@1 of 0.418 and Tool-Set F1 of 0.971, versus 0.255 and 0.978 for a standard single-model fine-tuned Sentence-BERT baseline. Its synchronized batch-one online latency is 5.39\,ms after a one-time 212.3\,ms gallery-indexing step. A matched latent-space analysis and frozen atomic-routing transfer test provide mixed rather than uniformly positive evidence for action-oriented organization, so we retain Functional Categorization and LEGR as complementary components. Code and data: \href{https://github.com/tanay-kadam/LEGR}{LEGR}.
 \end{abstract}
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{results.png}
-\caption{\textbf{Core LEGR Results and Scalability Analysis.} \textbf{(Left) Inference Latency vs. Graph Complexity.} Autoregressive LLM baselines exhibit linear latency growth as the execution DAG grows (more tool nodes to describe). LEGR performs a single nearest-neighbor lookup and its latency is independent of plan size, staying flat at 4.39\,ms. \textbf{(Right) Retrieval Accuracy on Held-Out (OOD) Topologies.} Recall@1 comparison on the \textit{test\_topology\_heldout} split. LEGR outperforms lexical (BM25) and dense (Sentence-BERT) baselines, and the GED-weighted loss further improves structural alignment.}
-\label{fig:results}
-\end{figure*}
 
 \section{Introduction}
 
@@ -49,9 +42,11 @@ Agentic systems struggle with intent mapping in two ways. \textbf{(1) Semantic d
 We address these two sub-problems with two decoupled retrievers dispatched by a task-complexity gate (see \S\ref{sec:overview}): atomic single-tool requests are handled by a training-free single-tool retriever built on Functional Categorization; multi-step requests are handled by LEGR. We deliberately decouple the paths because a wrong atomic-selection decision propagates as a silent structural error through every downstream edge of a compounded plan; the tradeoff is that the two paths do not share evidence at inference, which we revisit in \S6. Our contributions are:
 \begin{itemize}
     \item We propose a training-free \textbf{single-tool retriever} built on a \textbf{Functional Categorization} (tools grouped by action type rather than domain topic), which mitigates semantic drift and improves routing accuracy by up to 18.5 percentage points under lexical variation at the 15-tool scale.
-    \item We introduce \textbf{Latent Execution-Graph Retrieval (LEGR)} for multi-step planning, formulating tool orchestration as dual-encoder DAG retrieval. Planning latency depends on corpus size rather than plan size (unlike the $\mathcal{O}(N)$ sequential decoding of autoregressive planners), giving 4.39\,ms mean latency and roughly two orders of magnitude speedup over the autoregressive baselines we compare against (Figure~\ref{fig:results}).
-    \item We propose a contrastive loss regularized by Graph Edit Distance (GED) to enforce topological awareness in the latent space, mitigating edge hallucinations.
-    \item We release a benchmark derived from ToolBench and BFCL, demonstrating LEGR's structural generalization to unseen topologies (Recall@1 of 0.963).
+    \item We introduce \textbf{Latent Execution-Graph Retrieval (LEGR)} for multi-step planning, formulating orchestration as retrieval over a pre-indexed DAG corpus rather than autoregressive plan synthesis.
+    \item We develop LEGR V3, which shares one MiniLM backbone across the query and tool-name paths and fuses set-attention and directed message-passing representations; we compare it with the separate-node-encoder V2 architecture as an ablation.
+    \item We evaluate an optional Graph Edit Distance (GED) auxiliary objective and show that its effect is scale- and architecture-dependent rather than uniformly beneficial.
+    \item We measure synchronized indexing and online latency for every V2/V3 and GED/no-GED variant, audit whether V3's latent geometry transfers to atomic routing without fine-tuning, and show that a residual routing adapter over frozen V3 embeddings substantially improves atomic accuracy without modifying the original checkpoint.
+    \item We release Campaign V4, a three-scale benchmark with 22 topology families, structural-twin candidates, and leakage-controlled held-out evaluation on Diamond and Asymmetric Fork-Join workflows.
 \end{itemize}
 
 \begin{figure*}[t]
@@ -67,7 +62,7 @@ We address these two sub-problems with two decoupled retrievers dispatched by a 
 
 \textbf{Generative and graph-augmented planning.} Multi-step tool use requires producing an \emph{execution structure} that captures dependencies. The dominant approach serializes a workflow textually and lets an LLM emit it token by token (e.g., ReAct \cite{yao2022react}, DSPy \cite{khattab2023dspy}). Recent graph-augmented frameworks such as GTool \cite{chen2026gtool}, OptGraph \cite{xiu2026optgraph}, and TGR \cite{gao2025tool} narrow the modality gap by feeding graph tokens or validation feedback back into the LLM, but they remain autoregressive: decoding $N$ tokens takes $N$ sequential passes, scaling latency as $\mathcal{O}(N)$, and typically still requires validation-guided repair loops to fix edge hallucinations. GTool trains a missing-dependency predictor (MDPL) and TGR uses a gatekeeping discriminator, but both keep the plan itself in the token stream.
 
-\textbf{Retrieval for tool use.} Retrieve-then-generate pipelines fetch candidate APIs with sparse (BM25 \cite{robertson2009probabilistic}) or dense (Sentence-BERT \cite{reimers-gurevych-2019-sentence}) retrievers, then hand the shortlist to a generator. These retrievers treat candidates as flat text and therefore ignore the dependency structure that distinguishes ``the same tools chained'' from ``the same tools fanned out.'' Knowledge-Graph embedding methods (TransE, DistMult) are also not a fit for our setting: they are transductive, score triples inside a single fixed graph, lack a natural-language text encoder, and embed individual nodes rather than whole candidate DAGs. Aligning natural-language intents with executable DAGs directly in a shared latent space remains, to our knowledge, is underexplored. LEGR maps queries and DAGs into a shared space natively and regularizes the space with Graph Edit Distance \cite{sanfeliu1983distance} so that proximity reflects workflow topology.
+\textbf{Retrieval for tool use.} Retrieve-then-generate pipelines fetch candidate APIs with sparse (BM25 \cite{robertson2009probabilistic}) or dense (Sentence-BERT \cite{reimers-gurevych-2019-sentence}) retrievers, then hand the shortlist to a generator. These retrievers treat candidates as flat text and therefore ignore the dependency structure that distinguishes ``the same tools chained'' from ``the same tools fanned out.'' Knowledge-Graph embedding methods (TransE, DistMult) are also not a fit for our setting: they are transductive, score triples inside a single fixed graph, lack a natural-language text encoder, and embed individual nodes rather than whole candidate DAGs. Aligning natural-language intents with executable DAGs directly in a shared latent space remains, to our knowledge, underexplored. LEGR maps queries and DAGs into a shared space natively and evaluates an optional Graph Edit Distance (GED) auxiliary objective \cite{sanfeliu1983distance} intended to emphasize topology-sensitive errors.
 
 \section{Methodology}
 
@@ -100,59 +95,73 @@ Structuring the categorization under $\mathcal{T}_f$ reduces reliance on brittle
 
 \subsection{Sub-Problem 2: Latent Execution-Graph Retrieval (LEGR)}
 \label{sec:legr}
-LEGR replaces autoregressive plan synthesis with \emph{bi-encoder retrieval} in a shared latent space $\mathbb{R}^d$.
+LEGR replaces autoregressive plan synthesis with \emph{bi-encoder retrieval} in a shared latent space $\mathbb{R}^d$. We use the V3 encoder in the main experiments and retain V2 only for the architectural ablation in Appendix~\ref{sec:architecture-ablation}.
 
-\textbf{Text encoder.} A Transformer encoder $f_\theta(\cdot)$ (\texttt{all-MiniLM-L6-v2}) maps the request $q$ to an embedding $\mathbf{z}_q \in \mathbb{R}^d$.
+\textbf{Shared text encoder.} A Transformer encoder $f_\theta(\cdot)$ (\texttt{all-MiniLM-L6-v2}) maps the request $q$ to an embedding $\mathbf{z}_q \in \mathbb{R}^d$. The same backbone also encodes readable tool names into node features; V3 therefore contains one MiniLM model, not independent query and tool-name models.
 
-\textbf{Graph representation.} Each node $v\in\mathcal{V}$ corresponds to a tool invocation (tool name plus a short textual description, when available). We initialize node features from the same text backbone (tool-name and description embeddings) and treat edges $\mathcal{E}$ as directed dependencies.
+\textbf{Graph representation.} Each node $v\in\mathcal{V}$ corresponds to a tool invocation. The shared backbone encodes the tool name, a learned projection maps it to a 64-dimensional node feature, and a learned topological-position embedding supplies order information. Edges $\mathcal{E}$ are directed dependencies.
 
-\textbf{Graph encoder.} A $k$-layer directed Graph Neural Network produces a DAG embedding $\mathbf{z}_g \in \mathbb{R}^d$. Standard GCNs treat edges symmetrically, which would destroy the directed nature of execution graphs (e.g., confusing a read-then-write with a write-then-read). Instead, we use a directed message-passing formulation. For each node $v \in \mathcal{V}$, the representation is updated via:
+\textbf{Directed and set branches.} V3 uses two complementary graph summaries. A $k$-layer directed GNN applies separate transformations to predecessor and successor messages:
 \begin{equation}
 h_v^{(l+1)} = \sigma \left( \text{LN} \left( W_{\text{self}}^{(l)} h_v^{(l)} + \sum_{u \in \mathcal{N}_{\text{in}}(v)} W_{\text{in}}^{(l)} h_u^{(l)} + \sum_{w \in \mathcal{N}_{\text{out}}(v)} W_{\text{out}}^{(l)} h_w^{(l)} \right) \right)
 \end{equation}
-where $\mathcal{N}_{\text{in}}(v)$ and $\mathcal{N}_{\text{out}}(v)$ are the predecessor and successor nodes of $v$, $\text{LN}$ denotes LayerNorm, and $\sigma$ is the ReLU activation. This is a relational GCN with two edge types (predecessor and successor), so the encoder can distinguish which neighbors sit upstream vs. downstream of $v$ at each layer rather than symmetrizing them as a plain GCN would; combined with pooling, this preserves enough directional information to separate, e.g., a read-then-write from a write-then-read. After $k=3$ layers, we apply global mean pooling and a linear projection to obtain the graph embedding $\mathbf{z}_g = \text{Proj}(\frac{1}{|\mathcal{V}|} \sum_{v \in \mathcal{V}} h_v^{(k)}) \in \mathbb{R}^d$.
+where $\mathcal{N}_{\text{in}}(v)$ and $\mathcal{N}_{\text{out}}(v)$ are the predecessor and successor nodes, $\text{LN}$ is LayerNorm, and $\sigma$ is ReLU. Mean pooling after $k=3$ layers gives a structural summary $\mathbf{z}_{\mathrm{gnn}}$. In parallel, a learned scalar attention score $a_v$ pools the pre-message-passing tool-name features into a permutation-invariant set summary,
+\begin{equation}
+\mathbf{z}_{\mathrm{set}}=\sum_{v\in\mathcal{V}}\frac{\exp(a_v)}{\sum_{u\in\mathcal{V}}\exp(a_u)}\mathbf{x}_v.
+\end{equation}
+The final DAG vector is $\mathbf{z}_g=\operatorname{Proj}([\mathbf{z}_{\mathrm{gnn}};\mathbf{z}_{\mathrm{set}}])\in\mathbb{R}^{256}$. The set branch preserves tool identity while the directed branch represents dependency flow.
 
 \textbf{Inference (retrieval).} Text and graph embeddings are $\ell_2$-normalized ($\hat{\mathbf{z}} = \mathbf{z} / \|\mathbf{z}\|_2$) before comparison, so the dot product below is a cosine similarity. At test time, we retrieve the most compatible workflow from a pre-validated, pre-indexed corpus $\mathcal{C}$:
 \begin{equation}
 \hat{\mathcal{G}} = \arg\max_{\mathcal{G} \in \mathcal{C}} \; \hat{\mathbf{z}}_q^\top \hat{\mathbf{z}}_g.
 \end{equation}
-Because all candidate DAG embeddings can be pre-indexed, inference reduces to a single nearest-neighbor lookup. Retrieval cost is $\mathcal{O}(|\mathcal{C}|)$ for exact search and $\mathcal{O}(\log |\mathcal{C}|)$ with standard approximate nearest-neighbor indexing; crucially, it does not grow with the size $N$ of the output plan, unlike the $\mathcal{O}(N)$ sequential decoding of autoregressive planners. This also bypasses downstream validation-guided repair loops.
+Because all candidate DAG embeddings can be pre-indexed, inference reduces to query encoding and nearest-neighbor lookup. Exact search is $\mathcal{O}(|\mathcal{C}|)$ and standard approximate indexing can reduce search complexity; unlike autoregressive synthesis, retrieval does not decode the output plan token by token.
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\textwidth]{legr_arch.png}
-  \caption{\textbf{Overview of the LEGR Architecture.} Our proposed dual-tower encoder maps natural language queries (Text Tower, Blue) and execution Directed Acyclic Graphs (DAG Tower, Teal) into a shared, topologically informed latent space $\mathbb{R}^d$. The training objective is regularized by the Graph-Aware Contrastive Loss (GACL), which modulates the repulsion strength based on the Graph Edit Distance (GED) between pairs.}
-  \label{fig:arch}
-\end{figure}
+\paragraph{Training objective.} LEGR is trained to align request and DAG embeddings with a symmetric contrastive objective. Given a batch of $B$ pairs $\{(q_i, \mathcal{G}_i)\}_{i=1}^B$, we form a similarity matrix $\mathbf{S}$ over $\ell_2$-normalized embeddings with entries $\mathbf{S}_{ij} = (\hat{\mathbf{z}}_{q_i} \cdot \hat{\mathbf{z}}_{g_j}) / \tau$, where $\tau$ is a temperature.
 
-\paragraph{Training objective (GACL).} LEGR is trained to align request and DAG embeddings with a symmetric contrastive objective. Given a batch of $B$ pairs $\{(q_i, \mathcal{G}_i)\}_{i=1}^B$, we form a similarity matrix $\mathbf{S}$ over $\ell_2$-normalized embeddings with entries $\mathbf{S}_{ij} = (\hat{\mathbf{z}}_{q_i} \cdot \hat{\mathbf{z}}_{g_j}) / \tau$, where $\tau$ is a temperature.
-
-Standard InfoNCE implicitly treats all negatives equally. For execution graphs, this is suboptimal: many negatives share the same tool set but differ in a small number of edges, and these ``near-miss'' graphs are the ones a planner must not confuse. We therefore regularize the contrastive loss with Graph Edit Distance (GED) so that negatives with low GED are penalized more strongly.
+Standard InfoNCE treats all in-batch negatives uniformly. Because many Campaign V4 candidates share a tool multiset but differ in their edges, we also evaluate an optional Graph Edit Distance (GED) auxiliary term that emphasizes structurally close negatives.
 
 Concretely, the total loss is:
 \begin{equation}
 \mathcal{L} = \frac{1}{2} \left( \text{CE}(\mathbf{S}, \mathbf{y}) + \text{CE}(\mathbf{S}^\top, \mathbf{y}) \right) + \lambda_{ged} \cdot \mathcal{L}_{ged}
 \end{equation}
-where $\text{CE}$ represents the standard cross-entropy loss over the similarity matrix. The structural term is:
+where $\text{CE}$ represents the standard cross-entropy loss over the similarity matrix. For reproducibility, the structural term below describes the evaluated implementation exactly:
 \begin{equation}
-\mathcal{L}_{ged} = \frac{1}{B} \sum_{i=1}^B -\log \frac{e^{\mathbf{S}_{ii}}}{e^{\mathbf{S}_{ii}} + \sum_{j \neq i} e^{\mathbf{S}_{ij}}(1 - \tilde{w}_{ij})}
+\mathcal{L}_{ged}^{\mathrm{impl}} = \frac{1}{B} \sum_{i=1}^B -\log \frac{e^{\mathbf{S}_{ii}}}{e^{\mathbf{S}_{ii}} + \max\!\left(\epsilon,\sum_{j \neq i}\mathbf{S}_{ij}(1-w_{ij})\right)}
 \end{equation}
-where $\tilde{w}_{ij}$ is a normalized, margin-clamped GED between $\mathcal{G}_i$ and $\mathcal{G}_j$:
+where $w_{ij}$ is a normalized, margin-clamped GED between $\mathcal{G}_i$ and $\mathcal{G}_j$:
 \begin{equation}
-\tilde{w}_{ij} = \text{clip} \left( \frac{\text{GED}(\mathcal{G}_i, \mathcal{G}_j)}{\text{ged\_scale}} - \text{margin}, 0, 1 \right)
+u_{ij}=\max\!\left(\frac{\mathrm{GED}(\mathcal{G}_i,\mathcal{G}_j)}{\mathrm{ged\_scale}}-\mathrm{margin},0\right), \qquad
+w_{ij}=\frac{u_{ij}}{\mathrm{GED}_{\max}/\mathrm{ged\_scale}+\epsilon}.
 \end{equation}
-Because exact GED computation is NP-hard, we pre-compute the pairwise GED matrix for the candidate corpus $\mathcal{C}$ offline using standard approximation heuristics, so this regularization adds no overhead to the training loop. The hyperparameters $\text{ged\_scale}$ and $\text{margin}$ control the penalty threshold. Intuitively, when $\mathcal{G}_j$ is a near-miss of $\mathcal{G}_i$ (low GED) then $\tilde{w}_{ij} \to 0$ and the factor $(1-\tilde{w}_{ij}) \to 1$, so the negative is kept at full strength in the denominator and the loss is pushed to repel it; conversely, when $\mathcal{G}_j$ is structurally distant (high GED) then $\tilde{w}_{ij} \to 1$ and the factor vanishes, so far-away negatives contribute little signal. The latent space is therefore encouraged to organize by \emph{workflow topology} rather than by tool overlap alone.
+We pre-compute the pairwise GED matrix offline. The hyperparameters $\text{ged\_scale}$ and $\text{margin}$ control the penalty threshold: low-GED near misses retain more negative weight, whereas structurally distant graphs contribute less. Importantly, the implemented auxiliary denominator combines an exponentiated positive with weighted \emph{raw} negative logits, rather than exponentiating every logit as in a standard softmax. Consequently, this term is an implementation-specific ablation, not a normalized contrastive probability. Appendix~\ref{sec:architecture-ablation} reports both $\lambda_{ged}=0$ and $\lambda_{ged}>0$; on Campaign V4 it is not uniformly beneficial.
 
 
 
 \section{Dataset and Experimental Setup}
 
-We evaluate two questions: (i) whether \emph{Functional} categorization improves single-tool routing robustness under linguistic shift without training, and (ii) whether LEGR can retrieve the correct \emph{execution DAG} (including edges, not just tool sets) and generalize to unseen workflow \emph{topologies}. To this end, we construct a benchmark of paired natural-language requests and \emph{ground-truth} execution graphs, with controlled topology families and stress-tested query variants.
+We evaluate two questions: (i) whether \emph{Functional} categorization improves single-tool routing robustness under linguistic shift without training, and (ii) whether LEGR can retrieve the correct \emph{execution DAG} (including edges, not only tool sets) on unseen topology families. The execution-graph experiments use the new Campaign V4 benchmark.
 
 \subsection{Benchmark Corpus and Held-Out Splits}
-We derive the tool vocabulary and natural-language intents from existing tool-use benchmarks (ToolBench \cite{qin2023toolllm} and BFCL \cite{yan2024berkeley}), converting each example into an executable \emph{ground-truth} workflow graph $\mathcal{G}=(\mathcal{V},\mathcal{E})$. To ensure coverage of non-chain structures, we augment the corpus with template-generated DAGs that reuse the same tool library but vary only the dependency pattern. To mitigate dataset-creation bias, the topology templates and linguistic stress variations were generated programmatically using a fixed set of rules prior to model training. For example, synonym substitution was enforced via WordNet \cite{miller1995wordnet}, and graph edges were populated using strict input-output type matching between tools.
+Campaign V4 uses a 45-tool master registry and nested 15-, 30-, and 45-tool subsets. We instantiate 22 programmatic DAG families over these tools and generate six natural-language requests per DAG with Azure GPT-4o. The generated requests are fixed before training. Structural-twin groups deliberately include graphs with the same tool multiset but different directed edges, preventing a tool-set-only encoder from solving the benchmark by construction.
 
-We annotate each ground-truth workflow with a \textit{Topology Family} label using simple structural heuristics: \textit{Chain}, \textit{Fan-out}, \textit{Diamond} (edges $0\to1, 0\to2, 1\to3, 2\to3$), and \textit{Hourglass} (edges $0\to2, 1\to2, 2\to3, 2\to4$). To test structural generalization rather than memorization, we adopt a topology-family split. The training split contains only \textit{Chain} and \textit{Hourglass} graphs, while the \textit{Diamond} family is reserved exclusively for evaluation (\texttt{test\_topology\_heldout}). To prevent data leakage, we deduplicate workflows using a hash of the labeled multiset of tool nodes and directed edges. The resulting corpus scales across three tool-vocabulary tiers: the 15-tool setting comprises 3,970 query-graph pairs over 193 distinct DAGs; the 30-tool setting contains 2,060 pairs over 197 DAGs; and the 45-tool setting contains 5,420 pairs over 348 DAGs. Execution graphs range from 1 to 7 nodes, with approximately 300 hard negatives per tier.
+Diamond and Asymmetric Fork-Join are excluded from training and development and appear only in \texttt{test\_topology\_heldout}. Canonical hashes over labeled nodes and directed edges enforce zero DAG overlap between the training/development and held-out partitions. Table~\ref{tab:dataset_v4} gives the audited counts; each DAG has six distinct requests. At evaluation, the gallery is the unique union of the candidate corpus and the evaluated test split, so every gold DAG is present exactly once.
+
+\begin{table}[h]
+\caption{Campaign V4 counts. Values under splits are unique DAGs; ``Queries'' counts all six requests for every DAG, including candidate-only DAGs.}
+\label{tab:dataset_v4}
+\centering
+\small
+\begin{tabular}{@{}rrrrrrrr@{}}
+\toprule
+Tools & DAGs & Train & Dev & In-domain & Held-out & Candidate & Queries \\
+\midrule
+15 & 651  & 248 & 49 & 32 & 50  & 272 & 3,906 \\
+30 & 916  & 346 & 69 & 46 & 70  & 385 & 5,496 \\
+45 & 1,313 & 498 & 99 & 66 & 100 & 550 & 7,878 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{Linguistic Stress Conditions}
 \label{sec:stress}
@@ -165,19 +174,19 @@ For categorization-routing experiments, we evaluate under four query conditions 
 \end{enumerate}
 
 \subsection{Baselines and Metrics}
-Because there is no established query-to-DAG retriever, we compare LEGR against standard off-the-shelf text retrievers (sparse lexical BM25 and dense Sentence-BERT with the \texttt{all-MiniLM-L6-v2} checkpoint) and against generative LLMs (Llama 3.2 3B~\cite{meta2024llama32} and GPT-OSS 120B~\cite{openai2025gptoss}). For the text retrievers, candidate DAGs are flattened into textual dependency strings (e.g., ``\texttt{tool\_A -> tool\_B}''). For the generative baselines, the model is prompted to autoregressively synthesize the plan as a JSON object listing tools and directed edges. We evaluate the base LLMs directly rather than layering prompting frameworks (e.g., ReAct, ToT) on top, as those frameworks are iterative-reasoning strategies rather than query-to-DAG generation targets. We do not benchmark contemporary graph-augmented planners (GTool~\cite{chen2026gtool}, TGR~\cite{gao2025tool}, OptGraph~\cite{xiu2026optgraph}) directly, because their input formats (dependency-graph triples, gated candidates) and training protocols do not map cleanly onto query-to-DAG retrieval; we discuss them in \S2 as the closest conceptual points of comparison.
+Because there is no established query-to-DAG retriever, our primary dense baseline is a standard single-model Sentence-BERT fine-tune. One \texttt{all-MiniLM-L6-v2} model encodes both requests and flattened DAG dependency strings and is optimized with Multiple Negatives Ranking Loss; it contains no second tower, custom projection, LEGR component, or GNN. We also report a frozen Sentence-BERT diagnostic at 15 tools. For generation, Llama 3.2 3B~\cite{meta2024llama32} and GPT-OSS 120B~\cite{openai2025gptoss} emit one JSON plan containing tools and directed edges. We do not benchmark contemporary graph-augmented planners directly because their input and training protocols do not map cleanly onto closed-corpus query-to-DAG retrieval.
 
-For execution-graph retrieval, we report Tool-Set F1, Recall@$k$, and Mean Graph Edit Distance (GED). For categorization routing, we report end-to-end accuracy under each stress condition in \S\ref{sec:stress}.
+For retrieval, exact-DAG accuracy equals Recall@1; we additionally report Recall@3, Recall@5, MRR@5, Tool-Set F1, and Mean Graph Edit Distance (GED, lower is better). Retrieval metrics use the complete held-out splits (300/420/600 requests). A generator emits no ranked list, so the LLM baselines instead report exact-match rate, Tool-Set F1, GED, validity, and latency on a fixed 50-request subset at each scale. We keep these protocols separate rather than relabeling generative Tool-Set F1 as Recall@1. For categorization routing, we report end-to-end accuracy under each stress condition in \S\ref{sec:stress}.
 
 \subsection{Implementation Details}
 \label{sec:impl}
-LEGR uses \texttt{all-MiniLM-L6-v2}~\cite{wang2020minilm,reimers-gurevych-2019-sentence} for the text tower and a 3-layer directed GNN with hidden size 256 for the graph tower. Node features are initialized from the same text backbone applied to the tool name and description.
+LEGR V3 uses \texttt{all-MiniLM-L6-v2}~\cite{wang2020minilm,reimers-gurevych-2019-sentence}, 256-dimensional retrieval embeddings, 64-dimensional tool-name node features, a 3-layer directed GNN with hidden size 256, and the node-set attention branch described above. Sharing the text backbone yields 23.48M parameters. V2 instead uses a separate frozen MiniLM for node names and has 46.11M parameters.
 
-\textbf{Training.} The text tower is partially frozen: the bottom four of MiniLM's six transformer blocks are frozen; the top two blocks, the input embeddings, and the projection head are trained. We optimize with AdamW using a differential learning rate (2e-5 for the trainable backbone; 2e-4 for the projection head, GNN, and $\tau$), weight decay 1e-4, and gradient clipping at 1.0, with a 3-epoch linear warmup followed by cosine decay to 2e-7. Batch size is 128 and max sequence length is 128. Training uses a 100-epoch budget with patience-15 early stopping; runs converged at epoch 56 (30-tool) and epoch 73 (45-tool). The contrastive temperature $\tau$ is learnable, initialized at 0.05, and converges to $\approx 0.030$ (30-tool) and $\approx 0.036$ (45-tool). In Eq.~(4) we set $\text{ged\_scale}=2.5$ and $\text{margin}=0.05$; $\lambda_{ged}=0.10$ at 15 tools and $\lambda_{ged}=0.30$ at 30 and 45 tools. GACL uses in-batch negatives only; the corpus's held-out hard negatives ($\approx 300$ per tier) are used solely at evaluation time. Inside the training loop the GED penalty uses a cheap structural surrogate over the pre-computed pairwise matrix, while all reported Mean GED values use exact \texttt{networkx.graph\_edit\_distance} with unit costs.
+\textbf{Training.} For LEGR, the bottom four of MiniLM's six transformer blocks are frozen; the top two blocks, embeddings, projection, set-attention branch, GNN, and temperature are trained. AdamW uses learning rates $2\times10^{-5}$ for the trainable backbone and $2\times10^{-4}$ for the remaining modules, weight decay $10^{-4}$, gradient clipping at 1.0, three warm-up epochs, batch size 128, maximum sequence length 128, and a 75-epoch cap with patience-15 early stopping. Temperature is learnable and initialized at 0.05. GED runs use $\text{ged\_scale}=2.5$, margin 0.05, and $\lambda_{ged}=0.10$ at 15 tools or 0.30 at 30/45 tools. The single-model Sentence-BERT baseline uses AdamW at $2\times10^{-5}$, batch size 128, a 100-epoch cap, and the same patience and sequence length. All models use seed 42.
 
-\textbf{Hardware and latency protocol.} Local experiments ran on a single laptop (Intel i7-13650HX, 16\,GB RAM, one RTX 4050 6\,GB, PyTorch 2.5.1+cu121); the GPT-OSS 120B baseline was served remotely, so its reported latency includes network round-trip. Retrieval latencies in Table~\ref{tab:retrieval_metrics} measure tokenization plus a forward pass through the text tower at batch size 1 over 100 queries, without warm-up or \texttt{cuda.synchronize()}; nearest-neighbor search is excluded and scales as $\mathcal{O}(|\mathcal{C}|)$ for exact search or $\mathcal{O}(\log|\mathcal{C}|)$ under standard ANN indexing.
+\textbf{Hardware and latency protocol.} Model training and retrieval evaluation use one NVIDIA RTX 6000 Ada GPU. For each of the 12 V2/V3 checkpoints, we separately measure one-time gallery indexing and batch-one online retrieval. Online timing includes tokenization, host-to-device transfer, query encoding, exact cosine scoring against cached candidate vectors, and top-1 selection; it excludes model loading, file I/O, and graph indexing. We use 20 warm-up requests and three complete passes over each held-out query set, synchronizing CUDA around every measurement. Gallery indexing uses one warm-up and five timed repetitions with batch size 64. Llama runs locally through Ollama, whereas GPT-OSS 120B is cloud-served through Ollama; its latency includes network round-trip, so we report the protocols separately rather than claim a controlled hardware speedup.
 
-\textbf{Evaluation counts.} The four linguistic stress conditions of \S\ref{sec:stress} contain 1005 Standard, 1005 Lexical, 450 Confusable, and 1255 Paraphrase queries at 15 tools. The retrieval evaluation sets contain 1200 queries over 90 DAGs (30-tool tier) and 1100 queries over 78 DAGs (45-tool tier).
+\textbf{Evaluation counts.} The four linguistic stress conditions of \S\ref{sec:stress} contain 1005 Standard, 1005 Lexical, 450 Confusable, and 1255 Paraphrase queries at 15 tools. Campaign V4 topology-held-out retrieval contains 300, 420, and 600 requests over 50, 70, and 100 gold DAGs at 15, 30, and 45 tools. The corresponding full galleries contain 322, 455, and 650 unique DAGs.
 
 For the LLM baselines, both categorization routing and query-to-DAG generation use default sampling with constrained JSON decoding; unparseable outputs and out-of-vocabulary selections are counted as failures. Both categorization schemes (Topic-based and Functional) use identical prompts, isolating the label space as the only independent variable.
 
@@ -208,82 +217,135 @@ Topic-based & 78.3 & 68.1 & 62.7 & 78.0 & 70.0 & 43.3 & 43.3 & 64.9 \\
 
 Functional Categorization outperforms Topic-based Categorization on all four conditions and for both routers (Table~\ref{tab:routing_results}). The largest gaps are in conditions where topic nouns are unreliable: under the \textit{Lexical} condition (keyword masking and synonym substitution), Llama 3.2 accuracy rises by 18.5 absolute percentage points (43.3\% to 61.8\%) and GPT-OSS rises by 7.5 points (68.1\% to 75.6\%); the \textit{Confusable} condition shows a similar pattern. This is consistent with the hypothesis that grouping tools by action type (read, write, orchestrate) provides a more reliable zero-shot selection boundary than topical clustering when the surface vocabulary is perturbed.
 
+\paragraph{Frozen V3 atomic transfer.}
+We additionally rank each routing query directly against 15 one-node, zero-edge tool graphs using the frozen Campaign V4 V3 checkpoints. This test performs no routing fine-tuning and uses neither categorization; it is a cross-dataset transfer diagnostic, not an unseen-topology experiment. Table~\ref{tab:v3_atomic_routing} shows that V3 transfers above random chance but remains substantially below the two-stage Functional routers, especially after lexical cue removal. GED changes the aggregate accuracy only from 44.1\% to 44.5\% over all 3,715 requests.
+
+\begin{table}[h]
+\caption{Frozen V3 direct atomic routing. Each cell is accuracy / macro-F1; no routing data are used for training.}
+\label{tab:v3_atomic_routing}
+\centering
+\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Model & Standard & Lexical & Confusable & Paraphrase \\
+\midrule
+V3, no GED & 0.524 / 0.495 & \textbf{0.287} / \textbf{0.261} & \textbf{0.402} / 0.338 & 0.512 / 0.493 \\
+V3, with GED & \textbf{0.531} / \textbf{0.502} & 0.274 / 0.249 & 0.400 / \textbf{0.340} & \textbf{0.531} / \textbf{0.510} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The frozen transfer result does not establish that V3 implements Functional Categorization. Instead, it shows that a workflow-trained graph retriever can reuse its shared text encoder for atomic candidates, while the sharp Lexical degradation indicates that routing-specific robustness does not emerge automatically.
+
+\paragraph{Supervised routing adapter on frozen V3.}
+To test whether atomic accuracy improves under realistic routing supervision without rewriting Campaign weights, we train a residual adapter on top of the frozen 15-tool V3 no-GED checkpoint. The adapter comprises a $256{\to}128{\to}256$ residual query MLP and 15 residual tool prototypes; MiniLM, set attention, directed GNN, and fusion weights receive no gradients, and the source checkpoint SHA256 is unchanged before and after training. The training corpus contains 900 independent routing utterances (60 per tool) and 150 held-out validation utterances, with zero exact normalized overlap against the four evaluation CSVs. Candidates remain one-node, zero-edge graphs. Table~\ref{tab:v3_routing_adapter} reports mean~$\pm$~std over seeds 42, 123, and 2026.
+
+\begin{table}[h]
+\caption{Routing adapter over frozen V3 no-GED. Frozen row is the unchanged checkpoint; adapter rows are mean~$\pm$~std accuracy / macro-F1 over three seeds. Evaluation CSVs are unused for training.}
+\label{tab:v3_routing_adapter}
+\centering
+\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Stage & Standard & Lexical & Confusable & Paraphrase \\
+\midrule
+Frozen V3 & 0.524 / 0.495 & 0.287 / 0.261 & 0.402 / 0.338 & 0.512 / 0.493 \\
++ routing adapter & \textbf{0.751{\scriptsize$\pm$0.005}} / \textbf{0.746{\scriptsize$\pm$0.006}} &
+  \textbf{0.487{\scriptsize$\pm$0.007}} / \textbf{0.472{\scriptsize$\pm$0.008}} &
+  \textbf{0.616{\scriptsize$\pm$0.032}} / \textbf{0.591{\scriptsize$\pm$0.042}} &
+  \textbf{0.735{\scriptsize$\pm$0.008}} / \textbf{0.736{\scriptsize$\pm$0.008}} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The adapter raises Standard accuracy from 52.4\% to 75.1\% and Lexical accuracy from 28.7\% to 48.7\%. This supports supervised atomic adaptation of a Campaign-pretrained encoder while leaving the original model untouched. It does not show automatic transfer from multi-step graph retrieval: with one-node candidates the directed GNN remains inactive, and GPT-OSS Functional routing remains stronger on Standard, Lexical, and Paraphrase.
+
 \textbf{Branching-factor confound.} Functional Categorization uses three top-level branches (Data Retrieval, State Modification, Orchestration), whereas Topic-based Categorization inherits a finer-grained topical partition from the source benchmarks with $K>3$ branches. Part of the accuracy delta may therefore reflect the smaller branching factor rather than the label semantics alone. Two observations argue against a pure branching-factor artifact: (i) the gap widens under \textit{Lexical} and \textit{Confusable} conditions, where topical noun cues are precisely what is removed or disrupted, rather than staying flat as a pure coarseness effect would predict; and (ii) at 30- and 45-tool scales the three-way scheme itself becomes the limiting factor (see ``Categorization Granularity at Scale'' below), consistent with a coarseness--specificity trade-off rather than a monotonic ``fewer branches is better'' effect. We therefore scope the routing claim to the 15-tool, 3-vs-$K$-branch regime and note that hierarchical action categorizations are the principled way to disentangle the two factors.
 
 \subsection{Sub-Problem 2: Execution-Graph Retrieval}
 \label{sec:results-legr}
-Next, we evaluate LEGR's ability to retrieve the correct execution DAG compared to lexical (BM25) and dense (Sentence-BERT) retrieval baselines, as well as autoregressive generation (Llama 3.2 3B and GPT-OSS 120B). Table~\ref{tab:retrieval_metrics} presents the structural alignment and inference latency on the \textit{test\_topology\_heldout} split (15-tool setting), which exclusively contains Diamond topologies unseen during training.
-
-\textbf{A note on Recall@1 for generative baselines.} Retrieval methods return a ranked list of DAG candidates, so Recall@$k$ is well defined. Generative baselines instead emit a single plan per query and are not ranked. For consistency, we report their Recall@1 as the Tool-Set F1 of the single generated plan; this is why the Tool-Set F1 and Recall@1 entries coincide for the generative rows in Tables~\ref{tab:retrieval_metrics} and~\ref{tab:scalability}. Structural fidelity is captured separately by Mean GED, which does not collapse in this way and remains the primary structural comparison metric.
+We first compare LEGR V3 with the standard one-model fine-tuned Sentence-BERT baseline on the 15-tool topology-held-out split. Both rank the same 322-DAG full gallery for all 300 requests. The held-out set contains Diamond and Asymmetric Fork-Join graphs, neither of which occurs in training or development.
 
 \begin{table}[h]
-\caption{Structural retrieval and latent alignment metrics on the held-out Diamond topology split (15-tool tier). The final column reports each method's mean latency as a multiple of LEGR's: values above $1\times$ are slower than LEGR, values below are faster. $\dagger$~Generative baselines emit a single plan per query rather than a ranked list; we report their Recall@1 as the Tool-Set F1 of that plan (see \S\ref{sec:results-legr}).}
+\caption{Campaign V4 full-gallery retrieval on the 15-tool topology-held-out split ($n=300$, gallery $=322$). Exact DAG accuracy equals R@1.}
 \label{tab:retrieval_metrics}
 \centering
 \small
-\begin{tabular}{@{}lccccc@{}}
+\begin{tabular}{@{}lrrrrrr@{}}
 \toprule
-\textbf{Model} & \textbf{Tool-Set F1} & \textbf{Recall@1} & \textbf{Mean GED $\downarrow$} & \textbf{Latency (ms)} & \textbf{$t/t_{\text{LEGR}}$} \\
+Model & Tool F1 & R@1 & R@3 & R@5 & MRR@5 & GED $\downarrow$ \\
 \midrule
-BM25             & 0.223 & 0.014 & 6.030 & \textbf{0.41} & $0.09\times$ \\
-Sentence-BERT           & 0.610 & 0.302 & 4.618 & 9.10 & $2.07\times$ \\
-\midrule
-LEGR (no GED)    & 0.984 & 0.944 & 0.221 & 4.19 & $0.95\times$ \\
-\textbf{LEGR (with GED)} & \textbf{0.995} & \textbf{0.963} & \textbf{0.111} & 4.39 & $1.00\times$ \\
-\midrule
-Llama 3.2 (Gen)$^\dagger$  & 0.690 & 0.690 & 4.532 & 1,760.0 & $401\times$ \\
-GPT-OSS (Gen)$^\dagger$    & 0.961 & 0.961 & 1.590 & 2,742.0 & $625\times$ \\
+Fine-tuned SBERT (single) & \textbf{0.982} & 0.203 & \textbf{0.753} & \textbf{0.907} & \textbf{0.476} & \textbf{2.617} \\
+LEGR V3, no GED & 0.951 & \textbf{0.210} & 0.567 & 0.813 & 0.424 & 3.097 \\
+LEGR V3, with GED & 0.953 & 0.163 & 0.537 & 0.770 & 0.378 & 3.213 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\textbf{Structural generalization.} LEGR retrieves the correct DAG on the held-out Diamond family at Recall@1 = 0.963 and Tool-Set F1 = 0.995. Sentence-BERT scores Recall@1 = 0.302, showing that a text-only bi-encoder cannot separate topologically distinct graphs that share tool sets. The GED regularizer in GACL closes the remaining structural gap: it halves the Mean GED (0.221 to 0.111) versus the unregularized variant.
+At 15 tools, unregularized V3 has the highest exact-DAG score, but only by 0.7 percentage points over the fine-tuned text baseline. Sentence-BERT is stronger at ranks 3 and 5 and has lower mean GED. Thus, topology-aware representational capacity does not by itself guarantee a better ranking at the smallest scale. The advantage becomes clearer at 45 tools: V3 without GED reaches R@1 $=0.418$, compared with 0.255 for fine-tuned Sentence-BERT (Table~\ref{tab:scalability}).
 
-\textbf{Inference efficiency.} A single dense retrieval step gives LEGR a mean latency of 4.39\,ms, roughly $401\times$ faster than Llama 3.2 (1,760\,ms) and $625\times$ faster than GPT-OSS (2,742\,ms). Table~\ref{tab:retrieval_metrics} shows a latency--accuracy trade-off among the baselines: BM25 is faster (0.41\,ms) but scores near-zero structural accuracy (Recall@1 = 0.014); GPT-OSS approaches LEGR's tool-set accuracy but takes nearly 3\,s per query. LEGR is the only method in our comparison that avoids this trade-off, and because retrieval cost is a function of corpus size $|\mathcal{C}|$ rather than plan size $N$, its latency stays flat as plans grow (Fig.~\ref{fig:results}, left).
+\textbf{GED regularization.} The auxiliary loss does not consistently improve V3. It lowers V3 R@1 at all three scales, although it gives small R@3/R@5 gains at 45 tools. For V2, it raises R@1 substantially at 30 tools and slightly at 45 tools. We therefore treat GED as an objective ablation rather than select it as an always-on component.
+
+\subsection{Matched Action-versus-Semantic Latent Geometry}
+\label{sec:latent-geometry}
+
+We probe whether frozen V3 graph embeddings organize more clearly by action type than by topic. The analysis uses all 322 unique DAGs in the 15-tool full gallery and one shared 256-dimensional embedding matrix. The action partition contains Data Retrieval, State Modification, and Orchestration. As a matched control, we construct three five-tool semantic groups (Account \& Subscription, Data \& Access Management, and Service \& Incident Operations), each containing exactly two retrieval, two modification, and one orchestration tool. Because a strict-majority rule produces no Orchestration-labelled DAGs in this gallery, we use a disclosed unique-plurality rule and label exact ties as Mixed; this yields four observed labels for each partition. Figure~\ref{fig:action-semantic-tsne} presents separate PCA and t-SNE views of each taxonomy after omitting Mixed cases for legibility. The action view contains 253 non-tied DAGs (131 retrieval, 116 modification, and 6 orchestration); the semantic view contains 196 (58 account/subscription, 51 data/access, and 87 service/incident). These separately fitted projections are descriptive and their axes are not directly comparable.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{v3_action_clusters_scatter.pdf}
+\vspace{0.5em}
+\includegraphics[width=0.98\textwidth]{v3_semantic_clusters_scatter.pdf}
+\caption{\textbf{Frozen V3 Campaign V4 graph embeddings grouped by dominant action type (top) and matched semantic category (bottom).} Each row shows PCA and deterministic t-SNE projections (seed 42); crosses mark category centroids. Mixed/tied DAGs are omitted from this visualization, and each taxonomy is projected separately. Statistical comparisons use all 322 embeddings in the original 256-dimensional cosine space.}
+\label{fig:action-semantic-tsne}
+\end{figure*}
+
+The result is mixed and does not support a claim of uniformly clearer action separation. Action labels have higher local 5-nearest-neighbor purity (0.786 versus 0.717), but semantic labels have higher cosine silhouette (0.030 versus 0.014) and five-fold 5-NN macro-F1 (0.885 versus 0.821). One-sided 1,000-permutation tests on the action-minus-semantic difference are not significant (silhouette $p=0.354$; purity $p=0.306$). We therefore treat Figure~\ref{fig:action-semantic-tsne} as a diagnostic of local action neighborhoods, not evidence that the entire V3 space is action-dominant.
 
 \subsection{Efficiency, Scalability, and Model Footprint}
 \label{sec:results-scale}
-Table~\ref{tab:model_size} places LEGR next to the baselines on parameter footprint, structural accuracy, and latency.
+Table~\ref{tab:model_size} shows the effect of sharing the MiniLM backbone. V3 adds its directed and set branches while remaining close in size to the single-SBERT baseline; V2 approximately doubles the footprint because it retains a separate frozen node-name encoder.
 
 \begin{table}[h]
-\caption{Parameter count, structural accuracy, and latency for all methods. LEGR reduces Mean GED from 1.590 to 0.111 relative to the 120B-parameter autoregressive baseline while running roughly $625\times$ faster.}
+\caption{Trainable model footprint. V3 shares one MiniLM backbone between query and tool-name encoding.}
 \label{tab:model_size}
 \centering
 \small
-\begin{tabular}{@{}llccc@{}}
+\begin{tabular}{@{}llr@{}}
 \toprule
-\textbf{Model} & \textbf{Architecture} & \textbf{Parameters} & \textbf{Mean GED $\downarrow$} & \textbf{Latency (ms) $\downarrow$} \\
+Model & Architecture & Parameters \\
 \midrule
-GPT-OSS 120B & Autoregressive LLM & $\approx$ 120.0 Billion & 1.590 & 2,742.00 \\
-Llama 3.2    & Autoregressive LLM & $\approx$ 3.2 Billion   & 4.532 & 1,760.00 \\
-\midrule
-BM25         & Lexical Retrieval  & 0                       & 6.030 & \textbf{0.41} \\
-Sentence-BERT       & Dense Retrieval    & $\approx$ 22.7 Million  & 4.618 & 9.10 \\
-\textbf{LEGR (Ours)} & \textbf{Sentence-BERT + 3-Layer GNN} & \textbf{$\approx$ 23.5 Million} & \textbf{0.111} & 4.39 \\
+Fine-tuned SBERT (single) & one MiniLM encoder & 22.71M \\
+LEGR V2 & query MiniLM + frozen node MiniLM + directed GNN & 46.11M \\
+\textbf{LEGR V3} & \textbf{shared MiniLM + set attention + directed GNN} & \textbf{23.48M} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-LEGR achieves the lowest Mean GED in the table with a total footprint of about 23.5\,M parameters (a 22.7\,M-parameter text backbone and a 3-layer GNN). Relative to the 120B-parameter GPT-OSS baseline, LEGR reduces model size by $\sim 5{,}100\times$, mean inference latency from 2,742\,ms to 4.39\,ms, and Mean GED from 1.590 to 0.111. Accurate multi-tool orchestration therefore does not appear to require a massive autoregressive model in this benchmark; a topology-aware retriever in a properly regularized latent space is sufficient.
+\textbf{Scalability.} Full results appear in Appendix~A. V3 without GED improves from R@1 $=0.210$ at 15 tools to 0.418 at 45 tools despite the gallery growing from 322 to 650 DAGs. Fine-tuned Sentence-BERT stays near 0.20--0.26 R@1 while maintaining R@5 above 0.90. This gap between exact and top-$k$ retrieval shows that both models often place the right graph nearby, but structural twins remain difficult to order exactly.
 
-\textbf{Scalability and baseline degradation.} We scaled the tool vocabulary to 30 and 45 tools (full results in Appendix~A). LEGR sustains Recall@5 = 1.0 and Tool-Set F1 above 0.987 across all three tool tiers. The baselines degrade: Llama 3.2's Tool-Set F1 drops monotonically from 0.690 (15) to 0.578 (45) and its Mean GED rises from 4.532 to 7.325, indicating trouble synthesizing valid multi-tool plans over a broader action space. Even when autoregressive planners produce the correct tool set, they routinely predict the wrong dependency edges; LEGR sidesteps this \emph{edge hallucination} by retrieving pre-validated execution graphs.
+\textbf{Measured retrieval latency.} Across all 12 V2/V3 checkpoints, synchronized batch-one online means range from 4.58 to 5.71\,ms and p95 latency from 5.10 to 8.16\,ms (Appendix~\ref{sec:latency-results}). V3 without GED remains nearly flat as the gallery grows: 5.49, 5.28, and 5.39\,ms at 15, 30, and 45 tools. Its one-time indexing cost grows from 103.1 to 145.0 to 212.3\,ms. V2 indexes faster (41.7--85.5\,ms) because it omits V3's set-attention fusion, while online latency is similar because both variants use the same query-side MiniLM and score cached graph vectors.
+
+\textbf{Generative comparison.} On the separate 50-query subsets, GPT-OSS obtains exact-match rates of 0.76, 0.80, and 0.76 across the three scales, while Llama 3.2 obtains 0.08, 0.06, and 0.04. GPT-OSS is therefore substantially more accurate than the retrievers on its sampled queries, at mean end-to-end latency of 3.05--3.27 seconds. These results motivate a hybrid system: retrieval supplies a cheap shortlist and a stronger generator handles cases requiring synthesis or reranking.
 
 \textbf{Categorization granularity at scale.} While LEGR scales for multi-step planning, the three-way Functional Categorization (read, write, orchestrate) used for single-tool routing becomes under-specified at 30 and 45 tools. Addressing this within-branch confusion calls for a hierarchical categorization, which we identify as future work.
 
-\textbf{Additional analyses.} Detailed ablation studies on the GACL objective (which show that GED weighting is what drives internalization of directed edges), qualitative analyses of the latent space and topic confusion, and a per-case analysis of LEGR's misses versus the generative baselines on the same queries (\S\ref{sec:legr_failures}) appear in the Appendix.
+\textbf{Additional analyses.} Appendix~\ref{sec:architecture-ablation} reports the complete V2/V3 and GED/no-GED comparison, Appendix~\ref{sec:latency-results} reports all synchronized latency measurements, and Appendix~\ref{sec:llm-results} reports the updated generative metrics without conflating exact match with ranked recall.
 
 
 \section{Conclusion}
 
-We decoupled two brittleness modes in agentic intent mapping and treated each as a retrieval problem: semantic drift in single-tool selection is mitigated by a training-free single-tool retriever built on a Functional Categorization (tools grouped by action type), and multi-step edge hallucination is bypassed by LEGR, which retrieves a pre-validated execution DAG rather than autoregressively decoding one. The Functional Categorization retriever improves routing accuracy by up to 18.5 points under lexical stress at the 15-tool scale we evaluated. LEGR, regularized by GACL, retrieves the correct DAG on a held-out topology family (Diamond) with Recall@1 of 0.963 while its latency stays flat with plan size at 4.39\,ms. See \S\ref{sec:results-fc}--\S\ref{sec:results-scale} for the full results and Table~\ref{tab:model_size} for the parameter and latency comparison.
+We decoupled two brittleness modes in agentic intent mapping: semantic drift in atomic routing and structural ambiguity in multi-step planning. Functional Categorization improves zero-shot routing accuracy by up to 18.5 points under lexical stress. Frozen V3 atomic transfer is only moderate, but a residual routing adapter over the unchanged V3 no-GED checkpoint raises accuracy to 75.1\% / 48.7\% / 61.6\% / 73.5\% on Standard / Lexical / Confusable / Paraphrase. For multi-step tasks, LEGR V3 retrieves pre-validated DAGs using one shared MiniLM backbone, an attention-pooled tool-set branch, and a directed GNN branch. On Campaign V4, V3 without GED reaches exact-DAG Recall@1 of 0.418 at 45 tools, compared with 0.255 for the newly trained single-model Sentence-BERT baseline, while the baseline remains stronger at Recall@5. Online V3 retrieval takes 5.39\,ms at this scale after a one-time 212.3\,ms indexing step. V2 and GED/no-GED ablations show that both architecture and objective matter, whereas the matched geometry and frozen atomic-transfer analyses caution against claiming that action-oriented routing structure emerges automatically inside V3. The updated LLM results further show that GPT-OSS can achieve much higher exact generation accuracy on a 50-query subset, but at multi-second latency, motivating retrieval--generation hybrids rather than a blanket claim that one paradigm dominates.
 
 \subsection*{Limitations and Future Work}
 Several limitations bound our claims and point to natural next steps.
 \textbf{(1) Retrieval is constrained by the pre-indexed corpus.} LEGR can only return workflows present in the offline candidate corpus $\mathcal{C}$; queries that require genuinely novel compositions are outside its scope. We do not measure the cost or coverage properties of curating $\mathcal{C}$, both of which will govern deployment feasibility.
-\textbf{(2) The held-out topology evaluation is narrow.} Structural generalization is demonstrated on a single hand-crafted family (Diamond) held out from two others (Chain, Hourglass); real workflows are messier, and stronger structural-generalization claims will require larger and more varied held-out families.
-\textbf{(3) Retrieval and generation solve slightly different problems.} By construction, our candidate corpus contains the ground-truth DAG for each evaluation query, whereas the generative baselines must synthesize a DAG from scratch. This is a structural advantage for any retrieval-based method. A natural follow-up is retrieval-augmented generation, in which a generator is conditioned on the top-$k$ retrieved DAGs; we do not evaluate this baseline here.
+\textbf{(2) The held-out topology evaluation remains controlled.} Campaign V4 expands coverage to 22 families, but structural generalization is tested on only Diamond and Asymmetric Fork-Join. Real workflows can contain cycles, conditional execution, and data-dependent control flow outside this benchmark.
+\textbf{(3) Retrieval and generation solve different problems and use different evaluation sizes.} The candidate gallery contains the gold DAG for every retrieval query, whereas generators synthesize a graph. Retrieval uses all 300/420/600 held-out requests, while each LLM is evaluated on 50. Their values are informative but not a paired, equal-sized accuracy comparison.
 \textbf{(4) Functional Categorization is coarse at scale.} The three-way scheme becomes under-specified at 30--45 tools (\S\ref{sec:results-scale}); a hierarchical action categorization is a natural remedy.
-\textbf{(5) Deployment claims are unverified.} We do not present measurements on edge hardware or under high-throughput serving conditions; the sub-5\,ms latency in our benchmark is suggestive of favorable serving characteristics but is not itself evidence of edge-device viability.
+\textbf{(5) Cross-task transfer is limited without routing supervision.} Frozen V3 direct routing reaches only 27--29\% accuracy after lexical cue removal. A residual adapter over the frozen encoder improves this to 48.7\% Lexical and 75.1\% Standard accuracy without modifying the original checkpoint, but remains below the two-stage Functional routers and demonstrates supervised atomic adaptation rather than automatic transfer from multi-step graph retrieval. The Campaign V4 and routing tool names also differ, so the frozen baseline measures cross-dataset transfer rather than a controlled replacement for Functional Categorization.
+\textbf{(6) Latent action structure is local rather than global.} The matched geometry audit finds higher action-neighborhood purity but lower action silhouette and 5-NN macro-F1 than the semantic control, with non-significant permutation tests. Larger balanced corpora are needed before drawing a general representation-level conclusion.
+\textbf{(7) The evaluated GED auxiliary is implementation-specific.} Its denominator sums weighted raw negative logits alongside an exponentiated positive, so it is not a standard normalized contrastive probability. The reported GED/no-GED results characterize this code path only; a corrected exponentiated-negative formulation must be retrained before making a broader claim about GED-aware contrastive learning.
 Hybridizing LEGR with a lightweight autoregressive fallback for novel workflows, extending the corpus to cover dynamic, data-dependent control flow, and directly benchmarking against graph-enhanced planners such as GTool and TGR are the primary directions for future work.
 
 \section*{Declaration of LLM Usage}
@@ -301,75 +363,135 @@ The authors used Claude 4.7 and Gemini 1.5 Pro for LaTeX formatting, structural 
 \clearpage
 \appendix
 
-\section{Scalability to Larger Tool Libraries}
+\section{Campaign V4 Scalability}
 
-To assess performance as the action space expands, we scaled the tool vocabulary to 30 and 45 tools and evaluated on the held-out Diamond topologies. Table~\ref{tab:scalability} summarizes the retrieval performance across these scales.
+Table~\ref{tab:scalability} reports every full-gallery result for the single-model fine-tuned Sentence-BERT baseline and LEGR V3. Exact-DAG accuracy is R@1. All entries use seed 42 and the same gallery construction protocol.
 
 \begin{table}[h]
-\caption{Scalability of LEGR and baselines across 15, 30, and 45 tools on held-out topologies. LEGR achieves Recall@5 = 1.0 at every scale. $\dagger$~Generative baselines emit a single plan; for these rows Recall@1 is reported as the Tool-Set F1 of that plan (see \S\ref{sec:results-legr}).}
+\caption{Retrieval on Campaign V4 topology-held-out splits. $\dagger$ Mean GED was not recorded in the stored V3 no-GED summaries at 30/45 tools.}
 \label{tab:scalability}
 \centering
-\small
-\begin{tabular}{@{}llcccc@{}}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}rrlrrrrrr@{}}
 \toprule
-\textbf{Tools} & \textbf{Model} & \textbf{Tool-Set F1} & \textbf{Recall@1} & \textbf{Recall@5} & \textbf{Mean GED $\downarrow$} \\
+Tools & Gallery & Model & Tool F1 & R@1 & R@3 & R@5 & MRR@5 & GED $\downarrow$ \\
 \midrule
-\multirow{5}{*}{15}
-  & BM25                          & 0.223 & 0.014 & 0.068 & 6.030 \\
-  & Sentence-BERT                        & 0.610 & 0.302 & 0.694 & 4.618 \\
-  & Llama 3.2 (Gen)$^\dagger$     & 0.690 & 0.690 & ---     & 4.532 \\
-  & GPT-OSS (Gen)$^\dagger$       & 0.961 & 0.961 & ---     & 1.590 \\
-  & \textbf{LEGR (Ours)}          & \textbf{0.995} & \textbf{0.963} & \textbf{1.000} & \textbf{0.111} \\
+\multirow{3}{*}{15} & \multirow{3}{*}{322}
+ & Fine-tuned SBERT (single) & \textbf{0.982} & 0.203 & \textbf{0.753} & \textbf{0.907} & \textbf{0.476} & \textbf{2.617} \\
+ & & LEGR V3, no GED           & 0.951 & \textbf{0.210} & 0.567 & 0.813 & 0.424 & 3.097 \\
+ & & LEGR V3, with GED         & 0.953 & 0.163 & 0.537 & 0.770 & 0.378 & 3.213 \\
 \midrule
-\multirow{5}{*}{30}
-  & BM25                          & 0.150 & 0.012 & 0.056 & 6.358 \\
-  & Sentence-BERT                        & 0.531 & 0.316 & 0.663 & 3.811 \\
-  & Llama 3.2 (Gen)$^\dagger$     & 0.602 & 0.602 & ---     & 6.903 \\
-  & GPT-OSS (Gen)$^\dagger$       & 0.963 & 0.963 & ---     & 1.304 \\
-  & \textbf{LEGR (Ours)}          & \textbf{0.997} & \textbf{0.989} & \textbf{1.000} & \textbf{0.038} \\
+\multirow{3}{*}{30} & \multirow{3}{*}{455}
+ & Fine-tuned SBERT (single) & \textbf{0.985} & \textbf{0.250} & \textbf{0.840} & \textbf{0.948} & \textbf{0.538} & \textbf{2.390} \\
+ & & LEGR V3, no GED           & 0.974 & 0.231 & 0.752 & 0.898 & 0.497 & ---$^\dagger$ \\
+ & & LEGR V3, with GED         & 0.966 & 0.229 & 0.731 & 0.905 & 0.491 & 3.098 \\
 \midrule
-\multirow{5}{*}{45}
-  & BM25                          & 0.106 & 0.010 & 0.048 & 9.884 \\
-  & Sentence-BERT                        & 0.621 & 0.463 & 0.789 & 3.686 \\
-  & Llama 3.2 (Gen)$^\dagger$     & 0.578 & 0.578 & ---     & 7.325 \\
-  & GPT-OSS (Gen)$^\dagger$       & 0.959 & 0.959 & ---     & 1.578 \\
-  & \textbf{LEGR (Ours)}          & \textbf{0.987} & \textbf{0.975} & \textbf{1.000} & \textbf{0.134} \\
+\multirow{3}{*}{45} & \multirow{3}{*}{650}
+ & Fine-tuned SBERT (single) & \textbf{0.978} & 0.255 & \textbf{0.853} & \textbf{0.968} & 0.542 & \textbf{2.385} \\
+ & & LEGR V3, no GED           & 0.971 & \textbf{0.418} & 0.817 & 0.940 & \textbf{0.624} & ---$^\dagger$ \\
+ & & LEGR V3, with GED         & 0.961 & 0.378 & 0.820 & 0.942 & 0.605 & 2.450 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+The text-only baseline has excellent top-$k$ coverage and Tool-Set F1, which is expected because flattened DAG strings expose the tool identities directly. V3's main advantage appears in exact ordering at 45 tools: its no-GED R@1 is 16.3 points higher. However, no model exceeds 0.418 exact accuracy on the complete held-out gallery, so the structural-twin ranking problem remains open.
+
+\section{Measured V2/V3 Latency}
+\label{sec:latency-results}
+
+Table~\ref{tab:latency-results} reports the complete synchronized benchmark. Indexing encodes the full candidate gallery once; online timing assumes those embeddings are cached and includes one query's tokenization, encoding, exact cosine scoring, and top-1 selection. Each online entry contains three passes over the full held-out query set after 20 warm-ups. Index values are means over five repetitions after one warm-up.
+
+\begin{table}[h]
+\caption{Campaign V4 retrieval latency on one RTX 6000 Ada GPU. Online values are mean/p95 milliseconds; indexing is a one-time mean in milliseconds.}
+\label{tab:latency-results}
+\centering
+\scriptsize
+\begin{tabular}{@{}rrlrrr@{}}
+\toprule
+Tools & Gallery & Model & Online mean & Online p95 & Indexing \\
+\midrule
+\multirow{4}{*}{15} & \multirow{4}{*}{322}
+ & V2, InfoNCE     & 4.96 & 7.53 & 42.5 \\
+ & & V2, +GED        & 5.71 & 7.95 & 41.7 \\
+ & & V3, InfoNCE     & 5.49 & 8.16 & 103.1 \\
+ & & V3, +GED        & \textbf{4.71} & \textbf{5.69} & 95.4 \\
+\midrule
+\multirow{4}{*}{30} & \multirow{4}{*}{455}
+ & V2, InfoNCE     & \textbf{4.58} & \textbf{5.10} & 57.2 \\
+ & & V2, +GED        & 4.94 & 6.30 & 60.8 \\
+ & & V3, InfoNCE     & 5.28 & 7.93 & 145.0 \\
+ & & V3, +GED        & 4.92 & 6.40 & 158.6 \\
+\midrule
+\multirow{4}{*}{45} & \multirow{4}{*}{650}
+ & V2, InfoNCE     & 5.20 & 8.15 & 85.5 \\
+ & & V2, +GED        & \textbf{4.93} & 7.28 & \textbf{84.7} \\
+ & & V3, InfoNCE     & 5.39 & 7.91 & 212.3 \\
+ & & V3, +GED        & 5.01 & \textbf{7.02} & 230.3 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{tool_scale.png}
-    \caption{\textbf{Scalability of LEGR compared to Generative Baselines.} Performance across 15, 30, and 45 tools for LEGR, GPT-OSS, and Llama 3.2. \textbf{Left:} Tool-Set F1 score (higher is better). \textbf{Right:} Mean Graph Edit Distance (GED, lower is better). LEGR maintains near-perfect set matching and minimal structural error across all scales. In contrast, Llama 3.2 exhibits a marked degradation in both F1 and GED as the tool space expands.}
-    \label{fig:scalability_metrics}
-\end{figure}
+GED changes the learned parameters but not the inference graph, so small within-architecture latency differences should be interpreted as measurement variation rather than algorithmic speedups. The stable online values across gallery sizes show that, at these corpus sizes, MiniLM query encoding dominates the additional exact dot products. V3's extra cost is concentrated in offline indexing.
 
-LEGR sustains Recall@5 = 1.0 and Tool-Set F1 above 0.987 at all three tool counts; Mean GED stays below 0.135. Baseline methods degrade as the vocabulary expands (see the Llama 3.2 rows in particular), consistent with the general pattern that autoregressive generation and lexical matching do not scale in structural fidelity with the action space.
+\section{Updated Generative Baselines}
+\label{sec:llm-results}
 
-\section{Qualitative Analysis}
+Table~\ref{tab:llm_results} reports the updated LLM outputs. These models generate one graph and therefore use exact match rather than Recall@$k$. Each value is based on 50 topology-held-out requests, not the full retrieval split.
 
-\subsection{Mitigating Topic Confusion}
-A qualitative review of routing failures under the Topic-based Categorization shows a systematic vulnerability to lexical overlap. The router frequently misclassified ``State Modification'' intents into ``Data Retrieval'' branches when sibling tools shared prominent topic nouns (e.g., \texttt{Update\_User\_Profile} vs. \texttt{Get\_User\_Profile}). Reorganizing the label space around action types largely eliminates this failure mode: the Functional Categorization forces the router to attend to the verb-phrase action rather than the noun-phrase entity.
+\begin{table}[h]
+\caption{Generative baselines on 50 held-out Campaign V4 requests per tier. Latency is end-to-end and includes network time for cloud-served GPT-OSS.}
+\label{tab:llm_results}
+\centering
+\small
+\begin{tabular}{@{}rlrrrrr@{}}
+\toprule
+Tools & Model & Exact & Tool F1 & GED $\downarrow$ & Valid & Latency (ms) \\
+\midrule
+15 & Llama 3.2 3B & 0.080 & 0.791 & 6.114 & 0.880 & 4,485 \\
+15 & GPT-OSS 120B & \textbf{0.760} & \textbf{0.945} & \textbf{0.440} & \textbf{1.000} & \textbf{3,047} \\
+30 & Llama 3.2 3B & 0.060 & 0.777 & 4.796 & 0.917 & 4,610 \\
+30 & GPT-OSS 120B & \textbf{0.800} & \textbf{0.952} & \textbf{0.620} & \textbf{1.000} & \textbf{3,268} \\
+45 & Llama 3.2 3B & 0.040 & 0.684 & 4.581 & 0.956 & 5,080 \\
+45 & GPT-OSS 120B & \textbf{0.760} & \textbf{0.949} & \textbf{0.800} & \textbf{1.000} & \textbf{3,106} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\textwidth]{struct.png}
-  \caption{\textbf{Latent Space Topology Visualization.} A 2D projection (t-SNE) of the shared latent space $\mathbb{R}^d$. While the model is trained only on Chain (Blue) and Hourglass (Orange) topologies, it successfully clusters Held-Out Diamond topologies (Green) in a distinct, coherent region. This demonstrates \textbf{Structural Zero-Shot Generalization}.}
-  \label{fig:latent_viz}
-\end{figure}
+GPT-OSS is strong under direct plan generation, whereas Llama 3.2 degrades as the tool library grows. Since GPT-OSS is evaluated on a smaller subset and is allowed to synthesize graphs absent from a corpus, these results complement rather than directly replace the full-gallery retrieval evaluation.
 
-\subsection{Structural Zero-Shot Generalization}
-LEGR's ability to accurately retrieve "Diamond" topologies, despite only being exposed to "Chain" and "Hourglass" structures during training, demonstrates that the GNN encoder learns a generalizable representation of dependency flow rather than memorizing specific training graphs. Figure~\ref{fig:latent_viz} visualizes a t-SNE projection of the shared latent space, illustrating a clean separation of the held-out Diamond topologies from the training clusters.
+\section{V2 Architecture and GED Ablations}
+\label{sec:architecture-ablation}
 
-\subsection{LEGR Failure Modes}
-\label{sec:legr_failures}
-We inspected every query on the 15-tool held-out split where LEGR's top-1 retrieval did not match the ground truth (13 cases). In all 13 the ground-truth DAG appears within the top-5, and typically at rank 2: rank 2 in 11 cases, rank 3 in 1, and rank 4 in 1, with a median GED of 3.0 between the top-1 result and the target. This is consistent with the Recall@5 = 1.0 reported in Table~\ref{tab:scalability}. Qualitatively, the misses are near-misses on templates LEGR has already learned: the retrieved DAG has the correct fan-out or hourglass shape but swaps one peripheral tool for a plausible confusable (for example, \texttt{revoke\_access} in place of \texttt{rotate\_api\_key}, or \texttt{escalate\_to\_human} in place of \texttt{send\_notification}).
+V2 uses a separate frozen MiniLM copy for tool-name node features and only the mean-pooled directed GNN representation. V3 ties tool-name encoding to the query MiniLM and fuses the directed GNN output with attention pooling over the node set. Table~\ref{tab:v2_v3_ablation} crosses architecture with the GED auxiliary objective.
 
-To check that this subset is genuinely hard (rather than an artifact of the corpus), we re-ran the two generative baselines on the same 13 queries with the identical prompt used in the main experiments. GPT-OSS 120B recovers the exact ground-truth DAG in 8 of 13 cases, with 0 cyclic and 0 parse failures. Llama 3.2 3B reaches 0 exact matches: it emits a cyclic plan in 5 cases and fails to produce parseable JSON in 2. Two observations follow. First, the subset is resolvable, so LEGR's misses are real modelling errors, not label noise. Second, the \emph{quality} of the failures differs sharply: LEGR's worst case is a rank-2 near-miss on a valid, executable DAG, whereas the smaller autoregressive baseline's worst case is a plan that cannot be executed at all.
+\begin{table}[h]
+\caption{V2/V3 and GED ablation on Campaign V4 topology-held-out splits.}
+\label{tab:v2_v3_ablation}
+\centering
+\scriptsize
+\begin{tabular}{@{}rrlrrrrr@{}}
+\toprule
+Tools & Version & Objective & Tool F1 & R@1 & R@3 & R@5 & MRR@5 \\
+\midrule
+15 & V2 & InfoNCE       & 0.823 & 0.203 & 0.393 & 0.507 & 0.311 \\
+15 & V2 & InfoNCE+GED   & 0.822 & 0.200 & 0.400 & 0.503 & 0.311 \\
+15 & V3 & InfoNCE       & 0.951 & \textbf{0.210} & \textbf{0.567} & \textbf{0.813} & \textbf{0.424} \\
+15 & V3 & InfoNCE+GED   & \textbf{0.953} & 0.163 & 0.537 & 0.770 & 0.378 \\
+\midrule
+30 & V2 & InfoNCE       & 0.924 & 0.224 & 0.650 & 0.810 & 0.450 \\
+30 & V2 & InfoNCE+GED   & 0.907 & \textbf{0.295} & 0.652 & 0.793 & 0.488 \\
+30 & V3 & InfoNCE       & \textbf{0.974} & 0.231 & \textbf{0.752} & 0.898 & \textbf{0.497} \\
+30 & V3 & InfoNCE+GED   & 0.966 & 0.229 & 0.731 & \textbf{0.905} & 0.491 \\
+\midrule
+45 & V2 & InfoNCE       & 0.894 & 0.352 & 0.690 & 0.810 & 0.530 \\
+45 & V2 & InfoNCE+GED   & 0.880 & 0.363 & 0.672 & 0.812 & 0.530 \\
+45 & V3 & InfoNCE       & \textbf{0.971} & \textbf{0.418} & 0.817 & 0.940 & \textbf{0.624} \\
+45 & V3 & InfoNCE+GED   & 0.961 & 0.378 & \textbf{0.820} & \textbf{0.942} & 0.605 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-\section{Ablation of GED Regularization}
-
-We evaluated the necessity of the Graph-Aware Contrastive Loss (GACL) by comparing the full LEGR model ($\lambda_{ged}=0.10$, the value used at the 15-tool tier where Table~\ref{tab:retrieval_metrics} is computed) against an unregularized variant ($\lambda_{ged}=0$). Both variants identify the correct set of tools, but the unregularized model shows a $2.0\times$ degradation in structural alignment: Mean GED rises from 0.111 to 0.221. The GED-weighted denominator is what internalizes the directed edges of the execution DAG, converting a tool-set retriever into an execution-graph retriever.
+V3 consistently improves Tool-Set F1 over V2 and is much more parameter-efficient because it eliminates the second MiniLM copy. Exact-DAG R@1 is more nuanced: V2+GED is best at 30 tools, while V3 without GED is best at 15 and 45 tools. GED improves V2 R@1 by 7.1 points at 30 tools and 1.2 points at 45 tools, but reduces V3 R@1 at every scale. This mixed result does not support the earlier hypothesis that GED weighting alone is responsible for learning directed structure.
 
 \end{document}

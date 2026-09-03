@@ -57,6 +57,7 @@ api_key.txt
 *.pickle
 *.pt
 *.pth
+**/best_model/
 ged_cache.npy
 
 # Directories with large files

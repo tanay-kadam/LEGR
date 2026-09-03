@@ -1,0 +1,7 @@
+model,router_type,Standard,Lexical,Confusable,Paraphrase
+GPT-OSS Topic-based,two-stage taxonomy,78.3,68.1,62.7,78.0
+GPT-OSS Functional,two-stage taxonomy,93.3,75.6,68.0,90.6
+Llama 3.2 Topic-based,two-stage taxonomy,70.0,43.3,43.3,64.9
+Llama 3.2 Functional,two-stage taxonomy,83.8,61.8,55.3,79.8
+LEGR v3_no_ged_15t,direct frozen one-node retrieval,52.43781094527363,28.65671641791045,40.22222222222222,51.23505976095617
+LEGR v3_ged_15t,direct frozen one-node retrieval,53.13432835820896,27.363184079601986,40.0,53.06772908366534

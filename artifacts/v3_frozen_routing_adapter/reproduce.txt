@@ -1,0 +1,1 @@
+C:\Program Files\Python314\python.exe scripts/train_v3_routing_adapter.py --output artifacts/v3_frozen_routing_adapter --device cuda --seeds 42 123 2026 --epochs 150 --patience 20 --batch-size 128 --lr 0.001

@@ -1,0 +1,62 @@
+{
+  "action_tool_to_category": {
+    "read_user_profile": "Data Retrieval",
+    "read_database_record": "Data Retrieval",
+    "read_access_logs": "Data Retrieval",
+    "check_service_status": "Data Retrieval",
+    "read_subscription_status": "Data Retrieval",
+    "scan_system_for_malware": "Data Retrieval",
+    "edit_username": "State Modification",
+    "write_database_record": "State Modification",
+    "reset_user_password": "State Modification",
+    "update_subscription_plan": "State Modification",
+    "restart_service": "State Modification",
+    "create_support_ticket": "State Modification",
+    "dispatch_message_to_usergroup": "Orchestration",
+    "escalate_case_to_human": "Orchestration",
+    "route_task_by_condition": "Orchestration"
+  },
+  "semantic_groups": {
+    "Account & Subscription": [
+      "read_user_profile",
+      "read_subscription_status",
+      "edit_username",
+      "update_subscription_plan",
+      "dispatch_message_to_usergroup"
+    ],
+    "Data & Access Management": [
+      "read_database_record",
+      "read_access_logs",
+      "write_database_record",
+      "reset_user_password",
+      "escalate_case_to_human"
+    ],
+    "Service & Incident Operations": [
+      "check_service_status",
+      "scan_system_for_malware",
+      "restart_service",
+      "create_support_ticket",
+      "route_task_by_condition"
+    ]
+  },
+  "semantic_tool_to_category": {
+    "read_user_profile": "Account & Subscription",
+    "read_subscription_status": "Account & Subscription",
+    "edit_username": "Account & Subscription",
+    "update_subscription_plan": "Account & Subscription",
+    "dispatch_message_to_usergroup": "Account & Subscription",
+    "read_database_record": "Data & Access Management",
+    "read_access_logs": "Data & Access Management",
+    "write_database_record": "Data & Access Management",
+    "reset_user_password": "Data & Access Management",
+    "escalate_case_to_human": "Data & Access Management",
+    "check_service_status": "Service & Incident Operations",
+    "scan_system_for_malware": "Service & Incident Operations",
+    "restart_service": "Service & Incident Operations",
+    "create_support_ticket": "Service & Incident Operations",
+    "route_task_by_condition": "Service & Incident Operations"
+  },
+  "dag_rule": "unique plurality of node categories; exact ties are Mixed",
+  "rule_deviation_from_preregistered_plan": "Strict majority produced zero orchestration-labelled DAGs (95 retrieval, 86 modification, 141 mixed, 0 orchestration). Unique plurality is used to preserve the requested equal observed category count.",
+  "matched_control": "Each semantic group has five tools: 2 retrieval, 2 modification, 1 orchestration."
+}

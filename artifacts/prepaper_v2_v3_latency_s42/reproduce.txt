@@ -1,0 +1,1 @@
+C:\Program Files\Python314\python.exe scripts/benchmark_v2_v3_latency.py --device cuda --warmup 20 --passes 3 --index-repeats 5 --output artifacts/prepaper_v2_v3_latency_s42

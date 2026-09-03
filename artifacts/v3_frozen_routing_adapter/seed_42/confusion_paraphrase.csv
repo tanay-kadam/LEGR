@@ -1,0 +1,16 @@
+,db_read,db_write,reset_password,create_ticket,send_notification,quarantine_system,scan_malware,generate_report,process_refund,update_subscription,provision_vm,restart_service,check_status,escalate_to_human,log_audit_event
+db_read,53,7,0,3,2,0,0,5,0,0,0,0,0,0,0
+db_write,2,79,0,0,0,0,0,0,3,2,4,0,0,0,0
+reset_password,0,0,85,0,0,0,0,0,0,0,0,0,0,0,0
+create_ticket,0,0,5,66,0,0,0,1,0,0,2,0,0,3,33
+send_notification,0,3,4,9,48,0,0,5,8,2,5,0,0,6,10
+quarantine_system,0,9,5,2,7,27,2,1,10,0,9,2,0,0,1
+scan_malware,1,3,0,0,1,2,46,11,0,0,0,0,6,0,5
+generate_report,0,0,0,0,0,0,2,43,0,0,0,0,0,0,5
+process_refund,0,0,0,0,0,0,0,0,76,0,3,5,0,0,1
+update_subscription,0,0,0,0,0,0,0,0,0,59,1,0,0,0,0
+provision_vm,0,0,0,15,0,0,4,0,0,2,81,0,0,3,0
+restart_service,0,2,3,0,5,3,0,0,0,0,10,51,0,0,1
+check_status,3,4,0,0,5,4,6,7,3,0,0,0,69,0,14
+escalate_to_human,0,0,0,4,0,3,0,0,0,0,0,0,0,68,5
+log_audit_event,0,9,0,0,0,0,0,11,0,0,0,0,0,0,60

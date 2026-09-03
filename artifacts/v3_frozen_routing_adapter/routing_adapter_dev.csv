@@ -1,0 +1,151 @@
+query,ground_truth,class_id,intent_family,wrapper_family
+New request: show the facts currently retained for Amina,db_read,0,0,0
+Please act on this instruction: show the facts currently retained for Luca,db_read,0,0,1
+What must happen is: show the facts currently retained for Amina,db_read,0,0,2
+Handle the following user intent: show the facts currently retained for Luca,db_read,0,0,3
+Required next action: show the facts currently retained for Amina,db_read,0,0,4
+New request: read back entry REC-263 without editing it,db_read,0,1,0
+Please act on this instruction: read back entry REC-694 without editing it,db_read,0,1,1
+What must happen is: read back entry REC-263 without editing it,db_read,0,1,2
+Handle the following user intent: read back entry REC-694 without editing it,db_read,0,1,3
+Required next action: read back entry REC-263 without editing it,db_read,0,1,4
+New request: save corrected account values for Amina,db_write,1,0,0
+Please act on this instruction: save corrected account values for Luca,db_write,1,0,1
+What must happen is: save corrected account values for Amina,db_write,1,0,2
+Handle the following user intent: save corrected account values for Luca,db_write,1,0,3
+Required next action: save corrected account values for Amina,db_write,1,0,4
+New request: alter the persisted entry identified by REC-263,db_write,1,1,0
+Please act on this instruction: alter the persisted entry identified by REC-694,db_write,1,1,1
+What must happen is: alter the persisted entry identified by REC-263,db_write,1,1,2
+Handle the following user intent: alter the persisted entry identified by REC-694,db_write,1,1,3
+Required next action: alter the persisted entry identified by REC-263,db_write,1,1,4
+New request: replace Amina's sign-in secret,reset_password,2,0,0
+Please act on this instruction: replace Luca's sign-in secret,reset_password,2,0,1
+What must happen is: replace Amina's sign-in secret,reset_password,2,0,2
+Handle the following user intent: replace Luca's sign-in secret,reset_password,2,0,3
+Required next action: replace Amina's sign-in secret,reset_password,2,0,4
+New request: provide new credentials after access was lost,reset_password,2,1,0
+Please act on this instruction: provide new credentials after access was lost,reset_password,2,1,1
+What must happen is: provide new credentials after access was lost,reset_password,2,1,2
+Handle the following user intent: provide new credentials after access was lost,reset_password,2,1,3
+Required next action: provide new credentials after access was lost,reset_password,2,1,4
+New request: establish a support case for CASE-239,create_ticket,3,0,0
+Please act on this instruction: establish a support case for CASE-486,create_ticket,3,0,1
+What must happen is: establish a support case for CASE-239,create_ticket,3,0,2
+Handle the following user intent: establish a support case for CASE-486,create_ticket,3,0,3
+Required next action: establish a support case for CASE-239,create_ticket,3,0,4
+New request: give the billing-core problem a new tracked issue,create_ticket,3,1,0
+Please act on this instruction: give the auth-gateway problem a new tracked issue,create_ticket,3,1,1
+What must happen is: give the billing-core problem a new tracked issue,create_ticket,3,1,2
+Handle the following user intent: give the auth-gateway problem a new tracked issue,create_ticket,3,1,3
+Required next action: give the billing-core problem a new tracked issue,create_ticket,3,1,4
+New request: message the Site Operations recipients about the event,send_notification,4,0,0
+Please act on this instruction: message the Governance recipients about the event,send_notification,4,0,1
+What must happen is: message the Site Operations recipients about the event,send_notification,4,0,2
+Handle the following user intent: message the Governance recipients about the event,send_notification,4,0,3
+Required next action: message the Site Operations recipients about the event,send_notification,4,0,4
+New request: deliver an informational alert to Luca,send_notification,4,1,0
+Please act on this instruction: deliver an informational alert to Amina,send_notification,4,1,1
+What must happen is: deliver an informational alert to Luca,send_notification,4,1,2
+Handle the following user intent: deliver an informational alert to Amina,send_notification,4,1,3
+Required next action: deliver an informational alert to Luca,send_notification,4,1,4
+New request: contain host host-b36 away from the network,quarantine_system,5,0,0
+Please act on this instruction: contain host host-x74 away from the network,quarantine_system,5,0,1
+What must happen is: contain host host-b36 away from the network,quarantine_system,5,0,2
+Handle the following user intent: contain host host-x74 away from the network,quarantine_system,5,0,3
+Required next action: contain host host-b36 away from the network,quarantine_system,5,0,4
+New request: cut off communications from the affected machine,quarantine_system,5,1,0
+Please act on this instruction: cut off communications from the affected machine,quarantine_system,5,1,1
+What must happen is: cut off communications from the affected machine,quarantine_system,5,1,2
+Handle the following user intent: cut off communications from the affected machine,quarantine_system,5,1,3
+Required next action: cut off communications from the affected machine,quarantine_system,5,1,4
+New request: search host host-b36 for indicators of compromise,scan_malware,6,0,0
+Please act on this instruction: search host host-x74 for indicators of compromise,scan_malware,6,0,1
+What must happen is: search host host-b36 for indicators of compromise,scan_malware,6,0,2
+Handle the following user intent: search host host-x74 for indicators of compromise,scan_malware,6,0,3
+Required next action: search host host-b36 for indicators of compromise,scan_malware,6,0,4
+New request: assess billing-core for malicious content,scan_malware,6,1,0
+Please act on this instruction: assess auth-gateway for malicious content,scan_malware,6,1,1
+What must happen is: assess billing-core for malicious content,scan_malware,6,1,2
+Handle the following user intent: assess auth-gateway for malicious content,scan_malware,6,1,3
+Required next action: assess billing-core for malicious content,scan_malware,6,1,4
+New request: prepare a summarized document for Site Operations,generate_report,7,0,0
+Please act on this instruction: prepare a summarized document for Governance,generate_report,7,0,1
+What must happen is: prepare a summarized document for Site Operations,generate_report,7,0,2
+Handle the following user intent: prepare a summarized document for Governance,generate_report,7,0,3
+Required next action: prepare a summarized document for Site Operations,generate_report,7,0,4
+New request: aggregate the measurements into a review artifact,generate_report,7,1,0
+Please act on this instruction: aggregate the measurements into a review artifact,generate_report,7,1,1
+What must happen is: aggregate the measurements into a review artifact,generate_report,7,1,2
+Handle the following user intent: aggregate the measurements into a review artifact,generate_report,7,1,3
+Required next action: aggregate the measurements into a review artifact,generate_report,7,1,4
+New request: reimburse the buyer for ORD-257,process_refund,8,0,0
+Please act on this instruction: reimburse the buyer for ORD-683,process_refund,8,0,1
+What must happen is: reimburse the buyer for ORD-257,process_refund,8,0,2
+Handle the following user intent: reimburse the buyer for ORD-683,process_refund,8,0,3
+Required next action: reimburse the buyer for ORD-257,process_refund,8,0,4
+New request: undo the payment recorded as REC-263,process_refund,8,1,0
+Please act on this instruction: undo the payment recorded as REC-694,process_refund,8,1,1
+What must happen is: undo the payment recorded as REC-263,process_refund,8,1,2
+Handle the following user intent: undo the payment recorded as REC-694,process_refund,8,1,3
+Required next action: undo the payment recorded as REC-263,process_refund,8,1,4
+New request: revise the recurring membership for Amina,update_subscription,9,0,0
+Please act on this instruction: revise the recurring membership for Luca,update_subscription,9,0,1
+What must happen is: revise the recurring membership for Amina,update_subscription,9,0,2
+Handle the following user intent: revise the recurring membership for Luca,update_subscription,9,0,3
+Required next action: revise the recurring membership for Amina,update_subscription,9,0,4
+New request: place account REC-263 on another plan,update_subscription,9,1,0
+Please act on this instruction: place account REC-694 on another plan,update_subscription,9,1,1
+What must happen is: place account REC-263 on another plan,update_subscription,9,1,2
+Handle the following user intent: place account REC-694 on another plan,update_subscription,9,1,3
+Required next action: place account REC-263 on another plan,update_subscription,9,1,4
+New request: initialize a brand-new compute instance for Site Operations,provision_vm,10,0,0
+Please act on this instruction: initialize a brand-new compute instance for Governance,provision_vm,10,0,1
+What must happen is: initialize a brand-new compute instance for Site Operations,provision_vm,10,0,2
+Handle the following user intent: initialize a brand-new compute instance for Governance,provision_vm,10,0,3
+Required next action: initialize a brand-new compute instance for Site Operations,provision_vm,10,0,4
+New request: make another virtual host available,provision_vm,10,1,0
+Please act on this instruction: make another virtual host available,provision_vm,10,1,1
+What must happen is: make another virtual host available,provision_vm,10,1,2
+Handle the following user intent: make another virtual host available,provision_vm,10,1,3
+Required next action: make another virtual host available,provision_vm,10,1,4
+New request: recycle the running auth-gateway process,restart_service,11,0,0
+Please act on this instruction: recycle the running billing-core process,restart_service,11,0,1
+What must happen is: recycle the running auth-gateway process,restart_service,11,0,2
+Handle the following user intent: recycle the running billing-core process,restart_service,11,0,3
+Required next action: recycle the running auth-gateway process,restart_service,11,0,4
+New request: stop then relaunch the existing application,restart_service,11,1,0
+Please act on this instruction: stop then relaunch the existing application,restart_service,11,1,1
+What must happen is: stop then relaunch the existing application,restart_service,11,1,2
+Handle the following user intent: stop then relaunch the existing application,restart_service,11,1,3
+Required next action: stop then relaunch the existing application,restart_service,11,1,4
+New request: report whether host host-b36 is presently available,check_status,12,0,0
+Please act on this instruction: report whether host host-x74 is presently available,check_status,12,0,1
+What must happen is: report whether host host-b36 is presently available,check_status,12,0,2
+Handle the following user intent: report whether host host-x74 is presently available,check_status,12,0,3
+Required next action: report whether host host-b36 is presently available,check_status,12,0,4
+New request: inspect the live health of billing-core,check_status,12,1,0
+Please act on this instruction: inspect the live health of auth-gateway,check_status,12,1,1
+What must happen is: inspect the live health of billing-core,check_status,12,1,2
+Handle the following user intent: inspect the live health of auth-gateway,check_status,12,1,3
+Required next action: inspect the live health of billing-core,check_status,12,1,4
+New request: send CASE-239 to a person for resolution,escalate_to_human,13,0,0
+Please act on this instruction: send CASE-486 to a person for resolution,escalate_to_human,13,0,1
+What must happen is: send CASE-239 to a person for resolution,escalate_to_human,13,0,2
+Handle the following user intent: send CASE-486 to a person for resolution,escalate_to_human,13,0,3
+Required next action: send CASE-239 to a person for resolution,escalate_to_human,13,0,4
+New request: bring a human responder into the unresolved case,escalate_to_human,13,1,0
+Please act on this instruction: bring a human responder into the unresolved case,escalate_to_human,13,1,1
+What must happen is: bring a human responder into the unresolved case,escalate_to_human,13,1,2
+Handle the following user intent: bring a human responder into the unresolved case,escalate_to_human,13,1,3
+Required next action: bring a human responder into the unresolved case,escalate_to_human,13,1,4
+New request: place the action in the compliance trail,log_audit_event,14,0,0
+Please act on this instruction: place the action in the compliance trail,log_audit_event,14,0,1
+What must happen is: place the action in the compliance trail,log_audit_event,14,0,2
+Handle the following user intent: place the action in the compliance trail,log_audit_event,14,0,3
+Required next action: place the action in the compliance trail,log_audit_event,14,0,4
+New request: preserve an official audit entry for CASE-486,log_audit_event,14,1,0
+Please act on this instruction: preserve an official audit entry for CASE-239,log_audit_event,14,1,1
+What must happen is: preserve an official audit entry for CASE-486,log_audit_event,14,1,2
+Handle the following user intent: preserve an official audit entry for CASE-239,log_audit_event,14,1,3
+Required next action: preserve an official audit entry for CASE-486,log_audit_event,14,1,4

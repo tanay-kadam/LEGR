@@ -1,0 +1,1 @@
+C:\Program Files\Python314\python.exe scripts/analyze_v3_action_semantic_geometry.py --checkpoint artifacts/campaign_v4/results/legr_setgnn_tied_no_ged_15t_s42/best_model.pt --device cuda --seed 42 --bootstrap 1000 --permutations 1000 --output artifacts/prepaper_v3_action_semantic_s42

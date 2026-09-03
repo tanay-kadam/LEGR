@@ -1,0 +1,136 @@
+{
+  "dataset": "campaign_v4",
+  "tier": 30,
+  "seed": 42,
+  "gallery_protocol": "unique(candidate_corpus UNION evaluated_test_split)",
+  "models": {
+    "legr_directed_ged_30t_s42": {
+      "checkpoint_epoch": 8,
+      "graph_encoder_type": "directed",
+      "graph_direction": "directed",
+      "lambda_ged": 0.3,
+      "test_indomain": {
+        "tool_set_f1": 0.13142109500805155,
+        "mean_ged_error": 6.5978260869565215,
+        "recall@1": 0.014492753623188406,
+        "recall@3": 0.043478260869565216,
+        "recall@5": 0.050724637681159424,
+        "mrr@1": 0.014492753623188406,
+        "mrr@3": 0.027777777777777776,
+        "mrr@5": 0.029589371980676328,
+        "exact_dag_accuracy": 0.014492753623188406,
+        "num_queries": 276,
+        "gallery_unique_dags": 431
+      },
+      "test_topology_heldout": {
+        "tool_set_f1": 0.13435185185185186,
+        "mean_ged_error": 7.023809523809524,
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "mrr@1": 0.0,
+        "mrr@3": 0.0,
+        "mrr@5": 0.0,
+        "exact_dag_accuracy": 0.0,
+        "num_queries": 420,
+        "gallery_unique_dags": 455
+      }
+    },
+    "legr_directed_no_ged_30t_s42": {
+      "checkpoint_epoch": 8,
+      "graph_encoder_type": "directed",
+      "graph_direction": "directed",
+      "lambda_ged": 0.0,
+      "test_indomain": {
+        "tool_set_f1": 0.13086611456176675,
+        "mean_ged_error": 6.601449275362318,
+        "recall@1": 0.014492753623188406,
+        "recall@3": 0.04710144927536232,
+        "recall@5": 0.05434782608695652,
+        "mrr@1": 0.014492753623188406,
+        "mrr@3": 0.028381642512077292,
+        "mrr@5": 0.03001207729468599,
+        "exact_dag_accuracy": 0.014492753623188406,
+        "num_queries": 276,
+        "gallery_unique_dags": 431
+      },
+      "test_topology_heldout": {
+        "tool_set_f1": 0.1393915343915344,
+        "mean_ged_error": 6.9904761904761905,
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "mrr@1": 0.0,
+        "mrr@3": 0.0,
+        "mrr@5": 0.0,
+        "exact_dag_accuracy": 0.0,
+        "num_queries": 420,
+        "gallery_unique_dags": 455
+      }
+    },
+    "legr_legacy_ged_30t_s42": {
+      "checkpoint_epoch": 7,
+      "graph_encoder_type": "gcn",
+      "graph_direction": "gcn_undirected",
+      "lambda_ged": 0.3,
+      "test_indomain": {
+        "tool_set_f1": 0.15643259719346678,
+        "mean_ged_error": 6.721014492753623,
+        "recall@1": 0.010869565217391304,
+        "recall@3": 0.036231884057971016,
+        "recall@5": 0.04710144927536232,
+        "mrr@1": 0.010869565217391304,
+        "mrr@3": 0.02113526570048309,
+        "mrr@5": 0.023852657004830916,
+        "exact_dag_accuracy": 0.010869565217391304,
+        "num_queries": 276,
+        "gallery_unique_dags": 431
+      },
+      "test_topology_heldout": {
+        "tool_set_f1": 0.17595238095238097,
+        "mean_ged_error": 7.273809523809524,
+        "recall@1": 0.0,
+        "recall@3": 0.002380952380952381,
+        "recall@5": 0.007142857142857143,
+        "mrr@1": 0.0,
+        "mrr@3": 0.0007936507936507937,
+        "mrr@5": 0.0018650793650793651,
+        "exact_dag_accuracy": 0.0,
+        "num_queries": 420,
+        "gallery_unique_dags": 455
+      }
+    },
+    "legr_legacy_no_ged_30t_s42": {
+      "checkpoint_epoch": 7,
+      "graph_encoder_type": "gcn",
+      "graph_direction": "gcn_undirected",
+      "lambda_ged": 0.0,
+      "test_indomain": {
+        "tool_set_f1": 0.15932252127904303,
+        "mean_ged_error": 6.663043478260869,
+        "recall@1": 0.010869565217391304,
+        "recall@3": 0.03260869565217391,
+        "recall@5": 0.04710144927536232,
+        "mrr@1": 0.010869565217391304,
+        "mrr@3": 0.019323671497584537,
+        "mrr@5": 0.02276570048309179,
+        "exact_dag_accuracy": 0.010869565217391304,
+        "num_queries": 276,
+        "gallery_unique_dags": 431
+      },
+      "test_topology_heldout": {
+        "tool_set_f1": 0.17777777777777776,
+        "mean_ged_error": 7.2976190476190474,
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.002380952380952381,
+        "mrr@1": 0.0,
+        "mrr@3": 0.0,
+        "mrr@5": 0.0005952380952380953,
+        "exact_dag_accuracy": 0.0,
+        "num_queries": 420,
+        "gallery_unique_dags": 455
+      }
+    }
+  }
+}

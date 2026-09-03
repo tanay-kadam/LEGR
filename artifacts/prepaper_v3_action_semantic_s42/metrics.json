@@ -1,0 +1,84 @@
+{
+  "dataset": "Campaign V4 15-tool full gallery",
+  "gallery_size": 322,
+  "embedding_space": "frozen V3 graph encoder output (256d)",
+  "tsne_used_for_metrics": false,
+  "checkpoint": "artifacts/campaign_v4/results/legr_setgnn_tied_no_ged_15t_s42/best_model.pt",
+  "checkpoint_sha256": "6027a4df479bd30137f97e6eb26278b05bab9adbb61ad4e57b5354bb8e7f727a",
+  "checkpoint_metadata": {
+    "epoch": 35,
+    "graph_encoder_type": "setgnn_tied",
+    "lambda_ged": 0.0,
+    "configured_tool_count": 15
+  },
+  "action": {
+    "counts": {
+      "Data Retrieval": 131,
+      "Mixed": 69,
+      "Orchestration": 6,
+      "State Modification": 116
+    },
+    "silhouette_cosine": 0.014306539669632912,
+    "silhouette_95ci": [
+      0.0013087932631606237,
+      0.0277075020596385
+    ],
+    "knn_k": 5,
+    "knn_macro_f1": 0.8212152951322533,
+    "knn_macro_f1_95ci": [
+      0.6556890494448527,
+      0.9103142579625955
+    ],
+    "knn_neighborhood_purity": 0.7857142857142857,
+    "knn_neighborhood_purity_95ci": [
+      0.7627329192546584,
+      0.8093322981366461
+    ]
+  },
+  "semantic": {
+    "counts": {
+      "Account & Subscription": 58,
+      "Data & Access Management": 51,
+      "Mixed": 126,
+      "Service & Incident Operations": 87
+    },
+    "silhouette_cosine": 0.02982461266219616,
+    "silhouette_95ci": [
+      0.02195068448781967,
+      0.038439434859901665
+    ],
+    "knn_k": 5,
+    "knn_macro_f1": 0.88457216639448,
+    "knn_macro_f1_95ci": [
+      0.84356364670125,
+      0.9199088521130305
+    ],
+    "knn_neighborhood_purity": 0.7167701863354037,
+    "knn_neighborhood_purity_95ci": [
+      0.6931521739130434,
+      0.7434782608695651
+    ]
+  },
+  "differences": {
+    "silhouette_action_minus_semantic": -0.015518072992563248,
+    "knn_macro_f1_action_minus_semantic": -0.06335687126222667,
+    "purity_action_minus_semantic": 0.06894409937888202
+  },
+  "permutation_test": {
+    "permutations": 1000,
+    "alternative": "action_minus_semantic > null difference from independently permuted labels",
+    "silhouette_difference_p_one_sided": 0.35364635364635366,
+    "purity_difference_p_one_sided": 0.30569430569430567
+  },
+  "evidence": "NO_ACTION_ADVANTAGE",
+  "environment": {
+    "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.11.0+cu128",
+    "cuda_available": true,
+    "device": "cuda",
+    "cuda_version": "12.8",
+    "gpu_name": "NVIDIA RTX 6000 Ada Generation",
+    "gpu_total_memory_bytes": 51526500352
+  }
+}

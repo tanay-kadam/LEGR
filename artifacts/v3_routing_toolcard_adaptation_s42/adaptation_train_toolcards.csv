@@ -1,0 +1,91 @@
+query,class_id,routing_tool,legr_tool,template_id
+Tool name: query database. Purpose: Read / query data from a database.,0,query_database,db_read,train_0
+Select query database when the requested operation is to read / query data from a database.,0,query_database,db_read,train_1
+API operation query database: Read / query data from a database.,0,query_database,db_read,train_2
+The query database capability is used to read / query data from a database.,0,query_database,db_read,train_3
+Intent label query database corresponds to: Read / query data from a database.,0,query_database,db_read,train_4
+Route requests about this operation to query database: Read / query data from a database.,0,query_database,db_read,train_5
+Tool name: update database. Purpose: Write / update data in a database.,1,update_database,db_write,train_0
+Select update database when the requested operation is to write / update data in a database.,1,update_database,db_write,train_1
+API operation update database: Write / update data in a database.,1,update_database,db_write,train_2
+The update database capability is used to write / update data in a database.,1,update_database,db_write,train_3
+Intent label update database corresponds to: Write / update data in a database.,1,update_database,db_write,train_4
+Route requests about this operation to update database: Write / update data in a database.,1,update_database,db_write,train_5
+Tool name: reset password. Purpose: Reset a user's password or credentials.,2,reset_password,reset_password,train_0
+Select reset password when the requested operation is to reset a user's password or credentials.,2,reset_password,reset_password,train_1
+API operation reset password: Reset a user's password or credentials.,2,reset_password,reset_password,train_2
+The reset password capability is used to reset a user's password or credentials.,2,reset_password,reset_password,train_3
+Intent label reset password corresponds to: Reset a user's password or credentials.,2,reset_password,reset_password,train_4
+Route requests about this operation to reset password: Reset a user's password or credentials.,2,reset_password,reset_password,train_5
+Tool name: create ticket. Purpose: Create a support or incident ticket.,3,create_ticket,create_ticket,train_0
+Select create ticket when the requested operation is to create a support or incident ticket.,3,create_ticket,create_ticket,train_1
+API operation create ticket: Create a support or incident ticket.,3,create_ticket,create_ticket,train_2
+The create ticket capability is used to create a support or incident ticket.,3,create_ticket,create_ticket,train_3
+Intent label create ticket corresponds to: Create a support or incident ticket.,3,create_ticket,create_ticket,train_4
+Route requests about this operation to create ticket: Create a support or incident ticket.,3,create_ticket,create_ticket,train_5
+"Tool name: send notification. Purpose: Send an email, alert, or notification.",4,send_notification,send_notification,train_0
+"Select send notification when the requested operation is to send an email, alert, or notification.",4,send_notification,send_notification,train_1
+"API operation send notification: Send an email, alert, or notification.",4,send_notification,send_notification,train_2
+"The send notification capability is used to send an email, alert, or notification.",4,send_notification,send_notification,train_3
+"Intent label send notification corresponds to: Send an email, alert, or notification.",4,send_notification,send_notification,train_4
+"Route requests about this operation to send notification: Send an email, alert, or notification.",4,send_notification,send_notification,train_5
+Tool name: quarantine system. Purpose: Isolate a compromised or misbehaving system.,5,quarantine_system,quarantine_system,train_0
+Select quarantine system when the requested operation is to isolate a compromised or misbehaving system.,5,quarantine_system,quarantine_system,train_1
+API operation quarantine system: Isolate a compromised or misbehaving system.,5,quarantine_system,quarantine_system,train_2
+The quarantine system capability is used to isolate a compromised or misbehaving system.,5,quarantine_system,quarantine_system,train_3
+Intent label quarantine system corresponds to: Isolate a compromised or misbehaving system.,5,quarantine_system,quarantine_system,train_4
+Route requests about this operation to quarantine system: Isolate a compromised or misbehaving system.,5,quarantine_system,quarantine_system,train_5
+Tool name: scan malware. Purpose: Run a malware or vulnerability scan.,6,scan_malware,scan_malware,train_0
+Select scan malware when the requested operation is to run a malware or vulnerability scan.,6,scan_malware,scan_malware,train_1
+API operation scan malware: Run a malware or vulnerability scan.,6,scan_malware,scan_malware,train_2
+The scan malware capability is used to run a malware or vulnerability scan.,6,scan_malware,scan_malware,train_3
+Intent label scan malware corresponds to: Run a malware or vulnerability scan.,6,scan_malware,scan_malware,train_4
+Route requests about this operation to scan malware: Run a malware or vulnerability scan.,6,scan_malware,scan_malware,train_5
+Tool name: generate report. Purpose: Generate an analytics or compliance report.,7,generate_report,generate_report,train_0
+Select generate report when the requested operation is to generate an analytics or compliance report.,7,generate_report,generate_report,train_1
+API operation generate report: Generate an analytics or compliance report.,7,generate_report,generate_report,train_2
+The generate report capability is used to generate an analytics or compliance report.,7,generate_report,generate_report,train_3
+Intent label generate report corresponds to: Generate an analytics or compliance report.,7,generate_report,generate_report,train_4
+Route requests about this operation to generate report: Generate an analytics or compliance report.,7,generate_report,generate_report,train_5
+Tool name: process refund. Purpose: Process a financial refund or credit.,8,process_refund,process_refund,train_0
+Select process refund when the requested operation is to process a financial refund or credit.,8,process_refund,process_refund,train_1
+API operation process refund: Process a financial refund or credit.,8,process_refund,process_refund,train_2
+The process refund capability is used to process a financial refund or credit.,8,process_refund,process_refund,train_3
+Intent label process refund corresponds to: Process a financial refund or credit.,8,process_refund,process_refund,train_4
+Route requests about this operation to process refund: Process a financial refund or credit.,8,process_refund,process_refund,train_5
+"Tool name: update subscription. Purpose: Update, upgrade, or cancel a subscription.",9,update_subscription,update_subscription,train_0
+"Select update subscription when the requested operation is to update, upgrade, or cancel a subscription.",9,update_subscription,update_subscription,train_1
+"API operation update subscription: Update, upgrade, or cancel a subscription.",9,update_subscription,update_subscription,train_2
+"The update subscription capability is used to update, upgrade, or cancel a subscription.",9,update_subscription,update_subscription,train_3
+"Intent label update subscription corresponds to: Update, upgrade, or cancel a subscription.",9,update_subscription,update_subscription,train_4
+"Route requests about this operation to update subscription: Update, upgrade, or cancel a subscription.",9,update_subscription,update_subscription,train_5
+Tool name: provision vm. Purpose: Provision a new virtual machine or instance.,10,provision_vm,provision_vm,train_0
+Select provision vm when the requested operation is to provision a new virtual machine or instance.,10,provision_vm,provision_vm,train_1
+API operation provision vm: Provision a new virtual machine or instance.,10,provision_vm,provision_vm,train_2
+The provision vm capability is used to provision a new virtual machine or instance.,10,provision_vm,provision_vm,train_3
+Intent label provision vm corresponds to: Provision a new virtual machine or instance.,10,provision_vm,provision_vm,train_4
+Route requests about this operation to provision vm: Provision a new virtual machine or instance.,10,provision_vm,provision_vm,train_5
+Tool name: restart service. Purpose: Restart a service or application process.,11,restart_service,restart_service,train_0
+Select restart service when the requested operation is to restart a service or application process.,11,restart_service,restart_service,train_1
+API operation restart service: Restart a service or application process.,11,restart_service,restart_service,train_2
+The restart service capability is used to restart a service or application process.,11,restart_service,restart_service,train_3
+Intent label restart service corresponds to: Restart a service or application process.,11,restart_service,restart_service,train_4
+Route requests about this operation to restart service: Restart a service or application process.,11,restart_service,restart_service,train_5
+"Tool name: check status. Purpose: Check system, service, or request status.",12,check_status,check_status,train_0
+"Select check status when the requested operation is to check system, service, or request status.",12,check_status,check_status,train_1
+"API operation check status: Check system, service, or request status.",12,check_status,check_status,train_2
+"The check status capability is used to check system, service, or request status.",12,check_status,check_status,train_3
+"Intent label check status corresponds to: Check system, service, or request status.",12,check_status,check_status,train_4
+"Route requests about this operation to check status: Check system, service, or request status.",12,check_status,check_status,train_5
+Tool name: escalate to human. Purpose: Escalate an issue to a human agent.,13,escalate_to_human,escalate_to_human,train_0
+Select escalate to human when the requested operation is to escalate an issue to a human agent.,13,escalate_to_human,escalate_to_human,train_1
+API operation escalate to human: Escalate an issue to a human agent.,13,escalate_to_human,escalate_to_human,train_2
+The escalate to human capability is used to escalate an issue to a human agent.,13,escalate_to_human,escalate_to_human,train_3
+Intent label escalate to human corresponds to: Escalate an issue to a human agent.,13,escalate_to_human,escalate_to_human,train_4
+Route requests about this operation to escalate to human: Escalate an issue to a human agent.,13,escalate_to_human,escalate_to_human,train_5
+Tool name: log audit event. Purpose: Record an event in the audit / compliance log.,14,log_audit_event,log_audit_event,train_0
+Select log audit event when the requested operation is to record an event in the audit / compliance log.,14,log_audit_event,log_audit_event,train_1
+API operation log audit event: Record an event in the audit / compliance log.,14,log_audit_event,log_audit_event,train_2
+The log audit event capability is used to record an event in the audit / compliance log.,14,log_audit_event,log_audit_event,train_3
+Intent label log audit event corresponds to: Record an event in the audit / compliance log.,14,log_audit_event,log_audit_event,train_4
+Route requests about this operation to log audit event: Record an event in the audit / compliance log.,14,log_audit_event,log_audit_event,train_5

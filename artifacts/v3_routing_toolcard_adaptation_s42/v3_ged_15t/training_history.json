@@ -1,0 +1,122 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 0.7422744631767273,
+    "dev_accuracy": 1.0,
+    "temperature": 0.02664497122168541
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.1323908306658268,
+    "dev_accuracy": 1.0,
+    "temperature": 0.02642265148460865
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.022754679434001446,
+    "dev_accuracy": 1.0,
+    "temperature": 0.02598441205918789
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.007155687315389514,
+    "dev_accuracy": 1.0,
+    "temperature": 0.02547536976635456
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.0011260007449891418,
+    "dev_accuracy": 1.0,
+    "temperature": 0.024992313235998154
+  },
+  {
+    "epoch": 6,
+    "train_loss": 0.0010013939172495157,
+    "dev_accuracy": 1.0,
+    "temperature": 0.02455190196633339
+  },
+  {
+    "epoch": 7,
+    "train_loss": 0.0004522249655565247,
+    "dev_accuracy": 1.0,
+    "temperature": 0.024163540452718735
+  },
+  {
+    "epoch": 8,
+    "train_loss": 7.951678344397806e-05,
+    "dev_accuracy": 1.0,
+    "temperature": 0.02383769303560257
+  },
+  {
+    "epoch": 9,
+    "train_loss": 6.098969424783718e-05,
+    "dev_accuracy": 1.0,
+    "temperature": 0.023563209921121597
+  },
+  {
+    "epoch": 10,
+    "train_loss": 6.698030574625591e-06,
+    "dev_accuracy": 1.0,
+    "temperature": 0.02333551086485386
+  },
+  {
+    "epoch": 11,
+    "train_loss": 5.69670271488576e-06,
+    "dev_accuracy": 1.0,
+    "temperature": 0.02314629964530468
+  },
+  {
+    "epoch": 12,
+    "train_loss": 4.272915475667105e-06,
+    "dev_accuracy": 1.0,
+    "temperature": 0.022988945245742798
+  },
+  {
+    "epoch": 13,
+    "train_loss": 4.010684961031075e-06,
+    "dev_accuracy": 1.0,
+    "temperature": 0.02285783924162388
+  },
+  {
+    "epoch": 14,
+    "train_loss": 7.556664399999136e-06,
+    "dev_accuracy": 1.0,
+    "temperature": 0.022748131304979324
+  },
+  {
+    "epoch": 15,
+    "train_loss": 2.488779216491821e-06,
+    "dev_accuracy": 1.0,
+    "temperature": 0.022656748071312904
+  },
+  {
+    "epoch": 16,
+    "train_loss": 4.3191502072659205e-06,
+    "dev_accuracy": 1.0,
+    "temperature": 0.02258024364709854
+  },
+  {
+    "epoch": 17,
+    "train_loss": 3.826474653578771e-06,
+    "dev_accuracy": 1.0,
+    "temperature": 0.022516261786222458
+  },
+  {
+    "epoch": 18,
+    "train_loss": 1.2760001709466451e-05,
+    "dev_accuracy": 1.0,
+    "temperature": 0.022461753338575363
+  },
+  {
+    "epoch": 19,
+    "train_loss": 4.05695959670993e-06,
+    "dev_accuracy": 1.0,
+    "temperature": 0.022416073828935623
+  },
+  {
+    "epoch": 20,
+    "train_loss": 2.4093350248222123e-06,
+    "dev_accuracy": 1.0,
+    "temperature": 0.022377680987119675
+  }
+]

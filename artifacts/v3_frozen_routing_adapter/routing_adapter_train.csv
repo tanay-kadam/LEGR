@@ -1,0 +1,901 @@
+query,ground_truth,class_id,intent_family,wrapper_family
+obtain the current account information for Zara,db_read,0,0,0
+Please handle this: obtain the current account information for Mateo,db_read,0,0,1
+Can someone take care of this: obtain the current account information for Noor,db_read,0,0,2
+This needs attention: obtain the current account information for Inez,db_read,0,0,3
+The requested operation is: obtain the current account information for Kofi,db_read,0,0,4
+"For the current case, obtain the current account information for Zara",db_read,0,0,5
+Could the system do the following: obtain the current account information for Mateo,db_read,0,0,6
+The user needs us to obtain the current account information for Noor,db_read,0,0,7
+Operational request: obtain the current account information for Inez,db_read,0,0,8
+Complete this task safely: obtain the current account information for Kofi,db_read,0,0,9
+return what is presently stored under record REC-884,db_read,0,1,0
+Please handle this: return what is presently stored under record REC-926,db_read,0,1,1
+Can someone take care of this: return what is presently stored under record REC-447,db_read,0,1,2
+This needs attention: return what is presently stored under record REC-518,db_read,0,1,3
+The requested operation is: return what is presently stored under record REC-731,db_read,0,1,4
+"For the current case, return what is presently stored under record REC-884",db_read,0,1,5
+Could the system do the following: return what is presently stored under record REC-926,db_read,0,1,6
+The user needs us to return what is presently stored under record REC-447,db_read,0,1,7
+Operational request: return what is presently stored under record REC-518,db_read,0,1,8
+Complete this task safely: return what is presently stored under record REC-731,db_read,0,1,9
+inspect transaction ORD-935 without changing its data,db_read,0,2,0
+Please handle this: inspect transaction ORD-406 without changing its data,db_read,0,2,1
+Can someone take care of this: inspect transaction ORD-529 without changing its data,db_read,0,2,2
+This needs attention: inspect transaction ORD-711 without changing its data,db_read,0,2,3
+The requested operation is: inspect transaction ORD-842 without changing its data,db_read,0,2,4
+"For the current case, inspect transaction ORD-935 without changing its data",db_read,0,2,5
+Could the system do the following: inspect transaction ORD-406 without changing its data,db_read,0,2,6
+The user needs us to inspect transaction ORD-529 without changing its data,db_read,0,2,7
+Operational request: inspect transaction ORD-711 without changing its data,db_read,0,2,8
+Complete this task safely: inspect transaction ORD-842 without changing its data,db_read,0,2,9
+show the saved profile details associated with Zara,db_read,0,3,0
+Please handle this: show the saved profile details associated with Mateo,db_read,0,3,1
+Can someone take care of this: show the saved profile details associated with Noor,db_read,0,3,2
+This needs attention: show the saved profile details associated with Inez,db_read,0,3,3
+The requested operation is: show the saved profile details associated with Kofi,db_read,0,3,4
+"For the current case, show the saved profile details associated with Zara",db_read,0,3,5
+Could the system do the following: show the saved profile details associated with Mateo,db_read,0,3,6
+The user needs us to show the saved profile details associated with Noor,db_read,0,3,7
+Operational request: show the saved profile details associated with Inez,db_read,0,3,8
+Complete this task safely: show the saved profile details associated with Kofi,db_read,0,3,9
+access the existing entry for reference REC-884,db_read,0,4,0
+Please handle this: access the existing entry for reference REC-926,db_read,0,4,1
+Can someone take care of this: access the existing entry for reference REC-447,db_read,0,4,2
+This needs attention: access the existing entry for reference REC-518,db_read,0,4,3
+The requested operation is: access the existing entry for reference REC-731,db_read,0,4,4
+"For the current case, access the existing entry for reference REC-884",db_read,0,4,5
+Could the system do the following: access the existing entry for reference REC-926,db_read,0,4,6
+The user needs us to access the existing entry for reference REC-447,db_read,0,4,7
+Operational request: access the existing entry for reference REC-518,db_read,0,4,8
+Complete this task safely: access the existing entry for reference REC-731,db_read,0,4,9
+find the information already on file for Zara,db_read,0,5,0
+Please handle this: find the information already on file for Mateo,db_read,0,5,1
+Can someone take care of this: find the information already on file for Noor,db_read,0,5,2
+This needs attention: find the information already on file for Inez,db_read,0,5,3
+The requested operation is: find the information already on file for Kofi,db_read,0,5,4
+"For the current case, find the information already on file for Zara",db_read,0,5,5
+Could the system do the following: find the information already on file for Mateo,db_read,0,5,6
+The user needs us to find the information already on file for Noor,db_read,0,5,7
+Operational request: find the information already on file for Inez,db_read,0,5,8
+Complete this task safely: find the information already on file for Kofi,db_read,0,5,9
+replace the stored email address for Zara,db_write,1,0,0
+Please handle this: replace the stored email address for Mateo,db_write,1,0,1
+Can someone take care of this: replace the stored email address for Noor,db_write,1,0,2
+This needs attention: replace the stored email address for Inez,db_write,1,0,3
+The requested operation is: replace the stored email address for Kofi,db_write,1,0,4
+"For the current case, replace the stored email address for Zara",db_write,1,0,5
+Could the system do the following: replace the stored email address for Mateo,db_write,1,0,6
+The user needs us to replace the stored email address for Noor,db_write,1,0,7
+Operational request: replace the stored email address for Inez,db_write,1,0,8
+Complete this task safely: replace the stored email address for Kofi,db_write,1,0,9
+correct the existing database record REC-884,db_write,1,1,0
+Please handle this: correct the existing database record REC-926,db_write,1,1,1
+Can someone take care of this: correct the existing database record REC-447,db_write,1,1,2
+This needs attention: correct the existing database record REC-518,db_write,1,1,3
+The requested operation is: correct the existing database record REC-731,db_write,1,1,4
+"For the current case, correct the existing database record REC-884",db_write,1,1,5
+Could the system do the following: correct the existing database record REC-926,db_write,1,1,6
+The user needs us to correct the existing database record REC-447,db_write,1,1,7
+Operational request: correct the existing database record REC-518,db_write,1,1,8
+Complete this task safely: correct the existing database record REC-731,db_write,1,1,9
+persist the revised profile fields for Zara,db_write,1,2,0
+Please handle this: persist the revised profile fields for Mateo,db_write,1,2,1
+Can someone take care of this: persist the revised profile fields for Noor,db_write,1,2,2
+This needs attention: persist the revised profile fields for Inez,db_write,1,2,3
+The requested operation is: persist the revised profile fields for Kofi,db_write,1,2,4
+"For the current case, persist the revised profile fields for Zara",db_write,1,2,5
+Could the system do the following: persist the revised profile fields for Mateo,db_write,1,2,6
+The user needs us to persist the revised profile fields for Noor,db_write,1,2,7
+Operational request: persist the revised profile fields for Inez,db_write,1,2,8
+Complete this task safely: persist the revised profile fields for Kofi,db_write,1,2,9
+change what is saved under reference REC-884,db_write,1,3,0
+Please handle this: change what is saved under reference REC-926,db_write,1,3,1
+Can someone take care of this: change what is saved under reference REC-447,db_write,1,3,2
+This needs attention: change what is saved under reference REC-518,db_write,1,3,3
+The requested operation is: change what is saved under reference REC-731,db_write,1,3,4
+"For the current case, change what is saved under reference REC-884",db_write,1,3,5
+Could the system do the following: change what is saved under reference REC-926,db_write,1,3,6
+The user needs us to change what is saved under reference REC-447,db_write,1,3,7
+Operational request: change what is saved under reference REC-518,db_write,1,3,8
+Complete this task safely: change what is saved under reference REC-731,db_write,1,3,9
+write the approved value into Zara's record,db_write,1,4,0
+Please handle this: write the approved value into Mateo's record,db_write,1,4,1
+Can someone take care of this: write the approved value into Noor's record,db_write,1,4,2
+This needs attention: write the approved value into Inez's record,db_write,1,4,3
+The requested operation is: write the approved value into Kofi's record,db_write,1,4,4
+"For the current case, write the approved value into Zara's record",db_write,1,4,5
+Could the system do the following: write the approved value into Mateo's record,db_write,1,4,6
+The user needs us to write the approved value into Noor's record,db_write,1,4,7
+Operational request: write the approved value into Inez's record,db_write,1,4,8
+Complete this task safely: write the approved value into Kofi's record,db_write,1,4,9
+apply new account details rather than merely reading them,db_write,1,5,0
+Please handle this: apply new account details rather than merely reading them,db_write,1,5,1
+Can someone take care of this: apply new account details rather than merely reading them,db_write,1,5,2
+This needs attention: apply new account details rather than merely reading them,db_write,1,5,3
+The requested operation is: apply new account details rather than merely reading them,db_write,1,5,4
+"For the current case, apply new account details rather than merely reading them",db_write,1,5,5
+Could the system do the following: apply new account details rather than merely reading them,db_write,1,5,6
+The user needs us to apply new account details rather than merely reading them,db_write,1,5,7
+Operational request: apply new account details rather than merely reading them,db_write,1,5,8
+Complete this task safely: apply new account details rather than merely reading them,db_write,1,5,9
+issue fresh login credentials to Zara,reset_password,2,0,0
+Please handle this: issue fresh login credentials to Mateo,reset_password,2,0,1
+Can someone take care of this: issue fresh login credentials to Noor,reset_password,2,0,2
+This needs attention: issue fresh login credentials to Inez,reset_password,2,0,3
+The requested operation is: issue fresh login credentials to Kofi,reset_password,2,0,4
+"For the current case, issue fresh login credentials to Zara",reset_password,2,0,5
+Could the system do the following: issue fresh login credentials to Mateo,reset_password,2,0,6
+The user needs us to issue fresh login credentials to Noor,reset_password,2,0,7
+Operational request: issue fresh login credentials to Inez,reset_password,2,0,8
+Complete this task safely: issue fresh login credentials to Kofi,reset_password,2,0,9
+restore account access by replacing the old secret,reset_password,2,1,0
+Please handle this: restore account access by replacing the old secret,reset_password,2,1,1
+Can someone take care of this: restore account access by replacing the old secret,reset_password,2,1,2
+This needs attention: restore account access by replacing the old secret,reset_password,2,1,3
+The requested operation is: restore account access by replacing the old secret,reset_password,2,1,4
+"For the current case, restore account access by replacing the old secret",reset_password,2,1,5
+Could the system do the following: restore account access by replacing the old secret,reset_password,2,1,6
+The user needs us to restore account access by replacing the old secret,reset_password,2,1,7
+Operational request: restore account access by replacing the old secret,reset_password,2,1,8
+Complete this task safely: restore account access by replacing the old secret,reset_password,2,1,9
+invalidate Zara's current password and create another,reset_password,2,2,0
+Please handle this: invalidate Mateo's current password and create another,reset_password,2,2,1
+Can someone take care of this: invalidate Noor's current password and create another,reset_password,2,2,2
+This needs attention: invalidate Inez's current password and create another,reset_password,2,2,3
+The requested operation is: invalidate Kofi's current password and create another,reset_password,2,2,4
+"For the current case, invalidate Zara's current password and create another",reset_password,2,2,5
+Could the system do the following: invalidate Mateo's current password and create another,reset_password,2,2,6
+The user needs us to invalidate Noor's current password and create another,reset_password,2,2,7
+Operational request: invalidate Inez's current password and create another,reset_password,2,2,8
+Complete this task safely: invalidate Kofi's current password and create another,reset_password,2,2,9
+help Zara regain access with a new credential,reset_password,2,3,0
+Please handle this: help Mateo regain access with a new credential,reset_password,2,3,1
+Can someone take care of this: help Noor regain access with a new credential,reset_password,2,3,2
+This needs attention: help Inez regain access with a new credential,reset_password,2,3,3
+The requested operation is: help Kofi regain access with a new credential,reset_password,2,3,4
+"For the current case, help Zara regain access with a new credential",reset_password,2,3,5
+Could the system do the following: help Mateo regain access with a new credential,reset_password,2,3,6
+The user needs us to help Noor regain access with a new credential,reset_password,2,3,7
+Operational request: help Inez regain access with a new credential,reset_password,2,3,8
+Complete this task safely: help Kofi regain access with a new credential,reset_password,2,3,9
+force a credential replacement for account REC-884,reset_password,2,4,0
+Please handle this: force a credential replacement for account REC-926,reset_password,2,4,1
+Can someone take care of this: force a credential replacement for account REC-447,reset_password,2,4,2
+This needs attention: force a credential replacement for account REC-518,reset_password,2,4,3
+The requested operation is: force a credential replacement for account REC-731,reset_password,2,4,4
+"For the current case, force a credential replacement for account REC-884",reset_password,2,4,5
+Could the system do the following: force a credential replacement for account REC-926,reset_password,2,4,6
+The user needs us to force a credential replacement for account REC-447,reset_password,2,4,7
+Operational request: force a credential replacement for account REC-518,reset_password,2,4,8
+Complete this task safely: force a credential replacement for account REC-731,reset_password,2,4,9
+"change the authentication secret, not the profile data",reset_password,2,5,0
+"Please handle this: change the authentication secret, not the profile data",reset_password,2,5,1
+"Can someone take care of this: change the authentication secret, not the profile data",reset_password,2,5,2
+"This needs attention: change the authentication secret, not the profile data",reset_password,2,5,3
+"The requested operation is: change the authentication secret, not the profile data",reset_password,2,5,4
+"For the current case, change the authentication secret, not the profile data",reset_password,2,5,5
+"Could the system do the following: change the authentication secret, not the profile data",reset_password,2,5,6
+"The user needs us to change the authentication secret, not the profile data",reset_password,2,5,7
+"Operational request: change the authentication secret, not the profile data",reset_password,2,5,8
+"Complete this task safely: change the authentication secret, not the profile data",reset_password,2,5,9
+open a trackable support case for incident CASE-728,create_ticket,3,0,0
+Please handle this: open a trackable support case for incident CASE-835,create_ticket,3,0,1
+Can someone take care of this: open a trackable support case for incident CASE-914,create_ticket,3,0,2
+This needs attention: open a trackable support case for incident CASE-562,create_ticket,3,0,3
+The requested operation is: open a trackable support case for incident CASE-671,create_ticket,3,0,4
+"For the current case, open a trackable support case for incident CASE-728",create_ticket,3,0,5
+Could the system do the following: open a trackable support case for incident CASE-835,create_ticket,3,0,6
+The user needs us to open a trackable support case for incident CASE-914,create_ticket,3,0,7
+Operational request: open a trackable support case for incident CASE-562,create_ticket,3,0,8
+Complete this task safely: open a trackable support case for incident CASE-671,create_ticket,3,0,9
+create a new issue record about search-node,create_ticket,3,1,0
+Please handle this: create a new issue record about media-api,create_ticket,3,1,1
+Can someone take care of this: create a new issue record about catalog-core,create_ticket,3,1,2
+This needs attention: create a new issue record about identity-edge,create_ticket,3,1,3
+The requested operation is: create a new issue record about ledger-worker,create_ticket,3,1,4
+"For the current case, create a new issue record about search-node",create_ticket,3,1,5
+Could the system do the following: create a new issue record about media-api,create_ticket,3,1,6
+The user needs us to create a new issue record about catalog-core,create_ticket,3,1,7
+Operational request: create a new issue record about identity-edge,create_ticket,3,1,8
+Complete this task safely: create a new issue record about ledger-worker,create_ticket,3,1,9
+file a case so the problem has a ticket number,create_ticket,3,2,0
+Please handle this: file a case so the problem has a ticket number,create_ticket,3,2,1
+Can someone take care of this: file a case so the problem has a ticket number,create_ticket,3,2,2
+This needs attention: file a case so the problem has a ticket number,create_ticket,3,2,3
+The requested operation is: file a case so the problem has a ticket number,create_ticket,3,2,4
+"For the current case, file a case so the problem has a ticket number",create_ticket,3,2,5
+Could the system do the following: file a case so the problem has a ticket number,create_ticket,3,2,6
+The user needs us to file a case so the problem has a ticket number,create_ticket,3,2,7
+Operational request: file a case so the problem has a ticket number,create_ticket,3,2,8
+Complete this task safely: file a case so the problem has a ticket number,create_ticket,3,2,9
+start an incident record for the failure on search-node,create_ticket,3,3,0
+Please handle this: start an incident record for the failure on media-api,create_ticket,3,3,1
+Can someone take care of this: start an incident record for the failure on catalog-core,create_ticket,3,3,2
+This needs attention: start an incident record for the failure on identity-edge,create_ticket,3,3,3
+The requested operation is: start an incident record for the failure on ledger-worker,create_ticket,3,3,4
+"For the current case, start an incident record for the failure on search-node",create_ticket,3,3,5
+Could the system do the following: start an incident record for the failure on media-api,create_ticket,3,3,6
+The user needs us to start an incident record for the failure on catalog-core,create_ticket,3,3,7
+Operational request: start an incident record for the failure on identity-edge,create_ticket,3,3,8
+Complete this task safely: start an incident record for the failure on ledger-worker,create_ticket,3,3,9
+log a new support request for Zara,create_ticket,3,4,0
+Please handle this: log a new support request for Mateo,create_ticket,3,4,1
+Can someone take care of this: log a new support request for Noor,create_ticket,3,4,2
+This needs attention: log a new support request for Inez,create_ticket,3,4,3
+The requested operation is: log a new support request for Kofi,create_ticket,3,4,4
+"For the current case, log a new support request for Zara",create_ticket,3,4,5
+Could the system do the following: log a new support request for Mateo,create_ticket,3,4,6
+The user needs us to log a new support request for Noor,create_ticket,3,4,7
+Operational request: log a new support request for Inez,create_ticket,3,4,8
+Complete this task safely: log a new support request for Kofi,create_ticket,3,4,9
+create a case rather than only notifying someone,create_ticket,3,5,0
+Please handle this: create a case rather than only notifying someone,create_ticket,3,5,1
+Can someone take care of this: create a case rather than only notifying someone,create_ticket,3,5,2
+This needs attention: create a case rather than only notifying someone,create_ticket,3,5,3
+The requested operation is: create a case rather than only notifying someone,create_ticket,3,5,4
+"For the current case, create a case rather than only notifying someone",create_ticket,3,5,5
+Could the system do the following: create a case rather than only notifying someone,create_ticket,3,5,6
+The user needs us to create a case rather than only notifying someone,create_ticket,3,5,7
+Operational request: create a case rather than only notifying someone,create_ticket,3,5,8
+Complete this task safely: create a case rather than only notifying someone,create_ticket,3,5,9
+deliver an alert to the Platform team,send_notification,4,0,0
+Please handle this: deliver an alert to the Risk team,send_notification,4,0,1
+Can someone take care of this: deliver an alert to the Operations team,send_notification,4,0,2
+This needs attention: deliver an alert to the Reliability team,send_notification,4,0,3
+The requested operation is: deliver an alert to the Customer Care team,send_notification,4,0,4
+"For the current case, deliver an alert to the Platform team",send_notification,4,0,5
+Could the system do the following: deliver an alert to the Risk team,send_notification,4,0,6
+The user needs us to deliver an alert to the Operations team,send_notification,4,0,7
+Operational request: deliver an alert to the Reliability team,send_notification,4,0,8
+Complete this task safely: deliver an alert to the Customer Care team,send_notification,4,0,9
+inform Zara about the latest change,send_notification,4,1,0
+Please handle this: inform Mateo about the latest change,send_notification,4,1,1
+Can someone take care of this: inform Noor about the latest change,send_notification,4,1,2
+This needs attention: inform Inez about the latest change,send_notification,4,1,3
+The requested operation is: inform Kofi about the latest change,send_notification,4,1,4
+"For the current case, inform Zara about the latest change",send_notification,4,1,5
+Could the system do the following: inform Mateo about the latest change,send_notification,4,1,6
+The user needs us to inform Noor about the latest change,send_notification,4,1,7
+Operational request: inform Inez about the latest change,send_notification,4,1,8
+Complete this task safely: inform Kofi about the latest change,send_notification,4,1,9
+send the incident update to the intended recipients,send_notification,4,2,0
+Please handle this: send the incident update to the intended recipients,send_notification,4,2,1
+Can someone take care of this: send the incident update to the intended recipients,send_notification,4,2,2
+This needs attention: send the incident update to the intended recipients,send_notification,4,2,3
+The requested operation is: send the incident update to the intended recipients,send_notification,4,2,4
+"For the current case, send the incident update to the intended recipients",send_notification,4,2,5
+Could the system do the following: send the incident update to the intended recipients,send_notification,4,2,6
+The user needs us to send the incident update to the intended recipients,send_notification,4,2,7
+Operational request: send the incident update to the intended recipients,send_notification,4,2,8
+Complete this task safely: send the incident update to the intended recipients,send_notification,4,2,9
+notify the on-call group about search-node,send_notification,4,3,0
+Please handle this: notify the on-call group about media-api,send_notification,4,3,1
+Can someone take care of this: notify the on-call group about catalog-core,send_notification,4,3,2
+This needs attention: notify the on-call group about identity-edge,send_notification,4,3,3
+The requested operation is: notify the on-call group about ledger-worker,send_notification,4,3,4
+"For the current case, notify the on-call group about search-node",send_notification,4,3,5
+Could the system do the following: notify the on-call group about media-api,send_notification,4,3,6
+The user needs us to notify the on-call group about catalog-core,send_notification,4,3,7
+Operational request: notify the on-call group about identity-edge,send_notification,4,3,8
+Complete this task safely: notify the on-call group about ledger-worker,send_notification,4,3,9
+communicate the result to Zara without opening a case,send_notification,4,4,0
+Please handle this: communicate the result to Mateo without opening a case,send_notification,4,4,1
+Can someone take care of this: communicate the result to Noor without opening a case,send_notification,4,4,2
+This needs attention: communicate the result to Inez without opening a case,send_notification,4,4,3
+The requested operation is: communicate the result to Kofi without opening a case,send_notification,4,4,4
+"For the current case, communicate the result to Zara without opening a case",send_notification,4,4,5
+Could the system do the following: communicate the result to Mateo without opening a case,send_notification,4,4,6
+The user needs us to communicate the result to Noor without opening a case,send_notification,4,4,7
+Operational request: communicate the result to Inez without opening a case,send_notification,4,4,8
+Complete this task safely: communicate the result to Kofi without opening a case,send_notification,4,4,9
+distribute a warning message to Platform,send_notification,4,5,0
+Please handle this: distribute a warning message to Risk,send_notification,4,5,1
+Can someone take care of this: distribute a warning message to Operations,send_notification,4,5,2
+This needs attention: distribute a warning message to Reliability,send_notification,4,5,3
+The requested operation is: distribute a warning message to Customer Care,send_notification,4,5,4
+"For the current case, distribute a warning message to Platform",send_notification,4,5,5
+Could the system do the following: distribute a warning message to Risk,send_notification,4,5,6
+The user needs us to distribute a warning message to Operations,send_notification,4,5,7
+Operational request: distribute a warning message to Reliability,send_notification,4,5,8
+Complete this task safely: distribute a warning message to Customer Care,send_notification,4,5,9
+remove search-node from network access immediately,quarantine_system,5,0,0
+Please handle this: remove media-api from network access immediately,quarantine_system,5,0,1
+Can someone take care of this: remove catalog-core from network access immediately,quarantine_system,5,0,2
+This needs attention: remove identity-edge from network access immediately,quarantine_system,5,0,3
+The requested operation is: remove ledger-worker from network access immediately,quarantine_system,5,0,4
+"For the current case, remove search-node from network access immediately",quarantine_system,5,0,5
+Could the system do the following: remove media-api from network access immediately,quarantine_system,5,0,6
+The user needs us to remove catalog-core from network access immediately,quarantine_system,5,0,7
+Operational request: remove identity-edge from network access immediately,quarantine_system,5,0,8
+Complete this task safely: remove ledger-worker from network access immediately,quarantine_system,5,0,9
+isolate the affected host while investigation continues,quarantine_system,5,1,0
+Please handle this: isolate the affected host while investigation continues,quarantine_system,5,1,1
+Can someone take care of this: isolate the affected host while investigation continues,quarantine_system,5,1,2
+This needs attention: isolate the affected host while investigation continues,quarantine_system,5,1,3
+The requested operation is: isolate the affected host while investigation continues,quarantine_system,5,1,4
+"For the current case, isolate the affected host while investigation continues",quarantine_system,5,1,5
+Could the system do the following: isolate the affected host while investigation continues,quarantine_system,5,1,6
+The user needs us to isolate the affected host while investigation continues,quarantine_system,5,1,7
+Operational request: isolate the affected host while investigation continues,quarantine_system,5,1,8
+Complete this task safely: isolate the affected host while investigation continues,quarantine_system,5,1,9
+contain search-node so it cannot communicate with other systems,quarantine_system,5,2,0
+Please handle this: contain media-api so it cannot communicate with other systems,quarantine_system,5,2,1
+Can someone take care of this: contain catalog-core so it cannot communicate with other systems,quarantine_system,5,2,2
+This needs attention: contain identity-edge so it cannot communicate with other systems,quarantine_system,5,2,3
+The requested operation is: contain ledger-worker so it cannot communicate with other systems,quarantine_system,5,2,4
+"For the current case, contain search-node so it cannot communicate with other systems",quarantine_system,5,2,5
+Could the system do the following: contain media-api so it cannot communicate with other systems,quarantine_system,5,2,6
+The user needs us to contain catalog-core so it cannot communicate with other systems,quarantine_system,5,2,7
+Operational request: contain identity-edge so it cannot communicate with other systems,quarantine_system,5,2,8
+Complete this task safely: contain ledger-worker so it cannot communicate with other systems,quarantine_system,5,2,9
+place the suspicious machine in an isolated state,quarantine_system,5,3,0
+Please handle this: place the suspicious machine in an isolated state,quarantine_system,5,3,1
+Can someone take care of this: place the suspicious machine in an isolated state,quarantine_system,5,3,2
+This needs attention: place the suspicious machine in an isolated state,quarantine_system,5,3,3
+The requested operation is: place the suspicious machine in an isolated state,quarantine_system,5,3,4
+"For the current case, place the suspicious machine in an isolated state",quarantine_system,5,3,5
+Could the system do the following: place the suspicious machine in an isolated state,quarantine_system,5,3,6
+The user needs us to place the suspicious machine in an isolated state,quarantine_system,5,3,7
+Operational request: place the suspicious machine in an isolated state,quarantine_system,5,3,8
+Complete this task safely: place the suspicious machine in an isolated state,quarantine_system,5,3,9
+disconnect host host-v91 rather than merely scanning it,quarantine_system,5,4,0
+Please handle this: disconnect host host-k17 rather than merely scanning it,quarantine_system,5,4,1
+Can someone take care of this: disconnect host host-m28 rather than merely scanning it,quarantine_system,5,4,2
+This needs attention: disconnect host host-q42 rather than merely scanning it,quarantine_system,5,4,3
+The requested operation is: disconnect host host-r63 rather than merely scanning it,quarantine_system,5,4,4
+"For the current case, disconnect host host-v91 rather than merely scanning it",quarantine_system,5,4,5
+Could the system do the following: disconnect host host-k17 rather than merely scanning it,quarantine_system,5,4,6
+The user needs us to disconnect host host-m28 rather than merely scanning it,quarantine_system,5,4,7
+Operational request: disconnect host host-q42 rather than merely scanning it,quarantine_system,5,4,8
+Complete this task safely: disconnect host host-r63 rather than merely scanning it,quarantine_system,5,4,9
+prevent the compromised endpoint from reaching the network,quarantine_system,5,5,0
+Please handle this: prevent the compromised endpoint from reaching the network,quarantine_system,5,5,1
+Can someone take care of this: prevent the compromised endpoint from reaching the network,quarantine_system,5,5,2
+This needs attention: prevent the compromised endpoint from reaching the network,quarantine_system,5,5,3
+The requested operation is: prevent the compromised endpoint from reaching the network,quarantine_system,5,5,4
+"For the current case, prevent the compromised endpoint from reaching the network",quarantine_system,5,5,5
+Could the system do the following: prevent the compromised endpoint from reaching the network,quarantine_system,5,5,6
+The user needs us to prevent the compromised endpoint from reaching the network,quarantine_system,5,5,7
+Operational request: prevent the compromised endpoint from reaching the network,quarantine_system,5,5,8
+Complete this task safely: prevent the compromised endpoint from reaching the network,quarantine_system,5,5,9
+inspect host-v91 for malicious software and indicators,scan_malware,6,0,0
+Please handle this: inspect host-k17 for malicious software and indicators,scan_malware,6,0,1
+Can someone take care of this: inspect host-m28 for malicious software and indicators,scan_malware,6,0,2
+This needs attention: inspect host-q42 for malicious software and indicators,scan_malware,6,0,3
+The requested operation is: inspect host-r63 for malicious software and indicators,scan_malware,6,0,4
+"For the current case, inspect host-v91 for malicious software and indicators",scan_malware,6,0,5
+Could the system do the following: inspect host-k17 for malicious software and indicators,scan_malware,6,0,6
+The user needs us to inspect host-m28 for malicious software and indicators,scan_malware,6,0,7
+Operational request: inspect host-q42 for malicious software and indicators,scan_malware,6,0,8
+Complete this task safely: inspect host-r63 for malicious software and indicators,scan_malware,6,0,9
+perform a security sweep of search-node,scan_malware,6,1,0
+Please handle this: perform a security sweep of media-api,scan_malware,6,1,1
+Can someone take care of this: perform a security sweep of catalog-core,scan_malware,6,1,2
+This needs attention: perform a security sweep of identity-edge,scan_malware,6,1,3
+The requested operation is: perform a security sweep of ledger-worker,scan_malware,6,1,4
+"For the current case, perform a security sweep of search-node",scan_malware,6,1,5
+Could the system do the following: perform a security sweep of media-api,scan_malware,6,1,6
+The user needs us to perform a security sweep of catalog-core,scan_malware,6,1,7
+Operational request: perform a security sweep of identity-edge,scan_malware,6,1,8
+Complete this task safely: perform a security sweep of ledger-worker,scan_malware,6,1,9
+look for threats on the endpoint without isolating it,scan_malware,6,2,0
+Please handle this: look for threats on the endpoint without isolating it,scan_malware,6,2,1
+Can someone take care of this: look for threats on the endpoint without isolating it,scan_malware,6,2,2
+This needs attention: look for threats on the endpoint without isolating it,scan_malware,6,2,3
+The requested operation is: look for threats on the endpoint without isolating it,scan_malware,6,2,4
+"For the current case, look for threats on the endpoint without isolating it",scan_malware,6,2,5
+Could the system do the following: look for threats on the endpoint without isolating it,scan_malware,6,2,6
+The user needs us to look for threats on the endpoint without isolating it,scan_malware,6,2,7
+Operational request: look for threats on the endpoint without isolating it,scan_malware,6,2,8
+Complete this task safely: look for threats on the endpoint without isolating it,scan_malware,6,2,9
+analyze host host-v91 for signs of infection,scan_malware,6,3,0
+Please handle this: analyze host host-k17 for signs of infection,scan_malware,6,3,1
+Can someone take care of this: analyze host host-m28 for signs of infection,scan_malware,6,3,2
+This needs attention: analyze host host-q42 for signs of infection,scan_malware,6,3,3
+The requested operation is: analyze host host-r63 for signs of infection,scan_malware,6,3,4
+"For the current case, analyze host host-v91 for signs of infection",scan_malware,6,3,5
+Could the system do the following: analyze host host-k17 for signs of infection,scan_malware,6,3,6
+The user needs us to analyze host host-m28 for signs of infection,scan_malware,6,3,7
+Operational request: analyze host host-q42 for signs of infection,scan_malware,6,3,8
+Complete this task safely: analyze host host-r63 for signs of infection,scan_malware,6,3,9
+run a malware assessment against search-node,scan_malware,6,4,0
+Please handle this: run a malware assessment against media-api,scan_malware,6,4,1
+Can someone take care of this: run a malware assessment against catalog-core,scan_malware,6,4,2
+This needs attention: run a malware assessment against identity-edge,scan_malware,6,4,3
+The requested operation is: run a malware assessment against ledger-worker,scan_malware,6,4,4
+"For the current case, run a malware assessment against search-node",scan_malware,6,4,5
+Could the system do the following: run a malware assessment against media-api,scan_malware,6,4,6
+The user needs us to run a malware assessment against catalog-core,scan_malware,6,4,7
+Operational request: run a malware assessment against identity-edge,scan_malware,6,4,8
+Complete this task safely: run a malware assessment against ledger-worker,scan_malware,6,4,9
+check the machine for suspicious files and vulnerabilities,scan_malware,6,5,0
+Please handle this: check the machine for suspicious files and vulnerabilities,scan_malware,6,5,1
+Can someone take care of this: check the machine for suspicious files and vulnerabilities,scan_malware,6,5,2
+This needs attention: check the machine for suspicious files and vulnerabilities,scan_malware,6,5,3
+The requested operation is: check the machine for suspicious files and vulnerabilities,scan_malware,6,5,4
+"For the current case, check the machine for suspicious files and vulnerabilities",scan_malware,6,5,5
+Could the system do the following: check the machine for suspicious files and vulnerabilities,scan_malware,6,5,6
+The user needs us to check the machine for suspicious files and vulnerabilities,scan_malware,6,5,7
+Operational request: check the machine for suspicious files and vulnerabilities,scan_malware,6,5,8
+Complete this task safely: check the machine for suspicious files and vulnerabilities,scan_malware,6,5,9
+compile the quarterly figures into a reviewable document,generate_report,7,0,0
+Please handle this: compile the quarterly figures into a reviewable document,generate_report,7,0,1
+Can someone take care of this: compile the quarterly figures into a reviewable document,generate_report,7,0,2
+This needs attention: compile the quarterly figures into a reviewable document,generate_report,7,0,3
+The requested operation is: compile the quarterly figures into a reviewable document,generate_report,7,0,4
+"For the current case, compile the quarterly figures into a reviewable document",generate_report,7,0,5
+Could the system do the following: compile the quarterly figures into a reviewable document,generate_report,7,0,6
+The user needs us to compile the quarterly figures into a reviewable document,generate_report,7,0,7
+Operational request: compile the quarterly figures into a reviewable document,generate_report,7,0,8
+Complete this task safely: compile the quarterly figures into a reviewable document,generate_report,7,0,9
+produce an analytics summary for the Platform team,generate_report,7,1,0
+Please handle this: produce an analytics summary for the Risk team,generate_report,7,1,1
+Can someone take care of this: produce an analytics summary for the Operations team,generate_report,7,1,2
+This needs attention: produce an analytics summary for the Reliability team,generate_report,7,1,3
+The requested operation is: produce an analytics summary for the Customer Care team,generate_report,7,1,4
+"For the current case, produce an analytics summary for the Platform team",generate_report,7,1,5
+Could the system do the following: produce an analytics summary for the Risk team,generate_report,7,1,6
+The user needs us to produce an analytics summary for the Operations team,generate_report,7,1,7
+Operational request: produce an analytics summary for the Reliability team,generate_report,7,1,8
+Complete this task safely: produce an analytics summary for the Customer Care team,generate_report,7,1,9
+assemble the collected results into a formal report,generate_report,7,2,0
+Please handle this: assemble the collected results into a formal report,generate_report,7,2,1
+Can someone take care of this: assemble the collected results into a formal report,generate_report,7,2,2
+This needs attention: assemble the collected results into a formal report,generate_report,7,2,3
+The requested operation is: assemble the collected results into a formal report,generate_report,7,2,4
+"For the current case, assemble the collected results into a formal report",generate_report,7,2,5
+Could the system do the following: assemble the collected results into a formal report,generate_report,7,2,6
+The user needs us to assemble the collected results into a formal report,generate_report,7,2,7
+Operational request: assemble the collected results into a formal report,generate_report,7,2,8
+Complete this task safely: assemble the collected results into a formal report,generate_report,7,2,9
+create a compliance summary from the available records,generate_report,7,3,0
+Please handle this: create a compliance summary from the available records,generate_report,7,3,1
+Can someone take care of this: create a compliance summary from the available records,generate_report,7,3,2
+This needs attention: create a compliance summary from the available records,generate_report,7,3,3
+The requested operation is: create a compliance summary from the available records,generate_report,7,3,4
+"For the current case, create a compliance summary from the available records",generate_report,7,3,5
+Could the system do the following: create a compliance summary from the available records,generate_report,7,3,6
+The user needs us to create a compliance summary from the available records,generate_report,7,3,7
+Operational request: create a compliance summary from the available records,generate_report,7,3,8
+Complete this task safely: create a compliance summary from the available records,generate_report,7,3,9
+prepare a performance document about search-node,generate_report,7,4,0
+Please handle this: prepare a performance document about media-api,generate_report,7,4,1
+Can someone take care of this: prepare a performance document about catalog-core,generate_report,7,4,2
+This needs attention: prepare a performance document about identity-edge,generate_report,7,4,3
+The requested operation is: prepare a performance document about ledger-worker,generate_report,7,4,4
+"For the current case, prepare a performance document about search-node",generate_report,7,4,5
+Could the system do the following: prepare a performance document about media-api,generate_report,7,4,6
+The user needs us to prepare a performance document about catalog-core,generate_report,7,4,7
+Operational request: prepare a performance document about identity-edge,generate_report,7,4,8
+Complete this task safely: prepare a performance document about ledger-worker,generate_report,7,4,9
+turn the measurements into a report rather than checking live status,generate_report,7,5,0
+Please handle this: turn the measurements into a report rather than checking live status,generate_report,7,5,1
+Can someone take care of this: turn the measurements into a report rather than checking live status,generate_report,7,5,2
+This needs attention: turn the measurements into a report rather than checking live status,generate_report,7,5,3
+The requested operation is: turn the measurements into a report rather than checking live status,generate_report,7,5,4
+"For the current case, turn the measurements into a report rather than checking live status",generate_report,7,5,5
+Could the system do the following: turn the measurements into a report rather than checking live status,generate_report,7,5,6
+The user needs us to turn the measurements into a report rather than checking live status,generate_report,7,5,7
+Operational request: turn the measurements into a report rather than checking live status,generate_report,7,5,8
+Complete this task safely: turn the measurements into a report rather than checking live status,generate_report,7,5,9
+return the payment for order ORD-935 to the customer,process_refund,8,0,0
+Please handle this: return the payment for order ORD-406 to the customer,process_refund,8,0,1
+Can someone take care of this: return the payment for order ORD-529 to the customer,process_refund,8,0,2
+This needs attention: return the payment for order ORD-711 to the customer,process_refund,8,0,3
+The requested operation is: return the payment for order ORD-842 to the customer,process_refund,8,0,4
+"For the current case, return the payment for order ORD-935 to the customer",process_refund,8,0,5
+Could the system do the following: return the payment for order ORD-406 to the customer,process_refund,8,0,6
+The user needs us to return the payment for order ORD-529 to the customer,process_refund,8,0,7
+Operational request: return the payment for order ORD-711 to the customer,process_refund,8,0,8
+Complete this task safely: return the payment for order ORD-842 to the customer,process_refund,8,0,9
+reverse the completed charge associated with REC-884,process_refund,8,1,0
+Please handle this: reverse the completed charge associated with REC-926,process_refund,8,1,1
+Can someone take care of this: reverse the completed charge associated with REC-447,process_refund,8,1,2
+This needs attention: reverse the completed charge associated with REC-518,process_refund,8,1,3
+The requested operation is: reverse the completed charge associated with REC-731,process_refund,8,1,4
+"For the current case, reverse the completed charge associated with REC-884",process_refund,8,1,5
+Could the system do the following: reverse the completed charge associated with REC-926,process_refund,8,1,6
+The user needs us to reverse the completed charge associated with REC-447,process_refund,8,1,7
+Operational request: reverse the completed charge associated with REC-518,process_refund,8,1,8
+Complete this task safely: reverse the completed charge associated with REC-731,process_refund,8,1,9
+credit Zara for the disputed transaction,process_refund,8,2,0
+Please handle this: credit Mateo for the disputed transaction,process_refund,8,2,1
+Can someone take care of this: credit Noor for the disputed transaction,process_refund,8,2,2
+This needs attention: credit Inez for the disputed transaction,process_refund,8,2,3
+The requested operation is: credit Kofi for the disputed transaction,process_refund,8,2,4
+"For the current case, credit Zara for the disputed transaction",process_refund,8,2,5
+Could the system do the following: credit Mateo for the disputed transaction,process_refund,8,2,6
+The user needs us to credit Noor for the disputed transaction,process_refund,8,2,7
+Operational request: credit Inez for the disputed transaction,process_refund,8,2,8
+Complete this task safely: credit Kofi for the disputed transaction,process_refund,8,2,9
+send the purchase amount back for order ORD-935,process_refund,8,3,0
+Please handle this: send the purchase amount back for order ORD-406,process_refund,8,3,1
+Can someone take care of this: send the purchase amount back for order ORD-529,process_refund,8,3,2
+This needs attention: send the purchase amount back for order ORD-711,process_refund,8,3,3
+The requested operation is: send the purchase amount back for order ORD-842,process_refund,8,3,4
+"For the current case, send the purchase amount back for order ORD-935",process_refund,8,3,5
+Could the system do the following: send the purchase amount back for order ORD-406,process_refund,8,3,6
+The user needs us to send the purchase amount back for order ORD-529,process_refund,8,3,7
+Operational request: send the purchase amount back for order ORD-711,process_refund,8,3,8
+Complete this task safely: send the purchase amount back for order ORD-842,process_refund,8,3,9
+"complete the monetary reversal, not a subscription change",process_refund,8,4,0
+"Please handle this: complete the monetary reversal, not a subscription change",process_refund,8,4,1
+"Can someone take care of this: complete the monetary reversal, not a subscription change",process_refund,8,4,2
+"This needs attention: complete the monetary reversal, not a subscription change",process_refund,8,4,3
+"The requested operation is: complete the monetary reversal, not a subscription change",process_refund,8,4,4
+"For the current case, complete the monetary reversal, not a subscription change",process_refund,8,4,5
+"Could the system do the following: complete the monetary reversal, not a subscription change",process_refund,8,4,6
+"The user needs us to complete the monetary reversal, not a subscription change",process_refund,8,4,7
+"Operational request: complete the monetary reversal, not a subscription change",process_refund,8,4,8
+"Complete this task safely: complete the monetary reversal, not a subscription change",process_refund,8,4,9
+reimburse Zara for transaction REC-884,process_refund,8,5,0
+Please handle this: reimburse Mateo for transaction REC-926,process_refund,8,5,1
+Can someone take care of this: reimburse Noor for transaction REC-447,process_refund,8,5,2
+This needs attention: reimburse Inez for transaction REC-518,process_refund,8,5,3
+The requested operation is: reimburse Kofi for transaction REC-731,process_refund,8,5,4
+"For the current case, reimburse Zara for transaction REC-884",process_refund,8,5,5
+Could the system do the following: reimburse Mateo for transaction REC-926,process_refund,8,5,6
+The user needs us to reimburse Noor for transaction REC-447,process_refund,8,5,7
+Operational request: reimburse Inez for transaction REC-518,process_refund,8,5,8
+Complete this task safely: reimburse Kofi for transaction REC-731,process_refund,8,5,9
+move Zara to a different service plan,update_subscription,9,0,0
+Please handle this: move Mateo to a different service plan,update_subscription,9,0,1
+Can someone take care of this: move Noor to a different service plan,update_subscription,9,0,2
+This needs attention: move Inez to a different service plan,update_subscription,9,0,3
+The requested operation is: move Kofi to a different service plan,update_subscription,9,0,4
+"For the current case, move Zara to a different service plan",update_subscription,9,0,5
+Could the system do the following: move Mateo to a different service plan,update_subscription,9,0,6
+The user needs us to move Noor to a different service plan,update_subscription,9,0,7
+Operational request: move Inez to a different service plan,update_subscription,9,0,8
+Complete this task safely: move Kofi to a different service plan,update_subscription,9,0,9
+change the subscription tier on account REC-884,update_subscription,9,1,0
+Please handle this: change the subscription tier on account REC-926,update_subscription,9,1,1
+Can someone take care of this: change the subscription tier on account REC-447,update_subscription,9,1,2
+This needs attention: change the subscription tier on account REC-518,update_subscription,9,1,3
+The requested operation is: change the subscription tier on account REC-731,update_subscription,9,1,4
+"For the current case, change the subscription tier on account REC-884",update_subscription,9,1,5
+Could the system do the following: change the subscription tier on account REC-926,update_subscription,9,1,6
+The user needs us to change the subscription tier on account REC-447,update_subscription,9,1,7
+Operational request: change the subscription tier on account REC-518,update_subscription,9,1,8
+Complete this task safely: change the subscription tier on account REC-731,update_subscription,9,1,9
+modify the recurring plan without editing profile fields,update_subscription,9,2,0
+Please handle this: modify the recurring plan without editing profile fields,update_subscription,9,2,1
+Can someone take care of this: modify the recurring plan without editing profile fields,update_subscription,9,2,2
+This needs attention: modify the recurring plan without editing profile fields,update_subscription,9,2,3
+The requested operation is: modify the recurring plan without editing profile fields,update_subscription,9,2,4
+"For the current case, modify the recurring plan without editing profile fields",update_subscription,9,2,5
+Could the system do the following: modify the recurring plan without editing profile fields,update_subscription,9,2,6
+The user needs us to modify the recurring plan without editing profile fields,update_subscription,9,2,7
+Operational request: modify the recurring plan without editing profile fields,update_subscription,9,2,8
+Complete this task safely: modify the recurring plan without editing profile fields,update_subscription,9,2,9
+switch Zara's membership to the annual option,update_subscription,9,3,0
+Please handle this: switch Mateo's membership to the annual option,update_subscription,9,3,1
+Can someone take care of this: switch Noor's membership to the annual option,update_subscription,9,3,2
+This needs attention: switch Inez's membership to the annual option,update_subscription,9,3,3
+The requested operation is: switch Kofi's membership to the annual option,update_subscription,9,3,4
+"For the current case, switch Zara's membership to the annual option",update_subscription,9,3,5
+Could the system do the following: switch Mateo's membership to the annual option,update_subscription,9,3,6
+The user needs us to switch Noor's membership to the annual option,update_subscription,9,3,7
+Operational request: switch Inez's membership to the annual option,update_subscription,9,3,8
+Complete this task safely: switch Kofi's membership to the annual option,update_subscription,9,3,9
+apply the requested subscription upgrade,update_subscription,9,4,0
+Please handle this: apply the requested subscription upgrade,update_subscription,9,4,1
+Can someone take care of this: apply the requested subscription upgrade,update_subscription,9,4,2
+This needs attention: apply the requested subscription upgrade,update_subscription,9,4,3
+The requested operation is: apply the requested subscription upgrade,update_subscription,9,4,4
+"For the current case, apply the requested subscription upgrade",update_subscription,9,4,5
+Could the system do the following: apply the requested subscription upgrade,update_subscription,9,4,6
+The user needs us to apply the requested subscription upgrade,update_subscription,9,4,7
+Operational request: apply the requested subscription upgrade,update_subscription,9,4,8
+Complete this task safely: apply the requested subscription upgrade,update_subscription,9,4,9
+revise the customer's billing plan rather than refunding a charge,update_subscription,9,5,0
+Please handle this: revise the customer's billing plan rather than refunding a charge,update_subscription,9,5,1
+Can someone take care of this: revise the customer's billing plan rather than refunding a charge,update_subscription,9,5,2
+This needs attention: revise the customer's billing plan rather than refunding a charge,update_subscription,9,5,3
+The requested operation is: revise the customer's billing plan rather than refunding a charge,update_subscription,9,5,4
+"For the current case, revise the customer's billing plan rather than refunding a charge",update_subscription,9,5,5
+Could the system do the following: revise the customer's billing plan rather than refunding a charge,update_subscription,9,5,6
+The user needs us to revise the customer's billing plan rather than refunding a charge,update_subscription,9,5,7
+Operational request: revise the customer's billing plan rather than refunding a charge,update_subscription,9,5,8
+Complete this task safely: revise the customer's billing plan rather than refunding a charge,update_subscription,9,5,9
+bring a new virtual compute instance online for Platform,provision_vm,10,0,0
+Please handle this: bring a new virtual compute instance online for Risk,provision_vm,10,0,1
+Can someone take care of this: bring a new virtual compute instance online for Operations,provision_vm,10,0,2
+This needs attention: bring a new virtual compute instance online for Reliability,provision_vm,10,0,3
+The requested operation is: bring a new virtual compute instance online for Customer Care,provision_vm,10,0,4
+"For the current case, bring a new virtual compute instance online for Platform",provision_vm,10,0,5
+Could the system do the following: bring a new virtual compute instance online for Risk,provision_vm,10,0,6
+The user needs us to bring a new virtual compute instance online for Operations,provision_vm,10,0,7
+Operational request: bring a new virtual compute instance online for Reliability,provision_vm,10,0,8
+Complete this task safely: bring a new virtual compute instance online for Customer Care,provision_vm,10,0,9
+allocate and initialize another machine for the workload,provision_vm,10,1,0
+Please handle this: allocate and initialize another machine for the workload,provision_vm,10,1,1
+Can someone take care of this: allocate and initialize another machine for the workload,provision_vm,10,1,2
+This needs attention: allocate and initialize another machine for the workload,provision_vm,10,1,3
+The requested operation is: allocate and initialize another machine for the workload,provision_vm,10,1,4
+"For the current case, allocate and initialize another machine for the workload",provision_vm,10,1,5
+Could the system do the following: allocate and initialize another machine for the workload,provision_vm,10,1,6
+The user needs us to allocate and initialize another machine for the workload,provision_vm,10,1,7
+Operational request: allocate and initialize another machine for the workload,provision_vm,10,1,8
+Complete this task safely: allocate and initialize another machine for the workload,provision_vm,10,1,9
+create a fresh VM to host search-node,provision_vm,10,2,0
+Please handle this: create a fresh VM to host media-api,provision_vm,10,2,1
+Can someone take care of this: create a fresh VM to host catalog-core,provision_vm,10,2,2
+This needs attention: create a fresh VM to host identity-edge,provision_vm,10,2,3
+The requested operation is: create a fresh VM to host ledger-worker,provision_vm,10,2,4
+"For the current case, create a fresh VM to host search-node",provision_vm,10,2,5
+Could the system do the following: create a fresh VM to host media-api,provision_vm,10,2,6
+The user needs us to create a fresh VM to host catalog-core,provision_vm,10,2,7
+Operational request: create a fresh VM to host identity-edge,provision_vm,10,2,8
+Complete this task safely: create a fresh VM to host ledger-worker,provision_vm,10,2,9
+supply the Platform team with a new server instance,provision_vm,10,3,0
+Please handle this: supply the Risk team with a new server instance,provision_vm,10,3,1
+Can someone take care of this: supply the Operations team with a new server instance,provision_vm,10,3,2
+This needs attention: supply the Reliability team with a new server instance,provision_vm,10,3,3
+The requested operation is: supply the Customer Care team with a new server instance,provision_vm,10,3,4
+"For the current case, supply the Platform team with a new server instance",provision_vm,10,3,5
+Could the system do the following: supply the Risk team with a new server instance,provision_vm,10,3,6
+The user needs us to supply the Operations team with a new server instance,provision_vm,10,3,7
+Operational request: supply the Reliability team with a new server instance,provision_vm,10,3,8
+Complete this task safely: supply the Customer Care team with a new server instance,provision_vm,10,3,9
+launch additional compute rather than restarting an existing service,provision_vm,10,4,0
+Please handle this: launch additional compute rather than restarting an existing service,provision_vm,10,4,1
+Can someone take care of this: launch additional compute rather than restarting an existing service,provision_vm,10,4,2
+This needs attention: launch additional compute rather than restarting an existing service,provision_vm,10,4,3
+The requested operation is: launch additional compute rather than restarting an existing service,provision_vm,10,4,4
+"For the current case, launch additional compute rather than restarting an existing service",provision_vm,10,4,5
+Could the system do the following: launch additional compute rather than restarting an existing service,provision_vm,10,4,6
+The user needs us to launch additional compute rather than restarting an existing service,provision_vm,10,4,7
+Operational request: launch additional compute rather than restarting an existing service,provision_vm,10,4,8
+Complete this task safely: launch additional compute rather than restarting an existing service,provision_vm,10,4,9
+prepare a new virtual host named host-v91,provision_vm,10,5,0
+Please handle this: prepare a new virtual host named host-k17,provision_vm,10,5,1
+Can someone take care of this: prepare a new virtual host named host-m28,provision_vm,10,5,2
+This needs attention: prepare a new virtual host named host-q42,provision_vm,10,5,3
+The requested operation is: prepare a new virtual host named host-r63,provision_vm,10,5,4
+"For the current case, prepare a new virtual host named host-v91",provision_vm,10,5,5
+Could the system do the following: prepare a new virtual host named host-k17,provision_vm,10,5,6
+The user needs us to prepare a new virtual host named host-m28,provision_vm,10,5,7
+Operational request: prepare a new virtual host named host-q42,provision_vm,10,5,8
+Complete this task safely: prepare a new virtual host named host-r63,provision_vm,10,5,9
+stop and start the running process on search-node,restart_service,11,0,0
+Please handle this: stop and start the running process on media-api,restart_service,11,0,1
+Can someone take care of this: stop and start the running process on catalog-core,restart_service,11,0,2
+This needs attention: stop and start the running process on identity-edge,restart_service,11,0,3
+The requested operation is: stop and start the running process on ledger-worker,restart_service,11,0,4
+"For the current case, stop and start the running process on search-node",restart_service,11,0,5
+Could the system do the following: stop and start the running process on media-api,restart_service,11,0,6
+The user needs us to stop and start the running process on catalog-core,restart_service,11,0,7
+Operational request: stop and start the running process on identity-edge,restart_service,11,0,8
+Complete this task safely: stop and start the running process on ledger-worker,restart_service,11,0,9
+cycle the existing application service,restart_service,11,1,0
+Please handle this: cycle the existing application service,restart_service,11,1,1
+Can someone take care of this: cycle the existing application service,restart_service,11,1,2
+This needs attention: cycle the existing application service,restart_service,11,1,3
+The requested operation is: cycle the existing application service,restart_service,11,1,4
+"For the current case, cycle the existing application service",restart_service,11,1,5
+Could the system do the following: cycle the existing application service,restart_service,11,1,6
+The user needs us to cycle the existing application service,restart_service,11,1,7
+Operational request: cycle the existing application service,restart_service,11,1,8
+Complete this task safely: cycle the existing application service,restart_service,11,1,9
+bring search-node back by restarting it,restart_service,11,2,0
+Please handle this: bring media-api back by restarting it,restart_service,11,2,1
+Can someone take care of this: bring catalog-core back by restarting it,restart_service,11,2,2
+This needs attention: bring identity-edge back by restarting it,restart_service,11,2,3
+The requested operation is: bring ledger-worker back by restarting it,restart_service,11,2,4
+"For the current case, bring search-node back by restarting it",restart_service,11,2,5
+Could the system do the following: bring media-api back by restarting it,restart_service,11,2,6
+The user needs us to bring catalog-core back by restarting it,restart_service,11,2,7
+Operational request: bring identity-edge back by restarting it,restart_service,11,2,8
+Complete this task safely: bring ledger-worker back by restarting it,restart_service,11,2,9
+relaunch the process without provisioning another machine,restart_service,11,3,0
+Please handle this: relaunch the process without provisioning another machine,restart_service,11,3,1
+Can someone take care of this: relaunch the process without provisioning another machine,restart_service,11,3,2
+This needs attention: relaunch the process without provisioning another machine,restart_service,11,3,3
+The requested operation is: relaunch the process without provisioning another machine,restart_service,11,3,4
+"For the current case, relaunch the process without provisioning another machine",restart_service,11,3,5
+Could the system do the following: relaunch the process without provisioning another machine,restart_service,11,3,6
+The user needs us to relaunch the process without provisioning another machine,restart_service,11,3,7
+Operational request: relaunch the process without provisioning another machine,restart_service,11,3,8
+Complete this task safely: relaunch the process without provisioning another machine,restart_service,11,3,9
+perform a controlled restart on host host-v91,restart_service,11,4,0
+Please handle this: perform a controlled restart on host host-k17,restart_service,11,4,1
+Can someone take care of this: perform a controlled restart on host host-m28,restart_service,11,4,2
+This needs attention: perform a controlled restart on host host-q42,restart_service,11,4,3
+The requested operation is: perform a controlled restart on host host-r63,restart_service,11,4,4
+"For the current case, perform a controlled restart on host host-v91",restart_service,11,4,5
+Could the system do the following: perform a controlled restart on host host-k17,restart_service,11,4,6
+The user needs us to perform a controlled restart on host host-m28,restart_service,11,4,7
+Operational request: perform a controlled restart on host host-q42,restart_service,11,4,8
+Complete this task safely: perform a controlled restart on host host-r63,restart_service,11,4,9
+bounce the currently deployed service,restart_service,11,5,0
+Please handle this: bounce the currently deployed service,restart_service,11,5,1
+Can someone take care of this: bounce the currently deployed service,restart_service,11,5,2
+This needs attention: bounce the currently deployed service,restart_service,11,5,3
+The requested operation is: bounce the currently deployed service,restart_service,11,5,4
+"For the current case, bounce the currently deployed service",restart_service,11,5,5
+Could the system do the following: bounce the currently deployed service,restart_service,11,5,6
+The user needs us to bounce the currently deployed service,restart_service,11,5,7
+Operational request: bounce the currently deployed service,restart_service,11,5,8
+Complete this task safely: bounce the currently deployed service,restart_service,11,5,9
+determine whether search-node is currently healthy,check_status,12,0,0
+Please handle this: determine whether media-api is currently healthy,check_status,12,0,1
+Can someone take care of this: determine whether catalog-core is currently healthy,check_status,12,0,2
+This needs attention: determine whether identity-edge is currently healthy,check_status,12,0,3
+The requested operation is: determine whether ledger-worker is currently healthy,check_status,12,0,4
+"For the current case, determine whether search-node is currently healthy",check_status,12,0,5
+Could the system do the following: determine whether media-api is currently healthy,check_status,12,0,6
+The user needs us to determine whether catalog-core is currently healthy,check_status,12,0,7
+Operational request: determine whether identity-edge is currently healthy,check_status,12,0,8
+Complete this task safely: determine whether ledger-worker is currently healthy,check_status,12,0,9
+return the present availability state of host host-v91,check_status,12,1,0
+Please handle this: return the present availability state of host host-k17,check_status,12,1,1
+Can someone take care of this: return the present availability state of host host-m28,check_status,12,1,2
+This needs attention: return the present availability state of host host-q42,check_status,12,1,3
+The requested operation is: return the present availability state of host host-r63,check_status,12,1,4
+"For the current case, return the present availability state of host host-v91",check_status,12,1,5
+Could the system do the following: return the present availability state of host host-k17,check_status,12,1,6
+The user needs us to return the present availability state of host host-m28,check_status,12,1,7
+Operational request: return the present availability state of host host-q42,check_status,12,1,8
+Complete this task safely: return the present availability state of host host-r63,check_status,12,1,9
+inspect live service health without restarting anything,check_status,12,2,0
+Please handle this: inspect live service health without restarting anything,check_status,12,2,1
+Can someone take care of this: inspect live service health without restarting anything,check_status,12,2,2
+This needs attention: inspect live service health without restarting anything,check_status,12,2,3
+The requested operation is: inspect live service health without restarting anything,check_status,12,2,4
+"For the current case, inspect live service health without restarting anything",check_status,12,2,5
+Could the system do the following: inspect live service health without restarting anything,check_status,12,2,6
+The user needs us to inspect live service health without restarting anything,check_status,12,2,7
+Operational request: inspect live service health without restarting anything,check_status,12,2,8
+Complete this task safely: inspect live service health without restarting anything,check_status,12,2,9
+tell us whether search-node is responding normally,check_status,12,3,0
+Please handle this: tell us whether media-api is responding normally,check_status,12,3,1
+Can someone take care of this: tell us whether catalog-core is responding normally,check_status,12,3,2
+This needs attention: tell us whether identity-edge is responding normally,check_status,12,3,3
+The requested operation is: tell us whether ledger-worker is responding normally,check_status,12,3,4
+"For the current case, tell us whether search-node is responding normally",check_status,12,3,5
+Could the system do the following: tell us whether media-api is responding normally,check_status,12,3,6
+The user needs us to tell us whether catalog-core is responding normally,check_status,12,3,7
+Operational request: tell us whether identity-edge is responding normally,check_status,12,3,8
+Complete this task safely: tell us whether ledger-worker is responding normally,check_status,12,3,9
+"obtain the current operational state, not a historical report",check_status,12,4,0
+"Please handle this: obtain the current operational state, not a historical report",check_status,12,4,1
+"Can someone take care of this: obtain the current operational state, not a historical report",check_status,12,4,2
+"This needs attention: obtain the current operational state, not a historical report",check_status,12,4,3
+"The requested operation is: obtain the current operational state, not a historical report",check_status,12,4,4
+"For the current case, obtain the current operational state, not a historical report",check_status,12,4,5
+"Could the system do the following: obtain the current operational state, not a historical report",check_status,12,4,6
+"The user needs us to obtain the current operational state, not a historical report",check_status,12,4,7
+"Operational request: obtain the current operational state, not a historical report",check_status,12,4,8
+"Complete this task safely: obtain the current operational state, not a historical report",check_status,12,4,9
+verify whether the deployed endpoint is up or down,check_status,12,5,0
+Please handle this: verify whether the deployed endpoint is up or down,check_status,12,5,1
+Can someone take care of this: verify whether the deployed endpoint is up or down,check_status,12,5,2
+This needs attention: verify whether the deployed endpoint is up or down,check_status,12,5,3
+The requested operation is: verify whether the deployed endpoint is up or down,check_status,12,5,4
+"For the current case, verify whether the deployed endpoint is up or down",check_status,12,5,5
+Could the system do the following: verify whether the deployed endpoint is up or down,check_status,12,5,6
+The user needs us to verify whether the deployed endpoint is up or down,check_status,12,5,7
+Operational request: verify whether the deployed endpoint is up or down,check_status,12,5,8
+Complete this task safely: verify whether the deployed endpoint is up or down,check_status,12,5,9
+transfer incident CASE-728 to a human specialist,escalate_to_human,13,0,0
+Please handle this: transfer incident CASE-835 to a human specialist,escalate_to_human,13,0,1
+Can someone take care of this: transfer incident CASE-914 to a human specialist,escalate_to_human,13,0,2
+This needs attention: transfer incident CASE-562 to a human specialist,escalate_to_human,13,0,3
+The requested operation is: transfer incident CASE-671 to a human specialist,escalate_to_human,13,0,4
+"For the current case, transfer incident CASE-728 to a human specialist",escalate_to_human,13,0,5
+Could the system do the following: transfer incident CASE-835 to a human specialist,escalate_to_human,13,0,6
+The user needs us to transfer incident CASE-914 to a human specialist,escalate_to_human,13,0,7
+Operational request: transfer incident CASE-562 to a human specialist,escalate_to_human,13,0,8
+Complete this task safely: transfer incident CASE-671 to a human specialist,escalate_to_human,13,0,9
+hand the unresolved case to an on-call engineer,escalate_to_human,13,1,0
+Please handle this: hand the unresolved case to an on-call engineer,escalate_to_human,13,1,1
+Can someone take care of this: hand the unresolved case to an on-call engineer,escalate_to_human,13,1,2
+This needs attention: hand the unresolved case to an on-call engineer,escalate_to_human,13,1,3
+The requested operation is: hand the unresolved case to an on-call engineer,escalate_to_human,13,1,4
+"For the current case, hand the unresolved case to an on-call engineer",escalate_to_human,13,1,5
+Could the system do the following: hand the unresolved case to an on-call engineer,escalate_to_human,13,1,6
+The user needs us to hand the unresolved case to an on-call engineer,escalate_to_human,13,1,7
+Operational request: hand the unresolved case to an on-call engineer,escalate_to_human,13,1,8
+Complete this task safely: hand the unresolved case to an on-call engineer,escalate_to_human,13,1,9
+request human intervention for Zara's problem,escalate_to_human,13,2,0
+Please handle this: request human intervention for Mateo's problem,escalate_to_human,13,2,1
+Can someone take care of this: request human intervention for Noor's problem,escalate_to_human,13,2,2
+This needs attention: request human intervention for Inez's problem,escalate_to_human,13,2,3
+The requested operation is: request human intervention for Kofi's problem,escalate_to_human,13,2,4
+"For the current case, request human intervention for Zara's problem",escalate_to_human,13,2,5
+Could the system do the following: request human intervention for Mateo's problem,escalate_to_human,13,2,6
+The user needs us to request human intervention for Noor's problem,escalate_to_human,13,2,7
+Operational request: request human intervention for Inez's problem,escalate_to_human,13,2,8
+Complete this task safely: request human intervention for Kofi's problem,escalate_to_human,13,2,9
+move the issue out of automation and to a person,escalate_to_human,13,3,0
+Please handle this: move the issue out of automation and to a person,escalate_to_human,13,3,1
+Can someone take care of this: move the issue out of automation and to a person,escalate_to_human,13,3,2
+This needs attention: move the issue out of automation and to a person,escalate_to_human,13,3,3
+The requested operation is: move the issue out of automation and to a person,escalate_to_human,13,3,4
+"For the current case, move the issue out of automation and to a person",escalate_to_human,13,3,5
+Could the system do the following: move the issue out of automation and to a person,escalate_to_human,13,3,6
+The user needs us to move the issue out of automation and to a person,escalate_to_human,13,3,7
+Operational request: move the issue out of automation and to a person,escalate_to_human,13,3,8
+Complete this task safely: move the issue out of automation and to a person,escalate_to_human,13,3,9
+involve a senior responder rather than sending a notification,escalate_to_human,13,4,0
+Please handle this: involve a senior responder rather than sending a notification,escalate_to_human,13,4,1
+Can someone take care of this: involve a senior responder rather than sending a notification,escalate_to_human,13,4,2
+This needs attention: involve a senior responder rather than sending a notification,escalate_to_human,13,4,3
+The requested operation is: involve a senior responder rather than sending a notification,escalate_to_human,13,4,4
+"For the current case, involve a senior responder rather than sending a notification",escalate_to_human,13,4,5
+Could the system do the following: involve a senior responder rather than sending a notification,escalate_to_human,13,4,6
+The user needs us to involve a senior responder rather than sending a notification,escalate_to_human,13,4,7
+Operational request: involve a senior responder rather than sending a notification,escalate_to_human,13,4,8
+Complete this task safely: involve a senior responder rather than sending a notification,escalate_to_human,13,4,9
+assign the difficult case to human support,escalate_to_human,13,5,0
+Please handle this: assign the difficult case to human support,escalate_to_human,13,5,1
+Can someone take care of this: assign the difficult case to human support,escalate_to_human,13,5,2
+This needs attention: assign the difficult case to human support,escalate_to_human,13,5,3
+The requested operation is: assign the difficult case to human support,escalate_to_human,13,5,4
+"For the current case, assign the difficult case to human support",escalate_to_human,13,5,5
+Could the system do the following: assign the difficult case to human support,escalate_to_human,13,5,6
+The user needs us to assign the difficult case to human support,escalate_to_human,13,5,7
+Operational request: assign the difficult case to human support,escalate_to_human,13,5,8
+Complete this task safely: assign the difficult case to human support,escalate_to_human,13,5,9
+record the completed action in the compliance history,log_audit_event,14,0,0
+Please handle this: record the completed action in the compliance history,log_audit_event,14,0,1
+Can someone take care of this: record the completed action in the compliance history,log_audit_event,14,0,2
+This needs attention: record the completed action in the compliance history,log_audit_event,14,0,3
+The requested operation is: record the completed action in the compliance history,log_audit_event,14,0,4
+"For the current case, record the completed action in the compliance history",log_audit_event,14,0,5
+Could the system do the following: record the completed action in the compliance history,log_audit_event,14,0,6
+The user needs us to record the completed action in the compliance history,log_audit_event,14,0,7
+Operational request: record the completed action in the compliance history,log_audit_event,14,0,8
+Complete this task safely: record the completed action in the compliance history,log_audit_event,14,0,9
+append an immutable audit entry for incident CASE-728,log_audit_event,14,1,0
+Please handle this: append an immutable audit entry for incident CASE-835,log_audit_event,14,1,1
+Can someone take care of this: append an immutable audit entry for incident CASE-914,log_audit_event,14,1,2
+This needs attention: append an immutable audit entry for incident CASE-562,log_audit_event,14,1,3
+The requested operation is: append an immutable audit entry for incident CASE-671,log_audit_event,14,1,4
+"For the current case, append an immutable audit entry for incident CASE-728",log_audit_event,14,1,5
+Could the system do the following: append an immutable audit entry for incident CASE-835,log_audit_event,14,1,6
+The user needs us to append an immutable audit entry for incident CASE-914,log_audit_event,14,1,7
+Operational request: append an immutable audit entry for incident CASE-562,log_audit_event,14,1,8
+Complete this task safely: append an immutable audit entry for incident CASE-671,log_audit_event,14,1,9
+preserve evidence of the operation in the audit trail,log_audit_event,14,2,0
+Please handle this: preserve evidence of the operation in the audit trail,log_audit_event,14,2,1
+Can someone take care of this: preserve evidence of the operation in the audit trail,log_audit_event,14,2,2
+This needs attention: preserve evidence of the operation in the audit trail,log_audit_event,14,2,3
+The requested operation is: preserve evidence of the operation in the audit trail,log_audit_event,14,2,4
+"For the current case, preserve evidence of the operation in the audit trail",log_audit_event,14,2,5
+Could the system do the following: preserve evidence of the operation in the audit trail,log_audit_event,14,2,6
+The user needs us to preserve evidence of the operation in the audit trail,log_audit_event,14,2,7
+Operational request: preserve evidence of the operation in the audit trail,log_audit_event,14,2,8
+Complete this task safely: preserve evidence of the operation in the audit trail,log_audit_event,14,2,9
+write a compliance event rather than opening a support ticket,log_audit_event,14,3,0
+Please handle this: write a compliance event rather than opening a support ticket,log_audit_event,14,3,1
+Can someone take care of this: write a compliance event rather than opening a support ticket,log_audit_event,14,3,2
+This needs attention: write a compliance event rather than opening a support ticket,log_audit_event,14,3,3
+The requested operation is: write a compliance event rather than opening a support ticket,log_audit_event,14,3,4
+"For the current case, write a compliance event rather than opening a support ticket",log_audit_event,14,3,5
+Could the system do the following: write a compliance event rather than opening a support ticket,log_audit_event,14,3,6
+The user needs us to write a compliance event rather than opening a support ticket,log_audit_event,14,3,7
+Operational request: write a compliance event rather than opening a support ticket,log_audit_event,14,3,8
+Complete this task safely: write a compliance event rather than opening a support ticket,log_audit_event,14,3,9
+add the security activity to the official system log,log_audit_event,14,4,0
+Please handle this: add the security activity to the official system log,log_audit_event,14,4,1
+Can someone take care of this: add the security activity to the official system log,log_audit_event,14,4,2
+This needs attention: add the security activity to the official system log,log_audit_event,14,4,3
+The requested operation is: add the security activity to the official system log,log_audit_event,14,4,4
+"For the current case, add the security activity to the official system log",log_audit_event,14,4,5
+Could the system do the following: add the security activity to the official system log,log_audit_event,14,4,6
+The user needs us to add the security activity to the official system log,log_audit_event,14,4,7
+Operational request: add the security activity to the official system log,log_audit_event,14,4,8
+Complete this task safely: add the security activity to the official system log,log_audit_event,14,4,9
+create an auditable record of what happened on search-node,log_audit_event,14,5,0
+Please handle this: create an auditable record of what happened on media-api,log_audit_event,14,5,1
+Can someone take care of this: create an auditable record of what happened on catalog-core,log_audit_event,14,5,2
+This needs attention: create an auditable record of what happened on identity-edge,log_audit_event,14,5,3
+The requested operation is: create an auditable record of what happened on ledger-worker,log_audit_event,14,5,4
+"For the current case, create an auditable record of what happened on search-node",log_audit_event,14,5,5
+Could the system do the following: create an auditable record of what happened on media-api,log_audit_event,14,5,6
+The user needs us to create an auditable record of what happened on catalog-core,log_audit_event,14,5,7
+Operational request: create an auditable record of what happened on identity-edge,log_audit_event,14,5,8
+Complete this task safely: create an auditable record of what happened on ledger-worker,log_audit_event,14,5,9

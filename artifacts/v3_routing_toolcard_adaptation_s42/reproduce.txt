@@ -1,0 +1,1 @@
+C:\Program Files\Python314\python.exe scripts/adapt_v3_routing_tools.py --output artifacts/v3_routing_toolcard_adaptation_s42 --device cuda --epochs 20 --batch-size 45 --head-lr 0.0003 --backbone-lr 3e-05 --seed 42

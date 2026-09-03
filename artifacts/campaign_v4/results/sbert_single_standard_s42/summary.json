@@ -1,0 +1,86 @@
+{
+  "15": {
+    "test_indomain": {
+      "recall@1": 0.9010416666666666,
+      "mrr@1": 0.9010416666666666,
+      "recall@3": 0.9635416666666666,
+      "mrr@3": 0.9262152777777778,
+      "recall@5": 0.9739583333333334,
+      "mrr@5": 0.9282986111111112,
+      "exact_dag_accuracy": 0.9010416666666666,
+      "tool_set_f1": 0.9648944805194803,
+      "mean_ged_error": 0.4895833333333333,
+      "num_queries": 192,
+      "gallery_unique_dags": 304
+    },
+    "test_topology_heldout": {
+      "recall@1": 0.20333333333333334,
+      "mrr@1": 0.20333333333333334,
+      "recall@3": 0.7533333333333333,
+      "mrr@3": 0.43944444444444436,
+      "recall@5": 0.9066666666666666,
+      "mrr@5": 0.4761111111111113,
+      "exact_dag_accuracy": 0.20333333333333334,
+      "tool_set_f1": 0.9822592592592594,
+      "mean_ged_error": 2.6166666666666667,
+      "num_queries": 300,
+      "gallery_unique_dags": 322
+    }
+  },
+  "30": {
+    "test_indomain": {
+      "recall@1": 0.9239130434782609,
+      "mrr@1": 0.9239130434782609,
+      "recall@3": 0.9818840579710145,
+      "mrr@3": 0.9510869565217391,
+      "recall@5": 0.9963768115942029,
+      "mrr@5": 0.9547101449275363,
+      "exact_dag_accuracy": 0.9239130434782609,
+      "tool_set_f1": 0.9804951690821256,
+      "mean_ged_error": 0.358695652173913,
+      "num_queries": 276,
+      "gallery_unique_dags": 431
+    },
+    "test_topology_heldout": {
+      "recall@1": 0.25,
+      "mrr@1": 0.25,
+      "recall@3": 0.8404761904761905,
+      "mrr@3": 0.5126984126984131,
+      "recall@5": 0.9476190476190476,
+      "mrr@5": 0.538055555555556,
+      "exact_dag_accuracy": 0.25,
+      "tool_set_f1": 0.9853835978835979,
+      "mean_ged_error": 2.3904761904761904,
+      "num_queries": 420,
+      "gallery_unique_dags": 455
+    }
+  },
+  "45": {
+    "test_indomain": {
+      "recall@1": 0.9595959595959596,
+      "mrr@1": 0.9595959595959596,
+      "recall@3": 0.9924242424242424,
+      "mrr@3": 0.97516835016835,
+      "recall@5": 0.9924242424242424,
+      "mrr@5": 0.97516835016835,
+      "exact_dag_accuracy": 0.9595959595959596,
+      "tool_set_f1": 0.9750561167227835,
+      "mean_ged_error": 0.18434343434343434,
+      "num_queries": 396,
+      "gallery_unique_dags": 616
+    },
+    "test_topology_heldout": {
+      "recall@1": 0.255,
+      "mrr@1": 0.255,
+      "recall@3": 0.8533333333333334,
+      "mrr@3": 0.5149999999999998,
+      "recall@5": 0.9683333333333334,
+      "mrr@5": 0.5419999999999993,
+      "exact_dag_accuracy": 0.255,
+      "tool_set_f1": 0.9778888888888889,
+      "mean_ged_error": 2.385,
+      "num_queries": 600,
+      "gallery_unique_dags": 650
+    }
+  }
+}

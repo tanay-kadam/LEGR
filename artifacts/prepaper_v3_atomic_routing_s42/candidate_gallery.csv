@@ -1,0 +1,16 @@
+candidate_id,tool,num_nodes,num_edges,canonical_dag_hash
+0,db_read,1,0,c075ba5194905a51
+1,db_write,1,0,2ba287c7bceef863
+2,reset_password,1,0,4632095c7ecdbea3
+3,create_ticket,1,0,b6eb2205ba11c689
+4,send_notification,1,0,3b5c38def94bf432
+5,quarantine_system,1,0,43bbfbd408acca12
+6,scan_malware,1,0,f65a937304c782d7
+7,generate_report,1,0,e016d1581a5ac7e4
+8,process_refund,1,0,87eec42c34918c50
+9,update_subscription,1,0,b4fee0a1fa908eb2
+10,provision_vm,1,0,8b972a29695f50ff
+11,restart_service,1,0,09a99426b009dc67
+12,check_status,1,0,ae4042df120cfd08
+13,escalate_to_human,1,0,71ea91f239af7106
+14,log_audit_event,1,0,448970c79532232f

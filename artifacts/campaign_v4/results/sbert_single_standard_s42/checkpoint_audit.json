@@ -1,0 +1,95 @@
+{
+  "15": {
+    "modules": [
+      "Transformer",
+      "Pooling",
+      "Normalize"
+    ],
+    "parameter_count": 22713216,
+    "best_epoch": 19,
+    "test_results": {
+      "test_indomain": {
+        "recall@1": 0.9010416666666666,
+        "mrr@1": 0.9010416666666666,
+        "recall@3": 0.9635416666666666,
+        "mrr@3": 0.9262152777777778,
+        "recall@5": 0.9739583333333334,
+        "mrr@5": 0.9282986111111112,
+        "num_queries": 192,
+        "gallery_unique_dags": 304
+      },
+      "test_topology_heldout": {
+        "recall@1": 0.20333333333333334,
+        "mrr@1": 0.20333333333333334,
+        "recall@3": 0.7533333333333333,
+        "mrr@3": 0.43944444444444436,
+        "recall@5": 0.9066666666666666,
+        "mrr@5": 0.4761111111111113,
+        "num_queries": 300,
+        "gallery_unique_dags": 322
+      }
+    }
+  },
+  "30": {
+    "modules": [
+      "Transformer",
+      "Pooling",
+      "Normalize"
+    ],
+    "parameter_count": 22713216,
+    "best_epoch": 36,
+    "test_results": {
+      "test_indomain": {
+        "recall@1": 0.9239130434782609,
+        "mrr@1": 0.9239130434782609,
+        "recall@3": 0.9818840579710145,
+        "mrr@3": 0.9510869565217391,
+        "recall@5": 0.9963768115942029,
+        "mrr@5": 0.9547101449275363,
+        "num_queries": 276,
+        "gallery_unique_dags": 431
+      },
+      "test_topology_heldout": {
+        "recall@1": 0.25,
+        "mrr@1": 0.25,
+        "recall@3": 0.8404761904761905,
+        "mrr@3": 0.5126984126984131,
+        "recall@5": 0.9476190476190476,
+        "mrr@5": 0.538055555555556,
+        "num_queries": 420,
+        "gallery_unique_dags": 455
+      }
+    }
+  },
+  "45": {
+    "modules": [
+      "Transformer",
+      "Pooling",
+      "Normalize"
+    ],
+    "parameter_count": 22713216,
+    "best_epoch": 34,
+    "test_results": {
+      "test_indomain": {
+        "recall@1": 0.9595959595959596,
+        "mrr@1": 0.9595959595959596,
+        "recall@3": 0.9924242424242424,
+        "mrr@3": 0.97516835016835,
+        "recall@5": 0.9924242424242424,
+        "mrr@5": 0.97516835016835,
+        "num_queries": 396,
+        "gallery_unique_dags": 616
+      },
+      "test_topology_heldout": {
+        "recall@1": 0.255,
+        "mrr@1": 0.255,
+        "recall@3": 0.8533333333333334,
+        "mrr@3": 0.5149999999999998,
+        "recall@5": 0.9683333333333334,
+        "mrr@5": 0.5419999999999993,
+        "num_queries": 600,
+        "gallery_unique_dags": 650
+      }
+    }
+  }
+}

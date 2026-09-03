@@ -1,0 +1,268 @@
+{
+  "experiment": "V3 routing tool-card adaptation and full four-condition evaluation",
+  "training_data": "tool names, aliases, and registry descriptions only",
+  "evaluation_queries_used_for_training": false,
+  "candidate_protocol": "15 one-node, zero-edge LEGR graphs",
+  "adaptation_rows": {
+    "train": 90,
+    "dev": 30
+  },
+  "datasets": {
+    "Standard": {
+      "path": "upgraded_data/routing_15tools/base_cleaned.csv",
+      "sha256": "584144e515256b3d8a1e9d6d8d6b51cf5077fba6ceb81f847ce81fab3a057b91",
+      "rows": 1005
+    },
+    "Lexical": {
+      "path": "upgraded_data/routing_15tools/lexical_cue_reduced.csv",
+      "sha256": "dd1a7777d424d353fefc0b8c74a6d6e42167816ff855f437403e3c73fe3bd48c",
+      "rows": 1005
+    },
+    "Confusable": {
+      "path": "upgraded_data/routing_15tools/confusable_intents.csv",
+      "sha256": "fd7016cbe3138968a059bb4db472aa2f412862734d122a70b3abbf4661bb42e7",
+      "rows": 450
+    },
+    "Paraphrase": {
+      "path": "upgraded_data/routing_15tools/paraphrase_heldout_test.csv",
+      "sha256": "421ab494e264edcc1d9de295ef9b8bbe68bf5351e7f6bae32c61b71584d008f6",
+      "rows": 1255
+    }
+  },
+  "source_checkpoints": {
+    "v3_no_ged_15t": {
+      "source": "artifacts/campaign_v4/results/legr_setgnn_tied_no_ged_15t_s42/best_model.pt",
+      "source_sha256": "6027a4df479bd30137f97e6eb26278b05bab9adbb61ad4e57b5354bb8e7f727a",
+      "epoch": 35,
+      "graph_encoder_type": "setgnn_tied",
+      "lambda_ged": 0.0,
+      "configured_tool_count": 15
+    },
+    "v3_ged_15t": {
+      "source": "artifacts/campaign_v4/results/legr_setgnn_tied_ged_15t_s42/best_model.pt",
+      "source_sha256": "2813b0b0d8629d7c7350723291c311a65ca4a3625085dd70efb822d834c77199",
+      "epoch": 35,
+      "graph_encoder_type": "setgnn_tied",
+      "lambda_ged": 0.1,
+      "configured_tool_count": 15
+    }
+  },
+  "models": {
+    "v3_no_ged_15t": {
+      "source_objective": "InfoNCE",
+      "frozen": {
+        "Standard": {
+          "n": 1005,
+          "correct": 527,
+          "accuracy": 0.5243781094527363,
+          "accuracy_pct": 52.43781094527363,
+          "recall@1": 0.5243781094527363,
+          "recall@3": 0.7333333333333333,
+          "recall@5": 0.8696517412935323,
+          "mrr@5": 0.6462686567164179,
+          "macro_f1": 0.495250564828018
+        },
+        "Lexical": {
+          "n": 1005,
+          "correct": 288,
+          "accuracy": 0.2865671641791045,
+          "accuracy_pct": 28.65671641791045,
+          "recall@1": 0.2865671641791045,
+          "recall@3": 0.5014925373134328,
+          "recall@5": 0.6467661691542289,
+          "mrr@5": 0.41290215588723056,
+          "macro_f1": 0.2606398799363923
+        },
+        "Confusable": {
+          "n": 450,
+          "correct": 181,
+          "accuracy": 0.4022222222222222,
+          "accuracy_pct": 40.22222222222222,
+          "recall@1": 0.4022222222222222,
+          "recall@3": 0.6644444444444444,
+          "recall@5": 0.8266666666666667,
+          "mrr@5": 0.5478148148148149,
+          "macro_f1": 0.3375396852368372
+        },
+        "Paraphrase": {
+          "n": 1255,
+          "correct": 643,
+          "accuracy": 0.5123505976095617,
+          "accuracy_pct": 51.23505976095617,
+          "recall@1": 0.5123505976095617,
+          "recall@3": 0.6948207171314741,
+          "recall@5": 0.8350597609561753,
+          "mrr@5": 0.6237715803452855,
+          "macro_f1": 0.49324048021399614
+        }
+      },
+      "adapted": {
+        "Standard": {
+          "n": 1005,
+          "correct": 593,
+          "accuracy": 0.5900497512437811,
+          "accuracy_pct": 59.00497512437811,
+          "recall@1": 0.5900497512437811,
+          "recall@3": 0.7661691542288557,
+          "recall@5": 0.8626865671641791,
+          "mrr@5": 0.6881094527363184,
+          "macro_f1": 0.5787052807352125
+        },
+        "Lexical": {
+          "n": 1005,
+          "correct": 291,
+          "accuracy": 0.28955223880597014,
+          "accuracy_pct": 28.955223880597014,
+          "recall@1": 0.28955223880597014,
+          "recall@3": 0.5293532338308458,
+          "recall@5": 0.6547263681592039,
+          "mrr@5": 0.42386401326699835,
+          "macro_f1": 0.2472195668220237
+        },
+        "Confusable": {
+          "n": 450,
+          "correct": 210,
+          "accuracy": 0.4666666666666667,
+          "accuracy_pct": 46.666666666666664,
+          "recall@1": 0.4666666666666667,
+          "recall@3": 0.7,
+          "recall@5": 0.8133333333333334,
+          "mrr@5": 0.5934074074074075,
+          "macro_f1": 0.404065966684473
+        },
+        "Paraphrase": {
+          "n": 1255,
+          "correct": 675,
+          "accuracy": 0.5378486055776892,
+          "accuracy_pct": 53.78486055776892,
+          "recall@1": 0.5378486055776892,
+          "recall@3": 0.7322709163346613,
+          "recall@5": 0.8262948207171315,
+          "mrr@5": 0.6455245683930942,
+          "macro_f1": 0.550419974900016
+        }
+      },
+      "adapted_checkpoint": "artifacts/v3_routing_toolcard_adaptation_s42/v3_no_ged_15t/best_model.pt",
+      "adapted_checkpoint_sha256": "975263ad0e8243a4227144b8f6b2c75fe59db9c3d9b08e0df4f1e11cb230938a",
+      "best_toolcard_dev_accuracy": 1.0
+    },
+    "v3_ged_15t": {
+      "source_objective": "InfoNCE+GED",
+      "frozen": {
+        "Standard": {
+          "n": 1005,
+          "correct": 534,
+          "accuracy": 0.5313432835820896,
+          "accuracy_pct": 53.13432835820896,
+          "recall@1": 0.5313432835820896,
+          "recall@3": 0.7522388059701492,
+          "recall@5": 0.8656716417910447,
+          "mrr@5": 0.6523548922056385,
+          "macro_f1": 0.5020090061880581
+        },
+        "Lexical": {
+          "n": 1005,
+          "correct": 275,
+          "accuracy": 0.2736318407960199,
+          "accuracy_pct": 27.363184079601986,
+          "recall@1": 0.2736318407960199,
+          "recall@3": 0.5184079601990049,
+          "recall@5": 0.6358208955223881,
+          "mrr@5": 0.4039635157545605,
+          "macro_f1": 0.24872395122380214
+        },
+        "Confusable": {
+          "n": 450,
+          "correct": 180,
+          "accuracy": 0.4,
+          "accuracy_pct": 40.0,
+          "recall@1": 0.4,
+          "recall@3": 0.7066666666666667,
+          "recall@5": 0.8377777777777777,
+          "mrr@5": 0.5622962962962963,
+          "macro_f1": 0.33975311377417433
+        },
+        "Paraphrase": {
+          "n": 1255,
+          "correct": 666,
+          "accuracy": 0.5306772908366534,
+          "accuracy_pct": 53.06772908366534,
+          "recall@1": 0.5306772908366534,
+          "recall@3": 0.7099601593625497,
+          "recall@5": 0.8254980079681274,
+          "mrr@5": 0.6356972111553785,
+          "macro_f1": 0.5103082975511455
+        }
+      },
+      "adapted": {
+        "Standard": {
+          "n": 1005,
+          "correct": 536,
+          "accuracy": 0.5333333333333333,
+          "accuracy_pct": 53.333333333333336,
+          "recall@1": 0.5333333333333333,
+          "recall@3": 0.7134328358208956,
+          "recall@5": 0.8378109452736319,
+          "mrr@5": 0.6429353233830847,
+          "macro_f1": 0.4963345490347866
+        },
+        "Lexical": {
+          "n": 1005,
+          "correct": 259,
+          "accuracy": 0.25771144278606967,
+          "accuracy_pct": 25.771144278606968,
+          "recall@1": 0.25771144278606967,
+          "recall@3": 0.4746268656716418,
+          "recall@5": 0.6208955223880597,
+          "mrr@5": 0.38543946932006634,
+          "macro_f1": 0.214769041248444
+        },
+        "Confusable": {
+          "n": 450,
+          "correct": 184,
+          "accuracy": 0.4088888888888889,
+          "accuracy_pct": 40.88888888888889,
+          "recall@1": 0.4088888888888889,
+          "recall@3": 0.6733333333333333,
+          "recall@5": 0.7888888888888889,
+          "mrr@5": 0.5481481481481482,
+          "macro_f1": 0.34977265338391983
+        },
+        "Paraphrase": {
+          "n": 1255,
+          "correct": 667,
+          "accuracy": 0.5314741035856574,
+          "accuracy_pct": 53.147410358565736,
+          "recall@1": 0.5314741035856574,
+          "recall@3": 0.6828685258964143,
+          "recall@5": 0.7840637450199203,
+          "mrr@5": 0.6195086321381142,
+          "macro_f1": 0.49589301827042076
+        }
+      },
+      "adapted_checkpoint": "artifacts/v3_routing_toolcard_adaptation_s42/v3_ged_15t/best_model.pt",
+      "adapted_checkpoint_sha256": "f35a7e4cab46f731c398cc5542ee0baec239bfdf8730799d6c949d640c5db7bf",
+      "best_toolcard_dev_accuracy": 1.0
+    }
+  },
+  "environment": {
+    "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.11.0+cu128",
+    "cuda_available": true,
+    "device": "cuda",
+    "cuda_version": "12.8",
+    "gpu_name": "NVIDIA RTX 6000 Ada Generation",
+    "gpu_total_memory_bytes": 51526500352
+  },
+  "arguments": {
+    "output": "artifacts\\v3_routing_toolcard_adaptation_s42",
+    "device": "cuda",
+    "epochs": 20,
+    "batch_size": 45,
+    "head_lr": 0.0003,
+    "backbone_lr": 3e-05,
+    "weight_decay": 0.0001,
+    "seed": 42
+  }
+}

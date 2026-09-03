@@ -1,0 +1,105 @@
+{
+  "dataset": "campaign_v4",
+  "tier": 45,
+  "seed": 42,
+  "checkpoint_root": "C:\\Users\\tkadam\\LEGR\\artifacts\\campaign_v4\\results",
+  "gallery_protocol": "unique(candidate_corpus UNION evaluated_test_split)",
+  "models": {
+    "legr_directed_toolname_no_ged_45t_s42": {
+      "checkpoint_epoch": 51,
+      "graph_encoder_type": "directed_text",
+      "graph_direction": "directed_text",
+      "lambda_ged": 0.0,
+      "test_indomain": {
+        "tool_set_f1": 0.8966111329747694,
+        "mean_ged_error": 0.9343434343434344,
+        "recall@1": 0.8434343434343434,
+        "recall@3": 0.9166666666666666,
+        "recall@5": 0.9545454545454546,
+        "mrr@1": 0.8434343434343434,
+        "mrr@3": 0.8754208754208753,
+        "mrr@5": 0.884259259259259,
+        "exact_dag_accuracy": 0.8434343434343434,
+        "num_queries": 396,
+        "gallery_unique_dags": 616
+      },
+      "test_topology_heldout": {
+        "tool_set_f1": 0.8938425925925926,
+        "mean_ged_error": 2.8433333333333333,
+        "recall@1": 0.3516666666666667,
+        "recall@3": 0.69,
+        "recall@5": 0.81,
+        "mrr@1": 0.3516666666666667,
+        "mrr@3": 0.5016666666666667,
+        "mrr@5": 0.5295833333333325,
+        "exact_dag_accuracy": 0.3516666666666667,
+        "num_queries": 600,
+        "gallery_unique_dags": 650
+      }
+    },
+    "legr_directed_toolname_ged_45t_s42": {
+      "checkpoint_epoch": 54,
+      "graph_encoder_type": "directed_text",
+      "graph_direction": "directed_text",
+      "lambda_ged": 0.3,
+      "test_indomain": {
+        "tool_set_f1": 0.8989782383721777,
+        "mean_ged_error": 0.9368686868686869,
+        "recall@1": 0.8484848484848485,
+        "recall@3": 0.9343434343434344,
+        "recall@5": 0.9595959595959596,
+        "mrr@1": 0.8484848484848485,
+        "mrr@3": 0.8855218855218854,
+        "mrr@5": 0.8914562289562288,
+        "exact_dag_accuracy": 0.8484848484848485,
+        "num_queries": 396,
+        "gallery_unique_dags": 616
+      },
+      "test_topology_heldout": {
+        "tool_set_f1": 0.8796944444444443,
+        "mean_ged_error": 2.841666666666667,
+        "recall@1": 0.36333333333333334,
+        "recall@3": 0.6716666666666666,
+        "recall@5": 0.8116666666666666,
+        "mrr@1": 0.36333333333333334,
+        "mrr@3": 0.4980555555555554,
+        "mrr@5": 0.530388888888888,
+        "exact_dag_accuracy": 0.36333333333333334,
+        "num_queries": 600,
+        "gallery_unique_dags": 650
+      }
+    },
+    "legr_setgnn_tied_ged_45t_s42": {
+      "checkpoint_epoch": 35,
+      "graph_encoder_type": "setgnn_tied",
+      "graph_direction": "setgnn_tied",
+      "lambda_ged": 0.3,
+      "test_indomain": {
+        "tool_set_f1": 0.9268899310565977,
+        "mean_ged_error": 0.7095959595959596,
+        "recall@1": 0.8813131313131313,
+        "recall@3": 0.9570707070707071,
+        "recall@5": 0.9848484848484849,
+        "mrr@1": 0.8813131313131313,
+        "mrr@3": 0.9166666666666665,
+        "mrr@5": 0.9227272727272725,
+        "exact_dag_accuracy": 0.8813131313131313,
+        "num_queries": 396,
+        "gallery_unique_dags": 616
+      },
+      "test_topology_heldout": {
+        "tool_set_f1": 0.9610092592592594,
+        "mean_ged_error": 2.45,
+        "recall@1": 0.37833333333333335,
+        "recall@3": 0.82,
+        "recall@5": 0.9416666666666667,
+        "mrr@1": 0.37833333333333335,
+        "mrr@3": 0.5766666666666654,
+        "mrr@5": 0.605166666666665,
+        "exact_dag_accuracy": 0.37833333333333335,
+        "num_queries": 600,
+        "gallery_unique_dags": 650
+      }
+    }
+  }
+}

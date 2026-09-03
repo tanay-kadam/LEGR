@@ -1,0 +1,323 @@
+gallery_index,dag_id,tools,num_nodes,action_label,semantic_label,tsne_x,tsne_y,action_silhouette,semantic_silhouette,action_knn_purity,semantic_knn_purity
+0,379,check_service_status;escalate_case_to_human;read_user_profile;update_subscription_plan,4,Data Retrieval,Account & Subscription,3.185032,-4.2972865,-0.057787098,0.045705475,0.8,0.4
+1,380,check_service_status;escalate_case_to_human;read_user_profile;update_subscription_plan,4,Data Retrieval,Account & Subscription,3.6452076,-13.368288,-0.06227611,0.024295727,0.4,0.2
+2,381,check_service_status;escalate_case_to_human;read_user_profile;update_subscription_plan,4,Data Retrieval,Account & Subscription,-7.503483,7.058143,-0.054944377,0.018756146,0.4,0.4
+3,382,check_service_status;escalate_case_to_human;read_user_profile;update_subscription_plan,4,Data Retrieval,Account & Subscription,-0.14254944,-5.9793625,-0.012950322,0.062101655,1.0,0.6
+4,383,check_service_status;escalate_case_to_human;read_user_profile;update_subscription_plan,4,Data Retrieval,Account & Subscription,0.9353033,-4.4363203,-0.030754864,-0.037435386,1.0,1.0
+5,384,read_access_logs;check_service_status;route_task_by_condition;write_database_record,4,Data Retrieval,Mixed,12.952781,10.206542,-0.1249603,0.00017198776,0.8,0.8
+6,385,read_access_logs;check_service_status;route_task_by_condition;write_database_record,4,Data Retrieval,Mixed,11.612732,11.391963,-0.052804016,-0.04681659,1.0,1.0
+7,386,read_access_logs;check_service_status;route_task_by_condition;write_database_record,4,Data Retrieval,Mixed,-5.653648,10.850958,-0.128142,-0.025051707,1.0,0.4
+8,387,read_access_logs;check_service_status;route_task_by_condition;write_database_record,4,Data Retrieval,Mixed,11.875057,8.379835,-0.05726195,-0.030772995,1.0,0.8
+9,388,read_access_logs;check_service_status;route_task_by_condition;write_database_record,4,Data Retrieval,Mixed,12.489543,9.403992,-0.043643866,-0.032602686,1.0,1.0
+10,389,restart_service;read_database_record;update_subscription_plan;check_service_status,4,Mixed,Service & Incident Operations,-5.405444,15.337398,-0.025581947,-0.0007552122,1.0,1.0
+11,390,restart_service;read_database_record;update_subscription_plan;check_service_status,4,Mixed,Service & Incident Operations,-18.772337,-3.0768406,-0.022877295,-0.013192169,1.0,0.8
+12,391,restart_service;read_database_record;update_subscription_plan;check_service_status,4,Mixed,Service & Incident Operations,-3.2297606,14.600347,-0.0883549,-0.01716231,0.8,0.8
+13,392,restart_service;read_database_record;update_subscription_plan;check_service_status,4,Mixed,Service & Incident Operations,-3.7928503,16.065624,-0.029665051,0.031096572,0.8,0.8
+14,393,restart_service;read_database_record;update_subscription_plan;check_service_status,4,Mixed,Service & Incident Operations,-5.2785816,16.197756,0.01471456,0.016889356,0.6,0.6
+15,394,write_database_record;create_support_ticket;read_subscription_status;scan_system_for_malware,4,Mixed,Service & Incident Operations,4.514122,1.298977,0.08011495,-0.0065055205,0.4,0.4
+16,395,write_database_record;create_support_ticket;read_subscription_status;scan_system_for_malware,4,Mixed,Service & Incident Operations,-5.885783,-13.773953,0.08357556,-0.038197175,0.6,0.2
+17,396,write_database_record;create_support_ticket;read_subscription_status;scan_system_for_malware,4,Mixed,Service & Incident Operations,1.8256929,2.4263217,0.10457207,0.073334485,0.6,0.8
+18,397,write_database_record;create_support_ticket;read_subscription_status;scan_system_for_malware,4,Mixed,Service & Incident Operations,2.0814204,1.0909951,0.025094299,-0.063815966,0.4,0.4
+19,398,write_database_record;create_support_ticket;read_subscription_status;scan_system_for_malware,4,Mixed,Service & Incident Operations,3.5084019,1.5208888,0.10327692,0.053138528,0.8,0.8
+20,399,read_access_logs;update_subscription_plan;escalate_case_to_human;create_support_ticket,4,State Modification,Data & Access Management,-2.9323711,-1.1635008,0.051345654,0.16165495,0.8,0.8
+21,400,read_access_logs;update_subscription_plan;escalate_case_to_human;create_support_ticket,4,State Modification,Data & Access Management,-2.7899938,-4.102301,0.012558619,0.1425441,0.8,0.6
+22,401,read_access_logs;update_subscription_plan;escalate_case_to_human;create_support_ticket,4,State Modification,Data & Access Management,-6.6921816,6.5971103,-0.01618074,0.09841969,0.4,0.6
+23,402,read_access_logs;update_subscription_plan;escalate_case_to_human;create_support_ticket,4,State Modification,Data & Access Management,-3.6637847,-2.4181397,0.0315491,0.18162185,0.8,0.6
+24,403,read_access_logs;update_subscription_plan;escalate_case_to_human;create_support_ticket,4,State Modification,Data & Access Management,-2.1341972,-2.5901463,-0.02040579,0.14916241,1.0,1.0
+25,404,create_support_ticket;read_database_record;dispatch_message_to_usergroup;read_access_logs,4,Data Retrieval,Data & Access Management,4.815419,-1.0444973,0.0569647,0.19333899,0.4,0.6
+26,405,create_support_ticket;read_database_record;dispatch_message_to_usergroup;read_access_logs,4,Data Retrieval,Data & Access Management,-8.029211,-6.8816915,-0.03511626,0.15178785,0.4,0.6
+27,406,create_support_ticket;read_database_record;dispatch_message_to_usergroup;read_access_logs,4,Data Retrieval,Data & Access Management,-4.34285,9.509621,-0.028566878,0.13557386,1.0,0.6
+28,407,create_support_ticket;read_database_record;dispatch_message_to_usergroup;read_access_logs,4,Data Retrieval,Data & Access Management,2.435817,-0.9265829,-0.053427417,0.122194126,0.6,0.6
+29,408,create_support_ticket;read_database_record;dispatch_message_to_usergroup;read_access_logs,4,Data Retrieval,Data & Access Management,3.9433265,-1.8088828,0.0800292,0.20093739,0.6,0.8
+30,409,read_subscription_status;read_database_record;update_subscription_plan;read_user_profile,4,Data Retrieval,Account & Subscription,2.1037285,-10.540315,0.0020869542,0.14801186,0.6,0.4
+31,410,read_subscription_status;read_database_record;update_subscription_plan;read_user_profile,4,Data Retrieval,Account & Subscription,0.72813356,-12.967081,-0.04742517,0.1400112,0.8,0.6
+32,411,read_subscription_status;read_database_record;update_subscription_plan;read_user_profile,4,Data Retrieval,Account & Subscription,1.3103997,-9.039688,-0.09264984,0.15600984,1.0,1.0
+33,412,read_subscription_status;read_database_record;update_subscription_plan;read_user_profile,4,Data Retrieval,Account & Subscription,0.3977726,-9.180204,-0.059979055,0.13182092,0.8,0.8
+34,413,read_subscription_status;read_database_record;update_subscription_plan;read_user_profile,4,Data Retrieval,Account & Subscription,1.2157391,-10.560887,0.037629224,0.14631033,0.6,0.6
+35,414,route_task_by_condition;read_subscription_status;update_subscription_plan;restart_service,4,State Modification,Mixed,2.9490793,18.018236,-0.33491102,-0.008084227,0.8,0.8
+36,415,route_task_by_condition;read_subscription_status;update_subscription_plan;restart_service,4,State Modification,Mixed,1.338312,17.223776,-0.3266647,0.014950367,1.0,1.0
+37,416,route_task_by_condition;read_subscription_status;update_subscription_plan;restart_service,4,State Modification,Mixed,-1.2270033,14.375452,-0.25036934,0.024039945,0.8,0.8
+38,417,route_task_by_condition;read_subscription_status;update_subscription_plan;restart_service,4,State Modification,Mixed,1.7061144,16.02356,-0.33761778,0.027218176,0.6,0.6
+39,418,route_task_by_condition;read_subscription_status;update_subscription_plan;restart_service,4,State Modification,Mixed,2.902531,16.975655,-0.33985302,0.0004742495,0.8,0.8
+40,419,route_task_by_condition;edit_username;escalate_case_to_human;create_support_ticket,4,Mixed,Service & Incident Operations,-5.3861356,-0.60693055,-0.08619887,-0.08809861,0.8,0.8
+41,420,route_task_by_condition;edit_username;escalate_case_to_human;create_support_ticket,4,Mixed,Service & Incident Operations,-6.826745,-3.0138426,-0.04212038,-0.059278738,0.4,0.8
+42,421,route_task_by_condition;edit_username;escalate_case_to_human;create_support_ticket,4,Mixed,Service & Incident Operations,-6.7201886,6.157975,-0.024878966,-0.06867332,0.4,0.4
+43,422,route_task_by_condition;edit_username;escalate_case_to_human;create_support_ticket,4,Mixed,Service & Incident Operations,-5.01783,-2.0559793,-0.08788155,-0.11777377,0.8,0.8
+44,423,route_task_by_condition;edit_username;escalate_case_to_human;create_support_ticket,4,Mixed,Service & Incident Operations,-6.235109,-1.0014803,-0.055312272,-0.083025955,0.6,0.6
+45,424,check_service_status;read_database_record;update_subscription_plan;create_support_ticket,4,Mixed,Service & Incident Operations,6.002167,2.4886734,0.058216456,0.036172263,0.6,0.6
+46,425,check_service_status;read_database_record;update_subscription_plan;create_support_ticket,4,Mixed,Service & Incident Operations,5.06466,-14.0059,0.04989379,0.07145715,0.8,0.8
+47,426,check_service_status;read_database_record;update_subscription_plan;create_support_ticket,4,Mixed,Service & Incident Operations,-1.9727829,-7.5469,0.03691029,0.01338439,0.4,0.4
+48,427,escalate_case_to_human;restart_service;check_service_status;read_database_record,4,Data Retrieval,Mixed,-7.7710047,15.022683,-0.108136825,-0.094320394,1.0,0.8
+49,428,escalate_case_to_human;restart_service;check_service_status;read_database_record,4,Data Retrieval,Mixed,-9.213206,13.956348,-0.042807445,-0.09733816,0.8,0.8
+50,429,escalate_case_to_human;restart_service;check_service_status;read_database_record,4,Data Retrieval,Mixed,-7.5810494,11.373369,-0.07349425,-0.10422182,0.6,0.6
+51,430,escalate_case_to_human;restart_service;check_service_status;read_database_record,4,Data Retrieval,Mixed,-7.7809076,13.218823,-0.10216784,-0.10307505,1.0,0.8
+52,431,escalate_case_to_human;restart_service;check_service_status;read_database_record,4,Data Retrieval,Mixed,-8.235445,14.97859,-0.049009673,-0.060636137,0.6,0.6
+53,432,create_support_ticket;dispatch_message_to_usergroup;read_subscription_status;restart_service,4,State Modification,Mixed,1.2039206,10.608349,-0.03443353,-0.01867614,1.0,0.8
+54,433,create_support_ticket;dispatch_message_to_usergroup;read_subscription_status;restart_service,4,State Modification,Mixed,-9.81091,-5.757087,0.04204749,-0.0215795,0.8,0.4
+55,434,create_support_ticket;dispatch_message_to_usergroup;read_subscription_status;restart_service,4,State Modification,Mixed,-1.3408769,13.243666,-0.0091967685,-0.028915541,0.8,0.6
+56,435,create_support_ticket;dispatch_message_to_usergroup;read_subscription_status;restart_service,4,State Modification,Mixed,-0.4089727,11.068656,-0.1092852,0.017180102,0.6,0.6
+57,436,create_support_ticket;dispatch_message_to_usergroup;read_subscription_status;restart_service,4,State Modification,Mixed,0.7080421,10.953173,-0.10836503,-0.01565496,0.8,0.6
+58,437,update_subscription_plan;dispatch_message_to_usergroup;read_database_record;route_task_by_condition,4,Orchestration,Account & Subscription,5.829233,15.948826,0.5090451,0.05177765,0.4,0.4
+59,438,update_subscription_plan;dispatch_message_to_usergroup;read_database_record;route_task_by_condition,4,Orchestration,Account & Subscription,8.4870205,14.192052,0.47638348,0.020934204,0.2,0.2
+60,439,update_subscription_plan;dispatch_message_to_usergroup;read_database_record;route_task_by_condition,4,Orchestration,Account & Subscription,3.813002,13.018572,0.40828583,0.06782635,0.4,0.4
+61,440,update_subscription_plan;dispatch_message_to_usergroup;read_database_record;route_task_by_condition,4,Orchestration,Account & Subscription,5.908729,13.682916,0.46698955,0.045079295,0.4,0.4
+62,441,update_subscription_plan;dispatch_message_to_usergroup;read_database_record;route_task_by_condition,4,Orchestration,Account & Subscription,5.7889967,15.156173,0.56935966,0.010878273,0.8,0.8
+63,442,dispatch_message_to_usergroup;read_user_profile;scan_system_for_malware;reset_user_password,4,Data Retrieval,Account & Subscription,21.268066,-10.3406925,0.06562235,0.0738626,0.8,0.8
+64,443,dispatch_message_to_usergroup;read_user_profile;scan_system_for_malware;reset_user_password,4,Data Retrieval,Account & Subscription,-16.906475,4.552293,-0.012990274,0.06294061,0.8,0.6
+65,444,dispatch_message_to_usergroup;read_user_profile;scan_system_for_malware;reset_user_password,4,Data Retrieval,Account & Subscription,-18.120787,6.0077157,0.011788944,0.059285555,0.8,0.8
+66,445,dispatch_message_to_usergroup;read_user_profile;scan_system_for_malware;reset_user_password,4,Data Retrieval,Account & Subscription,20.796427,-11.924398,0.034763873,0.037307892,0.8,0.8
+67,446,dispatch_message_to_usergroup;read_user_profile;scan_system_for_malware;reset_user_password,4,Data Retrieval,Account & Subscription,21.62165,-10.895971,0.07727769,0.08511816,0.8,0.8
+68,447,edit_username;restart_service;scan_system_for_malware;read_database_record,4,Mixed,Service & Incident Operations,-24.21326,2.1838603,0.025750833,0.10203982,0.6,1.0
+69,448,edit_username;restart_service;scan_system_for_malware;read_database_record,4,Mixed,Service & Incident Operations,-23.488022,-1.2493869,-0.025860941,0.07187664,0.4,0.8
+70,449,edit_username;restart_service;scan_system_for_malware;read_database_record,4,Mixed,Service & Incident Operations,-18.578047,8.224603,0.016108492,0.08927925,0.2,0.6
+71,450,edit_username;restart_service;scan_system_for_malware;read_database_record,4,Mixed,Service & Incident Operations,-21.997732,5.760886,0.04568415,0.13777615,0.6,1.0
+72,451,edit_username;restart_service;scan_system_for_malware;read_database_record,4,Mixed,Service & Incident Operations,-24.540127,3.8755107,0.055022206,0.09112862,0.6,0.8
+73,452,reset_user_password;restart_service;scan_system_for_malware;read_user_profile,4,Mixed,Service & Incident Operations,-23.020733,2.3499856,-0.034834348,0.08609811,0.6,0.8
+74,453,reset_user_password;restart_service;scan_system_for_malware;read_user_profile,4,Mixed,Service & Incident Operations,-22.596691,0.21333276,-0.0721772,0.0795256,0.6,1.0
+75,454,reset_user_password;restart_service;scan_system_for_malware;read_user_profile,4,Mixed,Service & Incident Operations,-18.829859,6.498284,-0.060704764,0.07330909,0.6,0.8
+76,455,reset_user_password;restart_service;scan_system_for_malware;read_user_profile,4,Mixed,Service & Incident Operations,-21.172573,4.9539537,-0.01830698,0.09840492,0.6,0.6
+77,456,reset_user_password;restart_service;scan_system_for_malware;read_user_profile,4,Mixed,Service & Incident Operations,-23.670048,3.4793286,0.0074786847,0.10567368,1.0,1.0
+78,457,escalate_case_to_human;edit_username;write_database_record;read_database_record,4,State Modification,Data & Access Management,-16.32385,-11.3750725,0.010501217,0.082423225,1.0,0.8
+79,458,escalate_case_to_human;edit_username;write_database_record;read_database_record,4,State Modification,Data & Access Management,-14.155844,-11.543723,-0.008673452,0.12342484,0.8,0.8
+80,459,escalate_case_to_human;edit_username;write_database_record;read_database_record,4,State Modification,Data & Access Management,-15.072575,-9.524483,-0.06948236,0.09937384,0.6,0.4
+81,460,escalate_case_to_human;edit_username;write_database_record;read_database_record,4,State Modification,Data & Access Management,-14.91323,-10.342136,0.009530909,0.10123503,1.0,1.0
+82,461,escalate_case_to_human;edit_username;write_database_record;read_database_record,4,State Modification,Data & Access Management,-16.24597,-11.57953,0.0017601156,0.09438306,1.0,0.8
+83,462,edit_username;scan_system_for_malware;restart_service;write_database_record,4,State Modification,Service & Incident Operations,-24.651243,1.908187,0.008218038,0.112443,0.4,1.0
+84,463,edit_username;scan_system_for_malware;restart_service;write_database_record,4,State Modification,Service & Incident Operations,-23.457108,-1.3111496,0.034237076,0.09023986,0.4,0.8
+85,464,edit_username;scan_system_for_malware;restart_service;write_database_record,4,State Modification,Service & Incident Operations,-18.531347,8.253717,-0.0012793968,0.10292902,0.2,0.6
+86,465,edit_username;scan_system_for_malware;restart_service;write_database_record,4,State Modification,Service & Incident Operations,-23.022116,6.5182047,0.0070860847,0.113330774,0.2,1.0
+87,466,edit_username;scan_system_for_malware;restart_service;write_database_record,4,State Modification,Service & Incident Operations,-25.24844,4.352944,-0.074931905,0.08490206,0.2,1.0
+88,467,create_support_ticket;read_access_logs;edit_username;escalate_case_to_human,4,State Modification,Data & Access Management,-1.6263487,-0.7910604,0.0904779,0.20689799,0.8,0.4
+89,468,create_support_ticket;read_access_logs;edit_username;escalate_case_to_human,4,State Modification,Data & Access Management,-7.334136,-5.5717754,0.091899075,0.18365347,0.8,0.4
+90,469,create_support_ticket;read_access_logs;edit_username;escalate_case_to_human,4,State Modification,Data & Access Management,-5.8042183,6.7271533,0.03765401,0.15596305,0.4,0.6
+91,470,create_support_ticket;read_access_logs;edit_username;escalate_case_to_human,4,State Modification,Data & Access Management,-4.8781962,-4.589522,0.12614655,0.16827649,0.8,0.8
+92,471,create_support_ticket;read_access_logs;edit_username;escalate_case_to_human,4,State Modification,Data & Access Management,-1.1827952,-2.152302,0.0012815332,0.25426626,0.8,1.0
+93,472,create_support_ticket;reset_user_password;restart_service;read_subscription_status,4,State Modification,Service & Incident Operations,-11.148592,3.1293805,0.1199719,0.060513828,1.0,0.6
+94,473,create_support_ticket;reset_user_password;restart_service;read_subscription_status,4,State Modification,Service & Incident Operations,-11.255038,-5.3318024,0.17318407,0.025658945,1.0,0.0
+95,474,create_support_ticket;reset_user_password;restart_service;read_subscription_status,4,State Modification,Service & Incident Operations,-9.496664,9.048015,0.10165439,0.04455496,0.8,0.4
+96,475,create_support_ticket;reset_user_password;restart_service;read_subscription_status,4,State Modification,Service & Incident Operations,-10.199162,4.5904045,0.12923917,0.0749629,1.0,0.8
+97,476,create_support_ticket;reset_user_password;restart_service;read_subscription_status,4,State Modification,Service & Incident Operations,-11.574346,3.9379487,0.095898874,0.045641832,0.8,0.8
+98,477,update_subscription_plan;dispatch_message_to_usergroup;reset_user_password;write_database_record,4,State Modification,Mixed,-15.179069,13.247999,-0.045452405,-0.062328164,1.0,1.0
+99,478,update_subscription_plan;dispatch_message_to_usergroup;reset_user_password;write_database_record,4,State Modification,Mixed,-13.11484,11.94941,-0.14371336,-0.040398743,0.6,0.6
+100,479,update_subscription_plan;dispatch_message_to_usergroup;reset_user_password;write_database_record,4,State Modification,Mixed,-13.201632,9.60212,-0.118312255,-0.048382346,0.8,0.2
+101,480,update_subscription_plan;dispatch_message_to_usergroup;reset_user_password;write_database_record,4,State Modification,Mixed,-15.891347,11.985752,0.063481025,-0.043129925,1.0,1.0
+102,481,update_subscription_plan;dispatch_message_to_usergroup;reset_user_password;write_database_record,4,State Modification,Mixed,-15.500868,12.874497,-0.1802984,-0.04445796,0.8,0.8
+103,482,write_database_record;edit_username;create_support_ticket;update_subscription_plan,4,State Modification,Account & Subscription,-13.08831,6.6124945,0.14919452,0.024375515,1.0,0.6
+104,483,write_database_record;edit_username;create_support_ticket;update_subscription_plan,4,State Modification,Account & Subscription,-6.0650034,-12.586255,0.10596108,0.01120091,0.6,0.4
+105,484,write_database_record;edit_username;create_support_ticket;update_subscription_plan,4,State Modification,Account & Subscription,-10.490816,8.082077,0.101578094,0.0027614061,0.8,0.6
+106,485,write_database_record;edit_username;create_support_ticket;update_subscription_plan,4,State Modification,Account & Subscription,-11.629589,6.9062495,0.13041247,-0.022154842,0.8,0.6
+107,486,write_database_record;edit_username;create_support_ticket;update_subscription_plan,4,State Modification,Account & Subscription,-12.910622,5.919092,0.1400967,0.010062845,0.6,0.6
+108,487,read_subscription_status;scan_system_for_malware;check_service_status;read_database_record,4,Data Retrieval,Service & Incident Operations,16.319767,7.3967156,-0.0066994126,0.07152585,0.8,0.4
+109,488,read_subscription_status;scan_system_for_malware;check_service_status;read_database_record,4,Data Retrieval,Service & Incident Operations,11.902845,13.417717,0.09136353,-0.015385456,1.0,0.2
+110,489,read_subscription_status;scan_system_for_malware;check_service_status;read_database_record,4,Data Retrieval,Service & Incident Operations,-5.979441,10.703207,0.022545403,0.044701327,0.6,0.6
+111,490,read_subscription_status;scan_system_for_malware;check_service_status;read_database_record,4,Data Retrieval,Service & Incident Operations,13.526379,6.1767616,0.035973493,0.01921786,1.0,0.2
+112,491,read_subscription_status;scan_system_for_malware;check_service_status;read_database_record,4,Data Retrieval,Service & Incident Operations,15.497162,7.4566174,0.05303031,0.024428373,0.8,0.8
+113,492,read_subscription_status;write_database_record;check_service_status;escalate_case_to_human,4,Data Retrieval,Data & Access Management,6.0137124,-4.1539507,0.026018223,0.13854927,1.0,0.6
+114,493,read_subscription_status;write_database_record;check_service_status;escalate_case_to_human,4,Data Retrieval,Data & Access Management,5.6834846,-9.75983,-0.016718214,0.11159838,1.0,0.8
+115,494,read_subscription_status;write_database_record;check_service_status;escalate_case_to_human,4,Data Retrieval,Data & Access Management,-5.9896007,7.938279,-0.049623236,0.0849591,0.2,0.4
+116,495,read_subscription_status;write_database_record;check_service_status;escalate_case_to_human,4,Data Retrieval,Data & Access Management,11.126794,4.1745706,0.03237443,0.0052421563,1.0,0.2
+117,496,read_subscription_status;write_database_record;check_service_status;escalate_case_to_human,4,Data Retrieval,Data & Access Management,5.448849,-5.8547726,0.06723661,0.15496513,0.6,0.6
+118,497,update_subscription_plan;route_task_by_condition;restart_service;edit_username,4,State Modification,Mixed,1.886778,19.370758,-0.14712396,-0.0015152405,1.0,1.0
+119,498,update_subscription_plan;route_task_by_condition;restart_service;edit_username,4,State Modification,Mixed,0.10372008,19.749636,-0.27796704,-0.0041514416,0.8,0.8
+120,499,update_subscription_plan;route_task_by_condition;restart_service;edit_username,4,State Modification,Mixed,-1.7178086,19.779533,-0.10370502,-0.033585418,0.8,0.8
+121,500,update_subscription_plan;route_task_by_condition;restart_service;edit_username,4,State Modification,Mixed,-0.3270683,18.195374,-0.10899184,-0.009948957,1.0,0.8
+122,501,update_subscription_plan;route_task_by_condition;restart_service;edit_username,4,State Modification,Mixed,0.95675933,19.077066,-0.2309438,-0.018950213,1.0,1.0
+123,502,scan_system_for_malware;read_user_profile;write_database_record;route_task_by_condition;read_access_logs,5,Data Retrieval,Mixed,18.089602,-2.849204,0.05300193,-0.07252591,0.6,0.6
+124,503,scan_system_for_malware;read_user_profile;write_database_record;route_task_by_condition;read_access_logs,5,Data Retrieval,Mixed,18.454828,-5.5699544,0.003876668,-0.09710358,0.8,0.8
+125,504,scan_system_for_malware;read_user_profile;write_database_record;route_task_by_condition;read_access_logs,5,Data Retrieval,Mixed,19.305273,-3.522632,0.061932154,-0.07400289,0.8,0.8
+126,505,scan_system_for_malware;read_user_profile;write_database_record;route_task_by_condition;read_access_logs,5,Data Retrieval,Mixed,20.15791,-5.403167,0.060420465,-0.08424148,0.6,0.6
+127,506,scan_system_for_malware;read_user_profile;write_database_record;route_task_by_condition;read_access_logs,5,Data Retrieval,Mixed,11.814272,-15.788777,0.07655163,-0.063903205,0.8,0.6
+128,507,scan_system_for_malware;read_user_profile;write_database_record;route_task_by_condition;read_access_logs,5,Data Retrieval,Mixed,18.631899,-3.8799536,0.094663724,-0.09557042,0.6,0.6
+129,508,write_database_record;check_service_status;scan_system_for_malware;read_subscription_status;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,16.89276,5.2555127,0.020279236,-0.0016031237,0.8,0.6
+130,509,write_database_record;check_service_status;scan_system_for_malware;read_subscription_status;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,13.85294,4.4369664,0.023730982,-0.0332365,0.8,0.6
+131,510,write_database_record;check_service_status;scan_system_for_malware;read_subscription_status;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,15.443919,3.8597274,0.040060386,0.017905835,1.0,0.8
+132,511,write_database_record;check_service_status;scan_system_for_malware;read_subscription_status;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,7.7002687,11.486521,0.00022671082,-0.028612753,0.8,0.6
+133,512,write_database_record;check_service_status;scan_system_for_malware;read_subscription_status;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,-5.2048182,-15.445989,-0.1303878,-0.013755204,0.6,0.2
+134,513,write_database_record;check_service_status;scan_system_for_malware;read_subscription_status;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,15.8683195,3.417005,0.023270532,-0.004650936,0.8,0.8
+135,514,read_subscription_status;update_subscription_plan;create_support_ticket;route_task_by_condition;reset_user_password,5,State Modification,Mixed,-4.689633,1.6619215,0.04619818,-0.00548827,0.8,0.8
+136,515,read_subscription_status;update_subscription_plan;create_support_ticket;route_task_by_condition;reset_user_password,5,State Modification,Mixed,-2.8909628,2.6064687,0.108312786,-0.02915069,0.6,0.6
+137,516,read_subscription_status;update_subscription_plan;create_support_ticket;route_task_by_condition;reset_user_password,5,State Modification,Mixed,-5.7202873,2.8361957,0.042412847,-0.002510686,1.0,1.0
+138,517,read_subscription_status;update_subscription_plan;create_support_ticket;route_task_by_condition;reset_user_password,5,State Modification,Mixed,2.5043244,-15.356602,-0.0025005373,-0.04014504,0.8,0.8
+139,518,read_subscription_status;update_subscription_plan;create_support_ticket;route_task_by_condition;reset_user_password,5,State Modification,Mixed,2.7646067,-15.279373,0.010877489,-0.009170724,0.6,0.6
+140,519,read_subscription_status;update_subscription_plan;create_support_ticket;route_task_by_condition;reset_user_password,5,State Modification,Mixed,-5.0140386,2.787152,0.09065734,0.008706222,0.8,0.8
+141,520,read_user_profile;reset_user_password;check_service_status;read_database_record;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,13.959478,-5.340658,0.13280725,-0.051174816,0.8,0.2
+142,521,read_user_profile;reset_user_password;check_service_status;read_database_record;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,11.795096,1.2028984,0.07594609,-0.04355859,0.8,0.4
+143,522,read_user_profile;reset_user_password;check_service_status;read_database_record;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,12.344917,-6.6618433,0.1451364,-0.08095719,0.8,0.6
+144,523,read_user_profile;reset_user_password;check_service_status;read_database_record;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,-0.6332192,-17.645407,0.18447287,-0.08154626,1.0,0.8
+145,524,read_user_profile;reset_user_password;check_service_status;read_database_record;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,-0.64872164,-17.66223,0.07442567,-0.050378874,1.0,0.4
+146,525,read_user_profile;reset_user_password;check_service_status;read_database_record;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,11.640602,-6.213222,0.122917585,0.0017802044,0.8,0.6
+147,526,create_support_ticket;edit_username;write_database_record;reset_user_password;check_service_status,5,State Modification,Mixed,-12.8516865,-1.8168646,0.15055463,-0.034809932,1.0,0.8
+148,527,create_support_ticket;edit_username;write_database_record;reset_user_password;check_service_status,5,State Modification,Mixed,-14.881605,-4.614461,0.18849537,-0.028543338,0.8,1.0
+149,528,create_support_ticket;edit_username;write_database_record;reset_user_password;check_service_status,5,State Modification,Mixed,-14.401796,-2.6121068,0.14441596,-0.03631801,0.8,1.0
+150,529,create_support_ticket;edit_username;write_database_record;reset_user_password;check_service_status,5,State Modification,Mixed,-12.51675,-4.332539,0.20779403,-0.03566846,1.0,0.6
+151,530,create_support_ticket;edit_username;write_database_record;reset_user_password;check_service_status,5,State Modification,Mixed,-12.12702,-4.8596573,0.1944021,-0.010387963,1.0,0.8
+152,531,create_support_ticket;edit_username;write_database_record;reset_user_password;check_service_status,5,State Modification,Mixed,-14.905193,-2.8323493,0.13983905,-0.039531842,0.6,0.8
+153,532,create_support_ticket;write_database_record;restart_service;route_task_by_condition;escalate_case_to_human,5,State Modification,Service & Incident Operations,-1.6782737,5.4006166,-0.04908861,-0.048860293,0.4,1.0
+154,533,create_support_ticket;write_database_record;restart_service;route_task_by_condition;escalate_case_to_human,5,State Modification,Service & Incident Operations,-2.4869754,8.214834,0.03003447,0.09323509,0.6,0.6
+155,534,create_support_ticket;write_database_record;restart_service;route_task_by_condition;escalate_case_to_human,5,State Modification,Service & Incident Operations,-0.9877708,6.7811317,-0.018103149,-0.07426853,0.6,1.0
+156,535,create_support_ticket;write_database_record;restart_service;route_task_by_condition;escalate_case_to_human,5,State Modification,Service & Incident Operations,-8.19439,-3.9824395,0.017534299,-0.017924981,0.8,1.0
+157,536,create_support_ticket;write_database_record;restart_service;route_task_by_condition;escalate_case_to_human,5,State Modification,Service & Incident Operations,-8.394367,-4.3166494,0.021089775,-0.021501703,0.8,0.4
+158,537,create_support_ticket;write_database_record;restart_service;route_task_by_condition;escalate_case_to_human,5,State Modification,Service & Incident Operations,-1.6002475,6.976861,-0.004984772,0.021032158,0.8,1.0
+159,538,write_database_record;dispatch_message_to_usergroup;read_user_profile;read_database_record;read_subscription_status,5,Data Retrieval,Account & Subscription,12.371437,-3.0962458,-0.09232298,0.1408321,1.0,0.6
+160,539,write_database_record;dispatch_message_to_usergroup;read_user_profile;read_database_record;read_subscription_status,5,Data Retrieval,Account & Subscription,11.456465,-0.63735527,-0.037986413,0.15359783,1.0,0.6
+161,540,write_database_record;dispatch_message_to_usergroup;read_user_profile;read_database_record;read_subscription_status,5,Data Retrieval,Account & Subscription,10.929093,-2.649793,-0.09135944,0.119922556,1.0,0.6
+162,541,write_database_record;dispatch_message_to_usergroup;read_user_profile;read_database_record;read_subscription_status,5,Data Retrieval,Account & Subscription,-3.370791,-15.932956,-0.04825207,0.1283852,1.0,0.8
+163,542,write_database_record;dispatch_message_to_usergroup;read_user_profile;read_database_record;read_subscription_status,5,Data Retrieval,Account & Subscription,-3.8085186,-15.718505,-0.15912767,0.09867139,0.8,0.6
+164,543,write_database_record;dispatch_message_to_usergroup;read_user_profile;read_database_record;read_subscription_status,5,Data Retrieval,Account & Subscription,11.206035,-3.3051448,0.020846313,0.11958267,1.0,0.6
+165,544,check_service_status;edit_username;create_support_ticket;route_task_by_condition;read_subscription_status,5,Mixed,Service & Incident Operations,4.977276,4.05439,0.06487034,0.058856823,0.8,0.8
+166,545,check_service_status;edit_username;create_support_ticket;route_task_by_condition;read_subscription_status,5,Mixed,Service & Incident Operations,-1.6208564,2.871767,0.036390733,0.09511244,0.6,0.6
+167,546,check_service_status;edit_username;create_support_ticket;route_task_by_condition;read_subscription_status,5,Mixed,Service & Incident Operations,1.6908659,7.2672873,0.035828978,0.041762717,0.8,0.8
+168,547,check_service_status;edit_username;create_support_ticket;route_task_by_condition;read_subscription_status,5,Mixed,Service & Incident Operations,5.8036323,-15.986606,0.12040415,0.09375455,0.8,0.8
+169,548,check_service_status;edit_username;create_support_ticket;route_task_by_condition;read_subscription_status,5,Mixed,Service & Incident Operations,4.6290655,-15.088066,-0.014916955,0.0264839,0.6,0.6
+170,549,check_service_status;edit_username;create_support_ticket;route_task_by_condition;read_subscription_status,5,Mixed,Service & Incident Operations,1.4239433,5.9654155,0.04911757,0.06761646,0.8,0.8
+171,550,restart_service;update_subscription_plan;scan_system_for_malware;write_database_record;reset_user_password,5,State Modification,Mixed,-21.0477,1.2853775,0.077573135,-0.03745319,0.6,0.6
+172,551,restart_service;update_subscription_plan;scan_system_for_malware;write_database_record;reset_user_password,5,State Modification,Mixed,-20.173601,3.9265459,0.07488787,-0.07843154,0.4,0.4
+173,552,restart_service;update_subscription_plan;scan_system_for_malware;write_database_record;reset_user_password,5,State Modification,Mixed,-19.263887,1.7961494,0.099370986,-0.034496307,1.0,1.0
+174,553,restart_service;update_subscription_plan;scan_system_for_malware;write_database_record;reset_user_password,5,State Modification,Mixed,-19.654478,-0.19517082,0.085671656,-0.087554716,1.0,1.0
+175,554,restart_service;update_subscription_plan;scan_system_for_malware;write_database_record;reset_user_password,5,State Modification,Mixed,-19.486494,-0.8114968,0.09949399,-0.06324803,0.8,0.6
+176,555,restart_service;update_subscription_plan;scan_system_for_malware;write_database_record;reset_user_password,5,State Modification,Mixed,-19.99261,1.7009566,0.057229225,-0.07302137,1.0,1.0
+177,556,reset_user_password;scan_system_for_malware;edit_username;create_support_ticket;route_task_by_condition,5,State Modification,Service & Incident Operations,-12.412857,0.46763617,0.030623656,0.07173398,0.8,0.8
+178,557,reset_user_password;scan_system_for_malware;edit_username;create_support_ticket;route_task_by_condition,5,State Modification,Service & Incident Operations,-14.9438095,1.2487968,0.090680815,0.09999355,0.8,1.0
+179,558,reset_user_password;scan_system_for_malware;edit_username;create_support_ticket;route_task_by_condition,5,State Modification,Service & Incident Operations,-13.807299,1.5488582,0.0035980716,0.084492825,0.8,1.0
+180,559,reset_user_password;scan_system_for_malware;edit_username;create_support_ticket;route_task_by_condition,5,State Modification,Service & Incident Operations,-16.109568,-0.06153883,0.092409395,0.12569481,1.0,0.6
+181,560,reset_user_password;scan_system_for_malware;edit_username;create_support_ticket;route_task_by_condition,5,State Modification,Service & Incident Operations,-16.752808,-0.26348868,0.11244438,0.0919586,0.8,0.4
+182,561,reset_user_password;scan_system_for_malware;edit_username;create_support_ticket;route_task_by_condition,5,State Modification,Service & Incident Operations,-14.089589,0.5649848,0.04452514,0.061144195,1.0,1.0
+183,562,scan_system_for_malware;route_task_by_condition;create_support_ticket;write_database_record;read_subscription_status,5,Mixed,Service & Incident Operations,6.617532,4.2691875,-0.05489912,0.008560708,0.6,0.4
+184,563,scan_system_for_malware;route_task_by_condition;create_support_ticket;write_database_record;read_subscription_status,5,Mixed,Service & Incident Operations,-0.5547003,2.7619689,0.05258511,0.039579708,0.6,0.6
+185,564,scan_system_for_malware;route_task_by_condition;create_support_ticket;write_database_record;read_subscription_status,5,Mixed,Service & Incident Operations,3.1937838,7.2635026,0.026826823,0.0805473,0.6,0.8
+186,565,scan_system_for_malware;route_task_by_condition;create_support_ticket;write_database_record;read_subscription_status,5,Mixed,Service & Incident Operations,9.450879,-16.114489,0.108034216,0.04654515,0.8,0.6
+187,566,scan_system_for_malware;route_task_by_condition;create_support_ticket;write_database_record;read_subscription_status,5,Mixed,Service & Incident Operations,10.112579,-16.176205,0.03993491,0.06561591,0.6,0.6
+188,567,scan_system_for_malware;route_task_by_condition;create_support_ticket;write_database_record;read_subscription_status,5,Mixed,Service & Incident Operations,4.668699,6.708156,0.037975945,-0.002389348,1.0,1.0
+189,568,read_subscription_status;route_task_by_condition;check_service_status;read_database_record;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,8.389209,5.5230117,-0.22667602,-0.00021377463,0.6,0.6
+190,569,read_subscription_status;route_task_by_condition;check_service_status;read_database_record;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,11.658273,5.8066597,-0.25461146,0.033999775,0.8,0.6
+191,570,read_subscription_status;route_task_by_condition;check_service_status;read_database_record;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,8.3173065,7.7905993,-0.24939787,-0.012714325,0.8,0.8
+192,571,read_subscription_status;route_task_by_condition;check_service_status;read_database_record;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,10.077538,11.874062,-0.25797227,-0.0028153476,1.0,1.0
+193,572,read_subscription_status;route_task_by_condition;check_service_status;read_database_record;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,10.283838,13.057882,-0.2664699,0.018122224,0.6,0.4
+194,573,read_subscription_status;route_task_by_condition;check_service_status;read_database_record;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,6.9785337,8.563956,-0.22069371,0.03978946,0.8,0.8
+195,574,scan_system_for_malware;read_database_record;create_support_ticket;reset_user_password;read_access_logs,5,Data Retrieval,Data & Access Management,12.720136,-10.021167,0.016946401,0.07746933,0.8,0.6
+196,575,scan_system_for_malware;read_database_record;create_support_ticket;reset_user_password;read_access_logs,5,Data Retrieval,Data & Access Management,11.211734,-11.944838,-0.04927539,0.07283551,0.8,0.8
+197,576,scan_system_for_malware;read_database_record;create_support_ticket;reset_user_password;read_access_logs,5,Data Retrieval,Data & Access Management,11.563563,-10.555968,0.022209773,0.06799977,1.0,0.8
+198,577,scan_system_for_malware;read_database_record;create_support_ticket;reset_user_password;read_access_logs,5,Data Retrieval,Data & Access Management,12.356545,-13.143367,-0.025115168,0.021815354,1.0,0.8
+199,578,scan_system_for_malware;read_database_record;create_support_ticket;reset_user_password;read_access_logs,5,Data Retrieval,Data & Access Management,12.5068655,-14.174339,-0.0152326645,0.007861675,0.8,0.2
+200,579,scan_system_for_malware;read_database_record;create_support_ticket;reset_user_password;read_access_logs,5,Data Retrieval,Data & Access Management,10.991712,-9.858896,0.012901533,0.14469083,0.6,0.6
+201,580,check_service_status;route_task_by_condition;create_support_ticket;write_database_record;read_subscription_status,5,Mixed,Service & Incident Operations,6.2684994,4.2657714,-0.1071128,0.002341643,0.6,0.6
+202,581,check_service_status;route_task_by_condition;create_support_ticket;write_database_record;read_subscription_status,5,Mixed,Service & Incident Operations,-0.6808673,2.9472532,0.024296617,0.041446228,0.8,0.8
+203,582,check_service_status;route_task_by_condition;create_support_ticket;write_database_record;read_subscription_status,5,Mixed,Service & Incident Operations,2.9066803,7.211653,-0.00139858,0.041979395,0.8,0.8
+204,583,check_service_status;route_task_by_condition;create_support_ticket;write_database_record;read_subscription_status,5,Mixed,Service & Incident Operations,6.2527623,-15.664912,0.09487003,0.029866593,1.0,1.0
+205,584,check_service_status;route_task_by_condition;create_support_ticket;write_database_record;read_subscription_status,5,Mixed,Service & Incident Operations,5.188938,-14.850776,-0.012544759,0.028972303,0.8,0.8
+206,585,check_service_status;route_task_by_condition;create_support_ticket;write_database_record;read_subscription_status,5,Mixed,Service & Incident Operations,4.8200684,6.973317,-0.02129071,-0.0081134075,0.8,0.8
+207,586,create_support_ticket;update_subscription_plan;dispatch_message_to_usergroup;reset_user_password;escalate_case_to_human,5,State Modification,Mixed,-10.089015,-0.050182257,0.18055288,-0.08550002,1.0,0.6
+208,587,create_support_ticket;update_subscription_plan;dispatch_message_to_usergroup;reset_user_password;escalate_case_to_human,5,State Modification,Mixed,-8.8076935,1.4827242,0.12052081,-0.061465017,1.0,1.0
+209,588,create_support_ticket;update_subscription_plan;dispatch_message_to_usergroup;reset_user_password;escalate_case_to_human,5,State Modification,Mixed,-8.071224,1.359657,0.20847629,-0.04794049,1.0,1.0
+210,589,create_support_ticket;update_subscription_plan;dispatch_message_to_usergroup;reset_user_password;escalate_case_to_human,5,State Modification,Mixed,-10.267652,-3.5359716,0.21424228,-0.054127336,1.0,0.6
+211,590,create_support_ticket;update_subscription_plan;dispatch_message_to_usergroup;reset_user_password;escalate_case_to_human,5,State Modification,Mixed,-10.091287,-4.0970984,0.16110802,-0.03513684,1.0,0.4
+212,591,create_support_ticket;update_subscription_plan;dispatch_message_to_usergroup;reset_user_password;escalate_case_to_human,5,State Modification,Mixed,-7.4459805,1.7769455,0.16664608,-0.08991134,1.0,1.0
+213,592,read_subscription_status;read_database_record;check_service_status;route_task_by_condition;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,8.485764,5.6118026,-0.18106681,-0.013273392,0.8,0.8
+214,593,read_subscription_status;read_database_record;check_service_status;route_task_by_condition;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,11.650256,5.5322585,-0.22653404,0.019815303,0.8,0.4
+215,594,read_subscription_status;read_database_record;check_service_status;route_task_by_condition;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,8.388774,7.7945485,-0.2467619,-0.022988705,0.8,0.8
+216,595,read_subscription_status;read_database_record;check_service_status;route_task_by_condition;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,9.914009,11.909855,-0.28183216,0.008404655,0.8,0.8
+217,596,read_subscription_status;read_database_record;check_service_status;route_task_by_condition;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,7.031196,8.8186455,-0.2668568,0.05161894,0.8,0.8
+218,597,scan_system_for_malware;read_access_logs;read_subscription_status;read_user_profile;reset_user_password,5,Data Retrieval,Mixed,14.42513,-9.185838,0.14010052,-0.080754116,1.0,0.6
+219,598,scan_system_for_malware;read_access_logs;read_subscription_status;read_user_profile;reset_user_password,5,Data Retrieval,Mixed,16.784836,-10.355473,0.1557399,-0.10022164,1.0,0.6
+220,599,scan_system_for_malware;read_access_logs;read_subscription_status;read_user_profile;reset_user_password,5,Data Retrieval,Mixed,15.493738,-10.236919,0.13980377,-0.077186756,1.0,0.8
+221,600,scan_system_for_malware;read_access_logs;read_subscription_status;read_user_profile;reset_user_password,5,Data Retrieval,Mixed,14.23046,-13.577715,0.13239011,-0.11330864,1.0,0.8
+222,601,scan_system_for_malware;read_access_logs;read_subscription_status;read_user_profile;reset_user_password,5,Data Retrieval,Mixed,13.703549,-14.357138,0.08145818,-0.075677134,1.0,0.4
+223,602,scan_system_for_malware;read_access_logs;read_subscription_status;read_user_profile;reset_user_password,5,Data Retrieval,Mixed,15.57255,-9.750595,0.16681457,-0.09584846,1.0,0.8
+224,603,read_access_logs;read_subscription_status;read_user_profile;dispatch_message_to_usergroup;reset_user_password,5,Data Retrieval,Account & Subscription,15.0744915,-7.1264944,0.14290754,0.07750114,0.8,0.6
+225,604,read_access_logs;read_subscription_status;read_user_profile;dispatch_message_to_usergroup;reset_user_password,5,Data Retrieval,Account & Subscription,17.688215,-10.270888,0.12896042,0.12118986,0.8,0.8
+226,605,read_access_logs;read_subscription_status;read_user_profile;dispatch_message_to_usergroup;reset_user_password,5,Data Retrieval,Account & Subscription,16.97028,-8.68031,0.15015398,0.12733048,0.8,0.8
+227,606,read_access_logs;read_subscription_status;read_user_profile;dispatch_message_to_usergroup;reset_user_password,5,Data Retrieval,Account & Subscription,16.72123,-13.640241,0.20294534,0.12525813,1.0,0.8
+228,607,read_access_logs;read_subscription_status;read_user_profile;dispatch_message_to_usergroup;reset_user_password,5,Data Retrieval,Account & Subscription,16.58756,-14.210025,0.1379388,0.12408842,0.8,0.6
+229,608,read_access_logs;read_subscription_status;read_user_profile;dispatch_message_to_usergroup;reset_user_password,5,Data Retrieval,Account & Subscription,16.155928,-8.680201,0.17959453,0.1327477,1.0,0.6
+230,609,read_subscription_status;create_support_ticket;read_access_logs;restart_service;write_database_record,5,State Modification,Mixed,5.988285,-0.07094692,-0.024979362,-0.08105109,0.4,0.4
+231,610,read_subscription_status;create_support_ticket;read_access_logs;restart_service;write_database_record,5,State Modification,Mixed,9.402407,1.6126668,-0.052400686,-0.082467735,0.6,0.6
+232,611,read_subscription_status;create_support_ticket;read_access_logs;restart_service;write_database_record,5,State Modification,Mixed,8.311928,0.7603365,-0.008501777,0.0042432537,0.8,0.8
+233,612,read_subscription_status;create_support_ticket;read_access_logs;restart_service;write_database_record,5,State Modification,Mixed,6.785464,-12.074802,-0.018654756,0.0021947077,0.8,0.8
+234,613,read_subscription_status;create_support_ticket;read_access_logs;restart_service;write_database_record,5,State Modification,Mixed,6.203543,-12.010249,-0.00018940168,0.037157796,0.4,0.4
+235,614,read_subscription_status;create_support_ticket;read_access_logs;restart_service;write_database_record,5,State Modification,Mixed,7.9850354,-0.18891123,-0.05275126,-0.07460196,0.4,0.4
+236,615,read_database_record;escalate_case_to_human;read_user_profile;update_subscription_plan;read_subscription_status,5,Data Retrieval,Account & Subscription,3.3094196,-5.1955657,-0.054181267,0.107597455,1.0,1.0
+237,616,read_database_record;escalate_case_to_human;read_user_profile;update_subscription_plan;read_subscription_status,5,Data Retrieval,Account & Subscription,0.1738237,-6.826939,0.019663142,0.1498704,1.0,1.0
+238,617,read_database_record;escalate_case_to_human;read_user_profile;update_subscription_plan;read_subscription_status,5,Data Retrieval,Account & Subscription,2.5991654,-7.14389,-0.007924472,0.13802804,0.8,0.8
+239,618,read_database_record;escalate_case_to_human;read_user_profile;update_subscription_plan;read_subscription_status,5,Data Retrieval,Account & Subscription,-2.158875,-13.81802,0.010469886,0.1332218,1.0,0.8
+240,619,read_database_record;escalate_case_to_human;read_user_profile;update_subscription_plan;read_subscription_status,5,Data Retrieval,Account & Subscription,-2.4930546,-14.041198,-0.116535634,0.13356258,0.8,0.8
+241,620,read_database_record;escalate_case_to_human;read_user_profile;update_subscription_plan;read_subscription_status,5,Data Retrieval,Account & Subscription,2.8816698,-7.231711,0.03697023,0.08397271,1.0,0.8
+242,621,write_database_record;route_task_by_condition;escalate_case_to_human;scan_system_for_malware;read_access_logs,5,Mixed,Data & Access Management,19.437866,-0.9633623,-0.0013739737,0.14231236,0.8,0.6
+243,622,write_database_record;route_task_by_condition;escalate_case_to_human;scan_system_for_malware;read_access_logs,5,Mixed,Data & Access Management,21.751919,-1.3958803,0.021905936,0.14873806,0.8,0.6
+244,623,write_database_record;route_task_by_condition;escalate_case_to_human;scan_system_for_malware;read_access_logs,5,Mixed,Data & Access Management,20.6093,-2.0192447,0.0444978,0.09687767,0.8,0.8
+245,624,write_database_record;route_task_by_condition;escalate_case_to_human;scan_system_for_malware;read_access_logs,5,Mixed,Data & Access Management,21.297712,-4.189835,0.031196862,0.12460748,0.6,0.4
+246,625,write_database_record;route_task_by_condition;escalate_case_to_human;scan_system_for_malware;read_access_logs,5,Mixed,Data & Access Management,-6.5860043,-14.945695,-0.075302556,0.13725339,0.4,0.2
+247,626,write_database_record;route_task_by_condition;escalate_case_to_human;scan_system_for_malware;read_access_logs,5,Mixed,Data & Access Management,20.473648,-1.5262464,-0.0009789997,0.1614847,0.8,0.8
+248,627,read_user_profile;read_subscription_status;write_database_record;read_database_record;create_support_ticket,5,Data Retrieval,Mixed,8.323633,-3.3863323,0.093187355,-0.05587231,0.8,0.6
+249,628,read_user_profile;read_subscription_status;write_database_record;read_database_record;create_support_ticket,5,Data Retrieval,Mixed,-2.9490678,-10.609993,0.022508265,-0.04594373,0.8,1.0
+250,629,read_user_profile;read_subscription_status;write_database_record;read_database_record;create_support_ticket,5,Data Retrieval,Mixed,-1.9692649,-9.841501,0.056132205,-0.082937,1.0,0.8
+251,630,read_user_profile;read_subscription_status;write_database_record;read_database_record;create_support_ticket,5,Data Retrieval,Mixed,-1.1026917,-12.350079,0.1283362,-0.088150576,1.0,1.0
+252,631,read_user_profile;read_subscription_status;write_database_record;read_database_record;create_support_ticket,5,Data Retrieval,Mixed,-0.46693406,-13.172747,0.069220565,-0.06487685,1.0,0.4
+253,632,read_user_profile;read_subscription_status;write_database_record;read_database_record;create_support_ticket,5,Data Retrieval,Mixed,-1.5820011,-10.149283,0.082689434,-0.07303253,1.0,0.8
+254,633,edit_username;write_database_record;read_database_record;update_subscription_plan;restart_service,5,State Modification,Mixed,-19.576612,-7.61108,0.004433287,-0.0030413861,1.0,0.8
+255,634,edit_username;write_database_record;read_database_record;update_subscription_plan;restart_service,5,State Modification,Mixed,-17.424234,-6.696458,-0.050633583,-0.032821495,0.8,1.0
+256,635,edit_username;write_database_record;read_database_record;update_subscription_plan;restart_service,5,State Modification,Mixed,-18.368822,-6.398575,0.050357018,0.021272115,1.0,1.0
+257,636,edit_username;write_database_record;read_database_record;update_subscription_plan;restart_service,5,State Modification,Mixed,-20.560444,-5.4827,0.083357215,0.013779506,1.0,1.0
+258,637,edit_username;write_database_record;read_database_record;update_subscription_plan;restart_service,5,State Modification,Mixed,-20.934546,-5.031185,0.073439114,0.019932477,0.8,0.6
+259,638,edit_username;write_database_record;read_database_record;update_subscription_plan;restart_service,5,State Modification,Mixed,-18.959827,-6.332998,0.06448541,0.027703932,1.0,1.0
+260,639,restart_service;read_user_profile;read_access_logs;dispatch_message_to_usergroup;update_subscription_plan,5,Mixed,Account & Subscription,14.63349,-3.5410788,-0.09089312,0.05547638,0.0,0.4
+261,640,restart_service;read_user_profile;read_access_logs;dispatch_message_to_usergroup;update_subscription_plan,5,Mixed,Account & Subscription,12.246087,2.6544318,-0.10269498,0.041911192,0.0,0.0
+262,641,restart_service;read_user_profile;read_access_logs;dispatch_message_to_usergroup;update_subscription_plan,5,Mixed,Account & Subscription,15.281293,-0.54131895,-0.051260784,0.042499725,0.6,0.6
+263,642,restart_service;read_user_profile;read_access_logs;dispatch_message_to_usergroup;update_subscription_plan,5,Mixed,Account & Subscription,-9.570339,-10.920173,-0.071471326,0.008278456,0.4,0.2
+264,643,restart_service;read_user_profile;read_access_logs;dispatch_message_to_usergroup;update_subscription_plan,5,Mixed,Account & Subscription,-9.652548,-10.856353,-0.105390586,-0.01793017,0.6,0.2
+265,644,restart_service;read_user_profile;read_access_logs;dispatch_message_to_usergroup;update_subscription_plan,5,Mixed,Account & Subscription,15.458678,0.31041694,-0.14254004,0.035199426,0.4,0.6
+266,645,read_subscription_status;read_database_record;check_service_status;escalate_case_to_human;reset_user_password,5,Data Retrieval,Data & Access Management,6.5561504,-4.483465,0.08611898,0.14643,1.0,0.6
+267,646,read_subscription_status;read_database_record;check_service_status;escalate_case_to_human;reset_user_password,5,Data Retrieval,Data & Access Management,10.955145,2.7543576,0.07169802,-0.033660784,0.6,0.2
+268,647,read_subscription_status;read_database_record;check_service_status;escalate_case_to_human;reset_user_password,5,Data Retrieval,Data & Access Management,8.926661,-7.0542054,0.087556735,0.11025496,0.8,0.4
+269,648,read_subscription_status;read_database_record;check_service_status;escalate_case_to_human;reset_user_password,5,Data Retrieval,Data & Access Management,6.040197,-9.293197,0.109111674,0.119261585,1.0,1.0
+270,649,read_subscription_status;read_database_record;check_service_status;escalate_case_to_human;reset_user_password,5,Data Retrieval,Data & Access Management,5.4954066,-11.003447,0.08738673,-0.009098054,0.6,0.4
+271,650,read_subscription_status;read_database_record;check_service_status;escalate_case_to_human;reset_user_password,5,Data Retrieval,Data & Access Management,8.365707,-6.868663,0.057373025,0.11109331,0.6,0.4
+272,329,check_service_status;escalate_case_to_human;read_user_profile;update_subscription_plan,4,Data Retrieval,Account & Subscription,0.65937215,-5.1137915,-0.040217485,-0.00059723586,0.6,0.6
+273,330,read_access_logs;check_service_status;route_task_by_condition;write_database_record,4,Data Retrieval,Mixed,11.685146,9.078892,-0.07666197,-0.067941666,1.0,1.0
+274,331,restart_service;read_database_record;update_subscription_plan;check_service_status,4,Mixed,Service & Incident Operations,-4.1209526,15.669938,-0.0068150833,0.03682549,1.0,1.0
+275,332,write_database_record;create_support_ticket;read_subscription_status;scan_system_for_malware,4,Mixed,Service & Incident Operations,2.15823,1.6124552,0.10390266,0.0030719065,1.0,1.0
+276,333,read_access_logs;update_subscription_plan;escalate_case_to_human;create_support_ticket,4,State Modification,Data & Access Management,-3.2262247,-3.0195072,0.018821301,0.15392542,0.6,0.6
+277,334,create_support_ticket;read_database_record;dispatch_message_to_usergroup;read_access_logs,4,Data Retrieval,Data & Access Management,2.6181443,-1.2005208,-0.057936184,0.20498021,0.8,1.0
+278,335,read_subscription_status;read_database_record;update_subscription_plan;read_user_profile,4,Data Retrieval,Account & Subscription,0.43939242,-9.766082,-0.068246484,0.14403872,1.0,0.8
+279,336,route_task_by_condition;read_subscription_status;update_subscription_plan;restart_service,4,State Modification,Mixed,1.9321432,16.16408,-0.40285462,0.01838968,0.8,0.8
+280,337,route_task_by_condition;edit_username;escalate_case_to_human;create_support_ticket,4,Mixed,Service & Incident Operations,-5.7880926,-2.1186092,-0.08083484,-0.09846129,0.8,0.8
+281,338,check_service_status;read_database_record;update_subscription_plan;create_support_ticket,4,Mixed,Service & Incident Operations,-2.6547132,-7.517322,0.048506774,0.01710142,0.4,0.4
+282,339,escalate_case_to_human;restart_service;check_service_status;read_database_record,4,Data Retrieval,Mixed,-8.047232,13.471997,-0.07381553,-0.10504763,1.0,1.0
+283,340,create_support_ticket;dispatch_message_to_usergroup;read_subscription_status;restart_service,4,State Modification,Mixed,-0.5719071,11.384669,-0.032291763,-0.021802459,1.0,1.0
+284,341,update_subscription_plan;dispatch_message_to_usergroup;read_database_record;route_task_by_condition,4,Orchestration,Account & Subscription,5.3809595,14.366435,0.54095644,0.04394869,0.6,0.6
+285,342,dispatch_message_to_usergroup;read_user_profile;scan_system_for_malware;reset_user_password,4,Data Retrieval,Account & Subscription,21.449047,-11.86131,0.0044002207,0.04915419,1.0,1.0
+286,343,edit_username;restart_service;scan_system_for_malware;read_database_record,4,Mixed,Service & Incident Operations,-23.317513,5.3842845,-0.019769708,0.13176064,0.6,1.0
+287,344,reset_user_password;restart_service;scan_system_for_malware;read_user_profile,4,Mixed,Service & Incident Operations,-21.938204,4.1380715,-0.07544343,0.13443235,0.8,1.0
+288,345,escalate_case_to_human;edit_username;write_database_record;read_database_record,4,State Modification,Data & Access Management,-15.0038595,-10.8148155,-0.0105001135,0.16545966,1.0,1.0
+289,346,edit_username;scan_system_for_malware;restart_service;write_database_record,4,State Modification,Service & Incident Operations,-23.445648,5.4958534,0.02806543,0.13520336,0.2,1.0
+290,347,create_support_ticket;read_access_logs;edit_username;escalate_case_to_human,4,State Modification,Data & Access Management,-4.840972,-4.3406,0.09791362,0.22749266,0.8,0.8
+291,348,create_support_ticket;reset_user_password;restart_service;read_subscription_status,4,State Modification,Service & Incident Operations,-10.704397,4.214927,0.17348674,0.09131226,0.8,0.8
+292,349,update_subscription_plan;dispatch_message_to_usergroup;reset_user_password;write_database_record,4,State Modification,Mixed,-14.974818,12.044685,-0.1043001,-0.047609236,1.0,1.0
+293,350,write_database_record;edit_username;create_support_ticket;update_subscription_plan,4,State Modification,Account & Subscription,-12.02641,6.7323694,0.15233953,-0.053093,1.0,1.0
+294,351,read_subscription_status;scan_system_for_malware;check_service_status;read_database_record,4,Data Retrieval,Service & Incident Operations,14.590773,6.513265,0.05893677,0.030370302,1.0,0.4
+295,352,read_subscription_status;write_database_record;check_service_status;escalate_case_to_human,4,Data Retrieval,Data & Access Management,6.2449903,-6.9524407,0.020743893,0.16006157,0.8,0.8
+296,353,update_subscription_plan;route_task_by_condition;restart_service;edit_username,4,State Modification,Mixed,-0.27035105,18.82459,-0.18340056,-0.009782507,1.0,1.0
+297,354,scan_system_for_malware;read_user_profile;write_database_record;route_task_by_condition;read_access_logs,5,Data Retrieval,Mixed,19.26228,-4.368618,0.041110013,-0.12580922,1.0,1.0
+298,355,write_database_record;check_service_status;scan_system_for_malware;read_subscription_status;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,16.038467,4.980037,0.023951704,-0.029894158,1.0,0.8
+299,356,read_subscription_status;update_subscription_plan;create_support_ticket;route_task_by_condition;reset_user_password,5,State Modification,Mixed,-4.245544,2.5365202,-0.0041287183,-0.012861849,0.8,0.8
+300,357,read_user_profile;reset_user_password;check_service_status;read_database_record;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,12.655772,-5.318376,0.1822862,-0.044506162,1.0,1.0
+301,358,create_support_ticket;edit_username;write_database_record;reset_user_password;check_service_status,5,State Modification,Mixed,-13.589816,-2.6026132,0.19535594,-0.038282093,1.0,1.0
+302,359,create_support_ticket;write_database_record;restart_service;route_task_by_condition;escalate_case_to_human,5,State Modification,Service & Incident Operations,-1.9186636,6.1376476,0.009090273,-0.004258851,0.8,1.0
+303,360,write_database_record;dispatch_message_to_usergroup;read_user_profile;read_database_record;read_subscription_status,5,Data Retrieval,Account & Subscription,11.912301,-2.4555829,-0.14437254,0.12674429,1.0,1.0
+304,361,check_service_status;edit_username;create_support_ticket;route_task_by_condition;read_subscription_status,5,Mixed,Service & Incident Operations,1.7884507,4.9433475,0.102103025,0.07501185,0.8,0.8
+305,362,restart_service;update_subscription_plan;scan_system_for_malware;write_database_record;reset_user_password,5,State Modification,Mixed,-19.88265,0.9738789,0.084785074,-0.084304616,1.0,1.0
+306,363,reset_user_password;scan_system_for_malware;edit_username;create_support_ticket;route_task_by_condition,5,State Modification,Service & Incident Operations,-13.555901,0.9178281,0.07228932,0.09410381,1.0,1.0
+307,364,scan_system_for_malware;route_task_by_condition;create_support_ticket;write_database_record;read_subscription_status,5,Mixed,Service & Incident Operations,3.6823199,5.3307576,-0.0046429457,-0.023745187,1.0,0.8
+308,365,read_subscription_status;route_task_by_condition;check_service_status;read_database_record;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,9.533152,9.378604,-0.2838002,0.00888707,0.8,0.8
+309,366,scan_system_for_malware;read_database_record;create_support_ticket;reset_user_password;read_access_logs,5,Data Retrieval,Data & Access Management,11.95598,-11.34626,-0.028144317,0.070989214,1.0,1.0
+310,367,check_service_status;route_task_by_condition;create_support_ticket;write_database_record;read_subscription_status,5,Mixed,Service & Incident Operations,3.0654347,5.020267,-0.02418341,-0.013654597,1.0,1.0
+311,368,create_support_ticket;update_subscription_plan;dispatch_message_to_usergroup;reset_user_password;escalate_case_to_human,5,State Modification,Mixed,-9.200412,0.60439515,0.20954227,-0.040710647,1.0,1.0
+312,369,read_subscription_status;read_database_record;check_service_status;route_task_by_condition;dispatch_message_to_usergroup,5,Data Retrieval,Mixed,9.068706,9.535732,-0.30684263,-0.0041782195,1.0,1.0
+313,370,scan_system_for_malware;read_access_logs;read_subscription_status;read_user_profile;reset_user_password,5,Data Retrieval,Mixed,15.188739,-11.281753,0.15134388,-0.09390865,1.0,0.8
+314,371,read_access_logs;read_subscription_status;read_user_profile;dispatch_message_to_usergroup;reset_user_password,5,Data Retrieval,Account & Subscription,16.910425,-11.78181,0.19464095,0.08339495,1.0,0.8
+315,372,read_subscription_status;create_support_ticket;read_access_logs;restart_service;write_database_record,5,State Modification,Mixed,7.296042,-0.08633902,0.006494913,-0.057523645,1.0,1.0
+316,373,read_database_record;escalate_case_to_human;read_user_profile;update_subscription_plan;read_subscription_status,5,Data Retrieval,Account & Subscription,1.8719726,-6.273406,-0.03100089,0.10909654,1.0,1.0
+317,374,write_database_record;route_task_by_condition;escalate_case_to_human;scan_system_for_malware;read_access_logs,5,Mixed,Data & Access Management,20.728064,-0.80398244,0.039768748,0.16996275,1.0,0.8
+318,375,read_user_profile;read_subscription_status;write_database_record;read_database_record;create_support_ticket,5,Data Retrieval,Mixed,-1.6658008,-10.873691,0.107780494,-0.087051325,1.0,1.0
+319,376,edit_username;write_database_record;read_database_record;update_subscription_plan;restart_service,5,State Modification,Mixed,-19.117737,-7.1911597,-0.0060726036,-0.0005066383,1.0,1.0
+320,377,restart_service;read_user_profile;read_access_logs;dispatch_message_to_usergroup;update_subscription_plan,5,Mixed,Account & Subscription,14.591695,0.6561404,-0.13321693,0.05790764,0.8,0.8
+321,378,read_subscription_status;read_database_record;check_service_status;escalate_case_to_human;reset_user_password,5,Data Retrieval,Data & Access Management,7.0084367,-7.171153,0.13878094,0.15884185,1.0,1.0
