@@ -1,0 +1,14 @@
+[
+  {
+    "backbone": "sentence-transformers/all-mpnet-base-v2",
+    "reason": "not available in local model cache"
+  },
+  {
+    "backbone": "intfloat/e5-base-v2",
+    "reason": "not available in local model cache"
+  },
+  {
+    "backbone": "BAAI/bge-base-en-v1.5",
+    "reason": "not available in local model cache"
+  }
+]

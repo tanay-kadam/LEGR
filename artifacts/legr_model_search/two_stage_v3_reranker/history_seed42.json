@@ -1,0 +1,86 @@
+[
+  {
+    "epoch": 5,
+    "loss": 0.12920896708965302,
+    "structural_true_twin_recall@1": 0.7466666666666667,
+    "system_recall@1": 0.7244897959183674,
+    "hard_negative_pair_accuracy": 0.8690476190476188
+  },
+  {
+    "epoch": 10,
+    "loss": 0.016540338983759284,
+    "structural_true_twin_recall@1": 0.8066666666666666,
+    "system_recall@1": 0.7517006802721088,
+    "hard_negative_pair_accuracy": 0.8874603174603175
+  },
+  {
+    "epoch": 15,
+    "loss": 0.006725919200107455,
+    "structural_true_twin_recall@1": 0.8,
+    "system_recall@1": 0.7482993197278912,
+    "hard_negative_pair_accuracy": 0.882063492063492
+  },
+  {
+    "epoch": 20,
+    "loss": 0.004039082210510969,
+    "structural_true_twin_recall@1": 0.8133333333333334,
+    "system_recall@1": 0.7517006802721088,
+    "hard_negative_pair_accuracy": 0.892063492063492
+  },
+  {
+    "epoch": 25,
+    "loss": 0.0027099941798951477,
+    "structural_true_twin_recall@1": 0.8066666666666666,
+    "system_recall@1": 0.7482993197278912,
+    "hard_negative_pair_accuracy": 0.8841269841269841
+  },
+  {
+    "epoch": 30,
+    "loss": 0.0020194580720271915,
+    "structural_true_twin_recall@1": 0.8266666666666667,
+    "system_recall@1": 0.7585034013605442,
+    "hard_negative_pair_accuracy": 0.8939682539682539
+  },
+  {
+    "epoch": 35,
+    "loss": 0.0016852520930115134,
+    "structural_true_twin_recall@1": 0.82,
+    "system_recall@1": 0.7551020408163265,
+    "hard_negative_pair_accuracy": 0.893015873015873
+  },
+  {
+    "epoch": 40,
+    "loss": 0.001235930947586894,
+    "structural_true_twin_recall@1": 0.8266666666666667,
+    "system_recall@1": 0.7551020408163265,
+    "hard_negative_pair_accuracy": 0.8952380952380952
+  },
+  {
+    "epoch": 45,
+    "loss": 0.0009594408184057102,
+    "structural_true_twin_recall@1": 0.82,
+    "system_recall@1": 0.7551020408163265,
+    "hard_negative_pair_accuracy": 0.8930158730158729
+  },
+  {
+    "epoch": 50,
+    "loss": 0.0009118854213738814,
+    "structural_true_twin_recall@1": 0.82,
+    "system_recall@1": 0.7551020408163265,
+    "hard_negative_pair_accuracy": 0.8930158730158729
+  },
+  {
+    "epoch": 55,
+    "loss": 0.0006893100799061358,
+    "structural_true_twin_recall@1": 0.82,
+    "system_recall@1": 0.7551020408163265,
+    "hard_negative_pair_accuracy": 0.8930158730158729
+  },
+  {
+    "epoch": 60,
+    "loss": 0.0006602298308280297,
+    "structural_true_twin_recall@1": 0.82,
+    "system_recall@1": 0.7551020408163265,
+    "hard_negative_pair_accuracy": 0.8930158730158729
+  }
+]

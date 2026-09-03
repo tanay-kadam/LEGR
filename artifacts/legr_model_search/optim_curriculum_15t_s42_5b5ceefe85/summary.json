@@ -1,0 +1,35 @@
+{
+  "run_name": "optim_curriculum_15t_s42_5b5ceefe85",
+  "status": "complete",
+  "elapsed_seconds": 195.95200657844543,
+  "epochs_completed": 15,
+  "best_dev_recall@1": 0.9149659863945578,
+  "dev_metrics": {
+    "recall@1": 0.9149659863945578,
+    "mrr@1": 0.9149659863945578,
+    "recall@3": 0.9897959183673469,
+    "mrr@3": 0.9512471655328797,
+    "recall@5": 0.9965986394557823,
+    "mrr@5": 0.9527777777777778,
+    "tool_set_f1": 0.988068243170284,
+    "same_toolset_recall@1": 0.9523809523809523,
+    "n_queries": 294.0,
+    "gallery_size": 49.0,
+    "mean_latency_ms": 9.770457823153018,
+    "p95_latency_ms": 13.626402631512304
+  },
+  "parameter_count": 74540563,
+  "trainable_parameter_count": 9752723,
+  "load_reports": {
+    "v3": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    },
+    "sbert": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    }
+  }
+}

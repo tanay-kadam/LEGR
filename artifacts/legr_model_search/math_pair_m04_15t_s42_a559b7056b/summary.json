@@ -1,0 +1,35 @@
+{
+  "run_name": "math_pair_m04_15t_s42_a559b7056b",
+  "status": "complete",
+  "elapsed_seconds": 76.22231841087341,
+  "epochs_completed": 15,
+  "best_dev_recall@1": 0.8979591836734694,
+  "dev_metrics": {
+    "recall@1": 0.8979591836734694,
+    "mrr@1": 0.8979591836734694,
+    "recall@3": 0.9829931972789115,
+    "mrr@3": 0.9393424036281179,
+    "recall@5": 1.0,
+    "mrr@5": 0.9432539682539682,
+    "tool_set_f1": 0.9857196846992767,
+    "same_toolset_recall@1": 0.9455782312925171,
+    "n_queries": 294.0,
+    "gallery_size": 49.0,
+    "mean_latency_ms": 1.8432187074363757,
+    "p95_latency_ms": 2.112296874884123
+  },
+  "parameter_count": 71381331,
+  "trainable_parameter_count": 6593491,
+  "load_reports": {
+    "v3": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    },
+    "sbert": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    }
+  }
+}

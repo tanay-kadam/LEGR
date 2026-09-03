@@ -1,0 +1,119 @@
+{
+  "gps_adapter": {
+    "n": 487,
+    "label_counts": {
+      "read": 232,
+      "edit": 223,
+      "orchestrate": 32
+    },
+    "cosine_silhouette": 0.15497365593910217,
+    "silhouette_permutation_p": 0.000999000999000999,
+    "knn_neighbors": 5,
+    "knn_cv_macro_f1": 0.946231778518774,
+    "knn_macro_f1_chance": 0.3333333333333333,
+    "knn_macro_f1_permutation_mean": 0.32766196218473115,
+    "knn_macro_f1_permutation_95pct": 0.37185966734981596,
+    "knn_macro_f1_permutation_p": 0.000999000999000999,
+    "neighborhood_purity_by_class": {
+      "read": 0.9465517241379311,
+      "edit": 0.9390134529147982,
+      "orchestrate": 0.7937500000000001
+    },
+    "balanced_neighborhood_purity": 0.8931050590175764,
+    "mean_within_class_cosine_distance": 0.7946015000343323,
+    "mean_between_class_cosine_distance": 1.0249781608581543,
+    "between_minus_within_distance": 0.23037666082382202,
+    "distance_gap_permutation_mean": 1.9885599613189697e-05,
+    "distance_gap_permutation_95pct": 0.004738771915435791,
+    "distance_gap_permutation_p": 0.000999000999000999,
+    "permutations": 1000,
+    "bootstraps": 2000,
+    "knn_macro_f1_95ci": [
+      0.9102113672205914,
+      0.973488497180647
+    ],
+    "balanced_neighborhood_purity_95ci": [
+      0.8507239559172207,
+      0.9302464434822948
+    ],
+    "corroborates_functional_clustering": true
+  },
+  "v3_graph": {
+    "n": 487,
+    "label_counts": {
+      "read": 232,
+      "edit": 223,
+      "orchestrate": 32
+    },
+    "cosine_silhouette": 0.08734869956970215,
+    "silhouette_permutation_p": 0.000999000999000999,
+    "knn_neighbors": 5,
+    "knn_cv_macro_f1": 0.9291429121262419,
+    "knn_macro_f1_chance": 0.3333333333333333,
+    "knn_macro_f1_permutation_mean": 0.3271118401043986,
+    "knn_macro_f1_permutation_95pct": 0.3712008972246717,
+    "knn_macro_f1_permutation_p": 0.000999000999000999,
+    "neighborhood_purity_by_class": {
+      "read": 0.9241379310344828,
+      "edit": 0.9112107623318385,
+      "orchestrate": 0.825
+    },
+    "balanced_neighborhood_purity": 0.8867828977887738,
+    "mean_within_class_cosine_distance": 0.8847228288650513,
+    "mean_between_class_cosine_distance": 1.0735245943069458,
+    "between_minus_within_distance": 0.18880176544189453,
+    "distance_gap_permutation_mean": 8.903187513351441e-05,
+    "distance_gap_permutation_95pct": 0.003519624471664427,
+    "distance_gap_permutation_p": 0.000999000999000999,
+    "permutations": 1000,
+    "bootstraps": 2000,
+    "knn_macro_f1_95ci": [
+      0.8922500380334613,
+      0.962370693965977
+    ],
+    "balanced_neighborhood_purity_95ci": [
+      0.8490409402221536,
+      0.9193415690557187
+    ],
+    "corroborates_functional_clustering": true
+  },
+  "sbert_document": {
+    "n": 487,
+    "label_counts": {
+      "read": 232,
+      "edit": 223,
+      "orchestrate": 32
+    },
+    "cosine_silhouette": 0.11626937985420227,
+    "silhouette_permutation_p": 0.000999000999000999,
+    "knn_neighbors": 5,
+    "knn_cv_macro_f1": 0.9358633975331498,
+    "knn_macro_f1_chance": 0.3333333333333333,
+    "knn_macro_f1_permutation_mean": 0.32869581906826506,
+    "knn_macro_f1_permutation_95pct": 0.3736114203109295,
+    "knn_macro_f1_permutation_p": 0.000999000999000999,
+    "neighborhood_purity_by_class": {
+      "read": 0.9344827586206897,
+      "edit": 0.9192825112107623,
+      "orchestrate": 0.775
+    },
+    "balanced_neighborhood_purity": 0.8762550899438173,
+    "mean_within_class_cosine_distance": 0.7542890906333923,
+    "mean_between_class_cosine_distance": 0.916184663772583,
+    "between_minus_within_distance": 0.16189557313919067,
+    "distance_gap_permutation_mean": -2.3001670837402344e-05,
+    "distance_gap_permutation_95pct": 0.0041237503290176385,
+    "distance_gap_permutation_p": 0.000999000999000999,
+    "permutations": 1000,
+    "bootstraps": 2000,
+    "knn_macro_f1_95ci": [
+      0.9006367071735591,
+      0.965812036455406
+    ],
+    "balanced_neighborhood_purity_95ci": [
+      0.8394226296324933,
+      0.9111801985078088
+    ],
+    "corroborates_functional_clustering": true
+  }
+}

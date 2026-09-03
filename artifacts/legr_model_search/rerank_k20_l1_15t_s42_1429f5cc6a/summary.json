@@ -1,0 +1,35 @@
+{
+  "run_name": "rerank_k20_l1_15t_s42_1429f5cc6a",
+  "status": "complete",
+  "elapsed_seconds": 286.26730394363403,
+  "epochs_completed": 8,
+  "best_dev_recall@1": 0.6190476190476191,
+  "dev_metrics": {
+    "recall@1": 0.6190476190476191,
+    "mrr@1": 0.6190476190476191,
+    "recall@3": 0.8673469387755102,
+    "mrr@3": 0.7324263038548754,
+    "recall@5": 0.9251700680272109,
+    "mrr@5": 0.7456916099773245,
+    "tool_set_f1": 0.8371482070461668,
+    "same_toolset_recall@1": 0.9523809523809523,
+    "n_queries": 294.0,
+    "gallery_size": 49.0,
+    "mean_latency_ms": 30.826605442183915,
+    "p95_latency_ms": 35.32984473675146
+  },
+  "parameter_count": 75165716,
+  "trainable_parameter_count": 10377876,
+  "load_reports": {
+    "v3": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    },
+    "sbert": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    }
+  }
+}

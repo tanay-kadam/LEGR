@@ -1,0 +1,35 @@
+{
+  "run_name": "readout_v3_15t_s42_24ceb6fc99",
+  "status": "complete",
+  "elapsed_seconds": 78.93142747879028,
+  "epochs_completed": 15,
+  "best_dev_recall@1": 0.9081632653061225,
+  "dev_metrics": {
+    "recall@1": 0.9081632653061225,
+    "mrr@1": 0.9081632653061225,
+    "recall@3": 0.9863945578231292,
+    "mrr@3": 0.9467120181405895,
+    "recall@5": 0.9965986394557823,
+    "mrr@5": 0.9492630385487528,
+    "tool_set_f1": 0.9871909081092757,
+    "same_toolset_recall@1": 0.9455782312925171,
+    "n_queries": 294.0,
+    "gallery_size": 49.0,
+    "mean_latency_ms": 1.304282653127673,
+    "p95_latency_ms": 2.0182394735839857
+  },
+  "parameter_count": 71315795,
+  "trainable_parameter_count": 6527955,
+  "load_reports": {
+    "v3": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    },
+    "sbert": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    }
+  }
+}

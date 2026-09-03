@@ -1,0 +1,49 @@
+{
+  "checkpoint": "C:/Users/tkadam/LEGR/artifacts/legr_model_search/confirm_r1_15t_s42_30795749e6/best_model.pt",
+  "data_root": "C:/Users/tkadam/LEGR/data/campaign_v4",
+  "dataset_csvs": [
+    "C:/Users/tkadam/LEGR/data/campaign_v4/campaign_v4_15tools/train.csv",
+    "C:/Users/tkadam/LEGR/data/campaign_v4/campaign_v4_15tools/dev.csv",
+    "C:/Users/tkadam/LEGR/data/campaign_v4/campaign_v4_15tools/test_indomain.csv",
+    "C:/Users/tkadam/LEGR/data/campaign_v4/campaign_v4_15tools/test_topology_heldout.csv",
+    "C:/Users/tkadam/LEGR/data/campaign_v4/campaign_v4_15tools/candidate_corpus.csv"
+  ],
+  "device": "cuda",
+  "seed": 42,
+  "batch_size": 64,
+  "permutations": 1000,
+  "bootstraps": 2000,
+  "embedding_seconds": 6.7702206000103615,
+  "total_seconds": 86.1789420999994,
+  "model_config": {
+    "text_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "graph_kind": "gps",
+    "structure_kind": "degree",
+    "readout_kind": "dual_attention",
+    "fusion_kind": "gated",
+    "hidden_dim": 256,
+    "embed_dim": 256,
+    "graph_layers": 4,
+    "attention_heads": 8,
+    "dropout": 0.1,
+    "rerank_k": 20,
+    "rerank_layers": 2,
+    "use_reranker": false,
+    "use_semantic_expert": true,
+    "unfreeze": "last2"
+  },
+  "unique_graphs": 651,
+  "primary_graphs": 487,
+  "label_counts": {
+    "read": 232,
+    "edit": 223,
+    "orchestrate": 32,
+    "mixed": 164
+  },
+  "determinism": {
+    "checked": true,
+    "passed": true,
+    "max_abs_difference": 5.960464477539063e-08,
+    "repeat_seconds": 6.858439700008603
+  }
+}

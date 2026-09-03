@@ -1,0 +1,35 @@
+{
+  "run_name": "math_5_15t_s42_49bb823498",
+  "status": "complete",
+  "elapsed_seconds": 77.7277340888977,
+  "epochs_completed": 15,
+  "best_dev_recall@1": 0.891156462585034,
+  "dev_metrics": {
+    "recall@1": 0.891156462585034,
+    "mrr@1": 0.891156462585034,
+    "recall@3": 0.9829931972789115,
+    "mrr@3": 0.935374149659864,
+    "recall@5": 0.9965986394557823,
+    "mrr@5": 0.9384353741496598,
+    "tool_set_f1": 0.983711262282691,
+    "same_toolset_recall@1": 0.9455782312925171,
+    "n_queries": 294.0,
+    "gallery_size": 49.0,
+    "mean_latency_ms": 0.9840911563737705,
+    "p95_latency_ms": 1.5396105261874926
+  },
+  "parameter_count": 71381331,
+  "trainable_parameter_count": 6593491,
+  "load_reports": {
+    "v3": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    },
+    "sbert": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    }
+  }
+}

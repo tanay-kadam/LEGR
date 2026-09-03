@@ -1,0 +1,35 @@
+{
+  "run_name": "fusion_all_MiniLM_L6_v2_scalar_15t_s42_678a4ab8fa",
+  "status": "complete",
+  "elapsed_seconds": 179.6607563495636,
+  "epochs_completed": 15,
+  "best_dev_recall@1": 0.7210884353741497,
+  "dev_metrics": {
+    "recall@1": 0.7210884353741497,
+    "mrr@1": 0.7210884353741497,
+    "recall@3": 0.9625850340136054,
+    "mrr@3": 0.834467120181406,
+    "recall@5": 0.9863945578231292,
+    "mrr@5": 0.8402494331065762,
+    "tool_set_f1": 0.8661805126090844,
+    "same_toolset_recall@1": 0.9455782312925171,
+    "n_queries": 294.0,
+    "gallery_size": 49.0,
+    "mean_latency_ms": 10.297367346940677,
+    "p95_latency_ms": 16.797657894800835
+  },
+  "parameter_count": 74540563,
+  "trainable_parameter_count": 9752723,
+  "load_reports": {
+    "v3": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    },
+    "sbert": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "run_name": "arch_gated_combined_15t_s42_197530518d",
+  "status": "complete",
+  "elapsed_seconds": 78.27026796340942,
+  "epochs_completed": 15,
+  "best_dev_recall@1": 0.8945578231292517,
+  "dev_metrics": {
+    "recall@1": 0.8945578231292517,
+    "mrr@1": 0.8945578231292517,
+    "recall@3": 0.9897959183673469,
+    "mrr@3": 0.9410430839002266,
+    "recall@5": 0.9965986394557823,
+    "mrr@5": 0.9425736961451248,
+    "tool_set_f1": 0.9796188316596481,
+    "same_toolset_recall@1": 0.9455782312925171,
+    "n_queries": 294.0,
+    "gallery_size": 49.0,
+    "mean_latency_ms": 1.088322448984921,
+    "p95_latency_ms": 1.3842315789875819
+  },
+  "parameter_count": 72960339,
+  "trainable_parameter_count": 8172499,
+  "load_reports": {
+    "v3": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    },
+    "sbert": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    }
+  }
+}

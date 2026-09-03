@@ -3,56 +3,56 @@
   "tier": 45,
   "seed": 42,
   "device": "cpu",
-  "timestamp": "2026-09-01T06:31:08.424317",
+  "timestamp": "2026-09-01T07:43:34.453768",
   "python_version": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
   "runs": [
     {
       "label": "legr_legacy_no_ged_45t",
       "success": true,
-      "elapsed_s": 619.2,
+      "elapsed_s": 2638.5,
       "returncode": 0,
-      "stdout_tail": " best\nEpoch   2  |  train_loss 4.0864  |  val_loss 3.6393  |  R@1 0.106  |  tau 0.0503 * best\nEpoch   3  |  train_loss 2.6057  |  val_loss 2.8026  |  R@1 0.131  |  tau 0.0480 * best\nEpoch   4  |  train_loss 1.3251  |  val_loss 2.4952  |  R@1 0.145  |  tau 0.0438 * best\nEpoch   5  |  train_loss 0.7767  |  val_loss 2.4357  |  R@1 0.149  |  tau 0.0401 * best\n\nTraining complete.  Best val loss: 2.4357\nCheckpoints saved to C:\\Users\\tkadam\\LEGR\\artifacts\\campaign_v4\\results\\legr_legacy_no_ged_45t_s42\n",
-      "stderr_tail": "20/23 [02:28<00:20,  6.88s/it, loss=0.6655]\nTrain epoch 5:  91%|#########1| 21/23 [02:28<00:13,  6.96s/it, loss=0.6655]\nTrain epoch 5:  91%|#########1| 21/23 [02:34<00:13,  6.96s/it, loss=0.6692]\nTrain epoch 5:  96%|#########5| 22/23 [02:34<00:06,  6.74s/it, loss=0.6692]\nTrain epoch 5:  96%|#########5| 22/23 [02:40<00:06,  6.74s/it, loss=0.8201]\nTrain epoch 5: 100%|##########| 23/23 [02:40<00:00,  6.57s/it, loss=0.8201]\n                                                                           \n"
+      "stdout_tail": "4707  |  R@1 0.158  |  tau 0.0255\nEpoch  12  |  train_loss 0.2703  |  val_loss 2.4941  |  R@1 0.158  |  tau 0.0249\nEpoch  13  |  train_loss 0.2666  |  val_loss 2.4686  |  R@1 0.160  |  tau 0.0245\nEpoch  14  |  train_loss 0.2761  |  val_loss 2.4763  |  R@1 0.159  |  tau 0.0244\nEpoch  15  |  train_loss 0.2643  |  val_loss 2.4767  |  R@1 0.160  |  tau 0.0243\n\nTraining complete.  Best val loss: 2.4015\nCheckpoints saved to C:\\Users\\tkadam\\LEGR\\artifacts\\campaign_v4\\results\\legr_legacy_no_ged_45t_s42\n",
+      "stderr_tail": "[02:44<00:32, 10.88s/it, loss=0.3064]\nTrain epoch 15:  91%|#########1| 21/23 [02:44<00:22, 11.01s/it, loss=0.3064]\nTrain epoch 15:  91%|#########1| 21/23 [02:57<00:22, 11.01s/it, loss=0.3400]\nTrain epoch 15:  96%|#########5| 22/23 [02:57<00:11, 11.38s/it, loss=0.3400]\nTrain epoch 15:  96%|#########5| 22/23 [03:07<00:11, 11.38s/it, loss=0.2410]\nTrain epoch 15: 100%|##########| 23/23 [03:07<00:00, 11.05s/it, loss=0.2410]\n                                                                            \n"
     },
     {
       "label": "legr_legacy_ged_45t",
       "success": true,
-      "elapsed_s": 978.2,
+      "elapsed_s": 2054.8,
       "returncode": 0,
-      "stdout_tail": "2 * best\nEpoch   2  |  train_loss 4.2118  |  val_loss 3.7231  |  R@1 0.101  |  tau 0.0507 * best\nEpoch   3  |  train_loss 2.7020  |  val_loss 2.8622  |  R@1 0.134  |  tau 0.0485 * best\nEpoch   4  |  train_loss 1.3709  |  val_loss 2.5397  |  R@1 0.146  |  tau 0.0441 * best\nEpoch   5  |  train_loss 0.7906  |  val_loss 2.4560  |  R@1 0.149  |  tau 0.0403 * best\n\nTraining complete.  Best val loss: 2.4560\nCheckpoints saved to C:\\Users\\tkadam\\LEGR\\artifacts\\campaign_v4\\results\\legr_legacy_ged_45t_s42\n",
-      "stderr_tail": "20/23 [02:51<00:22,  7.60s/it, loss=0.6667]\nTrain epoch 5:  91%|#########1| 21/23 [02:51<00:15,  7.69s/it, loss=0.6667]\nTrain epoch 5:  91%|#########1| 21/23 [02:57<00:15,  7.69s/it, loss=0.6789]\nTrain epoch 5:  96%|#########5| 22/23 [02:57<00:07,  7.33s/it, loss=0.6789]\nTrain epoch 5:  96%|#########5| 22/23 [03:05<00:07,  7.33s/it, loss=0.8371]\nTrain epoch 5: 100%|##########| 23/23 [03:05<00:00,  7.30s/it, loss=0.8371]\n                                                                           \n"
+      "stdout_tail": " 2.4693  |  R@1 0.158  |  tau 0.0255\nEpoch  12  |  train_loss 0.2714  |  val_loss 2.4977  |  R@1 0.158  |  tau 0.0249\nEpoch  13  |  train_loss 0.2672  |  val_loss 2.4676  |  R@1 0.159  |  tau 0.0246\nEpoch  14  |  train_loss 0.2770  |  val_loss 2.4775  |  R@1 0.159  |  tau 0.0244\nEpoch  15  |  train_loss 0.2656  |  val_loss 2.4772  |  R@1 0.159  |  tau 0.0243\n\nTraining complete.  Best val loss: 2.4012\nCheckpoints saved to C:\\Users\\tkadam\\LEGR\\artifacts\\campaign_v4\\results\\legr_legacy_ged_45t_s42\n",
+      "stderr_tail": "[01:12<00:09,  3.28s/it, loss=0.3066]\nTrain epoch 15:  91%|#########1| 21/23 [01:12<00:06,  3.29s/it, loss=0.3066]\nTrain epoch 15:  91%|#########1| 21/23 [01:15<00:06,  3.29s/it, loss=0.3413]\nTrain epoch 15:  96%|#########5| 22/23 [01:15<00:03,  3.25s/it, loss=0.3413]\nTrain epoch 15:  96%|#########5| 22/23 [01:17<00:03,  3.25s/it, loss=0.2455]\nTrain epoch 15: 100%|##########| 23/23 [01:17<00:00,  3.09s/it, loss=0.2455]\n                                                                            \n"
     },
     {
       "label": "legr_directed_no_ged_45t",
       "success": true,
-      "elapsed_s": 706.9,
+      "elapsed_s": 1107.6,
       "returncode": 0,
-      "stdout_tail": "est\nEpoch   2  |  train_loss 4.2697  |  val_loss 4.1372  |  R@1 0.049  |  tau 0.0504 * best\nEpoch   3  |  train_loss 2.8157  |  val_loss 3.3214  |  R@1 0.102  |  tau 0.0482 * best\nEpoch   4  |  train_loss 1.3385  |  val_loss 2.8215  |  R@1 0.136  |  tau 0.0439 * best\nEpoch   5  |  train_loss 0.7298  |  val_loss 2.6732  |  R@1 0.142  |  tau 0.0401 * best\n\nTraining complete.  Best val loss: 2.6732\nCheckpoints saved to C:\\Users\\tkadam\\LEGR\\artifacts\\campaign_v4\\results\\legr_directed_no_ged_45t_s42\n",
-      "stderr_tail": "20/23 [01:37<00:14,  4.70s/it, loss=0.6127]\nTrain epoch 5:  91%|#########1| 21/23 [01:37<00:09,  4.79s/it, loss=0.6127]\nTrain epoch 5:  91%|#########1| 21/23 [01:41<00:09,  4.79s/it, loss=0.7146]\nTrain epoch 5:  96%|#########5| 22/23 [01:41<00:04,  4.64s/it, loss=0.7146]\nTrain epoch 5:  96%|#########5| 22/23 [01:47<00:04,  4.64s/it, loss=0.6727]\nTrain epoch 5: 100%|##########| 23/23 [01:47<00:00,  4.82s/it, loss=0.6727]\n                                                                           \n"
+      "stdout_tail": "72  |  R@1 0.153  |  tau 0.0243\nEpoch  12  |  train_loss 0.2202  |  val_loss 2.6348  |  R@1 0.152  |  tau 0.0241\nEpoch  13  |  train_loss 0.2045  |  val_loss 2.6256  |  R@1 0.153  |  tau 0.0240\nEpoch  14  |  train_loss 0.2090  |  val_loss 2.6079  |  R@1 0.154  |  tau 0.0240\nEpoch  15  |  train_loss 0.2042  |  val_loss 2.6028  |  R@1 0.154  |  tau 0.0240\n\nTraining complete.  Best val loss: 2.5828\nCheckpoints saved to C:\\Users\\tkadam\\LEGR\\artifacts\\campaign_v4\\results\\legr_directed_no_ged_45t_s42\n",
+      "stderr_tail": "[01:05<00:09,  3.13s/it, loss=0.2335]\nTrain epoch 15:  91%|#########1| 21/23 [01:05<00:06,  3.12s/it, loss=0.2335]\nTrain epoch 15:  91%|#########1| 21/23 [01:08<00:06,  3.12s/it, loss=0.1657]\nTrain epoch 15:  96%|#########5| 22/23 [01:08<00:03,  3.07s/it, loss=0.1657]\nTrain epoch 15:  96%|#########5| 22/23 [01:11<00:03,  3.07s/it, loss=0.2305]\nTrain epoch 15: 100%|##########| 23/23 [01:11<00:00,  3.03s/it, loss=0.2305]\n                                                                            \n"
     },
     {
       "label": "legr_directed_ged_45t",
       "success": true,
-      "elapsed_s": 763.4,
+      "elapsed_s": 999.0,
       "returncode": 0,
-      "stdout_tail": "* best\nEpoch   2  |  train_loss 4.4150  |  val_loss 4.2191  |  R@1 0.045  |  tau 0.0508 * best\nEpoch   3  |  train_loss 2.9527  |  val_loss 3.4007  |  R@1 0.103  |  tau 0.0488 * best\nEpoch   4  |  train_loss 1.4049  |  val_loss 2.8798  |  R@1 0.138  |  tau 0.0445 * best\nEpoch   5  |  train_loss 0.7434  |  val_loss 2.7220  |  R@1 0.141  |  tau 0.0406 * best\n\nTraining complete.  Best val loss: 2.7220\nCheckpoints saved to C:\\Users\\tkadam\\LEGR\\artifacts\\campaign_v4\\results\\legr_directed_ged_45t_s42\n",
-      "stderr_tail": "20/23 [03:07<00:28,  9.63s/it, loss=0.6154]\nTrain epoch 5:  91%|#########1| 21/23 [03:07<00:19,  9.82s/it, loss=0.6154]\nTrain epoch 5:  91%|#########1| 21/23 [03:18<00:19,  9.82s/it, loss=0.7301]\nTrain epoch 5:  96%|#########5| 22/23 [03:18<00:10, 10.01s/it, loss=0.7301]\nTrain epoch 5:  96%|#########5| 22/23 [03:28<00:10, 10.01s/it, loss=0.6883]\nTrain epoch 5: 100%|##########| 23/23 [03:28<00:00, 10.03s/it, loss=0.6883]\n                                                                           \n"
+      "stdout_tail": "0.156  |  tau 0.0246\nEpoch  12  |  train_loss 0.2205  |  val_loss 2.6398  |  R@1 0.152  |  tau 0.0244\nEpoch  13  |  train_loss 0.2047  |  val_loss 2.6147  |  R@1 0.154  |  tau 0.0243\nEpoch  14  |  train_loss 0.2109  |  val_loss 2.5988  |  R@1 0.155  |  tau 0.0242 * best\nEpoch  15  |  train_loss 0.2040  |  val_loss 2.5938  |  R@1 0.155  |  tau 0.0242 * best\n\nTraining complete.  Best val loss: 2.5938\nCheckpoints saved to C:\\Users\\tkadam\\LEGR\\artifacts\\campaign_v4\\results\\legr_directed_ged_45t_s42\n",
+      "stderr_tail": "[00:54<00:07,  2.56s/it, loss=0.2327]\nTrain epoch 15:  91%|#########1| 21/23 [00:54<00:05,  2.64s/it, loss=0.2327]\nTrain epoch 15:  91%|#########1| 21/23 [00:57<00:05,  2.64s/it, loss=0.1622]\nTrain epoch 15:  96%|#########5| 22/23 [00:57<00:02,  2.63s/it, loss=0.1622]\nTrain epoch 15:  96%|#########5| 22/23 [00:59<00:02,  2.63s/it, loss=0.2296]\nTrain epoch 15: 100%|##########| 23/23 [00:59<00:00,  2.59s/it, loss=0.2296]\n                                                                            \n"
     },
     {
       "label": "sbert_ft_no_ged_45t",
       "success": true,
-      "elapsed_s": 1173.8,
+      "elapsed_s": 1165.1,
       "returncode": 0,
-      "stdout_tail": ".139 * best\nEpoch   3  |  train 1.7092  |  val 2.4518  |  R@1 0.151 * best\n  Reloaded best checkpoint for eval: artifacts\\campaign_v4\\results\\sbert_ft_no_ged_45t_s42\\best_model.pt (epoch=3)\nEval data\\campaign_v4\\campaign_v4_45tools\\test_topology_heldout.csv: {'tool_set_f1': np.float64(0.8516944444444444), 'mean_ged_error': np.float64(1.0533333333333332), 'recall@1': 0.795, 'recall@3': 0.92, 'recall@5': 0.9383333333333334, 'mrr@1': 0.795, 'mrr@3': 0.8530555555555553, 'mrr@5': 0.8572222222222221}\n",
-      "stderr_tail": ", 10.04s/it, loss=1.1210]\nSBERT-FT epoch 3:  91%|#########1| 21/23 [03:29<00:19,  9.86s/it, loss=1.1210]\nSBERT-FT epoch 3:  91%|#########1| 21/23 [03:39<00:19,  9.86s/it, loss=1.2768]\nSBERT-FT epoch 3:  96%|#########5| 22/23 [03:39<00:09,  9.82s/it, loss=1.2768]\nSBERT-FT epoch 3:  96%|#########5| 22/23 [03:48<00:09,  9.82s/it, loss=1.2808]\nSBERT-FT epoch 3: 100%|##########| 23/23 [03:48<00:00,  9.63s/it, loss=1.2808]\n                                                                              \n"
+      "stdout_tail": "  val 2.2406  |  R@1 0.156 * best\n  Reloaded best checkpoint for eval: artifacts\\campaign_v4\\results\\sbert_ft_no_ged_45t_s42\\best_model.pt (epoch=10)\nEval data\\campaign_v4\\campaign_v4_45tools\\test_topology_heldout.csv: {'tool_set_f1': np.float64(0.967111111111111), 'mean_ged_error': np.float64(0.24333333333333335), 'recall@1': 0.9466666666666667, 'recall@3': 0.9866666666666667, 'recall@5': 0.9933333333333333, 'mrr@1': 0.9466666666666667, 'mrr@3': 0.9658333333333333, 'mrr@5': 0.9672499999999998}\n",
+      "stderr_tail": "6s/it, loss=0.4336]\nSBERT-FT epoch 10:  91%|#########1| 21/23 [01:34<00:09,  4.54s/it, loss=0.4336]\nSBERT-FT epoch 10:  91%|#########1| 21/23 [01:39<00:09,  4.54s/it, loss=0.3968]\nSBERT-FT epoch 10:  96%|#########5| 22/23 [01:39<00:04,  4.67s/it, loss=0.3968]\nSBERT-FT epoch 10:  96%|#########5| 22/23 [01:43<00:04,  4.67s/it, loss=0.4527]\nSBERT-FT epoch 10: 100%|##########| 23/23 [01:43<00:00,  4.56s/it, loss=0.4527]\n                                                                               \n"
     },
     {
       "label": "sbert_ft_ged_45t",
       "success": true,
-      "elapsed_s": 622.0,
+      "elapsed_s": 1056.5,
       "returncode": 0,
-      "stdout_tail": "1 0.139 * best\nEpoch   3  |  train 1.7092  |  val 2.4518  |  R@1 0.151 * best\n  Reloaded best checkpoint for eval: artifacts\\campaign_v4\\results\\sbert_ft_ged_45t_s42\\best_model.pt (epoch=3)\nEval data\\campaign_v4\\campaign_v4_45tools\\test_topology_heldout.csv: {'tool_set_f1': np.float64(0.8516944444444444), 'mean_ged_error': np.float64(1.0533333333333332), 'recall@1': 0.795, 'recall@3': 0.92, 'recall@5': 0.9383333333333334, 'mrr@1': 0.795, 'mrr@3': 0.8530555555555553, 'mrr@5': 0.8572222222222221}\n",
-      "stderr_tail": ",  7.43s/it, loss=1.1210]\nSBERT-FT epoch 3:  91%|#########1| 21/23 [02:45<00:14,  7.46s/it, loss=1.1210]\nSBERT-FT epoch 3:  91%|#########1| 21/23 [02:54<00:14,  7.46s/it, loss=1.2768]\nSBERT-FT epoch 3:  96%|#########5| 22/23 [02:54<00:07,  7.75s/it, loss=1.2768]\nSBERT-FT epoch 3:  96%|#########5| 22/23 [03:01<00:07,  7.75s/it, loss=1.2808]\nSBERT-FT epoch 3: 100%|##########| 23/23 [03:01<00:00,  7.73s/it, loss=1.2808]\n                                                                              \n"
+      "stdout_tail": "  |  val 2.2406  |  R@1 0.156 * best\n  Reloaded best checkpoint for eval: artifacts\\campaign_v4\\results\\sbert_ft_ged_45t_s42\\best_model.pt (epoch=10)\nEval data\\campaign_v4\\campaign_v4_45tools\\test_topology_heldout.csv: {'tool_set_f1': np.float64(0.967111111111111), 'mean_ged_error': np.float64(0.24333333333333335), 'recall@1': 0.9466666666666667, 'recall@3': 0.9866666666666667, 'recall@5': 0.9933333333333333, 'mrr@1': 0.9466666666666667, 'mrr@3': 0.9658333333333333, 'mrr@5': 0.9672499999999998}\n",
+      "stderr_tail": "5s/it, loss=0.4336]\nSBERT-FT epoch 10:  91%|#########1| 21/23 [01:37<00:09,  4.64s/it, loss=0.4336]\nSBERT-FT epoch 10:  91%|#########1| 21/23 [01:42<00:09,  4.64s/it, loss=0.3968]\nSBERT-FT epoch 10:  96%|#########5| 22/23 [01:42<00:04,  4.75s/it, loss=0.3968]\nSBERT-FT epoch 10:  96%|#########5| 22/23 [01:47<00:04,  4.75s/it, loss=0.4527]\nSBERT-FT epoch 10: 100%|##########| 23/23 [01:47<00:00,  4.72s/it, loss=0.4527]\n                                                                               \n"
     }
   ],
   "pytorch_version": "2.13.0+cpu",

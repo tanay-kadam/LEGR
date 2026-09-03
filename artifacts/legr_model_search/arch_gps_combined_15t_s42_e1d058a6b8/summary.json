@@ -1,0 +1,35 @@
+{
+  "run_name": "arch_gps_combined_15t_s42_e1d058a6b8",
+  "status": "complete",
+  "elapsed_seconds": 196.08019375801086,
+  "epochs_completed": 15,
+  "best_dev_recall@1": 0.9115646258503401,
+  "dev_metrics": {
+    "recall@1": 0.9115646258503401,
+    "mrr@1": 0.9115646258503401,
+    "recall@3": 0.9897959183673469,
+    "mrr@3": 0.9495464852607709,
+    "recall@5": 1.0,
+    "mrr@5": 0.9517573696145124,
+    "tool_set_f1": 0.9878252888456973,
+    "same_toolset_recall@1": 0.9489795918367347,
+    "n_queries": 294.0,
+    "gallery_size": 49.0,
+    "mean_latency_ms": 10.388499659854,
+    "p95_latency_ms": 13.635744736683066
+  },
+  "parameter_count": 74540563,
+  "trainable_parameter_count": 9752723,
+  "load_reports": {
+    "v3": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    },
+    "sbert": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    }
+  }
+}

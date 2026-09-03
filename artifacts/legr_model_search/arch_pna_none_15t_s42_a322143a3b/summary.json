@@ -1,0 +1,35 @@
+{
+  "run_name": "arch_pna_none_15t_s42_a322143a3b",
+  "status": "complete",
+  "elapsed_seconds": 82.6558632850647,
+  "epochs_completed": 15,
+  "best_dev_recall@1": 0.8945578231292517,
+  "dev_metrics": {
+    "recall@1": 0.8945578231292517,
+    "mrr@1": 0.8945578231292517,
+    "recall@3": 0.9897959183673469,
+    "mrr@3": 0.9410430839002266,
+    "recall@5": 0.9965986394557823,
+    "mrr@5": 0.9425736961451248,
+    "tool_set_f1": 0.9864485476730377,
+    "same_toolset_recall@1": 0.9455782312925171,
+    "n_queries": 294.0,
+    "gallery_size": 49.0,
+    "mean_latency_ms": 1.1198561224111578,
+    "p95_latency_ms": 1.7828947368941859
+  },
+  "parameter_count": 71643475,
+  "trainable_parameter_count": 6855635,
+  "load_reports": {
+    "v3": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    },
+    "sbert": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    }
+  }
+}

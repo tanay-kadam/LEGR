@@ -1,0 +1,35 @@
+{
+  "run_name": "optim_swa_15t_s42_032898b741",
+  "status": "complete",
+  "elapsed_seconds": 207.00484490394592,
+  "epochs_completed": 15,
+  "best_dev_recall@1": 0.9149659863945578,
+  "dev_metrics": {
+    "recall@1": 0.9081632653061225,
+    "mrr@1": 0.9081632653061225,
+    "recall@3": 0.9897959183673469,
+    "mrr@3": 0.947845804988662,
+    "recall@5": 1.0,
+    "mrr@5": 0.9500566893424036,
+    "tool_set_f1": 0.9866915019976248,
+    "same_toolset_recall@1": 0.9489795918367347,
+    "n_queries": 294.0,
+    "gallery_size": 49.0,
+    "mean_latency_ms": 12.15927789118821,
+    "p95_latency_ms": 17.24859473707559
+  },
+  "parameter_count": 74540563,
+  "trainable_parameter_count": 9752723,
+  "load_reports": {
+    "v3": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    },
+    "sbert": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    }
+  }
+}

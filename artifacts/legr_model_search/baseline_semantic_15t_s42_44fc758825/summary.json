@@ -1,0 +1,35 @@
+{
+  "run_name": "baseline_semantic_15t_s42_44fc758825",
+  "status": "complete",
+  "elapsed_seconds": 16.427966117858887,
+  "epochs_completed": 1,
+  "best_dev_recall@1": 0.8741496598639455,
+  "dev_metrics": {
+    "recall@1": 0.8741496598639455,
+    "mrr@1": 0.8741496598639455,
+    "recall@3": 0.9965986394557823,
+    "mrr@3": 0.9302721088435374,
+    "recall@5": 1.0,
+    "mrr@5": 0.9309523809523811,
+    "tool_set_f1": 0.9808952007931601,
+    "same_toolset_recall@1": 0.9319727891156463,
+    "n_queries": 294.0,
+    "gallery_size": 49.0,
+    "mean_latency_ms": 14.815625850399144,
+    "p95_latency_ms": 15.13951562492366
+  },
+  "parameter_count": 74540563,
+  "trainable_parameter_count": 9752723,
+  "load_reports": {
+    "v3": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    },
+    "sbert": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    }
+  }
+}

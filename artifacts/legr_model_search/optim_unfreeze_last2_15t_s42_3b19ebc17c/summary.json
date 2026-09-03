@@ -1,0 +1,35 @@
+{
+  "run_name": "optim_unfreeze_last2_15t_s42_3b19ebc17c",
+  "status": "complete",
+  "elapsed_seconds": 206.82173442840576,
+  "epochs_completed": 15,
+  "best_dev_recall@1": 0.9149659863945578,
+  "dev_metrics": {
+    "recall@1": 0.9149659863945578,
+    "mrr@1": 0.9149659863945578,
+    "recall@3": 0.9897959183673469,
+    "mrr@3": 0.9512471655328797,
+    "recall@5": 0.9965986394557823,
+    "mrr@5": 0.9527777777777778,
+    "tool_set_f1": 0.9892020300183567,
+    "same_toolset_recall@1": 0.9489795918367347,
+    "n_queries": 294.0,
+    "gallery_size": 49.0,
+    "mean_latency_ms": 11.41649217685947,
+    "p95_latency_ms": 15.880018420973915
+  },
+  "parameter_count": 74540563,
+  "trainable_parameter_count": 9752723,
+  "load_reports": {
+    "v3": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    },
+    "sbert": {
+      "loaded": true,
+      "missing": [],
+      "unexpected": []
+    }
+  }
+}

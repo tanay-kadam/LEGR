@@ -1,0 +1,51 @@
+[
+  {
+    "epoch": 5,
+    "loss": 0.01323042597089495,
+    "structural_true_twin_recall@1": 0.783625730994152,
+    "system_recall@1": 0.8249158249158249,
+    "hard_negative_pair_accuracy": 0.8859649122807017
+  },
+  {
+    "epoch": 10,
+    "loss": 0.0028942751565149854,
+    "structural_true_twin_recall@1": 0.7719298245614035,
+    "system_recall@1": 0.8198653198653199,
+    "hard_negative_pair_accuracy": 0.8801169590643275
+  },
+  {
+    "epoch": 15,
+    "loss": 0.002149283653125167,
+    "structural_true_twin_recall@1": 0.7660818713450293,
+    "system_recall@1": 0.8164983164983165,
+    "hard_negative_pair_accuracy": 0.8776803118908383
+  },
+  {
+    "epoch": 20,
+    "loss": 0.0015268487040884793,
+    "structural_true_twin_recall@1": 0.7660818713450293,
+    "system_recall@1": 0.8164983164983165,
+    "hard_negative_pair_accuracy": 0.8757309941520469
+  },
+  {
+    "epoch": 25,
+    "loss": 0.0010114192181000753,
+    "structural_true_twin_recall@1": 0.7602339181286549,
+    "system_recall@1": 0.8131313131313131,
+    "hard_negative_pair_accuracy": 0.874756335282651
+  },
+  {
+    "epoch": 30,
+    "loss": 0.0006999963204309877,
+    "structural_true_twin_recall@1": 0.7602339181286549,
+    "system_recall@1": 0.8131313131313131,
+    "hard_negative_pair_accuracy": 0.8732943469785573
+  },
+  {
+    "epoch": 35,
+    "loss": 0.0006372399636477764,
+    "structural_true_twin_recall@1": 0.7543859649122807,
+    "system_recall@1": 0.8097643097643098,
+    "hard_negative_pair_accuracy": 0.8718323586744638
+  }
+]
